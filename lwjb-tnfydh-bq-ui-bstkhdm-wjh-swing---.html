@@ -1,0 +1,2481 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="مقدمة إلى لغة جافا ومنظومة سبرينغ">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/ar-java-spring-dec-2015/lwjb-tnfydh-bq-ui-bstkhdm-wjh-swing---.html">
+      
+      
+        <link rel="prev" href="td-tnfydh-bq-ui-bstkhdm-brnmj-wd-ltkm.html">
+      
+      
+        <link rel="next" href="ldwr-ltdryby-dr-qwd-lbynt-llyqy-bstkhdm-spring-data.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>10. [الواجب]: تنفيذ طبقة [ui] باستخدام واجهة Swing - - مقدمة إلى لغة جافا ومنظومة سبرينغ</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "مقدمة إلى لغة جافا ومنظومة سبرينغ";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#10-ui-swing-" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="مقدمة إلى لغة جافا ومنظومة سبرينغ" class="md-header__button md-logo" aria-label="مقدمة إلى لغة جافا ومنظومة سبرينغ" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            مقدمة إلى لغة جافا ومنظومة سبرينغ
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              10. [الواجب]: تنفيذ طبقة [ui] باستخدام واجهة Swing - 
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="التبديل إلى الوضع المظلم"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="التبديل إلى الوضع المظلم" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="التبديل إلى الوضع الفاتح"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="التبديل إلى الوضع الفاتح" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/ar-java-spring-dec-2015" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="مقدمة إلى لغة جافا ومنظومة سبرينغ" class="md-nav__button md-logo" aria-label="مقدمة إلى لغة جافا ومنظومة سبرينغ" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    مقدمة إلى لغة جافا ومنظومة سبرينغ
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/ar-java-spring-dec-2015" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    مرحبًا بكم
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mqdm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. مقدمة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lwjb-lmshkl.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. [الواجب]: المشكلة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="td-lfyt.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. [TD]: الفئات
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="td-lbn-lbqy.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. [TD]: البنى الطبقية
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lmqrr-mqdm-l-r-ml-spring.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. [المقرر]: مقدمة إلى إطار عمل Spring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ldwr-mqdm-l-wjh-brmj-tbyqt-jdbc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. [الدورة]: مقدمة إلى واجهة برمجة تطبيقات JDBC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="td-tnfydh-bq-dao-fy-td-bstkhdm-wjh-brmj-tbyqt-jdbc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. [TD]: تنفيذ طبقة [DAO] في TD باستخدام واجهة برمجة تطبيقات JDBC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="td-bq-lml.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. [TD]: طبقة [الأعمال]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="td-tnfydh-bq-ui-bstkhdm-brnmj-wd-ltkm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. [TD]: تنفيذ طبقة [ui] باستخدام برنامج وحدة التحكم
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. [الواجب]: تنفيذ طبقة [ui] باستخدام واجهة Swing - 
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="lwjb-tnfydh-bq-ui-bstkhdm-wjh-swing---.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. [الواجب]: تنفيذ طبقة [ui] باستخدام واجهة Swing - 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#101" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1. الدعم
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#102" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2. كيفية عمل التطبيق
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#103-electionsswing-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3. فئة [ElectionsSwing] التي تنفذ طبقة [ui]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.3. فئة [ElectionsSwing] التي تنفذ طبقة [ui]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1031-netbeans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.1. مشروع NetBeans
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1032-maven" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.2. تكوين Maven
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1033" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.3. إنشاء واجهة المستخدم الرسومية
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1034" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.4. فصل الكود
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1035-ielectionsui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.5. تنفيذ واجهة [IElectionsUI]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1036" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.6. الفئة القابلة للتنفيذ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1037" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.7. تهيئة واجهة المستخدم الرسومية
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1038-utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.8. فئة [Utilities]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1039-electionsswing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.9. كود فئة [ElectionsSwing]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.3.9. كود فئة [ElectionsSwing]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#10391-init" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.9.1. طريقة [init]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10392-add" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.9.2. إدارة حالة رابط [Add]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10393" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.9.3. تخصيص الأصوات لكل قائمة
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10394-delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.9.4. إدارة حالة رابط [Delete]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10395" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.9.5. حذف قائمة المرشحين
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10396-calculate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.9.6. إدارة حالة رابط [Calculate]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10397" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.9.7. حساب المقاعد
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10398" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.9.8. حفظ النتائج في مصدر البيانات
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10399" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.9.9. مسح النتائج
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10310" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.10. التحسينات
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ldwr-ltdryby-dr-qwd-lbynt-llyqy-bstkhdm-spring-data.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. [الدورة التدريبية]: إدارة قواعد البيانات العلائقية باستخدام Spring Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="td-tnfydh-bq-dao-fy-td-bstkhdm-spring-data.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. [TD]: تنفيذ طبقة [DAO] في TD باستخدام [Spring Data]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ldwr-ltdryby-r-qd-bynt-l-lwyb-bstkhdm-spring-mvc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. [الدورة التدريبية]: عرض قاعدة بيانات على الويب باستخدام Spring MVC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="td-r-lwyb-lbq-lml.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. [TD]: عرض الويب لطبقة [الأعمال]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="td-nsh-myl-lkhdm-lwyb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. [TD]: إنشاء عميل لخدمة الويب
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ldwr-ltdryby-tmyn-lwwl-l-khdm-wyb-bstkhdm-spring-security.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. [الدورة التدريبية]: تأمين الوصول إلى خدمة ويب باستخدام Spring Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="td-tmyn-khdm-lwyb--json-llntkhbt.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. [TD]: تأمين خادم الويب / JSON للانتخابات
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lmqrr-mshrk-lmwrd-br-lwl.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. [المقرر]: مشاركة الموارد عبر الأصول
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="td-mshrk-lmwrd-br-lwl-cors.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. [TD] مشاركة الموارد عبر الأصول (CORS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lbrmj-yr-lmtzmn-bstkhdm-rxjava.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. البرمجة غير المتزامنة باستخدام RxJava
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="khtm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. خاتمة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lmlq.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. الملاحق
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a id="refheading318571812363491"></a>
+<a id="application-swing"></a></p>
+<h1 id="10-ui-swing-">10. <span style="color: #365f91">[الواجب]: تنفيذ طبقة [ui] باستخدام واجهة Swing -</span></h1>
+<p><strong>الكلمات المفتاحية</strong>: بنية متعددة الطبقات، Spring، حقن التبعية، مكتبة مكونات Swing.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000051B000000FD768FBF48.png" width="654" height="127" style="display:inline-block; margin:4px;width:17.291cm;height:3.348cm;" class="odt-zoomable" data-zoom-src="images/100000000000051B000000FD768FBF48.png" /></td></tr></table>
+
+<p><a id="refheading98770873157090"></a></p>
+<h2 id="101">10.1. <span style="color: #4f81bd">الدعم</span></h2>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000578000001AE3C23F928.png" width="680" height="209" style="display:inline-block; margin:4px;width:17.999cm;height:5.528cm;" class="odt-zoomable" data-zoom-src="images/1000000000000578000001AE3C23F928.png" /></td></tr></table>
+
+<p>في طبقة [UI]، نريد إنشاء واجهة مستخدم رسومية (GUI) باستخدام Swing. يوفر NetBeans أداة [Matisse] لإنشاء واجهات Swing هذه، وهي أداة تتفوق على ما يقدمه Eclipse. يتم استبدال واجهات Swing بشكل متزايد بواجهات JavaFX. يستخدم كل من NetBeans و Eclipse نفس الأداة لإنشاء هذه الأخيرة. لذلك، إذا قمنا بإنشاء واجهات JavaFX، فيمكننا استخدام Eclipse في جميع مراحل البنية الطبقية.</p>
+<p>يمكن لـ NetBeans فتح أي مشروع Maven. لذلك سنستخدم مشروع Maven السابق ونضيف إليه واجهة Swing. في [2]، نقوم بتحميل (ملف / فتح مشروع) مشاريع Maven للطبقات الثلاث التي أنشأناها باستخدام Eclipse. ثم نقوم بإنشاء ملفاتها الثنائية [3]. تعمل خيارات [إنشاء] و[تنظيف وإنشاء] على إنشاء الملف الثنائي للمشروع الذي يتم تطبيقهما عليه. يتم وضع هذه الملفات الثنائية في مجلد [target] الخاص بالمشروع [4-5]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001BB000001BC4D20CB45.png" width="222" height="222" style="display:inline-block; margin:4px;width:5.861cm;height:5.874cm;" class="odt-zoomable" data-zoom-src="images/10000000000001BB000001BC4D20CB45.png" /></td></tr></table>
+
+<p>يحذف خيار [Clean] مجلد [target] هذا. أما خيار [Build] فيعيد بنائه. وتُظهر التجربة أنه عند ظهور مشاكل غير متوقعة، فإن أول ما يجب فعله هو تنفيذ [Clean and Build] على المشروع للتأكد من أنك تعمل مع أحدث إصدار. ويكون هذا ضروريًا بشكل خاص عندما يكون لديك ملفات تكوين لا تؤدي تعديلها إلى إعادة تجميع تلقائية عند تشغيل المشروع. يجب عليك بعد ذلك فرض إعادة التجميع هذه باستخدام [Clean and Build] حتى يتم تثبيت الإصدارات الجديدة في المجلد [target].</p>
+<p><a id="refheading318591812363491"></a></p>
+<h2 id="102">10.2. <span style="color: #4f81bd">كيفية عمل التطبيق</span></h2>
+<p>لنعد إلى البنية العامة لتطبيق [Elections]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004BB000000FF2B1C6207.png" width="606" height="128" style="display:inline-block; margin:4px;width:16.021cm;height:3.374cm;" class="odt-zoomable" data-zoom-src="images/10000000000004BB000000FF2B1C6207.png" /></td></tr></table>
+
+<p>نحن نركز الآن على تنفيذ جديد لطبقة [ui]. التنفيذ الوحيد الموجود حاليًا هو واجهة وحدة التحكم. ونحن الآن بصدد إنشاء واجهة مستخدم رسومية.</p>
+<p>سيكون لدى المستخدم الواجهة التالية للتفاعل مع تطبيق [Elections]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003A90000035363325D82.png" width="469" height="426" style="display:inline-block; margin:4px;width:12.397cm;height:11.259cm;" class="odt-zoomable" data-zoom-src="images/10000000000003A90000035363325D82.png" /></td></tr></table>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001C0000001A0CEDB96B1.png" width="358" height="333" style="display:inline-block; margin:4px;width:9.479cm;height:8.802cm;" class="odt-zoomable" data-zoom-src="images/10000000000001C0000001A0CEDB96B1.png" /></td></tr></table>
+
+<p>تقع واجهة المستخدم الرسومية في الطبقة [ui]. وهذه الطبقة هي التي تتفاعل مع المستخدم.</p>
+<ul>
+  <li>عند بدء التشغيل، يقوم تطبيق وحدة التحكم [<b>main</b>] بإنشاء مثيلات للطبقات الثلاث للتطبيق باستخدام Spring. ويتم ذلك قبل أن تظهر واجهة المستخدم الرسومية. وأيضًا خلال مرحلة التهيئة هذه، تُطلب المعلومات التي تميز الانتخابات (عدد المقاعد المطلوب شغلها، والعتبة الانتخابية، والقوائم المتنافسة) من طبقة [dao]. إذا فشلت مرحلة التهيئة هذه (على سبيل المثال، عدم القدرة على الوصول إلى البيانات)، يتم عرض رسالة خطأ على وحدة التحكم ولا يتم عرض واجهة المستخدم الرسومية.
+  </li>
+</ul>
+
+<ul>
+  <li>إذا تمت قراءة البيانات بنجاح، يتم عرض الواجهة الرسومية مع المعلومات التالية (انظر لقطة الشاشة أعلاه):
+  </li>
+</ul>
+
+<ol>
+    <ul>
+      <li>عدد المقاعد المطلوب شغلها (2)
+      </li>
+      <li>الحد الأدنى للانتخاب الوارد في (3)
+      </li>
+      <li>أرقام الهوية وأسماء قوائم المرشحين في (4)
+      </li>
+    </ul>
+</ol>
+
+<ul>
+  <li>ثم يقوم المستخدم بتخصيص عدد الأصوات لكل قائمة مرشحين باستخدام الحقول 4 (المعرف - الاسم)، و5 (الأصوات)، و6 (إضافة).
+  </li>
+</ul>
+
+<p><img src="images/10000000000001AC000000775D50E179.png" width="342" height="95" style="width:9.059cm;height:2.519cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001AC000000775D50E179.png" /></p>
+<ul>
+  <li>يمكنك بعد ذلك استخدام الرابط (10) لحساب المقاعد:
+  </li>
+</ul>
+
+<p><img src="images/10000000000000BF0000006B6F7C0BD3.png" width="134" height="75" style="width:3.54cm;height:1.983cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000BF0000006B6F7C0BD3.png" /></p>
+<ul>
+  <li>يتيح لك الرابط [حفظ] (12) حفظ النتائج في مصدر البيانات.
+  </li>
+</ul>
+
+<p><a id="refheading318611812363491"></a></p>
+<h2 id="103-electionsswing-ui">10.3. <span style="color: #4f81bd">فئة [ElectionsSwing] التي تنفذ طبقة [ui]</span></h2>
+<p><a id="refheading318631812363491"></a></p>
+<h3 id="1031-netbeans">10.3.1. <span style="color: #4f81bd">مشروع NetBeans</span></h3>
+<p><strong>ملاحظة</strong>: يشرح <a href="#refheading78364566070260"><u><span style="color: #0563c1">القسم 22.4</span></u></a> كيفية الحصول على NetBeans. </p>
+<p>سيبدو مشروع NetBeans النهائي للتطبيق كما يلي [1]. قم بإنشائه باتباع الخطوات [2–5]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005AF000001E776D49C18.png" width="680" height="228" style="display:inline-block; margin:4px;width:17.999cm;height:6.024cm;" class="odt-zoomable" data-zoom-src="images/10000000000005AF000001E776D49C18.png" /></td></tr></table>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000245000001A2D2801BB9.png" width="291" height="209" style="display:inline-block; margin:4px;width:7.687cm;height:5.53cm;" class="odt-zoomable" data-zoom-src="images/1000000000000245000001A2D2801BB9.png" /></td></tr></table>
+
+<p>تأكد من تكوين المشروع بحيث يتم تجميعه باستخدام JDK 1.8 [1-6]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005980000048CDB9BF98C.png" width="680" height="553" style="display:inline-block; margin:4px;width:17.999cm;height:14.63cm;" class="odt-zoomable" data-zoom-src="images/10000000000005980000048CDB9BF98C.png" /></td></tr></table>
+
+<p><a id="refheading1217141037674463"></a></p>
+<h3 id="1032-maven">10.3.2. <span style="color: #4f81bd">تكوين Maven</span></h3>
+<p>سيعتمد المشروع الجديد [elections-swing-business-dao-jdbc] على المشروع السابق [elections-console-business-dao-jdbc]. للقيام بذلك، أضف تبعية Maven كما يلي [1-3]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000700000002C8B7BB149D.png" width="680" height="270" style="display:inline-block; margin:4px;width:17.999cm;height:7.151cm;" class="odt-zoomable" data-zoom-src="images/1000000000000700000002C8B7BB149D.png" /></td></tr></table>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000022A0000019CCFCECBD1.png" width="277" height="206" style="display:inline-block; margin:4px;width:7.329cm;height:5.45cm;" class="odt-zoomable" data-zoom-src="images/100000000000022A0000019CCFCECBD1.png" /></td></tr></table>
+
+<p><a id="refheading318651812363491"></a></p>
+<h3 id="1033">10.3.3. <span style="color: #4f81bd">إنشاء واجهة المستخدم الرسومية</span></h3>
+<p>لإنشاء واجهة المستخدم الرسومية، يمكننا اتباع الخطوات التالية:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000037100000158A562DFA9.png" width="441" height="172" style="display:inline-block; margin:4px;width:11.656cm;height:4.551cm;" class="odt-zoomable" data-zoom-src="images/100000000000037100000158A562DFA9.png" /></td></tr></table>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002B1000001E0D373F464.png" width="345" height="240" style="display:inline-block; margin:4px;width:9.116cm;height:6.352cm;" class="odt-zoomable" data-zoom-src="images/10000000000002B1000001E0D373F464.png" /></td></tr></table>
+
+<ul>
+  <li>[1]: أضف كائنًا إلى حزمة [elections.ui.service]
+  </li>
+  <li>[2]: حدد خيار [JFrame Form] في فئة [Swing GUI Forms]
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F60000017F755E9FA4.png" width="635" height="192" style="display:inline-block; margin:4px;width:16.801cm;height:5.068cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F60000017F755E9FA4.png" /></td></tr></table>
+
+<ul>
+  <li>[4]: قم بتسمية الفئة
+  </li>
+  <li>[5]: حزمة الفئة.
+  </li>
+  <li>أكمل المعالج.
+  </li>
+  <li>[6]: الفئة التي تم إنشاؤها
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000054E00000126B251AB47.png" width="679" height="147" style="display:inline-block; margin:4px;width:17.965cm;height:3.889cm;" class="odt-zoomable" data-zoom-src="images/100000000000054E00000126B251AB47.png" /></td></tr></table>
+
+<ul>
+  <li>[7]: الفئة [AbstractElectionsSwing] في وضع [التصميم]
+  </li>
+  <li>[8]: علامة التبويب [Navigator] التي تعرض شجرة [9] لمكونات النافذة
+  </li>
+  <li>[10]: علامة التبويب [Properties]، التي تعرض خصائص مكون [JFrame] المحدد في [9]
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000028E0000012158B404C5.png" width="327" height="144" style="display:inline-block; margin:4px;width:8.652cm;height:3.822cm;" class="odt-zoomable" data-zoom-src="images/100000000000028E0000012158B404C5.png" /></td></tr></table>
+
+<ul>
+  <li>[11]: [JFrame] هو حاوية مكونات. يمكن ترتيب المكونات داخل الحاوية وفقًا لقواعد تحديد المواقع المختلفة التي تسمى <i>التخطيطات</i>. هنا، نختار <i>تخطيط</i> [تصميم حر] [14]، الذي يسمح بوضع المكونات بحرية داخل الحاوية.
+  </li>
+</ul>
+
+<p>نجد المكونات في شريط الأدوات المسمى <em>Palette</em>:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000594000001925C114E9C.png" width="680" height="192" style="display:inline-block; margin:4px;width:17.999cm;height:5.068cm;" class="odt-zoomable" data-zoom-src="images/1000000000000594000001925C114E9C.png" /></td></tr></table>
+
+<ul>
+  <li>[1]: لوحة الألوان
+  </li>
+  <li>[2]: يتم إسقاط مكون JLabel في حاوية المكونات
+  </li>
+  <li>بالنقر بزر الماوس الأيمن عليه، يمكننا الوصول إلى خصائص متنوعة: اسمه [4]، نصه [3]، أو معالجات الأحداث الخاصة به [5]. نستخدم [3] لتعيين النص [6].
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000252000001F4BB8FBB0F.png" width="297" height="250" style="display:inline-block; margin:4px;width:7.858cm;height:6.615cm;" class="odt-zoomable" data-zoom-src="images/1000000000000252000001F4BB8FBB0F.png" /></td></tr></table>
+
+<ul>
+  <li>[1]: تتيح علامة التبويب [الخصائص] في مكون [JLabel] الوصول إلى خصائصه: موضعه الأفقي [2]، وموضعه الرأسي [3]، وخط النص [4]، والنص [5].
+  </li>
+</ul>
+
+<p>عندما يتم سحب مكون وتهيئته على الواجهة الرسومية وتقوم بحفظ (Ctrl-S) عملك، يتم إنشاء كود في فئة [AbstractElectionsSwing]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000264000000CF3DE1D0AD.png" width="428" height="145" style="display:inline-block; margin:4px;width:11.329cm;height:3.831cm;" class="odt-zoomable" data-zoom-src="images/1000000000000264000000CF3DE1D0AD.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002850000010FB89AC9E7.png" width="451" height="190" style="display:inline-block; margin:4px;width:11.94cm;height:5.017cm;" class="odt-zoomable" data-zoom-src="images/10000000000002850000010FB89AC9E7.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p>لا تقم بتعديل هذا الكود الذي يظهر باللون الرمادي، لأنه سيتم حذفه وإعادة إنشاؤه عند الحفظ التالي. وبالتالي، ستفقد أي تغييرات يتم إجراؤها.</p>
+<p>يمكن العثور على دليل تعليمي حول إنشاء واجهة مستخدم رسومية باستخدام NetBeans على الرابط [<a href="https://netbeans.org/kb/docs/java/quickstart-gui.html?print=yes#design"><u><span style="color: #0563c1">https://netbeans.org/kb/docs/java/quickstart-gui.html?print=yes#design</span></u></a>] (نوفمبر 2015).</p>
+<p>سنقوم الآن بإنشاء الواجهة التالية:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000394000003415B3742BA.png" width="458" height="417" style="display:inline-block; margin:4px;width:12.118cm;height:11.021cm;" class="odt-zoomable" data-zoom-src="images/1000000000000394000003415B3742BA.png" /></td></tr></table>
+
+<p>مكونات الواجهة هي كما يلي:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>رقم</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>النوع</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>الاسم</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>الدور</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">JMenuBar</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">jMenuBar1</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">قائمة</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>2
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">JLabel</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">jLabelSAP</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">عدد المقاعد المتاحة</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>3
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">JLabel</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">jLabelSE</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">الحد الأدنى للانتخاب</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>4
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">JComboBox</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">jComboBoxListNames</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">قائمة بأسماء القوائم المتنافسة</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>5
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">JTextField</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">jTextFieldVotesList</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">عدد الأصوات التي حصلت عليها القائمة</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>6
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">JLabel</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">jLabelAdd</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">لإضافة قائمة إلى (8)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>7،8
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">(JScrollPane، JList)</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">jListNamesVoices</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">أسماء وأصوات القوائم</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>9
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">JLabel</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">jLabelDelete</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">لإزالة (8) من القائمة المحددة في (8)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>10
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">JLabel</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">jLabelCalculate</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">لحساب نتائج الانتخابات</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>11
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">JLabel</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">jLabelClear</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">لمسح نتائج الانتخابات</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>12
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">JLabel</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">jLabelSave</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">لحفظ نتائج الانتخابات</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>13،14
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">(JScrollPane، JList)</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">jListResults</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">لعرض نتائج الانتخابات</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>15،16
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">(JScrollPane،</div><div style="margin:0 0 0.5em 0">JTextPane)</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">jTextPaneMessages</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">لعرض رسائل المتابعة</div></td></tr></table>
+
+<p>يُستخدم التعليق التوضيحي (JScrollPane، JList) [13-14] للإشارة إلى أنه عند سحب مكون [JList] وإفلاته داخل النافذة، يتم إدراجه تلقائيًا داخل مكون [JScrollPane] الذي يتيح التمرير عبر القائمة. إن مكون [JScrollPane] هو الذي يسمح لك بعرض جميع العناصر في القائمة، على الرغم من أن عددًا محدودًا منها فقط يكون مرئيًا في أي وقت معين. وينطبق الأمر نفسه على مكون [JTextPane] [15-16].</p>
+<p>يمكن إنشاء القائمة على النحو التالي:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000059F00000189AD148B2E.png" width="680" height="186" style="display:inline-block; margin:4px;width:17.999cm;height:4.916cm;" class="odt-zoomable" data-zoom-src="images/100000000000059F00000189AD148B2E.png" /></td></tr></table>
+
+<ul>
+  <li>[1، 2]: يتم وضع مكون [شريط القوائم] في النافذة
+  </li>
+  <li>[3]: القائمة الافتراضية كما تظهر في علامة التبويب [المستكشف]
+  </li>
+  <li>[4، 5، 6]: بالنقر بزر الماوس الأيمن على خيار من القائمة، يمكنك:
+    <ul>
+      <li>تغيير نصه [4]، واسمه [5]
+      </li>
+      <li>إدارة أحداثه [6]
+      </li>
+    </ul>
+  </li>
+  <li>[7]: القائمة المطلوبة
+  </li>
+</ul>
+
+<p>القائمة المطلوبة هي كما يلي:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>المستوى 1</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><i>المستوى 2</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>الانتخابات</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><i>الخروج</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>القوائم</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><i>إضافة</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><i>حذف</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>النتائج</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><i>احسب</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><i>مسح</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><i>حفظ</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>حول</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p>يمكنك اختبار الواجهة الرسومية في أي وقت:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000113000000618FF501BE.png" width="192" height="68" style="display:inline-block; margin:4px;width:5.091cm;height:1.796cm;" class="odt-zoomable" data-zoom-src="images/1000000000000113000000618FF501BE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p>عند إنشاء الواجهة، يجب عليك ربط معالج الأحداث ببعض العناوين والقوائم [إضافة، حذف، ...]. وإليك كيفية القيام بذلك:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F50000020F1187B4BD.png" width="635" height="264" style="display:inline-block; margin:4px;width:16.789cm;height:6.973cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F50000020F1187B4BD.png" /></td></tr></table>
+
+<ul>
+  <li>[1]: انقر بزر الماوس الأيمن على المكون الذي تريد إدارة حدث له
+  </li>
+  <li>[2]: حدد الخيار [الأحداث]
+  </li>
+  <li>[3]: حدد فئة الحدث
+  </li>
+  <li>[4]: حدد الحدث الذي تريد التعامل معه
+  </li>
+</ul>
+
+<p>فيما يلي كود Java الذي تم إنشاؤه بواسطة هذه العملية:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000c0">jLabelCalculer</span><span style="color:#000000">.addMouseListener(</span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> java.awt.event.MouseAdapter() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> mouseClicked(java.awt.event.MouseEvent </span><span style="color:#6a3e3e">evt</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        jLabelCalculerMouseClicked(</span><span style="color:#6a3e3e">evt</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    });</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> jLabelCalculerMouseClicked(java.awt.event.MouseEvent </span><span style="color:#6a3e3e">evt</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// TODO add your handling code here:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>الأسطر 1–5: تمت إضافة معالج أحداث إلى مكون <i>jLabelCalculer</i>. تتوقع طريقة <b>addMouseListener </b>كمعلمة فئة تنفذ واجهة <b>MouseListener</b> التالية:
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001FC0000012674E252F1.png" width="327" height="189" style="display:inline-block; margin:4px;width:8.64cm;height:5.001cm;" class="odt-zoomable" data-zoom-src="images/10000000000001FC0000012674E252F1.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p>يتم تنفيذ واجهة <em>MouseListener</em> من خلال فئات مختلفة، بما في ذلك فئة <em>MouseAdapter</em>. تنفذ هذه الفئة الطرق الخمس الخاصة بواجهة MouseListener، لكن هذه الطرق لا تؤدي أي وظيفة. ولذلك، يجب عليك إنشاء فئة فرعية من هذه الفئة لتنفيذ الطريقة (الطرق) التي تختارها. وقد تم ذلك في الكود أعلاه، كما هو موضح أدناه:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000c0">jLabelCalculer</span><span style="color:#000000">.addMouseListener(</span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> java.awt.event.MouseAdapter() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> mouseClicked(java.awt.event.MouseEvent </span><span style="color:#6a3e3e">evt</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        jLabelCalculerMouseClicked(</span><span style="color:#6a3e3e">evt</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">});</span></span>
+</code></pre></div>
+
+<p>يستخدم الكود أعلاه تقنية الفئة المجهولة الموضحة في القسم 2.5 من الدورة التدريبية [<a href="https://stahe.github.io/ar-java-sept-1998/"><u><span style="color: #0563c1">ref1</span></u></a>].</p>
+<p>في السطر 1، المعلمة الخاصة بالطريقة <em>addMouseListener</em> هي فئة مجهولة، يتم تعريفها على الفور. وهي مثيل لفئة مشتقة من فئة <em>MouseAdapter</em> (السطر 1)، والتي تم تجاوز طريقة <em>mouseClicked</em> الخاصة بها (الأسطر 2–4) بحيث تقوم بتنفيذ إجراء محدد.</p>
+<p>يتم تعريف طريقة <em>jLabelCalculerMouseClicked</em> التي تم استدعاؤها في السطر 3 على النحو التالي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> jLabelCalculerMouseClicked(java.awt.event.MouseEvent </span><span style="color:#6a3e3e">evt</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// TODO add your handling code here:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p>يقوم المطور بمعالجة حدث &quot;<em>MouseClicked</em>&quot; عن طريق وضع كود في هذه الطريقة.</p>
+<p>يتم إنشاء جميع معالجات الأحداث بواسطة NetBeans بهذه الطريقة. يمكن للمطور تجاهل أسطر الكود التي أنشأتها NetBeans لربط طريقة بحدث أحد المكونات. يمكنه ببساطة وضع الكود الخاص به في السطر 2 أعلاه. فيما يلي مثال:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> jLabelCalculerMouseClicked(java.awt.event.MouseEvent </span><span style="color:#6a3e3e">evt</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println(</span><span style="color:#2a00ff">&quot;Mouse Clicked&quot;</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p>إذا قمت بتشغيل واجهة المستخدم الرسومية (GUI) ونقرت على زر [Calculate]، فستظهر رسالة على وحدة التحكم:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E0000000A3C39FEEDD.png" width="624" height="81" style="display:inline-block; margin:4px;width:16.51cm;height:2.155cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E0000000A3C39FEEDD.png" /></td></tr></table>
+
+<ul>
+  <li>[1]: انقر مرتين على العنصر [Calculate]
+  </li>
+  <li>[2]: تم تنفيذ معالج الحدث وأنتج رسائل <i>mouseClicked </i>في وحدة التحكم في NetBeans.
+  </li>
+</ul>
+
+<p>تم تعريف المكونات [jComboBoxNomsListes، jListNomsVoix، jListResultats] على النحو التالي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">protected</span><span style="font-weight:bold;color:#000000"> </span><span style="color:#000000">javax.swing.JComboBox </span><span style="color:#0000c0">jComboBoxNomsListes</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> javax.swing.JList </span><span style="color:#0000c0">jListNomsVoix</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> javax.swing.JList </span><span style="color:#0000c0">jListResultats</span><span style="color:#000000">;</span></span></span>
+</code></pre></div>
+
+<p>هذه المكونات هي قوائم يتم تكوينها عادةً بنوع T: نوع العناصر في النموذج الذي تعرضه المكونات. يمكن أن يكون هذا النوع T أي نوع. القيمة المعروضة في مكون القائمة هي من النوع [String]. بشكل افتراضي، يتم استخدام طريقة [T.toString()] للعرض. للتحكم بشكل أفضل في ما يتم عرضه، سيكون النوع T هو نوع String هنا. لذلك، فإن الإعلان الصحيح لقوائمنا هو كما يلي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">protected</span><span style="font-weight:bold;color:#000000"> </span><span style="color:#000000">javax.swing.JComboBox&lt;String&gt; </span><span style="color:#0000c0">jComboBoxNomsListes</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> javax.swing.JList&lt;String&gt; </span><span style="color:#0000c0">jListNomsVoix</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> javax.swing.JList&lt;String&gt; </span><span style="color:#0000c0">jListResultats</span><span style="color:#000000">;</span></span></span>
+</code></pre></div>
+
+<p>نحقق هذه النتيجة عن طريق تعديل إحدى خصائص المكون:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001E40000010AD78B4217.png" width="242" height="133" style="display:inline-block; margin:4px;width:6.403cm;height:3.519cm;" class="odt-zoomable" data-zoom-src="images/10000000000001E40000010AD78B4217.png" /></td></tr></table>
+
+<p><a id="refheading318671812363491"></a></p>
+<h3 id="1034">10.3.4. <span style="color: #4f81bd">فصل الكود</span></h3>
+<p>لنعد إلى بنية تطبيقنا:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004BE000000FD68310DE1.png" width="607" height="127" style="display:inline-block; margin:4px;width:16.06cm;height:3.348cm;" class="odt-zoomable" data-zoom-src="images/10000000000004BE000000FD68310DE1.png" /></td></tr></table>
+
+<p>يجب أن تنفذ فئة [AbstractElectionsSwing] الطبقة [ui] أعلاه. لا يحتوي كودها، الذي تم إنشاؤه بواسطة NetBeans، حاليًا سوى على كود إدارة النوافذ ومعالجات الأحداث التي لا تقوم بأي شيء في هذه المرحلة. فيما سبق، نرى أن فئة [AbstractElectionsSwing] ستحتاج إلى معالجة التفاعلات مع طبقة [business]. ستتم هذه المعالجة في معالجات الأحداث. لتوضيح بنية الكود، قررنا وضعه في فئتين:</p>
+<ul>
+  <li>[AbstractElectionsSwing]، والتي ستبقى كما تم إنشاؤها بواسطة NetBeans مع بعض التغييرات الطفيفة. لن تتعامل هذه الفئة مع أي أحداث بنفسها. ستكون معالجات الأحداث فارغة ومُعلنة على أنها مجردة. وسيتم تنفيذها بواسطة فئة مشتقة من [AbstractElectionsSwing].
+  </li>
+  <li>[ElectionsSwing]، وهي فئة مشتقة من [AbstractElectionsSwing] ستقوم بتنفيذ جميع معالجات الأحداث.
+  </li>
+</ul>
+
+<p>هذا النوع من الفصل ليس غير معتاد. يمكن العثور عليه، على سبيل المثال، في صفحات الويب ASP.NET (الإصدار غير MVC). يتطور مشروع NetBeans على النحو التالي:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000108000000B031B76F2A.png" width="185" height="123" style="display:inline-block; margin:4px;width:4.89cm;height:3.26cm;" class="odt-zoomable" data-zoom-src="images/1000000000000108000000B031B76F2A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p>يتطور كود فئة [AbstractElectionsSwing] على النحو التالي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">abstract</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000"> AbstractElectionsSwing {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">....</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> jMenuItemCalculerActionPerformed(java.awt.event.ActionEvent </span><span style="color:#6a3e3e">evt</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        doCalculer();</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> jLabelCalculerMouseClicked(java.awt.event.MouseEvent </span><span style="color:#6a3e3e">evt</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">if</span><span style="color:#000000"> (</span><span style="color:#0000c0">jLabelCalculer</span><span style="color:#000000">.isEnabled()) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            doCalculer();</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">....</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// event managers</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">abstract</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doSupprimer();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">abstract</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doCalculer();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">abstract</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doQuitter();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">abstract</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doEffacer();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">abstract</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doEnregistrer();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">abstract</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doAjouter();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">abstract</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doInformer();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">abstract</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doMajLabelAjouter();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">abstract</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doMajLabelSupprimer();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 1: تم إعلان الفئة <b>على أنها مجردة</b>
+  </li>
+  <li>الأسطر 3-5: معالجة النقر على خيار القائمة [jMenuItemCalculer]. نرى أن معالجة الحدث يتم تفويضها إلى طريقة <i>doCalculer </i>في السطر 19. هذه الطريقة غير مُنفذة ومُعلنة على أنها مجردة. سيتم تنفيذها بواسطة الفئة المشتقة [ElectionsSwing]؛
+  </li>
+  <li>الأسطر 9-13: معالج حدث <i>النقر</i> على التسمية [jLabelCalculer]. يؤدي النقر دائمًا إلى تشغيل حدث، سواء كان مكون [jLabel] نشطًا (enabled=true) أو غير نشط (enabled=false). هنا، نتأكد من أنه نشط بالفعل لمعالجة الحدث؛
+  </li>
+  <li>السطور 15 وما بعدها: يتم تطبيق هذه التقنية المتمثلة في تفويض معالجة الأحداث إلى طريقة مجردة على جميع معالجات الأحداث.
+  </li>
+</ul>
+
+<p>تنفذ الفئة [ElectionsSwing]، المشتقة من [AbstractElectionsSwing]، جميع معالجات الأحداث التي لم تنفذها [AbstractElectionsSwing]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.ui.service;</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000"> ElectionsSwing </span><span style="font-weight:bold;color:#7f0055">extends</span><span style="color:#000000"> AbstractElectionsSwing {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// event managers</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doInformer() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doAjouter() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    ...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doCalculer() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    ...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doEffacer() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    ...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doEnregistrer() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doQuitter() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        System.<span style="font-style:italic">exit</span>(0);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doSupprimer() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doMajLabelAjouter() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doMajLabelSupprimer() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 3: [ElectionsSwing] يمتد من [AbstractElectionsSwing]
+  </li>
+  <li>الأسطر 7–50: معالجات الأحداث للنافذة الرسومية
+  </li>
+</ul>
+
+<p>ستعمل أساليب الفئة المشتقة [ElectionsSwing] على معالجة مكونات الفئة الأصلية [AbstractElectionsSwing]. حاليًا، تتمتع هذه المكونات بنطاق <em>خاص</em>، مما يمنع الفئة الفرعية [ElectionsSwing] من الوصول إليها:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> JMenuItem </span><span style="color:#0000c0">jMenuItemAPropos</span><span style="color:#000000"> = </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> JLabel </span><span style="color:#0000c0">jLabelAjouter</span><span style="color:#000000"> = </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">;</span></span></span>
+</code></pre></div>
+
+<p>لحل هذه المشكلة، سنحرص على أن يكون نطاق مكونات واجهة المستخدم الرسومية [<strong>محمي</strong>]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000057B0000019C18CB4098.png" width="680" height="200" style="display:inline-block; margin:4px;width:17.999cm;height:5.286cm;" class="odt-zoomable" data-zoom-src="images/100000000000057B0000019C18CB4098.png" /></td></tr></table>
+
+<ul>
+  <li>تعيين السمة [protected] في [3]؛
+  </li>
+</ul>
+<p><a id="refheading318691812363491"></a></p>
+<h3 id="1035-ielectionsui">10.3.5. <span style="color: #4f81bd">تنفيذ واجهة [IElectionsUI]</span></h3>
+<p>لنعد إلى بنية تطبيقنا:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004AF000000FEFC7607C9.png" width="600" height="127" style="display:inline-block; margin:4px;width:15.863cm;height:3.36cm;" class="odt-zoomable" data-zoom-src="images/10000000000004AF000000FEFC7607C9.png" /></td></tr></table>
+
+<p>في الأعلى، يجب أن تقدم طبقة [ui] واجهة [IElectionsUI] إلى الكائن [main]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.ui.service;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">interface</span><span style="color:#000000"> IElectionsUI {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#3f5fbf">/**</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">     </span><span style="color:#3f5fbf">*</span><span style="color:#000000"> </span><span style="color:#3f5fbf">lance</span><span style="color:#000000"> </span><span style="color:#3f5fbf">le</span><span style="color:#000000"> </span><span style="color:#3f5fbf">dialogue</span><span style="color:#000000"> </span><span style="color:#3f5fbf">avec</span><span style="color:#000000"> </span><span style="color:#3f5fbf">l&#x27;utilisateur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">     </span><span style="color:#3f5fbf">*/</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> run();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p>تم تعريف هذه الواجهة في مشروع [elections-console-metier-dao-jdbc] ووصفها في <a href="#refheading318391812363491"><u><span style="color: #0563c1">القسم 9.4</span></u></a>. ونظرًا لأن هذا المشروع تابع لمشروع [swing]، فإن هذه الواجهة معروفة.</p>
+<p>نظرًا لأن فئة [AbstractElectionsSwing] أصبحت فئة مجردة، لم يعد بإمكان Spring إنشاء مثيل لها. لذا، يجب الآن إنشاء مثيل لفئة [ElectionsSwing] بدلاً منها. ويجب أن تنفذ فئة [ElectionsSwing] واجهة [IElectionsUI]. وبالتالي، يتغير كودها على النحو التالي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000"> ElectionsSwing </span><span style="font-weight:bold;color:#7f0055">extends</span><span style="color:#000000"> AbstractElectionsSwing </span><span style="font-weight:bold;color:#7f0055">implements</span><span style="color:#000000"> IElectionsUI {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// interface [ElectionsUI] run method</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> run() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 1: تنفذ فئة [ElectionsSwing] واجهة [IElectionsUI]
+  </li>
+  <li>الأسطر 4–6: طريقة [run] لهذه الواجهة
+  </li>
+</ul>
+
+<p>ما الذي يجب أن تفعله طريقة <em>run</em>؟ عرض نافذة واجهة المستخدم الرسومية. كيف نفعل ذلك؟ يمكننا استخدام طريقة [main] التي أنشأتها NetBeans في فئة [AbstractElectionsSwing] كدليل، وهي تقوم بالضبط بما نريده:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">static</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> main(String </span><span style="color:#6a3e3e">args</span><span style="color:#000000">[]) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#3f7f5f">/* Set the Nimbus look and feel */</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">//&lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot; Look and feel setting code (optional) &quot;&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#3f7f5f">/* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">     */</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">try</span><span style="color:#000000"> {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="font-weight:bold;color:#7f0055">for</span><span style="color:#000000"> (javax.swing.UIManager.LookAndFeelInfo </span><span style="color:#6a3e3e">info</span><span style="color:#000000"> : javax.swing.UIManager.</span><span style="font-style:italic;color:#000000">getInstalledLookAndFeels</span><span style="color:#000000">()) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">if</span><span style="color:#000000"> (</span><span style="color:#2a00ff">&quot;Nimbus&quot;</span><span style="color:#000000">.equals(</span><span style="color:#6a3e3e">info</span><span style="color:#000000">.getName())) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          javax.swing.UIManager.</span><span style="font-style:italic;color:#000000">setLookAndFeel</span><span style="color:#000000">(</span><span style="color:#6a3e3e">info</span><span style="color:#000000">.getClassName());</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="font-weight:bold;color:#7f0055">break</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    } </span><span style="font-weight:bold;color:#7f0055">catch</span><span style="color:#000000"> (ClassNotFoundException </span><span style="color:#6a3e3e">ex</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      java.util.logging.Logger.</span><span style="font-style:italic;color:#000000">getLogger</span><span style="color:#000000">(NewJFrame.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">.getName()).log(java.util.logging.Level.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">SEVERE</span><span style="color:#000000">, </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">, </span><span style="color:#6a3e3e">ex</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    } </span><span style="font-weight:bold;color:#7f0055">catch</span><span style="color:#000000"> (InstantiationException </span><span style="color:#6a3e3e">ex</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      java.util.logging.Logger.</span><span style="font-style:italic;color:#000000">getLogger</span><span style="color:#000000">(NewJFrame.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">.getName()).log(java.util.logging.Level.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">SEVERE</span><span style="color:#000000">, </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">, </span><span style="color:#6a3e3e">ex</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    } </span><span style="font-weight:bold;color:#7f0055">catch</span><span style="color:#000000"> (IllegalAccessException </span><span style="color:#6a3e3e">ex</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      java.util.logging.Logger.</span><span style="font-style:italic;color:#000000">getLogger</span><span style="color:#000000">(NewJFrame.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">.getName()).log(java.util.logging.Level.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">SEVERE</span><span style="color:#000000">, </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">, </span><span style="color:#6a3e3e">ex</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    } </span><span style="font-weight:bold;color:#7f0055">catch</span><span style="color:#000000"> (javax.swing.UnsupportedLookAndFeelException </span><span style="color:#6a3e3e">ex</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      java.util.logging.Logger.</span><span style="font-style:italic;color:#000000">getLogger</span><span style="color:#000000">(NewJFrame.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">.getName()).log(java.util.logging.Level.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">SEVERE</span><span style="color:#000000">, </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">, </span><span style="color:#6a3e3e">ex</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">//&lt;/editor-fold&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#3f7f5f">/* Create and display the form */</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    java.awt.EventQueue.</span><span style="font-style:italic;color:#000000">invokeLater</span><span style="color:#000000">(</span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> Runnable() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> run() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> NewJFrame().setVisible(</span><span style="font-weight:bold;color:#7f0055">true</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    });</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+</code></pre></div>
+
+<p>المُنشئ [<span style="color: #000000">AbstractElectionsSwing</span>] المستخدم في السطر 28 هو كما يلي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="color:#000000">AbstractElectionsSwing</span><span style="color:#000000">() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    initComponents();</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 2: طريقة [initComponents] هي طريقة خاصة تم إنشاؤها بواسطة منشئ واجهة المستخدم الرسومية. لا يمكن تغيير كودها.
+  </li>
+</ul>
+
+<p>يمكن أن تكون طريقة [run] لفئة [ElectionsSwing] كما يلي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#646464">@Override</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> run() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// on affiche l&#x27;interface graphique</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    SwingUtilities.</span><span style="font-style:italic;color:#000000">invokeLater</span><span style="color:#000000">(</span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> Runnable() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> run() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        init();</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        setVisible(</span><span style="font-weight:bold;color:#7f0055">true</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    });</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 6: يتم تهيئة واجهة المستخدم الرسومية باستخدام طريقة [init]. هنا، نرغب في استدعاء طريقة [initComponents] الخاصة بالفئة الأم، ولكنها خاصة. لذلك نضيف طريقة [init] التالية إلى الفئة الأم [<span style="color: #000000">AbstractElectionsSwing</span>]:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> init(){</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    initComponents();</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>(تابع)
+    <ul>
+      <li>نظرًا لوجودها في فئة [<span style="color: #000000">AbstractElectionsSwing</span>]، فإن الطريقة [init] يمكنها الوصول إلى الطريقة الخاصة [initComponents] في نفس الفئة؛
+      </li>
+      <li>ولأنها تحمل السمة [protected]، فهي مرئية في الفئة الفرعية [ElectionsSwing]؛
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<ul>
+  <li>السطر 7: يتم إظهار واجهة المستخدم الرسومية؛
+  </li>
+</ul>
+
+<p><strong>ملاحظة</strong>: بمجرد كتابة الطريقة [run] في الفئة [ElectionsSwing]، يمكن إزالة الطريقة [main] الخاصة بالفئة المجردة [AbstractElectionsSwing].</p>
+<p><a id="refheading318711812363491"></a></p>
+<h3 id="1036">10.3.6. <span style="color: #4f81bd">الفئة القابلة للتنفيذ</span></h3>
+<p>لنعد إلى بنية تطبيقنا:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B10000010765176D5C.png" width="601" height="131" style="display:inline-block; margin:4px;width:15.889cm;height:3.478cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B10000010765176D5C.png" /></td></tr></table>
+
+<p>نود أن يقوم Spring بإنشاء مثيل لطبقة [ui] كما كان الحال عند تنفيذها بواسطة تطبيق <em>وحدة التحكم</em>. وللقيام بذلك، يجب أن تحتوي فئة التنفيذ [ElectionsSwing] على مرجع إلى طبقة [business]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content">@Component</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000"> ElectionsSwing </span><span style="font-weight:bold;color:#7f0055">extends</span><span style="color:#000000"> AbstractElectionsSwing </span><span style="font-weight:bold;color:#7f0055">implements</span><span style="color:#000000"> IElectionsUI{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// reference on the [business] layer</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#646464">@Autowired</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> IElectionsMetier </span><span style="color:#0000c0">metier</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 1: فئة [<span style="color: #000000">ElectionsSwing</span>] هي مكون Spring؛
+  </li>
+  <li>السطران 5-6: يقوم Spring بحقن مرجع في طبقة [business]؛
+  </li>
+</ul>
+
+<p>يتم تشغيل واجهة المستخدم الرسومية عن طريق تنفيذ فئة [BootElectionsSwing] التالية:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FE000000941C25FA12.png" width="178" height="104" style="display:inline-block; margin:4px;width:4.701cm;height:2.739cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FE000000941C25FA12.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.ui.boot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">import</span><span style="color:#000000"> elections.ui.service.IElectionsUI;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000"> BootElectionsSwing </span><span style="font-weight:bold;color:#7f0055">extends</span><span style="color:#000000"> AbstractBootElections {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">static</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> main(String[] </span><span style="color:#6a3e3e">arguments</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> BootElectionsSwing().run();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> IElectionsUI getUI() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return</span><span style="color:#000000"> </span><span style="color:#0000c0">ctx</span><span style="color:#000000">.getBean(</span><span style="color:#2a00ff">&quot;electionsSwing&quot;</span><span style="color:#000000">, IElectionsUI.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p>لقد شرحنا كودًا مشابهًا في <a href="#refheading318411812363491"><u><span style="color: #0563c1">القسم 9.5</span></u></a> عند مناقشة كود فئتي [AbstractBootElections] و [BootElectionsConsole]. في السطر 12، نسترد الفاصوليا المسماة [<span style="color: #2a00ff">electionsSwing</span>]، والتي تتوافق مع الاسم القياسي لـ Spring لفئة [ElectionsSwing].</p>
+<p><a id="refheading318751812363491"></a></p>
+<h3 id="1037">10.3.7. <span style="color: #4f81bd">تهيئة واجهة المستخدم الرسومية</span></h3>
+<p>عند عرض واجهة المستخدم الرسومية، يتم تهيئة بعض مكوناتها:</p>
+<p><img src="images/10000000000002520000021987E754B8.png" width="416" height="376" style="width:11cm;height:9.945cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002520000021987E754B8.png" /></p>
+<p>كما هو موضح أعلاه: </p>
+<ul>
+  <li>أن مربع القائمة المنسدلة قد تم ملؤه بأسماء القوائم؛
+  </li>
+  <li>أن عدد المقاعد المطلوب شغلها والحد الأدنى للانتخاب معروضان؛
+  </li>
+  <li>أن بعض الروابط قد تم تعطيلها؛
+  </li>
+  <li>يتم عرض رسالة نجاح في أسفل النافذة؛
+  </li>
+</ul>
+
+<p>متى ستتم عمليات التهيئة هذه؟ لا يمكن أن تحدث إلا بعد تهيئة حقل [electionsMetier] في فئة [ElectionsSwing]. وذلك لأن أسماء القوائم سيتم طلبها من طبقة [metier]. سيقوم Spring بتهيئة هذا الحقل بالترتيب التالي:</p>
+<ul>
+  <li>باستخدام منشئ الفئة [ElectionsSwing] بدون معلمات؛
+  </li>
+  <li>حقن التبعيات، في هذه الحالة الإشارة إلى طبقة [business]؛
+  </li>
+  <li>تنفيذ طريقة [run] لفئة [ElectionsSwing]:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> run() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on affiche l&#x27;interface graphique</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        SwingUtilities.</span><span style="font-style:italic;color:#000000">invokeLater</span><span style="color:#000000">(</span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> Runnable() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> run() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                init();</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                setVisible(</span><span style="font-weight:bold;color:#7f0055">true</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        });</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>في السطر 12، حددنا أننا سنستدعي طريقة [init] للفئة الأصلية، والتي ستقوم برسم مكونات واجهة المستخدم الرسومية. سنقوم بتجاوز هذه الطريقة محليًا في فئة [ElectionsSwing]. وداخل هذه الطريقة سنقوم هذه المرة بتهيئة مكونات النافذة (مربعات الاختيار، والتسميات) بالبيانات:
+  </li>
+</ul>
+
+<p>يمكن أن يكون للطريقة [init] المحلية الهيكل التالي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000"> ElectionsSwing </span><span style="font-weight:bold;color:#7f0055">extends</span><span style="color:#000000"> AbstractElectionsSwing </span><span style="font-weight:bold;color:#7f0055">implements</span><span style="color:#000000"> IElectionsUI {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#3f7f5f">...</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// reference on the [business] layer</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#646464">@Autowired</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> IElectionsMetier </span><span style="color:#0000c0">metier</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// initializations</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> init() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// generation of components by the parent class</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">super</span><span style="color:#000000">.init();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// lists are requested from the [metier] layer</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        ...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// associate list names with the jComboBoxNomsListes combo</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        ...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// and election parameters</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        ...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// we initialize the labels linked to these two pieces of information</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        ...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// message of success</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        ...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// initialization status of certain components form</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p>لاحظ، في السطر 11، استدعاء طريقة [init] للفئة الأصلية.</p>
+<p><a id="refheading318771812363491"></a></p>
+<h3 id="1038-utilities">10.3.8. <span style="color: #4f81bd">فئة [Utilities]</span></h3>
+<p>تم تجميع عدد من طرق المساعدة الثابتة معًا في فئة [Utilities]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000010500000094F3639E55.png" width="183" height="104" style="display:inline-block; margin:4px;width:4.83cm;height:2.739cm;" class="odt-zoomable" data-zoom-src="images/100000000000010500000094F3639E55.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p>فئة [Utilities] هي كما يلي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> istia.st.elections.ui;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">import</span><span style="color:#000000"> javax.swing.JLabel;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">import</span><span style="color:#000000"> javax.swing.JMenuItem;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">//utility class</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000"> Utilitaires {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// manage label array status</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">static</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> setEnabled(JLabel[] labels, </span><span style="font-weight:bold;color:#7f0055">boolean</span><span style="color:#000000"> value) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">for</span><span style="color:#000000"> (</span><span style="font-weight:bold;color:#7f0055">int</span><span style="color:#000000"> i = 0; i &lt; labels.</span><span style="color:#0000c0">length</span><span style="color:#000000">; i++) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            labels[i].setEnabled(value);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// manage the status of a table of menu options</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">static</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> setEnabled(JMenuItem[] menuItems, </span><span style="font-weight:bold;color:#7f0055">boolean</span><span style="color:#000000"> value) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        ...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 9: تحدد طريقة <i>setEnabled </i>حالة مكونات <i>JLabel </i>المحددة في مصفوفة. تتيح لك طريقة <i>setEnabled </i>لمكون <i>JLabel </i>تمكين أو تعطيل <i>JLabel</i>.
+  </li>
+</ul>
+
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>المهمة</strong>: باتباع مثال طريقة <em><code>setEnabled</code></em> في السطر 9<em>،</em> اكتب طريقة <em><code>setEnabled</code></em> في السطر 16 التي تقوم بنفس الشيء مع مكونات <code>*JMenuItem</code>*.</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+
+<p><a id="refheading318791812363491"></a></p>
+<h3 id="1039-electionsswing">10.3.9. <span style="color: #4f81bd">كود فئة [ElectionsSwing]</span></h3>
+<p>دعونا نستعرض الهيكل العام لفئة [ElectionsSwing]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> istia.st.elections.ui;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000"> ElectionsSwing </span><span style="font-weight:bold;color:#7f0055">extends</span><span style="color:#000000"> AbstractElectionsSwing </span><span style="font-weight:bold;color:#7f0055">implements</span><span style="color:#000000"> IElectionsUI {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// reference on the [business] layer</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#646464">@Autowired</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> IElectionsMetier </span><span style="color:#0000c0">metier</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// initializations</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> init() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#3f7f5f">...</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// event managers</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doInformer() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doAjouter() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doCalculer() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    ...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doEffacer() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doEnregistrer() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doQuitter() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        System.<span style="font-style:italic">exit</span>(0);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doSupprimer() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doMajLabelAjouter() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    ...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doMajLabelSupprimer() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p>سنقوم بفحص طرق الفئة واحدة تلو الأخرى.</p>
+<p><a id="refheading318811812363491"></a></p>
+<h4 id="10391-init">10.3.9.1. <span style="color: #4f81bd">طريقة [init]</span></h4>
+<p>لنعد إلى الواجهة الرسومية:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003AE00000355C8476B5D.png" width="471" height="427" style="display:inline-block; margin:4px;width:12.462cm;height:11.285cm;" class="odt-zoomable" data-zoom-src="images/10000000000003AE00000355C8476B5D.png" /></td></tr></table>
+
+<p>تهدف طريقة [init] إلى ما يلي:</p>
+<ul>
+  <li>ملء مربع القائمة المنسدلة [4] بمعرفات وأسماء القوائم بالصيغة [المعرف - الاسم]
+  </li>
+  <li>عرض رسالة نجاح في [15]
+  </li>
+  <li>تهيئة التسميات [2] و[3]
+  </li>
+  <li>تعطيل روابط معينة
+  </li>
+</ul>
+
+<p>يمكن أن يكون الهيكل الأساسي لطريقة [init] كما يلي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
+<span class="odt-code-line"><span class="odt-code-line-content">@Override</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> init() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// génération des composants par la classe parent</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">super</span><span style="color:#000000">.init();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// initialisations locales</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000c0">modèleNomsVoix</span><span style="color:#000000"> = </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> DefaultListModel&lt;&gt;();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000c0">jListNomsVoix</span><span style="color:#000000">.setModel(</span><span style="color:#0000c0">modèleNomsVoix</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000c0">modèleRésultats</span><span style="color:#000000"> = </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> DefaultListModel&lt;&gt;();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000c0">jListResultats</span><span style="color:#000000">.setModel(</span><span style="color:#0000c0">modèleRésultats</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        String </span><span style="color:#6a3e3e">info</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">try</span><span style="color:#000000"> {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// on demande les listes à la couche [métier]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000c0">listes</span><span style="color:#000000"> = ...</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// on associe les noms des listes au combo jComboBoxNomsListes</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            ...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // ainsi que les paramètres de l&#x27;election</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">int</span><span style="color:#000000"> </span><span style="color:#6a3e3e">nbSiegesAPourvoir</span><span style="color:#000000"> = ...</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">double</span><span style="color:#000000"> </span><span style="color:#6a3e3e">seuilElectoral</span><span style="color:#000000"> = ...</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// on initialise les labels liés à ces deux informations</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            ...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// message de succès</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#6a3e3e">info</span><span style="color:#000000"> = </span><span style="color:#2a00ff">&quot;Source de données lue avec succès&quot;</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        } </span><span style="font-weight:bold;color:#7f0055">catch</span><span style="color:#000000"> (ElectionsException </span><span style="color:#6a3e3e">ex1</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // on note l&#x27;error</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#6a3e3e">info</span><span style="color:#000000"> = getInfoForException(</span><span style="color:#2a00ff">&quot;Les erreurs suivantes se sont produites :&quot;</span><span style="color:#000000">, </span><span style="color:#6a3e3e">ex1</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        } </span><span style="font-weight:bold;color:#7f0055">catch</span><span style="color:#000000"> (RuntimeException </span><span style="color:#6a3e3e">ex2</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // on note l&#x27;error</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#6a3e3e">info</span><span style="color:#000000"> = getInfoForException(</span><span style="color:#2a00ff">&quot;Les erreurs suivantes se sont produites :&quot;</span><span style="color:#000000">, </span><span style="color:#6a3e3e">ex2</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // on affiche l&#x27;info</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000c0">jTextPaneMessages</span><span style="color:#000000">.setText(</span><span style="color:#6a3e3e">info</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000c0">jTextPaneMessages</span><span style="color:#000000">.setCaretPosition(0);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// état formulaire</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        Utilitaires.</span><span style="font-style:italic;color:#000000">setEnabled</span><span style="color:#000000">(</span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> JLabel[] { </span><span style="color:#0000c0">jLabelAjouter</span><span style="color:#000000">, </span><span style="color:#0000c0">jLabelCalculer</span><span style="color:#000000">, </span><span style="color:#0000c0">jLabelEnregistrer</span><span style="color:#000000">, </span><span style="color:#0000c0">jLabelSupprimer</span><span style="color:#000000"> }, </span><span style="font-weight:bold;color:#7f0055">false</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        Utilitaires.<span style="font-style:italic">setEnabled</span>(</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> JMenuItem[] { </span><span style="color:#0000c0">jMenuItemAjouter</span><span style="color:#000000">, </span><span style="color:#0000c0">jMenuItemCalculer</span><span style="color:#000000">, </span><span style="color:#0000c0">jMenuItemEnregistrer</span><span style="color:#000000">, </span><span style="color:#0000c0">jMenuItemSupprimer</span><span style="color:#000000"> }, </span><span style="font-weight:bold;color:#7f0055">false</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// centrer la fenêtre</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        Dimension </span><span style="color:#6a3e3e">screenSize</span><span style="color:#000000"> = Toolkit.</span><span style="font-style:italic;color:#000000">getDefaultToolkit</span><span style="color:#000000">().getScreenSize();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        Dimension </span><span style="color:#6a3e3e">frameSize</span><span style="color:#000000"> = getSize();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">if</span><span style="color:#000000"> (</span><span style="color:#6a3e3e">frameSize</span><span style="color:#000000">.</span><span style="color:#0000c0">height</span><span style="color:#000000"> &gt; </span><span style="color:#6a3e3e">screenSize</span><span style="color:#000000">.</span><span style="color:#0000c0">height</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#6a3e3e">frameSize</span><span style="color:#000000">.</span><span style="color:#0000c0">height</span><span style="color:#000000"> = </span><span style="color:#6a3e3e">screenSize</span><span style="color:#000000">.</span><span style="color:#0000c0">height</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">if</span><span style="color:#000000"> (</span><span style="color:#6a3e3e">frameSize</span><span style="color:#000000">.</span><span style="color:#0000c0">width</span><span style="color:#000000"> &gt; </span><span style="color:#6a3e3e">screenSize</span><span style="color:#000000">.</span><span style="color:#0000c0">width</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#6a3e3e">frameSize</span><span style="color:#000000">.</span><span style="color:#0000c0">width</span><span style="color:#000000"> = </span><span style="color:#6a3e3e">screenSize</span><span style="color:#000000">.</span><span style="color:#0000c0">width</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        setLocation((</span><span style="color:#6a3e3e">screenSize</span><span style="color:#000000">.</span><span style="color:#0000c0">width</span><span style="color:#000000"> - </span><span style="color:#6a3e3e">frameSize</span><span style="color:#000000">.</span><span style="color:#0000c0">width</span><span style="color:#000000">) / 2, (</span><span style="color:#6a3e3e">screenSize</span><span style="color:#000000">.</span><span style="color:#0000c0">height</span><span style="color:#000000"> - </span><span style="color:#6a3e3e">frameSize</span><span style="color:#000000">.</span><span style="color:#0000c0">height</span><span style="color:#000000">) / 2);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> String getInfoForException(String </span><span style="color:#6a3e3e">message</span><span style="color:#000000">, ElectionsException </span><span style="color:#6a3e3e">ex</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on affiche le message</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        StringBuffer </span><span style="color:#6a3e3e">info</span><span style="color:#000000"> = </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> StringBuffer(String.</span><span style="font-style:italic;color:#000000">format</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;%s -------------\n&quot;</span><span style="color:#000000">, </span><span style="color:#6a3e3e">message</span><span style="color:#000000">));</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#6a3e3e">info</span><span style="color:#000000">.append(String.</span><span style="font-style:italic;color:#000000">format</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;Code erreur : %d\n&quot;</span><span style="color:#000000">, </span><span style="color:#6a3e3e">ex</span><span style="color:#000000">.getCode()));</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on affiche les erreurs</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">for</span><span style="color:#000000"> (String </span><span style="color:#6a3e3e">erreur</span><span style="color:#000000"> : </span><span style="color:#6a3e3e">ex</span><span style="color:#000000">.getErreurs()) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#6a3e3e">info</span><span style="color:#000000">.append(String.</span><span style="font-style:italic;color:#000000">format</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;-- %s\n&quot;</span><span style="color:#000000">, </span><span style="color:#6a3e3e">erreur</span><span style="color:#000000">));</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return</span><span style="color:#000000"> </span><span style="color:#6a3e3e">info</span><span style="color:#000000">.toString();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> String getInfoForException(String </span><span style="color:#6a3e3e">message</span><span style="color:#000000">, RuntimeException </span><span style="color:#6a3e3e">ex</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on affiche le message</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        StringBuffer </span><span style="color:#6a3e3e">info</span><span style="color:#000000"> = </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> StringBuffer(String.</span><span style="font-style:italic;color:#000000">format</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;%s -------------\n&quot;</span><span style="color:#000000">, </span><span style="color:#6a3e3e">message</span><span style="color:#000000">));</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on affiche la pile des exceptions</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        Throwable </span><span style="color:#6a3e3e">cause</span><span style="color:#000000"> = </span><span style="color:#6a3e3e">ex</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">while</span><span style="color:#000000"> (</span><span style="color:#6a3e3e">cause</span><span style="color:#000000"> != </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#6a3e3e">info</span><span style="color:#000000">.append(String.</span><span style="font-style:italic;color:#000000">format</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;-- %s\n&quot;</span><span style="color:#000000">, </span><span style="color:#6a3e3e">cause</span><span style="color:#000000">.getMessage()));</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#6a3e3e">cause</span><span style="color:#000000"> = </span><span style="color:#6a3e3e">cause</span><span style="color:#000000">.getCause();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return</span><span style="color:#000000"> </span><span style="color:#6a3e3e">info</span><span style="color:#000000">.toString();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+</code></pre></div>
+
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>المهمة</strong>: أكمل الكود الخاص بالطريقة [init].</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+<p>اقرأ في الدورة التدريبية: مكونات <em>JTextField</em> و <em>JLabel</em></p>
+<p><strong>ملاحظة</strong>:</p>
+<p>يعرض مكون <em>JList</em> البيانات الموجودة في نموذج. بشكل افتراضي، يكون هذا النموذج من النوع <em>DefaultListModel</em> (السطران 2 و3). يتصرف كائن <em>DefaultListModel</em> بشكل مشابه إلى حد ما لـ <em>ArrayList</em>:</p>
+<ul>
+  <li>لإضافة كائن <i>o </i>إلى النموذج:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000c0">[DefaultListModel]</span><span style="color:#000000">.addElement(</span><span style="color:#2a00ff">Object o</span><span style="color:#000000">);</span></span></span>
+</code></pre></div>
+
+<p>في هذا التطبيق، سيكون الكائن <em>o</em> دائمًا من النوع <em>String</em>.</p>
+<ul>
+  <li>لإزالة العنصر i من النموذج:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000c0">[DefaultListModel]</span><span style="color:#000000">.remove(</span><span style="color:#2a00ff">int i</span><span style="color:#000000">);</span></span></span>
+</code></pre></div>
+
+<ul>
+  <li>لاسترداد العنصر i من النموذج:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000c0">[DefaultListModel]</span><span style="color:#000000">.elementAt(</span><span style="color:#2a00ff">int i</span><span style="color:#000000">);</span></span></span>
+</code></pre></div>
+
+<p>لإضافة عنصر إلى مربع القائمة المنسدلة [<span style="color: #0000c0">jComboBoxNomsListes</span>]، استخدم طريقة [addItem]:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000c0">jComboBoxNomsListes</span><span style="color:#000000">.addItem(chaîne de caractères)</span></span></span>
+</code></pre></div>
+
+<p>يحتوي مكون <em>JTextPane</em> على طريقتي <em>getText</em>() و <em>setText</em>() لقراءة/كتابة النص المعروض.</p>
+<p><a id="refheading318831812363491"></a></p>
+<h4 id="10392-add">10.3.9.2. <span style="color: #4f81bd">إدارة حالة رابط [Add]</span></h4>
+<p>لا يكون الزر [Add] [6] نشطًا إلا عندما يكون الحقل [5] المخصص للتصويت غير فارغ. في فئة [AbstractElectionsSwing]، يكون المعالج الذي يتتبع حركات المؤشر في الحقل [5] كما يلي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> jTextFieldVoixListeCaretUpdate(javax.swing.event.CaretEvent </span><span style="color:#6a3e3e">evt</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#3f7f5f">doMajLabelAjouter()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p>السطر 2 يستدعي طريقة [doMajLabelAjouter] الخاصة بفئة [ElectionsSwing].</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doMajLabelAjouter() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on fixe l&#x27;état du label [jLabelAjouter]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        ...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on fixe l&#x27;état du menu [jMenuItemAjouter]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        ...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>المهمة</strong>: أكمل كود الأسلوب [doMajLabelAjouter].</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+
+<p><a id="refheading318851812363491"></a></p>
+<h4 id="10393">10.3.9.3. <span style="color: #4f81bd"><span style="color: #4f81bd">تخصيص الأصوات لكل قائمة</span></span></h4>
+<p>بالنسبة لكل قائمة مرشحين من (4)، اتبع الخطوات التالية:</p>
+<ul>
+  <li>اختر قائمة من (4)
+  </li>
+  <li>أدخل عدد الأصوات في (5)
+  </li>
+  <li>قم بالتأكيد بالنقر على رابط [Add]
+  </li>
+</ul>
+
+<p>يتم الإبلاغ عن أخطاء الإدخال كما هو موضح في المثال التالي:</p>
+<p><img src="images/10000000000001F50000007952FDAE3C.png" width="351" height="85" style="width:9.28cm;height:2.24cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F50000007952FDAE3C.png" /></p>
+<p>إذا كان عدد الأصوات صحيحًا، تتم إضافة القائمة إلى المكون (8)، ويتم مسح عدد الأصوات، ويتم تعطيل رابط [إضافة]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000010700000050C8319E8A.png" width="184" height="56" style="display:inline-block; margin:4px;width:4.87cm;height:1.482cm;" class="odt-zoomable" data-zoom-src="images/100000000000010700000050C8319E8A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001A700000086A5A768BE.png" width="296" height="94" style="display:inline-block; margin:4px;width:7.83cm;height:2.48cm;" class="odt-zoomable" data-zoom-src="images/10000000000001A700000086A5A768BE.png" /></td></tr></table>
+
+<p>في فئة [AbstractElectionsSwing]، يكون المعالج الذي يتعامل مع النقر على رابط [إضافة] كما يلي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> jLabelAjouterMouseClicked(java.awt.event.MouseEvent </span><span style="color:#6a3e3e">evt</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">if</span><span style="color:#000000"> (</span><span style="color:#0000c0">jLabel</span><span style="color:#000000">Ajouter.isEnabled()) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            do<span style="color:#000000">Ajouter</span>();</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p>السطر 3 يستدعي طريقة [doAjouter] الخاصة بفئة [ElectionsSwing]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// modèles des listes JList</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> DefaultListModel&lt;String&gt; </span><span style="color:#0000c0">modèleNomsVoix</span><span style="color:#000000"> = </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> DefaultListModel&lt;String&gt; </span><span style="color:#0000c0">modèleRésultats</span><span style="color:#000000"> = </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// les listes en compétition</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> ListeElectorale[] </span><span style="color:#0000c0">listes</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  // listes saisies par l&#x27;user</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">final</span><span style="color:#000000"> List&lt;ListeElectorale&gt; </span><span style="color:#0000c0">listesSaisies</span><span style="color:#000000"> = </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> ArrayList&lt;&gt;();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> ListeElectorale[] </span><span style="color:#0000c0">tListesSaisies</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#646464">@Override</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doAjouter() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// le nombre de voix est-il correct ?</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    ...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// si erreur, alors on la signale</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">if</span><span style="color:#000000"> (</span><span style="color:#6a3e3e">erreur</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      JOptionPane.</span><span style="font-style:italic;color:#000000">showMessageDialog</span><span style="color:#000000">(</span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;Nombre de voix incorrect&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;Elections : erreur&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">              JOptionPane.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">INFORMATION_MESSAGE</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000c0">jTextFieldVoixListe</span><span style="color:#000000">.requestFocus();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      // retour à l&#x27;graphic interface</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="font-weight:bold;color:#7f0055">return</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // pas d&#x27;error - save the list</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000c0">listesSaisies</span><span style="color:#000000">.add(...);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000c0">modèleNomsVoix</span><span style="color:#000000">.addElement(...);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// on nettoie le nombre de voix</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000c0">jTextFieldVoixListe</span><span style="color:#000000">.setText(</span><span style="color:#2a00ff">&quot;&quot;</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// état formulaire (menus, labels)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 25: في كل مرة يضيف فيها المستخدم أصواتًا إلى قائمة ويؤكد اختياره، يتم تخزين هذه القائمة في حقل [<span style="color: #0000c0">listesSaisies</span>] في السطر 9. يتم حفظ القائمة هناك مع المعلومات [id، version، name، voice]. تأتي المعلومات الثلاثة الأولى من القوائم المخزنة مبدئيًا في المصفوفة في السطر 6. تُرجع طريقة [getSelectedIndex] لمربع القائمة المنسدلة مؤشر القائمة المحددة؛
+  </li>
+</ul>
+
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>المهمة</strong>: أكمل كود الدالة [doAjouter].</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+
+<p><a id="refheading318871812363491"></a></p>
+<h4 id="10394-delete">10.3.9.4. <span style="color: #4f81bd">إدارة حالة رابط [Delete]</span></h4>
+<p>لا يكون رابط [Delete] [9] نشطًا إلا عند تحديد عنصر في [8].</p>
+<p>في فئة [AbstractElectionsSwing]، يكون المعالج الذي يستجيب للنقر على عنصر في القائمة [8] كما يلي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> jListNomsVoixValueChanged(javax.swing.event.ListSelectionEvent </span><span style="color:#6a3e3e">evt</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    doMajLabelSupprimer();</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p>السطر 2 يستدعي طريقة [doMajLabelSupprimer] الخاصة بفئة [ElectionsSwing].</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doMajLabelSupprimer() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // on allume le label [jLabelSupprimer] et l&#x27;corresponding menu option</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            ...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>المهمة</strong>: أكمل كود الأسلوب [doMajLabelSupprimer].</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+
+<p><a id="refheading318891812363491"></a></p>
+<h4 id="10395">10.3.9.5. <span style="color: #4f81bd">حذف قائمة المرشحين</span></h4>
+<p>يتيح لك الرابط [حذف] [9] حذف الزوج (الاسم، التصويت) المحدد في (8). بمجرد اكتمال الحذف، يتم تعطيل الرابط [حذف]. ولن يتم تمكينه مرة أخرى إلا عند تحديد قائمة جديدة في (8).</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000A4000000818CF2F26E.png" width="131" height="103" style="display:inline-block; margin:4px;width:3.47cm;height:2.729cm;" class="odt-zoomable" data-zoom-src="images/10000000000000A4000000818CF2F26E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000A60000007D7A7AA404.png" width="133" height="100" style="display:inline-block; margin:4px;width:3.51cm;height:2.642cm;" class="odt-zoomable" data-zoom-src="images/10000000000000A60000007D7A7AA404.png" /></td></tr></table>
+
+<p>في فئة [AbstractElectionsSwing]، يكون المعالج الذي يستجيب للنقر على رابط [حذف] كما يلي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> jLabelSupprimerMouseClicked(java.awt.event.MouseEvent </span><span style="color:#6a3e3e">evt</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">if</span><span style="color:#000000">(</span><span style="color:#0000c0">jLabel</span><span style="color:#000000">Supprimer.isEnabled()){</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      doSupprimer();</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p>السطر 3 يستدعي طريقة [doSupprimer] الخاصة بفئة [ElectionsSwing].</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
+<span class="odt-code-line"><span class="odt-code-line-content">@Override</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doSupprimer() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// suppression de la liste sélectionnée, du modèle modèleNomsVoix et des listes saisies</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        ...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // maj de l&#x27;status of labels and form menu options</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        Utilitaires.</span><span style="font-style:italic;color:#000000">setEnabled</span><span style="color:#000000">(</span><span style="font-weight:bold;color:#7f0055">...</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    ...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>المهمة المطلوبة</strong>: أكمل كود طريقة [doSupprimer].</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+
+<p><a id="refheading318911812363491"></a></p>
+<h4 id="10396-calculate">10.3.9.6. <span style="color: #4f81bd">إدارة حالة رابط [Calculate]</span></h4>
+<p>لا يكون الرابط [Calculate] [10] نشطًا إلا عندما يكون هناك عنصر واحد على الأقل في [8].</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>المهمة</strong>: أضف الكود اللازم للتعامل مع هذا الرابط في طريقتي [doAdd] و [doDelete] المكتوبتين سابقًا. سيتم أيضًا التعامل مع خيار القائمة المقابل.</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+<p><strong>ملاحظة</strong>: يتم الحصول على عدد العناصر في <em>DefaultListModel</em> باستخدام طريقة <em>size</em>().</p>
+<p><a id="refheading318931812363491"></a></p>
+<h4 id="10397">10.3.9.7. <span style="color: #4f81bd">حساب المقاعد</span></h4>
+<p>يتيح لك الرابط [حساب] [10] بدء عملية حساب المقاعد وعرض النتائج في (14). إذا فشل الحساب (تم استبعاد جميع القوائم)، تظهر رسالة خطأ في [15]. وفي جميع الأحوال، يتم تعطيل الرابط [حساب] [10] بعد إتمام الحساب.</p>
+<p>في فئة [AbstractElectionsSwing]، يكون المعالج الذي يستجيب للنقر على رابط [حساب] كما يلي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> jLabelCalculerMouseClicked(java.awt.event.MouseEvent </span><span style="color:#6a3e3e">evt</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">if</span><span style="color:#000000">(</span><span style="color:#0000c0">jLabelCalculer</span><span style="color:#000000">.isEnabled()){</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      do<span style="color:#000000">Calculer</span>();</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p>السطر 3 يستدعي طريقة [doCalculer] الخاصة بفئة [ElectionsSwing].</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// listes saisies par l&#x27;utilisateur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">final</span><span style="color:#000000"> List&lt;ListeElectorale&gt; </span><span style="color:#0000c0">listesSaisies</span><span style="color:#000000"> = </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> ArrayList&lt;&gt;();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> ListeElectorale[] </span><span style="color:#0000c0">tListesSaisies</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#646464">@Override</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doCalculer() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000c0">tListesSaisies</span><span style="color:#000000"> = </span><span style="color:#0000c0">listesSaisies</span><span style="color:#000000">.toArray(</span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> ListeElectorale[0]);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// calcul des sièges</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">try</span><span style="color:#000000"> {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      ...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    } </span><span style="font-weight:bold;color:#7f0055">catch</span><span style="color:#000000"> (ElectionsException </span><span style="color:#6a3e3e">ex</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#000000">// on affiche l&#x27;exception</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      ...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="font-weight:bold;color:#7f0055">return</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// affichage des résultats</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    ...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// maj état formulaire</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    Utilitaires.</span><span style="font-style:italic;color:#000000">setEnabled</span><span style="color:#000000">(</span><span style="font-weight:bold;color:#7f0055">...</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>المهمة</strong>: أكمل كود طريقة [doCalculer].</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+
+<p><a id="refheading318951812363491"></a></p>
+<h4 id="10398">10.3.9.8. <span style="color: #4f81bd">حفظ النتائج في مصدر البيانات</span></h4>
+<p>يتيح لك الرابط [Save] (12) حفظ نتائج حساب المقاعد في مصدر البيانات. بمجرد نجاح عملية الحفظ، يتم تعطيل الرابط [Save]. إذا فشلت عملية الحفظ، يتم عرض رسالة خطأ في [15]. في كلتا الحالتين، يتم تعطيل الرابط [Save].</p>
+<p>في فئة [AbstractElectionsSwing]، يكون المعالج الذي يدير النقر على التسمية [Save] كما يلي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> jLabelEnregistrerMouseClicked(java.awt.event.MouseEvent </span><span style="color:#6a3e3e">evt</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">if</span><span style="color:#000000">(</span><span style="color:#0000c0">jLabelEnregistrer</span><span style="color:#000000">.isEnabled()){</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      do<span style="color:#000000">Enregistrer</span>();</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p>السطر 3 يستدعي طريقة [doEnregistrer] الخاصة بفئة [ElectionsSwing]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">@Override</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doEnregistrer() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on demande l&#x27;enregistrement à la couche métier</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">try</span><span style="color:#000000"> {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            ...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        } </span><span style="font-weight:bold;color:#7f0055">catch</span><span style="color:#000000"> (ElectionsException ex) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// on affiche l&#x27;exception</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            ...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// retour à l&#x27;interface graphique</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">return</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// maj du formulaire</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        Utilitaires.</span><span style="font-style:italic;color:#000000">setEnabled</span><span style="color:#000000">(</span><span style="font-weight:bold;color:#7f0055">...</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>المهمة</strong>: أكمل الكود الخاص بالطريقة [doEnregistrer].</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+
+<p><a id="refheading318971812363491"></a></p>
+<h4 id="10399">10.3.9.9. <span style="color: #4f81bd">مسح النتائج</span></h4>
+<p>رابط [مسح] (11) يمسح النتائج المعروضة في (14).</p>
+<p>في فئة [AbstractElectionsSwing]، يكون المعالج الذي يدير النقر على التسمية [Clear] كما يلي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> jLabelEffacerMouseClicked(java.awt.event.MouseEvent </span><span style="color:#6a3e3e">evt</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">if</span><span style="color:#000000">(</span><span style="color:#0000c0">jLabelEffacer</span><span style="color:#000000">.isEnabled()){</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      do<span style="color:#000000">Effacer</span>();</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p>السطر 3 يستدعي طريقة [doEffacer] الخاصة بفئة [ElectionsSwing]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doEffacer() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on vide la liste des résultats</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        ....</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// maj du formulaire</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        Utilitaires.</span><span style="font-style:italic;color:#000000">setEnabled</span><span style="color:#000000">(</span><span style="font-weight:bold;color:#7f0055">...</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>المهمة</strong>: أكمل الكود الخاص بالطريقة [doEffacer].</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+<p><strong>ملاحظة</strong>: تحتوي فئة <em>DefaultListModel</em> على طريقة <em>clear</em>()  تقوم بإزالة جميع عناصرها.</p>
+<p><a id="refheading319011812363491"></a></p>
+<h3 id="10310">10.3.10. <span style="color: #4f81bd"><span style="color: #4f81bd">التحسينات</span></span></h3>
+<p>يمكن تحسين الواجهة الرسومية السابقة بعدة طرق: فقد ينسى المستخدم إدخال الأصوات لجميع القوائم الموجودة في مربع القائمة المنسدلة، وقد يدخل أيضًا عن طريق الخطأ الأصوات لنفس القائمة عدة مرات.</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>المهمة</strong>: قم بتحسين الخوارزمية بحيث لا تحدث أي من هاتين الحالتين. أحد الحلول البسيطة هو الاحتفاظ بقاموس للقوائم التي تم إدخالها، حيث تكون المفاتيح هي عناصر مربع القائمة المنسدلة. سنحرص أيضًا على أن يكون زر [Calculate] نشطًا فقط عندما يتم إدخال جميع القوائم.</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+<p><strong>انظر الدورة التدريبية</strong> [<a href="https://stahe.github.io/ar-java-sept-1998/"><u><span style="color: #0563c1">ref1</span></u></a>]: فئة <em>HashTable</em> في القسم 3.8.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        هذا البرنامج التعليمي الذي كتبه <strong>Serge Tahé</strong> متاح للجمهور وفقًا لشروط
+<em>Creative Commons Attribution – Non-Commercial –
+ShareAlike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

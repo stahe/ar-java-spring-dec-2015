@@ -1,0 +1,1606 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="مقدمة إلى لغة جافا ومنظومة سبرينغ">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/ar-java-spring-dec-2015/td-lbn-lbqy.html">
+      
+      
+        <link rel="prev" href="td-lfyt.html">
+      
+      
+        <link rel="next" href="lmqrr-mqdm-l-r-ml-spring.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>4. [TD]: البنى الطبقية - مقدمة إلى لغة جافا ومنظومة سبرينغ</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "مقدمة إلى لغة جافا ومنظومة سبرينغ";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#4-td" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="مقدمة إلى لغة جافا ومنظومة سبرينغ" class="md-header__button md-logo" aria-label="مقدمة إلى لغة جافا ومنظومة سبرينغ" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            مقدمة إلى لغة جافا ومنظومة سبرينغ
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4. [TD]: البنى الطبقية
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="التبديل إلى الوضع المظلم"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="التبديل إلى الوضع المظلم" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="التبديل إلى الوضع الفاتح"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="التبديل إلى الوضع الفاتح" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/ar-java-spring-dec-2015" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="مقدمة إلى لغة جافا ومنظومة سبرينغ" class="md-nav__button md-logo" aria-label="مقدمة إلى لغة جافا ومنظومة سبرينغ" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    مقدمة إلى لغة جافا ومنظومة سبرينغ
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/ar-java-spring-dec-2015" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    مرحبًا بكم
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mqdm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. مقدمة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lwjb-lmshkl.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. [الواجب]: المشكلة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="td-lfyt.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. [TD]: الفئات
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. [TD]: البنى الطبقية
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="td-lbn-lbqy.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. [TD]: البنى الطبقية
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. مقدمة
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-elections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. واجهات تطبيق [Elections]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. فئة الاستثناء
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lmqrr-mqdm-l-r-ml-spring.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. [المقرر]: مقدمة إلى إطار عمل Spring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ldwr-mqdm-l-wjh-brmj-tbyqt-jdbc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. [الدورة]: مقدمة إلى واجهة برمجة تطبيقات JDBC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="td-tnfydh-bq-dao-fy-td-bstkhdm-wjh-brmj-tbyqt-jdbc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. [TD]: تنفيذ طبقة [DAO] في TD باستخدام واجهة برمجة تطبيقات JDBC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="td-bq-lml.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. [TD]: طبقة [الأعمال]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="td-tnfydh-bq-ui-bstkhdm-brnmj-wd-ltkm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. [TD]: تنفيذ طبقة [ui] باستخدام برنامج وحدة التحكم
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lwjb-tnfydh-bq-ui-bstkhdm-wjh-swing---.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. [الواجب]: تنفيذ طبقة [ui] باستخدام واجهة Swing - 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ldwr-ltdryby-dr-qwd-lbynt-llyqy-bstkhdm-spring-data.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. [الدورة التدريبية]: إدارة قواعد البيانات العلائقية باستخدام Spring Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="td-tnfydh-bq-dao-fy-td-bstkhdm-spring-data.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. [TD]: تنفيذ طبقة [DAO] في TD باستخدام [Spring Data]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ldwr-ltdryby-r-qd-bynt-l-lwyb-bstkhdm-spring-mvc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. [الدورة التدريبية]: عرض قاعدة بيانات على الويب باستخدام Spring MVC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="td-r-lwyb-lbq-lml.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. [TD]: عرض الويب لطبقة [الأعمال]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="td-nsh-myl-lkhdm-lwyb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. [TD]: إنشاء عميل لخدمة الويب
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ldwr-ltdryby-tmyn-lwwl-l-khdm-wyb-bstkhdm-spring-security.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. [الدورة التدريبية]: تأمين الوصول إلى خدمة ويب باستخدام Spring Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="td-tmyn-khdm-lwyb--json-llntkhbt.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. [TD]: تأمين خادم الويب / JSON للانتخابات
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lmqrr-mshrk-lmwrd-br-lwl.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. [المقرر]: مشاركة الموارد عبر الأصول
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="td-mshrk-lmwrd-br-lwl-cors.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. [TD] مشاركة الموارد عبر الأصول (CORS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lbrmj-yr-lmtzmn-bstkhdm-rxjava.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. البرمجة غير المتزامنة باستخدام RxJava
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="khtm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. خاتمة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lmlq.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. الملاحق
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a id="refheading317751812363491"></a></p>
+<h1 id="4-td">4. <span style="color: #365f91">[TD]: البنى الطبقية</span></h1>
+<p><strong>الكلمات المفتاحية</strong>: بنية متعددة الطبقات، Spring، حقن التبعية.</p>
+<p><a id="refheading317771812363491"></a></p>
+<h2 id="41">4.1. <span style="color: #4f81bd">مقدمة</span></h2>
+<p>دعونا نستعرض ما قمنا به:</p>
+<ul>
+  <li>في الجزء الأول من تمرين ELECTIONS، لم يتم استخدام أي فئات. قمنا ببناء حل كما كنا سنبنيه بلغة C.
+  </li>
+  <li>في الجزء الثاني من التمرين، تم تقديم فئتين:
+    <ul>
+      <li>[VoterList]، التي تمثل سمات (id، name، votes، seats، eliminated) قائمة المرشحين
+      </li>
+      <li>[ElectionsException]، وهي فئة للاستثناءات غير المعالجة. يُستخدم هذا النوع من الاستثناءات كلما حدث خطأ فادح في تطبيق الانتخابات. وهو غير معالج، مما يعني أن المطور غير مطالب بمعالجته باستخدام كتلة try-catch.
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>حتى الآن، كان حساب نتائج الانتخابات يتم من خلال طريقة [main] لفئة [MainElections]</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">istia.st.elections</span><span class="p">;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.*</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MainElections</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">   </span><span class="c1">// some data</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">barre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.05</span><span class="p">;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">  </span><span class="c1">// ----------------------------------------------------------------------</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">   </span><span class="c1">// the main procedure</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">arguments</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">     </span><span class="c1">// prepare keyboard input stream</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">    </span><span class="n">BufferedReader</span><span class="w"> </span><span class="n">clavier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BufferedReader</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">InputStreamReader</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">));</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">     </span><span class="c1">// data entry for seat calculations</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="p">...</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">     </span><span class="c1">// calculation of seats obtained by the various lists</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="p">....</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="w">     </span><span class="c1">// display of results</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="p">...</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="c1">// hand</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="p">}</span><span class="w"> </span><span class="c1">// class</span>
+</code></pre></div></td></tr></table></div>
+<p>يتضمن الحل السابق ثلاث مراحل قياسية:</p>
+<ul>
+  <li>جمع البيانات، السطور 17-18
+  </li>
+  <li>حساب الحل، السطور 19-20
+  </li>
+  <li>عرض و/أو حفظ النتائج، السطور 21-22
+  </li>
+</ul>
+
+<p>المرحلة 2 هي الوحيدة الثابتة حقًا. يمكن أن تختلف المرحلة 1: يمكن أن تأتي البيانات من لوحة المفاتيح كما في الأمثلة التي تمت دراستها، أو من ملف نصي، أو من واجهة رسومية، أو من قاعدة بيانات، أو من الشبكة، ... وبالمثل، هناك طرق متعددة لإخراج النتائج في المرحلة 3: عرضها على الشاشة كما في الأمثلة التي تمت دراستها، أو حفظها في ملف، أو في قاعدة بيانات، أو إرسالها عبر الشبكة، إلخ.</p>
+<p>بشكل عام، يمكن غالبًا نمذجة التطبيق على أنه ثلاث طبقات، لكل منها دور محدد جيدًا:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006E80000018177EC9E34.png" width="619" height="135" style="display:inline-block; margin:4px;width:16.371cm;height:3.565cm;" class="odt-zoomable" data-zoom-src="images/10000000000006E80000018177EC9E34.png" /></td></tr></table>
+
+<p>تُعرف هذه البنية أيضًا باسم «البنية <strong>ثلاثية المستويات</strong>». ويشير مصطلح «ثلاثية المستويات» عادةً إلى بنية يكون فيها كل مستوى موجودًا على جهاز مختلف. وعندما تكون المستويات موجودة على نفس الجهاز، تصبح البنية <strong>«ثلاثية</strong> الطبقات».</p>
+<ul>
+  <li>تحتوي الطبقة [التجارية] على القواعد التجارية للتطبيق. بالنسبة لتطبيق الانتخابات الخاص بنا، هذه هي القواعد التي تحسب المقاعد التي فازت بها القوائم المختلفة بمجرد معرفة الأصوات التي حصلت عليها كل قائمة. تتطلب هذه الطبقة بيانات لتعمل. على سبيل المثال، في تطبيق الانتخابات:
+  </li>
+  <li>القوائم، مع ذكر اسم كل قائمة وعدد الأصوات التي حصلت عليها
+  </li>
+  <li>عدد المقاعد التي سيتم شغلها
+  </li>
+  <li>الحد الأدنى الانتخابي الذي يتم عنده استبعاد القائمة
+  </li>
+</ul>
+
+<p>في الرسم البياني أعلاه، يمكن أن تأتي البيانات من مصدرين:</p>
+<ul>
+  <li>طبقة الوصول إلى البيانات أو [DAO] (DAO = كائن الوصول إلى البيانات) للبيانات المخزنة بالفعل في الملفات أو قواعد البيانات. قد يكون هذا هو الحال هنا بالنسبة لأسماء القوائم، وعدد المقاعد المطلوب شغلها، والحد الأدنى للانتخاب. في الواقع، هذه المعلومات معروفة قبل الانتخابات نفسها.
+  </li>
+  <li>طبقة واجهة المستخدم أو [ui] (UI = واجهة المستخدم) للبيانات التي يدخلها المستخدم أو التي تُعرض عليه. قد يكون هذا هو الحال هنا بالنسبة للأصوات التي حصلت عليها القوائم، والتي لا تُعرف إلا في اللحظة الأخيرة، وكذلك بالنسبة لعرض نتائج الانتخابات.
+  </li>
+</ul>
+
+<ul>
+  <li>بشكل عام، تتولى طبقة [DAO] الوصول إلى البيانات الدائمة (الملفات وقواعد البيانات) أو البيانات غير الدائمة (الشبكة وأجهزة الاستشعار وما إلى ذلك).
+  </li>
+  <li>من ناحية أخرى، تتولى طبقة [UI] التعامل مع التفاعلات مع المستخدم، إن وجدت.
+  </li>
+  <li>تتمتع الطبقات الثلاث بالاستقلالية من خلال استخدام واجهات Java.
+  </li>
+  <li>هناك طرق مختلفة لدمج هذه الطبقات في التطبيق. سنستخدم أداة تسمى &quot;Spring&quot;. في الرسم التخطيطي، تمر هذه الأداة عبر الطبقات الأخرى.
+  </li>
+</ul>
+
+<p>سنعيد النظر في تطبيق [Elections] الذي تم تطويره سابقًا لمنحه بنية ثلاثية المستويات. للقيام بذلك، سنفحص طبقات [UI، Business، DAO] واحدة تلو الأخرى، بدءًا من طبقة [DAO]، التي تتولى معالجة البيانات الدائمة.</p>
+<p>أولاً، نحتاج إلى تعريف واجهات الطبقات المختلفة لتطبيق [Elections].</p>
+<p><a id="refheading317791812363491"></a></p>
+<h2 id="42-elections">4.2. <span style="color: #4f81bd">واجهات تطبيق [Elections]</span></h2>
+<p>تذكر أن الواجهة تحدد مجموعة من توقيعات الطرق. وتوفر الفئات التي تنفذ الواجهة التنفيذ لهذه الطرق.</p>
+<p>لنعد إلى بنية التطبيق المكونة من 3 طبقات:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006E80000018177EC9E34.png" width="619" height="135" style="display:inline-block; margin:4px;width:16.371cm;height:3.565cm;" class="odt-zoomable" data-zoom-src="images/10000000000006E80000018177EC9E34.png" /></td></tr></table>
+
+<p>في هذا النوع من البنية، غالبًا ما يكون المستخدم هو من يأخذ زمام المبادرة. فهو يقدم طلبًا في [1] ويتلقى استجابة في [8]. وهذا ما يُسمى بدورة الطلب والاستجابة. لنأخذ مثال حساب المقاعد التي تم الفوز بها في ليلة الانتخابات. سيتطلب ذلك عدة خطوات:</p>
+<ol>
+  <li>ستحتاج طبقة [ui] إلى سؤال المستخدم عن عدد الأصوات التي حصلت عليها كل قائمة. للقيام بذلك، ستحتاج إلى عرض أسماء القوائم المتنافسة على المستخدم. بعد ذلك، سيقوم المستخدم ببساطة بإدخال عدد الأصوات بجانب كل قائمة وطلب حساب المقاعد.
+  </li>
+  <li>لا تحتوي طبقة [ui] على أسماء القوائم. يتم تخزين هذه الأسماء في مصدر البيانات الموجود على يمين الرسم التخطيطي. وستستخدم المسار [2، 3، 4، 5، 6، 7] لاستردادها. العملية [2] هي طلب القوائم، والعملية [7] هي الاستجابة لهذا الطلب. بمجرد الانتهاء من ذلك، يمكنها عرضها على المستخدم عبر [8].
+  </li>
+  <li>سيقوم المستخدم بإرسال عدد الأصوات التي حصلت عليها كل قائمة إلى طبقة [ui]. هذه هي العملية [1] أعلاه. خلال هذه الخطوة، يتفاعل المستخدم فقط مع طبقة [ui]. وهذه الطبقة هي التي ستتحقق من صحة البيانات المدخلة. بمجرد الانتهاء من ذلك، سيطلب المستخدم قائمة المقاعد التي حصلت عليها كل قائمة.
+  </li>
+  <li>ستطلب طبقة [ui] من طبقة الأعمال حساب المقاعد. للقيام بذلك، سترسل البيانات التي تلقتها من المستخدم إلى طبقة الأعمال. هذه هي العملية [2].
+  </li>
+  <li>تحتاج طبقة [business] إلى معلومات معينة لأداء مهمتها. لديها بالفعل القوائم من العملية (ب). كما تحتاج إلى عدد المقاعد المطلوب شغلها وقيمة العتبة الانتخابية. وستطلب هذه المعلومات من طبقة [DAO] عبر المسار [3، 4، 5، 6]. [3] هو الطلب الأولي و[6] هو الرد على هذا الطلب.
+  </li>
+  <li>بعد الحصول على جميع البيانات المطلوبة، تحسب طبقة [الأعمال] المقاعد التي فازت بها كل قائمة.
+  </li>
+  <li>يمكن لطبقة [الأعمال] الآن الرد على الطلب المقدم من طبقة [ui] في (د). هذا هو المسار [7].
+  </li>
+  <li>ستقوم طبقة [UI] بتنسيق هذه النتائج لتقديمها للمستخدم في شكل مناسب ثم عرضها. هذا هو المسار [8].
+  </li>
+  <li>يمكن للمرء أن يتخيل أن هذه النتائج تحتاج إلى تخزينها في ملف أو قاعدة بيانات. ويمكن القيام بذلك تلقائيًا. في هذه الحالة، بعد العملية (و)، ستطلب طبقة [الأعمال] من طبقة [DAO] حفظ النتائج. وسيكون هذا هو المسار [3، 4، 5، 6]. ويمكن أيضًا القيام بذلك بناءً على طلب المستخدم فقط. وسيتم استخدام المسار [1-8] في دورة الطلب والاستجابة.
+  </li>
+</ol>
+
+<p>يمكننا أن نرى من هذا الوصف أن الطبقة تستخدم موارد الطبقة الموجودة على يمينها، ولا تستخدم أبدًا موارد الطبقة الموجودة على يسارها. لنفكر في طبقتين متجاورتين:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004D5000000F627965266.png" width="433" height="86" style="display:inline-block; margin:4px;width:11.449cm;height:2.277cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D5000000F627965266.png" /></td></tr></table>
+
+<p>تقوم الطبقة [A] بإرسال طلبات إلى الطبقة [B]. في أبسط الحالات، يتم تنفيذ الطبقة بواسطة فئة واحدة. يتطور التطبيق بمرور الوقت. وبالتالي، قد تحتوي الطبقة [B] على فئات تنفيذ مختلفة [B1، B2، ...]. إذا كانت الطبقة [B] هي طبقة [DAO]، فقد يكون لها تنفيذ أولي [B1] يسترد البيانات من ملف. بعد بضع سنوات، قد نرغب في تخزين البيانات في قاعدة بيانات.  سنقوم عندئذٍ بإنشاء فئة تنفيذ ثانية [B2]. إذا كانت الطبقة [A] في التطبيق الأولي تعمل مباشرة مع الفئة [B1]، فسنضطر إلى إعادة كتابة جزء من كود الطبقة [A]. لنفترض، على سبيل المثال، أننا كتبنا شيئًا مثل ما يلي في الطبقة [A]:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>B1 b1=new B1(...);
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>..
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>b1.getData(...);
+</code></pre></div></td></tr></table></div>
+<ul>
+  <li>السطر 1: يتم إنشاء مثيل للفئة [B1]
+  </li>
+  <li>السطر 3: يتم طلب البيانات من هذه المثيل
+  </li>
+</ul>
+
+<p>إذا افترضنا أن فئة التنفيذ الجديدة [B2] تستخدم طرقًا لها نفس التوقيع مثل تلك الموجودة في الفئة [B1]، فسيتعين علينا تغيير جميع الإشارات إلى [B1] لتصبح [B2]. هذا سيناريو مواتٍ للغاية ومن غير المرجح حدوثه إذا لم نكن قد انتبهنا إلى توقيعات الطرق هذه. في الممارسة العملية، من الشائع أن يكون للفئتين [B1] و[B2] توقيعات طرق مختلفة، مما يعني أنه يجب إعادة كتابة جزء كبير من الطبقة [A] بالكامل.</p>
+<p>يمكننا تحسين الوضع عن طريق إدخال واجهة بين الطبقتين [A] و[B]. وهذا يعني أننا نحدد توقيعات الطرق التي تقدمها الطبقة [B] إلى الطبقة [A] في واجهة. عندئذ يصبح الرسم البياني السابق كما يلي:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004DF0000011E86BFD530.png" width="437" height="100" style="display:inline-block; margin:4px;width:11.55cm;height:2.649cm;" class="odt-zoomable" data-zoom-src="images/10000000000004DF0000011E86BFD530.png" /></td></tr></table>
+
+<p>لم تعد الطبقة [A] تتواصل مباشرة مع الطبقة [B]، بل أصبحت تتواصل مع واجهتها [IB]. وبالتالي، في كود الطبقة [A]، لا تظهر فئة التنفيذ [Bi] للطبقة [B] سوى مرة واحدة، وذلك عند تنفيذ الواجهة [IB]. وبمجرد الانتهاء من ذلك، تصبح الواجهة [IB] هي التي تُستخدم في الكود، وليس فئة التنفيذ الخاصة بها. ويصبح الكود السابق كما يلي:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>IB ib=new B1(...);
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>..
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>ib.getData(...);
+</code></pre></div></td></tr></table></div>
+<ul>
+  <li>السطر 1: يتم إنشاء مثيل [ib] ينفذ الواجهة [IB] عن طريق إنشاء مثيل للفئة [B1]
+  </li>
+  <li>السطر 3: يتم طلب البيانات من المثيل [ib]
+  </li>
+</ul>
+
+<p>الآن، إذا استبدلنا التنفيذ [B1] للطبقة [B] بتنفيذ [B2]، وكان كلا التنفيذين يتوافقان مع نفس الواجهة [IB]، فإن السطر 1 فقط من الطبقة [A] هو الذي يحتاج إلى تعديل، ولا حاجة لتعديل أي أسطر أخرى. هذه ميزة كبيرة تبرر بحد ذاتها الاستخدام المنهجي للواجهات بين طبقتين.</p>
+<p>يمكننا الذهاب إلى أبعد من ذلك وجعل الطبقة [A] مستقلة تمامًا عن الطبقة [B]. في الكود أعلاه، يمثل السطر 1 مشكلة لأنه يرمز بشكل ثابت إلى الفئة [B1]. من الناحية المثالية، يجب أن تكون الطبقة [A] قادرة على استخدام تنفيذ للواجهة [IB] دون الحاجة إلى تحديد اسم الفئة. سيكون هذا متسقًا مع الرسم التخطيطي أعلاه. يمكننا أن نرى أن الطبقة [A] تتفاعل مع الواجهة [IB]، ولا يوجد سبب يدعوها إلى معرفة اسم الفئة التي تنفذ هذه الواجهة. هذه التفاصيل ليست مفيدة للطبقة [A].</p>
+<p>يتيح لنا إطار عمل Spring (http://www.springframework.org) تحقيق هذا النتيجة. تتطور البنية السابقة على النحو التالي:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000050800000175AF8E87D4.png" width="386" height="112" style="display:inline-block; margin:4px;width:10.22cm;height:2.96cm;" class="odt-zoomable" data-zoom-src="images/100000000000050800000175AF8E87D4.png" /></td></tr></table>
+
+<p>ستسمح الطبقة الشاملة [Spring] لطبقة ما بالحصول، عبر التكوين، على مرجع للطبقة الموجودة على يمينها دون الحاجة إلى معرفة اسم الفئة التي تنفذ تلك الطبقة. سيكون هذا الاسم موجودًا في ملفات التكوين وليس في كود Java. ثم يأخذ كود Java للطبقة [A] الشكل التالي:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>IB ib; // initialisé par Spring
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>..
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>ib.getData(...);
+</code></pre></div></td></tr></table></div>
+<ul>
+  <li>السطر 1: مثيل [ib] ينفذ واجهة [IB] للطبقة [B]. يتم إنشاء هذا المثيل بواسطة Spring بناءً على المعلومات الموجودة في ملف التكوين. سيتولى Spring إنشاء:
+    <ul>
+      <li>المثيل [b] الذي ينفذ الطبقة [B]
+      </li>
+      <li>المثيل [a] الذي ينفذ الطبقة [A]. سيتم تهيئة هذا المثيل. سيتم تعيين الحقل [ib] أعلاه إلى مرجع [b] للكائن الذي ينفذ الطبقة [B]
+      </li>
+    </ul>
+  </li>
+  <li>السطر 3: يتم طلب البيانات من المثيل [ib]
+  </li>
+</ul>
+
+<p>يمكننا الآن أن نرى أن فئة التنفيذ [B1] للطبقة B لا تظهر في أي مكان في كود الطبقة [A]. عندما يتم استبدال التنفيذ [B1] بتنفيذ جديد [B2]، لن يتغير شيء في كود الفئة [A]. سنقوم ببساطة بتغيير ملفات تكوين Spring لإنشاء مثيل [B2] بدلاً من [B1].</p>
+<p>يؤدي الجمع بين <strong>Spring وواجهات Java</strong> إلى تحسين حاسم في صيانة التطبيق من خلال جعل طبقات التطبيق مترابطة بشكل وثيق مع بعضها البعض. هذا هو الحل الذي سنستخدمه لتطبيق [Elections].</p>
+<p>لنعد إلى بنية التطبيق ثلاثية الطبقات:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006D90000017E26BC8CF3.png" width="526" height="115" style="display:inline-block; margin:4px;width:13.91cm;height:3.03cm;" class="odt-zoomable" data-zoom-src="images/10000000000006D90000017E26BC8CF3.png" /></td></tr></table>
+
+<p>في الحالات البسيطة، يمكننا البدء من طبقة [الأعمال] لاكتشاف واجهات التطبيق. لكي يعمل، يحتاج إلى بيانات:</p>
+<ul>
+  <li>متوفرة بالفعل في الملفات أو قواعد البيانات أو عبر الشبكة. يتم توفير هذه البيانات بواسطة طبقة [DAO].
+  </li>
+  <li>غير متوفرة بعد. ثم يتم توفيرها بواسطة طبقة [UI]، التي تحصل عليها من مستخدم التطبيق.
+  </li>
+</ul>
+
+<p>ما هي الواجهة التي يجب أن توفرها طبقة [DAO] لطبقة [الأعمال]؟ ما هي التفاعلات الممكنة بين هاتين الطبقتين؟ يجب أن توفر طبقة [DAO] البيانات التالية لطبقة [الأعمال]:</p>
+<ul>
+  <li>عدد المقاعد التي يجب شغلها
+  </li>
+  <li>الحد الأدنى الانتخابي الذي تقل عنه القائمة يتم استبعادها
+  </li>
+  <li>أسماء القوائم
+  </li>
+</ul>
+
+<p>هذه المعلومات معروفة قبل الانتخابات وبالتالي يمكن تخزينها. في الاتجاه [الأعمال] -&gt; [DAO]، يمكن لطبقة [الأعمال] أن تطلب من طبقة [DAO] تسجيل نتائج الانتخابات، بما في ذلك عدد المقاعد التي فازت بها القوائم المختلفة.</p>
+<p>باستخدام هذه المعلومات، يمكننا محاولة وضع تعريف أولي لواجهة طبقة [DAO]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">interface</span><span style="color:#000000"> </span><a id="ielectionsdao"></a><span style="color:#000000">IElectionsDao</span><span style="color:#000000"> {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">double</span><span style="color:#000000"> getSeuilElectoral();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">int</span><span style="color:#000000"> getNbSiegesAPourvoir();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> ListeElectorale[] getListesElectorales();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> setListesElectorales(ListeElectorale[] listesElectorales);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 1: تسمى الواجهة [IElectionsDao]. وهي تحدد أربع طرق:
+    <ul>
+      <li>ثلاث طرق لقراءة البيانات من مصدر البيانات: [getVotingThreshold، getNumberOfSeatsToBeFilled، getVoterLists]. ستسمح هذه الطرق الثلاث لطبقة [الأعمال] بالحصول على البيانات التي تميز الانتخابات الحالية.
+      </li>
+      <li>طريقة واحدة لكتابة البيانات إلى مصدر البيانات: [setVoterLists]. ستسمح هذه الطريقة لطبقة [الأعمال] بطلب تسجيل النتائج التي قامت بحسابها.
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>لنعد إلى بنية التطبيق المكونة من ثلاث طبقات:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006D90000017E26BC8CF3.png" width="526" height="115" style="display:inline-block; margin:4px;width:13.91cm;height:3.03cm;" class="odt-zoomable" data-zoom-src="images/10000000000006D90000017E26BC8CF3.png" /></td></tr></table>
+
+<p>ما هي الواجهة التي يجب أن تقدمها طبقة [الأعمال] إلى طبقة [واجهة المستخدم]؟ دعونا ندرس التفاعلات المحتملة بين هاتين الطبقتين.</p>
+<ol>
+  <li>ستكون طبقة [ui] مسؤولة عن مطالبة المستخدم بالتصويت للقوائم المتنافسة المختلفة. للقيام بذلك، يجب أن تعرف عدد القوائم. يمكنها طلب هذه المعلومات من طبقة [business]، والتي بدورها يمكنها طلب جدول القوائم المتنافسة من طبقة [dao]. إذا كانت طبقة [business] تمتلك هذا الجدول، فمن الأفضل أن تنقله إلى طبقة [UI]. ستحصل طبقة [UI] بعد ذلك على أسماء القوائم ويمكنها تحسين رسائلها الموجهة إلى المستخدم بالسؤال، على سبيل المثال، &quot;عدد الأصوات للقائمة أ&quot;.
+  </li>
+  <li>بمجرد حصول طبقة [UI] على الأصوات لجميع القوائم، ستطلب حساب المقاعد من طبقة [business]. يمكن لطبقة [business] إجراء هذا الحساب وإرجاع النتيجة إلى طبقة [UI].
+  </li>
+  <li>يمكن لطبقة [UI] بعد ذلك عرض هذه النتائج على المستخدم. قد يطلب المستخدم أيضًا حفظها.
+  </li>
+  <li>قد ترغب طبقة [UI] أيضًا في عرض معلومات إضافية للمستخدم، مثل العتبة الانتخابية أو عدد المقاعد المطلوب شغلها.
+  </li>
+</ol>
+
+<p>باستخدام هذه المعلومات، يمكننا محاولة وضع تعريف أولي للواجهة الخاصة بطبقة [<a id="interfacemetier"></a> metier]: </p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">interface</span><span style="color:#000000"> IElectionsMetier {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> ListeElectorale[] getListesElectorales();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">int</span><span style="color:#000000"> getNbSiegesAPourvoir();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">double</span><span style="color:#000000"> getSeuilElectoral();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> recordResultats(ListeElectorale[] </span><span style="color:#6a3e3e">listesElectorales</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> ListeElectorale[] calculerSieges(ListeElectorale[] </span><span style="color:#6a3e3e">listesElectorales</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 1: تسمى الواجهة [IElectionsMetier]. وهي تحدد الطرق التالية:
+    <ul>
+      <li>السطر 3: طريقة [getVoterLists] التي ستسمح لطبقة [ui] بالحصول على مصفوفة القوائم المتنافسة؛
+      </li>
+      <li>السطر 5: تسترد الطريقة [<span style="color: #000000">getNbSiegesAPourvoir</span>] عدد المقاعد التي يتعين شغلها؛
+      </li>
+      <li>السطر 7: تسترد الطريقة [<span style="color: #000000">getElectoralThreshold</span>] العتبة الانتخابية؛
+      </li>
+      <li>السطر 11: طريقة [calculateSeats] (السطر 36) التي ستسمح لطبقة [ui] بطلب حساب المقاعد بمجرد معرفة عدد الأصوات للقوائم المختلفة. المعلمة هي مصفوفة القوائم المتنافسة، بدون مقاعدها وبدون القيمة المنطقية &quot;eliminated&quot;. والنتيجة المرجعة هي هذه المصفوفة نفسها، ولكن هذه المرة مع تهيئة الحقول [seats, eliminated]؛
+      </li>
+      <li>السطر 9: طريقة [recordResults] التي ستسمح لطبقة [ui] بطلب تسجيل النتائج.
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>ملاحظة</strong>: نظرًا لموقعها، تعيد طبقة [business] استخدام بعض الطرق من طبقة [DAO] لإتاحتها لطبقة [UI]. وبسبب هذا التكرار، قد يميل المرء إلى تجميع كل شيء في طبقة واحدة تجمع بين منطق الأعمال والوصول إلى البيانات. تسمى هذه الطبقة أحيانًا <strong>النموذج</strong>، وهو الحرف M في اختصار <strong>MVC</strong> (Model-View-Controller). MVC هو نمط تصميم يستخدم على نطاق واسع في تطبيقات الويب.</p>
+<p>دعونا نفحص توقيع طريقة [calculateSeats]:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> ListeElectorale[] calculerSieges(ListeElectorale[] </span><span style="color:#6a3e3e">listesElectorales</span><span style="color:#000000">);</span></span></span>
+</code></pre></div>
+
+<p>وقد ذُكر سابقًا: &quot;المعلمة هي مصفوفة القوائم المتنافسة، بدون مقاعدها وبدون القيمة المنطقية &#x27;eliminated&#x27;. والنتيجة هي نفس المصفوفة، ولكن هذه المرة مع الحقول [seats, eliminated]&quot;. ويمكن أن تكون توقيع الأسلوب كما يلي:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> void calculerSieges(ListeElectorale[] </span><span style="color:#6a3e3e">listesElectorales</span><span style="color:#000000">);</span></span></span>
+</code></pre></div>
+
+<p>المعلمة [<span style="color: #6a3e3e">voterLists</span>] هي مرجع كائن، وهو في هذه الحالة مصفوفة. كل عنصر هو بدوره مرجع كائن، وهو في هذه الحالة من النوع [VoterList]. ستقوم الطريقة [calculateSeats] بتعديل الحقول [seats, eliminated] لكل من هذه الكائنات. تحتفظ الطريقة المستدعية بمؤشر [<span style="color: #6a3e3e">voterLists</span>] الذي:</p>
+<ul>
+  <li>قبل الاستدعاء، هو مرجع إلى مصفوفة من كائنات [VoterList] مع حقول [seats, eliminated] غير مهيأة؛
+  </li>
+  <li>بعد الاستدعاء، يكون مرجعًا (نفس المرجع) إلى مصفوفة من كائنات [VoterList] مع تهيئة حقول [seats, eliminated] الخاصة بها؛
+  </li>
+</ul>
+
+<p>فلماذا نستخدم التوقيع:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> ListeElectorale[] calculerSieges(ListeElectorale[] </span><span style="color:#6a3e3e">listesElectorales</span><span style="color:#000000">);</span></span></span>
+</code></pre></div>
+
+<p>عند كتابة واجهة، من المهم تذكر أنه يمكن استخدامها في سياقين مختلفين: <em>محلي وعن بُعد</em><a id="interface-locale-distante"></a> . في السياق <em>المحلي</em>، يتم تنفيذ الطريقة المستدعية والطريقة المستدعاة في نفس JVM (آلة Java الافتراضية):</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006D90000017E26BC8CF3.png" width="526" height="115" style="display:inline-block; margin:4px;width:13.91cm;height:3.03cm;" class="odt-zoomable" data-zoom-src="images/10000000000006D90000017E26BC8CF3.png" /></td></tr></table>
+
+<p>إذا استدعت طبقة [ui] طريقة <em><span style="color: #000000">calculateSeats </span></em>في طبقة [DAO]، فإنها تمتلك بالفعل مرجعًا إلى المعلمة [<span style="color: #000000">VoterList[] </span><span style="color: #6a3e3e">voterLists</span>] التي تمررها إلى الطريقة.</p>
+<p>في السياق <em>البعيد</em>، يتم تنفيذ الطريقة المستدعية والطريقة المستدعاة في JVMs مختلفة:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000070000000191104E68B3.png" width="537" height="120" style="display:inline-block; margin:4px;width:14.22cm;height:3.182cm;" class="odt-zoomable" data-zoom-src="images/100000000000070000000191104E68B3.png" /></td></tr></table>
+
+<p>في المثال أعلاه، تعمل طبقة [ui] في JVM 1 وطبقة [business] في JVM 2 على جهازين مختلفين. لا تتواصل الطبقتان مباشرة. بينهما توجد طبقة سنسميها طبقة الاتصال [1]. تتكون هذه الطبقة من طبقة إرسال [2] وطبقة استقبال [3]. لا يتعين على المطور عمومًا كتابة طبقات الاتصال هذه. يتم إنشاؤها تلقائيًا بواسطة أدوات برمجية. تُكتب طبقة [business] كما لو كانت تعمل في نفس JVM مثل طبقة [DAO]. لذلك، لا يلزم إجراء أي تغييرات في الكود.</p>
+<p>آلية الاتصال بين طبقة [ui] وطبقة [business] هي كما يلي:</p>
+<ul>
+  <li>تستدعي طبقة [ui] طريقة <i><span style="color: #000000">calculateSeats </span></i>في طبقة [business]، وتمرر لها المعلمة [<span style="color: #000000">VoterList[] </span><i><span style="color: #6a3e3e">voterLists1</span></i>]؛
+  </li>
+  <li>يتم تمرير هذه المعلمة فعليًا إلى طبقة الإرسال [2]. ستقوم هذه الطبقة بإرسال <b>قيمة </b>المعلمة `<i><span style="color: #6a3e3e">listesElectorales1` </span></i>عبر الشبكة، وليس <b>مرجعها</b>. يعتمد الشكل الدقيق لهذه القيمة على بروتوكول الاتصال المستخدم؛
+  </li>
+  <li>ستسترد طبقة الاستقبال [3] هذه القيمة وتستخدمها لإعادة بناء كائن [<span style="color: #000000">VoterList[] </span><span style="color: #6a3e3e">voterLists2</span>] يعكس المعلمة الأولية المرسلة من طبقة [business]. لدينا الآن كائنان متطابقان (من حيث المحتوى) في جهازي JVM مختلفين: <i><span style="color: #6a3e3e">voterLists1 </span></i>و <i><span style="color: #6a3e3e">voterLists2</span></i>.
+  </li>
+  <li>ستقوم الطبقة المستقبلة بتمرير كائن <i><span style="color: #6a3e3e">listesElectorales2 </span></i>إلى طريقة <i>calculerSieges </i>في طبقة [business]، والتي ستحفظه في قاعدة البيانات. بعد هذه العملية، يشير مرجع <i><span style="color: #6a3e3e">listesElectorales2 </span></i>إلى مصفوفة من كائنات [VoterList] مع تهيئة حقول [seats, eliminated] الخاصة بها. هذا ليس هو الحال بالنسبة لكائن listesElectorales1، الذي تمتلك طبقة [ui] مرجعًا إليه. إذا أردنا أن يكون لطبقة [ui] مرجع إلى كائن listesElectorales2، فيجب علينا تمريره إلى طبقة [ui]. لذلك، نستخدم التوقيع التالي لطريقة [<span style="color: #000000">calculerSieges</span>]:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> ListeElectorale[] calculerSieges(ListeElectorale[] </span><span style="color:#6a3e3e">listesElectorales</span><span style="color:#000000">);</span></span></span>
+</code></pre></div>
+
+<ul>
+  <li>مع هذا التوقيع، ستُرجع الطريقة<i><span style="color: #000000"> `calculateSeats` </span></i>مرجع<i><span style="color: #6a3e3e"> `electoralLists2` </span></i>كنتيجة لها. تُرجع هذه النتيجة إلى الطبقة المستقبلة [3]، التي كانت قد استدعت الطبقة [business]. وستُرجع الطبقة [business] <b>قيمة </b>(وليس <b>مرجع</b>) <i><span style="color: #6a3e3e">`electoralLists2` </span></i>إلى الطبقة المرسلة [2]؛
+  </li>
+  <li>ستسترد الطبقة المرسلة [2] هذه القيمة وتستخدمها لإعادة بناء كائن [<span style="color: #000000">VoterList[] </span><i><span style="color: #6a3e3e">voterLists3</span></i>] يعكس النتيجة التي أعادتها طريقة <i><span style="color: #000000">calculateSeats</span></i> في طبقة [business].
+  </li>
+  <li>يتم إرجاع الكائن [<span style="color: #000000">VoterList[] </span><i><span style="color: #6a3e3e">voterLists3</span></i>] إلى الطريقة في طبقة [UI] التي أدى استدعاؤها لطريقة <i><span style="color: #000000">calculateSeats </span></i>في طبقة [DAO] إلى بدء هذه الآلية بأكملها؛
+  </li>
+</ul>
+
+<p>في هذه العملية، ستنتقل الكائنات من النوع [VoterList] بين الطبقتين [2] و[3]:</p>
+<ul>
+  <li>عندما تنقل الطبقة [2] قيمة كائن [VoterList] إلى الطبقة [3]، يُقال إن الكائن قد تم <b>تسلسله</b>. يعتمد الشكل الدقيق لهذا التسلسل على بروتوكول الاتصال المستخدم؛
+  </li>
+  <li>عندما تسترد الطبقة [3] قيمة كائن [VoterList] من أجل إنشاء كائن [VoterList] جديد، يُقال إن الكائن قد تم <b>إلغاء تس</b>لسله؛
+  </li>
+</ul>
+
+<p>لكي يخضع الكائن لعملية التسلسل/إلغاء التسلسل هذه، تتطلب بعض البروتوكولات أن يقوم الكائن بتنفيذ واجهة [Serializable]. هذه الواجهة هي مجرد علامة؛ ولا توجد طرق لتنفيذها. لذلك، سيتم الآن إعلان فئة [VoterList] على النحو التالي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">abstract</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000"> ListeElectorale </span><span style="font-weight:bold;color:#7f0055">implements</span><span style="color:#000000"> Serializable {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">static</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">final</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">long</span><span style="color:#000000"> </span><span style="font-weight:bold;font-style:italic;color:#0000c0">serialVersionUID</span><span style="color:#000000"> = 1L;</span></span></span>
+</code></pre></div>
+
+<ul>
+  <li>الحقل الموجود في السطر 2 إلزامي. يمكن الاحتفاظ به كما هو واستخدامه لأي فئة من النوع [Serializable].
+  </li>
+</ul>
+<p><a id="refheading1626141501930048"></a></p>
+<h2 id="43">4.3. <span style="color: #4f81bd">فئة الاستثناء</span></h2>
+<p>لنعد إلى واجهة طبقة [DAO]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006E600000186C15E5B12.png" width="530" height="117" style="display:inline-block; margin:4px;width:14.019cm;height:3.096cm;" class="odt-zoomable" data-zoom-src="images/10000000000006E600000186C15E5B12.png" /></td></tr></table>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">interface</span><span style="color:#000000"> </span><a id="ielectionsdao1"></a><span style="color:#000000">IElectionsDao</span><span style="color:#000000"> {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">double</span><span style="color:#000000"> getSeuilElectoral();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">int</span><span style="color:#000000"> getNbSiegesAPourvoir();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> ListeElectorale[] getListesElectorales();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> setListesElectorales(ListeElectorale[] listesElectorales);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p>تعمل هذه الطرق مع قاعدة بيانات وقد تواجه أخطاء متنوعة، مثل عدم توفر قاعدة البيانات. عند كتابة طريقة، يجب عليك دائمًا معالجة حالات الخطأ. وعادةً ما يتم الإشارة إلى هذه الحالات بواسطة استثناء. لقد سبق أن تعرفنا على فئة [ElectionsException] في <a href="#refheading317691812363491"><u><span style="color: #0563c1">القسم 3.3</span></u></a>. سنستمر في استخدامها ولكن سنقوم بتحسينها على النحو التالي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> ...;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">import</span><span style="color:#000000"> java.io.Serializable;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">import</span><span style="color:#000000"> java.util.ArrayList;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">import</span><span style="color:#000000"> java.util.List;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// exception class for the Elections application</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// the exception is uncontrolled</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000"> ElectionsException </span><span style="font-weight:bold;color:#7f0055">extends</span><span style="color:#000000"> RuntimeException </span><span style="font-weight:bold;color:#7f0055">implements</span><span style="color:#000000"> Serializable {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// serial ID</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">static</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">final</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">long</span><span style="color:#000000"> </span><span style="font-weight:bold;font-style:italic;color:#0000c0">serialVersionUID</span><span style="color:#000000"> = 1L;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// local fields</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">int</span><span style="color:#000000"> </span><span style="color:#0000c0">code</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> List&lt;String&gt; </span><span style="color:#0000c0">erreurs</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// manufacturers</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> ElectionsException() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">super</span><span style="color:#000000">();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> ElectionsException(</span><span style="font-weight:bold;color:#7f0055">int</span><span style="color:#000000"> </span><span style="color:#6a3e3e">code</span><span style="color:#000000">, Throwable </span><span style="color:#6a3e3e">e</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// parent</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">super</span><span style="color:#000000">(</span><span style="color:#6a3e3e">e</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// local</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">code</span><span style="color:#000000"> = </span><span style="color:#6a3e3e">code</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">erreurs</span><span style="color:#000000"> = getErreursForException(</span><span style="color:#6a3e3e">e</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> ElectionsException(</span><span style="font-weight:bold;color:#7f0055">int</span><span style="color:#000000"> </span><span style="color:#6a3e3e">code</span><span style="color:#000000">, String </span><span style="color:#6a3e3e">message</span><span style="color:#000000">, Throwable </span><span style="color:#6a3e3e">e</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// parent</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">super</span><span style="color:#000000">(</span><span style="color:#6a3e3e">message</span><span style="color:#000000">,</span><span style="color:#6a3e3e">e</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// local</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">code</span><span style="color:#000000"> = </span><span style="color:#6a3e3e">code</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">erreurs</span><span style="color:#000000"> = getErreursForException(</span><span style="color:#6a3e3e">e</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> ElectionsException(</span><span style="font-weight:bold;color:#7f0055">int</span><span style="color:#000000"> </span><span style="color:#6a3e3e">code</span><span style="color:#000000">, String </span><span style="color:#6a3e3e">message</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// parent</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">super</span><span style="color:#000000">(</span><span style="color:#6a3e3e">message</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// local</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">code</span><span style="color:#000000"> = </span><span style="color:#6a3e3e">code</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        List&lt;String&gt; </span><span style="color:#6a3e3e">erreurs</span><span style="color:#000000"> = </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> ArrayList&lt;&gt;();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#6a3e3e">erreurs</span><span style="color:#000000">.add(</span><span style="color:#6a3e3e">message</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">erreurs</span><span style="color:#000000"> = </span><span style="color:#6a3e3e">erreurs</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> ElectionsException(</span><span style="font-weight:bold;color:#7f0055">int</span><span style="color:#000000"> </span><span style="color:#6a3e3e">code</span><span style="color:#000000">, List&lt;String&gt; </span><span style="color:#6a3e3e">erreurs</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// parent</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">super</span><span style="color:#000000">();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// local</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">code</span><span style="color:#000000"> = </span><span style="color:#6a3e3e">code</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">erreurs</span><span style="color:#000000"> = </span><span style="color:#6a3e3e">erreurs</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// list of exception error messages</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> List&lt;String&gt; getErreursForException(Throwable </span><span style="color:#6a3e3e">th</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// retrieve the list of exception error messages</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        Throwable </span><span style="color:#6a3e3e">cause</span><span style="color:#000000"> = </span><span style="color:#6a3e3e">th</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        List&lt;String&gt; </span><span style="color:#6a3e3e">erreurs</span><span style="color:#000000"> = </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> ArrayList&lt;&gt;();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">while</span><span style="color:#000000"> (</span><span style="color:#6a3e3e">cause</span><span style="color:#000000"> != </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// the message is retrieved only if it is !=null and not blank</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            String </span><span style="color:#6a3e3e">message</span><span style="color:#000000"> = </span><span style="color:#6a3e3e">cause</span><span style="color:#000000">.getMessage();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">if</span><span style="color:#000000"> (</span><span style="color:#6a3e3e">message</span><span style="color:#000000"> != </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#6a3e3e">message</span><span style="color:#000000"> = </span><span style="color:#6a3e3e">message</span><span style="color:#000000">.trim();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="font-weight:bold;color:#7f0055">if</span><span style="color:#000000"> (</span><span style="color:#6a3e3e">message</span><span style="color:#000000">.length() != 0) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    </span><span style="color:#6a3e3e">erreurs</span><span style="color:#000000">.add(</span><span style="color:#6a3e3e">message</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// next cause</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#6a3e3e">cause</span><span style="color:#000000"> = </span><span style="color:#6a3e3e">cause</span><span style="color:#000000">.getCause();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return</span><span style="color:#000000"> </span><span style="color:#6a3e3e">erreurs</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// getters and setters</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطران 16-17: نوع [ElectionsException] يغلف:
+    <ul>
+      <li>رمز خطأ، السطر 16؛
+      </li>
+      <li>قائمة برسائل الخطأ، السطر 17؛
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>تدعم الفئة خمسة منشئات:</p>
+<ul>
+  <li><span style="color: #000000">السطر 20: </span><b><span style="color: #000000">ElectionsException</span></b><span style="color: #000000">()</span>
+  </li>
+  <li><span style="color: #000000">السطر 24: </span><b><span style="color: #000000">ElectionsException</span></b><span style="color: #000000">(</span><b><span style="color: #7f0055">int </span></b><span style="color: #6a3e3e">code</span><span style="color: #000000">, Throwable </span><span style="color: #6a3e3e">e</span><span style="color: #000000">): المعلمة الثانية من النوع [Throwable]، وهي الفئة الفائقة لفئة [Exception]. يسمح هذا المنشئ بتغليف الاستثناء </span><b><span style="color: #000000">e </span></b><span style="color: #000000">مع رمز الخطأ. يسمح لك النوع [Throwable] (وبالتالي النوع Exception) بتغليف استثناء واحد أو أكثر. الفكرة هي:</span>
+    <ul>
+      <li><span style="color: #000000">التقاط الاستثناء الذي يحدث؛</span>
+      </li>
+      <li><span style="color: #000000">إثرائه برسالة عن طريق تغليفه في استثناء جديد؛</span>
+      </li>
+      <li><span style="color: #000000">إلقاء الاستثناء الجديد؛</span>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>try{
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>...
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>}catch (Exception1 e1){
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>   throw new Exception2(«un message»,e1);
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>}
+</code></pre></div>
+<p><span style="color: #000000">يحدث التغليف في السطر 34 عبر عبارة [</span><strong><span style="color: #7f0055">super</span></strong><span style="color: #000000">(</span><span style="color: #6a3e3e">message</span><span style="color: #000000">, </span><span style="color: #6a3e3e">e</span><span style="color: #000000">)]. يمكن تكرار عملية التغليف هذه، ويمكن إثراء الاستثناء الأولي برسائل مختلفة. ويُشار إلى هذا باسم مكدس الاستثناءات. تتيح لك الطريقة [</span><strong><span style="color: #7f0055">private </span></strong><span style="color: #000000">List&lt;String&gt; getErrorsForException(Throwable </span><span style="color: #6a3e3e">th</span><span style="color: #000000">)] استرداد الرسائل المختلفة المرتبطة بالاستثناءات المغلفة:</span></p>
+<ul>
+  <li><span style="color: #000000">(تابع)</span>
+    <ul>
+      <li><span style="color: #000000">(تابع)</span>
+        <ul>
+          <li><span style="color: #000000">يتم الحصول على الاستثناء المغلف باستخدام طريقة Throwable [Throwable].getCause();</span>
+          </li>
+          <li><span style="color: #000000">يتم الحصول على الرسالة المرتبطة بالاستثناء عبر الطريقة String [Throwable].getMessage();</span>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><span style="color: #000000">السطران 28-29: يتم إنشاء الحقول [code، errors]؛</span>
+  </li>
+  <li><span style="color: #000000">السطر 32: </span><b><span style="color: #7f0055">public </span></b><span style="color: #000000">ElectionsException(</span><b><span style="color: #7f0055">int </span></b><span style="color: #6a3e3e">code</span><span style="color: #000000">, String </span><span style="color: #6a3e3e">message</span><span style="color: #000000">, Throwable </span><span style="color: #6a3e3e">e</span><span style="color: #000000">): هذا المنشئ مشابه للمنشئ السابق، باستثناء أنه يثري الاستثناء الذي سيغلفه برمز ورسالة؛</span>
+  </li>
+  <li><span style="color: #000000">السطر 40: </span><b><span style="color: #7f0055">public </span></b><span style="color: #000000">ElectionsException(</span><b><span style="color: #7f0055">int </span></b><span style="color: #6a3e3e">code</span><span style="color: #000000">, String </span><span style="color: #6a3e3e">message</span><span style="color: #000000">): منشئ بدون تغليف الاستثناء؛</span>
+  </li>
+  <li><span style="color: #000000">السطر 50: </span><b><span style="color: #7f0055">public </span></b><span style="color: #000000">ElectionsException(</span><b><span style="color: #7f0055">int </span></b><span style="color: #6a3e3e">code</span><span style="color: #000000">, List&lt;String&gt; </span><span style="color: #6a3e3e">errors</span><span style="color: #000000">): مُنشئ بدون تغليف للاستثناء أو رسالة؛</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">يمكن استخدام فئة [ElectionsException] على النحو التالي:</span></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>try{
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>...
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>}catch (Exception1 e1){
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>   throw new ElectionsException(un_code,un_message,e1);
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>}
+</code></pre></div>
+<p><span style="color: #000000">حيث قد تكون الرسالة موجودة أو غير موجودة. بمجرد إنشائها، لا يُقصد من استثناء [ElectionsException] أن يغلف استثناءات جديدة. في المثال أعلاه، يغلف الاستثناء </span><em><span style="color: #000000">e1 </span></em><span style="color: #000000">والاستثناءات التي يغلفها</span><em><span style="color: #000000"> e1</span></em><span style="color: #000000">. ولا توجد تغليفات أخرى بعد ذلك.</span></p>
+<p><span style="color: #000000">يمكن أيضًا استخدام فئة [ElectionsException] على النحو التالي:</span></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>//<span class="w"> </span>code<span class="w"> </span>susceptible<span class="w"> </span>de<span class="w"> </span>rencontrer<span class="w"> </span>un<span class="w"> </span>cas<span class="w"> </span>d<span class="s1">&#39;erreur (mais pas sous la forme d&#39;</span>une<span class="w"> </span>exception<span class="o">)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>...
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">if</span><span class="o">(</span>erreur<span class="o">){</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span>throw<span class="w"> </span>new<span class="w"> </span>ElectionsException<span class="o">(</span>un_code,un_message<span class="o">)</span><span class="p">;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="o">}</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        هذا البرنامج التعليمي الذي كتبه <strong>Serge Tahé</strong> متاح للجمهور وفقًا لشروط
+<em>Creative Commons Attribution – Non-Commercial –
+ShareAlike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
