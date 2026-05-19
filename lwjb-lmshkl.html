@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1001,16 +1003,16 @@
 <p><a id="refheading317631812363491"></a></p>
 <h1 id="2">2. <span style="color: #365f91">[الواجب]: المشكلة</span></h1>
 <p><strong>الكلمات المفتاحية</strong>: الخوارزميات، أساسيات جافا: المصفوفات، الإدخال/الإخراج، الحلقات، الاختبار، معالجة الاستثناءات</p>
-<p><strong>قراءات موصى بها</strong>: الفصل 1 من [<a href="https://stahe.github.io/ar-java-sept-1998/"><u><span style="color: #0563c1">ref1</span></u></a>]: أساسيات لغة جافا</p>
+<p><strong>قراءات موصى بها</strong>: الفصل 1 من [<a href="https://stahe.github.io/ar-java-sept-1998/"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">ref1</bdi></span></u></a>]: أساسيات لغة جافا</p>
 <p><a id="refheading17453469506693"></a></p>
 <h2 id="21">2.1. <span style="color: #4f81bd">الدعم</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000C70000007252CE7914.png" width="139" height="80" style="display:inline-block; margin:4px;width:3.679cm;height:2.108cm;" class="odt-zoomable" data-zoom-src="images/10000000000000C70000007252CE7914.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>يحتوي المجلد [support / chap-02] على الخوارزمية المطلوب تنفيذها بلغة C# و Java.</p>
+<p>يحتوي المجلد [<bdi dir="ltr" class="odt-ltr-term">support</bdi> / <bdi dir="ltr" class="odt-ltr-term">chap-02</bdi>] على الخوارزمية المطلوب تنفيذها بلغة <bdi dir="ltr" class="odt-ltr-term">C#</bdi> و <bdi dir="ltr" class="odt-ltr-term">Java.</bdi></p>
 <p><a id="refheading17453669506693"></a></p>
 <h2 id="22">2.2. <span style="color: #4f81bd">المشكلة المطلوب حلها</span></h2>
-<p>نريد كتابة برنامج يمكنه، في ليلة الانتخابات، حساب عدد المقاعد التي فازت بها قوائم المرشحين المختلفة. لاحقًا، سنكتشف طريقة حساب المقاعد في انتخابات التمثيل النسبي باستخدام المتوسط الأعلى، كما هو موضح في مقال نُشر في صحيفة Ouest-France في 15 مارس 1986.</p>
-<p>سنكتب تطبيق &quot;كونسول&quot; بلغة Java، أي تطبيق يستخدم <strong>لوحة</strong> المفاتيح <strong>والشاشة</strong> للتفاعل مع المستخدم. سيطلب التطبيق من المستخدم المعلومات التالية (التي يتم إدخالها عبر <strong>لوحة المفاتيح</strong>):</p>
+<p>نريد كتابة برنامج يمكنه، في ليلة الانتخابات، حساب عدد المقاعد التي فازت بها قوائم المرشحين المختلفة. لاحقًا، سنكتشف طريقة حساب المقاعد في انتخابات التمثيل النسبي باستخدام المتوسط الأعلى، كما هو موضح في مقال نُشر في صحيفة <bdi dir="ltr" class="odt-ltr-term">Ouest-France</bdi> في 15 مارس 1986.</p>
+<p>سنكتب تطبيق &quot;كونسول&quot; بلغة <bdi dir="ltr" class="odt-ltr-term">Java</bdi>، أي تطبيق يستخدم <strong>لوحة</strong> المفاتيح <strong>والشاشة</strong> للتفاعل مع المستخدم. سيطلب التطبيق من المستخدم المعلومات التالية (التي يتم إدخالها عبر <strong>لوحة المفاتيح</strong>):</p>
 <ul>
   <li>عدد المقاعد المطلوب شغلها
   </li>
@@ -1023,17 +1025,17 @@
 <p>باستخدام هذه المعلومات، يحسب التطبيق عدد المقاعد التي فازت بها كل قائمة ويعرضها على <strong>الشاشة</strong> بالصيغة التالية:</p>
 <ul>
 <li>
-<p>فازت القائمة [X1] بـ [N1] مقعدًا</p>
+<p>فازت القائمة [<bdi dir="ltr" class="odt-ltr-term">X1</bdi>] بـ [<bdi dir="ltr" class="odt-ltr-term">N1</bdi>] مقعدًا</p>
 </li>
 <li>
-<p>فازت القائمة [X2] بـ [N2] مقعدًا</p>
+<p>فازت القائمة [<bdi dir="ltr" class="odt-ltr-term">X2</bdi>] بـ [<bdi dir="ltr" class="odt-ltr-term">N2</bdi>] مقعدًا</p>
 </li>
 <li>
 <p>...</p>
 </li>
 </ul>
-<p>حيث [Xi] هو اسم القائمة رقم i و[Ni] هو عدد المقاعد التي فازت بها.</p>
-<p>مقال صحيفة Ouest-France الصادر في 15 مارس 1986:</p>
+<p>حيث [<bdi dir="ltr" class="odt-ltr-term">Xi</bdi>] هو اسم القائمة رقم <bdi dir="ltr" class="odt-ltr-term">i</bdi> و[<bdi dir="ltr" class="odt-ltr-term">Ni</bdi>] هو عدد المقاعد التي فازت بها.</p>
+<p>مقال صحيفة <bdi dir="ltr" class="odt-ltr-term">Ouest-France</bdi> الصادر في 15 مارس 1986:</p>
 <p><img src="images/100000000000092900000861EF460CA8.jpg" width="600" height="549" style="width:15.88cm;height:14.526cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000092900000861EF460CA8.jpg" /></p>
 <p><img src="images/100000000000081100000A684A6990EF.jpg" width="529" height="682" style="width:13.989cm;height:18.046cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000081100000A684A6990EF.jpg" /></p>
 <p><a id="refheading17453869506693"></a></p>
@@ -1295,18 +1297,18 @@
 </code></pre></div></td></tr></table></div>
 <p><a id="refheading17454069506693"></a></p>
 <h2 id="24">2.4. <span style="color: #4f81bd">المهام المطلوبة</span></h2>
-<p><strong>السؤال 1</strong>: ترجم الخوارزمية إلى لغة C#. قم بتنفيذها باستخدام Visual Studio.</p>
-<p><strong>السؤال 2</strong>: ترجم الخوارزمية إلى لغة Java، مستوحياً من كود C#. قم بتنفيذ برنامج Java في بيئة Eclipse مشابهة لما يلي:</p>
+<p><strong>السؤال 1</strong>: ترجم الخوارزمية إلى لغة <bdi dir="ltr" class="odt-ltr-term">C#.</bdi> قم بتنفيذها باستخدام <bdi dir="ltr" class="odt-ltr-term">Visual Studio.</bdi></p>
+<p><strong>السؤال 2</strong>: ترجم الخوارزمية إلى لغة <bdi dir="ltr" class="odt-ltr-term">Java</bdi>، مستوحياً من كود <bdi dir="ltr" class="odt-ltr-term">C#.</bdi> قم بتنفيذ برنامج <bdi dir="ltr" class="odt-ltr-term">Java</bdi> في بيئة <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> مشابهة لما يلي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000577000002A430F54DB0.png" width="680" height="329" style="display:inline-block; margin:4px;width:17.999cm;height:8.698cm;" class="odt-zoomable" data-zoom-src="images/1000000000000577000002A430F54DB0.png" /></td></tr></table>
 
 <ul>
-  <li>[1]: اسم المشروع هو [elections-01]
+  <li>[1]: اسم المشروع هو [<bdi dir="ltr" class="odt-ltr-term">elections-01</bdi>]
   </li>
-  <li>[2]: سيتم وضع التطبيق في حزمة، وهنا [istia.st.elections]
+  <li>[2]: سيتم وضع التطبيق في حزمة، وهنا [<bdi dir="ltr" class="odt-ltr-term">istia.st.elections</bdi>]
   </li>
-  <li>[3]: [MainElections.java] هو شفرة المصدر للتطبيق المكتوب في القسم السابق
+  <li>[3]: [<bdi dir="ltr" class="odt-ltr-term">MainElections.java</bdi>] هو شفرة المصدر للتطبيق المكتوب في القسم السابق
   </li>
-  <li>[4]: يتم تنفيذ فئة [MainElections]
+  <li>[4]: يتم تنفيذ فئة [<bdi dir="ltr" class="odt-ltr-term">MainElections</bdi>]
   </li>
 </ul>
 

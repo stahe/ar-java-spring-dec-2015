@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -918,16 +920,16 @@
 
 
 <p><a id="refheading1192901799226695"></a></p>
-<h1 id="19-td-cors">19. <span style="color: #365f91">[TD] مشاركة الموارد عبر الأصول (CORS)</span></h1>
-<p><strong>الكلمات المفتاحية</strong>: CORS (مشاركة الموارد عبر الأصول).</p>
+<h1 id="19-td-cors">19. <span style="color: #365f91">[<bdi dir="ltr" class="odt-ltr-term">TD</bdi>] مشاركة الموارد عبر الأصول (<bdi dir="ltr" class="odt-ltr-term">CORS</bdi>)</span></h1>
+<p><strong>الكلمات المفتاحية</strong>: <bdi dir="ltr" class="odt-ltr-term">CORS</bdi> (مشاركة الموارد عبر الأصول).</p>
 <p>هنا، سننشئ مشروعًا جديدًا حتى تقبل خدمة الويب الخاصة بالانتخابات الآمنة الطلبات عبر النطاقات.</p>
-<p>مشروع Eclipse هو كما يلي:</p>
+<p>مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> هو كما يلي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001860000015FD7541C97.png" width="273" height="246" style="display:inline-block; margin:4px;width:7.22cm;height:6.498cm;" class="odt-zoomable" data-zoom-src="images/10000000000001860000015FD7541C97.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
 <p><strong>المهمة</strong>: اتبع الخطوات الموضحة في <a href="#refheading4853838046689"><u><span style="color: #0563c1">القسم 18.9</span></u></a> لإنشاء هذا المشروع.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
-<p>بمجرد إنشاء هذا المشروع، إليك ما يمكنك فعله باستخدام عميل HTML الموصوف في <a href="#refheading196717811596012"><u><span style="color: #0563c1">القسم 18.2</span></u></a>. في بداية الطلبات، تكون قاعدة بيانات [dbelections] كما يلي:</p>
+<p>بمجرد إنشاء هذا المشروع، إليك ما يمكنك فعله باستخدام عميل <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> الموصوف في <a href="#refheading196717811596012"><u><span style="color: #0563c1">القسم 18.2</span></u></a>. في بداية الطلبات، تكون قاعدة بيانات [<bdi dir="ltr" class="odt-ltr-term">dbelections</bdi>] كما يلي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D90000003ECAC75DD1.png" width="152" height="43" style="display:inline-block; margin:4px;width:4.02cm;height:1.148cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D90000003ECAC75DD1.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FB000000D64999C1AB.png" width="176" height="150" style="display:inline-block; margin:4px;width:4.65cm;height:3.965cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FB000000D64999C1AB.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002DA00000186C8EB9E8E.png" width="511" height="273" style="display:inline-block; margin:4px;width:13.52cm;height:7.223cm;" class="odt-zoomable" data-zoom-src="images/10000000000002DA00000186C8EB9E8E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
@@ -936,13 +938,13 @@
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000483000002F8B945C78F.png" width="578" height="380" style="display:inline-block; margin:4px;width:15.281cm;height:10.054cm;" class="odt-zoomable" data-zoom-src="images/1000000000000483000002F8B945C78F.png" /></td></tr></table>
 
-<p>في [1]، تكون قيمة JSON المنشورة كما يلي:</p>
+<p>في [1]، تكون قيمة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> المنشورة كما يلي:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[{&quot;id&quot;:1,&quot;version&quot;:8,&quot;nom&quot;:&quot;A&quot;,&quot;voix&quot;:32000,&quot;sieges&quot;:0,&quot;elimine&quot;:false},{&quot;id&quot;:2,&quot;version&quot;:12,&quot;nom&quot;:&quot;B&quot;,&quot;voix&quot;:25000,&quot;sieges&quot;:0,&quot;elimine&quot;:false},{&quot;id&quot;:3,&quot;version&quot;:13,&quot;nom&quot;:&quot;C&quot;,&quot;voix&quot;:16000,&quot;sieges&quot;:0,&quot;elimine&quot;:false},{&quot;id&quot;:4,&quot;version&quot;:12,&quot;nom&quot;:&quot;D&quot;,&quot;voix&quot;:12000,&quot;sieges&quot;:0,&quot;elimine&quot;:false},{&quot;id&quot;:5,&quot;version&quot;:13,&quot;nom&quot;:&quot;E&quot;,&quot;voix&quot;:8000,&quot;sieges&quot;:0,&quot;elimine&quot;:false},{&quot;id&quot;:6,&quot;version&quot;:12,&quot;nom&quot;:&quot;F&quot;,&quot;voix&quot;:4500,&quot;sieges&quot;:0,&quot;elimine&quot;:false},{&quot;id&quot;:7,&quot;version&quot;:12,&quot;nom&quot;:&quot;G&quot;,&quot;voix&quot;:2500,&quot;sieges&quot;:0,&quot;elimine&quot;:false}]
 </code></pre></div>
-<p>في [2]، تم حساب حقول [seats] و [eliminated]. ننسخ حقل [body] من [2] إلى [3] أدناه:</p>
+<p>في [2]، تم حساب حقول [<bdi dir="ltr" class="odt-ltr-term">seats</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">eliminated</bdi>]. ننسخ حقل [<bdi dir="ltr" class="odt-ltr-term">body</bdi>] من [2] إلى [3] أدناه:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003960000025ADA871EE0.png" width="459" height="301" style="display:inline-block; margin:4px;width:12.144cm;height:7.964cm;" class="odt-zoomable" data-zoom-src="images/10000000000003960000025ADA871EE0.png" /></td></tr></table>
 
-<p>تصبح قاعدة بيانات [dbelections] كما يلي:</p>
+<p>تصبح قاعدة بيانات [<bdi dir="ltr" class="odt-ltr-term">dbelections</bdi>] كما يلي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D90000003ECAC75DD1.png" width="152" height="43" style="display:inline-block; margin:4px;width:4.02cm;height:1.148cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D90000003ECAC75DD1.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000010F000000C74D72A591.png" width="190" height="139" style="display:inline-block; margin:4px;width:5.02cm;height:3.687cm;" class="odt-zoomable" data-zoom-src="images/100000000000010F000000C74D72A591.png" /></td></tr></table>
 
 

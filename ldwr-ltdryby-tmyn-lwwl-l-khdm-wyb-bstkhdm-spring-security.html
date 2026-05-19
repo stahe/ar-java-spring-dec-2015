@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1270,45 +1272,45 @@
 
 
 <p><a id="refheading300919216381043"></a></p>
-<h1 id="16-spring-security">16. <span style="color: #365f91">[الدورة التدريبية]: تأمين الوصول إلى خدمة ويب باستخدام Spring Security</span></h1>
-<p><strong>الكلمات المفتاحية</strong>: بنية متعددة الطبقات، Spring، حقن التبعية، خدمة ويب آمنة / JSON، العميل / الخادم</p>
+<h1 id="16-spring-security">16. <span style="color: #365f91">[الدورة التدريبية]: تأمين الوصول إلى خدمة ويب باستخدام <bdi dir="ltr" class="odt-ltr-term">Spring Security</bdi></span></h1>
+<p><strong>الكلمات المفتاحية</strong>: بنية متعددة الطبقات، <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>، حقن التبعية، خدمة ويب آمنة / <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>، العميل / الخادم</p>
 <p><a id="refheading1217221037674463"></a></p>
 <h2 id="161">16.1. <span style="color: #4f81bd">الدعم</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000DB0000009816BDC0B3.png" width="153" height="107" style="display:inline-block; margin:4px;width:4.06cm;height:2.819cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DB0000009816BDC0B3.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E100000075F57A4DEE.png" width="158" height="82" style="display:inline-block; margin:4px;width:4.17cm;height:2.168cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E100000075F57A4DEE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>يمكن العثور على مشاريع هذا الفصل في المجلد [support / chap-16]. يُستخدم البرنامج النصي SQL لإنشاء قاعدة البيانات المطلوبة للاختبار.</p>
+<p>يمكن العثور على مشاريع هذا الفصل في المجلد [<bdi dir="ltr" class="odt-ltr-term">support</bdi> / <bdi dir="ltr" class="odt-ltr-term">chap-16</bdi>]. يُستخدم البرنامج النصي <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> لإنشاء قاعدة البيانات المطلوبة للاختبار.</p>
 <p><a id="refheading995114549776991"></a></p>
-<h2 id="162-spring-security">16.2. <span style="color: #4f81bd">دور Spring Security في تطبيق الويب</span></h2>
-<p>دعونا نضع Spring Security في سياق تطوير تطبيق ويب. غالبًا ما يتم بناؤه على بنية متعددة الطبقات مثل ما يلي:</p>
+<h2 id="162-spring-security">16.2. <span style="color: #4f81bd">دور <bdi dir="ltr" class="odt-ltr-term">Spring Security</bdi> في تطبيق الويب</span></h2>
+<p>دعونا نضع <bdi dir="ltr" class="odt-ltr-term">Spring Security</bdi> في سياق تطوير تطبيق ويب. غالبًا ما يتم بناؤه على بنية متعددة الطبقات مثل ما يلي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000057D00000147B2236C80.png" width="680" height="158" style="display:inline-block; margin:4px;width:17.999cm;height:4.189cm;" class="odt-zoomable" data-zoom-src="images/100000000000057D00000147B2236C80.png" /></td></tr></table>
 
 <ul>
-  <li>تسمح طبقة [<b>Spring Security</b>] بالوصول إلى طبقة [الويب] للمستخدمين المصرح لهم فقط.
+  <li>تسمح طبقة [<b><bdi dir="ltr" class="odt-ltr-term">Spring Security</bdi></b>] بالوصول إلى طبقة [الويب] للمستخدمين المصرح لهم فقط.
   </li>
 </ul>
 
 <p><a id="refheading9319894989336"></a></p>
-<h2 id="163-spring-security">16.3. <span style="color: #4f81bd">دليل تعليمي حول Spring Security</span></h2>
-<p><a id="refheading1623631200878134"></a>سنقوم مرة أخرى باستيراد دليل Spring باتباع الخطوات من 1 إلى 3 أدناه:</p>
+<h2 id="163-spring-security">16.3. <span style="color: #4f81bd">دليل تعليمي حول <bdi dir="ltr" class="odt-ltr-term">Spring Security</bdi></span></h2>
+<p><a id="refheading1623631200878134"></a>سنقوم مرة أخرى باستيراد دليل <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> باتباع الخطوات من 1 إلى 3 أدناه:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004A2000002E0C8AE7C87.png" width="593" height="368" style="display:inline-block; margin:4px;width:15.69cm;height:9.737cm;" class="odt-zoomable" data-zoom-src="images/10000000000004A2000002E0C8AE7C87.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F5000000FD9BD31E82.png" width="172" height="177" style="display:inline-block; margin:4px;width:4.54cm;height:4.688cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F5000000FD9BD31E82.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p>يتألف المشروع من العناصر التالية:</p>
 <ul>
-  <li>في مجلد [templates]، ستجد صفحات HTML الخاصة بالمشروع؛
+  <li>في مجلد [<bdi dir="ltr" class="odt-ltr-term">templates</bdi>]، ستجد صفحات <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> الخاصة بالمشروع؛
   </li>
-  <li>[Application]: هي الفئة القابلة للتنفيذ للمشروع؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">Application</bdi>]: هي الفئة القابلة للتنفيذ للمشروع؛
   </li>
-  <li>[MvcConfig]: هي فئة تكوين Spring MVC؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">MvcConfig</bdi>]: هي فئة تكوين <bdi dir="ltr" class="odt-ltr-term">Spring MVC</bdi>؛
   </li>
-  <li>[WebSecurityConfig]: هي فئة تكوين Spring Security؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">WebSecurityConfig</bdi>]: هي فئة تكوين <bdi dir="ltr" class="odt-ltr-term">Spring Security</bdi>؛
   </li>
 </ul>
 
 <p><a id="refheading9321894989336"></a></p>
-<h3 id="1631-maven">16.3.1. <span style="color: #4f81bd"><span style="color: #4f81bd">تكوين Maven</span></span></h3>
-<p><a id="refheading1623651200878134"></a>المشروع [3] هو مشروع Maven. دعونا نفحص ملف [pom.xml] الخاص به لنرى تبعياته:</p>
+<h3 id="1631-maven">16.3.1. <span style="color: #4f81bd"><span style="color: #4f81bd">تكوين <bdi dir="ltr" class="odt-ltr-term">Maven</bdi></span></span></h3>
+<p><a id="refheading1623651200878134"></a>المشروع [3] هو مشروع <bdi dir="ltr" class="odt-ltr-term">Maven.</bdi> دعونا نفحص ملف [<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>] الخاص به لنرى تبعياته:</p>
 <p><a id="refheading570831429907001"></a></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;?</span><span style="color:#3f7f7f">xml</span> <span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;1.0&quot;</span> <span style="color:#7f007f">encoding</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;UTF-8&quot;</span><span style="color:#008080">?&gt;</span></span></span>
@@ -1356,20 +1358,20 @@
 </code></pre></div>
 
 <ul>
-  <li>الأسطر 10–14: المشروع هو مشروع Spring Boot؛
+  <li>الأسطر 10–14: المشروع هو مشروع <bdi dir="ltr" class="odt-ltr-term">Spring Boot</bdi>؛
   </li>
-  <li>الأسطر 17–20: التبعية لإطار عمل [Thymeleaf]؛
+  <li>الأسطر 17–20: التبعية لإطار عمل [<bdi dir="ltr" class="odt-ltr-term">Thymeleaf</bdi>]؛
   </li>
-  <li>الأسطر 22–25: التبعية لإطار عمل Spring Security؛
+  <li>الأسطر 22–25: التبعية لإطار عمل <bdi dir="ltr" class="odt-ltr-term">Spring Security</bdi>؛
   </li>
 </ul>
 
 <p><a id="refheading9323894989336"></a></p>
-<h3 id="1632-thymeleaf">16.3.2. <span style="color: #4f81bd">طرق عرض Thymeleaf</span></h3>
+<h3 id="1632-thymeleaf">16.3.2. <span style="color: #4f81bd">طرق عرض <bdi dir="ltr" class="odt-ltr-term">Thymeleaf</bdi></span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000B7000000654C02E8DD.png" width="128" height="71" style="display:inline-block; margin:4px;width:3.39cm;height:1.871cm;" class="odt-zoomable" data-zoom-src="images/10000000000000B7000000654C02E8DD.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><a id="refheading1623671200878134"></a></p>
-<p><a id="refheading570851429907001"></a>تبدو طريقة العرض [home.html] كما يلي:</p>
+<p><a id="refheading570851429907001"></a>تبدو طريقة العرض [<bdi dir="ltr" class="odt-ltr-term">home.html</bdi>] كما يلي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000146000000CD6E9E44F9.png" width="212" height="133" style="display:inline-block; margin:4px;width:5.609cm;height:3.528cm;" class="odt-zoomable" data-zoom-src="images/1000000000000146000000CD6E9E44F9.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
@@ -1391,11 +1393,11 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 12: ستقوم السمة [<span style="color: #7f007f">th:</span><span style="color: #000000">href=</span><i><span style="color: #2a00ff">&quot;@{/hello}&quot;</span></i>] بإنشاء السمة [href] لعلامة [&lt;a&gt;]. <span style="color: #000000">ستقوم القيمة [</span><i><span style="color: #2a00ff">@{/hello}</span></i><span style="color: #000000">] بإنشاء المسار [&lt;context&gt;/hello]، حيث [context] هو سياق تطبيق الويب؛</span>
+  <li>السطر 12: ستقوم السمة [<span style="color: #7f007f"><bdi dir="ltr" class="odt-ltr-term">th:</bdi></span><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">href</bdi>=</span><i><span style="color: #2a00ff">&quot;@{/<bdi dir="ltr" class="odt-ltr-term">hello</bdi>}&quot;</span></i>] بإنشاء السمة [<bdi dir="ltr" class="odt-ltr-term">href</bdi>] لعلامة [&lt;<bdi dir="ltr" class="odt-ltr-term">a</bdi>&gt;]. <span style="color: #000000">ستقوم القيمة [</span><i><span style="color: #2a00ff">@{/<bdi dir="ltr" class="odt-ltr-term">hello</bdi>}</span></i><span style="color: #000000">] بإنشاء المسار [&lt;<bdi dir="ltr" class="odt-ltr-term">context</bdi>&gt;/<bdi dir="ltr" class="odt-ltr-term">hello</bdi>]، حيث [<bdi dir="ltr" class="odt-ltr-term">context</bdi>] هو سياق تطبيق الويب؛</span>
   </li>
 </ul>
 
-<p>فيما يلي كود HTML الذي تم إنشاؤه:</p>
+<p>فيما يلي كود <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> الذي تم إنشاؤه:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;!</span><span style="color:#3f7f7f">DOCTYPE</span> <span style="color:#008080">html&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1415,7 +1417,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">html</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
-<p>تبدو طريقة العرض [hello.html] كما يلي:</p>
+<p>تبدو طريقة العرض [<bdi dir="ltr" class="odt-ltr-term">hello.html</bdi>] كما يلي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000144000000D545362419.png" width="212" height="139" style="display:inline-block; margin:4px;width:5.609cm;height:3.687cm;" class="odt-zoomable" data-zoom-src="images/1000000000000144000000D545362419.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
@@ -1436,13 +1438,13 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 9: <span style="color: #000000">ستقوم السمة [</span><span style="color: #7f007f">th:</span><span style="color: #000000">inline=</span><i><span style="color: #2a00ff">&quot;text&quot;</span></i><span style="color: #000000">] بإنشاء نص العلامة [&lt;h1&gt;]. يحتوي هذا النص على تعبير $ يجب تقييمه. </span>العنصر <span style="color: #000000">[[${#httpServletRequest.remoteUser}]] هو قيمة السمة [RemoteUser] لطلب HTTP الحالي. هذا هو اسم المستخدم الذي قام بتسجيل الدخول؛</span>
+  <li>السطر 9: <span style="color: #000000">ستقوم السمة [</span><span style="color: #7f007f"><bdi dir="ltr" class="odt-ltr-term">th:</bdi></span><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">inline</bdi>=</span><i><span style="color: #2a00ff">&quot;<bdi dir="ltr" class="odt-ltr-term">text</bdi>&quot;</span></i><span style="color: #000000">] بإنشاء نص العلامة [&lt;<bdi dir="ltr" class="odt-ltr-term">h1</bdi>&gt;]. يحتوي هذا النص على تعبير $ يجب تقييمه. </span>العنصر <span style="color: #000000">[[${#<bdi dir="ltr" class="odt-ltr-term">httpServletRequest.remoteUser</bdi>}]] هو قيمة السمة [<bdi dir="ltr" class="odt-ltr-term">RemoteUser</bdi>] لطلب <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> الحالي. هذا هو اسم المستخدم الذي قام بتسجيل الدخول؛</span>
   </li>
-  <li><span style="color: #000000">السطر 10: نموذج HTML. ستؤدي السمة [</span><span style="color: #7f007f">th:</span><span style="color: #000000">action=</span><i><span style="color: #2a00ff">&quot;@{/logout}&quot;</span></i><span style="color: #000000">] إلى إنشاء السمة [action] لعلامة [form]. وستؤدي القيمة [</span><i><span style="color: #2a00ff">@{/logout}</span></i><span style="color: #000000">] إلى إنشاء المسار [&lt;context&gt;/logout]، حيث يمثل [context] سياق تطبيق الويب؛</span>
+  <li><span style="color: #000000">السطر 10: نموذج <bdi dir="ltr" class="odt-ltr-term">HTML.</bdi> ستؤدي السمة [</span><span style="color: #7f007f"><bdi dir="ltr" class="odt-ltr-term">th:</bdi></span><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">action</bdi>=</span><i><span style="color: #2a00ff">&quot;@{/<bdi dir="ltr" class="odt-ltr-term">logout</bdi>}&quot;</span></i><span style="color: #000000">] إلى إنشاء السمة [<bdi dir="ltr" class="odt-ltr-term">action</bdi>] لعلامة [<bdi dir="ltr" class="odt-ltr-term">form</bdi>]. وستؤدي القيمة [</span><i><span style="color: #2a00ff">@{/<bdi dir="ltr" class="odt-ltr-term">logout</bdi>}</span></i><span style="color: #000000">] إلى إنشاء المسار [&lt;<bdi dir="ltr" class="odt-ltr-term">context</bdi>&gt;/<bdi dir="ltr" class="odt-ltr-term">logout</bdi>]، حيث يمثل [<bdi dir="ltr" class="odt-ltr-term">context</bdi>] سياق تطبيق الويب؛</span>
   </li>
 </ul>
 
-<p><span style="color: #000000">فيما يلي كود HTML الذي تم إنشاؤه:</span></p>
+<p><span style="color: #000000">فيما يلي كود <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> الذي تم إنشاؤه:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;!</span><span style="color:#3f7f7f">DOCTYPE</span> <span style="color:#008080">html&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1461,15 +1463,15 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">السطر 8: ترجمة </span><i><span style="color: #000000">Hello [[${#httpServletRequest.remoteUser}]]!</span></i><span style="color: #000000">;</span>
+  <li><span style="color: #000000">السطر 8: ترجمة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">Hello</bdi> [[${#<bdi dir="ltr" class="odt-ltr-term">httpServletRequest.remoteUser</bdi>}]]!</span></i><span style="color: #000000">;</span>
   </li>
-  <li><span style="color: #000000">السطر 9: ترجمة </span><i><span style="color: #2a00ff">@{/logout}</span></i><span style="color: #000000">;</span>
+  <li><span style="color: #000000">السطر 9: ترجمة </span><i><span style="color: #2a00ff">@{/<bdi dir="ltr" class="odt-ltr-term">logout</bdi>}</span></i><span style="color: #000000">;</span>
   </li>
   <li><span style="color: #000000">السطر 11: حقل مخفي باسم (سمة </span><i><span style="color: #000000">الاسم</span></i><span style="color: #000000">) </span><b><span style="color: #000000">_csrf</span></b><span style="color: #000000">؛</span>
   </li>
 </ul>
 
-<p><span style="color: #000000">عرض [login.html] كما يلي:</span></p>
+<p><span style="color: #000000">عرض [<bdi dir="ltr" class="odt-ltr-term">login.html</bdi>] كما يلي:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000146000000C2EE6CA80A.png" width="212" height="126" style="display:inline-block; margin:4px;width:5.609cm;height:3.337cm;" class="odt-zoomable" data-zoom-src="images/1000000000000146000000C2EE6CA80A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
@@ -1501,21 +1503,21 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">السطر 9: تضمن السمة [</span><span style="color: #7f007f">th:</span><span style="color: #000000">if=</span><i><span style="color: #2a00ff">&quot;${param.error}&quot;</span></i><span style="color: #000000">] أن علامة &lt;div&gt; لن يتم إنشاؤها إلا إذا كان عنوان URL الذي يعرض صفحة تسجيل الدخول يحتوي على المعلمة [error] (http://context/login?error)؛</span>
+  <li><span style="color: #000000">السطر 9: تضمن السمة [</span><span style="color: #7f007f"><bdi dir="ltr" class="odt-ltr-term">th:</bdi></span><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">if</bdi>=</span><i><span style="color: #2a00ff">&quot;${<bdi dir="ltr" class="odt-ltr-term">param.error</bdi>}&quot;</span></i><span style="color: #000000">] أن علامة &lt;<bdi dir="ltr" class="odt-ltr-term">div</bdi>&gt; لن يتم إنشاؤها إلا إذا كان عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الذي يعرض صفحة تسجيل الدخول يحتوي على المعلمة [<bdi dir="ltr" class="odt-ltr-term">error</bdi>] (<bdi dir="ltr" class="odt-ltr-term">http://context/login</bdi>?<bdi dir="ltr" class="odt-ltr-term">error</bdi>)؛</span>
   </li>
-  <li><span style="color: #000000">السطر 10: تضمن السمة [</span><span style="color: #7f007f">th:</span><span style="color: #000000">if=</span><i><span style="color: #2a00ff">&quot;${param.logout}&quot;</span></i><span style="color: #000000">] أن علامة &lt;div&gt; لن يتم إنشاؤها إلا إذا كان عنوان URL الذي يعرض صفحة تسجيل الدخول يحتوي على المعلمة [logout] (http://context/login?logout)؛</span>
+  <li><span style="color: #000000">السطر 10: تضمن السمة [</span><span style="color: #7f007f"><bdi dir="ltr" class="odt-ltr-term">th:</bdi></span><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">if</bdi>=</span><i><span style="color: #2a00ff">&quot;${<bdi dir="ltr" class="odt-ltr-term">param.logout</bdi>}&quot;</span></i><span style="color: #000000">] أن علامة &lt;<bdi dir="ltr" class="odt-ltr-term">div</bdi>&gt; لن يتم إنشاؤها إلا إذا كان عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الذي يعرض صفحة تسجيل الدخول يحتوي على المعلمة [<bdi dir="ltr" class="odt-ltr-term">logout</bdi>] (<bdi dir="ltr" class="odt-ltr-term">http://context/login</bdi>?<bdi dir="ltr" class="odt-ltr-term">logout</bdi>)؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 11–23: نموذج HTML؛</span>
+  <li><span style="color: #000000">الأسطر 11–23: نموذج <bdi dir="ltr" class="odt-ltr-term">HTML</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطر 11: سيتم إرسال النموذج إلى عنوان URL [&lt;context&gt;/login]، حيث &lt;context&gt; هو سياق تطبيق الويب؛</span>
+  <li><span style="color: #000000">السطر 11: سيتم إرسال النموذج إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [&lt;<bdi dir="ltr" class="odt-ltr-term">context</bdi>&gt;/<bdi dir="ltr" class="odt-ltr-term">login</bdi>]، حيث &lt;<bdi dir="ltr" class="odt-ltr-term">context</bdi>&gt; هو سياق تطبيق الويب؛</span>
   </li>
-  <li><span style="color: #000000">السطر 13: حقل إدخال باسم [username]؛</span>
+  <li><span style="color: #000000">السطر 13: حقل إدخال باسم [<bdi dir="ltr" class="odt-ltr-term">username</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 17: حقل إدخال باسم [password]؛</span>
+  <li><span style="color: #000000">السطر 17: حقل إدخال باسم [<bdi dir="ltr" class="odt-ltr-term">password</bdi>]؛</span>
   </li>
 </ul>
 
-<p><span style="color: #000000">رمز HTML الذي تم إنشاؤه هو كما يلي:</span></p>
+<p><span style="color: #000000">رمز <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> الذي تم إنشاؤه هو كما يلي:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;!</span><span style="color:#3f7f7f">DOCTYPE</span> <span style="color:#008080">html&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1550,13 +1552,13 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">html</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">لاحظ في السطر 28 أن Thymeleaf قد أضاف حقلًا مخفيًا باسم [</span><strong><span style="color: #000000">_csrf</span></strong><span style="color: #000000">].</span></p>
+<p><span style="color: #000000">لاحظ في السطر 28 أن <bdi dir="ltr" class="odt-ltr-term">Thymeleaf</bdi> قد أضاف حقلًا مخفيًا باسم [</span><strong><span style="color: #000000">_csrf</span></strong><span style="color: #000000">].</span></p>
 <p><a id="refheading9325894989336"></a></p>
-<h3 id="1633-spring-mvc">16.3.3. <span style="color: #4f81bd">تكوين Spring MVC</span></h3>
+<h3 id="1633-spring-mvc">16.3.3. <span style="color: #4f81bd">تكوين <bdi dir="ltr" class="odt-ltr-term">Spring MVC</bdi></span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F1000000A03D183103.png" width="169" height="112" style="display:inline-block; margin:4px;width:4.461cm;height:2.962cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F1000000A03D183103.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><a id="refheading1623691200878134"></a></p>
-<p><span style="color: #000000"><a id="refheading570871429907001"></a>تقوم فئة [MvcConfig] بتكوين إطار عمل Spring MVC:</span></p>
+<p><span style="color: #000000"><a id="refheading570871429907001"></a>تقوم فئة [<bdi dir="ltr" class="odt-ltr-term">MvcConfig</bdi>] بتكوين إطار عمل <bdi dir="ltr" class="odt-ltr-term">Spring MVC:</bdi></span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span> hello;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1579,13 +1581,13 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">السطر 7: تجعل العلامة [@Configuration] فئة [MvcConfig] فئة تكوين؛</span>
+  <li><span style="color: #000000">السطر 7: تجعل العلامة [@<bdi dir="ltr" class="odt-ltr-term">Configuration</bdi>] فئة [<bdi dir="ltr" class="odt-ltr-term">MvcConfig</bdi>] فئة تكوين؛</span>
   </li>
-  <li><span style="color: #000000">السطر 8: تمتد فئة [MvcConfig] إلى فئة [WebMvcConfigurerAdapter] لتجاوز طرق معينة؛</span>
+  <li><span style="color: #000000">السطر 8: تمتد فئة [<bdi dir="ltr" class="odt-ltr-term">MvcConfig</bdi>] إلى فئة [<bdi dir="ltr" class="odt-ltr-term">WebMvcConfigurerAdapter</bdi>] لتجاوز طرق معينة؛</span>
   </li>
   <li><span style="color: #000000">السطر 10: إعادة تعريف طريقة من الفئة الأصلية؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 11–16: تسمح الطريقة [addViewControllers] بربط عناوين URL بعروض HTML. يتم إجراء الروابط التالية هناك:</span>
+  <li><span style="color: #000000">الأسطر 11–16: تسمح الطريقة [<bdi dir="ltr" class="odt-ltr-term">addViewControllers</bdi>] بربط عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> بعروض <bdi dir="ltr" class="odt-ltr-term">HTML.</bdi> يتم إجراء الروابط التالية هناك:</span>
   </li>
 </ul>
 
@@ -1595,24 +1597,24 @@
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>عرض</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>/, /home
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/templates/home.html</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/<bdi dir="ltr" class="odt-ltr-term">templates/home.html</bdi></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>/hello
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/القوالب/hello.html</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/القوالب/<bdi dir="ltr" class="odt-ltr-term">hello.html</bdi></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>/تسجيل_الدخول
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/القوالب/تسجيل_الدخول.html</div></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/القوالب/تسجيل_الدخول.<bdi dir="ltr" class="odt-ltr-term">html</bdi></div></td></tr></table>
 
-<p><span style="color: #000000">اللاحقة [html] والمجلد [templates] هما القيمتان الافتراضيتان اللتان يستخدمهما Thymeleaf. يمكن تغييرهما عبر التكوين. يجب أن يكون المجلد [templates] في جذر مسار فئات المشروع:</span></p>
+<p><span style="color: #000000">اللاحقة [<bdi dir="ltr" class="odt-ltr-term">html</bdi>] والمجلد [<bdi dir="ltr" class="odt-ltr-term">templates</bdi>] هما القيمتان الافتراضيتان اللتان يستخدمهما <bdi dir="ltr" class="odt-ltr-term">Thymeleaf.</bdi> يمكن تغييرهما عبر التكوين. يجب أن يكون المجلد [<bdi dir="ltr" class="odt-ltr-term">templates</bdi>] في جذر مسار فئات المشروع:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003E800000174E26E89AE.png" width="500" height="186" style="display:inline-block; margin:4px;width:13.229cm;height:4.921cm;" class="odt-zoomable" data-zoom-src="images/10000000000003E800000174E26E89AE.png" /></td></tr></table>
 
-<p><span style="color: #000000">في [1] أعلاه، مجلدا [java] و [resources] كلاهما مجلدان للمصدر. وهذا يعني أن محتوياتهما ستكون في جذر مسار فئات المشروع. لذلك، في [2]، سيكون مجلدا [hello] و [templates] في جذر مسار فئات المشروع.</span></p>
+<p><span style="color: #000000">في [1] أعلاه، مجلدا [<bdi dir="ltr" class="odt-ltr-term">java</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">resources</bdi>] كلاهما مجلدان للمصدر. وهذا يعني أن محتوياتهما ستكون في جذر مسار فئات المشروع. لذلك، في [2]، سيكون مجلدا [<bdi dir="ltr" class="odt-ltr-term">hello</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">templates</bdi>] في جذر مسار فئات المشروع.</span></p>
 <p><a id="refheading9327894989336"></a></p>
-<h3 id="1634-spring-security">16.3.4. <span style="color: #4f81bd">تكوين Spring Security</span></h3>
+<h3 id="1634-spring-security">16.3.4. <span style="color: #4f81bd">تكوين <bdi dir="ltr" class="odt-ltr-term">Spring Security</bdi></span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F70000009ACD60BCC4.png" width="173" height="108" style="display:inline-block; margin:4px;width:4.57cm;height:2.849cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F70000009ACD60BCC4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><a id="refheading1623711200878134"></a></p>
-<p><span style="color: #000000"><a id="refheading570891429907001"></a>تقوم فئة [WebSecurityConfig] بتكوين إطار عمل Spring Security:</span></p>
+<p><span style="color: #000000"><a id="refheading570891429907001"></a>تقوم فئة [<bdi dir="ltr" class="odt-ltr-term">WebSecurityConfig</bdi>] بتكوين إطار عمل <bdi dir="ltr" class="odt-ltr-term">Spring Security:</bdi></span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span> hello;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1639,17 +1641,17 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">السطر 9: تجعل العلامة [@Configuration] فئة [</span>WebSecurityConfig<span style="color: #000000">] فئة تكوين؛</span>
+  <li><span style="color: #000000">السطر 9: تجعل العلامة [@<bdi dir="ltr" class="odt-ltr-term">Configuration</bdi>] فئة [</span><bdi dir="ltr" class="odt-ltr-term">WebSecurityConfig</bdi><span style="color: #000000">] فئة تكوين؛</span>
   </li>
-  <li><span style="color: #000000">السطر 10: تجعل العلامة [@EnableWebSecurity] فئة [</span>WebSecurityConfig<span style="color: #000000">] فئة تكوين Spring Security؛</span>
+  <li><span style="color: #000000">السطر 10: تجعل العلامة [@<bdi dir="ltr" class="odt-ltr-term">EnableWebSecurity</bdi>] فئة [</span><bdi dir="ltr" class="odt-ltr-term">WebSecurityConfig</bdi><span style="color: #000000">] فئة تكوين <bdi dir="ltr" class="odt-ltr-term">Spring Security</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطر 11: تمتد فئة [WebSecurity] إلى فئة [WebSecurityConfigurerAdapter] لتجاوز طرق معينة؛</span>
+  <li><span style="color: #000000">السطر 11: تمتد فئة [<bdi dir="ltr" class="odt-ltr-term">WebSecurity</bdi>] إلى فئة [<bdi dir="ltr" class="odt-ltr-term">WebSecurityConfigurerAdapter</bdi>] لتجاوز طرق معينة؛</span>
   </li>
   <li><span style="color: #000000">السطر 12: إعادة تعريف طريقة من الفئة الأصلية؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 13-16: يتم تجاوز الطريقة [</span>configure(HttpSecurity http)<span style="color: #000000">] لتعريف حقوق الوصول لمختلف عناوين URL الخاصة بالتطبيق؛</span>
+  <li><span style="color: #000000">الأسطر 13-16: يتم تجاوز الطريقة [</span><bdi dir="ltr" class="odt-ltr-term">configure</bdi>(<bdi dir="ltr" class="odt-ltr-term">HttpSecurity http</bdi>)<span style="color: #000000">] لتعريف حقوق الوصول لمختلف عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الخاصة بالتطبيق؛</span>
   </li>
-  <li><span style="color: #000000">السطر 14: تسمح الطريقة [</span>http.authorizeRequests()<span style="color: #000000">] بربط عناوين URL بحقوق الوصول. يتم إجراء الروابط التالية هناك:</span>
+  <li><span style="color: #000000">السطر 14: تسمح الطريقة [</span><bdi dir="ltr" class="odt-ltr-term">http.authorizeRequests</bdi>()<span style="color: #000000">] بربط عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> بحقوق الوصول. يتم إجراء الروابط التالية هناك:</span>
   </li>
 </ul>
 
@@ -1670,11 +1672,11 @@
 </div></td></tr></table>
 
 <ul>
-  <li>السطر 15: يحدد طريقة المصادقة. تتم المصادقة عبر نموذج URL [/login] متاح للجميع [<span style="color: #000000">http.formLogin().loginPage(</span><span style="color: #2a00ff">&quot;/login&quot;</span><span style="color: #000000">).permitAll()</span>]. كما أن تسجيل الخروج متاح للجميع؛
+  <li>السطر 15: يحدد طريقة المصادقة. تتم المصادقة عبر نموذج <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">login</bdi>] متاح للجميع [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">http.formLogin</bdi>().<bdi dir="ltr" class="odt-ltr-term">loginPage</bdi>(</span><span style="color: #2a00ff">&quot;/<bdi dir="ltr" class="odt-ltr-term">login</bdi>&quot;</span><span style="color: #000000">).<bdi dir="ltr" class="odt-ltr-term">permitAll</bdi>()</span>]. كما أن تسجيل الخروج متاح للجميع؛
   </li>
-  <li>الأسطر 19-21: تعيد تعريف الطريقة [<span style="color: #000000">configure(AuthenticationManagerBuilder auth)</span>] التي تدير المستخدمين؛
+  <li>الأسطر 19-21: تعيد تعريف الطريقة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">configure</bdi>(<bdi dir="ltr" class="odt-ltr-term">AuthenticationManagerBuilder auth</bdi>)</span>] التي تدير المستخدمين؛
   </li>
-  <li>السطر 20: تتم المصادقة باستخدام مستخدمين مبرمجين [<span style="color: #000000">auth.inMemoryAuthentication()</span>]. يتم تعريف المستخدم هنا باستخدام اسم المستخدم [user] وكلمة المرور [password] والدور [USER]. يمكن منح المستخدمين الذين لديهم نفس الدور نفس الأذونات؛
+  <li>السطر 20: تتم المصادقة باستخدام مستخدمين مبرمجين [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">auth.inMemoryAuthentication</bdi>()</span>]. يتم تعريف المستخدم هنا باستخدام اسم المستخدم [<bdi dir="ltr" class="odt-ltr-term">user</bdi>] وكلمة المرور [<bdi dir="ltr" class="odt-ltr-term">password</bdi>] والدور [<bdi dir="ltr" class="odt-ltr-term">USER</bdi>]. يمكن منح المستخدمين الذين لديهم نفس الدور نفس الأذونات؛
   </li>
 </ul>
 
@@ -1684,7 +1686,7 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F70000009A7B7CF92B.png" width="173" height="108" style="display:inline-block; margin:4px;width:4.57cm;height:2.849cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F70000009A7B7CF92B.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><a id="refheading570911429907001"></a></p>
-<p><span style="color: #000000">فئة [Application] هي كما يلي:</span></p>
+<p><span style="color: #000000">فئة [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>] هي كما يلي:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span> hello;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1706,28 +1708,28 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">السطر 8: توجه العلامة [@EnableAutoConfiguration] Spring Boot (السطر 3) إلى تنفيذ التكوين الذي لم يقم المطور بإعداده صراحةً؛</span>
+  <li><span style="color: #000000">السطر 8: توجه العلامة [@<bdi dir="ltr" class="odt-ltr-term">EnableAutoConfiguration</bdi>] <bdi dir="ltr" class="odt-ltr-term">Spring Boot</bdi> (السطر 3) إلى تنفيذ التكوين الذي لم يقم المطور بإعداده صراحةً؛</span>
   </li>
-  <li><span style="color: #000000">السطر 9: يجعل فئة [Application] فئة تكوين Spring؛</span>
+  <li><span style="color: #000000">السطر 9: يجعل فئة [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>] فئة تكوين <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطر 10: يوجه النظام إلى فحص الدليل الذي يحتوي على فئة [Application] للبحث عن مكونات Spring. وبالتالي سيتم اكتشاف الفئتين [MvcConfig] و [WebSecurityConfig] لأنهما تحتويان على تعليق [@Configuration]؛</span>
+  <li><span style="color: #000000">السطر 10: يوجه النظام إلى فحص الدليل الذي يحتوي على فئة [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>] للبحث عن مكونات <bdi dir="ltr" class="odt-ltr-term">Spring.</bdi> وبالتالي سيتم اكتشاف الفئتين [<bdi dir="ltr" class="odt-ltr-term">MvcConfig</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">WebSecurityConfig</bdi>] لأنهما تحتويان على تعليق [@<bdi dir="ltr" class="odt-ltr-term">Configuration</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 13: الطريقة [main] للفئة القابلة للتنفيذ؛</span>
+  <li><span style="color: #000000">السطر 13: الطريقة [<bdi dir="ltr" class="odt-ltr-term">main</bdi>] للفئة القابلة للتنفيذ؛</span>
   </li>
-  <li><span style="color: #000000">السطر 14: يتم تنفيذ الطريقة الثابتة [SpringApplication.run] باستخدام فئة التكوين [Application] كمعلمة. لقد صادفنا هذه العملية من قبل ونعلم أن خادم Tomcat المضمن في تبعيات Maven للمشروع سيتم تشغيله ونشر المشروع عليه. رأينا أن أربعة عناوين URL تمت إدارتها [/, /home, /login, /hello] وأن بعضها محمي بحقوق الوصول.</span>
+  <li><span style="color: #000000">السطر 14: يتم تنفيذ الطريقة الثابتة [<bdi dir="ltr" class="odt-ltr-term">SpringApplication.run</bdi>] باستخدام فئة التكوين [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>] كمعلمة. لقد صادفنا هذه العملية من قبل ونعلم أن خادم <bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi> المضمن في تبعيات <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> للمشروع سيتم تشغيله ونشر المشروع عليه. رأينا أن أربعة عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> تمت إدارتها [/, /<bdi dir="ltr" class="odt-ltr-term">home</bdi>, /<bdi dir="ltr" class="odt-ltr-term">login</bdi>, /<bdi dir="ltr" class="odt-ltr-term">hello</bdi>] وأن بعضها محمي بحقوق الوصول.</span>
   </li>
 </ul>
 
 <p><a id="refheading9331894989336"></a></p>
 <h3 id="1636">16.3.6. <span style="color: #4f81bd">اختبار التطبيق</span></h3>
-<p><span style="color: #000000"><a id="refheading1623751200878134"></a>لنبدأ بطلب عنوان URL [/]، وهو أحد عناوين URL الأربعة المقبولة. وهو مرتبط بالعرض [/templates/home.html]:</span></p>
+<p><span style="color: #000000"><a id="refheading1623751200878134"></a>لنبدأ بطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/]، وهو أحد عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الأربعة المقبولة. وهو مرتبط بالعرض [/<bdi dir="ltr" class="odt-ltr-term">templates/home.html</bdi>]:</span></p>
 <p><a id="refheading570931429907001"></a></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000143000000DCD3E5FF81.png" width="226" height="154" style="display:inline-block; margin:4px;width:5.98cm;height:4.073cm;" class="odt-zoomable" data-zoom-src="images/1000000000000143000000DCD3E5FF81.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p><span style="color: #000000">عنوان URL المطلوب [/] متاح للجميع. ولهذا السبب تمكنا من استرداده. الرابط [هنا] هو كما يلي:</span></p>
+<p><span style="color: #000000">عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> المطلوب [/] متاح للجميع. ولهذا السبب تمكنا من استرداده. الرابط [هنا] هو كما يلي:</span></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Click <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/hello&quot;</span><span class="p">&gt;</span>here<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> to see a greeting.
 </code></pre></div>
-<p><span style="color: #000000">سيتم طلب عنوان URL [/hello] عند النقر على الرابط. هذا العنوان محمي:</span></p>
+<p><span style="color: #000000">سيتم طلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">hello</bdi>] عند النقر على الرابط. هذا العنوان محمي:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>عنوان URL
 </code></pre></div>
@@ -1744,7 +1746,7 @@
 </code></pre></div>
 </div></td></tr></table>
 
-<p><span style="color: #000000">يجب أن تكون مصادقًا عليه للوصول إليه. سيقوم Spring Security بعد ذلك بإعادة توجيه متصفح العميل إلى صفحة المصادقة. استنادًا إلى التكوين الموضح، هذه هي الصفحة الموجودة على عنوان URL [/login]. هذه الصفحة متاحة للجميع:</span></p>
+<p><span style="color: #000000">يجب أن تكون مصادقًا عليه للوصول إليه. سيقوم <bdi dir="ltr" class="odt-ltr-term">Spring Security</bdi> بعد ذلك بإعادة توجيه متصفح العميل إلى صفحة المصادقة. استنادًا إلى التكوين الموضح، هذه هي الصفحة الموجودة على عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">login</bdi>]. هذه الصفحة متاحة للجميع:</span></p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">http.formLogin().loginPage(<span style="color:#2a00ff">&quot;/login&quot;</span>).permitAll().and().logout().permitAll();</span></span>
 </code></pre></div>
@@ -1774,11 +1776,11 @@
 <a id="__codelineno-13-10" name="__codelineno-13-10"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li><span style="color: #000000">السطر 7، يظهر حقل مخفي غير موجود في الصفحة الأصلية [login.html]. أضافه Thymeleaf. تم تصميم هذا الرمز، المعروف باسم CSRF (تزوير الطلبات عبر المواقع)، للقضاء على ثغرة أمنية. يجب إرسال هذا الرمز إلى Spring Security مع المصادقة حتى يتم قبوله؛</span>
+  <li><span style="color: #000000">السطر 7، يظهر حقل مخفي غير موجود في الصفحة الأصلية [<bdi dir="ltr" class="odt-ltr-term">login.html</bdi>]. أضافه <bdi dir="ltr" class="odt-ltr-term">Thymeleaf.</bdi> تم تصميم هذا الرمز، المعروف باسم <bdi dir="ltr" class="odt-ltr-term">CSRF</bdi> (تزوير الطلبات عبر المواقع)، للقضاء على ثغرة أمنية. يجب إرسال هذا الرمز إلى <bdi dir="ltr" class="odt-ltr-term">Spring Security</bdi> مع المصادقة حتى يتم قبوله؛</span>
   </li>
 </ul>
 
-<p><span style="color: #000000">نتذكر أن Spring Security لا يتعرف إلا على زوج </span><em>المستخدم/كلمة</em> <span style="color: #000000">المرور. إذا أدخلنا شيئًا آخر في [2]، فسنحصل على نفس الصفحة مع رسالة خطأ في [3]. قام Spring Security بإعادة توجيه المتصفح إلى عنوان URL [http://localhost:8080/login?error]. أدى وجود المعلمة [error] إلى عرض العلامة:</span></p>
+<p><span style="color: #000000">نتذكر أن <bdi dir="ltr" class="odt-ltr-term">Spring Security</bdi> لا يتعرف إلا على زوج </span><em>المستخدم/كلمة</em> <span style="color: #000000">المرور. إذا أدخلنا شيئًا آخر في [2]، فسنحصل على نفس الصفحة مع رسالة خطأ في [3]. قام <bdi dir="ltr" class="odt-ltr-term">Spring Security</bdi> بإعادة توجيه المتصفح إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/login</bdi>?<bdi dir="ltr" class="odt-ltr-term">error</bdi>]. أدى وجود المعلمة [<bdi dir="ltr" class="odt-ltr-term">error</bdi>] إلى عرض العلامة:</span></p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">div</span> <span style="color:#7f007f">th:if</span>=<span style="font-style:italic;color:#2a00ff">&quot;${param.error}&quot;</span><span style="color:#008080">&gt;</span>Invalid username and password.<span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">div</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
@@ -1789,7 +1791,7 @@
 <ul>
   <li><span style="color: #000000">في [4]، نقوم بتسجيل الدخول؛</span>
   </li>
-  <li><span style="color: #000000">في [5]، يعيدنا Spring Security إلى عنوان URL [/hello] لأن هذا هو عنوان URL الذي طلبناه عندما تمت إعادة توجيهنا إلى صفحة تسجيل الدخول. تم عرض هوية المستخدم من خلال السطر التالي من [hello.html]:</span>
+  <li><span style="color: #000000">في [5]، يعيدنا <bdi dir="ltr" class="odt-ltr-term">Spring Security</bdi> إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">hello</bdi>] لأن هذا هو عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الذي طلبناه عندما تمت إعادة توجيهنا إلى صفحة تسجيل الدخول. تم عرض هوية المستخدم من خلال السطر التالي من [<bdi dir="ltr" class="odt-ltr-term">hello.html</bdi>]:</span>
   </li>
 </ul>
 
@@ -1804,18 +1806,18 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">form</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">عند النقر على زر [تسجيل الخروج]، يتم إرسال طلب POST إلى عنوان URL [/logout]. ومثل عنوان URL [/login]، فإن هذا العنوان متاح للجميع:</span></p>
+<p><span style="color: #000000">عند النقر على زر [تسجيل الخروج]، يتم إرسال طلب <bdi dir="ltr" class="odt-ltr-term">POST</bdi> إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">logout</bdi>]. ومثل عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">login</bdi>]، فإن هذا العنوان متاح للجميع:</span></p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">http.formLogin().loginPage(<span style="color:#2a00ff">&quot;/login&quot;</span>).permitAll().and().<span style="color:#ff3333">logout().permitAll()</span>;</span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">في تعيين عناوين URL/العرض لدينا، لم نحدد أي شيء لعنوان URL [/logout]. ماذا سيحدث؟ لنجرب:</span></p>
+<p><span style="color: #000000">في تعيين عناوين <bdi dir="ltr" class="odt-ltr-term">URL/</bdi>العرض لدينا، لم نحدد أي شيء لعنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">logout</bdi>]. ماذا سيحدث؟ لنجرب:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B70000015550E2A552.png" width="604" height="170" style="display:inline-block; margin:4px;width:15.968cm;height:4.51cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B70000015550E2A552.png" /></td></tr></table>
 
 <ul>
-  <li><span style="color: #000000">في [6]، نضغط على زر [Sign Out]؛</span>
+  <li><span style="color: #000000">في [6]، نضغط على زر [<bdi dir="ltr" class="odt-ltr-term">Sign Out</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">في [7]، نرى أنه تمت إعادة توجيهنا إلى عنوان URL [http://localhost:8080/login?logout]. طلب Spring Security إعادة التوجيه هذه. تسبب وجود المعلمة [logout] في عنوان URL في عرض السطر التالي في العرض:</span>
+  <li><span style="color: #000000">في [7]، نرى أنه تمت إعادة توجيهنا إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/login</bdi>?<bdi dir="ltr" class="odt-ltr-term">logout</bdi>]. طلب <bdi dir="ltr" class="odt-ltr-term">Spring Security</bdi> إعادة التوجيه هذه. تسبب وجود المعلمة [<bdi dir="ltr" class="odt-ltr-term">logout</bdi>] في عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> في عرض السطر التالي في العرض:</span>
   </li>
 </ul>
 
@@ -1825,87 +1827,87 @@
 
 <p><a id="refheading9333894989336"></a></p>
 <h3 id="1637">16.3.7. <span style="color: #4f81bd">الخلاصة</span></h3>
-<p><span style="color: #000000"><a id="refheading1623771200878134"></a>في المثال السابق، كان بإمكاننا كتابة تطبيق الويب أولاً ثم تأمينه لاحقًا. Spring Security غير تدخلي. يمكنك تنفيذ الأمان لتطبيق ويب تمت كتابته بالفعل. علاوة على ذلك، اكتشفنا النقاط التالية:</span></p>
+<p><span style="color: #000000"><a id="refheading1623771200878134"></a>في المثال السابق، كان بإمكاننا كتابة تطبيق الويب أولاً ثم تأمينه لاحقًا. <bdi dir="ltr" class="odt-ltr-term">Spring Security</bdi> غير تدخلي. يمكنك تنفيذ الأمان لتطبيق ويب تمت كتابته بالفعل. علاوة على ذلك، اكتشفنا النقاط التالية:</span></p>
 <p><a id="refheading570951429907001"></a></p>
 <ul>
   <li><span style="color: #000000">من الممكن تعريف صفحة مصادقة؛</span>
   </li>
-  <li><span style="color: #000000">يجب أن تكون المصادقة مصحوبة برمز CSRF الصادر عن Spring Security؛</span>
+  <li><span style="color: #000000">يجب أن تكون المصادقة مصحوبة برمز <bdi dir="ltr" class="odt-ltr-term">CSRF</bdi> الصادر عن <bdi dir="ltr" class="odt-ltr-term">Spring Security</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">في حالة فشل المصادقة، يتم إعادة توجيهك إلى صفحة المصادقة مع معلمة </span><b>خطأ</b><span style="color: #000000"> إضافية </span>في عنوان <span style="color: #000000">URL؛</span>
+  <li><span style="color: #000000">في حالة فشل المصادقة، يتم إعادة توجيهك إلى صفحة المصادقة مع معلمة </span><b>خطأ</b><span style="color: #000000"> إضافية </span>في عنوان <span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">URL</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">إذا نجحت المصادقة، يتم إعادة توجيهك إلى الصفحة المطلوبة وقت المصادقة. إذا طلبت صفحة المصادقة مباشرةً دون المرور بصفحة وسيطة، فإن Spring Security يعيد توجيهك إلى عنوان URL [/] (لم يتم توضيح هذه الحالة)؛</span>
+  <li><span style="color: #000000">إذا نجحت المصادقة، يتم إعادة توجيهك إلى الصفحة المطلوبة وقت المصادقة. إذا طلبت صفحة المصادقة مباشرةً دون المرور بصفحة وسيطة، فإن <bdi dir="ltr" class="odt-ltr-term">Spring Security</bdi> يعيد توجيهك إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/] (لم يتم توضيح هذه الحالة)؛</span>
   </li>
-  <li><span style="color: #000000">يمكنك تسجيل الخروج عن طريق طلب عنوان URL [/logout] باستخدام طلب POST. ثم يقوم Spring Security بإعادة توجيهك إلى صفحة المصادقة مع معلمة &quot;</span><b>logout&quot; </b><span style="color: #000000">في عنوان URL؛</span>
+  <li><span style="color: #000000">يمكنك تسجيل الخروج عن طريق طلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">logout</bdi>] باستخدام طلب <bdi dir="ltr" class="odt-ltr-term">POST.</bdi> ثم يقوم <bdi dir="ltr" class="odt-ltr-term">Spring Security</bdi> بإعادة توجيهك إلى صفحة المصادقة مع معلمة &quot;</span><b><bdi dir="ltr" class="odt-ltr-term">logout</bdi>&quot; </b><span style="color: #000000">في عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi>؛</span>
   </li>
 </ul>
 
-<p><span style="color: #000000">تستند جميع هذه الاستنتاجات إلى السلوك الافتراضي لـ Spring Security. يمكن تغيير هذا السلوك من خلال التكوين عن طريق تجاوز طرق معينة لفئة [</span>WebSecurityConfigurerAdapter<span style="color: #000000">].</span></p>
+<p><span style="color: #000000">تستند جميع هذه الاستنتاجات إلى السلوك الافتراضي لـ <bdi dir="ltr" class="odt-ltr-term">Spring Security.</bdi> يمكن تغيير هذا السلوك من خلال التكوين عن طريق تجاوز طرق معينة لفئة [</span><bdi dir="ltr" class="odt-ltr-term">WebSecurityConfigurerAdapter</bdi><span style="color: #000000">].</span></p>
 <p><span style="color: #000000">لن يكون الدرس السابق مفيدًا لنا كثيرًا في المستقبل. سنستخدم، في الواقع، ما يلي:</span></p>
 <ul>
   <li><span style="color: #000000">قاعدة بيانات لتخزين المستخدمين وكلمات مرورهم وأدوارهم؛</span>
   </li>
-  <li><span style="color: #000000">المصادقة المستندة إلى رأس HTTP؛</span>
+  <li><span style="color: #000000">المصادقة المستندة إلى رأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi>؛</span>
   </li>
 </ul>
 
 <p><span style="color: #000000">هناك عدد قليل جدًا من الدروس المتاحة لما نريد القيام به هنا. الحل الذي سنقترحه هو مزيج من مقتطفات الكود الموجودة هنا وهناك.</span></p>
 <p><a id="refheading9335894989336"></a></p>
-<h2 id="164-json">16.4. <span style="color: #4f81bd">تنفيذ الأمان على خدمة الويب الخاصة بالمنتج / JSON</span></h2>
+<h2 id="164-json">16.4. <span style="color: #4f81bd">تنفيذ الأمان على خدمة الويب الخاصة بالمنتج / <bdi dir="ltr" class="odt-ltr-term">JSON</bdi></span></h2>
 <p><a id="refheading9337894989336"></a></p>
 <h3 id="1641">16.4.1. <span style="color: #4f81bd">قاعدة البيانات</span></h3>
-<p><span style="color: #000000">يتم تحديث قاعدة البيانات [dbintrospringdata] لتشمل المستخدمين وكلمات مرورهم وأدوارهم. يتم إضافة ثلاثة جداول جديدة:</span></p>
+<p><span style="color: #000000">يتم تحديث قاعدة البيانات [<bdi dir="ltr" class="odt-ltr-term">dbintrospringdata</bdi>] لتشمل المستخدمين وكلمات مرورهم وأدوارهم. يتم إضافة ثلاثة جداول جديدة:</span></p>
 <p><a id="refheading570971429907001"></a></p>
 <p><a id="refheading570991429907001"></a></p>
 <p><img src="images/1000000000000295000000BEB9405F01.png" width="463" height="133" style="width:12.24cm;height:3.517cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000295000000BEB9405F01.png" /></p>
-<p><strong><span style="color: #000000">الجدول [USERS]: users</span></strong></p>
+<p><strong><span style="color: #000000">الجدول [<bdi dir="ltr" class="odt-ltr-term">USERS</bdi>]: <bdi dir="ltr" class="odt-ltr-term">users</bdi></span></strong></p>
 <ul>
-  <li><span style="color: #000000">ID: المفتاح الأساسي؛</span>
+  <li><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ID:</bdi> المفتاح الأساسي؛</span>
   </li>
-  <li><span style="color: #000000">VERSION: عمود إصدار الصف؛</span>
+  <li><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">VERSION:</bdi> عمود إصدار الصف؛</span>
   </li>
-  <li><span style="color: #000000">IDENTITY: معرف وصفية للمستخدم؛</span>
+  <li><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">IDENTITY:</bdi> معرف وصفية للمستخدم؛</span>
   </li>
-  <li><span style="color: #000000">LOGIN: تسجيل دخول المستخدم؛</span>
+  <li><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">LOGIN:</bdi> تسجيل دخول المستخدم؛</span>
   </li>
-  <li><span style="color: #000000">PASSWORD: كلمة المرور الخاصة به؛</span>
+  <li><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">PASSWORD:</bdi> كلمة المرور الخاصة به؛</span>
   </li>
 </ul>
 
-<p><span style="color: #000000">في جدول USERS، لا يتم تخزين كلمات المرور بنص عادي:</span></p>
+<p><span style="color: #000000">في جدول <bdi dir="ltr" class="odt-ltr-term">USERS</bdi>، لا يتم تخزين كلمات المرور بنص عادي:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000025B00000088CAEA4E9C.png" width="422" height="95" style="display:inline-block; margin:4px;width:11.171cm;height:2.519cm;" class="odt-zoomable" data-zoom-src="images/100000000000025B00000088CAEA4E9C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p><span style="color: #000000">الخوارزمية المستخدمة لتشفير كلمات المرور هي خوارزمية BCRYPT.</span></p>
-<p><strong><span style="color: #000000">جدول [ROLES]: الأدوار</span></strong></p>
+<p><span style="color: #000000">الخوارزمية المستخدمة لتشفير كلمات المرور هي خوارزمية <bdi dir="ltr" class="odt-ltr-term">BCRYPT.</bdi></span></p>
+<p><strong><span style="color: #000000">جدول [<bdi dir="ltr" class="odt-ltr-term">ROLES</bdi>]: الأدوار</span></strong></p>
 <ul>
-  <li><span style="color: #000000">ID: المفتاح الأساسي؛</span>
+  <li><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ID:</bdi> المفتاح الأساسي؛</span>
   </li>
-  <li><span style="color: #000000">VERSION: عمود إصدار الصف؛</span>
+  <li><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">VERSION:</bdi> عمود إصدار الصف؛</span>
   </li>
-  <li><span style="color: #000000">NAME: اسم الدور. بشكل افتراضي، يتوقع Spring Security أسماءً بالصيغة ROLE_XX، مثل ROLE_ADMIN أو ROLE_GUEST؛</span>
+  <li><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">NAME:</bdi> اسم الدور. بشكل افتراضي، يتوقع <bdi dir="ltr" class="odt-ltr-term">Spring Security</bdi> أسماءً بالصيغة <bdi dir="ltr" class="odt-ltr-term">ROLE_XX</bdi>، مثل <bdi dir="ltr" class="odt-ltr-term">ROLE_ADMIN</bdi> أو <bdi dir="ltr" class="odt-ltr-term">ROLE_GUEST</bdi>؛</span>
   </li>
 </ul>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000B500000048E262A78D.png" width="127" height="50" style="display:inline-block; margin:4px;width:3.35cm;height:1.334cm;" class="odt-zoomable" data-zoom-src="images/10000000000000B500000048E262A78D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p><strong><span style="color: #000000">الجدول [USERS_ROLES]: جدول ربط USERS/ROLES</span></strong></p>
-<p><span style="color: #000000">يمكن أن يكون للمستخدم أدوار متعددة، ويمكن أن يشمل الدور مستخدمين متعددين. هذه علاقة </span><strong>متعددة إلى متعددة</strong> <span style="color: #000000">يمثلها جدول [USERS_ROLES].</span></p>
+<p><strong><span style="color: #000000">الجدول [<bdi dir="ltr" class="odt-ltr-term">USERS</bdi>_ROLES]: جدول ربط <bdi dir="ltr" class="odt-ltr-term">USERS/ROLES</bdi></span></strong></p>
+<p><span style="color: #000000">يمكن أن يكون للمستخدم أدوار متعددة، ويمكن أن يشمل الدور مستخدمين متعددين. هذه علاقة </span><strong>متعددة إلى متعددة</strong> <span style="color: #000000">يمثلها جدول [<bdi dir="ltr" class="odt-ltr-term">USERS</bdi>_ROLES].</span></p>
 <ul>
-  <li><span style="color: #000000">ID: المفتاح الأساسي؛</span>
+  <li><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ID:</bdi> المفتاح الأساسي؛</span>
   </li>
-  <li><span style="color: #000000">VERSION: عمود إصدار الصف؛</span>
+  <li><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">VERSION:</bdi> عمود إصدار الصف؛</span>
   </li>
-  <li><span style="color: #000000">USER_ID: معرف المستخدم؛</span>
+  <li><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">USER_ID:</bdi> معرف المستخدم؛</span>
   </li>
-  <li><span style="color: #000000">ROLE_ID: معرف الدور؛</span>
+  <li><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ROLE_ID:</bdi> معرف الدور؛</span>
   </li>
 </ul>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D70000004EAD3A1F94.png" width="150" height="55" style="display:inline-block; margin:4px;width:3.979cm;height:1.445cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D70000004EAD3A1F94.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><a id="refheading9339894989336"></a></p>
-<h3 id="1642-eclipse">16.4.2. <span style="color: #4f81bd">مشروع Eclipse</span></h3>
-<p><span style="color: #000000">نقوم بإنشاء مشروع Eclipse التالي:</span></p>
+<h3 id="1642-eclipse">16.4.2. <span style="color: #4f81bd">مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi></span></h3>
+<p><span style="color: #000000">نقوم بإنشاء مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> التالي:</span></p>
 <p><a id="refheading1623811200878134"></a></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>1</b></div><img src="images/1000000000000118000000B9B4B6008E.png" width="196" height="129" style="display:inline-block; margin:4px;width:5.181cm;height:3.424cm;" class="odt-zoomable" data-zoom-src="images/1000000000000118000000B9B4B6008E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
@@ -1913,22 +1915,22 @@
 <ul>
   <li><span style="color: #000000">في [1]: المشروع الجديد مع الحزم التالية:</span>
     <ul>
-      <li><span style="color: #000000">[spring.security.entities]: يحتوي على كيانات JPA المطابقة للجداول الثلاثة الجديدة في قاعدة البيانات؛</span>
+      <li><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">spring.security.entities</bdi>]: يحتوي على كيانات <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> المطابقة للجداول الثلاثة الجديدة في قاعدة البيانات؛</span>
       </li>
-      <li><span style="color: #000000">[spring.security.repositories]: يحتوي على مستودعات Spring Data المرتبطة بالجداول الثلاثة الجديدة؛</span>
+      <li><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">spring.security.repositories</bdi>]: يحتوي على مستودعات <bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi> المرتبطة بالجداول الثلاثة الجديدة؛</span>
       </li>
-      <li><span style="color: #000000">[spring.security.dao]: يحتوي على خدمة تستند إلى [repositories]؛</span>
+      <li><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">spring.security.dao</bdi>]: يحتوي على خدمة تستند إلى [<bdi dir="ltr" class="odt-ltr-term">repositories</bdi>]؛</span>
       </li>
-      <li><span style="color: #000000">[spring.security.config]: يحتوي على تكوين المشروع، بما في ذلك التكوين الخاص بالوصول الآمن إلى خدمة الويب؛</span>
+      <li><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">spring.security.config</bdi>]: يحتوي على تكوين المشروع، بما في ذلك التكوين الخاص بالوصول الآمن إلى خدمة الويب؛</span>
       </li>
-      <li><span style="color: #000000">[spring.security.boot]: يحتوي على فئة التشغيل لخدمة الويب الآمنة؛</span>
+      <li><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">spring.security.boot</bdi>]: يحتوي على فئة التشغيل لخدمة الويب الآمنة؛</span>
       </li>
     </ul>
   </li>
 </ul>
 <p><a id="refheading9341894989336"></a></p>
-<h3 id="1643-maven">16.4.3. <span style="color: #4f81bd">تكوين Maven</span></h3>
-<p><span style="color: #000000">المشروع الجديد هو مشروع Maven تم تكوينه بواسطة ملف [pom.xml] التالي:</span></p>
+<h3 id="1643-maven">16.4.3. <span style="color: #4f81bd">تكوين <bdi dir="ltr" class="odt-ltr-term">Maven</bdi></span></h3>
+<p><span style="color: #000000">المشروع الجديد هو مشروع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> تم تكوينه بواسطة ملف [<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>] التالي:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span> <span style="color:#7f007f">xmlns</span>=<span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span style="color:#7f007f">xmlns:xsi</span>=<span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#7f007f">xsi:schemaLocation</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#008080">&gt;</span></span></span>
@@ -2002,27 +2004,27 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">الأسطر 23–27: نعيد استخدام الكود الموجود مع أرشيف خدمة الويب/JSON الذي درسناه؛</span>
+  <li><span style="color: #000000">الأسطر 23–27: نعيد استخدام الكود الموجود مع أرشيف خدمة الويب/<bdi dir="ltr" class="odt-ltr-term">JSON</bdi> الذي درسناه؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 29–32: التبعية التي تجلب فئات Spring Security؛</span>
+  <li><span style="color: #000000">الأسطر 29–32: التبعية التي تجلب فئات <bdi dir="ltr" class="odt-ltr-term">Spring Security</bdi>؛</span>
   </li>
   <li><span style="color: #000000">الأسطر 34–37: مكتبة التسجيل؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 39–42: المكتبة التي تتيح استخدام تعليقات Spring Boot؛</span>
+  <li><span style="color: #000000">الأسطر 39–42: المكتبة التي تتيح استخدام تعليقات <bdi dir="ltr" class="odt-ltr-term">Spring Boot</bdi>؛</span>
   </li>
   <li><span style="color: #000000">الأسطر 44–48: المكتبة المطلوبة للاختبار؛</span>
   </li>
 </ul>
 
 <p><a id="refheading9343894989336"></a></p>
-<h3 id="1644-jpa">16.4.4. <span style="color: #4f81bd">الكيانات [JPA] الجديدة</span></h3>
+<h3 id="1644-jpa">16.4.4. <span style="color: #4f81bd">الكيانات [<bdi dir="ltr" class="odt-ltr-term">JPA</bdi>] الجديدة</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000042C000000F0DB12BAF6.png" width="534" height="120" style="display:inline-block; margin:4px;width:14.129cm;height:3.175cm;" class="odt-zoomable" data-zoom-src="images/100000000000042C000000F0DB12BAF6.png" /></td></tr></table>
 
-<p><span style="color: #000000"><a id="refheading1623831200878134"></a>تحدد طبقة JPA ثلاث كيانات جديدة:</span></p>
+<p><span style="color: #000000"><a id="refheading1623831200878134"></a>تحدد طبقة <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> ثلاث كيانات جديدة:</span></p>
 <p><a id="refheading571031429907001"></a></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000AB0000004AD11DDC6D.png" width="120" height="52" style="display:inline-block; margin:4px;width:3.17cm;height:1.372cm;" class="odt-zoomable" data-zoom-src="images/10000000000000AB0000004AD11DDC6D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p><span style="color: #000000">تمثل فئة [User] الجدول [USERS]:</span></p>
+<p><span style="color: #000000">تمثل فئة [<bdi dir="ltr" class="odt-ltr-term">User</bdi>] الجدول [<bdi dir="ltr" class="odt-ltr-term">USERS</bdi>]:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span> spring.security.entities;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2060,11 +2062,11 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">السطر 11: تمتد الفئة إلى فئة [AbstractEntity] المستخدمة بالفعل للكيانات الأخرى؛</span>
+  <li><span style="color: #000000">السطر 11: تمتد الفئة إلى فئة [<bdi dir="ltr" class="odt-ltr-term">AbstractEntity</bdi>] المستخدمة بالفعل للكيانات الأخرى؛</span>
   </li>
 </ul>
 
-<p><span style="color: #000000">تمثل فئة [Role] الجدول [ROLES]:</span></p>
+<p><span style="color: #000000">تمثل فئة [<bdi dir="ltr" class="odt-ltr-term">Role</bdi>] الجدول [<bdi dir="ltr" class="odt-ltr-term">ROLES</bdi>]:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span> spring.security.entities;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2102,7 +2104,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">تمثل فئة [UserRole] الجدول [USERS_ROLES]:</span></p>
+<p><span style="color: #000000">تمثل فئة [<bdi dir="ltr" class="odt-ltr-term">UserRole</bdi>] الجدول [<bdi dir="ltr" class="odt-ltr-term">USERS</bdi>_ROLES]:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span> spring.security.entities;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2151,21 +2153,21 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">الأسطر 22–24: تعريف المفتاح الخارجي من الجدول [USERS_ROLES] إلى الجدول [USERS]؛</span>
+  <li><span style="color: #000000">الأسطر 22–24: تعريف المفتاح الخارجي من الجدول [<bdi dir="ltr" class="odt-ltr-term">USERS_ROLES</bdi>] إلى الجدول [<bdi dir="ltr" class="odt-ltr-term">USERS</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 27-29: تعريف المفتاح الخارجي من الجدول [USERS_ROLES] إلى الجدول [ROLES]؛</span>
+  <li><span style="color: #000000">الأسطر 27-29: تعريف المفتاح الخارجي من الجدول [<bdi dir="ltr" class="odt-ltr-term">USERS_ROLES</bdi>] إلى الجدول [<bdi dir="ltr" class="odt-ltr-term">ROLES</bdi>]؛</span>
   </li>
 </ul>
 
 <p><a id="refheading9345894989336"></a></p>
-<h3 id="1645-repositories">16.4.5. <span style="color: #4f81bd">[repositories]</span></h3>
+<h3 id="1645-repositories">16.4.5. <span style="color: #4f81bd">[<bdi dir="ltr" class="odt-ltr-term">repositories</bdi>]</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000042B000000FAD8CF0402.png" width="534" height="125" style="display:inline-block; margin:4px;width:14.116cm;height:3.307cm;" class="odt-zoomable" data-zoom-src="images/100000000000042B000000FAD8CF0402.png" /></td></tr></table>
 
-<p><span style="color: #000000"><a id="refheading1623851200878134"></a>يتم إدارة كل كيان من كيانات JPA السابقة بواسطة [مستودع] Spring Data:</span></p>
+<p><span style="color: #000000"><a id="refheading1623851200878134"></a>يتم إدارة كل كيان من كيانات <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> السابقة بواسطة [مستودع] <bdi dir="ltr" class="odt-ltr-term">Spring Data:</bdi></span></p>
 <p><a id="refheading571051429907001"></a></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F7000000BB6C336B6A.png" width="173" height="131" style="display:inline-block; margin:4px;width:4.57cm;height:3.461cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F7000000BB6C336B6A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p><span style="color: #000000">تدير واجهة [UserRepository] الوصول إلى كيانات [User]:</span></p>
+<p><span style="color: #000000">تدير واجهة [<bdi dir="ltr" class="odt-ltr-term">UserRepository</bdi>] الوصول إلى كيانات [<bdi dir="ltr" class="odt-ltr-term">User</bdi>]:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span> spring.security.repositories;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2191,9 +2193,9 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">السطر 9: واجهة [UserRepository] تمتد واجهة [CrudRepository] الخاصة بـ Spring Data (السطر 4)؛</span>
+  <li><span style="color: #000000">السطر 9: واجهة [<bdi dir="ltr" class="odt-ltr-term">UserRepository</bdi>] تمتد واجهة [<bdi dir="ltr" class="odt-ltr-term">CrudRepository</bdi>] الخاصة بـ <bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi> (السطر 4)؛</span>
   </li>
-  <li><span style="color: #000000">السطران 12-13: تسترد طريقة [getRoles(User user)] جميع الأدوار الخاصة بمستخدم محدد بواسطة [id] الخاص به</span>
+  <li><span style="color: #000000">السطران 12-13: تسترد طريقة [<bdi dir="ltr" class="odt-ltr-term">getRoles</bdi>(<bdi dir="ltr" class="odt-ltr-term">User user</bdi>)] جميع الأدوار الخاصة بمستخدم محدد بواسطة [<bdi dir="ltr" class="odt-ltr-term">id</bdi>] الخاص به</span>
   </li>
   <li><span style="color: #000000">السطران 16-17: كما هو مذكور أعلاه، ولكن بالنسبة لمستخدم يتم تحديده بواسطة اسم تسجيل الدخول وكلمة المرور؛</span>
   </li>
@@ -2201,7 +2203,7 @@
   </li>
 </ul>
 
-<p><span style="color: #000000">تدير واجهة [RoleRepository] الوصول إلى كيانات [Role]:</span></p>
+<p><span style="color: #000000">تدير واجهة [<bdi dir="ltr" class="odt-ltr-term">RoleRepository</bdi>] الوصول إلى كيانات [<bdi dir="ltr" class="odt-ltr-term">Role</bdi>]:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span> spring.security.repositories;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2218,13 +2220,13 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">السطر 7: واجهة [RoleRepository] تمتد من واجهة [CrudRepository]؛</span>
+  <li><span style="color: #000000">السطر 7: واجهة [<bdi dir="ltr" class="odt-ltr-term">RoleRepository</bdi>] تمتد من واجهة [<bdi dir="ltr" class="odt-ltr-term">CrudRepository</bdi>]؛</span>
   </li>
   <li><span style="color: #000000">السطر 10: يمكنك البحث عن دور حسب اسمه؛</span>
   </li>
 </ul>
 
-<p><span style="color: #000000">تدير واجهة [UserRoleRepository] الوصول إلى كيانات [UserRole]:</span></p>
+<p><span style="color: #000000">تدير واجهة [<bdi dir="ltr" class="odt-ltr-term">UserRoleRepository</bdi>] الوصول إلى كيانات [<bdi dir="ltr" class="odt-ltr-term">UserRole</bdi>]:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span> spring.security.repositories;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2238,7 +2240,7 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">السطر 5: واجهة [UserRoleRepository] تمتد ببساطة واجهة [CrudRepository] دون إضافة أي طرق جديدة؛</span>
+  <li><span style="color: #000000">السطر 5: واجهة [<bdi dir="ltr" class="odt-ltr-term">UserRoleRepository</bdi>] تمتد ببساطة واجهة [<bdi dir="ltr" class="odt-ltr-term">CrudRepository</bdi>] دون إضافة أي طرق جديدة؛</span>
   </li>
 </ul>
 <p><a id="refheading9347894989336"></a></p>
@@ -2247,10 +2249,10 @@
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F8000000B04E5DAD91.png" width="173" height="123" style="display:inline-block; margin:4px;width:4.59cm;height:3.256cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F8000000B04E5DAD91.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p><span style="color: #000000"><a id="refheading571071429907001"></a>يتطلب Spring Security إنشاء فئة تنفذ واجهة [UsersDetail] التالية:</span></p>
+<p><span style="color: #000000"><a id="refheading571071429907001"></a>يتطلب <bdi dir="ltr" class="odt-ltr-term">Spring Security</bdi> إنشاء فئة تنفذ واجهة [<bdi dir="ltr" class="odt-ltr-term">UsersDetail</bdi>] التالية:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000028A000001A12033E12F.png" width="431" height="277" style="display:inline-block; margin:4px;width:11.414cm;height:7.324cm;" class="odt-zoomable" data-zoom-src="images/100000000000028A000001A12033E12F.png" /></td></tr></table>
 
-<p><span style="color: #000000">يتم تنفيذ هذه الواجهة هنا بواسطة فئة [AppUserDetails]:</span></p>
+<p><span style="color: #000000">يتم تنفيذ هذه الواجهة هنا بواسطة فئة [<bdi dir="ltr" class="odt-ltr-term">AppUserDetails</bdi>]:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span> spring.security.dao;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2328,19 +2330,19 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">السطر 14: تنفذ فئة [AppUserDetails] واجهة [UserDetails]؛</span>
+  <li><span style="color: #000000">السطر 14: تنفذ فئة [<bdi dir="ltr" class="odt-ltr-term">AppUserDetails</bdi>] واجهة [<bdi dir="ltr" class="odt-ltr-term">UserDetails</bdi>]؛</span>
   </li>
   <li><span style="color: #000000">السطران 19-20: تغلف الفئة مستخدمًا (السطر 19) والمستودع الذي يوفر تفاصيل عن هذا المستخدم (السطر 20)؛</span>
   </li>
   <li><span style="color: #000000">الأسطر 26-29: المنشئ الذي ينشئ مثيلًا للفئة باستخدام مستخدم ومستودعه؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 32–36: تنفيذ طريقة [getAuthorities] لواجهة [UserDetails]. يجب أن تنشئ مجموعة من العناصر من النوع [GrantedAuthority] أو نوع مشتق. هنا، نستخدم النوع المشتق [SimpleGrantedAuthority] (السطر 36)، الذي يغلف اسم أحد أدوار المستخدم من السطر 19؛</span>
+  <li><span style="color: #000000">الأسطر 32–36: تنفيذ طريقة [<bdi dir="ltr" class="odt-ltr-term">getAuthorities</bdi>] لواجهة [<bdi dir="ltr" class="odt-ltr-term">UserDetails</bdi>]. يجب أن تنشئ مجموعة من العناصر من النوع [<bdi dir="ltr" class="odt-ltr-term">GrantedAuthority</bdi>] أو نوع مشتق. هنا، نستخدم النوع المشتق [<bdi dir="ltr" class="odt-ltr-term">SimpleGrantedAuthority</bdi>] (السطر 36)، الذي يغلف اسم أحد أدوار المستخدم من السطر 19؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 35-37: نكرر قائمة أدوار المستخدم من السطر 19 لإنشاء قائمة بالعناصر من النوع [SimpleGrantedAuthority]؛</span>
+  <li><span style="color: #000000">الأسطر 35-37: نكرر قائمة أدوار المستخدم من السطر 19 لإنشاء قائمة بالعناصر من النوع [<bdi dir="ltr" class="odt-ltr-term">SimpleGrantedAuthority</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 42-44: تنفيذ طريقة [getPassword] لواجهة [UserDetails]. نُرجع كلمة مرور  المستخدم من السطر 19؛</span>
+  <li><span style="color: #000000">الأسطر 42-44: تنفيذ طريقة [<bdi dir="ltr" class="odt-ltr-term">getPassword</bdi>] لواجهة [<bdi dir="ltr" class="odt-ltr-term">UserDetails</bdi>]. نُرجع كلمة مرور  المستخدم من السطر 19؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 42–44: ننفذ طريقة [getUserName] لواجهة [UserDetails]. نُرجع اسم تسجيل الدخول  للمستخدم من السطر 19؛</span>
+  <li><span style="color: #000000">الأسطر 42–44: ننفذ طريقة [<bdi dir="ltr" class="odt-ltr-term">getUserName</bdi>] لواجهة [<bdi dir="ltr" class="odt-ltr-term">UserDetails</bdi>]. نُرجع اسم تسجيل الدخول  للمستخدم من السطر 19؛</span>
   </li>
   <li><span style="color: #000000">الأسطر 51–54: لا تنتهي صلاحية حساب المستخدم أبدًا؛</span>
   </li>
@@ -2352,10 +2354,10 @@
   </li>
 </ul>
 
-<p>يتطلب Spring Security أيضًا وجود فئة تنفذ واجهة [AppUserDetailsService]:</p>
+<p>يتطلب <bdi dir="ltr" class="odt-ltr-term">Spring Security</bdi> أيضًا وجود فئة تنفذ واجهة [<bdi dir="ltr" class="odt-ltr-term">AppUserDetailsService</bdi>]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000019C0000007FEE7FC945.png" width="288" height="89" style="display:inline-block; margin:4px;width:7.631cm;height:2.351cm;" class="odt-zoomable" data-zoom-src="images/100000000000019C0000007FEE7FC945.png" /></td></tr></table>
 
-<p><span style="color: #000000">يتم تنفيذ هذه الواجهة بواسطة فئة [AppUserDetailsService] التالية:</span></p>
+<p><span style="color: #000000">يتم تنفيذ هذه الواجهة بواسطة فئة [<bdi dir="ltr" class="odt-ltr-term">AppUserDetailsService</bdi>] التالية:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span> spring.security.dao;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2390,17 +2392,17 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">السطر 12: ستكون الفئة مكونًا في Spring، لذا ستكون متاحة في سياقها؛</span>
+  <li><span style="color: #000000">السطر 12: ستكون الفئة مكونًا في <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>، لذا ستكون متاحة في سياقها؛</span>
   </li>
-  <li><span style="color: #000000">السطران 15-16: سيتم إدخال مكون [UserRepository] هنا؛</span>
+  <li><span style="color: #000000">السطران 15-16: سيتم إدخال مكون [<bdi dir="ltr" class="odt-ltr-term">UserRepository</bdi>] هنا؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 19-28: تنفيذ طريقة [loadUserByUsername] لواجهة [UserDetailsService] (السطر 10). المعلمة هي اسم تسجيل دخول المستخدم؛</span>
+  <li><span style="color: #000000">الأسطر 19-28: تنفيذ طريقة [<bdi dir="ltr" class="odt-ltr-term">loadUserByUsername</bdi>] لواجهة [<bdi dir="ltr" class="odt-ltr-term">UserDetailsService</bdi>] (السطر 10). المعلمة هي اسم تسجيل دخول المستخدم؛</span>
   </li>
   <li><span style="color: #000000">السطر 21: يتم البحث عن المستخدم باستخدام اسم تسجيل الدخول الخاص به؛</span>
   </li>
   <li><span style="color: #000000">الأسطر 23-25: إذا لم يتم العثور على المستخدم، يتم إصدار استثناء؛</span>
   </li>
-  <li><span style="color: #000000">السطر 27: يتم إنشاء كائن [AppUserDetails] وإرجاعه. وهو بالفعل من النوع [UserDetails] (السطر 19)؛</span>
+  <li><span style="color: #000000">السطر 27: يتم إنشاء كائن [<bdi dir="ltr" class="odt-ltr-term">AppUserDetails</bdi>] وإرجاعه. وهو بالفعل من النوع [<bdi dir="ltr" class="odt-ltr-term">UserDetails</bdi>] (السطر 19)؛</span>
   </li>
 </ul>
 
@@ -2411,7 +2413,7 @@
 <p><span style="color: #000000"><a id="refheading571131429907001"></a>يتم تكوين المشروع بواسطة فئتين:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000258000001C6C59F2CC5.png" width="300" height="227" style="display:inline-block; margin:4px;width:7.938cm;height:6.006cm;" class="odt-zoomable" data-zoom-src="images/1000000000000258000001C6C59F2CC5.png" /></td></tr></table>
 
-<p><span style="color: #000000">تقوم فئة [DaoConfig] بتكوين طبقة [DAO] التي أدخلها المشروع الجديد:</span></p>
+<p><span style="color: #000000">تقوم فئة [<bdi dir="ltr" class="odt-ltr-term">DaoConfig</bdi>] بتكوين طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] التي أدخلها المشروع الجديد:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span> spring.security.config;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2437,13 +2439,13 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">السطر 10: نقوم باستيراد فئة التكوين [spring.data.config.DaoConfig] من مشروع [intro-spring-data-01]، الذي ينفذ طبقة [DAO] للمنتجات والفئات؛</span>
+  <li><span style="color: #000000">السطر 10: نقوم باستيراد فئة التكوين [<bdi dir="ltr" class="odt-ltr-term">spring.data.config.DaoConfig</bdi>] من مشروع [<bdi dir="ltr" class="odt-ltr-term">intro-spring-data-01</bdi>]، الذي ينفذ طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] للمنتجات والفئات؛</span>
   </li>
-  <li><span style="color: #000000">السطر 8: نحدد المجلدات في المشروع الحالي التي تحتوي على [مستودعات] Spring Data؛</span>
+  <li><span style="color: #000000">السطر 8: نحدد المجلدات في المشروع الحالي التي تحتوي على [مستودعات] <bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطر 9: نحدد المجلدات في المشروع الحالي التي تحتوي على مكونات Spring المتعلقة بطبقة [DAO]؛</span>
+  <li><span style="color: #000000">السطر 9: نحدد المجلدات في المشروع الحالي التي تحتوي على مكونات <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> المتعلقة بطبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 14: يحدد هذا الدلائل التي تحتوي على كيانات JPA. وتشمل هذه الكيانات تلك الموجودة في مشروع [intro-spring-data-01] وتلك الموجودة في مشروع الخادم الآمن. يتم تعريف هذه المعلومات في الفول في الأسطر 16-19. يتجاوز هذا الفول الفول الذي يحمل نفس الاسم في مشروع [intro-spring-data-01]:</span>
+  <li><span style="color: #000000">السطر 14: يحدد هذا الدلائل التي تحتوي على كيانات <bdi dir="ltr" class="odt-ltr-term">JPA.</bdi> وتشمل هذه الكيانات تلك الموجودة في مشروع [<bdi dir="ltr" class="odt-ltr-term">intro-spring-data-01</bdi>] وتلك الموجودة في مشروع الخادم الآمن. يتم تعريف هذه المعلومات في الفول في الأسطر 16-19. يتجاوز هذا الفول الفول الذي يحمل نفس الاسم في مشروع [<bdi dir="ltr" class="odt-ltr-term">intro-spring-data-01</bdi>]:</span>
   </li>
 </ul>
 
@@ -2467,8 +2469,8 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">في طبقة [DAO]، يقوم السطر 8 بمسح الدلائل المحددة في السطر 1. ونظرًا لإعادة تعريف الكائن في الأسطر 14–17 في المشروع الآمن (الأسطر 16–19)، سيقوم السطر 8 أعلاه الآن بمسح الدلائل [</span><span style="color: #2a00ff">&quot;spring.data.entities&quot;</span><span style="color: #000000">، </span><span style="color: #2a00ff">&quot;spring.security.entities&quot;</span><span style="color: #000000">]. لاحظ أن الفئة المستوردة في السطر 10 من فئة [spring.security.config.DaoConfig] يجب أن تتضمن التعليق التوضيحي [@Configuration]؛ وإلا، فلن يعمل السلوك الموصوف أعلاه.</span></p>
-<p><span style="color: #000000">تقوم فئة [SecurityConfig] بتكوين الجانب الأمني للمشروع. لقد صادفنا بالفعل فئة تكوين Spring Security:</span></p>
+<p><span style="color: #000000">في طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]، يقوم السطر 8 بمسح الدلائل المحددة في السطر 1. ونظرًا لإعادة تعريف الكائن في الأسطر 14–17 في المشروع الآمن (الأسطر 16–19)، سيقوم السطر 8 أعلاه الآن بمسح الدلائل [</span><span style="color: #2a00ff">&quot;<bdi dir="ltr" class="odt-ltr-term">spring.data.entities</bdi>&quot;</span><span style="color: #000000">، </span><span style="color: #2a00ff">&quot;<bdi dir="ltr" class="odt-ltr-term">spring.security.entities</bdi>&quot;</span><span style="color: #000000">]. لاحظ أن الفئة المستوردة في السطر 10 من فئة [<bdi dir="ltr" class="odt-ltr-term">spring.security.config.DaoConfig</bdi>] يجب أن تتضمن التعليق التوضيحي [@<bdi dir="ltr" class="odt-ltr-term">Configuration</bdi>]؛ وإلا، فلن يعمل السلوك الموصوف أعلاه.</span></p>
+<p><span style="color: #000000">تقوم فئة [<bdi dir="ltr" class="odt-ltr-term">SecurityConfig</bdi>] بتكوين الجانب الأمني للمشروع. لقد صادفنا بالفعل فئة تكوين <bdi dir="ltr" class="odt-ltr-term">Spring Security:</bdi></span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span> hello;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2496,15 +2498,15 @@
 
 <p><span style="color: #000000">سنتبع نفس الإجراء:</span></p>
 <ul>
-  <li><span style="color: #000000">السطر 11: تعريف فئة تمتد من فئة [</span>WebSecurityConfigurerAdapter<span style="color: #000000">]؛</span>
+  <li><span style="color: #000000">السطر 11: تعريف فئة تمتد من فئة [</span><bdi dir="ltr" class="odt-ltr-term">WebSecurityConfigurerAdapter</bdi><span style="color: #000000">]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 13: تعريف طريقة [</span>configure(HttpSecurity http)<span style="color: #000000">] التي تحدد حقوق الوصول إلى عناوين URL المختلفة لخدمة الويب؛</span>
+  <li><span style="color: #000000">السطر 13: تعريف طريقة [</span><bdi dir="ltr" class="odt-ltr-term">configure</bdi>(<bdi dir="ltr" class="odt-ltr-term">HttpSecurity http</bdi>)<span style="color: #000000">] التي تحدد حقوق الوصول إلى عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> المختلفة لخدمة الويب؛</span>
   </li>
-  <li><span style="color: #000000">السطر 19: تعريف طريقة [</span>configure(AuthenticationManagerBuilder auth)<span style="color: #000000">] التي تحدد المستخدمين وأدوارهم؛</span>
+  <li><span style="color: #000000">السطر 19: تعريف طريقة [</span><bdi dir="ltr" class="odt-ltr-term">configure</bdi>(<bdi dir="ltr" class="odt-ltr-term">AuthenticationManagerBuilder auth</bdi>)<span style="color: #000000">] التي تحدد المستخدمين وأدوارهم؛</span>
   </li>
 </ul>
 
-<p><span style="color: #000000">ستكون فئة [SecurityConfig] كما يلي:</span></p>
+<p><span style="color: #000000">ستكون فئة [<bdi dir="ltr" class="odt-ltr-term">SecurityConfig</bdi>] كما يلي:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span> spring.security.config;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2562,51 +2564,51 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">السطر 16: لتمكين مكونات Spring Security؛</span>
+  <li><span style="color: #000000">السطر 16: لتمكين مكونات <bdi dir="ltr" class="odt-ltr-term">Spring Security</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطر 17: نضيف مكونات Spring من حزمة [</span><span style="color: #2a00ff">spring.security.service</span><span style="color: #000000">]؛</span>
+  <li><span style="color: #000000">السطر 17: نضيف مكونات <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> من حزمة [</span><span style="color: #2a00ff"><bdi dir="ltr" class="odt-ltr-term">spring.security.service</bdi></span><span style="color: #000000">]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 18: استيراد الفاصوليا من طبقة [DAO] التي قدمناها للتو، بالإضافة إلى تلك الموجودة في خادم الويب غير الآمن/JSON؛</span>
+  <li><span style="color: #000000">السطر 18: استيراد الفاصوليا من طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] التي قدمناها للتو، بالإضافة إلى تلك الموجودة في خادم الويب غير الآمن/<bdi dir="ltr" class="odt-ltr-term">JSON</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطران 21-22: يتم إدخال فئة [AppUserDetails]، التي توفر الوصول إلى مستخدمي التطبيق؛</span>
+  <li><span style="color: #000000">السطران 21-22: يتم إدخال فئة [<bdi dir="ltr" class="odt-ltr-term">AppUserDetails</bdi>]، التي توفر الوصول إلى مستخدمي التطبيق؛</span>
   </li>
-  <li><span style="color: #000000">السطر 25: قيمة منطقية تؤمن (true) أو لا تؤمن (false) تطبيق الويب؛</span>
+  <li><span style="color: #000000">السطر 25: قيمة منطقية تؤمن (<bdi dir="ltr" class="odt-ltr-term">true</bdi>) أو لا تؤمن (<bdi dir="ltr" class="odt-ltr-term">false</bdi>) تطبيق الويب؛</span>
   </li>
-  <li>الأسطر 27–32: تحدد طريقة [configure(HttpSecurity http)] المستخدمين وأدوارهم. وهي تأخذ نوع [AuthenticationManagerBuilder] كمعلمة. يتم إثراء هذه المعلمة بمعلومتين (السطر 38):
+  <li>الأسطر 27–32: تحدد طريقة [<bdi dir="ltr" class="odt-ltr-term">configure</bdi>(<bdi dir="ltr" class="odt-ltr-term">HttpSecurity http</bdi>)] المستخدمين وأدوارهم. وهي تأخذ نوع [<bdi dir="ltr" class="odt-ltr-term">AuthenticationManagerBuilder</bdi>] كمعلمة. يتم إثراء هذه المعلمة بمعلومتين (السطر 38):
     <ul>
-      <li>إشارة إلى [<span style="color: #0000c0">appUserDetailsService</span>] من السطر 22، والتي توفر الوصول إلى المستخدمين المسجلين. لاحظ هنا أن حقيقة تخزينهم في قاعدة بيانات لم يتم ذكرها صراحةً. لذلك، يمكن أن يكونوا في ذاكرة التخزين المؤقت، أو يتم توفيرهم بواسطة خدمة ويب، إلخ.
+      <li>إشارة إلى [<span style="color: #0000c0"><bdi dir="ltr" class="odt-ltr-term">appUserDetailsService</bdi></span>] من السطر 22، والتي توفر الوصول إلى المستخدمين المسجلين. لاحظ هنا أن حقيقة تخزينهم في قاعدة بيانات لم يتم ذكرها صراحةً. لذلك، يمكن أن يكونوا في ذاكرة التخزين المؤقت، أو يتم توفيرهم بواسطة خدمة ويب، إلخ.
       </li>
-      <li><span style="color: #000000">نوع التشفير المستخدم لكلمة المرور. تذكر أننا استخدمنا خوارزمية BCrypt؛</span>
+      <li><span style="color: #000000">نوع التشفير المستخدم لكلمة المرور. تذكر أننا استخدمنا خوارزمية <bdi dir="ltr" class="odt-ltr-term">BCrypt</bdi>؛</span>
       </li>
     </ul>
   </li>
-  <li>الأسطر 34-52: تحدد طريقة [configure(HttpSecurity http)] حقوق الوصول إلى عناوين URL لخدمة الويب؛
+  <li>الأسطر 34-52: تحدد طريقة [<bdi dir="ltr" class="odt-ltr-term">configure</bdi>(<bdi dir="ltr" class="odt-ltr-term">HttpSecurity http</bdi>)] حقوق الوصول إلى عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لخدمة الويب؛
   </li>
-  <li><span style="color: #000000">السطر 37: رأينا في المشروع التمهيدي أن Spring Security تدير افتراضيًا رمز CSRF (تزوير الطلبات عبر المواقع) الذي يجب على المستخدم الذي يحاول المصادقة إرساله مرة أخرى إلى الخادم. هنا، يتم تعطيل هذه الآلية. بالاقتران مع القيمة المنطقية (isSecured=false)، يسمح هذا باستخدام تطبيق الويب بدون أمان؛</span>
+  <li><span style="color: #000000">السطر 37: رأينا في المشروع التمهيدي أن <bdi dir="ltr" class="odt-ltr-term">Spring Security</bdi> تدير افتراضيًا رمز <bdi dir="ltr" class="odt-ltr-term">CSRF</bdi> (تزوير الطلبات عبر المواقع) الذي يجب على المستخدم الذي يحاول المصادقة إرساله مرة أخرى إلى الخادم. هنا، يتم تعطيل هذه الآلية. بالاقتران مع القيمة المنطقية (<bdi dir="ltr" class="odt-ltr-term">isSecured</bdi>=<bdi dir="ltr" class="odt-ltr-term">false</bdi>)، يسمح هذا باستخدام تطبيق الويب بدون أمان؛</span>
   </li>
-  <li><span style="color: #000000">السطر 41: نقوم بتمكين المصادقة عبر رؤوس HTTP. يجب على العميل إرسال رأس HTTP التالي:</span>
+  <li><span style="color: #000000">السطر 41: نقوم بتمكين المصادقة عبر رؤوس <bdi dir="ltr" class="odt-ltr-term">HTTP.</bdi> يجب على العميل إرسال رأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> التالي:</span>
   </li>
 </ul>
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Authorization:Basic code
 </code></pre></div>
-<p>حيث code هو ترميز Base64 لسلسلة <strong>login:password</strong>. على سبيل المثال، ترميز Base64 لسلسلة <em>admin:admin</em> هو <em>YWRtaW46YWRtaW4=</em>. لذلك، سيقوم المستخدم الذي يستخدم اسم المستخدم [admin] وكلمة المرور [admin] بإرسال رأس HTTP التالي للمصادقة:</p>
+<p>حيث <bdi dir="ltr" class="odt-ltr-term">code</bdi> هو ترميز <bdi dir="ltr" class="odt-ltr-term">Base64</bdi> لسلسلة <strong><bdi dir="ltr" class="odt-ltr-term">login:password</bdi></strong>. على سبيل المثال، ترميز <bdi dir="ltr" class="odt-ltr-term">Base64</bdi> لسلسلة <em><bdi dir="ltr" class="odt-ltr-term">admin:admin</bdi></em> هو <em><bdi dir="ltr" class="odt-ltr-term">YWRtaW46YWRtaW4</bdi>=</em>. لذلك، سيقوم المستخدم الذي يستخدم اسم المستخدم [<bdi dir="ltr" class="odt-ltr-term">admin</bdi>] وكلمة المرور [<bdi dir="ltr" class="odt-ltr-term">admin</bdi>] بإرسال رأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> التالي للمصادقة:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Authorization:Basic YWRtaW46YWRtaW4=
 </code></pre></div>
 <ul>
-  <li><span style="color: #000000">الأسطر 46–48: تحدد أن جميع عناوين URL لخدمة الويب متاحة للمستخدمين الذين لديهم دور [ROLE_ADMIN]. وهذا يعني أن المستخدم الذي لا يمتلك هذا الدور لا يمكنه الوصول إلى خدمة الويب؛</span>
+  <li><span style="color: #000000">الأسطر 46–48: تحدد أن جميع عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لخدمة الويب متاحة للمستخدمين الذين لديهم دور [<bdi dir="ltr" class="odt-ltr-term">ROLE_ADMIN</bdi>]. وهذا يعني أن المستخدم الذي لا يمتلك هذا الدور لا يمكنه الوصول إلى خدمة الويب؛</span>
   </li>
-  <li><span style="color: #000000">السطر 50: في وضع [session]، لا يحتاج المستخدم الذي قام بالمصادقة مرة واحدة إلى القيام بذلك في عمليات الوصول اللاحقة. هنا، نقوم بتعطيل هذا الوضع، بحيث يتعين على المستخدم المصادقة في كل مرة يصل فيها إلى الخدمة؛</span>
+  <li><span style="color: #000000">السطر 50: في وضع [<bdi dir="ltr" class="odt-ltr-term">session</bdi>]، لا يحتاج المستخدم الذي قام بالمصادقة مرة واحدة إلى القيام بذلك في عمليات الوصول اللاحقة. هنا، نقوم بتعطيل هذا الوضع، بحيث يتعين على المستخدم المصادقة في كل مرة يصل فيها إلى الخدمة؛</span>
   </li>
 </ul>
 
 <p><a id="refheading9349894989336"></a></p>
-<h3 id="1648-dao">16.4.8. <span style="color: #4f81bd">اختبار طبقة [DAO]</span></h3>
+<h3 id="1648-dao">16.4.8. <span style="color: #4f81bd">اختبار طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004300000010D540F8048.png" width="536" height="135" style="display:inline-block; margin:4px;width:14.182cm;height:3.56cm;" class="odt-zoomable" data-zoom-src="images/10000000000004300000010D540F8048.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000C800000059F3626BCE.png" width="140" height="62" style="display:inline-block; margin:4px;width:3.701cm;height:1.647cm;" class="odt-zoomable" data-zoom-src="images/10000000000000C800000059F3626BCE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p><a id="refheading1623891200878134"></a>أولاً، نقوم بإنشاء فئة قابلة للتنفيذ [CreateUser] قادرة على إنشاء مستخدم له دور:</p>
+<p><a id="refheading1623891200878134"></a>أولاً، نقوم بإنشاء فئة قابلة للتنفيذ [<bdi dir="ltr" class="odt-ltr-term">CreateUser</bdi>] قادرة على إنشاء مستخدم له دور:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> sprin.security.tests;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2685,19 +2687,19 @@
   </li>
   <li>الأسطر 25–27: يتم استرداد المعلمات الثلاثة؛
   </li>
-  <li>السطر 29: يتم إنشاء سياق Spring من فئة التكوين [AppConfig]؛
+  <li>السطر 29: يتم إنشاء سياق <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> من فئة التكوين [<bdi dir="ltr" class="odt-ltr-term">AppConfig</bdi>]؛
   </li>
-  <li>الأسطر 30–32: يتم استرداد المراجع إلى الكائنات الثلاثة [Repository] التي قد تكون مفيدة لإنشاء المستخدم؛
+  <li>الأسطر 30–32: يتم استرداد المراجع إلى الكائنات الثلاثة [<bdi dir="ltr" class="odt-ltr-term">Repository</bdi>] التي قد تكون مفيدة لإنشاء المستخدم؛
   </li>
   <li>السطر 34: نتحقق مما إذا كان الدور موجودًا بالفعل؛
   </li>
-  <li>الأسطر 36-38: إذا لم يكن موجودًا، نقوم بإنشائه في قاعدة البيانات. سيكون اسمه على شكل [ROLE_XX]؛
+  <li>الأسطر 36-38: إذا لم يكن موجودًا، نقوم بإنشائه في قاعدة البيانات. سيكون اسمه على شكل [<bdi dir="ltr" class="odt-ltr-term">ROLE_XX</bdi>]؛
   </li>
   <li>السطر 40: نتحقق مما إذا كان اسم المستخدم موجودًا بالفعل؛
   </li>
   <li>الأسطر 42-49: إذا لم يكن اسم المستخدم موجودًا، نقوم بإنشائه في قاعدة البيانات؛
   </li>
-  <li>السطر 44: نقوم بتشفير كلمة المرور. هنا، نستخدم فئة [BCrypt] من Spring Security (السطر 4). لذلك نحتاج إلى أرشيفات هذا الإطار. يتضمن ملف [pom.xml] هذه التبعية:
+  <li>السطر 44: نقوم بتشفير كلمة المرور. هنا، نستخدم فئة [<bdi dir="ltr" class="odt-ltr-term">BCrypt</bdi>] من <bdi dir="ltr" class="odt-ltr-term">Spring Security</bdi> (السطر 4). لذلك نحتاج إلى أرشيفات هذا الإطار. يتضمن ملف [<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>] هذه التبعية:
   </li>
 </ul>
 
@@ -2715,23 +2717,23 @@
   </li>
   <li>الأسطر 51-57: إذا كان تسجيل الدخول موجودًا بالفعل، نتحقق مما إذا كان الدور الذي نريد تعيينه له موجودًا بالفعل ضمن أدواره؛
   </li>
-  <li>الأسطر 59–61: إذا لم يتم العثور على الدور الذي يتم البحث عنه، يتم إنشاء صف في جدول [USERS_ROLES] لربط المستخدم بدوره؛
+  <li>الأسطر 59–61: إذا لم يتم العثور على الدور الذي يتم البحث عنه، يتم إنشاء صف في جدول [<bdi dir="ltr" class="odt-ltr-term">USERS_ROLES</bdi>] لربط المستخدم بدوره؛
   </li>
   <li>لم نقم بالحماية من الاستثناءات المحتملة. هذه فئة مساعدة لإنشاء مستخدم بدور بسرعة.
   </li>
 </ul>
 
-<p>عند تنفيذ الفئة مع الحجج [x x guest]، يتم الحصول على النتائج التالية في قاعدة البيانات:</p>
-<p><strong>الجدول [USERS]</strong></p>
+<p>عند تنفيذ الفئة مع الحجج [<bdi dir="ltr" class="odt-ltr-term">x x guest</bdi>]، يتم الحصول على النتائج التالية في قاعدة البيانات:</p>
+<p><strong>الجدول [<bdi dir="ltr" class="odt-ltr-term">USERS</bdi>]</strong></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000025F000000704AB541BB.png" width="425" height="78" style="display:inline-block; margin:4px;width:11.24cm;height:2.074cm;" class="odt-zoomable" data-zoom-src="images/100000000000025F000000704AB541BB.png" /></td></tr></table>
 
 <p><strong>جدول [الأدوار]</strong></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000BD000000701234D8E4.png" width="132" height="78" style="display:inline-block; margin:4px;width:3.5cm;height:2.074cm;" class="odt-zoomable" data-zoom-src="images/10000000000000BD000000701234D8E4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p><strong>الجدول [USERS_ROLES]</strong></p>
+<p><strong>الجدول [<bdi dir="ltr" class="odt-ltr-term">USERS</bdi>_ROLES]</strong></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E10000007320F58A19.png" width="158" height="81" style="display:inline-block; margin:4px;width:4.17cm;height:2.131cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E10000007320F58A19.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>الآن دعونا ننظر إلى الفئة الثانية [UsersTest]، وهي اختبار JUnit:</p>
+<p>الآن دعونا ننظر إلى الفئة الثانية [<bdi dir="ltr" class="odt-ltr-term">UsersTest</bdi>]، وهي اختبار <bdi dir="ltr" class="odt-ltr-term">JUnit:</bdi></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000C800000059F3626BCE.png" width="140" height="62" style="display:inline-block; margin:4px;width:3.701cm;height:1.647cm;" class="odt-zoomable" data-zoom-src="images/10000000000000C800000059F3626BCE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -2818,11 +2820,11 @@
 <ul>
   <li>الأسطر 37–44: اختبار مرئي. نعرض جميع المستخدمين مع أدوارهم؛
   </li>
-  <li>الأسطر 46–56: نتحقق من أن المستخدم [admin] لديه كلمة المرور [admin] والدور [ROLE_ADMIN] باستخدام [UserRepository]؛
+  <li>الأسطر 46–56: نتحقق من أن المستخدم [<bdi dir="ltr" class="odt-ltr-term">admin</bdi>] لديه كلمة المرور [<bdi dir="ltr" class="odt-ltr-term">admin</bdi>] والدور [<bdi dir="ltr" class="odt-ltr-term">ROLE_ADMIN</bdi>] باستخدام [<bdi dir="ltr" class="odt-ltr-term">UserRepository</bdi>]؛
   </li>
-  <li>السطر 51: [admin] هي كلمة المرور النصية العادية. في قاعدة البيانات، يتم تشفيرها باستخدام خوارزمية BCrypt. تتحقق طريقة [BCrypt.checkpw] من أن كلمة المرور النصية العادية المشفرة تتطابق مع تلك الموجودة في قاعدة البيانات؛
+  <li>السطر 51: [<bdi dir="ltr" class="odt-ltr-term">admin</bdi>] هي كلمة المرور النصية العادية. في قاعدة البيانات، يتم تشفيرها باستخدام خوارزمية <bdi dir="ltr" class="odt-ltr-term">BCrypt.</bdi> تتحقق طريقة [<bdi dir="ltr" class="odt-ltr-term">BCrypt.checkpw</bdi>] من أن كلمة المرور النصية العادية المشفرة تتطابق مع تلك الموجودة في قاعدة البيانات؛
   </li>
-  <li>الأسطر 58–69: نتحقق من أن المستخدم [admin] لديه كلمة المرور [admin] والدور [ROLE_ADMIN] باستخدام [<span style="color: #0000c0">appUserDetailsService</span>]؛
+  <li>الأسطر 58–69: نتحقق من أن المستخدم [<bdi dir="ltr" class="odt-ltr-term">admin</bdi>] لديه كلمة المرور [<bdi dir="ltr" class="odt-ltr-term">admin</bdi>] والدور [<bdi dir="ltr" class="odt-ltr-term">ROLE_ADMIN</bdi>] باستخدام [<span style="color: #0000c0"><bdi dir="ltr" class="odt-ltr-term">appUserDetailsService</bdi></span>]؛
   </li>
 </ul>
 
@@ -2859,11 +2861,11 @@
 </code></pre></div></td></tr></table></div>
 <p><a id="refheading9353894989336"></a></p>
 <h3 id="1649">16.4.9. <span style="color: #4f81bd"><span style="color: #4f81bd">اختبار خدمة الويب</span></span></h3>
-<p><span style="color: #000000">سنقوم باختبار خدمة الويب باستخدام عميل Chrome [Advanced Rest Client]. سنحتاج إلى تحديد رأس مصادقة HTTP:</span></p>
+<p><span style="color: #000000">سنقوم باختبار خدمة الويب باستخدام عميل <bdi dir="ltr" class="odt-ltr-term">Chrome</bdi> [<bdi dir="ltr" class="odt-ltr-term">Advanced Rest Client</bdi>]. سنحتاج إلى تحديد رأس مصادقة <bdi dir="ltr" class="odt-ltr-term">HTTP:</bdi></span></p>
 <p><a id="refheading1623951200878134"></a></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>Authorization:Basic code
 </code></pre></div>
-<p><span style="color: #000000">حيث [code] هي السلسلة المشفرة بـ Base64 [login:password]. لإنشاء هذا الرمز، يمكنك استخدام البرنامج التالي:</span></p>
+<p><span style="color: #000000">حيث [<bdi dir="ltr" class="odt-ltr-term">code</bdi>] هي السلسلة المشفرة بـ <bdi dir="ltr" class="odt-ltr-term">Base64</bdi> [<bdi dir="ltr" class="odt-ltr-term">login:password</bdi>]. لإنشاء هذا الرمز، يمكنك استخدام البرنامج التالي:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000CD0000004D7F21C7F8.png" width="144" height="54" style="display:inline-block; margin:4px;width:3.799cm;height:1.427cm;" class="odt-zoomable" data-zoom-src="images/10000000000000CD0000004D7F21C7F8.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -2890,23 +2892,23 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">إذا قمنا بتشغيل هذا البرنامج مع الحجتين [admin admin]:</span></p>
+<p><span style="color: #000000">إذا قمنا بتشغيل هذا البرنامج مع الحجتين [<bdi dir="ltr" class="odt-ltr-term">admin admin</bdi>]:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000B600000082F93EB79F.png" width="127" height="91" style="display:inline-block; margin:4px;width:3.371cm;height:2.408cm;" class="odt-zoomable" data-zoom-src="images/10000000000000B600000082F93EB79F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><span style="color: #000000">نحصل على النتيجة التالية:</span></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>YWRtaW46YWRtaW4=
 </code></pre></div>
-<p><span style="color: #000000">الآن بعد أن عرفنا كيفية إنشاء رأس مصادقة HTTP، نقوم بتشغيل خدمة الويب الآمنة، ثم باستخدام عميل Chrome [Advanced Rest Client]، نطلب قائمة بجميع </span>المنتجات<span style="color: #000000">:</span></p>
+<p><span style="color: #000000">الآن بعد أن عرفنا كيفية إنشاء رأس مصادقة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi>، نقوم بتشغيل خدمة الويب الآمنة، ثم باستخدام عميل <bdi dir="ltr" class="odt-ltr-term">Chrome</bdi> [<bdi dir="ltr" class="odt-ltr-term">Advanced Rest Client</bdi>]، نطلب قائمة بجميع </span>المنتجات<span style="color: #000000">:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000452000001B0CCD29594.png" width="553" height="216" style="display:inline-block; margin:4px;width:14.631cm;height:5.715cm;" class="odt-zoomable" data-zoom-src="images/1000000000000452000001B0CCD29594.png" /></td></tr></table>
 
 <ul>
-  <li><span style="color: #000000">في [1]، نطلب عنوان URL للفئات؛</span>
+  <li><span style="color: #000000">في [1]، نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> للفئات؛</span>
   </li>
-  <li><span style="color: #000000">في [2]، باستخدام طريقة GET؛</span>
+  <li><span style="color: #000000">في [2]، باستخدام طريقة <bdi dir="ltr" class="odt-ltr-term">GET</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">في [3]، نقدم رأس مصادقة HTTP. الرمز [YWRtaW46YWRtaW4=] هو ترميز Base64 للسلسلة [admin:admin]؛</span>
+  <li><span style="color: #000000">في [3]، نقدم رأس مصادقة <bdi dir="ltr" class="odt-ltr-term">HTTP.</bdi> الرمز [<bdi dir="ltr" class="odt-ltr-term">YWRtaW46YWRtaW4</bdi>=] هو ترميز <bdi dir="ltr" class="odt-ltr-term">Base64</bdi> للسلسلة [<bdi dir="ltr" class="odt-ltr-term">admin:admin</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">في [4]، نرسل طلب HTTP؛</span>
+  <li><span style="color: #000000">في [4]، نرسل طلب <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi>؛</span>
   </li>
 </ul>
 
@@ -2914,20 +2916,20 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002CE000001B5B729F0DF.png" width="359" height="218" style="display:inline-block; margin:4px;width:9.499cm;height:5.78cm;" class="odt-zoomable" data-zoom-src="images/10000000000002CE000001B5B729F0DF.png" /></td></tr></table>
 
 <ul>
-  <li><span style="color: #000000">في [1]، رأس مصادقة HTTP؛</span>
+  <li><span style="color: #000000">في [1]، رأس مصادقة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">في [2]، يقوم الخادم بإرجاع استجابة JSON؛</span>
+  <li><span style="color: #000000">في [2]، يقوم الخادم بإرجاع استجابة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>؛</span>
   </li>
 </ul>
 
 <p><span style="color: #000000">نجحنا في الحصول على قائمة الفئات:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000119000001657189CC21.png" width="197" height="250" style="display:inline-block; margin:4px;width:5.2cm;height:6.606cm;" class="odt-zoomable" data-zoom-src="images/1000000000000119000001657189CC21.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p><span style="color: #000000">الآن دعونا نجرب طلب HTTP برأس مصادقة غير صحيح. تكون الاستجابة عندئذ كما يلي:</span></p>
+<p><span style="color: #000000">الآن دعونا نجرب طلب <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> برأس مصادقة غير صحيح. تكون الاستجابة عندئذ كما يلي:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000417000001BAAC19A967.png" width="524" height="221" style="display:inline-block; margin:4px;width:13.852cm;height:5.847cm;" class="odt-zoomable" data-zoom-src="images/1000000000000417000001BAAC19A967.png" /></td></tr></table>
 
 <ul>
-  <li><span style="color: #000000">في [1]: رأس المصادقة HTTP؛</span>
+  <li><span style="color: #000000">في [1]: رأس المصادقة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi>؛</span>
   </li>
 </ul>
 
@@ -2939,7 +2941,7 @@
   </li>
 </ul>
 
-<p><span style="color: #000000">الآن، دعونا نجرب المستخدم / user. إنه موجود ولكنه لا يملك حق الوصول إلى خدمة الويب. إذا قمنا بتشغيل برنامج الترميز Base64 مع الحجتين [user user]:</span></p>
+<p><span style="color: #000000">الآن، دعونا نجرب المستخدم / <bdi dir="ltr" class="odt-ltr-term">user.</bdi> إنه موجود ولكنه لا يملك حق الوصول إلى خدمة الويب. إذا قمنا بتشغيل برنامج الترميز <bdi dir="ltr" class="odt-ltr-term">Base64</bdi> مع الحجتين [<bdi dir="ltr" class="odt-ltr-term">user user</bdi>]:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000009E000000765D52ED73.png" width="111" height="83" style="display:inline-block; margin:4px;width:2.93cm;height:2.187cm;" class="odt-zoomable" data-zoom-src="images/100000000000009E000000765D52ED73.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><span style="color: #000000">نحصل على النتيجة التالية:</span></p>
@@ -2948,23 +2950,23 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002E20000011B5B418D52.png" width="369" height="142" style="display:inline-block; margin:4px;width:9.763cm;height:3.745cm;" class="odt-zoomable" data-zoom-src="images/10000000000002E20000011B5B418D52.png" /></td></tr></table>
 
 <ul>
-  <li><span style="color: #000000">في [1]: رأس مصادقة HTTP غير الصحيح؛</span>
+  <li><span style="color: #000000">في [1]: رأس مصادقة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> غير الصحيح؛</span>
   </li>
 </ul>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002AC000001CCB5568B61.png" width="342" height="230" style="display:inline-block; margin:4px;width:9.049cm;height:6.085cm;" class="odt-zoomable" data-zoom-src="images/10000000000002AC000001CCB5568B61.png" /></td></tr></table>
 
 <ul>
-  <li><span style="color: #000000">في [2]: استجابة خدمة الويب. وهي تختلف عن الاستجابة السابقة، التي كانت [401 غير مصرح به]. هذه المرة، تمت مصادقة المستخدم بشكل صحيح ولكنه لا يمتلك أذونات كافية للوصول إلى عنوان URL؛</span>
+  <li><span style="color: #000000">في [2]: استجابة خدمة الويب. وهي تختلف عن الاستجابة السابقة، التي كانت [401 غير مصرح به]. هذه المرة، تمت مصادقة المستخدم بشكل صحيح ولكنه لا يمتلك أذونات كافية للوصول إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi>؛</span>
   </li>
 </ul>
 
 <p><span style="color: #000000">خدمة الويب الآمنة لدينا تعمل الآن.</span></p>
 <p><a id="refheading9355894989336"></a></p>
-<h3 id="16410-url">16.4.10. <span style="color: #4f81bd">عنوان URL للمصادقة</span></h3>
+<h3 id="16410-url">16.4.10. <span style="color: #4f81bd">عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> للمصادقة</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000117000000BAB751A9D8.png" width="195" height="130" style="display:inline-block; margin:4px;width:5.159cm;height:3.44cm;" class="odt-zoomable" data-zoom-src="images/1000000000000117000000BAB751A9D8.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p><span style="color: #000000">سننشئ عنوان URL يسمح لنا بتحديد ما إذا كان المستخدم مخولًا للوصول إلى خدمة الويب. للقيام بذلك، نقوم بإنشاء وحدة تحكم MVC جديدة [AuthenticateController] كما يلي:</span></p>
+<p><span style="color: #000000">سننشئ عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> يسمح لنا بتحديد ما إذا كان المستخدم مخولًا للوصول إلى خدمة الويب. للقيام بذلك، نقوم بإنشاء وحدة تحكم <bdi dir="ltr" class="odt-ltr-term">MVC</bdi> جديدة [<bdi dir="ltr" class="odt-ltr-term">AuthenticateController</bdi>] كما يلي:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span> spring.security.service;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2999,42 +3001,42 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">السطر 15: فئة [AuthenticateController] هي وحدة تحكم Spring. وبصفتها كذلك، فإنها تعرض عناوين URL؛</span>
+  <li><span style="color: #000000">السطر 15: فئة [<bdi dir="ltr" class="odt-ltr-term">AuthenticateController</bdi>] هي وحدة تحكم <bdi dir="ltr" class="odt-ltr-term">Spring.</bdi> وبصفتها كذلك، فإنها تعرض عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطر 22: تعرض عنوان URL [/authenticate]؛</span>
+  <li><span style="color: #000000">السطر 22: تعرض عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">authenticate</bdi>]؛</span>
   </li>
   <li><span style="color: #000000">السطر 23: سيتم إرسال نتيجة الطريقة مباشرة إلى العميل؛</span>
   </li>
-  <li><span style="color: #000000">السطران 26 و27: تُرجع الدالة ببساطة كائن [Response] فارغًا، لكن مع قيمة [status] تساوي 0، مما يشير إلى عدم حدوث أي خطأ؛</span>
+  <li><span style="color: #000000">السطران 26 و27: تُرجع الدالة ببساطة كائن [<bdi dir="ltr" class="odt-ltr-term">Response</bdi>] فارغًا، لكن مع قيمة [<bdi dir="ltr" class="odt-ltr-term">status</bdi>] تساوي 0، مما يشير إلى عدم حدوث أي خطأ؛</span>
   </li>
 </ul>
 
-<p><span style="color: #000000">ما الغرض من عنوان URL هذا؟ عندما نريد ببساطة مصادقة مستخدم، سنطلبه. وقد رأينا أنه إذا لم تقبل طبقة الأمان هذا المستخدم، فإنها ترمي استثناءً. وإليك مثال على ذلك؛</span></p>
-<p><span style="color: #000000">مع المستخدم [admin:admin]:</span></p>
+<p><span style="color: #000000">ما الغرض من عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> هذا؟ عندما نريد ببساطة مصادقة مستخدم، سنطلبه. وقد رأينا أنه إذا لم تقبل طبقة الأمان هذا المستخدم، فإنها ترمي استثناءً. وإليك مثال على ذلك؛</span></p>
+<p><span style="color: #000000">مع المستخدم [<bdi dir="ltr" class="odt-ltr-term">admin:admin</bdi>]:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001420000009AABCE08F9.png" width="225" height="108" style="display:inline-block; margin:4px;width:5.96cm;height:2.85cm;" class="odt-zoomable" data-zoom-src="images/10000000000001420000009AABCE08F9.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000117000000B591DBE78F.png" width="195" height="127" style="display:inline-block; margin:4px;width:5.159cm;height:3.348cm;" class="odt-zoomable" data-zoom-src="images/1000000000000117000000B591DBE78F.png" /></td></tr></table>
 
 <p><span style="color: #000000">نحصل على استجابة فارغة ولكن دون حدوث استثناء.</span></p>
-<p><span style="color: #000000">مع المستخدم [user:user]:</span></p>
+<p><span style="color: #000000">مع المستخدم [<bdi dir="ltr" class="odt-ltr-term">user:user</bdi>]:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000013400000092BD454689.png" width="215" height="102" style="display:inline-block; margin:4px;width:5.701cm;height:2.702cm;" class="odt-zoomable" data-zoom-src="images/100000000000013400000092BD454689.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000014B0000013AB01AB4A1.png" width="232" height="220" style="display:inline-block; margin:4px;width:6.13cm;height:5.816cm;" class="odt-zoomable" data-zoom-src="images/100000000000014B0000013AB01AB4A1.png" /></td></tr></table>
 
 <p><span style="color: #000000">حدثت استثناء.</span></p>
 <p><a id="refheading9357894989336"></a></p>
 <h3 id="16411">16.4.11. <span style="color: #4f81bd">الخلاصة</span></h3>
-<p>تمت إضافة الفئات الضرورية لـ Spring Security دون تعديل مشروع web/JSON الأصلي. ينبع هذا السيناريو المواتي للغاية من حقيقة أن الجداول الثلاثة المضافة إلى قاعدة البيانات مستقلة عن الجداول الموجودة. كان بإمكاننا حتى وضعها في قاعدة بيانات منفصلة. في حالات أخرى، قد تكون للجداول المضافة علاقات مع الجداول الموجودة. في هذه الحالة، يجب تعديل كيانات JPA، مما يؤثر عمومًا على جميع طبقات المشروع.</p>
+<p>تمت إضافة الفئات الضرورية لـ <bdi dir="ltr" class="odt-ltr-term">Spring Security</bdi> دون تعديل مشروع <bdi dir="ltr" class="odt-ltr-term">web/JSON</bdi> الأصلي. ينبع هذا السيناريو المواتي للغاية من حقيقة أن الجداول الثلاثة المضافة إلى قاعدة البيانات مستقلة عن الجداول الموجودة. كان بإمكاننا حتى وضعها في قاعدة بيانات منفصلة. في حالات أخرى، قد تكون للجداول المضافة علاقات مع الجداول الموجودة. في هذه الحالة، يجب تعديل كيانات <bdi dir="ltr" class="odt-ltr-term">JPA</bdi>، مما يؤثر عمومًا على جميع طبقات المشروع.</p>
 <p><a id="refheading180062656793311"></a></p>
-<h2 id="165-webjson">16.5. <span style="color: #4f81bd">عميل مبرمج لخدمة web/JSON الآمنة</span></h2>
-<p>لقد قمنا بالفعل بكتابة عميل لخدمة الويب / JSON غير الآمنة:</p>
+<h2 id="165-webjson">16.5. <span style="color: #4f81bd">عميل مبرمج لخدمة <bdi dir="ltr" class="odt-ltr-term">web/JSON</bdi> الآمنة</span></h2>
+<p>لقد قمنا بالفعل بكتابة عميل لخدمة الويب / <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> غير الآمنة:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000049C000003193CBC7635.png" width="590" height="396" style="display:inline-block; margin:4px;width:15.61cm;height:10.49cm;" class="odt-zoomable" data-zoom-src="images/100000000000049C000003193CBC7635.png" /></td></tr></table>
 
 <p>سنقوم الآن بإنشاء عميل مبرمج لخدمة الويب الآمنة:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000046E0000030D137DB59E.png" width="567" height="391" style="display:inline-block; margin:4px;width:15.002cm;height:10.333cm;" class="odt-zoomable" data-zoom-src="images/100000000000046E0000030D137DB59E.png" /></td></tr></table>
 
-<p>نقوم بنسخ المشروع الحالي [intro-webjson-client] إلى مشروع جديد [intro-spring-security-client-01]:</p>
+<p>نقوم بنسخ المشروع الحالي [<bdi dir="ltr" class="odt-ltr-term">intro-webjson-client</bdi>] إلى مشروع جديد [<bdi dir="ltr" class="odt-ltr-term">intro-spring-security-client-01</bdi>]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F0000001C2A470D4AF.png" width="168" height="315" style="display:inline-block; margin:4px;width:4.45cm;height:8.343cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F0000001C2A470D4AF.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><a id="refheading9359894989336"></a></p>
-<h3 id="1651-abstractdao">16.5.1. <span style="color: #4f81bd">فئة [AbstractDao]</span></h3>
-<p>تتولى فئة [AbstractDao] إدارة الاتصال عبر HTTP مع خادم الويب/JSON الآمن. وكما رأينا للتو، في هذا الاتصال عبر HTTP، يجب على العميل الآن إرسال رأس مصادقة، على سبيل المثال:</p>
+<h3 id="1651-abstractdao">16.5.1. <span style="color: #4f81bd">فئة [<bdi dir="ltr" class="odt-ltr-term">AbstractDao</bdi>]</span></h3>
+<p>تتولى فئة [<bdi dir="ltr" class="odt-ltr-term">AbstractDao</bdi>] إدارة الاتصال عبر <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> مع خادم الويب/<bdi dir="ltr" class="odt-ltr-term">JSON</bdi> الآمن. وكما رأينا للتو، في هذا الاتصال عبر <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi>، يجب على العميل الآن إرسال رأس مصادقة، على سبيل المثال:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>Authorization:Basic YWRtaW46YWRtaW4=
 </code></pre></div>
 <p>ويتم ذلك على النحو التالي:</p>
@@ -3060,7 +3062,7 @@
 
 <p><span style="color: #000000"> </span></p>
 <ul>
-  <li>السطر 15: الطريقة العامة [getResponse]، المسؤولة عن الاتصال HTTP مع خدمة الويب الآمنة، تقبل الآن المستخدم الذي يطلب عنوان URL كمعلمة أولى لها. فئة [User] هي كما يلي:
+  <li>السطر 15: الطريقة العامة [<bdi dir="ltr" class="odt-ltr-term">getResponse</bdi>]، المسؤولة عن الاتصال <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> مع خدمة الويب الآمنة، تقبل الآن المستخدم الذي يطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> كمعلمة أولى لها. فئة [<bdi dir="ltr" class="odt-ltr-term">User</bdi>] هي كما يلي:
   </li>
 </ul>
 
@@ -3090,7 +3092,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>تصبح طريقة [getResponse] كما يلي:</p>
+<p>تصبح طريقة [<bdi dir="ltr" class="odt-ltr-term">getResponse</bdi>] كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.security.client.dao;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -3161,15 +3163,15 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">الأسطر 42–44، 49–51: إذا لم يكن المستخدم فارغًا، يتم إضافة رأس المصادقة. يتم التعامل مع ترميز </span><i><span style="color: #000000">Base64 </span></i><span style="color: #000000">للمستخدم وكلمة المرور الخاصة به بواسطة طريقة [getBase64] في الأسطر 25–29. لاحظ أن هذه الطريقة تستخدم فئة [Base64] تابعة لـ JDK 1.8.</span>
+  <li><span style="color: #000000">الأسطر 42–44، 49–51: إذا لم يكن المستخدم فارغًا، يتم إضافة رأس المصادقة. يتم التعامل مع ترميز </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">Base64</bdi> </span></i><span style="color: #000000">للمستخدم وكلمة المرور الخاصة به بواسطة طريقة [<bdi dir="ltr" class="odt-ltr-term">getBase64</bdi>] في الأسطر 25–29. لاحظ أن هذه الطريقة تستخدم فئة [<bdi dir="ltr" class="odt-ltr-term">Base64</bdi>] تابعة لـ <bdi dir="ltr" class="odt-ltr-term">JDK 1.8</bdi>.</span>
   </li>
   <li><span style="color: #000000">بصرف النظر عن الأسطر السابقة، يظل الكود دون تغيير؛</span>
   </li>
 </ul>
 
 <p><a id="refheading9361894989336"></a></p>
-<h3 id="1652-idao">16.5.2. <span style="color: #4f81bd">واجهة [IDao]</span></h3>
-<p><span style="color: #000000">تستقبل جميع طرق واجهة [IDao] معلمة إضافية [User user]:</span></p>
+<h3 id="1652-idao">16.5.2. <span style="color: #4f81bd">واجهة [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>]</span></h3>
+<p><span style="color: #000000">تستقبل جميع طرق واجهة [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>] معلمة إضافية [<bdi dir="ltr" class="odt-ltr-term">User user</bdi>]:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000010B000000C9955EE9BE.png" width="186" height="140" style="display:inline-block; margin:4px;width:4.93cm;height:3.711cm;" class="odt-zoomable" data-zoom-src="images/100000000000010B000000C9955EE9BE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -3232,12 +3234,12 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">السطر 12: أضفنا طريقة [authenticate(User user)] لمصادقة المستخدم. ترمي هذه الطريقة استثناءً إذا لم يكن لدى المستخدم إذن للوصول إلى عنوان URL [/authenticate] لخدمة الويب؛</span>
+  <li><span style="color: #000000">السطر 12: أضفنا طريقة [<bdi dir="ltr" class="odt-ltr-term">authenticate</bdi>(<bdi dir="ltr" class="odt-ltr-term">User user</bdi>)] لمصادقة المستخدم. ترمي هذه الطريقة استثناءً إذا لم يكن لدى المستخدم إذن للوصول إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">authenticate</bdi>] لخدمة الويب؛</span>
   </li>
 </ul>
 <p><a id="refheading9363894989336"></a></p>
-<h3 id="1653-dao">16.5.3. <span style="color: #4f81bd">فئة [Dao]</span></h3>
-<p><span style="color: #000000">تستقبل جميع الطرق في فئة [Dao] معلمة إضافية [User user] تقوم بتمريرها إلى الطريقة العامة [getResponse] لفئة [AbstractDao]. فيما يلي مثالان:</span></p>
+<h3 id="1653-dao">16.5.3. <span style="color: #4f81bd">فئة [<bdi dir="ltr" class="odt-ltr-term">Dao</bdi>]</span></h3>
+<p><span style="color: #000000">تستقبل جميع الطرق في فئة [<bdi dir="ltr" class="odt-ltr-term">Dao</bdi>] معلمة إضافية [<bdi dir="ltr" class="odt-ltr-term">User user</bdi>] تقوم بتمريرها إلى الطريقة العامة [<bdi dir="ltr" class="odt-ltr-term">getResponse</bdi>] لفئة [<bdi dir="ltr" class="odt-ltr-term">AbstractDao</bdi>]. فيما يلي مثالان:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content">// authentication</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
@@ -3276,8 +3278,8 @@
 </code></pre></div>
 
 <p><a id="refheading9365894989336"></a></p>
-<h3 id="1654-dao">16.5.4. <span style="color: #4f81bd">اختبارات الوحدة لفئة [Dao]</span></h3>
-<p><span style="color: #000000">تم تعديل فئة [Test01] الخاصة باختبار الوحدة لفئة [Dao] على النحو التالي:</span></p>
+<h3 id="1654-dao">16.5.4. <span style="color: #4f81bd">اختبارات الوحدة لفئة [<bdi dir="ltr" class="odt-ltr-term">Dao</bdi>]</span></h3>
+<p><span style="color: #000000">تم تعديل فئة [<bdi dir="ltr" class="odt-ltr-term">Test01</bdi>] الخاصة باختبار الوحدة لفئة [<bdi dir="ltr" class="odt-ltr-term">Dao</bdi>] على النحو التالي:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F900000093E26E8850.png" width="174" height="103" style="display:inline-block; margin:4px;width:4.611cm;height:2.722cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F900000093E26E8850.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -3392,19 +3394,19 @@
 <ul>
   <li><span style="color: #000000">أثناء تهيئة فئة الاختبار، في الأسطر 21–26، يتم إنشاء ثلاثة مستخدمين:</span>
     <ul>
-      <li><span style="color: #000000">المستخدم [admin] لديه حق الوصول إلى عناوين URL لخدمة الويب، اختبار الأسطر 96-104؛</span>
+      <li><span style="color: #000000">المستخدم [<bdi dir="ltr" class="odt-ltr-term">admin</bdi>] لديه حق الوصول إلى عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لخدمة الويب، اختبار الأسطر 96-104؛</span>
       </li>
-      <li><span style="color: #000000">المستخدم [user] موجود ولكنه غير مخول باستخدام عناوين URL لخدمة الويب، الأسطر 71-81 من الاختبار؛</span>
+      <li><span style="color: #000000">المستخدم [<bdi dir="ltr" class="odt-ltr-term">user</bdi>] موجود ولكنه غير مخول باستخدام عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لخدمة الويب، الأسطر 71-81 من الاختبار؛</span>
       </li>
-      <li><span style="color: #000000">المستخدم [unknown] غير موجود، الأسطر 83-93 من الاختبار؛</span>
+      <li><span style="color: #000000">المستخدم [<bdi dir="ltr" class="odt-ltr-term">unknown</bdi>] غير موجود، الأسطر 83-93 من الاختبار؛</span>
       </li>
     </ul>
   </li>
-  <li><span style="color: #000000">طرق الاختبار هي نفسها التي سبق رؤيتها لخدمة الويب غير الآمنة، باستثناء أن طرق واجهة [IDaoClient] يتم استدعاؤها باستخدام المستخدم [admin] —الذي لديه إذن لاستخدام عناوين URL— كمعلمة أولى؛</span>
+  <li><span style="color: #000000">طرق الاختبار هي نفسها التي سبق رؤيتها لخدمة الويب غير الآمنة، باستثناء أن طرق واجهة [<bdi dir="ltr" class="odt-ltr-term">IDaoClient</bdi>] يتم استدعاؤها باستخدام المستخدم [<bdi dir="ltr" class="odt-ltr-term">admin</bdi>] —الذي لديه إذن لاستخدام عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi>— كمعلمة أولى؛</span>
   </li>
 </ul>
 
-<p><span style="color: #000000">اجتاز الاختبار، لكن يمكننا ملاحظة أنه أبطأ من خدمة الويب غير الآمنة. يؤدي تأمين التطبيق إلى زيادة أوقات الاستجابة بشكل كبير. هناك عامل مهم واحد يؤثر على أداء خدمة الويب الآمنة: في فئة [AppConfig] التي تقوم بتكوينها، كتبنا:</span></p>
+<p><span style="color: #000000">اجتاز الاختبار، لكن يمكننا ملاحظة أنه أبطأ من خدمة الويب غير الآمنة. يؤدي تأمين التطبيق إلى زيادة أوقات الاستجابة بشكل كبير. هناك عامل مهم واحد يؤثر على أداء خدمة الويب الآمنة: في فئة [<bdi dir="ltr" class="odt-ltr-term">AppConfig</bdi>] التي تقوم بتكوينها، كتبنا:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> configure(HttpSecurity </span><span style="color:#6a3e3e">http</span><span style="color:#000000">) </span><span style="font-weight:bold;color:#7f0055">throws</span><span style="color:#000000"> Exception {</span></span></span>
@@ -3427,7 +3429,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">السطر 17 له ثمنه. فهو يجبر المستخدم على المصادقة عند كل وصول. إذا قمنا بتعليقه، تنخفض مدة اختبار JUnit السابق من 10.57 ثانية إلى 4.21 ثانية، لأن المستخدم [admin] يقوم بالمصادقة فقط للاختبار الأول وليس للاختبارات اللاحقة (على الرغم من إرسال رأس مصادقة HTTP من قبل العميل، لا يقوم الخادم بإعادة التحقق من كلمة مرور المستخدم). مع خدمة ويب غير آمنة، تنخفض مدة اختبار JUnit إلى 2.33 ثانية.</span></p>
+<p><span style="color: #000000">السطر 17 له ثمنه. فهو يجبر المستخدم على المصادقة عند كل وصول. إذا قمنا بتعليقه، تنخفض مدة اختبار <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi> السابق من 10.57 ثانية إلى 4.21 ثانية، لأن المستخدم [<bdi dir="ltr" class="odt-ltr-term">admin</bdi>] يقوم بالمصادقة فقط للاختبار الأول وليس للاختبارات اللاحقة (على الرغم من إرسال رأس مصادقة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> من قبل العميل، لا يقوم الخادم بإعادة التحقق من كلمة مرور المستخدم). مع خدمة ويب غير آمنة، تنخفض مدة اختبار <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi> إلى 2.33 ثانية.</span></p>
 
 
 

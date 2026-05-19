@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1104,73 +1106,73 @@
 
 
 <p><a id="refheading2192602014630537"></a></p>
-<h1 id="12-td-dao-td-spring-data">12. <span style="color: #365f91">[TD]: تنفيذ طبقة [DAO] في TD باستخدام [Spring Data]</span></h1>
-<p><strong>الكلمات المفتاحية</strong>: بنية متعددة الطبقات، Spring، حقن التبعية، JPA (Java Persistence API)، Spring Data.</p>
-<p>سنتبع نفس النهج السابق لتنفيذ طبقة [DAO] في TD.</p>
+<h1 id="12-td-dao-td-spring-data">12. <span style="color: #365f91">[<bdi dir="ltr" class="odt-ltr-term">TD</bdi>]: تنفيذ طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] في <bdi dir="ltr" class="odt-ltr-term">TD</bdi> باستخدام [<bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi>]</span></h1>
+<p><strong>الكلمات المفتاحية</strong>: بنية متعددة الطبقات، <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>، حقن التبعية، <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> (<bdi dir="ltr" class="odt-ltr-term">Java Persistence API</bdi>)، <bdi dir="ltr" class="odt-ltr-term">Spring Data.</bdi></p>
+<p>سنتبع نفس النهج السابق لتنفيذ طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] في <bdi dir="ltr" class="odt-ltr-term">TD.</bdi></p>
 <p><a id="refheading1217161037674463"></a></p>
 <h2 id="121">12.1. <span style="color: #4f81bd"><span style="color: #4f81bd">الدعم</span></span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000015F000000BCA205EC53.png" width="176" height="94" style="display:inline-block; margin:4px;width:4.644cm;height:2.487cm;" class="odt-zoomable" data-zoom-src="images/100000000000015F000000BCA205EC53.png" /></td></tr></table>
 
 <ul>
-  <li>في [1]، يحتوي المجلد [support / chap-12] على مشروع Eclipse الخاص بهذا الفصل؛
+  <li>في [1]، يحتوي المجلد [<bdi dir="ltr" class="odt-ltr-term">support</bdi> / <bdi dir="ltr" class="odt-ltr-term">chap-12</bdi>] على مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> الخاص بهذا الفصل؛
   </li>
 </ul>
 <p><a id="refheading2192622014630537"></a></p>
-<h2 id="122-eclipse">12.2. <span style="color: #4f81bd">مشروع Eclipse</span></h2>
-<p>سيكون مشروع Eclipse على النحو التالي:</p>
+<h2 id="122-eclipse">12.2. <span style="color: #4f81bd">مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi></span></h2>
+<p>سيكون مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> على النحو التالي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F70000014EC15FE9D3.png" width="173" height="234" style="display:inline-block; margin:4px;width:4.57cm;height:6.181cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F70000014EC15FE9D3.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <ul>
-  <li>[elections.dao.config]: يحتوي على فئة تكوين مشروع Spring؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">elections.dao.config</bdi>]: يحتوي على فئة تكوين مشروع <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>؛
   </li>
-  <li>[elections.dao.entities]: يحتوي على كيانات JPA بالإضافة إلى فئة الاستثناءات الخاصة بالمشروع؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">elections.dao.entities</bdi>]: يحتوي على كيانات <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> بالإضافة إلى فئة الاستثناءات الخاصة بالمشروع؛
   </li>
-  <li>[elections.dao.repositories]: يحتوي على واجهات [CrudRepository] لجداول [CONF] و[LISTES]؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">elections.dao.repositories</bdi>]: يحتوي على واجهات [<bdi dir="ltr" class="odt-ltr-term">CrudRepository</bdi>] لجداول [<bdi dir="ltr" class="odt-ltr-term">CONF</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">LISTES</bdi>]؛
   </li>
-  <li>[elections.dao.service]: يحتوي على تنفيذ طبقة [DAO]. هذا هو ما نحتاج إلى كتابته؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">elections.dao.service</bdi>]: يحتوي على تنفيذ طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]. هذا هو ما نحتاج إلى كتابته؛
   </li>
-  <li>[elections.dao.console]: يحتوي على فئة اختبار [console]؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">elections.dao.console</bdi>]: يحتوي على فئة اختبار [<bdi dir="ltr" class="odt-ltr-term">console</bdi>]؛
   </li>
-  <li>[pom.xml]: ملف تكوين مشروع Maven؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>]: ملف تكوين مشروع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi>؛
   </li>
 </ul>
 
 <p>يُنفذ هذا المشروع البنية التالية:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000438000000FAD9AFB415.png" width="540" height="125" style="display:inline-block; margin:4px;width:14.288cm;height:3.307cm;" class="odt-zoomable" data-zoom-src="images/1000000000000438000000FAD9AFB415.png" /></td></tr></table>
 
-<p>لا ترى طبقة [DAO] سوى الطبقة التي تنفذها [Spring Data].</p>
+<p>لا ترى طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] سوى الطبقة التي تنفذها [<bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi>].</p>
 <p><a id="refheading226302014630537"></a></p>
-<h2 id="123-maven">12.3. <span style="color: #4f81bd">تكوين Maven</span></h2>
+<h2 id="123-maven">12.3. <span style="color: #4f81bd">تكوين <bdi dir="ltr" class="odt-ltr-term">Maven</bdi></span></h2>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><strong>المهمة</strong>: إنشاء ملف [pom.xml] الخاص بالمشروع.</p>
+<p><strong>المهمة</strong>: إنشاء ملف [<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>] الخاص بالمشروع.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
 <p><a id="refheading2192642014630537"></a></p>
-<h2 id="124-jpa">12.4. <span style="color: #4f81bd">كيانات طبقة [JPA]</span></h2>
+<h2 id="124-jpa">12.4. <span style="color: #4f81bd">كيانات طبقة [<bdi dir="ltr" class="odt-ltr-term">JPA</bdi>]</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000430000000F2A20C3FB2.png" width="536" height="121" style="display:inline-block; margin:4px;width:14.182cm;height:3.201cm;" class="odt-zoomable" data-zoom-src="images/1000000000000430000000F2A20C3FB2.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D10000005AD3AD4B0F.png" width="146" height="63" style="display:inline-block; margin:4px;width:3.87cm;height:1.667cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D10000005AD3AD4B0F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <ul>
-  <li>[ElectionsConfig] هو نموذج الكائن المرتبط بصف في جدول [CONF]؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">ElectionsConfig</bdi>] هو نموذج الكائن المرتبط بصف في جدول [<bdi dir="ltr" class="odt-ltr-term">CONF</bdi>]؛
   </li>
-  <li>[VoterList] هو نموذج الكائن المرتبط بصف في جدول [LISTS]؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>] هو نموذج الكائن المرتبط بصف في جدول [<bdi dir="ltr" class="odt-ltr-term">LISTS</bdi>]؛
   </li>
-  <li>[AbstractEntity] هي الفئة الأم للفئتين السابقتين. وهي تفصل الحقول [id, version] المشتركة بين الفئتين؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">AbstractEntity</bdi>] هي الفئة الأم للفئتين السابقتين. وهي تفصل الحقول [<bdi dir="ltr" class="odt-ltr-term">id</bdi>, <bdi dir="ltr" class="odt-ltr-term">version</bdi>] المشتركة بين الفئتين؛
   </li>
-  <li>[ElectionsException] هي فئة الاستثناءات الخاصة بالمشروع؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">ElectionsException</bdi>] هي فئة الاستثناءات الخاصة بالمشروع؛
   </li>
 </ul>
 <p><a id="refheading226835658489731"></a></p>
-<h3 id="1241-electionsexception">12.4.1. <span style="color: #4f81bd">فئة [ElectionsException]</span></h3>
+<h3 id="1241-electionsexception">12.4.1. <span style="color: #4f81bd">فئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsException</bdi>]</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D10000005A1EDAED12.png" width="146" height="63" style="display:inline-block; margin:4px;width:3.87cm;height:1.667cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D10000005A1EDAED12.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>فئة [ElectionsException] هي الاستثناء غير المعالج الموصوف في <a href="#refheading1626141501930048"><u><span style="color: #0563c1">القسم 4.3</span></u></a>.</p>
+<p>فئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsException</bdi>] هي الاستثناء غير المعالج الموصوف في <a href="#refheading1626141501930048"><u><span style="color: #0563c1">القسم 4.3</span></u></a>.</p>
 <p><a id="refheading226855658489731"></a></p>
-<h3 id="1242-abstractentity">12.4.2. <span style="color: #4f81bd">فئة [AbstractEntity]</span></h3>
+<h3 id="1242-abstractentity">12.4.2. <span style="color: #4f81bd">فئة [<bdi dir="ltr" class="odt-ltr-term">AbstractEntity</bdi>]</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D10000005AAC8C257E.png" width="146" height="63" style="display:inline-block; margin:4px;width:3.87cm;height:1.667cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D10000005AAC8C257E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>فئة [AbstractEntity] هي كما يلي:</p>
+<p>فئة [<bdi dir="ltr" class="odt-ltr-term">AbstractEntity</bdi>] هي كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.dao.entities;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1245,42 +1247,42 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>هذه هي الفئة الموصوفة في <a href="#refheading1961161114084373"><u><span style="color: #0563c1">القسم 11.3.5.</span></u></a>2، بدون مرشحات JSON. هنا، لا ترتبط الجداول [CONF] و[LISTES] بعلاقة مفتاح خارجي. ومع ذلك، فإن وجود مثل هذه العلاقة مع وضع [التحميل المتأخر] هو ما يستلزم مرشحات JSON.</p>
+<p>هذه هي الفئة الموصوفة في <a href="#refheading1961161114084373"><u><span style="color: #0563c1">القسم 11.3.5.</span></u></a>2، بدون مرشحات <bdi dir="ltr" class="odt-ltr-term">JSON.</bdi> هنا، لا ترتبط الجداول [<bdi dir="ltr" class="odt-ltr-term">CONF</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">LISTES</bdi>] بعلاقة مفتاح خارجي. ومع ذلك، فإن وجود مثل هذه العلاقة مع وضع [التحميل المتأخر] هو ما يستلزم مرشحات <bdi dir="ltr" class="odt-ltr-term">JSON.</bdi></p>
 <p><a id="refheading226875658489731"></a></p>
-<h3 id="1243-electionsconfig">12.4.3. <span style="color: #4f81bd">فئة [ElectionsConfig]</span></h3>
+<h3 id="1243-electionsconfig">12.4.3. <span style="color: #4f81bd">فئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsConfig</bdi>]</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D10000005A7D0E977A.png" width="146" height="63" style="display:inline-block; margin:4px;width:3.87cm;height:1.667cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D10000005A7D0E977A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>فئة [ElectionsConfig] هي كيان JPA المرتبط بالجدول [CONF]؛</p>
+<p>فئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsConfig</bdi>] هي كيان <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> المرتبط بالجدول [<bdi dir="ltr" class="odt-ltr-term">CONF</bdi>]؛</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><strong>المهمة</strong>: قم بتنفيذ فئة [ElectionsConfig].</p>
+<p><strong>المهمة</strong>: قم بتنفيذ فئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsConfig</bdi>].</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
 <p><a id="refheading226895658489731"></a></p>
-<h3 id="1244-voterlist">12.4.4. <span style="color: #4f81bd">فئة [VoterList]</span></h3>
+<h3 id="1244-voterlist">12.4.4. <span style="color: #4f81bd">فئة [<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>]</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D10000005AF6FF4979.png" width="146" height="63" style="display:inline-block; margin:4px;width:3.87cm;height:1.667cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D10000005AF6FF4979.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>فئة [VoterList] هي الكيان JPA المرتبط بالجدول [LISTS]؛</p>
+<p>فئة [<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>] هي الكيان <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> المرتبط بالجدول [<bdi dir="ltr" class="odt-ltr-term">LISTS</bdi>]؛</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><strong>المهمة</strong>: قم بتنفيذ فئة [VoterList].</p>
+<p><strong>المهمة</strong>: قم بتنفيذ فئة [<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>].</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
 <p><a id="refheading2192662014630537"></a></p>
-<h2 id="125-spring-data">12.5. <span style="color: #4f81bd">طبقة [Spring Data]</span></h2>
+<h2 id="125-spring-data">12.5. <span style="color: #4f81bd">طبقة [<bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi>]</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000431000000F69F141679.png" width="537" height="123" style="display:inline-block; margin:4px;width:14.196cm;height:3.254cm;" class="odt-zoomable" data-zoom-src="images/1000000000000431000000F69F141679.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000ED00000037CB1E9CA7.png" width="166" height="39" style="display:inline-block; margin:4px;width:4.39cm;height:1.02cm;" class="odt-zoomable" data-zoom-src="images/10000000000000ED00000037CB1E9CA7.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><strong>المهمة</strong>: اكتب واجهتي [Spring Data] لإدارة الجدولين [CONF] و[LISTES]؛</p>
+<p><strong>المهمة</strong>: اكتب واجهتي [<bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi>] لإدارة الجدولين [<bdi dir="ltr" class="odt-ltr-term">CONF</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">LISTES</bdi>]؛</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
 <p><a id="refheading2192682014630537"></a></p>
-<h2 id="126-dao">12.6. <span style="color: #4f81bd">طبقة [DAO]</span></h2>
+<h2 id="126-dao">12.6. <span style="color: #4f81bd">طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000042A000000F51E420498.png" width="533" height="122" style="display:inline-block; margin:4px;width:14.102cm;height:3.24cm;" class="odt-zoomable" data-zoom-src="images/100000000000042A000000F51E420498.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000B3000000391442EF3F.png" width="125" height="40" style="display:inline-block; margin:4px;width:3.311cm;height:1.055cm;" class="odt-zoomable" data-zoom-src="images/10000000000000B3000000391442EF3F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>واجهة [IElectionsDao] لطبقة [DAO] هي كما يلي:</p>
+<p>واجهة [<bdi dir="ltr" class="odt-ltr-term">IElectionsDao</bdi>] لطبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] هي كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> dao.service;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1301,25 +1303,25 @@
 </code></pre></div>
 
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><strong>المهمة</strong>: اكتب تنفيذ [ElectionsDaoJpa] لواجهة [IElectionsDao].</p>
+<p><strong>المهمة</strong>: اكتب تنفيذ [<bdi dir="ltr" class="odt-ltr-term">ElectionsDaoJpa</bdi>] لواجهة [<bdi dir="ltr" class="odt-ltr-term">IElectionsDao</bdi>].</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
 <p><a id="refheading2192702014630537"></a></p>
-<h2 id="127-spring">12.7. <span style="color: #4f81bd">تكوين مشروع Spring</span></h2>
+<h2 id="127-spring">12.7. <span style="color: #4f81bd">تكوين مشروع <bdi dir="ltr" class="odt-ltr-term">Spring</bdi></span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000AA00000029F949FB68.png" width="119" height="29" style="display:inline-block; margin:4px;width:3.15cm;height:0.76cm;" class="odt-zoomable" data-zoom-src="images/10000000000000AA00000029F949FB68.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>تقوم فئة [DaoConfig] بتكوين مشروع Spring.</p>
+<p>تقوم فئة [<bdi dir="ltr" class="odt-ltr-term">DaoConfig</bdi>] بتكوين مشروع <bdi dir="ltr" class="odt-ltr-term">Spring.</bdi></p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><strong>المهمة</strong>: اكتب فئة [DaoConfig]</p>
+<p><strong>المهمة</strong>: اكتب فئة [<bdi dir="ltr" class="odt-ltr-term">DaoConfig</bdi>]</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
 <p><a id="refheading2192722014630537"></a></p>
-<h2 id="128-console">12.8. <span style="color: #4f81bd">طبقة [console]</span></h2>
+<h2 id="128-console">12.8. <span style="color: #4f81bd">طبقة [<bdi dir="ltr" class="odt-ltr-term">console</bdi>]</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000042A000000F926691E50.png" width="533" height="124" style="display:inline-block; margin:4px;width:14.102cm;height:3.293cm;" class="odt-zoomable" data-zoom-src="images/100000000000042A000000F926691E50.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000C60000005F76FEDE2E.png" width="139" height="67" style="display:inline-block; margin:4px;width:3.671cm;height:1.76cm;" class="odt-zoomable" data-zoom-src="images/10000000000000C60000005F76FEDE2E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>الفئة [Main] هي الفئة القابلة للتنفيذ التالية:</p>
+<p>الفئة [<bdi dir="ltr" class="odt-ltr-term">Main</bdi>] هي الفئة القابلة للتنفيذ التالية:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> dao.console;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1357,7 +1359,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>فئة [Test01] هي اختبار JUnit:</p>
+<p>فئة [<bdi dir="ltr" class="odt-ltr-term">Test01</bdi>] هي اختبار <bdi dir="ltr" class="odt-ltr-term">JUnit:</bdi></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> dao.tests;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1460,12 +1462,12 @@
 </code></pre></div>
 
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><strong>المهمة</strong>: قم بتشغيل اختبارات [console] و [JUnit] على طبقة [DAO] الخاصة بك.</p>
+<p><strong>المهمة</strong>: قم بتشغيل اختبارات [<bdi dir="ltr" class="odt-ltr-term">console</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">JUnit</bdi>] على طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] الخاصة بك.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
 <p><a id="refheading165821515544210"></a></p>
-<h2 id="129-maven">12.9. <span style="color: #4f81bd">إنشاء أرشيف Maven للمشروع</span></h2>
-<p>باتباع المثال الوارد في <a href="#refheading165801515544210"><u><span style="color: #0563c1">القسم 11.3.12</span></u></a>، قم بإنشاء أرشيف Maven للمشروع.</p>
+<h2 id="129-maven">12.9. <span style="color: #4f81bd">إنشاء أرشيف <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> للمشروع</span></h2>
+<p>باتباع المثال الوارد في <a href="#refheading165801515544210"><u><span style="color: #0563c1">القسم 11.3.12</span></u></a>، قم بإنشاء أرشيف <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> للمشروع.</p>
 
 
 

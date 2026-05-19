@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1010,45 +1012,45 @@
 
 
 <p><a id="refheading317651812363491"></a></p>
-<h1 id="3-td">3. <span style="color: #365f91">[TD]: الفئات</span></h1>
+<h1 id="3-td">3. <span style="color: #365f91">[<bdi dir="ltr" class="odt-ltr-term">TD</bdi>]: الفئات</span></h1>
 <p><strong>الكلمات الرئيسية</strong>: فئة، واجهة، وراثة، استثناء، تعدد الأشكال</p>
 <p><strong>قراءات موصى بها</strong>:</p>
 <ul>
-  <li>الأقسام 2.1 و 2.2 و 2.4 و 2.7 من الفصل 2 من [<a href="https://stahe.github.io/ar-java-sept-1998/"><u><span style="color: #0563c1">ref1</span></u></a>]: الفئات والواجهات
+  <li>الأقسام 2.1 و 2.2 و 2.4 و 2.7 من الفصل 2 من [<a href="https://stahe.github.io/ar-java-sept-1998/"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">ref1</bdi></span></u></a>]: الفئات والواجهات
   </li>
-  <li>الأقسام 3.3 (فئة String)، 3.5 (فئة ArrayList)، 3.6 (فئة Arrays)
+  <li>الأقسام 3.3 (فئة <bdi dir="ltr" class="odt-ltr-term">String</bdi>)، 3.5 (فئة <bdi dir="ltr" class="odt-ltr-term">ArrayList</bdi>)، 3.6 (فئة <bdi dir="ltr" class="odt-ltr-term">Arrays</bdi>)
   </li>
 </ul>
 
-<p>في الجزء الأول من تمرين ELECTIONS، لم يتم استخدام أي فئات. قمنا ببناء حل كما كنا سنبنيه بلغة C. سنقدم الآن مفهوم <strong>فئات Java</strong>.</p>
+<p>في الجزء الأول من تمرين <bdi dir="ltr" class="odt-ltr-term">ELECTIONS</bdi>، لم يتم استخدام أي فئات. قمنا ببناء حل كما كنا سنبنيه بلغة <bdi dir="ltr" class="odt-ltr-term">C.</bdi> سنقدم الآن مفهوم <strong>فئات <bdi dir="ltr" class="odt-ltr-term">Java</bdi></strong>.</p>
 <p><a id="refheading17454269506693"></a></p>
 <h2 id="31">3.1. <span style="color: #4f81bd">الدعم</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000AE0000007E2A79D0D2.png" width="122" height="88" style="display:inline-block; margin:4px;width:3.221cm;height:2.332cm;" class="odt-zoomable" data-zoom-src="images/10000000000000AE0000007E2A79D0D2.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000ED000000894DDDE97D.png" width="166" height="96" style="display:inline-block; margin:4px;width:4.39cm;height:2.538cm;" class="odt-zoomable" data-zoom-src="images/10000000000000ED000000894DDDE97D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>يحتوي المجلد [support / chap-03] على مشروع Eclipse الخاص بهذا الفصل.</p>
-<p>سنعمل الآن مع JDK 1.8 لأن بعض المشاريع القادمة تتطلب هذا الإصدار من JDK. لتحديد إصدار JDK المستخدم، اتبع الخطوات التالية:</p>
+<p>يحتوي المجلد [<bdi dir="ltr" class="odt-ltr-term">support</bdi> / <bdi dir="ltr" class="odt-ltr-term">chap-03</bdi>] على مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> الخاص بهذا الفصل.</p>
+<p>سنعمل الآن مع <bdi dir="ltr" class="odt-ltr-term">JDK 1.8</bdi> لأن بعض المشاريع القادمة تتطلب هذا الإصدار من <bdi dir="ltr" class="odt-ltr-term">JDK.</bdi> لتحديد إصدار <bdi dir="ltr" class="odt-ltr-term">JDK</bdi> المستخدم، اتبع الخطوات التالية:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004150000023CE56E0D75.png" width="523" height="286" style="display:inline-block; margin:4px;width:13.825cm;height:7.567cm;" class="odt-zoomable" data-zoom-src="images/10000000000004150000023CE56E0D75.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B1000001207FC6F553.png" width="601" height="144" style="display:inline-block; margin:4px;width:15.889cm;height:3.81cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B1000001207FC6F553.png" /></td></tr></table>
 
 <ul>
-  <li>في [4]، يتم استخدام JRE (بيئة تشغيل جافا). هذه JRE هي في الواقع JDK (مجموعة أدوات تطوير جافا) هنا، وتحديداً [jdk1.8.0_60]. إذا لم تكن JDK أو إذا كان لديك إصدار أقل من 1.8، فاتبع الخطوات التالية [5-21]؛
+  <li>في [4]، يتم استخدام <bdi dir="ltr" class="odt-ltr-term">JRE</bdi> (بيئة تشغيل جافا). هذه <bdi dir="ltr" class="odt-ltr-term">JRE</bdi> هي في الواقع <bdi dir="ltr" class="odt-ltr-term">JDK</bdi> (مجموعة أدوات تطوير جافا) هنا، وتحديداً [<bdi dir="ltr" class="odt-ltr-term">jdk1.8.0_60</bdi>]. إذا لم تكن <bdi dir="ltr" class="odt-ltr-term">JDK</bdi> أو إذا كان لديك إصدار أقل من 1.8، فاتبع الخطوات التالية [5-21]؛
   </li>
 </ul>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000059F000002D0E9975998.png" width="680" height="340" style="display:inline-block; margin:4px;width:17.999cm;height:9.006cm;" class="odt-zoomable" data-zoom-src="images/100000000000059F000002D0E9975998.png" /></td></tr></table>
 
 <ul>
-  <li>في [8]، JRE المستخدم حاليًا بشكل افتراضي بواسطة Eclipse؛
+  <li>في [8]، <bdi dir="ltr" class="odt-ltr-term">JRE</bdi> المستخدم حاليًا بشكل افتراضي بواسطة <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi>؛
   </li>
-  <li>في [11]، مختلف JDKs و JREs التي يتعرف عليها Eclipse حاليًا؛
+  <li>في [11]، مختلف <bdi dir="ltr" class="odt-ltr-term">JDKs</bdi> و <bdi dir="ltr" class="odt-ltr-term">JREs</bdi> التي يتعرف عليها <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> حاليًا؛
   </li>
 </ul>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000572000002B85410D524.png" width="680" height="340" style="display:inline-block; margin:4px;width:17.999cm;height:8.987cm;" class="odt-zoomable" data-zoom-src="images/1000000000000572000002B85410D524.png" /></td></tr></table>
 
 <ul>
-  <li>في [15]، <b>اختر JDK بدلاً من JRE</b>. يستخدم هذا المستند مشاريع Maven التي تتطلب JDK؛
+  <li>في [15]، <b>اختر <bdi dir="ltr" class="odt-ltr-term">JDK</bdi> بدلاً من <bdi dir="ltr" class="odt-ltr-term">JRE</bdi></b>. يستخدم هذا المستند مشاريع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> التي تتطلب <bdi dir="ltr" class="odt-ltr-term">JDK</bdi>؛
   </li>
 </ul>
 
@@ -1057,22 +1059,22 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000572000001BD639EFE35.png" width="680" height="217" style="display:inline-block; margin:4px;width:17.999cm;height:5.747cm;" class="odt-zoomable" data-zoom-src="images/1000000000000572000001BD639EFE35.png" /></td></tr></table>
 
 <ul>
-  <li>في [21]، لدينا إصدار JDK &gt;=1.8؛
+  <li>في [21]، لدينا إصدار <bdi dir="ltr" class="odt-ltr-term">JDK</bdi> &gt;=1.8؛
   </li>
-  <li>في [22-23]، قم بالوصول إلى جوانب المشروع (طرق عرض مختلفة لنفس مشروع Eclipse)؛
+  <li>في [22-23]، قم بالوصول إلى جوانب المشروع (طرق عرض مختلفة لنفس مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi>)؛
   </li>
 </ul>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002B000000208E7A6D7F1.png" width="344" height="260" style="display:inline-block; margin:4px;width:9.102cm;height:6.879cm;" class="odt-zoomable" data-zoom-src="images/10000000000002B000000208E7A6D7F1.png" /></td></tr></table>
 
 <ul>
-  <li>في [24]، تحقق من أنك تستخدم إصدار Java &gt;=1.8؛
+  <li>في [24]، تحقق من أنك تستخدم إصدار <bdi dir="ltr" class="odt-ltr-term">Java</bdi> &gt;=1.8؛
   </li>
 </ul>
 <p><a id="refheading317671812363491"></a>
 <a id="listeelectorale"></a></p>
-<h2 id="32-listeelectorale">3.2. <span style="color: #4f81bd">الفئة [ ListeElectorale]</span></h2>
-<p>في لغة C، كنا سنستخدم على الأرجح <strong>بنية</strong> لتمثيل قائمة المرشحين للانتخابات. وقد تبدو كما يلي:</p>
+<h2 id="32-listeelectorale">3.2. <span style="color: #4f81bd">الفئة [ <bdi dir="ltr" class="odt-ltr-term">ListeElectorale</bdi>]</span></h2>
+<p>في لغة <bdi dir="ltr" class="odt-ltr-term">C</bdi>، كنا سنستخدم على الأرجح <strong>بنية</strong> لتمثيل قائمة المرشحين للانتخابات. وقد تبدو كما يلي:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>struct t_liste
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   {
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>     char nom[15];
@@ -1081,7 +1083,7 @@
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>     int sieges;
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>   };
 </code></pre></div>
-<p>مفهوم البنية غير موجود في لغة Java. يجب استبداله بمفهوم <strong>الفئة</strong>. لذلك قررنا إنشاء فئة لتخزين المعلومات المتعلقة بقائمة المرشحين. سيكون لهذه الفئة الهيكل التالي:</p>
+<p>مفهوم البنية غير موجود في لغة <bdi dir="ltr" class="odt-ltr-term">Java.</bdi> يجب استبداله بمفهوم <strong>الفئة</strong>. لذلك قررنا إنشاء فئة لتخزين المعلومات المتعلقة بقائمة المرشحين. سيكون لهذه الفئة الهيكل التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> istia.st.elections;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1231,30 +1233,30 @@
   </li>
 </ul>
 
-<p>يمكن تهيئة كل حقل خاص باسم [xyz] باستخدام طريقة باسم [setXyz]. تسترد طريقة [getXyz] قيمة الحقل الخاص [xyz]. في الحالة المحددة التي يكون فيها [xyz] حقلًا منطقيًا، يمكن استبدال طريقة [getXyz] بطريقة [isXyz]. تتبع التسمية المحددة لهذه الطرق معيار ترميز يسمى معيار <strong>JavaBean</strong>. وبالتالي، نحدد الطرق العامة التالية:</p>
+<p>يمكن تهيئة كل حقل خاص باسم [<bdi dir="ltr" class="odt-ltr-term">xyz</bdi>] باستخدام طريقة باسم [<bdi dir="ltr" class="odt-ltr-term">setXyz</bdi>]. تسترد طريقة [<bdi dir="ltr" class="odt-ltr-term">getXyz</bdi>] قيمة الحقل الخاص [<bdi dir="ltr" class="odt-ltr-term">xyz</bdi>]. في الحالة المحددة التي يكون فيها [<bdi dir="ltr" class="odt-ltr-term">xyz</bdi>] حقلًا منطقيًا، يمكن استبدال طريقة [<bdi dir="ltr" class="odt-ltr-term">getXyz</bdi>] بطريقة [<bdi dir="ltr" class="odt-ltr-term">isXyz</bdi>]. تتبع التسمية المحددة لهذه الطرق معيار ترميز يسمى معيار <strong><bdi dir="ltr" class="odt-ltr-term">JavaBean</bdi></strong>. وبالتالي، نحدد الطرق العامة التالية:</p>
 <ul>
-  <li>getId (السطر 48)، setId (السطر 57)
+  <li><bdi dir="ltr" class="odt-ltr-term">getId</bdi> (السطر 48)، <bdi dir="ltr" class="odt-ltr-term">setId</bdi> (السطر 57)
   </li>
-  <li>getName (السطر 65)، setName (السطر 74)
+  <li><bdi dir="ltr" class="odt-ltr-term">getName</bdi> (السطر 65)، <bdi dir="ltr" class="odt-ltr-term">setName</bdi> (السطر 74)
   </li>
-  <li>getVoice (السطر 82)، setVoice (السطر 90)
+  <li><bdi dir="ltr" class="odt-ltr-term">getVoice</bdi> (السطر 82)، <bdi dir="ltr" class="odt-ltr-term">setVoice</bdi> (السطر 90)
   </li>
-  <li>getSeats (السطر 98)، setSeats (السطر 106)
+  <li><bdi dir="ltr" class="odt-ltr-term">getSeats</bdi> (السطر 98)، <bdi dir="ltr" class="odt-ltr-term">setSeats</bdi> (السطر 106)
   </li>
-  <li>isEliminated (السطر 114)، setEliminated (السطر 122)
+  <li><bdi dir="ltr" class="odt-ltr-term">isEliminated</bdi> (السطر 114)، <bdi dir="ltr" class="odt-ltr-term">setEliminated</bdi> (السطر 122)
   </li>
 </ul>
 
 <ul>
-  <li>السطران 30-31: تعريف منشئ بدون معلمات. يتيح لك ذلك إنشاء كائن [VoterList] دون تهيئته. يمكن بعد ذلك تهيئته باستخدام طرق <b>set</b>.
+  <li>السطران 30-31: تعريف منشئ بدون معلمات. يتيح لك ذلك إنشاء كائن [<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>] دون تهيئته. يمكن بعد ذلك تهيئته باستخدام طرق <b><bdi dir="ltr" class="odt-ltr-term">set</bdi></b>.
   </li>
-  <li>السطور 40-42: تعريف منشئ يقوم بإنشاء كائن [VoterList] مع تهيئة حقوله الخمسة الخاصة.
+  <li>السطور 40-42: تعريف منشئ يقوم بإنشاء كائن [<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>] مع تهيئة حقوله الخمسة الخاصة.
   </li>
-  <li>الأسطر 130–132: تعريف طريقة [toString]، التي تُرجع سلسلة تحتوي على قيم الحقول الخمسة للكائن.
+  <li>الأسطر 130–132: تعريف طريقة [<bdi dir="ltr" class="odt-ltr-term">toString</bdi>]، التي تُرجع سلسلة تحتوي على قيم الحقول الخمسة للكائن.
   </li>
 </ul>
 
-<p>قد يبدو برنامج الاختبار لفئة [<strong>VoterList</strong>] كما يلي:</p>
+<p>قد يبدو برنامج الاختبار لفئة [<strong><bdi dir="ltr" class="odt-ltr-term">VoterList</bdi></strong>] كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> istia.st.elections.tests;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1284,35 +1286,35 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>قد تكون بيئة Eclipse لهذا الاختبار كما يلي:</p>
+<p>قد تكون بيئة <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> لهذا الاختبار كما يلي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002E20000016F883805FD.png" width="258" height="128" style="display:inline-block; margin:4px;width:6.83cm;height:3.395cm;" class="odt-zoomable" data-zoom-src="images/10000000000002E20000016F883805FD.png" /></td></tr></table>
 
 <ul>
-  <li>[1]: اسم المشروع هو [elections-02A]
+  <li>[1]: اسم المشروع هو [<bdi dir="ltr" class="odt-ltr-term">elections-02A</bdi>]
   </li>
-  <li>[2]: سيتم وضع التطبيق في حزمة، هنا [istia.st.elections]
+  <li>[2]: سيتم وضع التطبيق في حزمة، هنا [<bdi dir="ltr" class="odt-ltr-term">istia.st.elections</bdi>]
   </li>
-  <li>[3]: [VoterList.java] هو كود المصدر لفئة [VoterList]
+  <li>[3]: [<bdi dir="ltr" class="odt-ltr-term">VoterList.java</bdi>] هو كود المصدر لفئة [<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>]
   </li>
-  <li>[4]: سيتم وضع فئات الاختبار في حزمة، هنا [istia.st.elections.tests]
+  <li>[4]: سيتم وضع فئات الاختبار في حزمة، هنا [<bdi dir="ltr" class="odt-ltr-term">istia.st.elections.tests</bdi>]
   </li>
-  <li>[5]: فئة الاختبار [MainTest1VoterList]
+  <li>[5]: فئة الاختبار [<bdi dir="ltr" class="odt-ltr-term">MainTest1VoterList</bdi>]
   </li>
 </ul>
 
 <p>الشاشة التي تظهر بعد تشغيل البرنامج أعلاه هي كما يلي:</p>
 <p><img src="images/1000000000000153000000893AA31019.png" width="218" height="88" style="width:5.78cm;height:2.335cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000153000000893AA31019.png" /></p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><strong>المهمة</strong>: باستخدام المعلومات المذكورة أعلاه، أكمل كود فئة <strong>VoterList</strong>.</p>
+<p><strong>المهمة</strong>: باستخدام المعلومات المذكورة أعلاه، أكمل كود فئة <strong><bdi dir="ltr" class="odt-ltr-term">VoterList</bdi></strong>.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
 <p><a id="refheading317691812363491"></a></p>
-<h2 id="33-electionsexception">3.3. <span style="color: #4f81bd">إنشاء فئة استثناء [ElectionsException]</span></h2>
-<p>من بين فئات الاستثناءات المختلفة في لغة Java، هناك فئة تسمى [RuntimeException]. هذه الفئة مشتقة من فئة [Exception]، وهي جذر جميع فئات الاستثناءات. السمة المميزة لمثيلات [RuntimeException] أو المثيلات المشتقة منها هي أنه لا يلزمك إعلانها أو معالجتها. وتسمى هذه <strong>الاستثناءات بالاستثناءات غير الملتقطة</strong>.</p>
-<p>لنلقِ نظرة على المثال الأول. فئة [BufferedReader] هي فئة تسمح لك مثيلاتها بقراءة أسطر النص من دفق البيانات. وتحتوي على طريقة [readLine] ذات التوقيع التالي:</p>
+<h2 id="33-electionsexception">3.3. <span style="color: #4f81bd">إنشاء فئة استثناء [<bdi dir="ltr" class="odt-ltr-term">ElectionsException</bdi>]</span></h2>
+<p>من بين فئات الاستثناءات المختلفة في لغة <bdi dir="ltr" class="odt-ltr-term">Java</bdi>، هناك فئة تسمى [<bdi dir="ltr" class="odt-ltr-term">RuntimeException</bdi>]. هذه الفئة مشتقة من فئة [<bdi dir="ltr" class="odt-ltr-term">Exception</bdi>]، وهي جذر جميع فئات الاستثناءات. السمة المميزة لمثيلات [<bdi dir="ltr" class="odt-ltr-term">RuntimeException</bdi>] أو المثيلات المشتقة منها هي أنه لا يلزمك إعلانها أو معالجتها. وتسمى هذه <strong>الاستثناءات بالاستثناءات غير الملتقطة</strong>.</p>
+<p>لنلقِ نظرة على المثال الأول. فئة [<bdi dir="ltr" class="odt-ltr-term">BufferedReader</bdi>] هي فئة تسمح لك مثيلاتها بقراءة أسطر النص من دفق البيانات. وتحتوي على طريقة [<bdi dir="ltr" class="odt-ltr-term">readLine</bdi>] ذات التوقيع التالي:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>public String readLine()throws IOException
 </code></pre></div>
-<p>يمكننا أن نرى أن الطريقة يمكن أن ترمي استثناء [IOException]. التسلسل الهرمي لهذه الفئة هو كما يلي:</p>
+<p>يمكننا أن نرى أن الطريقة يمكن أن ترمي استثناء [<bdi dir="ltr" class="odt-ltr-term">IOException</bdi>]. التسلسل الهرمي لهذه الفئة هو كما يلي:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
 <span class="normal"><a href="#__codelineno-2-3">3</a></span>
@@ -1321,7 +1323,7 @@
 <a id="__codelineno-2-3" name="__codelineno-2-3"></a>      java.lang.Exception
 <a id="__codelineno-2-4" name="__codelineno-2-4"></a>          java.io.IOException
 </code></pre></div></td></tr></table></div>
-<p>تشتق فئة [IOException] من فئة [Exception] (السطر 3). يطلب منا المُجمِّع معالجة وإعلان الاستثناءات من النوع [java.lang.Exception] أو الأنواع المشتقة (باستثناء فرع [RuntimeException]، الذي سنناقشه لاحقًا). وبالتالي، لقراءة سطر من النص المكتوب على لوحة المفاتيح، يجب أن نكتب شيئًا مثل:</p>
+<p>تشتق فئة [<bdi dir="ltr" class="odt-ltr-term">IOException</bdi>] من فئة [<bdi dir="ltr" class="odt-ltr-term">Exception</bdi>] (السطر 3). يطلب منا المُجمِّع معالجة وإعلان الاستثناءات من النوع [<bdi dir="ltr" class="odt-ltr-term">java.lang.Exception</bdi>] أو الأنواع المشتقة (باستثناء فرع [<bdi dir="ltr" class="odt-ltr-term">RuntimeException</bdi>]، الذي سنناقشه لاحقًا). وبالتالي، لقراءة سطر من النص المكتوب على لوحة المفاتيح، يجب أن نكتب شيئًا مثل:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span>
@@ -1338,10 +1340,10 @@
 <a id="__codelineno-3-7" name="__codelineno-3-7"></a>    ....
 <a id="__codelineno-3-8" name="__codelineno-3-8"></a>}
 </code></pre></div></td></tr></table></div>
-<p>لنأخذ مثالاً آخر. لتحويل سلسلة إلى عدد صحيح، يمكننا استخدام الطريقة الثابتة [Integer.parseInt]، التي يكون توقيعها كما يلي:</p>
+<p>لنأخذ مثالاً آخر. لتحويل سلسلة إلى عدد صحيح، يمكننا استخدام الطريقة الثابتة [<bdi dir="ltr" class="odt-ltr-term">Integer.parseInt</bdi>]، التي يكون توقيعها كما يلي:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>public static int parseInt(String s) throws NumberFormatException
 </code></pre></div>
-<p>الحجة [s] هي السلسلة المراد تحويلها إلى عدد صحيح. يمكننا أن نرى أن الطريقة يمكن أن ترمي استثناء [NumberFormatException]. التسلسل الهرمي لهذه الفئة هو كما يلي:</p>
+<p>الحجة [<bdi dir="ltr" class="odt-ltr-term">s</bdi>] هي السلسلة المراد تحويلها إلى عدد صحيح. يمكننا أن نرى أن الطريقة يمكن أن ترمي استثناء [<bdi dir="ltr" class="odt-ltr-term">NumberFormatException</bdi>]. التسلسل الهرمي لهذه الفئة هو كما يلي:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
 <span class="normal"><a href="#__codelineno-5-2">2</a></span>
 <span class="normal"><a href="#__codelineno-5-3">3</a></span>
@@ -1354,7 +1356,7 @@
 <a id="__codelineno-5-5" name="__codelineno-5-5"></a>              java.lang.IllegalArgumentException
 <a id="__codelineno-5-6" name="__codelineno-5-6"></a>                  java.lang.NumberFormatException
 </code></pre></div></td></tr></table></div>
-<p>تتفرع فئة [NumberFormatException] من فئة [RuntimeException] (السطر 4). لا يشترط المُجمِّع أن نتعامل مع استثناءات من نوع [java.lang.RuntimeException] أو فئاتها الفرعية أو أن نعلن عنها. وبالتالي، يمكننا كتابة شيء مثل:</p>
+<p>تتفرع فئة [<bdi dir="ltr" class="odt-ltr-term">NumberFormatException</bdi>] من فئة [<bdi dir="ltr" class="odt-ltr-term">RuntimeException</bdi>] (السطر 4). لا يشترط المُجمِّع أن نتعامل مع استثناءات من نوع [<bdi dir="ltr" class="odt-ltr-term">java.lang.RuntimeException</bdi>] أو فئاتها الفرعية أو أن نعلن عنها. وبالتالي، يمكننا كتابة شيء مثل:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
 <span class="normal"><a href="#__codelineno-6-2">2</a></span>
 <span class="normal"><a href="#__codelineno-6-3">3</a></span>
@@ -1373,16 +1375,16 @@
 <a id="__codelineno-6-8" name="__codelineno-6-8"></a>}
 <a id="__codelineno-6-9" name="__codelineno-6-9"></a>int age=Integer.parseInt(ligne);
 </code></pre></div></td></tr></table></div>
-<p>لسنا مطالبين بتضمين كتلة [try-catch] لمعالجة أي استثناء ناتج عن [Integer.parseInt] (السطر 9).</p>
-<p>هناك مزايا وعيوب لإنشاء واستخدام فئات الاستثناءات المشتقة من [RuntimeException]:</p>
+<p>لسنا مطالبين بتضمين كتلة [<bdi dir="ltr" class="odt-ltr-term">try-catch</bdi>] لمعالجة أي استثناء ناتج عن [<bdi dir="ltr" class="odt-ltr-term">Integer.parseInt</bdi>] (السطر 9).</p>
+<p>هناك مزايا وعيوب لإنشاء واستخدام فئات الاستثناءات المشتقة من [<bdi dir="ltr" class="odt-ltr-term">RuntimeException</bdi>]:</p>
 <ul>
   <li>من الناحية الإيجابية: يكون الكود أكثر إيجازًا
   </li>
-  <li>على الجانب السلبي: قد نلجأ في النهاية إلى أساليب على غرار لغة C حيث تُرجع كل دالة رمز خطأ — وهي ممارسة يستخدمها قلة من الناس، وذلك تحديدًا للحفاظ على خفة الكود. وعندما يحدث مثل هذا الخطأ غير المعالج، يتعطل البرنامج، وعادةً ما يكون ذلك بطريقة غير أنيقة.
+  <li>على الجانب السلبي: قد نلجأ في النهاية إلى أساليب على غرار لغة <bdi dir="ltr" class="odt-ltr-term">C</bdi> حيث تُرجع كل دالة رمز خطأ — وهي ممارسة يستخدمها قلة من الناس، وذلك تحديدًا للحفاظ على خفة الكود. وعندما يحدث مثل هذا الخطأ غير المعالج، يتعطل البرنامج، وعادةً ما يكون ذلك بطريقة غير أنيقة.
   </li>
 </ul>
 
-<p>لقد قررنا إنشاء فئة خاصة تجمع كل الاستثناءات التي قد تحدث في تطبيق ELECTIONS الخاص بنا. ستسمى [ElectionsException] وستكون مشتقة من فئة [RuntimeException]. وفيما يلي شفرة البرمجة الخاصة بها:</p>
+<p>لقد قررنا إنشاء فئة خاصة تجمع كل الاستثناءات التي قد تحدث في تطبيق <bdi dir="ltr" class="odt-ltr-term">ELECTIONS</bdi> الخاص بنا. ستسمى [<bdi dir="ltr" class="odt-ltr-term">ElectionsException</bdi>] وستكون مشتقة من فئة [<bdi dir="ltr" class="odt-ltr-term">RuntimeException</bdi>]. وفيما يلي شفرة البرمجة الخاصة بها:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> istia.st.elections;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1408,9 +1410,9 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 1: نضع الفئة في الحزمة [istia.st.elections]؛
+  <li>السطر 1: نضع الفئة في الحزمة [<bdi dir="ltr" class="odt-ltr-term">istia.st.elections</bdi>]؛
   </li>
-  <li>السطر 3: الفئة تمتد من [RuntimeException]. وبالتالي فهي <b>غير محددة</b>؛
+  <li>السطر 3: الفئة تمتد من [<bdi dir="ltr" class="odt-ltr-term">RuntimeException</bdi>]. وبالتالي فهي <b>غير محددة</b>؛
   </li>
   <li>السطر 4: معرف تسلسل يمكننا تجاهله في الوقت الحالي؛
   </li>
@@ -1438,7 +1440,7 @@
 <ul>
   <li>(تابع)
     <ul>
-      <li>أو تلك الموجودة في الأسطر 14–20، والتي صُممت لنشر استثناء قد حدث بالفعل عن طريق تغليفه في [ElectionsException]:
+      <li>أو تلك الموجودة في الأسطر 14–20، والتي صُممت لنشر استثناء قد حدث بالفعل عن طريق تغليفه في [<bdi dir="ltr" class="odt-ltr-term">ElectionsException</bdi>]:
       </li>
     </ul>
   </li>
@@ -1464,25 +1466,25 @@
 </code></pre></div>
 
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><strong>المهمة</strong>: قم بتعديل كود فئة <strong>ListeElectorale</strong> بحيث تقوم طرق <strong>set</strong> بإلقاء استثناء [ElectionsException] إذا كانت عملية التهيئة المطلوبة غير صحيحة، مثل تهيئة الاسم بسلسلة فارغة.</p>
+<p><strong>المهمة</strong>: قم بتعديل كود فئة <strong><bdi dir="ltr" class="odt-ltr-term">ListeElectorale</bdi></strong> بحيث تقوم طرق <strong><bdi dir="ltr" class="odt-ltr-term">set</bdi></strong> بإلقاء استثناء [<bdi dir="ltr" class="odt-ltr-term">ElectionsException</bdi>] إذا كانت عملية التهيئة المطلوبة غير صحيحة، مثل تهيئة الاسم بسلسلة فارغة.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
-<p>قد يكون مشروع اختبار Eclipse لهذه النسخة الجديدة كما يلي:</p>
+<p>قد يكون مشروع اختبار <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> لهذه النسخة الجديدة كما يلي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002DE000001891C512EB6.png" width="257" height="138" style="display:inline-block; margin:4px;width:6.8cm;height:3.641cm;" class="odt-zoomable" data-zoom-src="images/10000000000002DE000001891C512EB6.png" /></td></tr></table>
 
 <ul>
-  <li>[1]: اسم المشروع هو [elections-02B]
+  <li>[1]: اسم المشروع هو [<bdi dir="ltr" class="odt-ltr-term">elections-02B</bdi>]
   </li>
-  <li>[2]: يتم وضع التطبيق في حزمة، وهنا [istia.st.elections]
+  <li>[2]: يتم وضع التطبيق في حزمة، وهنا [<bdi dir="ltr" class="odt-ltr-term">istia.st.elections</bdi>]
   </li>
-  <li>[3]: الفئتان [VoterList] و [ElectionsException]
+  <li>[3]: الفئتان [<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">ElectionsException</bdi>]
   </li>
-  <li>[4]: توجد فئات الاختبار في حزمة، هنا [istia.st.elections.tests]
+  <li>[4]: توجد فئات الاختبار في حزمة، هنا [<bdi dir="ltr" class="odt-ltr-term">istia.st.elections.tests</bdi>]
   </li>
-  <li>[5]: فئة الاختبار [MainTest1VoterList]
+  <li>[5]: فئة الاختبار [<bdi dir="ltr" class="odt-ltr-term">MainTest1VoterList</bdi>]
   </li>
 </ul>
 
-<p>تم تعديل فئة الاختبار [MainTest1VoterList] التي تمت مناقشتها سابقًا بشكل طفيف لاختبار حالات الاستثناء:</p>
+<p>تم تعديل فئة الاختبار [<bdi dir="ltr" class="odt-ltr-term">MainTest1VoterList</bdi>] التي تمت مناقشتها سابقًا بشكل طفيف لاختبار حالات الاستثناء:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> istia.st.elections.tests;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1530,13 +1532,13 @@
 
 <p>يؤدي تشغيل الاختبار إلى النتائج التالية:</p>
 <p><img src="images/10000000000003990000009D8D7FAF3A.png" width="645" height="110" style="width:17.06cm;height:2.909cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003990000009D8D7FAF3A.png" /></p>
-<p>لاحظ أن فئة [VoterList] قد أطلقت بالفعل استثناءً عندما حاولنا تهيئة عدد المقاعد بقيمة غير صالحة (السطر 28 من الكود).</p>
+<p>لاحظ أن فئة [<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>] قد أطلقت بالفعل استثناءً عندما حاولنا تهيئة عدد المقاعد بقيمة غير صالحة (السطر 28 من الكود).</p>
 <p><a id="refheading317711812363491"></a></p>
 <h2 id="34">3.4. <span style="color: #4f81bd">فئة اختبار الوحدة</span></h2>
 <p>يعتمد النوع السابق من الاختبارات على التحقق البصري. نتحقق من أن ما يتم عرضه على الشاشة يتطابق مع ما هو متوقع. لا يُنصح باستخدام هذه الطريقة في بيئة احترافية. يجب أن تكون الاختبارات آلية قدر الإمكان وأن تهدف إلى عدم الحاجة إلى تدخل بشري. فالإنسان معرض للتعب بالفعل، وتقل قدرته على التحقق من الاختبارات مع مرور اليوم.</p>
 <p>يتطور التطبيق بمرور الوقت. مع كل تحديث، يجب أن نتحقق من أن التطبيق لا &quot;يتراجع&quot;، أي أنه يستمر في اجتياز الاختبارات الوظيفية التي تم إجراؤها أثناء تطويره الأولي. تسمى هذه الاختبارات &quot;اختبارات عدم التراجع&quot;. قد يتطلب التطبيق المتوسط الحجم مئات الاختبارات. في الواقع، يتم اختبار كل طريقة في كل فئة من فئات التطبيق. وتسمى هذه الاختبارات <strong>&quot;اختبارات الوحدة</strong>&quot;. ويمكن أن تشغل الكثير من المطورين إذا لم يتم أتمتتها.</p>
-<p>تم تطوير أدوات لأتمتة الاختبار. إحدى هذه الأدوات تسمى [JUnit]. وهي مكتبة من الفئات مصممة لإدارة الاختبارات. سنستخدم هذه الأداة لاختبار فئة [VoterList].</p>
-<p>يأخذ برنامج اختبار JUnit (الإصدار 4.x) الشكل التالي:</p>
+<p>تم تطوير أدوات لأتمتة الاختبار. إحدى هذه الأدوات تسمى [<bdi dir="ltr" class="odt-ltr-term">JUnit</bdi>]. وهي مكتبة من الفئات مصممة لإدارة الاختبارات. سنستخدم هذه الأداة لاختبار فئة [<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>].</p>
+<p>يأخذ برنامج اختبار <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi> (الإصدار 4.<bdi dir="ltr" class="odt-ltr-term">x</bdi>) الشكل التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> istia.st.elections.tests;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1574,31 +1576,31 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 1: تم وضع الفئة في الحزمة [istia.st.elections.tests]؛
+  <li>السطر 1: تم وضع الفئة في الحزمة [<bdi dir="ltr" class="odt-ltr-term">istia.st.elections.tests</bdi>]؛
   </li>
-  <li>السطر 11: يتم تنفيذ الطريقة المُعلَّمة بعلامة [<b>@Before</b>] <b>قبل </b>كل اختبار وحدة؛ 
+  <li>السطر 11: يتم تنفيذ الطريقة المُعلَّمة بعلامة [<b>@<bdi dir="ltr" class="odt-ltr-term">Before</bdi></b>] <b>قبل </b>كل اختبار وحدة؛ 
   </li>
-  <li>السطر 16: يتم تنفيذ الطريقة المُعلَّمة بعلامة [<b>@After</b>] <b>بعد </b>كل اختبار وحدة؛
+  <li>السطر 16: يتم تنفيذ الطريقة المُعلَّمة بعلامة [<b>@<bdi dir="ltr" class="odt-ltr-term">After</bdi></b>] <b>بعد </b>كل اختبار وحدة؛
   </li>
-  <li>السطر 21: الطريقة المُعلَّمة بعلامة [<b>@Test</b>] هي طريقة يتم اختبارها بواسطة الاختبار الوحدوي. سيتم تنفيذ الطرق المُعلَّمة بعلامة [@Test] واحدة تلو الأخرى، ما لم يحدد المختبر خلاف ذلك، حيث يمكنه اختيار الطرق المراد اختبارها بنفسه. قبل كل تنفيذ لطريقة [@Test]، يتم تنفيذ طريقة [@Before].  بعد كل تنفيذ لطريقة [@Test]، يتم تنفيذ طريقة [@After]؛
+  <li>السطر 21: الطريقة المُعلَّمة بعلامة [<b>@<bdi dir="ltr" class="odt-ltr-term">Test</bdi></b>] هي طريقة يتم اختبارها بواسطة الاختبار الوحدوي. سيتم تنفيذ الطرق المُعلَّمة بعلامة [@<bdi dir="ltr" class="odt-ltr-term">Test</bdi>] واحدة تلو الأخرى، ما لم يحدد المختبر خلاف ذلك، حيث يمكنه اختيار الطرق المراد اختبارها بنفسه. قبل كل تنفيذ لطريقة [@<bdi dir="ltr" class="odt-ltr-term">Test</bdi>]، يتم تنفيذ طريقة [@<bdi dir="ltr" class="odt-ltr-term">Before</bdi>].  بعد كل تنفيذ لطريقة [@<bdi dir="ltr" class="odt-ltr-term">Test</bdi>]، يتم تنفيذ طريقة [@<bdi dir="ltr" class="odt-ltr-term">After</bdi>]؛
   </li>
-  <li>الأسطر 22-25: تعريف طريقة اختبار [t1]؛
+  <li>الأسطر 22-25: تعريف طريقة اختبار [<bdi dir="ltr" class="odt-ltr-term">t1</bdi>]؛
   </li>
-  <li>السطر 18: إحدى طرق [<b>Assert.</b>assert*] المستخدمة للتحقق من التأكيدات. تتوفر طرق [assert] التالية:
+  <li>السطر 18: إحدى طرق [<b><bdi dir="ltr" class="odt-ltr-term">Assert.</bdi></b><bdi dir="ltr" class="odt-ltr-term">assert</bdi>*] المستخدمة للتحقق من التأكيدات. تتوفر طرق [<bdi dir="ltr" class="odt-ltr-term">assert</bdi>] التالية:
     <ul>
-      <li><b>assertEquals(expression1, expression2)</b>: تتحقق من أن قيم التعبيرين متساويتان. يتم قبول العديد من أنواع التعبيرات (int، String، float، double، boolean، char، short). إذا لم يكن التعبيران متساويين، يتم إلقاء استثناء [AssertionFailedError]،
+      <li><b><bdi dir="ltr" class="odt-ltr-term">assertEquals</bdi>(<bdi dir="ltr" class="odt-ltr-term">expression1</bdi>, <bdi dir="ltr" class="odt-ltr-term">expression2</bdi>)</b>: تتحقق من أن قيم التعبيرين متساويتان. يتم قبول العديد من أنواع التعبيرات (<bdi dir="ltr" class="odt-ltr-term">int</bdi>، <bdi dir="ltr" class="odt-ltr-term">String</bdi>، <bdi dir="ltr" class="odt-ltr-term">float</bdi>، <bdi dir="ltr" class="odt-ltr-term">double</bdi>، <bdi dir="ltr" class="odt-ltr-term">boolean</bdi>، <bdi dir="ltr" class="odt-ltr-term">char</bdi>، <bdi dir="ltr" class="odt-ltr-term">short</bdi>). إذا لم يكن التعبيران متساويين، يتم إلقاء استثناء [<bdi dir="ltr" class="odt-ltr-term">AssertionFailedError</bdi>]،
       </li>
-      <li><b>assertEquals(real1, real2, delta)</b>: يتحقق من أن رقمين حقيقيين متساويان في حدود <b>delta</b>، أي abs(real1-real2) &lt;= delta. على سبيل المثال، يمكن كتابة <b>assertEquals(real1, real2, 1E-6) </b>للتحقق من أن القيمتين متساويتان في حدود 10⁻⁶،
+      <li><b><bdi dir="ltr" class="odt-ltr-term">assertEquals</bdi>(<bdi dir="ltr" class="odt-ltr-term">real1</bdi>, <bdi dir="ltr" class="odt-ltr-term">real2</bdi>, <bdi dir="ltr" class="odt-ltr-term">delta</bdi>)</b>: يتحقق من أن رقمين حقيقيين متساويان في حدود <b><bdi dir="ltr" class="odt-ltr-term">delta</bdi></b>، أي <bdi dir="ltr" class="odt-ltr-term">abs</bdi>(<bdi dir="ltr" class="odt-ltr-term">real1-real2</bdi>) &lt;= <bdi dir="ltr" class="odt-ltr-term">delta.</bdi> على سبيل المثال، يمكن كتابة <b><bdi dir="ltr" class="odt-ltr-term">assertEquals</bdi>(<bdi dir="ltr" class="odt-ltr-term">real1</bdi>, <bdi dir="ltr" class="odt-ltr-term">real2</bdi>, 1E-6) </b>للتحقق من أن القيمتين متساويتان في حدود 10⁻⁶،
       </li>
-      <li><b>assertEquals(message, expression1, expression2) </b>و <b>assertEquals(message, real1, real2, delta) </b>هما متغيران يسمحان لك بتحديد رسالة الخطأ المرتبطة باستثناء [AssertionFailedError] الذي يتم إلقائه عند فشل طريقة [assertEquals]،
+      <li><b><bdi dir="ltr" class="odt-ltr-term">assertEquals</bdi>(<bdi dir="ltr" class="odt-ltr-term">message</bdi>, <bdi dir="ltr" class="odt-ltr-term">expression1</bdi>, <bdi dir="ltr" class="odt-ltr-term">expression2</bdi>) </b>و <b><bdi dir="ltr" class="odt-ltr-term">assertEquals</bdi>(<bdi dir="ltr" class="odt-ltr-term">message</bdi>, <bdi dir="ltr" class="odt-ltr-term">real1</bdi>, <bdi dir="ltr" class="odt-ltr-term">real2</bdi>, <bdi dir="ltr" class="odt-ltr-term">delta</bdi>) </b>هما متغيران يسمحان لك بتحديد رسالة الخطأ المرتبطة باستثناء [<bdi dir="ltr" class="odt-ltr-term">AssertionFailedError</bdi>] الذي يتم إلقائه عند فشل طريقة [<bdi dir="ltr" class="odt-ltr-term">assertEquals</bdi>]،
       </li>
-      <li><b>assertNotNull(Object) </b>و <b>assertNotNull(message, Object)</b>: يتحققان من أن <b>Object </b>لا يساوي <b>null،</b>
+      <li><b><bdi dir="ltr" class="odt-ltr-term">assertNotNull</bdi>(<bdi dir="ltr" class="odt-ltr-term">Object</bdi>) </b>و <b><bdi dir="ltr" class="odt-ltr-term">assertNotNull</bdi>(<bdi dir="ltr" class="odt-ltr-term">message</bdi>, <bdi dir="ltr" class="odt-ltr-term">Object</bdi>)</b>: يتحققان من أن <b><bdi dir="ltr" class="odt-ltr-term">Object</bdi> </b>لا يساوي <b><bdi dir="ltr" class="odt-ltr-term">null</bdi>،</b>
       </li>
-      <li><b>assertNull(Object) </b>و <b>assertNull(message, Object)</b>: تتحقق من أن <b>Object </b>يساوي <b>null،</b>
+      <li><b><bdi dir="ltr" class="odt-ltr-term">assertNull</bdi>(<bdi dir="ltr" class="odt-ltr-term">Object</bdi>) </b>و <b><bdi dir="ltr" class="odt-ltr-term">assertNull</bdi>(<bdi dir="ltr" class="odt-ltr-term">message</bdi>, <bdi dir="ltr" class="odt-ltr-term">Object</bdi>)</b>: تتحقق من أن <b><bdi dir="ltr" class="odt-ltr-term">Object</bdi> </b>يساوي <b><bdi dir="ltr" class="odt-ltr-term">null</bdi>،</b>
       </li>
-      <li><b>assertSame(Object1, Object2) </b>و <b>assertSame(message, Object1, Object2)</b>: يتحقق من أن المراجع <b>Object1 </b>و <b>Object2 </b>تشير إلى نفس الكائن،
+      <li><b><bdi dir="ltr" class="odt-ltr-term">assertSame</bdi>(<bdi dir="ltr" class="odt-ltr-term">Object1</bdi>, <bdi dir="ltr" class="odt-ltr-term">Object2</bdi>) </b>و <b><bdi dir="ltr" class="odt-ltr-term">assertSame</bdi>(<bdi dir="ltr" class="odt-ltr-term">message</bdi>, <bdi dir="ltr" class="odt-ltr-term">Object1</bdi>, <bdi dir="ltr" class="odt-ltr-term">Object2</bdi>)</b>: يتحقق من أن المراجع <b><bdi dir="ltr" class="odt-ltr-term">Object1</bdi> </b>و <b><bdi dir="ltr" class="odt-ltr-term">Object2</bdi> </b>تشير إلى نفس الكائن،
       </li>
-      <li><b>assertNotSame(Object1, Object2) </b>و <b>assertNotSame(message, Object1, Object2)</b>: يتحقق من أن المراجع <b>Object1 </b>و <b>Object2 </b>لا تشيران إلى نفس الكائن؛
+      <li><b><bdi dir="ltr" class="odt-ltr-term">assertNotSame</bdi>(<bdi dir="ltr" class="odt-ltr-term">Object1</bdi>, <bdi dir="ltr" class="odt-ltr-term">Object2</bdi>) </b>و <b><bdi dir="ltr" class="odt-ltr-term">assertNotSame</bdi>(<bdi dir="ltr" class="odt-ltr-term">message</bdi>, <bdi dir="ltr" class="odt-ltr-term">Object1</bdi>, <bdi dir="ltr" class="odt-ltr-term">Object2</bdi>)</b>: يتحقق من أن المراجع <b><bdi dir="ltr" class="odt-ltr-term">Object1</bdi> </b>و <b><bdi dir="ltr" class="odt-ltr-term">Object2</bdi> </b>لا تشيران إلى نفس الكائن؛
       </li>
     </ul>
   </li>
@@ -1608,18 +1610,18 @@
   </li>
 </ul>
 
-<p>في بيئة Eclipse، يمكن إنشاء فئة اختبار JUnit على النحو التالي:</p>
+<p>في بيئة <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi>، يمكن إنشاء فئة اختبار <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi> على النحو التالي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004FD0000037B88E88961.png" width="447" height="312" style="display:inline-block; margin:4px;width:11.83cm;height:8.253cm;" class="odt-zoomable" data-zoom-src="images/10000000000004FD0000037B88E88961.png" /></td></tr></table>
 
 <ul>
-  <li>[1]: انقر بزر الماوس الأيمن على الحزمة التي تريد إضافة فئة الاختبار إليها، ثم حدد [JUnit / New / JUnit Test Case]
+  <li>[1]: انقر بزر الماوس الأيمن على الحزمة التي تريد إضافة فئة الاختبار إليها، ثم حدد [<bdi dir="ltr" class="odt-ltr-term">JUnit</bdi> / <bdi dir="ltr" class="odt-ltr-term">New</bdi> / <bdi dir="ltr" class="odt-ltr-term">JUnit Test Case</bdi>]
   </li>
 </ul>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F90000033A032509E4.png" width="637" height="413" style="display:inline-block; margin:4px;width:16.842cm;height:10.927cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F90000033A032509E4.png" /></td></tr></table>
 
 <ul>
-  <li>[1]: حدد إصدار JUnit؛
+  <li>[1]: حدد إصدار <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi>؛
   </li>
   <li>[2]: حدد المجلد الذي يجب إنشاء فئة الاختبار فيه؛
   </li>
@@ -1629,7 +1631,7 @@
   </li>
   <li>[5]: حدد الطرق التي تريد تضمينها في الفئة التي سيتم إنشاؤها؛
   </li>
-  <li>[6]: تم إنشاء فئة <i>JUnitEssai</i>
+  <li>[6]: تم إنشاء فئة <i><bdi dir="ltr" class="odt-ltr-term">JUnitEssai</bdi></i>
   </li>
 </ul>
 
@@ -1690,21 +1692,21 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>في Eclipse، انقر بزر الماوس الأيمن على فئة الاختبار، ثم حدد [تشغيل كـ / اختبار JUnit] لتشغيلها:</p>
+<p>في <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi>، انقر بزر الماوس الأيمن على فئة الاختبار، ثم حدد [تشغيل كـ / اختبار <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi>] لتشغيلها:</p>
 <p><img src="images/10000000000002C00000023086FCFE78.png" width="423" height="336" style="width:11.18cm;height:8.894cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002C00000023086FCFE78.png" /></p>
 <p>النتائج التي تم الحصول عليها عند تشغيل هذا الاختبار هي كما يلي:</p>
 <p><img src="images/10000000000001710000011C1DE344A2.png" width="258" height="199" style="width:6.83cm;height:5.256cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001710000011C1DE344A2.png" /></p>
-<p>في الأعلى، فشلت طريقة [test2]. كلما فشل اختبار، تظهر رسالة خطأ مرتبطة به. بالنسبة لـ [test2]، هي الرسالة الموضحة أعلاه. تشير الرسالة إلى رقم السطر الذي حدث فيه الخطأ (السطر 30). في السطر 30، كان الاستدعاء الذي فشل هو:</p>
+<p>في الأعلى، فشلت طريقة [<bdi dir="ltr" class="odt-ltr-term">test2</bdi>]. كلما فشل اختبار، تظهر رسالة خطأ مرتبطة به. بالنسبة لـ [<bdi dir="ltr" class="odt-ltr-term">test2</bdi>]، هي الرسالة الموضحة أعلاه. تشير الرسالة إلى رقم السطر الذي حدث فيه الخطأ (السطر 30). في السطر 30، كان الاستدعاء الذي فشل هو:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content">    Assert.<span style="font-style:italic">assertEquals</span>(1, 2);</span></span>
 </code></pre></div>
 
-<p>يُطلق على المعلمة الأولى اسم القيمة المتوقعة، وعلى الثانية اسم القيمة الفعلية. تشير رسالة الخطأ الخاصة بـ [test2] أعلاه إلى أن القيمة المتوقعة كانت 2، لكن القيمة الفعلية كانت 3.</p>
+<p>يُطلق على المعلمة الأولى اسم القيمة المتوقعة، وعلى الثانية اسم القيمة الفعلية. تشير رسالة الخطأ الخاصة بـ [<bdi dir="ltr" class="odt-ltr-term">test2</bdi>] أعلاه إلى أن القيمة المتوقعة كانت 2، لكن القيمة الفعلية كانت 3.</p>
 <p>وأخيرًا، كانت الرسائل التي كتبتها طرق الاختبار المختلفة على وحدة التحكم كما يلي:</p>
 <p><img src="images/100000000000012100000099C3174063.png" width="164" height="87" style="width:4.33cm;height:2.291cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000012100000099C3174063.png" /></p>
-<p>تُظهر هذه الرسائل أن طريقتي [@Before] و[@After] قد تم استدعاؤهما بالفعل، على التوالي، قبل وبعد كل طريقة اختبار.</p>
-<p>لا تكتب فئات الاختبار بالضرورة من قبل المطورين أنفسهم. فقد تكتب من قبل الأشخاص الذين كتبوا مواصفات التطبيق. وتدعو بعض أساليب التطوير المعروفة باسم TDD (التطوير القائم على الاختبار) إلى كتابة فئات الاختبار حتى قبل كتابة الفئات المراد اختبارها. ويساعد هذا أحيانًا في توضيح المواصفات التي قد تُفسر بطرق متعددة لولا ذلك.</p>
-<p>لنقم بإنشاء اختبار JUnit 4، باسم [JUnitTest1VoterList]، لفئة [VoterList]. في Eclipse، سنمضي قدماً كما هو موضح سابقاً:</p>
+<p>تُظهر هذه الرسائل أن طريقتي [@<bdi dir="ltr" class="odt-ltr-term">Before</bdi>] و[@<bdi dir="ltr" class="odt-ltr-term">After</bdi>] قد تم استدعاؤهما بالفعل، على التوالي، قبل وبعد كل طريقة اختبار.</p>
+<p>لا تكتب فئات الاختبار بالضرورة من قبل المطورين أنفسهم. فقد تكتب من قبل الأشخاص الذين كتبوا مواصفات التطبيق. وتدعو بعض أساليب التطوير المعروفة باسم <bdi dir="ltr" class="odt-ltr-term">TDD</bdi> (التطوير القائم على الاختبار) إلى كتابة فئات الاختبار حتى قبل كتابة الفئات المراد اختبارها. ويساعد هذا أحيانًا في توضيح المواصفات التي قد تُفسر بطرق متعددة لولا ذلك.</p>
+<p>لنقم بإنشاء اختبار <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi> 4، باسم [<bdi dir="ltr" class="odt-ltr-term">JUnitTest1VoterList</bdi>]، لفئة [<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>]. في <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi>، سنمضي قدماً كما هو موضح سابقاً:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001C6000001AB22F05F4D.png" width="318" height="299" style="display:inline-block; margin:4px;width:8.41cm;height:7.909cm;" class="odt-zoomable" data-zoom-src="images/10000000000001C6000001AB22F05F4D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FA000000DEA23A34D9.png" width="175" height="155" style="display:inline-block; margin:4px;width:4.63cm;height:4.112cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FA000000DEA23A34D9.png" /></td></tr></table>
 
 <p>نكمل الكود الذي تم إنشاؤه بواسطة المعالج على النحو التالي:</p>
@@ -1767,20 +1769,20 @@
 
 <p>يؤدي تشغيل الاختبار إلى النتيجة التالية:</p>
 <p><img src="images/1000000000000173000000C0D6037593.png" width="260" height="134" style="width:6.87cm;height:3.554cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000173000000C0D6037593.png" /></p>
-<p>اجتاز الاختبار. سنعتبر الآن فئة [VoterList] جاهزة للعمل.</p>
+<p>اجتاز الاختبار. سنعتبر الآن فئة [<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>] جاهزة للعمل.</p>
 <p><a id="refheading317731812363491"></a></p>
-<h2 id="35-mainelections-2">3.5. <span style="color: #4f81bd">MainElections: الإصدار 2</span></h2>
+<h2 id="35-mainelections-2">3.5. <span style="color: #4f81bd"><bdi dir="ltr" class="odt-ltr-term">MainElections:</bdi> الإصدار 2</span></h2>
 <p><strong>قراءات موصى بها</strong>:</p>
 <ul>
   <li>الأقسام 2.1 و 2.2 و 2.4 و 2.7 من الفصل 2 في [1]: الفئات والواجهات
   </li>
-  <li>الأقسام 3.3 (فئة String)، و3.5 (فئة ArrayList)، و3.6 (فئة Arrays)
+  <li>الأقسام 3.3 (فئة <bdi dir="ltr" class="odt-ltr-term">String</bdi>)، و3.5 (فئة <bdi dir="ltr" class="odt-ltr-term">ArrayList</bdi>)، و3.6 (فئة <bdi dir="ltr" class="odt-ltr-term">Arrays</bdi>)
   </li>
 </ul>
 
-<p>نريد إعادة كتابة تطبيق [Elections] بإضافة القيود الجديدة التالية:</p>
+<p>نريد إعادة كتابة تطبيق [<bdi dir="ltr" class="odt-ltr-term">Elections</bdi>] بإضافة القيود الجديدة التالية:</p>
 <ul>
-  <li>سنستخدم فئة [VoterList] لتمثيل قائمة المرشحين
+  <li>سنستخدم فئة [<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>] لتمثيل قائمة المرشحين
   </li>
   <li>سيطلب التطبيق من المستخدم المعلومات التالية:
   </li>
@@ -1788,52 +1790,52 @@
   </li>
   <li>أسماء القوائم والأصوات المخصصة لها. لا نعرف مسبقًا عدد القوائم الموجودة. سيتم الإشارة إلى القائمة الأخيرة باسم يساوي السلسلة &quot;*&quot;.
   </li>
-  <li>نظرًا لأننا لا نعرف مسبقًا عدد القوائم، فسيتم تخزينها أولاً في كائن [ArrayList]. ثم، بمجرد إدخال جميع القوائم، سيتم نقلها إلى مصفوفة من القوائم.
+  <li>نظرًا لأننا لا نعرف مسبقًا عدد القوائم، فسيتم تخزينها أولاً في كائن [<bdi dir="ltr" class="odt-ltr-term">ArrayList</bdi>]. ثم، بمجرد إدخال جميع القوائم، سيتم نقلها إلى مصفوفة من القوائم.
   </li>
   <li>سيتم عرض النتائج بترتيب تنازلي حسب عدد المقاعد التي تم الحصول عليها.
   </li>
 </ul>
 
-<p>لفرز مصفوفة T، يمكننا استخدام طرق ثابتة متنوعة لفئة [Arrays]:</p>
+<p>لفرز مصفوفة <bdi dir="ltr" class="odt-ltr-term">T</bdi>، يمكننا استخدام طرق ثابتة متنوعة لفئة [<bdi dir="ltr" class="odt-ltr-term">Arrays</bdi>]:</p>
 <ul>
-  <li><b>Arrays.sort(T)</b>: يفرز المصفوفة T بترتيب طبيعي إن وجد (تصاعدي للأرقام والتواريخ، أبجدي للسلاسل، إلخ)
+  <li><b><bdi dir="ltr" class="odt-ltr-term">Arrays.sort</bdi>(<bdi dir="ltr" class="odt-ltr-term">T</bdi>)</b>: يفرز المصفوفة <bdi dir="ltr" class="odt-ltr-term">T</bdi> بترتيب طبيعي إن وجد (تصاعدي للأرقام والتواريخ، أبجدي للسلاسل، إلخ)
   </li>
-  <li><b>Arrays.sort(T,comparator)</b>: لفرز المصفوفات T التي لا تحتوي على ترتيب طبيعي. وهذا هو الحال هنا مع مصفوفة القوائم، التي يجب فرزها وفقًا لحقل معين من القائمة: عدد المقاعد التي تم الحصول عليها.
+  <li><b><bdi dir="ltr" class="odt-ltr-term">Arrays.sort</bdi>(<bdi dir="ltr" class="odt-ltr-term">T</bdi>,<bdi dir="ltr" class="odt-ltr-term">comparator</bdi>)</b>: لفرز المصفوفات <bdi dir="ltr" class="odt-ltr-term">T</bdi> التي لا تحتوي على ترتيب طبيعي. وهذا هو الحال هنا مع مصفوفة القوائم، التي يجب فرزها وفقًا لحقل معين من القائمة: عدد المقاعد التي تم الحصول عليها.
   </li>
 </ul>
 
-<p>في طريقة <strong>Arrays.sort(T,comparator)</strong>، المعلمة <strong>comparator</strong> هي كائن ينفذ واجهة <strong>Comparator</strong> التالية:</p>
+<p>في طريقة <strong><bdi dir="ltr" class="odt-ltr-term">Arrays.sort</bdi>(<bdi dir="ltr" class="odt-ltr-term">T</bdi>,<bdi dir="ltr" class="odt-ltr-term">comparator</bdi>)</strong>، المعلمة <strong><bdi dir="ltr" class="odt-ltr-term">comparator</bdi></strong> هي كائن ينفذ واجهة <strong><bdi dir="ltr" class="odt-ltr-term">Comparator</bdi></strong> التالية:</p>
 <p><img src="images/10000000000002110000009A0EFC1F82.png" width="370" height="108" style="width:9.8cm;height:2.852cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002110000009A0EFC1F82.png" /></p>
 <ul>
-  <li>تسمح طريقة <b>compare </b>بمقارنة عنصرين من المصفوفة T
+  <li>تسمح طريقة <b><bdi dir="ltr" class="odt-ltr-term">compare</bdi> </b>بمقارنة عنصرين من المصفوفة <bdi dir="ltr" class="odt-ltr-term">T</bdi>
   </li>
-  <li>تحدد طريقة <b>equals </b>ما إذا كان كائنان متساويين
+  <li>تحدد طريقة <b><bdi dir="ltr" class="odt-ltr-term">equals</bdi> </b>ما إذا كان كائنان متساويين
   </li>
 </ul>
 
-<p>تقارن كلتا الطريقتين أنواع <strong>الكائنات</strong> <em>obj1</em> و <em>obj2</em>. يعتمد تحديد ما إذا كان <em>obj1&lt;obj2</em> أو <em>obj1=obj2</em> أو <em>obj1&gt;obj2</em> على علاقة الترتيب التي نرغب في إقامتها بين الكائنين. يعود الأمر للمطور الذي ينفذ هذه الواجهة لتحديد كيفية معرفة ما يلي:</p>
+<p>تقارن كلتا الطريقتين أنواع <strong>الكائنات</strong> <em><bdi dir="ltr" class="odt-ltr-term">obj1</bdi></em> و <em><bdi dir="ltr" class="odt-ltr-term">obj2</bdi></em>. يعتمد تحديد ما إذا كان <em><bdi dir="ltr" class="odt-ltr-term">obj1</bdi>&lt;<bdi dir="ltr" class="odt-ltr-term">obj2</bdi></em> أو <em><bdi dir="ltr" class="odt-ltr-term">obj1</bdi>=<bdi dir="ltr" class="odt-ltr-term">obj2</bdi></em> أو <em><bdi dir="ltr" class="odt-ltr-term">obj1</bdi>&gt;<bdi dir="ltr" class="odt-ltr-term">obj2</bdi></em> على علاقة الترتيب التي نرغب في إقامتها بين الكائنين. يعود الأمر للمطور الذي ينفذ هذه الواجهة لتحديد كيفية معرفة ما يلي:</p>
 <ul>
-  <li><i>obj1 </i>أصغر من <i>obj2</i>
+  <li><i><bdi dir="ltr" class="odt-ltr-term">obj1</bdi> </i>أصغر من <i><bdi dir="ltr" class="odt-ltr-term">obj2</bdi></i>
   </li>
-  <li><i>obj1 </i>أكبر من <i>obj2</i>
+  <li><i><bdi dir="ltr" class="odt-ltr-term">obj1</bdi> </i>أكبر من <i><bdi dir="ltr" class="odt-ltr-term">obj2</bdi></i>
   </li>
-  <li><i>obj1 </i>يساوي <i>obj2</i>
+  <li><i><bdi dir="ltr" class="odt-ltr-term">obj1</bdi> </i>يساوي <i><bdi dir="ltr" class="odt-ltr-term">obj2</bdi></i>
   </li>
 </ul>
 
-<p>تحتوي فئة <strong>Object</strong>، التي تنحدر منها جميع فئات Java، بالفعل على طريقة [equals]. لفرز مصفوفة T من الكائنات من النوع O، لا تكون طريقة [equals] لفئة O مفيدة. لذلك يمكننا ترك التنفيذ الافتراضي الذي توفره فئة <strong>Object</strong>. عندئذٍ يجب تنفيذ طريقة [compare] فقط. يتم استدعاء هذه الطريقة بشكل متكرر بواسطة طريقة [<strong>Arrays.sort</strong>]. في كل مرة، تمرر [Arrays.sort] <strong>obj1</strong> و <strong>obj2</strong> — عنصرين من المصفوفة <strong>T</strong> المراد فرزها — كمعلمات لطريقة <strong>compare</strong>. في حالتنا، ستكون هذه العناصر من النوع [VoterList]. لاحظ تعدد الأشكال الذي يحدث هنا. تم تعريف طريقة [compare] لقبول معلمات من النوع [Object]. وهذا يعني أنها يمكن أن تقبل معلمات من النوع [Object] أو أي نوع مشتق (تعدد الأشكال). وبما أن [Object] هي الفئة الأم لجميع فئات Java، فإن المعلمات الفعلية يمكن أن تكون من النوع [VoterList].</p>
-<p>للترتيب الترتيبي التصاعدي، يجب أن تُرجع طريقة [compare]:</p>
+<p>تحتوي فئة <strong><bdi dir="ltr" class="odt-ltr-term">Object</bdi></strong>، التي تنحدر منها جميع فئات <bdi dir="ltr" class="odt-ltr-term">Java</bdi>، بالفعل على طريقة [<bdi dir="ltr" class="odt-ltr-term">equals</bdi>]. لفرز مصفوفة <bdi dir="ltr" class="odt-ltr-term">T</bdi> من الكائنات من النوع <bdi dir="ltr" class="odt-ltr-term">O</bdi>، لا تكون طريقة [<bdi dir="ltr" class="odt-ltr-term">equals</bdi>] لفئة <bdi dir="ltr" class="odt-ltr-term">O</bdi> مفيدة. لذلك يمكننا ترك التنفيذ الافتراضي الذي توفره فئة <strong><bdi dir="ltr" class="odt-ltr-term">Object</bdi></strong>. عندئذٍ يجب تنفيذ طريقة [<bdi dir="ltr" class="odt-ltr-term">compare</bdi>] فقط. يتم استدعاء هذه الطريقة بشكل متكرر بواسطة طريقة [<strong><bdi dir="ltr" class="odt-ltr-term">Arrays.sort</bdi></strong>]. في كل مرة، تمرر [<bdi dir="ltr" class="odt-ltr-term">Arrays.sort</bdi>] <strong><bdi dir="ltr" class="odt-ltr-term">obj1</bdi></strong> و <strong><bdi dir="ltr" class="odt-ltr-term">obj2</bdi></strong> — عنصرين من المصفوفة <strong><bdi dir="ltr" class="odt-ltr-term">T</bdi></strong> المراد فرزها — كمعلمات لطريقة <strong><bdi dir="ltr" class="odt-ltr-term">compare</bdi></strong>. في حالتنا، ستكون هذه العناصر من النوع [<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>]. لاحظ تعدد الأشكال الذي يحدث هنا. تم تعريف طريقة [<bdi dir="ltr" class="odt-ltr-term">compare</bdi>] لقبول معلمات من النوع [<bdi dir="ltr" class="odt-ltr-term">Object</bdi>]. وهذا يعني أنها يمكن أن تقبل معلمات من النوع [<bdi dir="ltr" class="odt-ltr-term">Object</bdi>] أو أي نوع مشتق (تعدد الأشكال). وبما أن [<bdi dir="ltr" class="odt-ltr-term">Object</bdi>] هي الفئة الأم لجميع فئات <bdi dir="ltr" class="odt-ltr-term">Java</bdi>، فإن المعلمات الفعلية يمكن أن تكون من النوع [<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>].</p>
+<p>للترتيب الترتيبي التصاعدي، يجب أن تُرجع طريقة [<bdi dir="ltr" class="odt-ltr-term">compare</bdi>]:</p>
 <ul>
-  <li>-1 إذا كان<i> obj1 </i>أصغر من <i>obj2</i>
+  <li>-1 إذا كان<i> <bdi dir="ltr" class="odt-ltr-term">obj1</bdi> </i>أصغر من <i><bdi dir="ltr" class="odt-ltr-term">obj2</bdi></i>
   </li>
-  <li>+1 إذا كان<i> obj1 </i>أكبر من <i>obj2</i>
+  <li>+1 إذا كان<i> <bdi dir="ltr" class="odt-ltr-term">obj1</bdi> </i>أكبر من <i><bdi dir="ltr" class="odt-ltr-term">obj2</bdi></i>
   </li>
-  <li>0 إذا كان<i> obj1 </i>يساوي <i>obj2</i>
+  <li>0 إذا كان<i> <bdi dir="ltr" class="odt-ltr-term">obj1</bdi> </i>يساوي <i><bdi dir="ltr" class="odt-ltr-term">obj2</bdi></i>
   </li>
 </ul>
 
-<p>للترتيب التنازلي، يتم عكس القيمتين +1 و -1. تعبر العبارات &quot;أصغر من&quot; و&quot;أكبر من&quot; و&quot;يساوي&quot; عن علاقة ترتيب. بالنسبة للكائنات من النوع [VoterList]، تنطبق العلاقة <strong>list1</strong> &quot;أصغر من&quot;  <strong>list2</strong> إذا كان عدد الأصوات في <strong>list1</strong> أقل من عدد الأصوات <strong>في list2</strong>.</p>
-<p>في نفس ملف المصدر الخاص بفئة [MainElections]، يمكننا إضافة فئة ثانية:</p>
+<p>للترتيب التنازلي، يتم عكس القيمتين +1 و -1. تعبر العبارات &quot;أصغر من&quot; و&quot;أكبر من&quot; و&quot;يساوي&quot; عن علاقة ترتيب. بالنسبة للكائنات من النوع [<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>]، تنطبق العلاقة <strong><bdi dir="ltr" class="odt-ltr-term">list1</bdi></strong> &quot;أصغر من&quot;  <strong><bdi dir="ltr" class="odt-ltr-term">list2</bdi></strong> إذا كان عدد الأصوات في <strong><bdi dir="ltr" class="odt-ltr-term">list1</bdi></strong> أقل من عدد الأصوات <strong>في <bdi dir="ltr" class="odt-ltr-term">list2</bdi></strong>.</p>
+<p>في نفس ملف المصدر الخاص بفئة [<bdi dir="ltr" class="odt-ltr-term">MainElections</bdi>]، يمكننا إضافة فئة ثانية:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
@@ -1859,11 +1861,11 @@
 <a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="err">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li>السطر 2: لم يتم إعلان الفئة <b>على أنها عامة</b>. في ملف مصدر Java، يمكن أن يكون هناك عدة فئات، ولكن يمكن أن يكون هناك فئة واحدة فقط لها السمة <b>العامة </b>— وهي الفئة التي تحمل نفس اسم ملف المصدر.
+  <li>السطر 2: لم يتم إعلان الفئة <b>على أنها عامة</b>. في ملف مصدر <bdi dir="ltr" class="odt-ltr-term">Java</bdi>، يمكن أن يكون هناك عدة فئات، ولكن يمكن أن يكون هناك فئة واحدة فقط لها السمة <b>العامة </b>— وهي الفئة التي تحمل نفس اسم ملف المصدر.
   </li>
 </ul>
 
-<p>في طريقة <em>compare</em> السابقة، المعلمات من نوع <em>Object،</em> مما يتطلب في السطرين 7 و8 تحويل معلمات الطريقة من نوع <em>Object</em> إلى نوع <em>VoterList</em>. يتم فرض توقيع طريقة <em>compare</em> بواسطة واجهة <em>Comparator في</em> ، والتي تمت كتابتها لمقارنة كائنات عشوائية. منذ JDK 1.5، توجد واجهة <em>Comparator</em> عامة: <em>Comparator&lt;T&gt;،</em> حيث <em>T</em> هو أي نوع في Java. تقارن طريقة <em>compare</em> الخاصة بواجهة <em>Comparator&lt;T&gt;</em> الكائنات من النوع <em>T</em> بدلاً من النوع <em>Object</em>، مما يتجنب عمليات التحويل السابقة. قد تبدو فئة المقارنة للكائنات من النوع <em>VoterList</em> كما يلي:</p>
+<p>في طريقة <em><bdi dir="ltr" class="odt-ltr-term">compare</bdi></em> السابقة، المعلمات من نوع <em><bdi dir="ltr" class="odt-ltr-term">Object</bdi>،</em> مما يتطلب في السطرين 7 و8 تحويل معلمات الطريقة من نوع <em><bdi dir="ltr" class="odt-ltr-term">Object</bdi></em> إلى نوع <em><bdi dir="ltr" class="odt-ltr-term">VoterList</bdi></em>. يتم فرض توقيع طريقة <em><bdi dir="ltr" class="odt-ltr-term">compare</bdi></em> بواسطة واجهة <em><bdi dir="ltr" class="odt-ltr-term">Comparator</bdi> في</em> ، والتي تمت كتابتها لمقارنة كائنات عشوائية. منذ <bdi dir="ltr" class="odt-ltr-term">JDK 1.5</bdi>، توجد واجهة <em><bdi dir="ltr" class="odt-ltr-term">Comparator</bdi></em> عامة: <em><bdi dir="ltr" class="odt-ltr-term">Comparator</bdi>&lt;<bdi dir="ltr" class="odt-ltr-term">T</bdi>&gt;،</em> حيث <em><bdi dir="ltr" class="odt-ltr-term">T</bdi></em> هو أي نوع في <bdi dir="ltr" class="odt-ltr-term">Java.</bdi> تقارن طريقة <em><bdi dir="ltr" class="odt-ltr-term">compare</bdi></em> الخاصة بواجهة <em><bdi dir="ltr" class="odt-ltr-term">Comparator</bdi>&lt;<bdi dir="ltr" class="odt-ltr-term">T</bdi>&gt;</em> الكائنات من النوع <em><bdi dir="ltr" class="odt-ltr-term">T</bdi></em> بدلاً من النوع <em><bdi dir="ltr" class="odt-ltr-term">Object</bdi></em>، مما يتجنب عمليات التحويل السابقة. قد تبدو فئة المقارنة للكائنات من النوع <em><bdi dir="ltr" class="odt-ltr-term">VoterList</bdi></em> كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
 <span class="odt-code-line"><span class="odt-code-line-content">// classe de comparaison de listes électorales</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000"> CompareListesElectorales </span><span style="font-weight:bold;color:#7f0055">implements</span><span style="color:#000000"> Comparator&lt;ListeElectorale&gt; {</span></span></span>
@@ -1877,24 +1879,24 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 2: تنفذ الفئة واجهة<i> Comparator&lt;VoterList&gt;</i>
+  <li>السطر 2: تنفذ الفئة واجهة<i> <bdi dir="ltr" class="odt-ltr-term">Comparator</bdi>&lt;<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>&gt;</i>
   </li>
-  <li>السطران 5-6: معلمات طريقة <i>compare </i>من النوع <i>VoterList</i>. لم يعد تحويل النوع ضروريًا.
+  <li>السطران 5-6: معلمات طريقة <i><bdi dir="ltr" class="odt-ltr-term">compare</bdi> </i>من النوع <i><bdi dir="ltr" class="odt-ltr-term">VoterList</bdi></i>. لم يعد تحويل النوع ضروريًا.
   </li>
 </ul>
 
-<p>أدخلت JDK 1.5 مفهوم الفئات/الواجهات العامة لمختلف الفئات/الواجهات في JDK 1.4 التي كانت تتعامل في البداية مع كائنات من نوع <em>Object</em> فقط. وهذا هو الحال بالنسبة للقوائم والقواميس، ...</p>
-<p>ذكرنا سابقًا أنه نظرًا لعدم معرفتنا بعدد القوائم، لم نتمكن من تخزينها في مصفوفة. يمكن تخزينها في كائن <em>ArrayList</em>، الذي يطبق مفهوم «قائمة الكائنات». تخزن هذه الفئة كائنات من نوع <em>Object</em>. منذ JDK 1.5، أصبحت هناك قوائم كائنات مكتوبة. وبالتالي، سنستخدم كائن <em>ArrayList&lt;VoterList&gt;</em> لتخزين القوائم قبل نقلها إلى مصفوفة. إذا كانت المصفوفة تسمى tLists، فسيتم فرزها باستخدام العبارة التالية:</p>
+<p>أدخلت <bdi dir="ltr" class="odt-ltr-term">JDK 1.5</bdi> مفهوم الفئات/الواجهات العامة لمختلف الفئات/الواجهات في <bdi dir="ltr" class="odt-ltr-term">JDK 1.4</bdi> التي كانت تتعامل في البداية مع كائنات من نوع <em><bdi dir="ltr" class="odt-ltr-term">Object</bdi></em> فقط. وهذا هو الحال بالنسبة للقوائم والقواميس، ...</p>
+<p>ذكرنا سابقًا أنه نظرًا لعدم معرفتنا بعدد القوائم، لم نتمكن من تخزينها في مصفوفة. يمكن تخزينها في كائن <em><bdi dir="ltr" class="odt-ltr-term">ArrayList</bdi></em>، الذي يطبق مفهوم «قائمة الكائنات». تخزن هذه الفئة كائنات من نوع <em><bdi dir="ltr" class="odt-ltr-term">Object</bdi></em>. منذ <bdi dir="ltr" class="odt-ltr-term">JDK 1.5</bdi>، أصبحت هناك قوائم كائنات مكتوبة. وبالتالي، سنستخدم كائن <em><bdi dir="ltr" class="odt-ltr-term">ArrayList</bdi>&lt;<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>&gt;</em> لتخزين القوائم قبل نقلها إلى مصفوفة. إذا كانت المصفوفة تسمى <bdi dir="ltr" class="odt-ltr-term">tLists</bdi>، فسيتم فرزها باستخدام العبارة التالية:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
 <span class="odt-code-line"><span class="odt-code-line-content">// tri des listes</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">Arrays.</span><span style="font-style:italic;color:#000000">sort</span><span style="color:#000000">(tListes, </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> CompareListesElectorales());</span></span></span>
 </code></pre></div>
 
-<p>حيث <em>CompareVoterLists</em> هي الفئة التي تنفذ واجهة <em>Comparator&lt;VoterList&gt;</em>.</p>
+<p>حيث <em><bdi dir="ltr" class="odt-ltr-term">CompareVoterLists</bdi></em> هي الفئة التي تنفذ واجهة <em><bdi dir="ltr" class="odt-ltr-term">Comparator</bdi>&lt;<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>&gt;</em>.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><strong>المهمة</strong>: أعد كتابة تطبيق [Elections] مع مراعاة هذه المواصفات الجديدة.</p>
+<p><strong>المهمة</strong>: أعد كتابة تطبيق [<bdi dir="ltr" class="odt-ltr-term">Elections</bdi>] مع مراعاة هذه المواصفات الجديدة.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
-<p>قد يبدو مشروع Eclipse كما يلي:</p>
+<p>قد يبدو مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> كما يلي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002840000023FCAF6ECB5.png" width="225" height="201" style="display:inline-block; margin:4px;width:5.96cm;height:5.322cm;" class="odt-zoomable" data-zoom-src="images/10000000000002840000023FCAF6ECB5.png" /></td></tr></table>
 
 <p>فيما يلي مثال على تنفيذ [1]:</p>

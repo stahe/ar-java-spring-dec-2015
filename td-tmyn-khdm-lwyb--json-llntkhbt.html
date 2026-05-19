@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1204,8 +1206,8 @@
 
 
 <p><a id="refheading251521391218965"></a></p>
-<h1 id="17-td-json">17. <span style="color: #365f91">[TD]: تأمين خادم الويب / JSON للانتخابات</span></h1>
-<p><strong>الكلمات المفتاحية</strong>: بنية متعددة المستويات، Spring، حقن التبعية، خدمة ويب آمنة / JSON، العميل / الخادم</p>
+<h1 id="17-td-json">17. <span style="color: #365f91">[<bdi dir="ltr" class="odt-ltr-term">TD</bdi>]: تأمين خادم الويب / <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> للانتخابات</span></h1>
+<p><strong>الكلمات المفتاحية</strong>: بنية متعددة المستويات، <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>، حقن التبعية، خدمة ويب آمنة / <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>، العميل / الخادم</p>
 <p>سنطبق الآن ما تعلمناه في الفصل السابق على مهمة الانتخابات. ستكون البنية كما يلي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000485000002EDCB27EACE.png" width="579" height="375" style="display:inline-block; margin:4px;width:15.307cm;height:9.91cm;" class="odt-zoomable" data-zoom-src="images/1000000000000485000002EDCB27EACE.png" /></td></tr></table>
 
@@ -1213,31 +1215,31 @@
 <ul>
   <li>كتابة الخادم؛
   </li>
-  <li>كتابة العميل بدون طبقة [ui] ولكن مع اختبار JUnit لطبقة [business]؛
+  <li>كتابة العميل بدون طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] ولكن مع اختبار <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi> لطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>]؛
   </li>
-  <li>كتابة العميل مع طبقة [UI]؛
+  <li>كتابة العميل مع طبقة [<bdi dir="ltr" class="odt-ltr-term">UI</bdi>]؛
   </li>
 </ul>
 <p><a id="refheading1217241037674463"></a></p>
 <h2 id="171">17.1. <span style="color: #4f81bd">الدعم</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000139000000C90A649EAC.png" width="219" height="141" style="display:inline-block; margin:4px;width:5.791cm;height:3.718cm;" class="odt-zoomable" data-zoom-src="images/1000000000000139000000C90A649EAC.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000DE0000006B5C473BFD.png" width="155" height="75" style="display:inline-block; margin:4px;width:4.11cm;height:1.981cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DE0000006B5C473BFD.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>يمكن العثور على مشاريع هذا الفصل في المجلد [support / chap-17]. يُستخدم البرنامج النصي SQL لإنشاء قاعدة البيانات المطلوبة للاختبار.</p>
+<p>يمكن العثور على مشاريع هذا الفصل في المجلد [<bdi dir="ltr" class="odt-ltr-term">support</bdi> / <bdi dir="ltr" class="odt-ltr-term">chap-17</bdi>]. يُستخدم البرنامج النصي <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> لإنشاء قاعدة البيانات المطلوبة للاختبار.</p>
 <p><a id="refheading251523391218965"></a></p>
 <h2 id="172">17.2. <span style="color: #4f81bd"><span style="color: #4f81bd">قاعدة البيانات</span></span></h2>
-<p>يجب أن تحتوي قاعدة بيانات الخادم الآمن الآن على الجداول [USERS] و[ROLES] و[USERS_ROLES]:</p>
+<p>يجب أن تحتوي قاعدة بيانات الخادم الآمن الآن على الجداول [<bdi dir="ltr" class="odt-ltr-term">USERS</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">ROLES</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">USERS</bdi>_ROLES]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000B20000008EDE1C2B32.png" width="125" height="100" style="display:inline-block; margin:4px;width:3.3cm;height:2.633cm;" class="odt-zoomable" data-zoom-src="images/10000000000000B20000008EDE1C2B32.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D40000005D8745EF19.png" width="149" height="65" style="display:inline-block; margin:4px;width:3.93cm;height:1.723cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D40000005D8745EF19.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>يتوفر البرنامج النصي SQL لإنشاء قاعدة البيانات في قسم الدعم بالوثيقة.</p>
+<p>يتوفر البرنامج النصي <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> لإنشاء قاعدة البيانات في قسم الدعم بالوثيقة.</p>
 <p><a id="refheading251525391218965"></a></p>
 <h2 id="173">17.3. <span style="color: #4f81bd">الخادم الآمن</span></h2>
-<p>لإعداد خادم الانتخابات الآمن، ما عليك سوى نسخ ولصق المشروع النموذجي [intro-spring-security-server-01]:</p>
+<p>لإعداد خادم الانتخابات الآمن، ما عليك سوى نسخ ولصق المشروع النموذجي [<bdi dir="ltr" class="odt-ltr-term">intro-spring-security-server-01</bdi>]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000049C0000015EDC1CA3CF.png" width="590" height="175" style="display:inline-block; margin:4px;width:15.61cm;height:4.63cm;" class="odt-zoomable" data-zoom-src="images/100000000000049C0000015EDC1CA3CF.png" /></td></tr></table>
 
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
 <p><strong>المهمة</strong>: أعد تسمية الحزم كما هو موضح في [1].</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
-<p>بمجرد الانتهاء من ذلك، نقوم بتعديل ملف [pom.xml] على النحو التالي:</p>
+<p>بمجرد الانتهاء من ذلك، نقوم بتعديل ملف [<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>] على النحو التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span> <span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#7f007f">xsi:schemaLocation</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#008080">&gt;</span></span></span>
@@ -1278,14 +1280,14 @@
 </code></pre></div>
 
 <ul>
-  <li>في الأسطر 23–27، استبدل التبعية لمشروع [intro-server-webjson-01] بالتبعية لمشروع [<span style="color: #000000">elections-webjson-metier-dao-spring-data</span>] الذي تمت مناقشته في <a href="#refheading2192602014630537"><u><span style="color: #0563c1">الفقرة 12</span></u></a>؛
+  <li>في الأسطر 23–27، استبدل التبعية لمشروع [<bdi dir="ltr" class="odt-ltr-term">intro-server-webjson-01</bdi>] بالتبعية لمشروع [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">elections-webjson-metier-dao-spring-data</bdi></span>] الذي تمت مناقشته في <a href="#refheading2192602014630537"><u><span style="color: #0563c1">الفقرة 12</span></u></a>؛
   </li>
   <li>في الأسطر 4-7، أدخل خصائص المشروع الجديد؛
   </li>
 </ul>
 
 <p>لا يزال يتعين علينا تعديل فئات تكوين المشروع:</p>
-<p><u><strong>[DaoConfig]</strong></u></p>
+<p><u><strong>[<bdi dir="ltr" class="odt-ltr-term">DaoConfig</bdi>]</strong></u></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.security.config;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1315,12 +1317,12 @@
 <ul>
   <li>الأسطر 8 و9 و14: أدخل أسماء الحزم الصحيحة؛
   </li>
-  <li>السطر 10: أصبحت الفئة المستوردة الآن [<span style="color: #000000">elections.dao.config.DaoConfig</span>] من مشروع [<span style="color: #000000">elections-webjson-metier-dao-spring-data</span>]؛
+  <li>السطر 10: أصبحت الفئة المستوردة الآن [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">elections.dao.config.DaoConfig</bdi></span>] من مشروع [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">elections-webjson-metier-dao-spring-data</bdi></span>]؛
   </li>
 </ul>
 
-<p><strong>ملاحظة</strong>: كما ذكرنا، لا يعمل هذا التكوين إلا إذا كانت الفئة [<span style="color: #000000">elections.dao.config.DaoConfig</span>] تحتوي على التعليق التوضيحي [@Configuration]. يرجى التحقق من ذلك.</p>
-<p><u><strong>[SecurityConfig]</strong></u></p>
+<p><strong>ملاحظة</strong>: كما ذكرنا، لا يعمل هذا التكوين إلا إذا كانت الفئة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">elections.dao.config.DaoConfig</bdi></span>] تحتوي على التعليق التوضيحي [@<bdi dir="ltr" class="odt-ltr-term">Configuration</bdi>]. يرجى التحقق من ذلك.</p>
+<p><u><strong>[<bdi dir="ltr" class="odt-ltr-term">SecurityConfig</bdi>]</strong></u></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.security.config;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1341,29 +1343,29 @@
   </li>
 </ul>
 
-<p>هذا كل شيء. قم بإجراء اختبار أولي عن طريق تنفيذ اختبار JUnit []:</p>
+<p>هذا كل شيء. قم بإجراء اختبار أولي عن طريق تنفيذ اختبار <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi> []:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000C9000000608400FFD5.png" width="141" height="67" style="display:inline-block; margin:4px;width:3.72cm;height:1.776cm;" class="odt-zoomable" data-zoom-src="images/10000000000000C9000000608400FFD5.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>قم بتشغيل فئة [Boot]، ثم استخدم ملحق Chrome [Advanced Rest Client] لإجراء الاختبار التالي:</p>
+<p>قم بتشغيل فئة [<bdi dir="ltr" class="odt-ltr-term">Boot</bdi>]، ثم استخدم ملحق <bdi dir="ltr" class="odt-ltr-term">Chrome</bdi> [<bdi dir="ltr" class="odt-ltr-term">Advanced Rest Client</bdi>] لإجراء الاختبار التالي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B200000335949105CD.png" width="601" height="410" style="display:inline-block; margin:4px;width:15.901cm;height:10.86cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B200000335949105CD.png" /></td></tr></table>
 
-<p>في [1]، الطلب. في [3]، الاستجابة. في [2]، رأس HTTP هو رأس مصادقة المستخدم [admin, admin]: <strong>Authorization:Basic YWRtaW46YWRtaW4=</strong></p>
+<p>في [1]، الطلب. في [3]، الاستجابة. في [2]، رأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> هو رأس مصادقة المستخدم [<bdi dir="ltr" class="odt-ltr-term">admin</bdi>, <bdi dir="ltr" class="odt-ltr-term">admin</bdi>]: <strong><bdi dir="ltr" class="odt-ltr-term">Authorization:Basic YWRtaW46YWRtaW4</bdi>=</strong></p>
 <p>الآن اطلب القوائم المتنافسة:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000489000003FC6AA66833.png" width="581" height="510" style="display:inline-block; margin:4px;width:15.36cm;height:13.496cm;" class="odt-zoomable" data-zoom-src="images/1000000000000489000003FC6AA66833.png" /></td></tr></table>
 
 <p><a id="refheading110174391218965"></a></p>
-<h2 id="174-ui">17.4. <span style="color: #4f81bd">عميل الخادم الآمن بدون طبقة [ui]</span></h2>
+<h2 id="174-ui">17.4. <span style="color: #4f81bd">عميل الخادم الآمن بدون طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>]</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B7000002F2D08275D5.png" width="604" height="377" style="display:inline-block; margin:4px;width:15.968cm;height:9.975cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B7000002F2D08275D5.png" /></td></tr></table>
 
-<p>انسخ مشروع [elections-ui-metier-dao-webjson] والصقه في مشروع [elections-metier-dao-security-webjson].</p>
+<p>انسخ مشروع [<bdi dir="ltr" class="odt-ltr-term">elections-ui-metier-dao-webjson</bdi>] والصقه في مشروع [<bdi dir="ltr" class="odt-ltr-term">elections-metier-dao-security-webjson</bdi>].</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002B2000002B9BF021CEB.png" width="345" height="349" style="display:inline-block; margin:4px;width:9.128cm;height:9.222cm;" class="odt-zoomable" data-zoom-src="images/10000000000002B2000002B9BF021CEB.png" /></td></tr></table>
 
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><strong>المهمة</strong>: في [1]، قم بتغيير اسم الحزم إذا لزم الأمر وقم بإزالة تلك الموجودة في طبقة [ui] وفئات بدء التشغيل [boot].</p>
+<p><strong>المهمة</strong>: في [1]، قم بتغيير اسم الحزم إذا لزم الأمر وقم بإزالة تلك الموجودة في طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] وفئات بدء التشغيل [<bdi dir="ltr" class="odt-ltr-term">boot</bdi>].</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <p>سنمضي الآن كما هو موضح في <a href="#refheading180062656793311"><u><span style="color: #0563c1">القسم 16.5</span></u></a>.</p>
 <p><a id="refheading251908391218965"></a></p>
-<h3 id="1741-maven">17.4.1. <span style="color: #4f81bd">تكوين Maven</span></h3>
+<h3 id="1741-maven">17.4.1. <span style="color: #4f81bd">تكوين <bdi dir="ltr" class="odt-ltr-term">Maven</bdi></span></h3>
 <p>يتغير قسم تعريف المشروع فقط:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span> <span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span>
@@ -1381,7 +1383,7 @@
 <h3 id="1742">17.4.2. <span style="color: #4f81bd"><span style="color: #4f81bd">إعادة هيكلة طبقة [الأعمال]</span></span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000106000000A6331D601E.png" width="183" height="116" style="display:inline-block; margin:4px;width:4.851cm;height:3.074cm;" class="odt-zoomable" data-zoom-src="images/1000000000000106000000A6331D601E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>تتطور واجهة [IElectionsMetier] على النحو التالي:</p>
+<p>تتطور واجهة [<bdi dir="ltr" class="odt-ltr-term">IElectionsMetier</bdi>] على النحو التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.security.client.metier;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1412,7 +1414,7 @@
 </code></pre></div>
 
 <p>تحتوي جميع الطرق على المعلمة الأولى وهي المستخدم الذي يرغب في استخدام موارد الخادم الآمن.</p>
-<p>يتطور تنفيذ [ElectionsMetier] على النحو التالي:</p>
+<p>يتطور تنفيذ [<bdi dir="ltr" class="odt-ltr-term">ElectionsMetier</bdi>] على النحو التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.security.client.metier;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1505,10 +1507,10 @@
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
 <p><a id="refheading251912391218965"></a></p>
-<h3 id="1743-spring">17.4.3. <span style="color: #4f81bd">تكوين Spring</span></h3>
+<h3 id="1743-spring">17.4.3. <span style="color: #4f81bd">تكوين <bdi dir="ltr" class="odt-ltr-term">Spring</bdi></span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000102000000836B55FF70.png" width="181" height="92" style="display:inline-block; margin:4px;width:4.78cm;height:2.427cm;" class="odt-zoomable" data-zoom-src="images/1000000000000102000000836B55FF70.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>تتطور فئة [MetierConfig] على النحو التالي:</p>
+<p>تتطور فئة [<bdi dir="ltr" class="odt-ltr-term">MetierConfig</bdi>] على النحو التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.security.client.config;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1520,10 +1522,10 @@
 
 <p>السطر 5: يجب تحديث الحزم المراد فحصها.</p>
 <p><a id="refheading251914391218965"></a></p>
-<h3 id="1744-junit">17.4.4. <span style="color: #4f81bd">اختبار JUnit لطبقة [الأعمال]</span></h3>
+<h3 id="1744-junit">17.4.4. <span style="color: #4f81bd">اختبار <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi> لطبقة [الأعمال]</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001220000008C545EB71D.png" width="203" height="98" style="display:inline-block; margin:4px;width:5.369cm;height:2.591cm;" class="odt-zoomable" data-zoom-src="images/10000000000001220000008C545EB71D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>تتغير فئة الاختبار [Test01] على النحو التالي:</p>
+<p>تتغير فئة الاختبار [<bdi dir="ltr" class="odt-ltr-term">Test01</bdi>] على النحو التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.security.client.metier.junit;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1740,28 +1742,28 @@
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
 <p><a id="refheading110868391218965"></a></p>
-<h2 id="175-console">17.5. <span style="color: #4f81bd">عميل الخادم الآمن مع طبقة [console]</span></h2>
+<h2 id="175-console">17.5. <span style="color: #4f81bd">عميل الخادم الآمن مع طبقة [<bdi dir="ltr" class="odt-ltr-term">console</bdi>]</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004BC000002E7C848F928.png" width="606" height="371" style="display:inline-block; margin:4px;width:16.034cm;height:9.828cm;" class="odt-zoomable" data-zoom-src="images/10000000000004BC000002E7C848F928.png" /></td></tr></table>
 
-<p>في <strong>NetBeans</strong>، نفتح مشروعي Maven [elections-business-dao-security-webjson] و [elections-ui-business-dao-webjson]، ثم ننشئ مشروعًا جديدًا [elections-console-business-dao-security-webjson] عن طريق نسخ مشروع [elections-ui-business-dao-webjson] ولصقه:</p>
+<p>في <strong><bdi dir="ltr" class="odt-ltr-term">NetBeans</bdi></strong>، نفتح مشروعي <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> [<bdi dir="ltr" class="odt-ltr-term">elections-business-dao-security-webjson</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">elections-ui-business-dao-webjson</bdi>]، ثم ننشئ مشروعًا جديدًا [<bdi dir="ltr" class="odt-ltr-term">elections-console-business-dao-security-webjson</bdi>] عن طريق نسخ مشروع [<bdi dir="ltr" class="odt-ltr-term">elections-ui-business-dao-webjson</bdi>] ولصقه:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000020C0000009DE47FA86B.png" width="262" height="79" style="display:inline-block; margin:4px;width:6.932cm;height:2.078cm;" class="odt-zoomable" data-zoom-src="images/100000000000020C0000009DE47FA86B.png" /></td></tr></table>
 
-<p>تأتي معظم الفئات في المشروع الجديد [3] من مشروع [elections-ui-metier-dao-webjson] [2]، الذي كان العميل لخادم الويب/JSON غير الآمن:</p>
+<p>تأتي معظم الفئات في المشروع الجديد [3] من مشروع [<bdi dir="ltr" class="odt-ltr-term">elections-ui-metier-dao-webjson</bdi>] [2]، الذي كان العميل لخادم الويب/<bdi dir="ltr" class="odt-ltr-term">JSON</bdi> غير الآمن:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000482000001E004587F70.png" width="577" height="240" style="display:inline-block; margin:4px;width:15.266cm;height:6.35cm;" class="odt-zoomable" data-zoom-src="images/1000000000000482000001E004587F70.png" /></td></tr></table>
 
-<p>اتبع هذه الخطوات لإنشاء مشروع Maven الجديد:</p>
+<p>اتبع هذه الخطوات لإنشاء مشروع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> الجديد:</p>
 <ul>
-  <li>انسخ مشروع [elections-ui-metier-dao-webjson] والصقه في مشروع [elections-ui-metier-dao-security-webjson]؛
+  <li>انسخ مشروع [<bdi dir="ltr" class="odt-ltr-term">elections-ui-metier-dao-webjson</bdi>] والصقه في مشروع [<bdi dir="ltr" class="odt-ltr-term">elections-ui-metier-dao-security-webjson</bdi>]؛
   </li>
   <li>في المشروع الجديد:
     <ul>
-      <li>احذف الحزم [elections.client.dao، elections.client.metier، elections.client.entities]؛
+      <li>احذف الحزم [<bdi dir="ltr" class="odt-ltr-term">elections.client.dao</bdi>، <bdi dir="ltr" class="odt-ltr-term">elections.client.metier</bdi>، <bdi dir="ltr" class="odt-ltr-term">elections.client.entities</bdi>]؛
       </li>
-      <li>في الحزمة [elections.client.ui]، احتفظ فقط بفئة وحدة التحكم [ElectionsConsole] وواجهتها [IElectionsUI]؛
+      <li>في الحزمة [<bdi dir="ltr" class="odt-ltr-term">elections.client.ui</bdi>]، احتفظ فقط بفئة وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">ElectionsConsole</bdi>] وواجهتها [<bdi dir="ltr" class="odt-ltr-term">IElectionsUI</bdi>]؛
       </li>
       <li>أعد تسمية الحزم كما هو موضح في [3]؛
       </li>
-      <li>قم بإصلاح مشكلات الاستيراد في الفئات المختلفة عن طريق [النقر بزر الماوس الأيمن / Fix Imports]؛
+      <li>قم بإصلاح مشكلات الاستيراد في الفئات المختلفة عن طريق [النقر بزر الماوس الأيمن / <bdi dir="ltr" class="odt-ltr-term">Fix Imports</bdi>]؛
       </li>
     </ul>
   </li>
@@ -1769,8 +1771,8 @@
 
 <p>في هذه المرحلة، يحتوي المشروع الجديد على العديد من الأخطاء.</p>
 <p><a id="refheading251916391218965"></a></p>
-<h3 id="1751-maven">17.5.1. <span style="color: #4f81bd"><span style="color: #4f81bd">تكوين Maven</span></span></h3>
-<p>ملف [pom.xml] للمشروع الجديد هو كما يلي:</p>
+<h3 id="1751-maven">17.5.1. <span style="color: #4f81bd"><span style="color: #4f81bd">تكوين <bdi dir="ltr" class="odt-ltr-term">Maven</bdi></span></span></h3>
+<p>ملف [<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>] للمشروع الجديد هو كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span> <span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#7f007f">xsi:schemaLocation</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#008080">&gt;</span></span></span>
@@ -1814,16 +1816,16 @@
 </code></pre></div>
 
 <ul>
-  <li>الأسطر 4–8: معرف Maven للمشروع الجديد؛
+  <li>الأسطر 4–8: معرف <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> للمشروع الجديد؛
   </li>
-  <li>الأسطر 22–26: التبعية لمشروع [elections-metier-dao-security-webjson] الذي أنشأناه للتو في <a href="#refheading110174391218965"><u><span style="color: #0563c1">القسم 17.4</span></u></a>، والذي يوفر طبقتي [DAO] و[business]؛
+  <li>الأسطر 22–26: التبعية لمشروع [<bdi dir="ltr" class="odt-ltr-term">elections-metier-dao-security-webjson</bdi>] الذي أنشأناه للتو في <a href="#refheading110174391218965"><u><span style="color: #0563c1">القسم 17.4</span></u></a>، والذي يوفر طبقتي [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">business</bdi>]؛
   </li>
 </ul>
 <p><a id="refheading111102391218965"></a></p>
-<h3 id="1752-spring">17.5.2. <span style="color: #4f81bd">تكوين Spring</span></h3>
+<h3 id="1752-spring">17.5.2. <span style="color: #4f81bd">تكوين <bdi dir="ltr" class="odt-ltr-term">Spring</bdi></span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F6000000E555E1FEA0.png" width="172" height="160" style="display:inline-block; margin:4px;width:4.56cm;height:4.246cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F6000000E555E1FEA0.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>فئة [UiConfig] هي كما يلي:</p>
+<p>فئة [<bdi dir="ltr" class="odt-ltr-term">UiConfig</bdi>] هي كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.security.client.config;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1848,18 +1850,18 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 8: نستورد الفئة [elections.security.client.config.MetierConfig] من المشروع [elections-metier-dao-security-webjson] الذي تمت مناقشته في <a href="#refheading110174391218965"><u><span style="color: #0563c1">القسم 17.4</span></u></a>؛
+  <li>السطر 8: نستورد الفئة [<bdi dir="ltr" class="odt-ltr-term">elections.security.client.config.MetierConfig</bdi>] من المشروع [<bdi dir="ltr" class="odt-ltr-term">elections-metier-dao-security-webjson</bdi>] الذي تمت مناقشته في <a href="#refheading110174391218965"><u><span style="color: #0563c1">القسم 17.4</span></u></a>؛
   </li>
-  <li>السطر 9: نعلن الحزم التي توجد فيها حبوب Spring؛
+  <li>السطر 9: نعلن الحزم التي توجد فيها حبوب <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>؛
   </li>
-  <li>الأسطر 12–18: حبة [admin] هي المستخدم [admin, admin] الذي سيستخدمه تطبيق وحدة التحكم. تذكر أن هذا هو المستخدم الوحيد المصرح له بالاستعلام عن خادم الويب/JSON الآمن؛
+  <li>الأسطر 12–18: حبة [<bdi dir="ltr" class="odt-ltr-term">admin</bdi>] هي المستخدم [<bdi dir="ltr" class="odt-ltr-term">admin</bdi>, <bdi dir="ltr" class="odt-ltr-term">admin</bdi>] الذي سيستخدمه تطبيق وحدة التحكم. تذكر أن هذا هو المستخدم الوحيد المصرح له بالاستعلام عن خادم الويب/<bdi dir="ltr" class="odt-ltr-term">JSON</bdi> الآمن؛
   </li>
 </ul>
 <p><a id="refheading251918391218965"></a></p>
 <h3 id="1753">17.5.3. <span style="color: #4f81bd">تطبيق تشغيل وحدة التحكم</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000105000000A3E63A28B1.png" width="183" height="114" style="display:inline-block; margin:4px;width:4.83cm;height:3.016cm;" class="odt-zoomable" data-zoom-src="images/1000000000000105000000A3E63A28B1.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>تتطور فئة [ElectionsConsole] على النحو التالي:</p>
+<p>تتطور فئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsConsole</bdi>] على النحو التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.security.client.console;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1944,36 +1946,36 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>لم تتغير فئة ElectionsConsole إلا قليلاً. فقط تذكر أن الطرق في طبقة [business] تتطلب الآن مستخدمًا كمعلمة أولى (الأسطر 31 و49 و51). ويتم توفير ذلك عن طريق الحقن في الأسطر 21–22. والمستخدم الذي تم حقنه هو المستخدم المصرح له بالاستعلام عن خادم الويب / jSON.</p>
+<p>لم تتغير فئة <bdi dir="ltr" class="odt-ltr-term">ElectionsConsole</bdi> إلا قليلاً. فقط تذكر أن الطرق في طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] تتطلب الآن مستخدمًا كمعلمة أولى (الأسطر 31 و49 و51). ويتم توفير ذلك عن طريق الحقن في الأسطر 21–22. والمستخدم الذي تم حقنه هو المستخدم المصرح له بالاستعلام عن خادم الويب / <bdi dir="ltr" class="odt-ltr-term">jSON.</bdi></p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
 <p><strong>المهمة</strong>: اختبر تطبيق وحدة التحكم (تذكر تشغيل الخادم الآمن أولاً).</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
 <p><a id="refheading251527391218965"></a></p>
-<h2 id="176-swing">17.6. <span style="color: #4f81bd">عميل الخادم الآمن مع طبقة [swing]</span></h2>
+<h2 id="176-swing">17.6. <span style="color: #4f81bd">عميل الخادم الآمن مع طبقة [<bdi dir="ltr" class="odt-ltr-term">swing</bdi>]</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004C3000002EF3F2B3A54.png" width="610" height="376" style="display:inline-block; margin:4px;width:16.127cm;height:9.936cm;" class="odt-zoomable" data-zoom-src="images/10000000000004C3000002EF3F2B3A54.png" /></td></tr></table>
 
-<p>نقوم بإنشاء مشروع NetBeans جديد [elections-swing-business-dao-security-webjson] عن طريق نسخ ولصق مشروع [elections-ui-business-dao-webjson]:</p>
+<p>نقوم بإنشاء مشروع <bdi dir="ltr" class="odt-ltr-term">NetBeans</bdi> جديد [<bdi dir="ltr" class="odt-ltr-term">elections-swing-business-dao-security-webjson</bdi>] عن طريق نسخ ولصق مشروع [<bdi dir="ltr" class="odt-ltr-term">elections-ui-business-dao-webjson</bdi>]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000498000001F139049F43.png" width="588" height="249" style="display:inline-block; margin:4px;width:15.558cm;height:6.576cm;" class="odt-zoomable" data-zoom-src="images/1000000000000498000001F139049F43.png" /></td></tr></table>
 
 <p>في المشروع الجديد [2]:</p>
 <ul>
-  <li>احذف الحزم [elections.client.dao، elections.client.metier، elections.client.entities]؛
+  <li>احذف الحزم [<bdi dir="ltr" class="odt-ltr-term">elections.client.dao</bdi>، <bdi dir="ltr" class="odt-ltr-term">elections.client.metier</bdi>، <bdi dir="ltr" class="odt-ltr-term">elections.client.entities</bdi>]؛
   </li>
-  <li>في الحزمة [elections.client.ui]، احذف الفئات [ElectionsConsole، IElectionsUI]؛
+  <li>في الحزمة [<bdi dir="ltr" class="odt-ltr-term">elections.client.ui</bdi>]، احذف الفئات [<bdi dir="ltr" class="odt-ltr-term">ElectionsConsole</bdi>، <bdi dir="ltr" class="odt-ltr-term">IElectionsUI</bdi>]؛
   </li>
   <li>أعد تسمية الحزم كما هو موضح في [2]؛
   </li>
-  <li>في الحزمة [elections.security.client.swing]، قم بتغيير اسم الفئة [AbstractElectionsSwing]، التي تنفذ واجهة المستخدم الرسومية، إلى [AbstractElectionsMainForm]، والفئة [ElectionsSwing]، التي تنفذ معالجات أحداث واجهة المستخدم الرسومية، إلى [ElectionsMainForm]؛
+  <li>في الحزمة [<bdi dir="ltr" class="odt-ltr-term">elections.security.client.swing</bdi>]، قم بتغيير اسم الفئة [<bdi dir="ltr" class="odt-ltr-term">AbstractElectionsSwing</bdi>]، التي تنفذ واجهة المستخدم الرسومية، إلى [<bdi dir="ltr" class="odt-ltr-term">AbstractElectionsMainForm</bdi>]، والفئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsSwing</bdi>]، التي تنفذ معالجات أحداث واجهة المستخدم الرسومية، إلى [<bdi dir="ltr" class="odt-ltr-term">ElectionsMainForm</bdi>]؛
   </li>
-  <li>قم بإصلاح مشكلات الاستيراد في الفئات المختلفة عن طريق النقر بزر الماوس الأيمن واختيار [Fix Imports]؛
+  <li>قم بإصلاح مشكلات الاستيراد في الفئات المختلفة عن طريق النقر بزر الماوس الأيمن واختيار [<bdi dir="ltr" class="odt-ltr-term">Fix Imports</bdi>]؛
   </li>
 </ul>
 
 <p>في هذه المرحلة، توجد أخطاء عديدة.</p>
 <p><a id="refheading251920391218965"></a></p>
-<h3 id="1761-maven">17.6.1. <span style="color: #4f81bd">تكوين Maven</span></h3>
-<p>يتغير ملف [pom.xml] على النحو التالي:</p>
+<h3 id="1761-maven">17.6.1. <span style="color: #4f81bd">تكوين <bdi dir="ltr" class="odt-ltr-term">Maven</bdi></span></h3>
+<p>يتغير ملف [<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>] على النحو التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span> <span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#7f007f">xsi:schemaLocation</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#008080">&gt;</span></span></span>
@@ -2017,16 +2019,16 @@
 </code></pre></div>
 
 <ul>
-  <li>الأسطر 4–8: معرف Maven للمشروع الجديد؛
+  <li>الأسطر 4–8: معرف <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> للمشروع الجديد؛
   </li>
   <li>الأسطر 22–26: تبعية لمشروع وحدة التحكم الذي درسناه للتو في <a href="#refheading110868391218965"><u><span style="color: #0563c1">القسم 17.5</span></u></a>؛
   </li>
 </ul>
 <p><a id="refheading251922391218965"></a></p>
-<h3 id="1762-spring">17.6.2. <span style="color: #4f81bd">تكوين Spring</span></h3>
-<p>يستخدم هذا المشروع تكوين Spring الخاص بمشروع وحدة التحكم الذي يستورده (انظر <a href="#refheading111102391218965"><u><span style="color: #0563c1">القسم 17.5.2</span></u></a>).</p>
+<h3 id="1762-spring">17.6.2. <span style="color: #4f81bd">تكوين <bdi dir="ltr" class="odt-ltr-term">Spring</bdi></span></h3>
+<p>يستخدم هذا المشروع تكوين <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> الخاص بمشروع وحدة التحكم الذي يستورده (انظر <a href="#refheading111102391218965"><u><span style="color: #0563c1">القسم 17.5.2</span></u></a>).</p>
 <p><a id="refheading251924391218965"></a></p>
-<h3 id="1763-swing">17.6.3. <span style="color: #4f81bd">طرق عرض تطبيق Swing</span></h3>
+<h3 id="1763-swing">17.6.3. <span style="color: #4f81bd">طرق عرض تطبيق <bdi dir="ltr" class="odt-ltr-term">Swing</bdi></span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012A000000B9393BA944.png" width="209" height="129" style="display:inline-block; margin:4px;width:5.519cm;height:3.425cm;" class="odt-zoomable" data-zoom-src="images/100000000000012A000000B9393BA944.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p>سيستخدم هذا المشروع عرضين:</p>
@@ -2035,17 +2037,17 @@
 <ul>
   <li>طريقة عرض [1] لتسجيل الدخول هي طريقة عرض جديدة. تُستخدم لمصادقة المستخدم الذي يرغب في استخدام التطبيق. وهي تستخدم الفئات التالية:
     <ul>
-      <li>[AbstractElectionsConnectForm]، التي تنفذ العرض؛
+      <li>[<bdi dir="ltr" class="odt-ltr-term">AbstractElectionsConnectForm</bdi>]، التي تنفذ العرض؛
       </li>
-      <li>[ElectionsConnectForm]، التي تتعامل مع أحداث العرض؛
+      <li>[<bdi dir="ltr" class="odt-ltr-term">ElectionsConnectForm</bdi>]، التي تتعامل مع أحداث العرض؛
       </li>
     </ul>
   </li>
   <li>الطريقة [2] مألوفة. وهي الطريقة المستخدمة حتى الآن. وهي تستخدم الفئات التالية:
     <ul>
-      <li>[AbstractElectionsMainForm]، التي تنفذ العرض؛
+      <li>[<bdi dir="ltr" class="odt-ltr-term">AbstractElectionsMainForm</bdi>]، التي تنفذ العرض؛
       </li>
-      <li>[ElectionsMainForm]، التي تتعامل مع أحداث العرض؛
+      <li>[<bdi dir="ltr" class="odt-ltr-term">ElectionsMainForm</bdi>]، التي تتعامل مع أحداث العرض؛
       </li>
     </ul>
   </li>
@@ -2054,7 +2056,7 @@
 <h3 id="1764">17.6.4. <span style="color: #4f81bd">الجلسة</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000123000000B58BE6BCD8.png" width="204" height="127" style="display:inline-block; margin:4px;width:5.39cm;height:3.353cm;" class="odt-zoomable" data-zoom-src="images/1000000000000123000000B58BE6BCD8.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>عندما يحتوي تطبيق Swing على عدة طرق عرض، تكون هناك حاجة إلى آلية تسمح لطريقة عرض ما بتمرير المعلومات إلى طريقة عرض أخرى. نستخدم مفهومًا مستمدًا من تطوير الويب: الجلسة (session)، التي تسمح لطرق العرض المرتبطة بمستخدم معين بمشاركة المعلومات. سيتم تنفيذ هذا المفهوم هنا باستخدام عنصر Spring فريد (singleton) سيتم حقنه في الفئتين اللتين تتعاملان مع الأحداث لكلا طريقتي العرض:</p>
+<p>عندما يحتوي تطبيق <bdi dir="ltr" class="odt-ltr-term">Swing</bdi> على عدة طرق عرض، تكون هناك حاجة إلى آلية تسمح لطريقة عرض ما بتمرير المعلومات إلى طريقة عرض أخرى. نستخدم مفهومًا مستمدًا من تطوير الويب: الجلسة (<bdi dir="ltr" class="odt-ltr-term">session</bdi>)، التي تسمح لطرق العرض المرتبطة بمستخدم معين بمشاركة المعلومات. سيتم تنفيذ هذا المفهوم هنا باستخدام عنصر <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> فريد (<bdi dir="ltr" class="odt-ltr-term">singleton</bdi>) سيتم حقنه في الفئتين اللتين تتعاملان مع الأحداث لكلا طريقتي العرض:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.security.client.swing;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2073,7 +2075,7 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 6: فئة [UiSession] هي مكون من مكونات Spring؛
+  <li>السطر 6: فئة [<bdi dir="ltr" class="odt-ltr-term">UiSession</bdi>] هي مكون من مكونات <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>؛
   </li>
   <li>السطر 10: تخدم غرضًا واحدًا فقط: تخزين المستخدم الذي يسجل الدخول باستخدام العرض [1]. العرض [2]، الذي يحتاج إلى معرفة هذا المستخدم، سيسترده من هناك؛
   </li>
@@ -2101,16 +2103,16 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 5: تمتد فئة [<span style="color: #000000">BootElectionsSwing</span>] إلى فئة [<span style="color: #000000">AbstractBootElections</span>] المحددة في مشروع وحدة التحكم المضمنة في تبعيات المشروع؛
+  <li>السطر 5: تمتد فئة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">BootElectionsSwing</bdi></span>] إلى فئة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">AbstractBootElections</bdi></span>] المحددة في مشروع وحدة التحكم المضمنة في تبعيات المشروع؛
   </li>
-  <li>الأسطر 10–13: ستعرض فئة [<span style="color: #000000">BootElectionsSwing</span>] طريقة عرض تسجيل الدخول [<span style="color: #2a00ff">ElectionsConnectForm</span>]؛
+  <li>الأسطر 10–13: ستعرض فئة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">BootElectionsSwing</bdi></span>] طريقة عرض تسجيل الدخول [<span style="color: #2a00ff"><bdi dir="ltr" class="odt-ltr-term">ElectionsConnectForm</bdi></span>]؛
   </li>
-  <li>الأسطر 6-8: سيتم تنفيذ طريقة [run] لهذه الفئة؛
+  <li>الأسطر 6-8: سيتم تنفيذ طريقة [<bdi dir="ltr" class="odt-ltr-term">run</bdi>] لهذه الفئة؛
   </li>
 </ul>
 <p><a id="refheading251930391218965"></a></p>
-<h3 id="1766-electionsmainform">17.6.6. <span style="color: #4f81bd">فئة [ElectionsMainForm]</span></h3>
-<p>فئة [ElectionsMainForm] هي الفئة التي كانت تسمى سابقًا [ElectionsSwing]. وهي تتولى معالجة الأحداث الخاصة بعرض [AbstractElectionsMainForm]. ويتطور كودها على النحو التالي:</p>
+<h3 id="1766-electionsmainform">17.6.6. <span style="color: #4f81bd">فئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsMainForm</bdi>]</span></h3>
+<p>فئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsMainForm</bdi>] هي الفئة التي كانت تسمى سابقًا [<bdi dir="ltr" class="odt-ltr-term">ElectionsSwing</bdi>]. وهي تتولى معالجة الأحداث الخاصة بعرض [<bdi dir="ltr" class="odt-ltr-term">AbstractElectionsMainForm</bdi>]. ويتطور كودها على النحو التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.security.client.swing;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2237,24 +2239,24 @@
 <ul>
   <li>السطران 32-33: إدراج جلسة التطبيق؛
   </li>
-  <li>الأسطر 112–119: سيتم تنشيط العرض كما في السابق باستخدام طريقة [run] الخاصة به؛
+  <li>الأسطر 112–119: سيتم تنشيط العرض كما في السابق باستخدام طريقة [<bdi dir="ltr" class="odt-ltr-term">run</bdi>] الخاصة به؛
   </li>
-  <li>السطر 115: يتم استرداد المستخدم من الجلسة. وقد تم وضع هذا المستخدم هناك بواسطة الكود الموجود في عرض تسجيل الدخول [ElectionsConnectForm]. ثم يتم تعديل الكود بحيث يكون هذا المستخدم هو المعلمة الأولى في استدعاءات طبقة [business] (السطور 63 و69-70، على سبيل المثال)؛
+  <li>السطر 115: يتم استرداد المستخدم من الجلسة. وقد تم وضع هذا المستخدم هناك بواسطة الكود الموجود في عرض تسجيل الدخول [<bdi dir="ltr" class="odt-ltr-term">ElectionsConnectForm</bdi>]. ثم يتم تعديل الكود بحيث يكون هذا المستخدم هو المعلمة الأولى في استدعاءات طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] (السطور 63 و69-70، على سبيل المثال)؛
   </li>
 </ul>
 <p><a id="refheading251932391218965"></a></p>
-<h3 id="1767-abstractelectionsconnectform">17.6.7. <span style="color: #4f81bd">عرض [AbstractElectionsConnectForm]</span></h3>
+<h3 id="1767-abstractelectionsconnectform">17.6.7. <span style="color: #4f81bd">عرض [<bdi dir="ltr" class="odt-ltr-term">AbstractElectionsConnectForm</bdi>]</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000123000000B510C58FFE.png" width="204" height="127" style="display:inline-block; margin:4px;width:5.39cm;height:3.353cm;" class="odt-zoomable" data-zoom-src="images/1000000000000123000000B510C58FFE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>استخدم NetBeans لإنشاء النموذج التالي:</p>
+<p>استخدم <bdi dir="ltr" class="odt-ltr-term">NetBeans</bdi> لإنشاء النموذج التالي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000020A0000012673B4D7F0.png" width="313" height="176" style="display:inline-block; margin:4px;width:8.28cm;height:4.664cm;" class="odt-zoomable" data-zoom-src="images/100000000000020A0000012673B4D7F0.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>لن تقوم الفئة بتنفيذ الطريقة التي تتعامل مع النقر على خيار القائمة [Login] نفسه. بل ستستدعي طريقة [doConnecter] المعلنة على أنها مجردة، وستُعلن فئة العرض نفسها على أنها مجردة. سنقوم بإزالة الطريقة الثابتة [main] التي تم إنشاؤها تلقائيًا.</p>
+<p>لن تقوم الفئة بتنفيذ الطريقة التي تتعامل مع النقر على خيار القائمة [<bdi dir="ltr" class="odt-ltr-term">Login</bdi>] نفسه. بل ستستدعي طريقة [<bdi dir="ltr" class="odt-ltr-term">doConnecter</bdi>] المعلنة على أنها مجردة، وستُعلن فئة العرض نفسها على أنها مجردة. سنقوم بإزالة الطريقة الثابتة [<bdi dir="ltr" class="odt-ltr-term">main</bdi>] التي تم إنشاؤها تلقائيًا.</p>
 <p><a id="refheading251934391218965"></a></p>
 <h3 id="1768">17.6.8. <span style="color: #4f81bd">معالجة الأحداث لعرض تسجيل الدخول</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000123000000B552B2A441.png" width="204" height="127" style="display:inline-block; margin:4px;width:5.39cm;height:3.353cm;" class="odt-zoomable" data-zoom-src="images/1000000000000123000000B552B2A441.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>تقوم فئة [ElectionsConnectForm] بتنفيذ معالجة الأحداث لعرض تسجيل الدخول على النحو التالي:</p>
+<p>تقوم فئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsConnectForm</bdi>] بتنفيذ معالجة الأحداث لعرض تسجيل الدخول على النحو التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.security.client.swing;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2355,17 +2357,17 @@
 </code></pre></div>
 
 <ul>
-  <li>السطور 73–82: طريقة [run]، التي سيتم استدعاؤها بواسطة فئة التمهيد [BootElectionsSwing]؛
+  <li>السطور 73–82: طريقة [<bdi dir="ltr" class="odt-ltr-term">run</bdi>]، التي سيتم استدعاؤها بواسطة فئة التمهيد [<bdi dir="ltr" class="odt-ltr-term">BootElectionsSwing</bdi>]؛
   </li>
   <li>السطور 26-27: إدخال مرجع إلى العرض رقم 2، الذي يجب عرضه إذا تم التعرف على المستخدم؛
   </li>
   <li>السطور 30-31: إدخال جلسة التطبيق؛
   </li>
-  <li>السطر 84: تقوم طريقة [<span style="color: #000000">isPageValid</span>] بأمرين:
+  <li>السطر 84: تقوم طريقة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">isPageValid</bdi></span>] بأمرين:
     <ul>
       <li>تتحقق من أن اسم المستخدم ليس فارغًا (قد تكون كلمة المرور فارغة)؛
       </li>
-      <li>تنشئ مثيل لحقل User من السطر 23 باستخدام المدخلات؛
+      <li>تنشئ مثيل لحقل <bdi dir="ltr" class="odt-ltr-term">User</bdi> من السطر 23 باستخدام المدخلات؛
       </li>
     </ul>
   </li>

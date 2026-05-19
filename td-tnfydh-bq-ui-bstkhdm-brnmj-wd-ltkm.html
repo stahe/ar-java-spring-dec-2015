@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1021,18 +1023,18 @@
 
 
 <p><a id="refheading318371812363491"></a></p>
-<h1 id="9-td-ui">9. <span style="color: #365f91">[TD]: تنفيذ طبقة [ui] باستخدام برنامج وحدة التحكم</span></h1>
-<p><strong>الكلمات المفتاحية</strong>: بنية متعددة الطبقات، Spring، حقن التبعية.</p>
+<h1 id="9-td-ui">9. <span style="color: #365f91">[<bdi dir="ltr" class="odt-ltr-term">TD</bdi>]: تنفيذ طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] باستخدام برنامج وحدة التحكم</span></h1>
+<p><strong>الكلمات المفتاحية</strong>: بنية متعددة الطبقات، <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>، حقن التبعية.</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000051A0000011B44E3880A.png" width="653" height="142" style="display:inline-block; margin:4px;width:17.277cm;height:3.745cm;" class="odt-zoomable" data-zoom-src="images/100000000000051A0000011B44E3880A.png" /></td></tr></table>
 
 <p><a id="refheading17455469506693"></a></p>
 <h2 id="91">9.1. <span style="color: #4f81bd">الدعم</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003BA00000294C4C67C2A.png" width="477" height="330" style="display:inline-block; margin:4px;width:12.621cm;height:8.731cm;" class="odt-zoomable" data-zoom-src="images/10000000000003BA00000294C4C67C2A.png" /></td></tr></table>
 
-<p>في [1]، يحتوي المجلد [support / chap-09] على مشروع Eclipse الخاص بطبقة [UI] لتطبيق وحدة التحكم.</p>
+<p>في [1]، يحتوي المجلد [<bdi dir="ltr" class="odt-ltr-term">support</bdi> / <bdi dir="ltr" class="odt-ltr-term">chap-09</bdi>] على مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> الخاص بطبقة [<bdi dir="ltr" class="odt-ltr-term">UI</bdi>] لتطبيق وحدة التحكم.</p>
 <p><a id="refheading17455669506693"></a></p>
-<h2 id="92-maven">9.2. <span style="color: #4f81bd">تكوين Maven</span></h2>
-<p>يتم تكوين مشروع Eclipse [elections-ui-metier-dao-jdbc] بواسطة ملف Maven [pom.xml] التالي:</p>
+<h2 id="92-maven">9.2. <span style="color: #4f81bd">تكوين <bdi dir="ltr" class="odt-ltr-term">Maven</bdi></span></h2>
+<p>يتم تكوين مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> [<bdi dir="ltr" class="odt-ltr-term">elections-ui-metier-dao-jdbc</bdi>] بواسطة ملف <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> [<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>] التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span> <span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#7f007f">xsi:schemaLocation</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#008080">&gt;</span></span></span>
@@ -1102,14 +1104,14 @@
 </code></pre></div>
 
 <ul>
-  <li>الأسطر 22–26: نقوم باستيراد أرشيف طبقة [business] وبالتالي أرشيف طبقة [DAO]؛
+  <li>الأسطر 22–26: نقوم باستيراد أرشيف طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] وبالتالي أرشيف طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]؛
   </li>
 </ul>
 <p><a id="refheading17455869506693"></a></p>
-<h2 id="93-spring">9.3. <span style="color: #4f81bd">تكوين Spring</span></h2>
+<h2 id="93-spring">9.3. <span style="color: #4f81bd">تكوين <bdi dir="ltr" class="odt-ltr-term">Spring</bdi></span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000011E000000AC14E8B420.png" width="200" height="120" style="display:inline-block; margin:4px;width:5.3cm;height:3.187cm;" class="odt-zoomable" data-zoom-src="images/100000000000011E000000AC14E8B420.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>تقوم فئة [UiConfig] بتكوين تطبيق Spring:</p>
+<p>تقوم فئة [<bdi dir="ltr" class="odt-ltr-term">UiConfig</bdi>] بتكوين تطبيق <bdi dir="ltr" class="odt-ltr-term">Spring:</bdi></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.ui.config;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1125,19 +1127,19 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 8: نقوم باستيراد الفاصوليا المحددة في طبقة [business]. وقد استوردت هذه الطبقة بالفعل الفاصوليا المحددة في طبقة [DAO]. وبالتالي، يمكننا هنا الوصول إلى الفاصوليا من الطبقات الثلاث جميعها؛
+  <li>السطر 8: نقوم باستيراد الفاصوليا المحددة في طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>]. وقد استوردت هذه الطبقة بالفعل الفاصوليا المحددة في طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]. وبالتالي، يمكننا هنا الوصول إلى الفاصوليا من الطبقات الثلاث جميعها؛
   </li>
-  <li>السطر 9: تحتوي حزمة [elections.ui.service] على مكونات أخرى؛
+  <li>السطر 9: تحتوي حزمة [<bdi dir="ltr" class="odt-ltr-term">elections.ui.service</bdi>] على مكونات أخرى؛
   </li>
 </ul>
 <p><a id="refheading318391812363491"></a></p>
-<h2 id="94-ui">9.4. <span style="color: #4f81bd">واجهة طبقة [UI]</span></h2>
+<h2 id="94-ui">9.4. <span style="color: #4f81bd">واجهة طبقة [<bdi dir="ltr" class="odt-ltr-term">UI</bdi>]</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000110000000BB2C62B0D2.png" width="190" height="131" style="display:inline-block; margin:4px;width:5.039cm;height:3.464cm;" class="odt-zoomable" data-zoom-src="images/1000000000000110000000BB2C62B0D2.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>لفهم الشكل الذي قد تبدو عليه واجهة Java لطبقة [UI]، نحتاج إلى معرفة من سيستخدم هذه الواجهة. إنه ليس المستخدم الموضح في الرسم البياني أعلاه، بل البرنامج الذي سيقوم بتشغيل التطبيق ككل.</p>
+<p>لفهم الشكل الذي قد تبدو عليه واجهة <bdi dir="ltr" class="odt-ltr-term">Java</bdi> لطبقة [<bdi dir="ltr" class="odt-ltr-term">UI</bdi>]، نحتاج إلى معرفة من سيستخدم هذه الواجهة. إنه ليس المستخدم الموضح في الرسم البياني أعلاه، بل البرنامج الذي سيقوم بتشغيل التطبيق ككل.</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004AC000001077CD9D27D.png" width="598" height="131" style="display:inline-block; margin:4px;width:15.822cm;height:3.478cm;" class="odt-zoomable" data-zoom-src="images/10000000000004AC000001077CD9D27D.png" /></td></tr></table>
 
-<p>يتم تقديم واجهة [IElectionsUI] إلى البرنامج الرئيسي [main]، الذي سيقوم بتشغيل التطبيق. ما الذي يمكن أن يطلبه [main] من طبقة [UI]؟ يمكنه أن يطلب منها بدء التفاعلات مع المستخدم الذي سيقوم بإدخال بيانات الانتخابات المفقودة. سنعتمد الواجهة البسيطة التالية:</p>
+<p>يتم تقديم واجهة [<bdi dir="ltr" class="odt-ltr-term">IElectionsUI</bdi>] إلى البرنامج الرئيسي [<bdi dir="ltr" class="odt-ltr-term">main</bdi>]، الذي سيقوم بتشغيل التطبيق. ما الذي يمكن أن يطلبه [<bdi dir="ltr" class="odt-ltr-term">main</bdi>] من طبقة [<bdi dir="ltr" class="odt-ltr-term">UI</bdi>]؟ يمكنه أن يطلب منها بدء التفاعلات مع المستخدم الذي سيقوم بإدخال بيانات الانتخابات المفقودة. سنعتمد الواجهة البسيطة التالية:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> istia.st.elections.ui;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1150,14 +1152,14 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 7: تحتوي الواجهة على طريقة واحدة فقط: <b>run</b>. من خلال استدعاء هذه الطريقة، نوجه طبقة [ui] لبدء التفاعل مع المستخدم.
+  <li>السطر 7: تحتوي الواجهة على طريقة واحدة فقط: <b><bdi dir="ltr" class="odt-ltr-term">run</bdi></b>. من خلال استدعاء هذه الطريقة، نوجه طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] لبدء التفاعل مع المستخدم.
   </li>
 </ul>
 <p><a id="refheading318411812363491"></a></p>
 <h2 id="95">9.5. <span style="color: #4f81bd">نقطة دخول التطبيق</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000116000000AE6E041AA8.png" width="195" height="122" style="display:inline-block; margin:4px;width:5.151cm;height:3.224cm;" class="odt-zoomable" data-zoom-src="images/1000000000000116000000AE6E041AA8.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>فئة بدء تشغيل التطبيق هي فئة Java تحتوي على طريقة [main] ثابتة. يجب أن تقوم هذه الطريقة بإنشاء مثيلات لطبقات [ui، business، demo] وتوجيه طبقة [ui] لبدء التفاعل مع المستخدم. يمكن أن تكون هذه الفئة هي فئة [<span style="color: #000000">AbstractBootElections</span>] التالية:</p>
+<p>فئة بدء تشغيل التطبيق هي فئة <bdi dir="ltr" class="odt-ltr-term">Java</bdi> تحتوي على طريقة [<bdi dir="ltr" class="odt-ltr-term">main</bdi>] ثابتة. يجب أن تقوم هذه الطريقة بإنشاء مثيلات لطبقات [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>، <bdi dir="ltr" class="odt-ltr-term">business</bdi>، <bdi dir="ltr" class="odt-ltr-term">demo</bdi>] وتوجيه طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] لبدء التفاعل مع المستخدم. يمكن أن تكون هذه الفئة هي فئة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">AbstractBootElections</bdi></span>] التالية:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.ui.boot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1229,43 +1231,43 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 19: يتم إنشاء مثيل لسياق Spring: سيتم إنشاء جميع الفاصوليا المحددة في ملفات التكوين المختلفة؛
+  <li>السطر 19: يتم إنشاء مثيل لسياق <bdi dir="ltr" class="odt-ltr-term">Spring:</bdi> سيتم إنشاء جميع الفاصوليا المحددة في ملفات التكوين المختلفة؛
   </li>
-  <li>السطر 21: نسترد مرجعًا إلى المكون الذي ينفذ واجهة [IElectionsUI]. سننفذ واجهة [IElectionsUI] باستخدام مكونين:
+  <li>السطر 21: نسترد مرجعًا إلى المكون الذي ينفذ واجهة [<bdi dir="ltr" class="odt-ltr-term">IElectionsUI</bdi>]. سننفذ واجهة [<bdi dir="ltr" class="odt-ltr-term">IElectionsUI</bdi>] باستخدام مكونين:
     <ul>
-      <li>[ElectionsConsole] لتطبيق وحدة التحكم؛
+      <li>[<bdi dir="ltr" class="odt-ltr-term">ElectionsConsole</bdi>] لتطبيق وحدة التحكم؛
       </li>
-      <li>[ElectionsSwing] لتطبيق Swing؛
+      <li>[<bdi dir="ltr" class="odt-ltr-term">ElectionsSwing</bdi>] لتطبيق <bdi dir="ltr" class="odt-ltr-term">Swing</bdi>؛
       </li>
     </ul>
   </li>
 </ul>
 
-<p>طريقة [getUI] هي طريقة مجردة (السطر 44). في الواقع، ستكون فئة [<span style="color: #000000">AbstractBootElections</span>] هي الفئة الأم لفئتين:</p>
+<p>طريقة [<bdi dir="ltr" class="odt-ltr-term">getUI</bdi>] هي طريقة مجردة (السطر 44). في الواقع، ستكون فئة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">AbstractBootElections</bdi></span>] هي الفئة الأم لفئتين:</p>
 <ul>
-  <li>[<span style="color: #000000">BootElectionsConsole</span>]، التي ستوفر bean [ElectionsConsole] لفئتها الأم؛
+  <li>[<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">BootElectionsConsole</bdi></span>]، التي ستوفر <bdi dir="ltr" class="odt-ltr-term">bean</bdi> [<bdi dir="ltr" class="odt-ltr-term">ElectionsConsole</bdi>] لفئتها الأم؛
   </li>
-  <li>[<span style="color: #000000">BootElectionsSwing</span>]، التي ستوفر bean [ElectionsSwing] لفئتها الأم؛
+  <li>[<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">BootElectionsSwing</bdi></span>]، التي ستوفر <bdi dir="ltr" class="odt-ltr-term">bean</bdi> [<bdi dir="ltr" class="odt-ltr-term">ElectionsSwing</bdi>] لفئتها الأم؛
   </li>
-  <li>السطر 30: يتم تنفيذ طريقة [run] للواجهة؛
+  <li>السطر 30: يتم تنفيذ طريقة [<bdi dir="ltr" class="odt-ltr-term">run</bdi>] للواجهة؛
   </li>
 </ul>
 
 <p>تتم معالجة الاستثناءات في عدة أماكن:</p>
 <ul>
-  <li>الأسطر 22–27: قد يحدث استثناء أثناء إنشاء مثيل لسياق Spring؛
+  <li>الأسطر 22–27: قد يحدث استثناء أثناء إنشاء مثيل لسياق <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>؛
   </li>
-  <li>الأسطر 31–41: قد يحدث استثناء أثناء تنفيذ طبقة [UI]. هناك نوعان من الاستثناءات:
+  <li>الأسطر 31–41: قد يحدث استثناء أثناء تنفيذ طبقة [<bdi dir="ltr" class="odt-ltr-term">UI</bdi>]. هناك نوعان من الاستثناءات:
     <ul>
-      <li>فئة [ElectionsException] التي تطلقها طبقة [DAO]؛
+      <li>فئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsException</bdi>] التي تطلقها طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]؛
       </li>
-      <li>فئة [RuntimeException] للاستثناءات الأخرى التي قد تحدث أثناء التنفيذ؛
+      <li>فئة [<bdi dir="ltr" class="odt-ltr-term">RuntimeException</bdi>] للاستثناءات الأخرى التي قد تحدث أثناء التنفيذ؛
       </li>
     </ul>
   </li>
 </ul>
 
-<p>فئة [BootElectionsConsole] هي الفئة التي تطلق تنفيذ وحدة التحكم. وفيما يلي كودها:</p>
+<p>فئة [<bdi dir="ltr" class="odt-ltr-term">BootElectionsConsole</bdi>] هي الفئة التي تطلق تنفيذ وحدة التحكم. وفيما يلي كودها:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.ui.boot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1284,11 +1286,11 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 5: تمتد فئة [BootElectionsConsole] من فئة [<span style="color: #000000">AbstractBootElections</span>]. ولذلك يجب أن تنفذ طريقة [getUI] التي أعلنتها فئتها الأم على أنها مجردة؛
+  <li>السطر 5: تمتد فئة [<bdi dir="ltr" class="odt-ltr-term">BootElectionsConsole</bdi>] من فئة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">AbstractBootElections</bdi></span>]. ولذلك يجب أن تنفذ طريقة [<bdi dir="ltr" class="odt-ltr-term">getUI</bdi>] التي أعلنتها فئتها الأم على أنها مجردة؛
   </li>
-  <li>الأسطر 10-13: تنفيذ طريقة [getUI]؛
+  <li>الأسطر 10-13: تنفيذ طريقة [<bdi dir="ltr" class="odt-ltr-term">getUI</bdi>]؛
   </li>
-  <li>السطر 12: تم إنشاء الفاصوليا المسماة [<span style="color: #2a00ff">electionsConsole</span>] لتنفيذ واجهة [<span style="color: #000000">IElectionsUI</span>]. [<span style="color: #0000c0">ctx</span>] هو سياق Spring المحدد في الفئة الأصلية من خلال الإعلان:
+  <li>السطر 12: تم إنشاء الفاصوليا المسماة [<span style="color: #2a00ff"><bdi dir="ltr" class="odt-ltr-term">electionsConsole</bdi></span>] لتنفيذ واجهة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">IElectionsUI</bdi></span>]. [<span style="color: #0000c0"><bdi dir="ltr" class="odt-ltr-term">ctx</bdi></span>] هو سياق <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> المحدد في الفئة الأصلية من خلال الإعلان:
   </li>
 </ul>
 
@@ -1297,7 +1299,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> AnnotationConfigApplicationContext </span><span style="color:#0000c0">ctx</span><span style="color:#000000">;</span></span></span>
 </code></pre></div>
 
-<p>نظرًا لأن الحقل يحتوي على السمة [protected]، فإنه يكون مرئيًا في الفئات الفرعية.</p>
+<p>نظرًا لأن الحقل يحتوي على السمة [<bdi dir="ltr" class="odt-ltr-term">protected</bdi>]، فإنه يكون مرئيًا في الفئات الفرعية.</p>
 <p>سيتم إعلان الفاصوليا في السطر 12 على النحو التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content">@Component</span></span>
@@ -1307,7 +1309,7 @@
 <p>الاسم الافتراضي لهذا الفول هو اسم الفئة مع الحرف الأول صغيرًا. يمكنك تجاوز هذا الاسم الافتراضي عن طريق الكتابة صراحةً:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nd">@Component</span><span class="p">(</span><span class="n">nom_du_bean_entre_guillemets</span><span class="p">)</span>
 </code></pre></div>
-<p>قد تكون فئة [BootElectionsSwing] التي ستطلق تطبيق Swing كما يلي:</p>
+<p>قد تكون فئة [<bdi dir="ltr" class="odt-ltr-term">BootElectionsSwing</bdi>] التي ستطلق تطبيق <bdi dir="ltr" class="odt-ltr-term">Swing</bdi> كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.ui.boot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1327,10 +1329,10 @@
 
 <p>يُطلق على نمط التصميم هذا، الذي يتم فيه تجميع السلوك المشترك بين الفئات في فئة أصلية، وترك الفئات الفرعية لتنفيذ تفاصيلها الخاصة، اسم نمط تصميم <em>الاستراتيجية</em>. يفرض نمط التصميم هذا سلوكًا مشتركًا على جميع الفئات الفرعية.</p>
 <p><a id="refheading318431812363491"></a></p>
-<h2 id="96-electionsconsole">9.6. <span style="color: #4f81bd">فئة التنفيذ [ElectionsConsole]</span></h2>
+<h2 id="96-electionsconsole">9.6. <span style="color: #4f81bd">فئة التنفيذ [<bdi dir="ltr" class="odt-ltr-term">ElectionsConsole</bdi>]</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000011F000000C4BF01BDDF.png" width="201" height="137" style="display:inline-block; margin:4px;width:5.309cm;height:3.627cm;" class="odt-zoomable" data-zoom-src="images/100000000000011F000000C4BF01BDDF.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>ستكون فئة التنفيذ الأولى لطبقة [ui] فئة تستخدم وحدة التحكم للتواصل مع المستخدم. فيما يلي مثال على مربع حوار معروض على وحدة التحكم في Eclipse:</p>
+<p>ستكون فئة التنفيذ الأولى لطبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] فئة تستخدم وحدة التحكم للتواصل مع المستخدم. فيما يلي مثال على مربع حوار معروض على وحدة التحكم في <bdi dir="ltr" class="odt-ltr-term">Eclipse:</bdi></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">Il y a 7 listes en compétition. Veuillez indiquer le nombre de voix de chacune d&#x27;elles :</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">Nombre de voix de la liste [A] : 2500</span></span>
@@ -1354,7 +1356,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">[A,2500,0,true]</span></span>
 </code></pre></div>
 
-<p>يمكن أن يكون للطبقة [<span style="color: #000000">ElectionsConsole</span>] الهيكل التالي:</p>
+<p>يمكن أن يكون للطبقة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ElectionsConsole</bdi></span>] الهيكل التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.ui.service;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1415,26 +1417,26 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 12: فئة [<span style="color: #000000">ElectionsConsole</span>] هي مكون Spring؛
+  <li>السطر 12: فئة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ElectionsConsole</bdi></span>] هي مكون <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>؛
   </li>
-  <li>السطر 13: تنفذ الفئة واجهة [IElectionsUI]
+  <li>السطر 13: تنفذ الفئة واجهة [<bdi dir="ltr" class="odt-ltr-term">IElectionsUI</bdi>]
   </li>
-  <li>السطران 15-16: يقوم Spring بحقن مرجع في طبقة [business]؛
+  <li>السطران 15-16: يقوم <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> بحقن مرجع في طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>]؛
   </li>
-  <li>السطور 18–34: طريقة [run] لواجهة [IelectionsUI]؛
+  <li>السطور 18–34: طريقة [<bdi dir="ltr" class="odt-ltr-term">run</bdi>] لواجهة [<bdi dir="ltr" class="odt-ltr-term">IelectionsUI</bdi>]؛
   </li>
 </ul>
 
-<p>يُسمى كتلة <em>try</em> في الأسطر 21–28 <em>try-with-resources،</em> وصيغتها كما يلي:</p>
+<p>يُسمى كتلة <em><bdi dir="ltr" class="odt-ltr-term">try</bdi></em> في الأسطر 21–28 <em><bdi dir="ltr" class="odt-ltr-term">try-with-resources</bdi>،</em> وصيغتها كما يلي:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>try(ressource){
 <a id="__codelineno-1-2" name="__codelineno-1-2"></a>…
 <a id="__codelineno-1-3" name="__codelineno-1-3"></a>}
 </code></pre></div></td></tr></table></div>
-<p>يجب أن ينفذ المورد في السطر 1 واجهة [<span style="color: #000000">java.lang.AutoCloseable</span>]. يتم فتح المورد في السطر 1 ويتم إغلاقه تلقائيًا بعد السطر 3، بغض النظر عما إذا حدث استثناء في الكود الذي يتم تنفيذه بين السطرين. تضمن هذه الصيغة إغلاق المورد المفتوح، مهما حدث.</p>
+<p>يجب أن ينفذ المورد في السطر 1 واجهة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">java.lang.AutoCloseable</bdi></span>]. يتم فتح المورد في السطر 1 ويتم إغلاقه تلقائيًا بعد السطر 3، بغض النظر عما إذا حدث استثناء في الكود الذي يتم تنفيذه بين السطرين. تضمن هذه الصيغة إغلاق المورد المفتوح، مهما حدث.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><strong>المهمة</strong>: اكتب الكود الخاص بالطريقة [run]. استخدم التعليقات كدليل.</p>
+<p><strong>المهمة</strong>: اكتب الكود الخاص بالطريقة [<bdi dir="ltr" class="odt-ltr-term">run</bdi>]. استخدم التعليقات كدليل.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
 

@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1237,40 +1239,40 @@
 
 
 <p><a id="refheading300915216381043"></a></p>
-<h1 id="11-spring-data">11. <span style="color: #365f91">[الدورة التدريبية]: إدارة قواعد البيانات العلائقية باستخدام Spring Data</span></h1>
-<p><strong>الكلمات المفتاحية</strong>: بنية متعددة الطبقات، Spring، حقن التبعية، JPA (واجهة برمجة تطبيقات الاستمرارية في Java)، Spring Data.</p>
-<p><a id="refheading1622651200878134"></a>سنقوم بتنفيذ طبقة [DAO] الخاصة بالمهمة باستخدام [Spring Data]، وهو أحد مكونات نظام Spring. يعتمد [Spring Data] على طبقة JPA (Java Persistence API) التي تسمح لطبقة [DAO] بمعالجة الكائنات بدلاً من عبارات SQL. في النهاية، لا تدرك طبقة [DAO] أنها تتفاعل مع قاعدة بيانات. فهي تعرف فقط واجهة طبقة [Spring Data].</p>
+<h1 id="11-spring-data">11. <span style="color: #365f91">[الدورة التدريبية]: إدارة قواعد البيانات العلائقية باستخدام <bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi></span></h1>
+<p><strong>الكلمات المفتاحية</strong>: بنية متعددة الطبقات، <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>، حقن التبعية، <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> (واجهة برمجة تطبيقات الاستمرارية في <bdi dir="ltr" class="odt-ltr-term">Java</bdi>)، <bdi dir="ltr" class="odt-ltr-term">Spring Data.</bdi></p>
+<p><a id="refheading1622651200878134"></a>سنقوم بتنفيذ طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] الخاصة بالمهمة باستخدام [<bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi>]، وهو أحد مكونات نظام <bdi dir="ltr" class="odt-ltr-term">Spring.</bdi> يعتمد [<bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi>] على طبقة <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> (<bdi dir="ltr" class="odt-ltr-term">Java Persistence API</bdi>) التي تسمح لطبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] بمعالجة الكائنات بدلاً من عبارات <bdi dir="ltr" class="odt-ltr-term">SQL.</bdi> في النهاية، لا تدرك طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] أنها تتفاعل مع قاعدة بيانات. فهي تعرف فقط واجهة طبقة [<bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi>].</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004960000011254B543CA.png" width="587" height="137" style="display:inline-block; margin:4px;width:15.531cm;height:3.625cm;" class="odt-zoomable" data-zoom-src="images/10000000000004960000011254B543CA.png" /></td></tr></table>
 
-<p>سنستكشف أولاً [Spring Data] من خلال مثالين.</p>
+<p>سنستكشف أولاً [<bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi>] من خلال مثالين.</p>
 <p><a id="refheading98772873157090"></a></p>
 <h2 id="111">11.1. <span style="color: #4f81bd">الدعم</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000037F0000011E3930C6BE.png" width="448" height="143" style="display:inline-block; margin:4px;width:11.841cm;height:3.784cm;" class="odt-zoomable" data-zoom-src="images/100000000000037F0000011E3930C6BE.png" /></td></tr></table>
 
 <ul>
-  <li>في [1]، يحتوي المجلد [support / chap-11] على ثلاثة مشاريع Eclipse؛
+  <li>في [1]، يحتوي المجلد [<bdi dir="ltr" class="odt-ltr-term">support</bdi> / <bdi dir="ltr" class="odt-ltr-term">chap-11</bdi>] على ثلاثة مشاريع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi>؛
   </li>
-  <li>في [2]، النص البرمجي SQL لإنشاء قاعدة البيانات النموذجية لهذا الفصل؛
+  <li>في [2]، النص البرمجي <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> لإنشاء قاعدة البيانات النموذجية لهذا الفصل؛
   </li>
 </ul>
 <p><a id="refheading2192302014630537"></a></p>
 <h2 id="112-1">11.2. <span style="color: #4f81bd">المثال 1</span></h2>
-<p>يقدم موقع Spring الإلكتروني العديد من الدروس التعليمية للبدء في استخدام Spring [<a href="http://spring.io/guides"><u><span style="color: #0563c1">http://spring.io/guides</span></u></a>]. سنستخدم إحداها لتقديم Spring Data. للقيام بذلك، سنستخدم Spring Tool Suite (STS).</p>
+<p>يقدم موقع <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> الإلكتروني العديد من الدروس التعليمية للبدء في استخدام <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> [<a href="http://spring.io/guides"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">http://spring.io/guides</bdi></span></u></a>]. سنستخدم إحداها لتقديم <bdi dir="ltr" class="odt-ltr-term">Spring Data.</bdi> للقيام بذلك، سنستخدم <bdi dir="ltr" class="odt-ltr-term">Spring Tool Suite</bdi> (<bdi dir="ltr" class="odt-ltr-term">STS</bdi>).</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003D20000015DA19B7E0B.png" width="489" height="175" style="display:inline-block; margin:4px;width:12.938cm;height:4.618cm;" class="odt-zoomable" data-zoom-src="images/10000000000003D20000015DA19B7E0B.png" /></td></tr></table>
 
 <ul>
-  <li>في [1]، نقوم باستيراد أحد البرامج التعليمية من [spring.io/guides]؛
+  <li>في [1]، نقوم باستيراد أحد البرامج التعليمية من [<bdi dir="ltr" class="odt-ltr-term">spring.io/guides</bdi>]؛
   </li>
 </ul>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005340000032B0ABEBB8F.png" width="666" height="406" style="display:inline-block; margin:4px;width:17.621cm;height:10.73cm;" class="odt-zoomable" data-zoom-src="images/10000000000005340000032B0ABEBB8F.png" /></td></tr></table>
 
 <ul>
-  <li>في [2]، نختار البرنامج التعليمي [Accessing Data Jpa]، الذي يوضح كيفية الوصول إلى قاعدة البيانات باستخدام Spring Data؛
+  <li>في [2]، نختار البرنامج التعليمي [<bdi dir="ltr" class="odt-ltr-term">Accessing Data Jpa</bdi>]، الذي يوضح كيفية الوصول إلى قاعدة البيانات باستخدام <bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi>؛
   </li>
-  <li>في [3]، نختار مشروعًا تم تكوينه بواسطة Maven؛
+  <li>في [3]، نختار مشروعًا تم تكوينه بواسطة <bdi dir="ltr" class="odt-ltr-term">Maven</bdi>؛
   </li>
-  <li>في [4]، يتوفر البرنامج التعليمي في شكلين: [initial]، وهي نسخة فارغة تقوم بملئها باتباع البرنامج التعليمي، أو [complete]، وهي النسخة النهائية من البرنامج التعليمي. نختار الخيار الأخير؛
+  <li>في [4]، يتوفر البرنامج التعليمي في شكلين: [<bdi dir="ltr" class="odt-ltr-term">initial</bdi>]، وهي نسخة فارغة تقوم بملئها باتباع البرنامج التعليمي، أو [<bdi dir="ltr" class="odt-ltr-term">complete</bdi>]، وهي النسخة النهائية من البرنامج التعليمي. نختار الخيار الأخير؛
   </li>
   <li>في [5]، يمكنك اختيار عرض البرنامج التعليمي في متصفح؛
   </li>
@@ -1278,8 +1280,8 @@
   </li>
 </ul>
 <p><a id="refheading2192322014630537"></a></p>
-<h3 id="1121-maven">11.2.1. <span style="color: #4f81bd">تكوين Maven للمشروع</span></h3>
-<p><a id="refheading1622671200878134"></a>يتم تكوين تبعيات Maven للمشروع في ملف [pom.xml]:</p>
+<h3 id="1121-maven">11.2.1. <span style="color: #4f81bd">تكوين <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> للمشروع</span></h3>
+<p><a id="refheading1622671200878134"></a>يتم تكوين تبعيات <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> للمشروع في ملف [<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>]:</p>
 <p><a id="refheading569851429907001"></a></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.springframework</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span></span></span>
@@ -1312,11 +1314,11 @@
 </code></pre></div>
 
 <ul>
-  <li>الأسطر 5–9: تعريف مشروع Maven الأصلي. يحدد هذا المشروع معظم تبعيات المشروع. قد تكون هذه التبعيات كافية، وفي هذه الحالة لا تضاف أي تبعيات إضافية، أو قد لا تكون كافية، وفي هذه الحالة تضاف التبعيات المفقودة؛
+  <li>الأسطر 5–9: تعريف مشروع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> الأصلي. يحدد هذا المشروع معظم تبعيات المشروع. قد تكون هذه التبعيات كافية، وفي هذه الحالة لا تضاف أي تبعيات إضافية، أو قد لا تكون كافية، وفي هذه الحالة تضاف التبعيات المفقودة؛
   </li>
-  <li>الأسطر 12–15: تحدد تبعية لـ [spring-boot-starter-data-jpa]. تحتوي هذه الأداة على فئات Spring Data؛
+  <li>الأسطر 12–15: تحدد تبعية لـ [<bdi dir="ltr" class="odt-ltr-term">spring-boot-starter-data-jpa</bdi>]. تحتوي هذه الأداة على فئات <bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi>؛
   </li>
-  <li>الأسطر 16–19: تحدد تبعية لنظام إدارة قواعد البيانات H2، الذي يسمح لك بإنشاء وإدارة قواعد البيانات في الذاكرة.
+  <li>الأسطر 16–19: تحدد تبعية لنظام إدارة قواعد البيانات <bdi dir="ltr" class="odt-ltr-term">H2</bdi>، الذي يسمح لك بإنشاء وإدارة قواعد البيانات في الذاكرة.
   </li>
 </ul>
 
@@ -1325,18 +1327,18 @@
 
 <p>هناك العديد منها:</p>
 <ul>
-  <li>بعضها ينتمي إلى نظام Spring (تلك التي تبدأ بـ spring)؛
+  <li>بعضها ينتمي إلى نظام <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> (تلك التي تبدأ بـ <bdi dir="ltr" class="odt-ltr-term">spring</bdi>)؛
   </li>
-  <li>والبعض الآخر ينتمي إلى منظومة Hibernate (hibernate، jboss)، التي نستخدم تطبيق JPA الخاص بها هنا؛
+  <li>والبعض الآخر ينتمي إلى منظومة <bdi dir="ltr" class="odt-ltr-term">Hibernate</bdi> (<bdi dir="ltr" class="odt-ltr-term">hibernate</bdi>، <bdi dir="ltr" class="odt-ltr-term">jboss</bdi>)، التي نستخدم تطبيق <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> الخاص بها هنا؛
   </li>
-  <li>وبعضها الآخر عبارة عن مكتبات اختبار (junit، hamcrest)؛
+  <li>وبعضها الآخر عبارة عن مكتبات اختبار (<bdi dir="ltr" class="odt-ltr-term">junit</bdi>، <bdi dir="ltr" class="odt-ltr-term">hamcrest</bdi>)؛
   </li>
-  <li>وبعضها الآخر عبارة عن مكتبات تسجيل (log4j، logback، slf4j)؛
+  <li>وبعضها الآخر عبارة عن مكتبات تسجيل (<bdi dir="ltr" class="odt-ltr-term">log4j</bdi>، <bdi dir="ltr" class="odt-ltr-term">logback</bdi>، <bdi dir="ltr" class="odt-ltr-term">slf4j</bdi>)؛
   </li>
 </ul>
 
 <p>سنحتفظ بها جميعًا. بالنسبة لتطبيق الإنتاج، يجب الاحتفاظ فقط بالمكتبات الضرورية.</p>
-<p>في السطر 26 من ملف [pom.xml]، نجد السطر:</p>
+<p>في السطر 26 من ملف [<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>]، نجد السطر:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">start-class</span><span style="color:#008080">&gt;</span><span style="color:#000000">hello.Application</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">start-class</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
@@ -1356,15 +1358,15 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">build</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
-<p>الأسطر 6–9: يتيح لك [spring-boot-maven-plugin] إنشاء ملف JAR القابل للتنفيذ الخاص بالتطبيق. ثم تحدد السطر 26 من ملف [pom.xml] الفئة القابلة للتنفيذ لهذا الملف JAR.</p>
+<p>الأسطر 6–9: يتيح لك [<bdi dir="ltr" class="odt-ltr-term">spring-boot-maven-plugin</bdi>] إنشاء ملف <bdi dir="ltr" class="odt-ltr-term">JAR</bdi> القابل للتنفيذ الخاص بالتطبيق. ثم تحدد السطر 26 من ملف [<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>] الفئة القابلة للتنفيذ لهذا الملف <bdi dir="ltr" class="odt-ltr-term">JAR.</bdi></p>
 <p><a id="refheading2192342014630537"></a></p>
-<h3 id="1122-jpa">11.2.2. <span style="color: #4f81bd">طبقة [JPA]</span></h3>
-<p><a id="refheading1622691200878134"></a>يتم التعامل مع الوصول إلى قاعدة البيانات من خلال طبقة [JPA]، وهي واجهة برمجة تطبيقات Java Persistence:</p>
+<h3 id="1122-jpa">11.2.2. <span style="color: #4f81bd">طبقة [<bdi dir="ltr" class="odt-ltr-term">JPA</bdi>]</span></h3>
+<p><a id="refheading1622691200878134"></a>يتم التعامل مع الوصول إلى قاعدة البيانات من خلال طبقة [<bdi dir="ltr" class="odt-ltr-term">JPA</bdi>]، وهي واجهة برمجة تطبيقات <bdi dir="ltr" class="odt-ltr-term">Java Persistence:</bdi></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004A20000011020A14249.png" width="593" height="136" style="display:inline-block; margin:4px;width:15.69cm;height:3.598cm;" class="odt-zoomable" data-zoom-src="images/10000000000004A20000011020A14249.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EB00000077D50ECFCE.png" width="164" height="83" style="display:inline-block; margin:4px;width:4.35cm;height:2.203cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EB00000077D50ECFCE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>التطبيق بسيط ويقوم بإدارة كيانات [Customer]. تعد فئة [Customer] جزءًا من طبقة [JPA] وهي كما يلي:</p>
+<p>التطبيق بسيط ويقوم بإدارة كيانات [<bdi dir="ltr" class="odt-ltr-term">Customer</bdi>]. تعد فئة [<bdi dir="ltr" class="odt-ltr-term">Customer</bdi>] جزءًا من طبقة [<bdi dir="ltr" class="odt-ltr-term">JPA</bdi>] وهي كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> hello;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1398,26 +1400,26 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>لدى العميل معرف [id] واسم أول [firstName] واسم عائلة [lastName]. تمثل كل مثيل [Customer] صفًا في جدول قاعدة البيانات.</p>
+<p>لدى العميل معرف [<bdi dir="ltr" class="odt-ltr-term">id</bdi>] واسم أول [<bdi dir="ltr" class="odt-ltr-term">firstName</bdi>] واسم عائلة [<bdi dir="ltr" class="odt-ltr-term">lastName</bdi>]. تمثل كل مثيل [<bdi dir="ltr" class="odt-ltr-term">Customer</bdi>] صفًا في جدول قاعدة البيانات.</p>
 <ul>
-  <li>السطر 8: تعليق JPA يضمن أن استمرارية مثيلات [Customer] (إنشاء، قراءة، تحديث، حذف) ستدار بواسطة تطبيق JPA. استنادًا إلى تبعيات Maven، يمكننا أن نرى أن تطبيق JPA/Hibernate قيد الاستخدام؛
+  <li>السطر 8: تعليق <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> يضمن أن استمرارية مثيلات [<bdi dir="ltr" class="odt-ltr-term">Customer</bdi>] (إنشاء، قراءة، تحديث، حذف) ستدار بواسطة تطبيق <bdi dir="ltr" class="odt-ltr-term">JPA.</bdi> استنادًا إلى تبعيات <bdi dir="ltr" class="odt-ltr-term">Maven</bdi>، يمكننا أن نرى أن تطبيق <bdi dir="ltr" class="odt-ltr-term">JPA/Hibernate</bdi> قيد الاستخدام؛
   </li>
-  <li>السطران 11-12: تعليقات توضيحية لـ JPA تربط حقل [id] بالمفتاح الأساسي لجدول [Customer]. يشير السطر 12 إلى أن تطبيق JPA سيستخدم طريقة إنشاء المفتاح الأساسي الخاصة بنظام إدارة قواعد البيانات المستخدم، وهو H2 في هذه الحالة؛
+  <li>السطران 11-12: تعليقات توضيحية لـ <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> تربط حقل [<bdi dir="ltr" class="odt-ltr-term">id</bdi>] بالمفتاح الأساسي لجدول [<bdi dir="ltr" class="odt-ltr-term">Customer</bdi>]. يشير السطر 12 إلى أن تطبيق <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> سيستخدم طريقة إنشاء المفتاح الأساسي الخاصة بنظام إدارة قواعد البيانات المستخدم، وهو <bdi dir="ltr" class="odt-ltr-term">H2</bdi> في هذه الحالة؛
   </li>
 </ul>
 
-<p>لا توجد تعليقات توضيحية أخرى لـ JPA. وبالتالي، سيتم استخدام القيم الافتراضية:</p>
+<p>لا توجد تعليقات توضيحية أخرى لـ <bdi dir="ltr" class="odt-ltr-term">JPA.</bdi> وبالتالي، سيتم استخدام القيم الافتراضية:</p>
 <ul>
-  <li>سيتم تسمية جدول [Customer] على اسم الفئة، أي [Customer]؛
+  <li>سيتم تسمية جدول [<bdi dir="ltr" class="odt-ltr-term">Customer</bdi>] على اسم الفئة، أي [<bdi dir="ltr" class="odt-ltr-term">Customer</bdi>]؛
   </li>
-  <li>سيتم تسمية أعمدة هذا الجدول على اسم حقول الفئة: [id, firstName, lastName]، مع ملاحظة أن حالة الأحرف لا تؤخذ في الاعتبار في أسماء أعمدة الجدول؛
+  <li>سيتم تسمية أعمدة هذا الجدول على اسم حقول الفئة: [<bdi dir="ltr" class="odt-ltr-term">id</bdi>, <bdi dir="ltr" class="odt-ltr-term">firstName</bdi>, <bdi dir="ltr" class="odt-ltr-term">lastName</bdi>]، مع ملاحظة أن حالة الأحرف لا تؤخذ في الاعتبار في أسماء أعمدة الجدول؛
   </li>
 </ul>
 
-<p>لاحظ أن تطبيق JPA المستخدم لا يُسمى أبدًا.</p>
+<p>لاحظ أن تطبيق <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> المستخدم لا يُسمى أبدًا.</p>
 <p><a id="refheading2192362014630537"></a></p>
-<h3 id="1123-spring-data">11.2.3. <span style="color: #4f81bd">طبقة [Spring Data]</span></h3>
-<p><a id="refheading1622711200878134"></a>تنفذ فئة [CustomerRepository] طبقة الوصول لجدول [Customer]. وفيما يلي كودها:</p>
+<h3 id="1123-spring-data">11.2.3. <span style="color: #4f81bd">طبقة [<bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi>]</span></h3>
+<p><a id="refheading1622711200878134"></a>تنفذ فئة [<bdi dir="ltr" class="odt-ltr-term">CustomerRepository</bdi>] طبقة الوصول لجدول [<bdi dir="ltr" class="odt-ltr-term">Customer</bdi>]. وفيما يلي كودها:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004A1000001188C053E0A.png" width="593" height="140" style="display:inline-block; margin:4px;width:15.677cm;height:3.704cm;" class="odt-zoomable" data-zoom-src="images/10000000000004A1000001188C053E0A.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EB00000077BA57F747.png" width="164" height="83" style="display:inline-block; margin:4px;width:4.35cm;height:2.203cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EB00000077BA57F747.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
@@ -1435,7 +1437,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>وبالتالي، فهذه واجهة وليست فئة (السطر 7). وهي تمتد واجهة [CrudRepository]، وهي واجهة Spring Data (السطر 5). يتم تحديد معلمات هذه الواجهة بواسطة نوعين: الأول هو نوع العناصر المدارة، وهو هنا نوع [Customer]؛ والثاني هو نوع المفتاح الأساسي للعناصر المدارة، وهو هنا نوع [Long]. واجهة [CrudRepository] هي كما يلي:</p>
+<p>وبالتالي، فهذه واجهة وليست فئة (السطر 7). وهي تمتد واجهة [<bdi dir="ltr" class="odt-ltr-term">CrudRepository</bdi>]، وهي واجهة <bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi> (السطر 5). يتم تحديد معلمات هذه الواجهة بواسطة نوعين: الأول هو نوع العناصر المدارة، وهو هنا نوع [<bdi dir="ltr" class="odt-ltr-term">Customer</bdi>]؛ والثاني هو نوع المفتاح الأساسي للعناصر المدارة، وهو هنا نوع [<bdi dir="ltr" class="odt-ltr-term">Long</bdi>]. واجهة [<bdi dir="ltr" class="odt-ltr-term">CrudRepository</bdi>] هي كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> org.springframework.data.repository;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1468,25 +1470,25 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>تحدد هذه الواجهة عمليات CRUD (إنشاء – قراءة – تحديث – حذف) التي يمكن تنفيذها على نوع JPA T:</p>
+<p>تحدد هذه الواجهة عمليات <bdi dir="ltr" class="odt-ltr-term">CRUD</bdi> (إنشاء – قراءة – تحديث – حذف) التي يمكن تنفيذها على نوع <bdi dir="ltr" class="odt-ltr-term">JPA T:</bdi></p>
 <ul>
-  <li>السطر 8: تسمح طريقة <b>save </b>بتخزين كيان T في قاعدة البيانات. وهي تخزن الكيان باستخدام المفتاح الأساسي المخصص له بواسطة نظام إدارة قواعد البيانات (DBMS). كما تسمح <b>بتحديث </b>كيان T المحدد بواسطة <i>معرف</i> المفتاح الأساسي الخاص به. يعتمد الاختيار بين هذين الإجراءين على قيمة <i>معرف</i> المفتاح الأساسي: إذا كانت قيمة<b> معرف المفتاح الأساسي </b>null، تتم عملية التخزين؛ وإلا، تتم عملية التحديث؛
+  <li>السطر 8: تسمح طريقة <b><bdi dir="ltr" class="odt-ltr-term">save</bdi> </b>بتخزين كيان <bdi dir="ltr" class="odt-ltr-term">T</bdi> في قاعدة البيانات. وهي تخزن الكيان باستخدام المفتاح الأساسي المخصص له بواسطة نظام إدارة قواعد البيانات (<bdi dir="ltr" class="odt-ltr-term">DBMS</bdi>). كما تسمح <b>بتحديث </b>كيان <bdi dir="ltr" class="odt-ltr-term">T</bdi> المحدد بواسطة <i>معرف</i> المفتاح الأساسي الخاص به. يعتمد الاختيار بين هذين الإجراءين على قيمة <i>معرف</i> المفتاح الأساسي: إذا كانت قيمة<b> معرف المفتاح الأساسي </b><bdi dir="ltr" class="odt-ltr-term">null</bdi>، تتم عملية التخزين؛ وإلا، تتم عملية التحديث؛
   </li>
   <li>السطر 10: كما هو مذكور أعلاه، ولكن بالنسبة لقائمة الكيانات؛
   </li>
-  <li>السطر 12: تسترد طريقة <b>findOne </b>كيان T المحدد بواسطة <i>معرف</i> المفتاح الأساسي الخاص به؛
+  <li>السطر 12: تسترد طريقة <b><bdi dir="ltr" class="odt-ltr-term">findOne</bdi> </b>كيان <bdi dir="ltr" class="odt-ltr-term">T</bdi> المحدد بواسطة <i>معرف</i> المفتاح الأساسي الخاص به؛
   </li>
-  <li>السطر 22: تسمح لك طريقة <b>delete </b>بحذف كيان T المحدد بواسطة <i>معرف</i> المفتاح الأساسي الخاص به؛
+  <li>السطر 22: تسمح لك طريقة <b><bdi dir="ltr" class="odt-ltr-term">delete</bdi> </b>بحذف كيان <bdi dir="ltr" class="odt-ltr-term">T</bdi> المحدد بواسطة <i>معرف</i> المفتاح الأساسي الخاص به؛
   </li>
-  <li>الأسطر 24-28: أشكال مختلفة من طريقة [delete]؛
+  <li>الأسطر 24-28: أشكال مختلفة من طريقة [<bdi dir="ltr" class="odt-ltr-term">delete</bdi>]؛
   </li>
-  <li>السطر 16: تسترد طريقة [findAll] جميع الكيانات T الدائمة؛
+  <li>السطر 16: تسترد طريقة [<bdi dir="ltr" class="odt-ltr-term">findAll</bdi>] جميع الكيانات <bdi dir="ltr" class="odt-ltr-term">T</bdi> الدائمة؛
   </li>
   <li>السطر 18: كما هو مذكور أعلاه، ولكن يقتصر على الكيانات التي تم توفير قائمة بمعرفاتها؛
   </li>
 </ul>
 
-<p>لنعد إلى واجهة [CustomerRepository]:</p>
+<p>لنعد إلى واجهة [<bdi dir="ltr" class="odt-ltr-term">CustomerRepository</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> hello;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1501,36 +1503,36 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 9 يسمح لك باسترداد [Customer] حسب [lastName]؛
+  <li>السطر 9 يسمح لك باسترداد [<bdi dir="ltr" class="odt-ltr-term">Customer</bdi>] حسب [<bdi dir="ltr" class="odt-ltr-term">lastName</bdi>]؛
   </li>
 </ul>
 
-<p>وهذا كل شيء بالنسبة لطبقة [DAO]. لا توجد فئة تنفيذ للواجهة السابقة. يتم إنشاؤها في وقت التشغيل بواسطة [Spring Data]. يتم تنفيذ أساليب واجهة [CrudRepository] تلقائيًا. أما بالنسبة للأساليب المضافة إلى واجهة [CustomerRepository]، فهذا يعتمد على الحالة. لنعد إلى تعريف [Customer]:</p>
+<p>وهذا كل شيء بالنسبة لطبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]. لا توجد فئة تنفيذ للواجهة السابقة. يتم إنشاؤها في وقت التشغيل بواسطة [<bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi>]. يتم تنفيذ أساليب واجهة [<bdi dir="ltr" class="odt-ltr-term">CrudRepository</bdi>] تلقائيًا. أما بالنسبة للأساليب المضافة إلى واجهة [<bdi dir="ltr" class="odt-ltr-term">CustomerRepository</bdi>]، فهذا يعتمد على الحالة. لنعد إلى تعريف [<bdi dir="ltr" class="odt-ltr-term">Customer</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">long</span><span style="color:#000000"> </span><span style="color:#0000c0">id</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> String </span><span style="color:#0000c0">firstName</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> String </span><span style="color:#0000c0">lastName</span><span style="color:#000000">;</span></span></span>
 </code></pre></div>
 
-<p>يتم تنفيذ الطريقة الموجودة في السطر 9 تلقائيًا بواسطة [Spring Data] لأنها تشير إلى حقل [lastName] (السطر 3) في [Customer]. عندما تصادف طريقة [findBySomething] في الواجهة المراد تنفيذها، تقوم Spring Data بتنفيذها باستخدام استعلام JPQL (لغة استعلامات الاستمرارية في Java) التالي:</p>
+<p>يتم تنفيذ الطريقة الموجودة في السطر 9 تلقائيًا بواسطة [<bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi>] لأنها تشير إلى حقل [<bdi dir="ltr" class="odt-ltr-term">lastName</bdi>] (السطر 3) في [<bdi dir="ltr" class="odt-ltr-term">Customer</bdi>]. عندما تصادف طريقة [<bdi dir="ltr" class="odt-ltr-term">findBySomething</bdi>] في الواجهة المراد تنفيذها، تقوم <bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi> بتنفيذها باستخدام استعلام <bdi dir="ltr" class="odt-ltr-term">JPQL</bdi> (لغة استعلامات الاستمرارية في <bdi dir="ltr" class="odt-ltr-term">Java</bdi>) التالي:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">select</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">something</span><span class="o">=</span><span class="p">:</span><span class="n">value</span>
 </code></pre></div>
-<p>لذلك، يجب أن يحتوي النوع T على حقل باسم [شيء ما]. وبالتالي، فإن الطريقة</p>
+<p>لذلك، يجب أن يحتوي النوع <bdi dir="ltr" class="odt-ltr-term">T</bdi> على حقل باسم [شيء ما]. وبالتالي، فإن الطريقة</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>List&lt;Customer&gt; findByLastName(String lastName);
 </code></pre></div>
 <p>بكود مشابه لما يلي:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">return</span><span class="w"> </span><span class="p">[</span><span class="n">em</span><span class="p">].</span><span class="n">createQuery</span><span class="p">(</span><span class="ss">&quot;select c from Customer c where  c.lastName=:value&quot;</span><span class="p">).</span><span class="n">setParameter</span><span class="p">(</span><span class="ss">&quot;value&quot;</span><span class="p">,</span><span class="n">lastName</span><span class="p">).</span><span class="n">getResultList</span><span class="p">()</span>
 </code></pre></div>
-<p>حيث يشير [em] إلى سياق ثبات JPA. وهذا ممكن فقط إذا كانت فئة [Customer] تحتوي على حقل باسم [lastName]، وهو ما يحدث بالفعل.</p>
-<p>في الختام، في الحالات البسيطة، يسمح لنا Spring Data بتنفيذ طبقة [DAO] بواجهة بسيطة.</p>
+<p>حيث يشير [<bdi dir="ltr" class="odt-ltr-term">em</bdi>] إلى سياق ثبات <bdi dir="ltr" class="odt-ltr-term">JPA.</bdi> وهذا ممكن فقط إذا كانت فئة [<bdi dir="ltr" class="odt-ltr-term">Customer</bdi>] تحتوي على حقل باسم [<bdi dir="ltr" class="odt-ltr-term">lastName</bdi>]، وهو ما يحدث بالفعل.</p>
+<p>في الختام، في الحالات البسيطة، يسمح لنا <bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi> بتنفيذ طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] بواجهة بسيطة.</p>
 <p><a id="refheading2192382014630537"></a></p>
-<h3 id="1124-console">11.2.4. <span style="color: #4f81bd">طبقة [console]</span></h3>
+<h3 id="1124-console">11.2.4. <span style="color: #4f81bd">طبقة [<bdi dir="ltr" class="odt-ltr-term">console</bdi>]</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004980000010700ABFB59.png" width="588" height="131" style="display:inline-block; margin:4px;width:15.558cm;height:3.478cm;" class="odt-zoomable" data-zoom-src="images/10000000000004980000010700ABFB59.png" /></td></tr></table>
 
 <p><a id="refheading569911429907001"></a></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EB00000077E52D8FD9.png" width="164" height="83" style="display:inline-block; margin:4px;width:4.35cm;height:2.203cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EB00000077E52D8FD9.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>فئة [Application] هي كما يلي:</p>
+<p>فئة [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>] هي كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> hello;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1585,27 +1587,27 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 9: تنفذ الفئة واجهة [CommandLineRunner]، وهي واجهة [Spring Boot] (السطر 4). تحتوي هذه الواجهة على طريقة واحدة فقط، وهي الموجودة في السطر 19؛
+  <li>السطر 9: تنفذ الفئة واجهة [<bdi dir="ltr" class="odt-ltr-term">CommandLineRunner</bdi>]، وهي واجهة [<bdi dir="ltr" class="odt-ltr-term">Spring Boot</bdi>] (السطر 4). تحتوي هذه الواجهة على طريقة واحدة فقط، وهي الموجودة في السطر 19؛
   </li>
-  <li>السطر 8: <b>@SpringBootApplication </b>هي تعليمة توضيحية تجمع عدة تعليقات توضيحية [Spring Boot]:
+  <li>السطر 8: <b>@<bdi dir="ltr" class="odt-ltr-term">SpringBootApplication</bdi> </b>هي تعليمة توضيحية تجمع عدة تعليقات توضيحية [<bdi dir="ltr" class="odt-ltr-term">Spring Boot</bdi>]:
     <ul>
-      <li><b>@Configuration</b>: تشير إلى أن الفئة هي فئة تكوين؛
+      <li><b>@<bdi dir="ltr" class="odt-ltr-term">Configuration</bdi></b>: تشير إلى أن الفئة هي فئة تكوين؛
       </li>
-      <li><b>@EnableAutoConfiguration</b>: يوجه [Spring Boot] لإنشاء عدد من الفاصوليا تلقائيًا بناءً على خصائص متنوعة، لا سيما محتويات مسار فئات المشروع. ونظرًا لوجود مكتبات Hibernate في مسار الفئات، سيتم تنفيذ فاصوليا [entityManagerFactory] باستخدام Hibernate. ونظرًا لوجود مكتبة H2 DBMS في مسار الفئات، سيتم تنفيذ فاصوليا [dataSource] باستخدام H2. في bean [dataSource]، يجب علينا أيضًا تعريف اسم المستخدم وكلمة المرور. هنا، سيستخدم Spring Boot المسؤول الافتراضي لـ H2، <b>الذي </b>لا يحتوي على كلمة مرور. ونظرًا لوجود مكتبة [spring-tx] في مسار الفئات (Classpath)، سيتم استخدام مدير المعاملات في Spring؛
+      <li><b>@<bdi dir="ltr" class="odt-ltr-term">EnableAutoConfiguration</bdi></b>: يوجه [<bdi dir="ltr" class="odt-ltr-term">Spring Boot</bdi>] لإنشاء عدد من الفاصوليا تلقائيًا بناءً على خصائص متنوعة، لا سيما محتويات مسار فئات المشروع. ونظرًا لوجود مكتبات <bdi dir="ltr" class="odt-ltr-term">Hibernate</bdi> في مسار الفئات، سيتم تنفيذ فاصوليا [<bdi dir="ltr" class="odt-ltr-term">entityManagerFactory</bdi>] باستخدام <bdi dir="ltr" class="odt-ltr-term">Hibernate.</bdi> ونظرًا لوجود مكتبة <bdi dir="ltr" class="odt-ltr-term">H2 DBMS</bdi> في مسار الفئات، سيتم تنفيذ فاصوليا [<bdi dir="ltr" class="odt-ltr-term">dataSource</bdi>] باستخدام <bdi dir="ltr" class="odt-ltr-term">H2.</bdi> في <bdi dir="ltr" class="odt-ltr-term">bean</bdi> [<bdi dir="ltr" class="odt-ltr-term">dataSource</bdi>]، يجب علينا أيضًا تعريف اسم المستخدم وكلمة المرور. هنا، سيستخدم <bdi dir="ltr" class="odt-ltr-term">Spring Boot</bdi> المسؤول الافتراضي لـ <bdi dir="ltr" class="odt-ltr-term">H2</bdi>، <b>الذي </b>لا يحتوي على كلمة مرور. ونظرًا لوجود مكتبة [<bdi dir="ltr" class="odt-ltr-term">spring-tx</bdi>] في مسار الفئات (<bdi dir="ltr" class="odt-ltr-term">Classpath</bdi>)، سيتم استخدام مدير المعاملات في <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>؛
       </li>
-      <li><b>@EnableWebMvc</b>: إذا كانت مكتبة [spring-mvc] موجودة في مسار الفئات. في هذه الحالة، يتم إجراء التكوين التلقائي لتطبيق الويب؛
+      <li><b>@<bdi dir="ltr" class="odt-ltr-term">EnableWebMvc</bdi></b>: إذا كانت مكتبة [<bdi dir="ltr" class="odt-ltr-term">spring-mvc</bdi>] موجودة في مسار الفئات. في هذه الحالة، يتم إجراء التكوين التلقائي لتطبيق الويب؛
       </li>
-      <li><b>@ComponentScan</b>: الذي يحدد لـ Spring مكان البحث عن الحبوب والتكوينات والخدمات الأخرى. هنا، يتم البحث عنها افتراضيًا في الحزمة التي تحتوي على الفئة المُعلَّمة، أي حزمة [hello]. وبالتالي، سيتم العثور على فئتي [Customer] و [CustomerRepository]. ونظرًا لأن الأولى تحتوي على تعليق [@Entity]، فسيتم تصنيفها ككيان يديره Hibernate. ونظرًا لأن الثانية تمتد واجهة [CrudRepository]، فسيتم تسجيلها كحبة Spring؛
+      <li><b>@<bdi dir="ltr" class="odt-ltr-term">ComponentScan</bdi></b>: الذي يحدد لـ <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> مكان البحث عن الحبوب والتكوينات والخدمات الأخرى. هنا، يتم البحث عنها افتراضيًا في الحزمة التي تحتوي على الفئة المُعلَّمة، أي حزمة [<bdi dir="ltr" class="odt-ltr-term">hello</bdi>]. وبالتالي، سيتم العثور على فئتي [<bdi dir="ltr" class="odt-ltr-term">Customer</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">CustomerRepository</bdi>]. ونظرًا لأن الأولى تحتوي على تعليق [@<bdi dir="ltr" class="odt-ltr-term">Entity</bdi>]، فسيتم تصنيفها ككيان يديره <bdi dir="ltr" class="odt-ltr-term">Hibernate.</bdi> ونظرًا لأن الثانية تمتد واجهة [<bdi dir="ltr" class="odt-ltr-term">CrudRepository</bdi>]، فسيتم تسجيلها كحبة <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>؛
       </li>
     </ul>
   </li>
-  <li>السطران 11-12: يتم حقن bean [CustomerRepository] في كود الفئة الرئيسية؛
+  <li>السطران 11-12: يتم حقن <bdi dir="ltr" class="odt-ltr-term">bean</bdi> [<bdi dir="ltr" class="odt-ltr-term">CustomerRepository</bdi>] في كود الفئة الرئيسية؛
   </li>
-  <li>السطر 15: يتم تنفيذ الطريقة الثابتة [run] لفئة [SpringApplication] من مشروع Spring Boot. معلمتها هي الفئة التي تحتوي على تعليق [Configuration] أو [EnableAutoConfiguration]. بعد ذلك، سيتم تنفيذ كل ما تم شرحه سابقًا. والنتيجة هي سياق تطبيق Spring، أي مجموعة من الحبوب التي يديرها Spring؛
+  <li>السطر 15: يتم تنفيذ الطريقة الثابتة [<bdi dir="ltr" class="odt-ltr-term">run</bdi>] لفئة [<bdi dir="ltr" class="odt-ltr-term">SpringApplication</bdi>] من مشروع <bdi dir="ltr" class="odt-ltr-term">Spring Boot.</bdi> معلمتها هي الفئة التي تحتوي على تعليق [<bdi dir="ltr" class="odt-ltr-term">Configuration</bdi>] أو [<bdi dir="ltr" class="odt-ltr-term">EnableAutoConfiguration</bdi>]. بعد ذلك، سيتم تنفيذ كل ما تم شرحه سابقًا. والنتيجة هي سياق تطبيق <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>، أي مجموعة من الحبوب التي يديرها <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>؛
   </li>
 </ul>
 
-<p>تستخدم العمليات التالية ببساطة أساليب الكائن الذي ينفذ واجهة [CustomerRepository]. وفيما يلي مخرجات وحدة التحكم:</p>
+<p>تستخدم العمليات التالية ببساطة أساليب الكائن الذي ينفذ واجهة [<bdi dir="ltr" class="odt-ltr-term">CustomerRepository</bdi>]. وفيما يلي مخرجات وحدة التحكم:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
@@ -1697,37 +1699,37 @@
 <a id="__codelineno-3-45" name="__codelineno-3-45"></a><span class="mi">2015</span><span class="o">-</span><span class="mo">03</span><span class="o">-</span><span class="mi">10</span><span class="w"> </span><span class="mi">15</span><span class="p">:</span><span class="mi">35</span><span class="p">:</span><span class="mf">47.051</span><span class="w">  </span><span class="n">INFO</span><span class="w"> </span><span class="mi">5784</span><span class="w"> </span><span class="o">---</span><span class="w"> </span><span class="o">[</span><span class="w">       </span><span class="n">Thread</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="n">org</span><span class="p">.</span><span class="na">hibernate</span><span class="p">.</span><span class="na">tool</span><span class="p">.</span><span class="na">hbm2ddl</span><span class="p">.</span><span class="na">SchemaExport</span><span class="w">  </span><span class="p">:</span><span class="w"> </span><span class="n">HHH000230</span><span class="p">:</span><span class="w"> </span><span class="n">Schema</span><span class="w"> </span><span class="n">export</span><span class="w"> </span><span class="n">complete</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li>الأسطر 1-8: شعار مشروع Spring Boot؛
+  <li>الأسطر 1-8: شعار مشروع <bdi dir="ltr" class="odt-ltr-term">Spring Boot</bdi>؛
   </li>
-  <li>السطر 9: يتم تنفيذ فئة [hello.Application]؛
+  <li>السطر 9: يتم تنفيذ فئة [<bdi dir="ltr" class="odt-ltr-term">hello.Application</bdi>]؛
   </li>
-  <li>السطر 10: [AnnotationConfigApplicationContext] هي فئة تنفذ واجهة [ApplicationContext] الخاصة بـ Spring. وهي عبارة عن حاوية bean؛
+  <li>السطر 10: [<bdi dir="ltr" class="odt-ltr-term">AnnotationConfigApplicationContext</bdi>] هي فئة تنفذ واجهة [<bdi dir="ltr" class="odt-ltr-term">ApplicationContext</bdi>] الخاصة بـ <bdi dir="ltr" class="odt-ltr-term">Spring.</bdi> وهي عبارة عن حاوية <bdi dir="ltr" class="odt-ltr-term">bean</bdi>؛
   </li>
-  <li>السطر 11: يتم تنفيذ bean [entityManagerFactory] باستخدام فئة [LocalContainerEntityManagerFactory]، وهي فئة Spring؛
+  <li>السطر 11: يتم تنفيذ <bdi dir="ltr" class="odt-ltr-term">bean</bdi> [<bdi dir="ltr" class="odt-ltr-term">entityManagerFactory</bdi>] باستخدام فئة [<bdi dir="ltr" class="odt-ltr-term">LocalContainerEntityManagerFactory</bdi>]، وهي فئة <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>؛
   </li>
-  <li>السطر 12: يظهر [Hibernate]. هذا هو تطبيق JPA الذي تم اختياره؛
+  <li>السطر 12: يظهر [<bdi dir="ltr" class="odt-ltr-term">Hibernate</bdi>]. هذا هو تطبيق <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> الذي تم اختياره؛
   </li>
-  <li>السطر 19: لهجة Hibernate هي متغير SQL الذي سيتم استخدامه مع نظام إدارة قواعد البيانات (DBMS). هنا، تشير لهجة [H2Dialect] إلى أن Hibernate سيعمل مع نظام إدارة قواعد البيانات H2؛
+  <li>السطر 19: لهجة <bdi dir="ltr" class="odt-ltr-term">Hibernate</bdi> هي متغير <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> الذي سيتم استخدامه مع نظام إدارة قواعد البيانات (<bdi dir="ltr" class="odt-ltr-term">DBMS</bdi>). هنا، تشير لهجة [<bdi dir="ltr" class="odt-ltr-term">H2Dialect</bdi>] إلى أن <bdi dir="ltr" class="odt-ltr-term">Hibernate</bdi> سيعمل مع نظام إدارة قواعد البيانات <bdi dir="ltr" class="odt-ltr-term">H2</bdi>؛
   </li>
-  <li>السطران 21-22: يتم إنشاء قاعدة البيانات. يتم إنشاء الجدول [CUSTOMER]. وهذا يعني أنه تم تكوين Hibernate لإنشاء جداول من تعريفات JPA، وفي هذه الحالة تعريف JPA لفئة [Customer]؛
+  <li>السطران 21-22: يتم إنشاء قاعدة البيانات. يتم إنشاء الجدول [<bdi dir="ltr" class="odt-ltr-term">CUSTOMER</bdi>]. وهذا يعني أنه تم تكوين <bdi dir="ltr" class="odt-ltr-term">Hibernate</bdi> لإنشاء جداول من تعريفات <bdi dir="ltr" class="odt-ltr-term">JPA</bdi>، وفي هذه الحالة تعريف <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> لفئة [<bdi dir="ltr" class="odt-ltr-term">Customer</bdi>]؛
   </li>
-  <li>الأسطر 26-30: نتيجة طريقة [findAll] للواجهة؛
+  <li>الأسطر 26-30: نتيجة طريقة [<bdi dir="ltr" class="odt-ltr-term">findAll</bdi>] للواجهة؛
   </li>
-  <li>السطر 34: نتيجة طريقة [findOne] للواجهة؛
+  <li>السطر 34: نتيجة طريقة [<bdi dir="ltr" class="odt-ltr-term">findOne</bdi>] للواجهة؛
   </li>
-  <li>السطور 38-39: نتائج طريقة [findByLastName]؛
+  <li>السطور 38-39: نتائج طريقة [<bdi dir="ltr" class="odt-ltr-term">findByLastName</bdi>]؛
   </li>
-  <li>السطور 41 وما يليها: سجلات من إغلاق سياق Spring.
+  <li>السطور 41 وما يليها: سجلات من إغلاق سياق <bdi dir="ltr" class="odt-ltr-term">Spring.</bdi>
   </li>
 </ul>
 <p><a id="refheading5939178138399"></a></p>
-<h3 id="1125-spring-data">11.2.5. <span style="color: #4f81bd">التكوين اليدوي لمشروع Spring Data</span></h3>
-<p><a id="refheading1622751200878134"></a>نقوم بنسخ المشروع السابق إلى مشروع [gs-accessing-data-jpa-02]:</p>
+<h3 id="1125-spring-data">11.2.5. <span style="color: #4f81bd">التكوين اليدوي لمشروع <bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi></span></h3>
+<p><a id="refheading1622751200878134"></a>نقوم بنسخ المشروع السابق إلى مشروع [<bdi dir="ltr" class="odt-ltr-term">gs-accessing-data-jpa-02</bdi>]:</p>
 <p><a id="refheading569931429907001"></a></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F80000015BACE9B961.png" width="173" height="243" style="display:inline-block; margin:4px;width:4.59cm;height:6.422cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F80000015BACE9B961.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>في هذا المشروع الجديد، لن نعتمد على التكوين التلقائي الذي يوفره Spring Boot. سنقوم بتكوينه يدويًا. قد يكون هذا مفيدًا إذا كانت التكوينات الافتراضية لا تناسب احتياجاتنا.</p>
-<p>أولاً، سنحدد التبعيات الضرورية في ملف [pom.xml]:</p>
+<p>في هذا المشروع الجديد، لن نعتمد على التكوين التلقائي الذي يوفره <bdi dir="ltr" class="odt-ltr-term">Spring Boot.</bdi> سنقوم بتكوينه يدويًا. قد يكون هذا مفيدًا إذا كانت التكوينات الافتراضية لا تناسب احتياجاتنا.</p>
+<p>أولاً، سنحدد التبعيات الضرورية في ملف [<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;?</span><span style="color:#3f7f7f">xml</span> <span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;1.0&quot;</span> <span style="color:#7f007f">encoding</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;UTF-8&quot;</span><span style="color:#008080">?&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span> <span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span style="color:#7f007f">xsi:schemaLocation</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&quot;</span></span></span>
@@ -1807,29 +1809,29 @@
 </code></pre></div>
 
 <ul>
-  <li>الأسطر 10–14: مشروع Maven الأصلي الذي سنستخدم مكتباته؛
+  <li>الأسطر 10–14: مشروع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> الأصلي الذي سنستخدم مكتباته؛
   </li>
-  <li>الأسطر 18–21: Spring Data المستخدم للوصول إلى قاعدة البيانات؛
+  <li>الأسطر 18–21: <bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi> المستخدم للوصول إلى قاعدة البيانات؛
   </li>
-  <li>الأسطر 23–26: تطبيق Hibernate لمواصفات JPA؛
+  <li>الأسطر 23–26: تطبيق <bdi dir="ltr" class="odt-ltr-term">Hibernate</bdi> لمواصفات <bdi dir="ltr" class="odt-ltr-term">JPA</bdi>؛
   </li>
-  <li>الأسطر 28–31: نظام إدارة قواعد البيانات H2؛
+  <li>الأسطر 28–31: نظام إدارة قواعد البيانات <bdi dir="ltr" class="odt-ltr-term">H2</bdi>؛
   </li>
-  <li>الأسطر 33–36: غالبًا ما تُستخدم قواعد البيانات مع مجموعات الاتصال، مما يتجنب فتح وإغلاق الاتصالات بشكل متكرر. هنا، التنفيذ المستخدم هو [tomcat-jdbc]؛
+  <li>الأسطر 33–36: غالبًا ما تُستخدم قواعد البيانات مع مجموعات الاتصال، مما يتجنب فتح وإغلاق الاتصالات بشكل متكرر. هنا، التنفيذ المستخدم هو [<bdi dir="ltr" class="odt-ltr-term">tomcat-jdbc</bdi>]؛
   </li>
 </ul>
 
-<p>في المشروع الجديد، تظل الكيان [Customer] والواجهة [CustomerRepository] دون تغيير. سنقوم بتعديل فئة [Application]، والتي سيتم تقسيمها إلى فئتين: </p>
+<p>في المشروع الجديد، تظل الكيان [<bdi dir="ltr" class="odt-ltr-term">Customer</bdi>] والواجهة [<bdi dir="ltr" class="odt-ltr-term">CustomerRepository</bdi>] دون تغيير. سنقوم بتعديل فئة [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>]، والتي سيتم تقسيمها إلى فئتين: </p>
 <ul>
-  <li>[Config]، التي ستكون فئة التكوين؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">Config</bdi>]، التي ستكون فئة التكوين؛
   </li>
-  <li>[Main]، التي ستكون فئة التنفيذ؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">Main</bdi>]، التي ستكون فئة التنفيذ؛
   </li>
 </ul>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E80000009FB5A3B942.png" width="163" height="111" style="display:inline-block; margin:4px;width:4.3cm;height:2.947cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E80000009FB5A3B942.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>أصبحت فئة [Application] القابلة للتنفيذ كما يلي:</p>
+<p>أصبحت فئة [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>] القابلة للتنفيذ كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> console;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1861,17 +1863,17 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 9: لم تعد فئة [Application] تحتوي على أي تعليقات توضيحية للتكوين؛
+  <li>السطر 9: لم تعد فئة [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>] تحتوي على أي تعليقات توضيحية للتكوين؛
   </li>
-  <li>الأسطر 3–7: لاحظ أنه لم يعد هناك أي استيراد لحزمة [Spring Boot]؛
+  <li>الأسطر 3–7: لاحظ أنه لم يعد هناك أي استيراد لحزمة [<bdi dir="ltr" class="odt-ltr-term">Spring Boot</bdi>]؛
   </li>
-  <li>السطر 12: نقوم بإنشاء مثيلات لفاصوليا Spring. نحصل على سياق Spring، الذي يحتوي على مراجع للفاصوليا التي تم إنشاؤها؛
+  <li>السطر 12: نقوم بإنشاء مثيلات لفاصوليا <bdi dir="ltr" class="odt-ltr-term">Spring.</bdi> نحصل على سياق <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>، الذي يحتوي على مراجع للفاصوليا التي تم إنشاؤها؛
   </li>
-  <li>السطر 13: نطلب مرجعًا إلى حبة [<span style="color: #000000">CustomerRepository</span>]؛
+  <li>السطر 13: نطلب مرجعًا إلى حبة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">CustomerRepository</bdi></span>]؛
   </li>
 </ul>
 
-<p>فئة [<a id="springdataconfig"></a> Config] التي تهيئ المشروع هي كما يلي:</p>
+<p>فئة [<a id="springdataconfig"></a> <bdi dir="ltr" class="odt-ltr-term">Config</bdi>] التي تهيئ المشروع هي كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> config;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1944,42 +1946,42 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 17: تشير العلامة [@EnableTransactionManagement] إلى أن طرق واجهات [CrudRepository] يجب أن تُنفَّذ ضمن معاملة. وقد تم تعليقها لأن هذا هو السلوك الافتراضي؛
+  <li>السطر 17: تشير العلامة [@<bdi dir="ltr" class="odt-ltr-term">EnableTransactionManagement</bdi>] إلى أن طرق واجهات [<bdi dir="ltr" class="odt-ltr-term">CrudRepository</bdi>] يجب أن تُنفَّذ ضمن معاملة. وقد تم تعليقها لأن هذا هو السلوك الافتراضي؛
   </li>
-  <li>السطر 18: تحدد العلامة [@EnableJpaRepositories] الدلائل التي توجد فيها واجهات Spring Data [CrudRepository]. ستصبح هذه الواجهات مكونات Spring وستكون متاحة في سياق Spring؛
+  <li>السطر 18: تحدد العلامة [@<bdi dir="ltr" class="odt-ltr-term">EnableJpaRepositories</bdi>] الدلائل التي توجد فيها واجهات <bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi> [<bdi dir="ltr" class="odt-ltr-term">CrudRepository</bdi>]. ستصبح هذه الواجهات مكونات <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> وستكون متاحة في سياق <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>؛
   </li>
-  <li>السطر 19: تجعل العلامة [@Configuration] فئة [Config] فئة تكوين Spring؛
+  <li>السطر 19: تجعل العلامة [@<bdi dir="ltr" class="odt-ltr-term">Configuration</bdi>] فئة [<bdi dir="ltr" class="odt-ltr-term">Config</bdi>] فئة تكوين <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>؛
   </li>
-  <li>السطر 20: تدرج العلامة [@ComponentScan] الدلائل التي يجب البحث فيها عن مكونات Spring. مكونات Spring هي فئات مزودة بعلامات Spring مثل <b>@Service و@Component</b> و@<b>Controller</b>، إلخ. هنا، لا توجد مكونات أخرى غير تلك المحددة داخل فئة [AppConfig]، لذا تم تعليق هذه العلامة؛
+  <li>السطر 20: تدرج العلامة [@<bdi dir="ltr" class="odt-ltr-term">ComponentScan</bdi>] الدلائل التي يجب البحث فيها عن مكونات <bdi dir="ltr" class="odt-ltr-term">Spring.</bdi> مكونات <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> هي فئات مزودة بعلامات <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> مثل <b>@<bdi dir="ltr" class="odt-ltr-term">Service</bdi> و@<bdi dir="ltr" class="odt-ltr-term">Component</bdi></b> و@<b><bdi dir="ltr" class="odt-ltr-term">Controller</bdi></b>، إلخ. هنا، لا توجد مكونات أخرى غير تلك المحددة داخل فئة [<bdi dir="ltr" class="odt-ltr-term">AppConfig</bdi>]، لذا تم تعليق هذه العلامة؛
   </li>
-  <li>الأسطر 24–37: تحدد مصدر البيانات، قاعدة بيانات H2. إن تعليق @Bean في السطر 25 هو الذي يجعل الكائن الذي تم إنشاؤه بواسطة هذه الطريقة مكونًا تديره Spring. يمكن أن يكون اسم الطريقة هنا أي شيء. ومع ذلك، يجب تسميته [<b>dataSource</b>] إذا كان EntityManagerFactory في السطر 51 غائبًا وتم تعريفه عبر التكوين التلقائي؛
+  <li>الأسطر 24–37: تحدد مصدر البيانات، قاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">H2.</bdi> إن تعليق @<bdi dir="ltr" class="odt-ltr-term">Bean</bdi> في السطر 25 هو الذي يجعل الكائن الذي تم إنشاؤه بواسطة هذه الطريقة مكونًا تديره <bdi dir="ltr" class="odt-ltr-term">Spring.</bdi> يمكن أن يكون اسم الطريقة هنا أي شيء. ومع ذلك، يجب تسميته [<b><bdi dir="ltr" class="odt-ltr-term">dataSource</bdi></b>] إذا كان <bdi dir="ltr" class="odt-ltr-term">EntityManagerFactory</bdi> في السطر 51 غائبًا وتم تعريفه عبر التكوين التلقائي؛
   </li>
-  <li>السطر 30: سيتم تسمية قاعدة البيانات [demo] وسيتم إنشاؤها في مجلد المشروع؛
+  <li>السطر 30: سيتم تسمية قاعدة البيانات [<bdi dir="ltr" class="odt-ltr-term">demo</bdi>] وسيتم إنشاؤها في مجلد المشروع؛
   </li>
-  <li>الأسطر 40-47: تعريف تطبيق JPA المستخدم، وهو في هذه الحالة تطبيق Hibernate. يمكن أن يكون اسم الطريقة هنا أي شيء؛
+  <li>الأسطر 40-47: تعريف تطبيق <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> المستخدم، وهو في هذه الحالة تطبيق <bdi dir="ltr" class="odt-ltr-term">Hibernate.</bdi> يمكن أن يكون اسم الطريقة هنا أي شيء؛
   </li>
-  <li>السطر 43: لا توجد سجلات SQL؛
+  <li>السطر 43: لا توجد سجلات <bdi dir="ltr" class="odt-ltr-term">SQL</bdi>؛
   </li>
   <li>السطر 44: سيتم إنشاء قاعدة البيانات إذا لم تكن موجودة؛
   </li>
-  <li>الأسطر 50-58: تحدد EntityManagerFactory التي ستدير استمرارية JPA. يجب تسمية الطريقة [<b>entityManagerFactory</b>]؛
+  <li>الأسطر 50-58: تحدد <bdi dir="ltr" class="odt-ltr-term">EntityManagerFactory</bdi> التي ستدير استمرارية <bdi dir="ltr" class="odt-ltr-term">JPA.</bdi> يجب تسمية الطريقة [<b><bdi dir="ltr" class="odt-ltr-term">entityManagerFactory</bdi></b>]؛
   </li>
-  <li>السطر 51: تتلقى الطريقة معلمتين من أنواع الحبتين المحددتين سابقًا. سيتم بعد ذلك إنشاء هاتين الحبتين وحقنهما بواسطة Spring كمعلمات للطريقة؛
+  <li>السطر 51: تتلقى الطريقة معلمتين من أنواع الحبتين المحددتين سابقًا. سيتم بعد ذلك إنشاء هاتين الحبتين وحقنهما بواسطة <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> كمعلمات للطريقة؛
   </li>
-  <li>السطر 53: يحدد تنفيذ JPA المراد استخدامه؛
+  <li>السطر 53: يحدد تنفيذ <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> المراد استخدامه؛
   </li>
-  <li>السطر 54: يحدد الدلائل التي يمكن العثور فيها على كيانات JPA؛
+  <li>السطر 54: يحدد الدلائل التي يمكن العثور فيها على كيانات <bdi dir="ltr" class="odt-ltr-term">JPA</bdi>؛
   </li>
   <li>السطر 55: يحدد مصدر البيانات المراد إدارته؛
   </li>
-  <li>الأسطر 61–66: مدير المعاملات. يجب تسمية الطريقة [<b>transactionManager</b>]. تتلقى الحبة من الأسطر 51–58 كمعلمة؛
+  <li>الأسطر 61–66: مدير المعاملات. يجب تسمية الطريقة [<b><bdi dir="ltr" class="odt-ltr-term">transactionManager</bdi></b>]. تتلقى الحبة من الأسطر 51–58 كمعلمة؛
   </li>
-  <li>السطر 64: يرتبط مدير المعاملات بـ EntityManagerFactory؛
+  <li>السطر 64: يرتبط مدير المعاملات بـ <bdi dir="ltr" class="odt-ltr-term">EntityManagerFactory</bdi>؛
   </li>
 </ul>
 
 <p>يمكن تعريف الطرق السابقة بأي ترتيب.</p>
-<p>يؤدي تشغيل المشروع إلى نفس النتائج. يظهر ملف جديد في مجلد المشروع، وهو ملف قاعدة بيانات H2:</p>
+<p>يؤدي تشغيل المشروع إلى نفس النتائج. يظهر ملف جديد في مجلد المشروع، وهو ملف قاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">H2:</bdi></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F1000000D6F0EB16BE.png" width="169" height="150" style="display:inline-block; margin:4px;width:4.461cm;height:3.962cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F1000000D6F0EB16BE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><a id="refheading2192402014630537"></a></p>
@@ -1990,7 +1992,7 @@
 <ul>
   <li>في [1]: قم بإنشاء تكوين وقت التشغيل؛
   </li>
-  <li>في [2]: من النوع [تطبيق Java]
+  <li>في [2]: من النوع [تطبيق <bdi dir="ltr" class="odt-ltr-term">Java</bdi>]
   </li>
   <li>في [3]: حدد المشروع المراد تشغيله (استخدم زر <i>&quot;تصفح&quot;</i>)؛
   </li>
@@ -2005,7 +2007,7 @@
 <ul>
   <li>في [6]: تصدير المشروع؛
   </li>
-  <li>في [7]: كأرشيف JAR قابل للتنفيذ؛
+  <li>في [7]: كأرشيف <bdi dir="ltr" class="odt-ltr-term">JAR</bdi> قابل للتنفيذ؛
   </li>
   <li>في [8]: حدد مسار واسم الملف القابل للتنفيذ المراد إنشاؤه؛
   </li>
@@ -2132,60 +2134,60 @@
 <h2 id="113-2">11.3. <span style="color: #4f81bd">مثال 2</span></h2>
 <p><a id="refheading2192442014630537"></a></p>
 <h3 id="1131">11.3.1. <span style="color: #4f81bd">مقدمة</span></h3>
-<p>سنعود إلى مثال جدول المنتجات الذي استخدمناه لتقديم واجهة برمجة تطبيقات JDBC وننشئ البنية التالية:</p>
+<p>سنعود إلى مثال جدول المنتجات الذي استخدمناه لتقديم واجهة برمجة تطبيقات <bdi dir="ltr" class="odt-ltr-term">JDBC</bdi> وننشئ البنية التالية:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000049A0000011056D6AA7D.png" width="589" height="136" style="display:inline-block; margin:4px;width:15.584cm;height:3.598cm;" class="odt-zoomable" data-zoom-src="images/100000000000049A0000011056D6AA7D.png" /></td></tr></table>
 
-<p>تحتوي قاعدة البيانات [dbintrospringjpa] على جدولين: [PRODUCTS] و[CATEGORIES]. ويبدو جدول [CATEGORIES] كما يلي:</p>
+<p>تحتوي قاعدة البيانات [<bdi dir="ltr" class="odt-ltr-term">dbintrospringjpa</bdi>] على جدولين: [<bdi dir="ltr" class="odt-ltr-term">PRODUCTS</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">CATEGORIES</bdi>]. ويبدو جدول [<bdi dir="ltr" class="odt-ltr-term">CATEGORIES</bdi>] كما يلي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000219000000692D8D8733.png" width="376" height="73" style="display:inline-block; margin:4px;width:9.94cm;height:1.944cm;" class="odt-zoomable" data-zoom-src="images/1000000000000219000000692D8D8733.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <ul>
-  <li>[ID]: المفتاح الأساسي في وضع AUTO_INCREMENT؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">ID</bdi>]: المفتاح الأساسي في وضع <bdi dir="ltr" class="odt-ltr-term">AUTO_INCREMENT</bdi>؛
   </li>
-  <li>[VERSION]: رقم إصدار السجل؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">VERSION</bdi>]: رقم إصدار السجل؛
   </li>
-  <li>[NAME]: اسم الفئة - فريد؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">NAME</bdi>]: اسم الفئة - فريد؛
   </li>
 </ul>
 
-<p>جدول [PRODUCTS] كما يلي:</p>
+<p>جدول [<bdi dir="ltr" class="odt-ltr-term">PRODUCTS</bdi>] كما يلي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000024F000000AC2E1845DE.png" width="413" height="120" style="display:inline-block; margin:4px;width:10.94cm;height:3.184cm;" class="odt-zoomable" data-zoom-src="images/100000000000024F000000AC2E1845DE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <ul>
-  <li>[ID]: المفتاح الأساسي في وضع AUTO_INCREMENT؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">ID</bdi>]: المفتاح الأساسي في وضع <bdi dir="ltr" class="odt-ltr-term">AUTO_INCREMENT</bdi>؛
   </li>
-  <li>[VERSION]: رقم إصدار السجل؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">VERSION</bdi>]: رقم إصدار السجل؛
   </li>
-  <li>[NAME]: اسم المنتج - فريد؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">NAME</bdi>]: اسم المنتج - فريد؛
   </li>
-  <li>[CATEGORY_ID]: معرّف الفئة - مفتاح خارجي في حقل [CATEGORIES.ID]؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">CATEGORY_ID</bdi>]: معرّف الفئة - مفتاح خارجي في حقل [<bdi dir="ltr" class="odt-ltr-term">CATEGORIES.ID</bdi>]؛
   </li>
-  <li>[PRICE]: سعره؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">PRICE</bdi>]: سعره؛
   </li>
-  <li>[DESCRIPTION]: وصف المنتج؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">DESCRIPTION</bdi>]: وصف المنتج؛
   </li>
 </ul>
 
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><strong>المهمة</strong>: قم بإنشاء قاعدة البيانات [<span style="color: #2a00ff">dbintrospringdata</span>] باستخدام البرنامج النصي SQL [dbintrospringdata.sql] الموجود في مواد الدعم:</p>
+<p><strong>المهمة</strong>: قم بإنشاء قاعدة البيانات [<span style="color: #2a00ff"><bdi dir="ltr" class="odt-ltr-term">dbintrospringdata</bdi></span>] باستخدام البرنامج النصي <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> [<bdi dir="ltr" class="odt-ltr-term">dbintrospringdata.sql</bdi>] الموجود في مواد الدعم:</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
 <p><a id="refheading2192462014630537"></a></p>
-<h3 id="1132-maven">11.3.2. <span style="color: #4f81bd">إنشاء مشروع Maven</span></h3>
-<p><a id="refheading1622791200878134"></a>لإنشاء قالب مشروع Spring Data، اتبع الخطوات التالية:</p>
+<h3 id="1132-maven">11.3.2. <span style="color: #4f81bd">إنشاء مشروع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi></span></h3>
+<p><a id="refheading1622791200878134"></a>لإنشاء قالب مشروع <bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi>، اتبع الخطوات التالية:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000053B0000037FB182922E.png" width="670" height="448" style="display:inline-block; margin:4px;width:17.715cm;height:11.841cm;" class="odt-zoomable" data-zoom-src="images/100000000000053B0000037FB182922E.png" /></td></tr></table>
 
 <ul>
   <li>في [1]، أنشئ مشروعًا جديدًا؛
   </li>
-  <li>في [2]، حدد نوع [Spring Starter Project]؛
+  <li>في [2]، حدد نوع [<bdi dir="ltr" class="odt-ltr-term">Spring Starter Project</bdi>]؛
   </li>
-  <li>سيكون المشروع الذي تم إنشاؤه مشروع Maven. في [3]، حدد اسم مجموعة المشروع؛
+  <li>سيكون المشروع الذي تم إنشاؤه مشروع <bdi dir="ltr" class="odt-ltr-term">Maven.</bdi> في [3]، حدد اسم مجموعة المشروع؛
   </li>
-  <li>في [4]، حدد اسم الأداة (ملف JAR في هذه الحالة) التي سيتم إنشاؤها عند بناء المشروع؛
+  <li>في [4]، حدد اسم الأداة (ملف <bdi dir="ltr" class="odt-ltr-term">JAR</bdi> في هذه الحالة) التي سيتم إنشاؤها عند بناء المشروع؛
   </li>
-  <li>في [5]: اسم مشروع Eclipse – يمكن أن يكون أي شيء (لا يجب أن يكون هو نفسه [4])؛
+  <li>في [5]: اسم مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> – يمكن أن يكون أي شيء (لا يجب أن يكون هو نفسه [4])؛
   </li>
-  <li>في [7]: حدد أنك تقوم بإنشاء مشروع بطبقة [JPA] باستخدام نظام إدارة قواعد البيانات MySQL. سيتم بعد ذلك تضمين التبعيات المطلوبة لمثل هذا المشروع في ملف [pom.xml]؛
+  <li>في [7]: حدد أنك تقوم بإنشاء مشروع بطبقة [<bdi dir="ltr" class="odt-ltr-term">JPA</bdi>] باستخدام نظام إدارة قواعد البيانات <bdi dir="ltr" class="odt-ltr-term">MySQL.</bdi> سيتم بعد ذلك تضمين التبعيات المطلوبة لمثل هذا المشروع في ملف [<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>]؛
   </li>
 </ul>
 
@@ -2205,7 +2207,7 @@
   </li>
 </ul>
 
-<p>يتضمن ملف [pom.xml] التبعيات المطلوبة لمشروع JPA:</p>
+<p>يتضمن ملف [<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>] التبعيات المطلوبة لمشروع <bdi dir="ltr" class="odt-ltr-term">JPA:</bdi></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;?</span><span style="color:#3f7f7f">xml</span> <span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;1.0&quot;</span> <span style="color:#7f007f">encoding</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;UTF-8&quot;</span><span style="color:#008080">?&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span> <span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span>
@@ -2263,17 +2265,17 @@
 </code></pre></div>
 
 <ul>
-  <li>الأسطر 14–19: مشروع Maven الأصلي — يحدد عددًا كبيرًا من المكتبات مع إصداراتها — نستخدم هذه المكتبات كاعتمادات Maven دون تحديد إصداراتها؛
+  <li>الأسطر 14–19: مشروع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> الأصلي — يحدد عددًا كبيرًا من المكتبات مع إصداراتها — نستخدم هذه المكتبات كاعتمادات <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> دون تحديد إصداراتها؛
   </li>
-  <li>الأسطر 28–31: التبعية المطلوبة لـ JPA – ستشمل [Spring Data]؛
+  <li>الأسطر 28–31: التبعية المطلوبة لـ <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> – ستشمل [<bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi>]؛
   </li>
-  <li>الأسطر 32–36: التبعية على برنامج تشغيل MySQL JDBC؛
+  <li>الأسطر 32–36: التبعية على برنامج تشغيل <bdi dir="ltr" class="odt-ltr-term">MySQL JDBC</bdi>؛
   </li>
-  <li>الأسطر 37–41: التبعيات المطلوبة لاختبارات JUnit المدمجة مع Spring؛
+  <li>الأسطر 37–41: التبعيات المطلوبة لاختبارات <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi> المدمجة مع <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>؛
   </li>
 </ul>
 
-<p>لا تقوم الفئة القابلة للتنفيذ [Application] بأي شيء ولكنها معدة مسبقًا:</p>
+<p>لا تقوم الفئة القابلة للتنفيذ [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>] بأي شيء ولكنها معدة مسبقًا:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> demo;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2290,11 +2292,11 @@
 </code></pre></div>
 
 <ul>
-  <li>تجعل العلامة [@SpringBootApplication] الفئة فئة تكوين تلقائي للمشروع؛
+  <li>تجعل العلامة [@<bdi dir="ltr" class="odt-ltr-term">SpringBootApplication</bdi>] الفئة فئة تكوين تلقائي للمشروع؛
   </li>
 </ul>
 
-<p>فئة الاختبار [ApplicationTests] لا تقوم بأي شيء ولكنها مهيأة مسبقًا:</p>
+<p>فئة الاختبار [<bdi dir="ltr" class="odt-ltr-term">ApplicationTests</bdi>] لا تقوم بأي شيء ولكنها مهيأة مسبقًا:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> demo;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2315,48 +2317,48 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 9: تسمح علامة [<span style="color: #646464">@SpringApplicationConfiguration</span>] باستخدام ملف التكوين [<span style="color: #000000">Application</span>]. وبالتالي ستستفيد فئة الاختبار من جميع الفاصوليا المحددة في هذا الملف؛
+  <li>السطر 9: تسمح علامة [<span style="color: #646464">@<bdi dir="ltr" class="odt-ltr-term">SpringApplicationConfiguration</bdi></span>] باستخدام ملف التكوين [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">Application</bdi></span>]. وبالتالي ستستفيد فئة الاختبار من جميع الفاصوليا المحددة في هذا الملف؛
   </li>
-  <li>السطر 8: تتيح العلامة [<span style="color: #646464">@RunWith</span>] تكامل Spring مع JUnit: يمكن تنفيذ الفئة كاختبار JUnit. [<span style="color: #646464">@RunWith</span>] هي علامة JUnit (السطر 4)، في حين أن فئة [<span style="color: #000000">SpringJUnit4ClassRunner</span>] هي فئة Spring (السطر 6)؛
+  <li>السطر 8: تتيح العلامة [<span style="color: #646464">@<bdi dir="ltr" class="odt-ltr-term">RunWith</bdi></span>] تكامل <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> مع <bdi dir="ltr" class="odt-ltr-term">JUnit:</bdi> يمكن تنفيذ الفئة كاختبار <bdi dir="ltr" class="odt-ltr-term">JUnit.</bdi> [<span style="color: #646464">@<bdi dir="ltr" class="odt-ltr-term">RunWith</bdi></span>] هي علامة <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi> (السطر 4)، في حين أن فئة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">SpringJUnit4ClassRunner</bdi></span>] هي فئة <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> (السطر 6)؛
   </li>
 </ul>
 
-<p>الآن بعد أن أصبح لدينا هيكل تطبيق JPA، يمكننا إكماله لكتابة مشروع طبقة الاستمرارية المرتبط بقاعدة بيانات المنتج.</p>
+<p>الآن بعد أن أصبح لدينا هيكل تطبيق <bdi dir="ltr" class="odt-ltr-term">JPA</bdi>، يمكننا إكماله لكتابة مشروع طبقة الاستمرارية المرتبط بقاعدة بيانات المنتج.</p>
 <p><a id="refheading2192482014630537"></a></p>
-<h3 id="1133-eclipse">11.3.3. <span style="color: #4f81bd">مشروع Eclipse</span></h3>
+<h3 id="1133-eclipse">11.3.3. <span style="color: #4f81bd">مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi></span></h3>
 <p>سنقوم بتوسيع المشروع السابق على النحو التالي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F6000002024FC5FC8F.png" width="172" height="360" style="display:inline-block; margin:4px;width:4.56cm;height:9.529cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F6000002024FC5FC8F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <ul>
-  <li>[AppConfig.java]: فئة تكوين مشروع Spring؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">AppConfig.java</bdi>]: فئة تكوين مشروع <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>؛
   </li>
-  <li>[Main.java]: فئة المشروع القابلة للتنفيذ؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">Main.java</bdi>]: فئة المشروع القابلة للتنفيذ؛
   </li>
-  <li>[IDao.java]: واجهة طبقة [DAO]؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">IDao.java</bdi>]: واجهة طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]؛
   </li>
-  <li>[Dao.java]: فئة التنفيذ لطبقة [DAO]؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">Dao.java</bdi>]: فئة التنفيذ لطبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]؛
   </li>
-  <li>[AbstractEntity.java]: الفئة الأم لفئتي [Product] و [Category]؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">AbstractEntity.java</bdi>]: الفئة الأم لفئتي [<bdi dir="ltr" class="odt-ltr-term">Product</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">Category</bdi>]؛
   </li>
-  <li>[Product.java]: الفئة المرتبطة بصف في جدول [PRODUCTS] في قاعدة البيانات؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">Product.java</bdi>]: الفئة المرتبطة بصف في جدول [<bdi dir="ltr" class="odt-ltr-term">PRODUCTS</bdi>] في قاعدة البيانات؛
   </li>
-  <li>[Category.java]: الفئة المرتبطة بصف في جدول [CATEGORIES] في قاعدة البيانات؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">Category.java</bdi>]: الفئة المرتبطة بصف في جدول [<bdi dir="ltr" class="odt-ltr-term">CATEGORIES</bdi>] في قاعدة البيانات؛
   </li>
-  <li>[ProductsRepository]: واجهة Spring Data للوصول إلى جدول [PRODUCTS]؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">ProductsRepository</bdi>]: واجهة <bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi> للوصول إلى جدول [<bdi dir="ltr" class="odt-ltr-term">PRODUCTS</bdi>]؛
   </li>
-  <li>[CategoriesRepository]: واجهة Spring Data للوصول إلى جدول [CATEGORIES]؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">CategoriesRepository</bdi>]: واجهة <bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi> للوصول إلى جدول [<bdi dir="ltr" class="odt-ltr-term">CATEGORIES</bdi>]؛
   </li>
-  <li>[pom.xml]: ملف تكوين مشروع Maven؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>]: ملف تكوين مشروع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi>؛
   </li>
 </ul>
 
 <p>يُنفذ هذا المشروع البنية التالية:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000049B00000112C905184C.png" width="590" height="137" style="display:inline-block; margin:4px;width:15.598cm;height:3.625cm;" class="odt-zoomable" data-zoom-src="images/100000000000049B00000112C905184C.png" /></td></tr></table>
 
-<p>لا ترى طبقة [DAO] سوى الطبقة التي تنفذها [Spring Data].</p>
+<p>لا ترى طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] سوى الطبقة التي تنفذها [<bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi>].</p>
 <p><a id="refheading226282014630537"></a></p>
-<h3 id="1134-maven">11.3.4. <span style="color: #4f81bd">تكوين Maven</span></h3>
-<p>ملف [pom.xml] لمشروع Maven هو كما يلي:</p>
+<h3 id="1134-maven">11.3.4. <span style="color: #4f81bd">تكوين <bdi dir="ltr" class="odt-ltr-term">Maven</bdi></span></h3>
+<p>ملف [<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>] لمشروع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> هو كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;?</span><span style="color:#3f7f7f">xml</span> <span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;1.0&quot;</span> <span style="color:#7f007f">encoding</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;UTF-8&quot;</span><span style="color:#008080">?&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span> <span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span>
@@ -2452,25 +2454,25 @@
 
 <p>هذا التكوين هو الذي تم استخدامه وشرحه في <a href="#refheading5939178138399"><u><span style="color: #0563c1">القسم 11.2.5</span></u></a>. نضيف المكتبات التالية:</p>
 <ul>
-  <li>الأسطر 42–49: مكتبة JSON تستخدمها طريقة [toString] لفئة [Product]؛
+  <li>الأسطر 42–49: مكتبة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> تستخدمها طريقة [<bdi dir="ltr" class="odt-ltr-term">toString</bdi>] لفئة [<bdi dir="ltr" class="odt-ltr-term">Product</bdi>]؛
   </li>
-  <li>الأسطر 51–55: مكتبة [Google Guava]، التي توفر طرقًا مساعدة لإدارة مجموعات العناصر. ستستخدمها فئة [Dao]، التي تنفذ طبقة [DAO]؛
+  <li>الأسطر 51–55: مكتبة [<bdi dir="ltr" class="odt-ltr-term">Google Guava</bdi>]، التي توفر طرقًا مساعدة لإدارة مجموعات العناصر. ستستخدمها فئة [<bdi dir="ltr" class="odt-ltr-term">Dao</bdi>]، التي تنفذ طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]؛
   </li>
-  <li>الأسطر 56–67: المكتبات المطلوبة لاختبار JUnit؛
+  <li>الأسطر 56–67: المكتبات المطلوبة لاختبار <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi>؛
   </li>
   <li>الأسطر 69–72: مكتبة تسجيل؛
   </li>
-  <li>الأسطر 81–86: مكونات Maven الإضافية المطلوبة للمشروع؛
+  <li>الأسطر 81–86: مكونات <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> الإضافية المطلوبة للمشروع؛
   </li>
 </ul>
 <p><a id="refheading2192502014630537"></a></p>
-<h3 id="1135-jpa">11.3.5. <span style="color: #4f81bd">كيانات طبقة [JPA]</span></h3>
-<p>طبقة [<strong>DAO</strong>] طبقة [<strong>Console</strong>] طبقة [<strong>JPA</strong>] برنامج تشغيل [<strong>JDBC</strong>] طبقة [<strong>Spring Data</strong>] Spring 4DBMS</p>
+<h3 id="1135-jpa">11.3.5. <span style="color: #4f81bd">كيانات طبقة [<bdi dir="ltr" class="odt-ltr-term">JPA</bdi>]</span></h3>
+<p>طبقة [<strong><bdi dir="ltr" class="odt-ltr-term">DAO</bdi></strong>] طبقة [<strong><bdi dir="ltr" class="odt-ltr-term">Console</bdi></strong>] طبقة [<strong><bdi dir="ltr" class="odt-ltr-term">JPA</bdi></strong>] برنامج تشغيل [<strong><bdi dir="ltr" class="odt-ltr-term">JDBC</bdi></strong>] طبقة [<strong><bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi></strong>] <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> 4DBMS</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000DB000000CFBC5B5629.png" width="153" height="145" style="display:inline-block; margin:4px;width:4.06cm;height:3.838cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DB000000CFBC5B5629.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><a id="refheading1961141114084373"></a></p>
-<h4 id="11351-abstractentity">11.3.5.1. <span style="color: #4f81bd">فئة [AbstractEntity]</span></h4>
-<p>فئة [AbstractEntity] هي كما يلي:</p>
+<h4 id="11351-abstractentity">11.3.5.1. <span style="color: #4f81bd">فئة [<bdi dir="ltr" class="odt-ltr-term">AbstractEntity</bdi>]</span></h4>
+<p>فئة [<bdi dir="ltr" class="odt-ltr-term">AbstractEntity</bdi>] هي كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.data.entities;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2542,30 +2544,30 @@
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 </code></pre></div>
 
-<p>الغرض من هذه الفئة هو توفير فئة أم لكيانات JPA من خلال تغليف <span style="color: #000000">الخصائص [id، version] (السطران 19 و22) المشتركة بين كيانات [Product] و[Category] المرتبطة بقاعدة البيانات </span>في مكان واحد<span style="color: #000000">. ترتبط هذه الخصائص بأعمدة [ID، VERSION] في الجداول (السطران 18 و21).</span></p>
+<p>الغرض من هذه الفئة هو توفير فئة أم لكيانات <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> من خلال تغليف <span style="color: #000000">الخصائص [<bdi dir="ltr" class="odt-ltr-term">id</bdi>، <bdi dir="ltr" class="odt-ltr-term">version</bdi>] (السطران 19 و22) المشتركة بين كيانات [<bdi dir="ltr" class="odt-ltr-term">Product</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">Category</bdi>] المرتبطة بقاعدة البيانات </span>في مكان واحد<span style="color: #000000">. ترتبط هذه الخصائص بأعمدة [<bdi dir="ltr" class="odt-ltr-term">ID</bdi>، <bdi dir="ltr" class="odt-ltr-term">VERSION</bdi>] في الجداول (السطران 18 و21).</span></p>
 <ul>
-  <li><span style="color: #000000">السطر 13: تشير العلامة [@MappedSuperclass] إلى أن الفئة هي فئة أم لكيانات JPA؛</span>
+  <li><span style="color: #000000">السطر 13: تشير العلامة [@<bdi dir="ltr" class="odt-ltr-term">MappedSuperclass</bdi>] إلى أن الفئة هي فئة أم لكيانات <bdi dir="ltr" class="odt-ltr-term">JPA</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطر 16: تشير العلامة [@Id] إلى أن الحقل [id] (قد يكون له اسم مختلف) مرتبط بالمفتاح الأساسي لجدول؛</span>
+  <li><span style="color: #000000">السطر 16: تشير العلامة [@<bdi dir="ltr" class="odt-ltr-term">Id</bdi>] إلى أن الحقل [<bdi dir="ltr" class="odt-ltr-term">id</bdi>] (قد يكون له اسم مختلف) مرتبط بالمفتاح الأساسي لجدول؛</span>
   </li>
-  <li><span style="color: #000000">السطر 17: تحدد التعليقة التوضيحية [</span><span style="color: #646464">@GeneratedValue</span><span style="color: #000000">(strategy=GenerationType.</span><i><b><span style="color: #0000c0">IDENTITY</span></b></i><span style="color: #000000">)] وضع إنشاء المفتاح الأساسي. سيستخدم وضع [GenerationType.</span><i><b><span style="color: #0000c0">IDENTITY</span></b></i><span style="color: #000000">] وضع [AUTO_INCREMENT] مع MySQL. مع نظام إدارة قواعد البيانات (DBMS) آخر، سيستخدم هذا الوضع طريقة مختلفة. الميزة هي أن المطور لا يحتاج إلى القلق بشأن هذا الأمر، ويظل كوده صالحًا بغض النظر عن نظام إدارة قواعد البيانات المستخدم؛</span>
+  <li><span style="color: #000000">السطر 17: تحدد التعليقة التوضيحية [</span><span style="color: #646464">@<bdi dir="ltr" class="odt-ltr-term">GeneratedValue</bdi></span><span style="color: #000000">(<bdi dir="ltr" class="odt-ltr-term">strategy</bdi>=<bdi dir="ltr" class="odt-ltr-term">GenerationType.</bdi></span><i><b><span style="color: #0000c0"><bdi dir="ltr" class="odt-ltr-term">IDENTITY</bdi></span></b></i><span style="color: #000000">)] وضع إنشاء المفتاح الأساسي. سيستخدم وضع [<bdi dir="ltr" class="odt-ltr-term">GenerationType.</bdi></span><i><b><span style="color: #0000c0"><bdi dir="ltr" class="odt-ltr-term">IDENTITY</bdi></span></b></i><span style="color: #000000">] وضع [<bdi dir="ltr" class="odt-ltr-term">AUTO_INCREMENT</bdi>] مع <bdi dir="ltr" class="odt-ltr-term">MySQL.</bdi> مع نظام إدارة قواعد البيانات (<bdi dir="ltr" class="odt-ltr-term">DBMS</bdi>) آخر، سيستخدم هذا الوضع طريقة مختلفة. الميزة هي أن المطور لا يحتاج إلى القلق بشأن هذا الأمر، ويظل كوده صالحًا بغض النظر عن نظام إدارة قواعد البيانات المستخدم؛</span>
   </li>
-  <li><span style="color: #000000">السطر 18: تحدد العلامة [@Column] العمود المرتبط بالحقل. عندما لا تكون هذه العلامة موجودة، يفترض JPA أن العمود يحمل نفس اسم الحقل. وهذا هو الحال هنا. لذلك، كان بإمكاننا حذف هذه العلامة؛</span>
+  <li><span style="color: #000000">السطر 18: تحدد العلامة [@<bdi dir="ltr" class="odt-ltr-term">Column</bdi>] العمود المرتبط بالحقل. عندما لا تكون هذه العلامة موجودة، يفترض <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> أن العمود يحمل نفس اسم الحقل. وهذا هو الحال هنا. لذلك، كان بإمكاننا حذف هذه العلامة؛</span>
   </li>
-  <li><span style="color: #000000">السطر 20: تشير التعليقة التوضيحية [</span><span style="color: #646464">@Version</span><span style="color: #000000">] إلى أن الحقل [version] مرتبط بعمود الإصدار. سيقوم تطبيق JPA بزيادة رقم الإصدار هذا في كل مرة يتم فيها تعديل الكيان. يُستخدم هذا الرقم لمنع التحديثات المتزامنة للكيان من قبل مستخدمين مختلفين: يقرأ مستخدمان، U1 و U2، الكيان E برقم إصدار يساوي V1. يعدل U1 الكيان E ويحفظ هذا التغيير في قاعدة البيانات: ثم يتغير رقم الإصدار إلى V1+1. يقوم U2 بدوره بتعديل الكيان E ويحفظ هذا التغيير في قاعدة البيانات: سيتلقى استثناءً لأن إصداره (V1) يختلف عن الإصدار الموجود في قاعدة البيانات (V1+1)؛</span>
+  <li><span style="color: #000000">السطر 20: تشير التعليقة التوضيحية [</span><span style="color: #646464">@<bdi dir="ltr" class="odt-ltr-term">Version</bdi></span><span style="color: #000000">] إلى أن الحقل [<bdi dir="ltr" class="odt-ltr-term">version</bdi>] مرتبط بعمود الإصدار. سيقوم تطبيق <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> بزيادة رقم الإصدار هذا في كل مرة يتم فيها تعديل الكيان. يُستخدم هذا الرقم لمنع التحديثات المتزامنة للكيان من قبل مستخدمين مختلفين: يقرأ مستخدمان، <bdi dir="ltr" class="odt-ltr-term">U1</bdi> و <bdi dir="ltr" class="odt-ltr-term">U2</bdi>، الكيان <bdi dir="ltr" class="odt-ltr-term">E</bdi> برقم إصدار يساوي <bdi dir="ltr" class="odt-ltr-term">V1.</bdi> يعدل <bdi dir="ltr" class="odt-ltr-term">U1</bdi> الكيان <bdi dir="ltr" class="odt-ltr-term">E</bdi> ويحفظ هذا التغيير في قاعدة البيانات: ثم يتغير رقم الإصدار إلى <bdi dir="ltr" class="odt-ltr-term">V1+1.</bdi> يقوم <bdi dir="ltr" class="odt-ltr-term">U2</bdi> بدوره بتعديل الكيان <bdi dir="ltr" class="odt-ltr-term">E</bdi> ويحفظ هذا التغيير في قاعدة البيانات: سيتلقى استثناءً لأن إصداره (<bdi dir="ltr" class="odt-ltr-term">V1</bdi>) يختلف عن الإصدار الموجود في قاعدة البيانات (<bdi dir="ltr" class="odt-ltr-term">V1+1</bdi>)؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 35–52: إعادة تعريف طريقتي [hashCode] و [equals]. بشكل افتراضي، تُرجع [obj1.equals(obj2)] القيمة true إذا كان [obj1 == obj2]، أي إذا كان obj1 و obj2 مؤشرين متساويين. إذا أردنا مقارنة الكائنات المشار إليها بدلاً من المؤشرات نفسها، يجب علينا تجاوز طريقة [equals] وطريقة [hashCode]. يجب أن تُرجع الطريقة الأخيرة نفس القيمة لكائنين تعتبرهما طريقة [equals] متساويين؛</span>
+  <li><span style="color: #000000">الأسطر 35–52: إعادة تعريف طريقتي [<bdi dir="ltr" class="odt-ltr-term">hashCode</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">equals</bdi>]. بشكل افتراضي، تُرجع [<bdi dir="ltr" class="odt-ltr-term">obj1.equals</bdi>(<bdi dir="ltr" class="odt-ltr-term">obj2</bdi>)] القيمة <bdi dir="ltr" class="odt-ltr-term">true</bdi> إذا كان [<bdi dir="ltr" class="odt-ltr-term">obj1</bdi> == <bdi dir="ltr" class="odt-ltr-term">obj2</bdi>]، أي إذا كان <bdi dir="ltr" class="odt-ltr-term">obj1</bdi> و <bdi dir="ltr" class="odt-ltr-term">obj2</bdi> مؤشرين متساويين. إذا أردنا مقارنة الكائنات المشار إليها بدلاً من المؤشرات نفسها، يجب علينا تجاوز طريقة [<bdi dir="ltr" class="odt-ltr-term">equals</bdi>] وطريقة [<bdi dir="ltr" class="odt-ltr-term">hashCode</bdi>]. يجب أن تُرجع الطريقة الأخيرة نفس القيمة لكائنين تعتبرهما طريقة [<bdi dir="ltr" class="odt-ltr-term">equals</bdi>] متساويين؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 42–51: سيتم اعتبار كائنين من النوع [AbstractEntity] أو الأنواع المشتقة متساويين إذا كانت مفاتيحهما الأساسية [id] متساوية؛</span>
+  <li><span style="color: #000000">الأسطر 42–51: سيتم اعتبار كائنين من النوع [<bdi dir="ltr" class="odt-ltr-term">AbstractEntity</bdi>] أو الأنواع المشتقة متساويين إذا كانت مفاتيحهما الأساسية [<bdi dir="ltr" class="odt-ltr-term">id</bdi>] متساوية؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 35-38: تعيد طريقة [hashCode] بالفعل نفس القيمة لكائنين متطابقين من نوع [AbstractEntity] واللذين لهما بالتالي نفس المفتاح الأساسي [id]؛</span>
+  <li><span style="color: #000000">الأسطر 35-38: تعيد طريقة [<bdi dir="ltr" class="odt-ltr-term">hashCode</bdi>] بالفعل نفس القيمة لكائنين متطابقين من نوع [<bdi dir="ltr" class="odt-ltr-term">AbstractEntity</bdi>] واللذين لهما بالتالي نفس المفتاح الأساسي [<bdi dir="ltr" class="odt-ltr-term">id</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 55-63: تُرجع طريقة [toString] سلسلة JSON للكائن [this]. إذا كان هذا الكائن يشير إلى فئة فرعية، فستُرجع هذه الطريقة سلسلة JSON للفئة الفرعية. وهذا يلغي الحاجة إلى إنشاء طريقة [toString] في الفئات الفرعية؛</span>
+  <li><span style="color: #000000">الأسطر 55-63: تُرجع طريقة [<bdi dir="ltr" class="odt-ltr-term">toString</bdi>] سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> للكائن [<bdi dir="ltr" class="odt-ltr-term">this</bdi>]. إذا كان هذا الكائن يشير إلى فئة فرعية، فستُرجع هذه الطريقة سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> للفئة الفرعية. وهذا يلغي الحاجة إلى إنشاء طريقة [<bdi dir="ltr" class="odt-ltr-term">toString</bdi>] في الفئات الفرعية؛</span>
   </li>
 </ul>
 <p><a id="refheading1961161114084373"></a></p>
-<h4 id="11352-jpa-product">11.3.5.2. <span style="color: #4f81bd">كيان JPA [Product]</span></h4>
-<p>فئة [Product] هي كيان JPA مرتبط بصف في جدول [PRODUCTS]:</p>
+<h4 id="11352-jpa-product">11.3.5.2. <span style="color: #4f81bd">كيان <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> [<bdi dir="ltr" class="odt-ltr-term">Product</bdi>]</span></h4>
+<p>فئة [<bdi dir="ltr" class="odt-ltr-term">Product</bdi>] هي كيان <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> مرتبط بصف في جدول [<bdi dir="ltr" class="odt-ltr-term">PRODUCTS</bdi>]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000024F000000AC2E1845DE.png" width="427" height="124" style="display:inline-block; margin:4px;width:11.299cm;height:3.288cm;" class="odt-zoomable" data-zoom-src="images/100000000000024F000000AC2E1845DE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -2620,24 +2622,24 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 12: تجعل العلامة [@Entity] فئة [Product] كيانًا تديره طبقة [JPA]؛
+  <li>السطر 12: تجعل العلامة [@<bdi dir="ltr" class="odt-ltr-term">Entity</bdi>] فئة [<bdi dir="ltr" class="odt-ltr-term">Product</bdi>] كيانًا تديره طبقة [<bdi dir="ltr" class="odt-ltr-term">JPA</bdi>]؛
   </li>
-  <li>السطر 13: تشير العلامة [@Table(name = &quot;PRODUCTS&quot;)] إلى أن فئة [Product] تمثل صفًا في جدول [PRODUCTS] في قاعدة البيانات؛
+  <li>السطر 13: تشير العلامة [@<bdi dir="ltr" class="odt-ltr-term">Table</bdi>(<bdi dir="ltr" class="odt-ltr-term">name</bdi> = &quot;<bdi dir="ltr" class="odt-ltr-term">PRODUCTS</bdi>&quot;)] إلى أن فئة [<bdi dir="ltr" class="odt-ltr-term">Product</bdi>] تمثل صفًا في جدول [<bdi dir="ltr" class="odt-ltr-term">PRODUCTS</bdi>] في قاعدة البيانات؛
   </li>
-  <li>السطر 14: اسم مرشح JSON المراد تطبيقه على الكيان. سنلاحظ أن الخاصية [<span style="color: #0000c0">categorie</span>] في السطر 13 ليست متاحة دائمًا. ولذلك يجب استبعادها من تمثيل JSON للكائن. وللقيام بذلك، نحتاج إلى مرشح. لذا سنحدد ما إذا كنا نريد تضمين الخاصية [<span style="color: #0000c0">categorie</span>] أم لا في مرشح باسم [<span style="color: #2a00ff">jsonFilterCategorie</span>]؛
+  <li>السطر 14: اسم مرشح <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> المراد تطبيقه على الكيان. سنلاحظ أن الخاصية [<span style="color: #0000c0"><bdi dir="ltr" class="odt-ltr-term">categorie</bdi></span>] في السطر 13 ليست متاحة دائمًا. ولذلك يجب استبعادها من تمثيل <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> للكائن. وللقيام بذلك، نحتاج إلى مرشح. لذا سنحدد ما إذا كنا نريد تضمين الخاصية [<span style="color: #0000c0"><bdi dir="ltr" class="odt-ltr-term">categorie</bdi></span>] أم لا في مرشح باسم [<span style="color: #2a00ff"><bdi dir="ltr" class="odt-ltr-term">jsonFilterCategorie</bdi></span>]؛
   </li>
-  <li>السطر 18: تربط التعليقة التوضيحية [@Column] الحقل [nom] بالعمود [NOM] في الجدول [PRODUITS]. عندما يكون للحقل نفس اسم العمود المرتبط به، يمكن حذف التعليقة التوضيحية [@Column]. وهذا هو الحال هنا؛
+  <li>السطر 18: تربط التعليقة التوضيحية [@<bdi dir="ltr" class="odt-ltr-term">Column</bdi>] الحقل [<bdi dir="ltr" class="odt-ltr-term">nom</bdi>] بالعمود [<bdi dir="ltr" class="odt-ltr-term">NOM</bdi>] في الجدول [<bdi dir="ltr" class="odt-ltr-term">PRODUITS</bdi>]. عندما يكون للحقل نفس اسم العمود المرتبط به، يمكن حذف التعليقة التوضيحية [@<bdi dir="ltr" class="odt-ltr-term">Column</bdi>]. وهذا هو الحال هنا؛
   </li>
   <li>الأسطر 31-33: فئة المنتج؛
   </li>
-  <li>السطر 31: تشير العلامة [<span style="color: #646464">@ManyToOne</span>] إلى أن العمود المشار إليه في العلامة الموجودة في السطر 32 [<span style="color: #646464">@JoinColumn</span><span style="color: #000000">(name = </span><span style="color: #2a00ff">&quot;CATEGORIE_ID&quot;</span><span style="color: #000000">)</span>] هو مفتاح خارجي من جدول [PRODUCTS] الخاص بكيان [Product] إلى جدول [CATEGORIES] المرتبط بالكيان الموجود في السطر 33. يجب تطبيق هذه العلامة على كيان JPA. لذلك، يجب أن تكون الفئة في السطر 33 كيان JPA؛
+  <li>السطر 31: تشير العلامة [<span style="color: #646464">@<bdi dir="ltr" class="odt-ltr-term">ManyToOne</bdi></span>] إلى أن العمود المشار إليه في العلامة الموجودة في السطر 32 [<span style="color: #646464">@<bdi dir="ltr" class="odt-ltr-term">JoinColumn</bdi></span><span style="color: #000000">(<bdi dir="ltr" class="odt-ltr-term">name</bdi> = </span><span style="color: #2a00ff">&quot;<bdi dir="ltr" class="odt-ltr-term">CATEGORIE_ID</bdi>&quot;</span><span style="color: #000000">)</span>] هو مفتاح خارجي من جدول [<bdi dir="ltr" class="odt-ltr-term">PRODUCTS</bdi>] الخاص بكيان [<bdi dir="ltr" class="odt-ltr-term">Product</bdi>] إلى جدول [<bdi dir="ltr" class="odt-ltr-term">CATEGORIES</bdi>] المرتبط بالكيان الموجود في السطر 33. يجب تطبيق هذه العلامة على كيان <bdi dir="ltr" class="odt-ltr-term">JPA.</bdi> لذلك، يجب أن تكون الفئة في السطر 33 كيان <bdi dir="ltr" class="odt-ltr-term">JPA</bdi>؛
   </li>
-  <li>السطر 31: تحدد التعليقة [<span style="color: #000000">fetch = FetchType.</span><i><b><span style="color: #0000c0">LAZY</span></b></i>] أنه عند استرداد منتج من جدول [PRODUCTS]، لا يتم استرداد فئته (السطر 33) على الفور (التحميل المتأخر). ثم يتم الحصول عليها أثناء أول استدعاء لطريقة [getCategory]. هذه السمة <b>ليست إلزامية</b>. يُسمح لتنفيذ JPA المستخدم بتجاهلها. ولأن خاصية [<span style="color: #0000c0">category</span>] قد تكون موجودة أو غير موجودة، فقد أدخلنا مرشح JSON في السطر 14. لا تتعامل تطبيقات JPA الحالية (Hibernate، Eclipselink، OpenJPA) مع هذا التعليق التوضيحي بنفس الطريقة. يعزز Hibernate الطريقة الأولية [getCategory] (التي تعيد ببساطة حقل <i>الفئة</i>) عن طريق إجراء استدعاء إلى نظام إدارة قواعد البيانات (DBMS) لاسترداد الفئة. لكي يعمل هذا، يجب أن يظل اتصال نظام إدارة قواعد البيانات (DBMS) المستخدم في البداية لاسترداد المنتج مفتوحًا؛ وإلا، تحدث استثناء.
+  <li>السطر 31: تحدد التعليقة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">fetch</bdi> = <bdi dir="ltr" class="odt-ltr-term">FetchType.</bdi></span><i><b><span style="color: #0000c0"><bdi dir="ltr" class="odt-ltr-term">LAZY</bdi></span></b></i>] أنه عند استرداد منتج من جدول [<bdi dir="ltr" class="odt-ltr-term">PRODUCTS</bdi>]، لا يتم استرداد فئته (السطر 33) على الفور (التحميل المتأخر). ثم يتم الحصول عليها أثناء أول استدعاء لطريقة [<bdi dir="ltr" class="odt-ltr-term">getCategory</bdi>]. هذه السمة <b>ليست إلزامية</b>. يُسمح لتنفيذ <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> المستخدم بتجاهلها. ولأن خاصية [<span style="color: #0000c0"><bdi dir="ltr" class="odt-ltr-term">category</bdi></span>] قد تكون موجودة أو غير موجودة، فقد أدخلنا مرشح <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> في السطر 14. لا تتعامل تطبيقات <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> الحالية (<bdi dir="ltr" class="odt-ltr-term">Hibernate</bdi>، <bdi dir="ltr" class="odt-ltr-term">Eclipselink</bdi>، <bdi dir="ltr" class="odt-ltr-term">OpenJPA</bdi>) مع هذا التعليق التوضيحي بنفس الطريقة. يعزز <bdi dir="ltr" class="odt-ltr-term">Hibernate</bdi> الطريقة الأولية [<bdi dir="ltr" class="odt-ltr-term">getCategory</bdi>] (التي تعيد ببساطة حقل <i>الفئة</i>) عن طريق إجراء استدعاء إلى نظام إدارة قواعد البيانات (<bdi dir="ltr" class="odt-ltr-term">DBMS</bdi>) لاسترداد الفئة. لكي يعمل هذا، يجب أن يظل اتصال نظام إدارة قواعد البيانات (<bdi dir="ltr" class="odt-ltr-term">DBMS</bdi>) المستخدم في البداية لاسترداد المنتج مفتوحًا؛ وإلا، تحدث استثناء.
   </li>
 </ul>
 <p><a id="refheading1961181114084373"></a></p>
-<h4 id="11353-jpa-category">11.3.5.3. <span style="color: #4f81bd">كيان JPA [Category]</span></h4>
-<p>فئة [Category] هي كيان JPA مرتبط بصف في جدول [CATEGORIES]:</p>
+<h4 id="11353-jpa-category">11.3.5.3. <span style="color: #4f81bd">كيان <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> [<bdi dir="ltr" class="odt-ltr-term">Category</bdi>]</span></h4>
+<p>فئة [<bdi dir="ltr" class="odt-ltr-term">Category</bdi>] هي كيان <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> مرتبط بصف في جدول [<bdi dir="ltr" class="odt-ltr-term">CATEGORIES</bdi>]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000219000000692D8D8733.png" width="376" height="73" style="display:inline-block; margin:4px;width:9.94cm;height:1.944cm;" class="odt-zoomable" data-zoom-src="images/1000000000000219000000692D8D8733.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p>وإليك كودها:</p>
@@ -2696,21 +2698,21 @@
   </li>
   <li>السطران 25-26: المنتجات في هذه الفئة؛
   </li>
-  <li>السطر 25: التعليق التوضيحي [<span style="color: #646464">@OneToMany</span>] هو <b>العلاقة العكسية </b>للعلاقة [@ManyToOne] التي صادفناها في كيان [Product]. تحدد السمة [<span style="color: #000000">mappedBy = </span><span style="color: #2a00ff">&quot;category&quot;</span>] الحقل في كيان [Product] المعلق عليه بالعلاقة العكسية [@ManyToOne]. تحدد السمة [<span style="color: #000000">cascade = { CascadeType.</span><i><b><span style="color: #0000c0">ALL </span></b></i><span style="color: #000000">}</span>] أن العمليات (persist، merge، remove) التي يتم إجراؤها على @Entity [Category] يجب أن تتسلسل إلى [products] في السطر 26. يمكن تحديد التسلسلات الجزئية باستخدام الثوابت [<span style="color: #000000">CascadeType.</span><i><b><span style="color: #0000c0">PERSIST</span></b></i><span style="color: #0000c0">، </span><span style="color: #000000">CascadeType.</span><i><b><span style="color: #0000c0">MERGE</span></b></i><i><span style="color: #0000c0">، </span></i><span style="color: #000000">CascadeType.</span><i><b><span style="color: #0000c0">REMOVE</span></b></i>]؛
+  <li>السطر 25: التعليق التوضيحي [<span style="color: #646464">@<bdi dir="ltr" class="odt-ltr-term">OneToMany</bdi></span>] هو <b>العلاقة العكسية </b>للعلاقة [@<bdi dir="ltr" class="odt-ltr-term">ManyToOne</bdi>] التي صادفناها في كيان [<bdi dir="ltr" class="odt-ltr-term">Product</bdi>]. تحدد السمة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">mappedBy</bdi> = </span><span style="color: #2a00ff">&quot;<bdi dir="ltr" class="odt-ltr-term">category</bdi>&quot;</span>] الحقل في كيان [<bdi dir="ltr" class="odt-ltr-term">Product</bdi>] المعلق عليه بالعلاقة العكسية [@<bdi dir="ltr" class="odt-ltr-term">ManyToOne</bdi>]. تحدد السمة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">cascade</bdi> = { <bdi dir="ltr" class="odt-ltr-term">CascadeType.</bdi></span><i><b><span style="color: #0000c0"><bdi dir="ltr" class="odt-ltr-term">ALL</bdi> </span></b></i><span style="color: #000000">}</span>] أن العمليات (<bdi dir="ltr" class="odt-ltr-term">persist</bdi>، <bdi dir="ltr" class="odt-ltr-term">merge</bdi>، <bdi dir="ltr" class="odt-ltr-term">remove</bdi>) التي يتم إجراؤها على @<bdi dir="ltr" class="odt-ltr-term">Entity</bdi> [<bdi dir="ltr" class="odt-ltr-term">Category</bdi>] يجب أن تتسلسل إلى [<bdi dir="ltr" class="odt-ltr-term">products</bdi>] في السطر 26. يمكن تحديد التسلسلات الجزئية باستخدام الثوابت [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">CascadeType.</bdi></span><i><b><span style="color: #0000c0"><bdi dir="ltr" class="odt-ltr-term">PERSIST</bdi></span></b></i><span style="color: #0000c0">، </span><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">CascadeType.</bdi></span><i><b><span style="color: #0000c0"><bdi dir="ltr" class="odt-ltr-term">MERGE</bdi></span></b></i><i><span style="color: #0000c0">، </span></i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">CascadeType.</bdi></span><i><b><span style="color: #0000c0"><bdi dir="ltr" class="odt-ltr-term">REMOVE</bdi></span></b></i>]؛
   </li>
-  <li>السطر 25: تحدد السمة [<span style="color: #000000">fetch = FetchType.</span><i><b><span style="color: #0000c0">LAZY</span></b></i>] أنه عند استرداد فئة من جدول [CATEGORIES]، لا يتم استرداد منتجاتها على الفور. سيتم استردادها أثناء أول استدعاء لطريقة [getProduits]. لا تتعامل تطبيقات JPA الحالية (Hibernate، Eclipselink، OpenJPA) مع هذا التعليق التوضيحي بنفس الطريقة. يعزز Hibernate الأسلوب [getProduits] الأولي (الذي يعرض حقل <i>المنتجات</i> ببساطة) عن طريق إجراء استدعاء إلى نظام إدارة قواعد البيانات (DBMS) لجلب المنتجات الخاصة بالفئة. لكي يكون ذلك ممكنًا، يجب أن يظل الاتصال بنظام إدارة قواعد البيانات (DBMS) المستخدم في البداية لاسترداد الفئة مفتوحًا. هذه السمة <b>إلزامية</b>. لا يمكن لتطبيق JPA تجاهلها. نظرًا لأن الخاصية [products] قد يتم تهيئتها أو لا يتم تهيئتها، فقد أدخلنا مرشح JSON في السطر 17، والذي يسمح لنا بتحديد ما إذا كنا نريد هذه الخاصية أم لا؛
+  <li>السطر 25: تحدد السمة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">fetch</bdi> = <bdi dir="ltr" class="odt-ltr-term">FetchType.</bdi></span><i><b><span style="color: #0000c0"><bdi dir="ltr" class="odt-ltr-term">LAZY</bdi></span></b></i>] أنه عند استرداد فئة من جدول [<bdi dir="ltr" class="odt-ltr-term">CATEGORIES</bdi>]، لا يتم استرداد منتجاتها على الفور. سيتم استردادها أثناء أول استدعاء لطريقة [<bdi dir="ltr" class="odt-ltr-term">getProduits</bdi>]. لا تتعامل تطبيقات <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> الحالية (<bdi dir="ltr" class="odt-ltr-term">Hibernate</bdi>، <bdi dir="ltr" class="odt-ltr-term">Eclipselink</bdi>، <bdi dir="ltr" class="odt-ltr-term">OpenJPA</bdi>) مع هذا التعليق التوضيحي بنفس الطريقة. يعزز <bdi dir="ltr" class="odt-ltr-term">Hibernate</bdi> الأسلوب [<bdi dir="ltr" class="odt-ltr-term">getProduits</bdi>] الأولي (الذي يعرض حقل <i>المنتجات</i> ببساطة) عن طريق إجراء استدعاء إلى نظام إدارة قواعد البيانات (<bdi dir="ltr" class="odt-ltr-term">DBMS</bdi>) لجلب المنتجات الخاصة بالفئة. لكي يكون ذلك ممكنًا، يجب أن يظل الاتصال بنظام إدارة قواعد البيانات (<bdi dir="ltr" class="odt-ltr-term">DBMS</bdi>) المستخدم في البداية لاسترداد الفئة مفتوحًا. هذه السمة <b>إلزامية</b>. لا يمكن لتطبيق <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> تجاهلها. نظرًا لأن الخاصية [<bdi dir="ltr" class="odt-ltr-term">products</bdi>] قد يتم تهيئتها أو لا يتم تهيئتها، فقد أدخلنا مرشح <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> في السطر 17، والذي يسمح لنا بتحديد ما إذا كنا نريد هذه الخاصية أم لا؛
   </li>
-  <li>السطر 26: النوع [Set] هو واجهة. النوع [HashSet] هو فئة تنفذ هذه الواجهة. وهي تنفذ مجموعة من العناصر تسمى <i>مجموعة</i>. لا يمكن أن تحتوي المجموعة على كائنين متطابقين. هنا، الكائنات من النوع [Product]. وبالتالي، لا يمكن أن يكون لدينا كائنان متطابقان داخل المجموعة. نظرًا لأن طريقة [equals] للفئة الأصلية [AbstractEntity] قد تم تجاوزها لتشير إلى أن المنتجين متطابقان إذا كان لهما نفس المفتاح الأساسي، لا يمكن أن يحتوي الحقل [products] على منتجين لهما نفس المفتاح الأساسي؛
+  <li>السطر 26: النوع [<bdi dir="ltr" class="odt-ltr-term">Set</bdi>] هو واجهة. النوع [<bdi dir="ltr" class="odt-ltr-term">HashSet</bdi>] هو فئة تنفذ هذه الواجهة. وهي تنفذ مجموعة من العناصر تسمى <i>مجموعة</i>. لا يمكن أن تحتوي المجموعة على كائنين متطابقين. هنا، الكائنات من النوع [<bdi dir="ltr" class="odt-ltr-term">Product</bdi>]. وبالتالي، لا يمكن أن يكون لدينا كائنان متطابقان داخل المجموعة. نظرًا لأن طريقة [<bdi dir="ltr" class="odt-ltr-term">equals</bdi>] للفئة الأصلية [<bdi dir="ltr" class="odt-ltr-term">AbstractEntity</bdi>] قد تم تجاوزها لتشير إلى أن المنتجين متطابقان إذا كان لهما نفس المفتاح الأساسي، لا يمكن أن يحتوي الحقل [<bdi dir="ltr" class="odt-ltr-term">products</bdi>] على منتجين لهما نفس المفتاح الأساسي؛
   </li>
-  <li>الأسطر 38–43: تسمح طريقة [addProduct] بإضافة منتج إلى الفئة؛
+  <li>الأسطر 38–43: تسمح طريقة [<bdi dir="ltr" class="odt-ltr-term">addProduct</bdi>] بإضافة منتج إلى الفئة؛
   </li>
 </ul>
 <p><a id="refheading2192522014630537"></a></p>
-<h3 id="1136-spring-data">11.3.6. <span style="color: #4f81bd">طبقة [Spring Data]</span></h3>
-<p>طبقة [<strong>DAO</strong>] طبقة [<strong>Console</strong>] طبقة [<strong>JPA</strong>] برنامج تشغيل [<strong>JDBC</strong>] طبقة [<strong>Spring Data</strong>] Spring 4DBMS</p>
+<h3 id="1136-spring-data">11.3.6. <span style="color: #4f81bd">طبقة [<bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi>]</span></h3>
+<p>طبقة [<strong><bdi dir="ltr" class="odt-ltr-term">DAO</bdi></strong>] طبقة [<strong><bdi dir="ltr" class="odt-ltr-term">Console</bdi></strong>] طبقة [<strong><bdi dir="ltr" class="odt-ltr-term">JPA</bdi></strong>] برنامج تشغيل [<strong><bdi dir="ltr" class="odt-ltr-term">JDBC</bdi></strong>] طبقة [<strong><bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi></strong>] <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> 4DBMS</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000010000000139D8D8F9D3.png" width="179" height="219" style="display:inline-block; margin:4px;width:4.74cm;height:5.794cm;" class="odt-zoomable" data-zoom-src="images/100000000000010000000139D8D8F9D3.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>تدير واجهة [CategoriesRepository] الوصول إلى جدول [CATEGORIES]:</p>
+<p>تدير واجهة [<bdi dir="ltr" class="odt-ltr-term">CategoriesRepository</bdi>] الوصول إلى جدول [<bdi dir="ltr" class="odt-ltr-term">CATEGORIES</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.data.repositories;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2734,31 +2736,31 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 8: تم استخدام واجهة [CrudRepository] وشرحها في <a href="#crudrepository"><u><span style="color: #0563c1">القسم 11.2.3</span></u></a>. تذكر أن:
+  <li>السطر 8: تم استخدام واجهة [<bdi dir="ltr" class="odt-ltr-term">CrudRepository</bdi>] وشرحها في <a href="#crudrepository"><u><span style="color: #0563c1">القسم 11.2.3</span></u></a>. تذكر أن:
     <ul>
-      <li>النوع الأول للواجهة هو كيان JPA الذي تتم إدارته لعمليات CRUD (findOne، findAll، save، delete، deleteAll)،
+      <li>النوع الأول للواجهة هو كيان <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> الذي تتم إدارته لعمليات <bdi dir="ltr" class="odt-ltr-term">CRUD</bdi> (<bdi dir="ltr" class="odt-ltr-term">findOne</bdi>، <bdi dir="ltr" class="odt-ltr-term">findAll</bdi>، <bdi dir="ltr" class="odt-ltr-term">save</bdi>، <bdi dir="ltr" class="odt-ltr-term">delete</bdi>، <bdi dir="ltr" class="odt-ltr-term">deleteAll</bdi>)،
       </li>
-      <li>النوع الثاني هو المفتاح الأساسي لكيان JPA، وهو هنا عدد صحيح [Long]؛
+      <li>النوع الثاني هو المفتاح الأساسي لكيان <bdi dir="ltr" class="odt-ltr-term">JPA</bdi>، وهو هنا عدد صحيح [<bdi dir="ltr" class="odt-ltr-term">Long</bdi>]؛
       </li>
     </ul>
   </li>
-  <li>السطر 12: يتم تنفيذ الطريقة الموجودة في السطر 12 بواسطة استعلام JPQL (لغة استعلام الاستمرارية في Java) الموجود في السطر 11. يسترد هذا الاستعلام كيانات JPA. في مثل هذا الاستعلام:
+  <li>السطر 12: يتم تنفيذ الطريقة الموجودة في السطر 12 بواسطة استعلام <bdi dir="ltr" class="odt-ltr-term">JPQL</bdi> (لغة استعلام الاستمرارية في <bdi dir="ltr" class="odt-ltr-term">Java</bdi>) الموجود في السطر 11. يسترد هذا الاستعلام كيانات <bdi dir="ltr" class="odt-ltr-term">JPA.</bdi> في مثل هذا الاستعلام:
     <ul>
-      <li>يتم استبدال الجداول بكيانات JPA المرتبطة بها؛
+      <li>يتم استبدال الجداول بكيانات <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> المرتبطة بها؛
       </li>
-      <li>يتم استبدال الأعمدة بحقول كيانات JPA المستخدمة في الاستعلام؛
+      <li>يتم استبدال الأعمدة بحقول كيانات <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> المستخدمة في الاستعلام؛
       </li>
     </ul>
   </li>
-  <li>السطر 11: يعرض استعلام JPQL فئة مع منتجاتها. تذكر أنه في كيان [Category]، كان للحقل [products] السمة [fetch = FetchType.LAZY] (التحميل المتأخر). في استعلام JPQL، نفرض تحميل المنتجات باستخدام الكلمة الرئيسية [fetch]. سيتم استبدال المعلمة<b> ?1 </b>للاستعلام في وقت التشغيل بقيمة المعلمة الأولى للطريقة في السطر 12، أي المعلمة [Long id]؛
+  <li>السطر 11: يعرض استعلام <bdi dir="ltr" class="odt-ltr-term">JPQL</bdi> فئة مع منتجاتها. تذكر أنه في كيان [<bdi dir="ltr" class="odt-ltr-term">Category</bdi>]، كان للحقل [<bdi dir="ltr" class="odt-ltr-term">products</bdi>] السمة [<bdi dir="ltr" class="odt-ltr-term">fetch</bdi> = <bdi dir="ltr" class="odt-ltr-term">FetchType.LAZY</bdi>] (التحميل المتأخر). في استعلام <bdi dir="ltr" class="odt-ltr-term">JPQL</bdi>، نفرض تحميل المنتجات باستخدام الكلمة الرئيسية [<bdi dir="ltr" class="odt-ltr-term">fetch</bdi>]. سيتم استبدال المعلمة<b> ?1 </b>للاستعلام في وقت التشغيل بقيمة المعلمة الأولى للطريقة في السطر 12، أي المعلمة [<bdi dir="ltr" class="odt-ltr-term">Long id</bdi>]؛
   </li>
   <li>السطران 14-15: طريقة مماثلة لفئة محددة باسمها؛
   </li>
-  <li>السطر 18: سيتم تنفيذ الطريقة [findByName] تلقائيًا بواسطة [Spring Data] لأن النوع [Category] يحتوي على حقل [name]؛
+  <li>السطر 18: سيتم تنفيذ الطريقة [<bdi dir="ltr" class="odt-ltr-term">findByName</bdi>] تلقائيًا بواسطة [<bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi>] لأن النوع [<bdi dir="ltr" class="odt-ltr-term">Category</bdi>] يحتوي على حقل [<bdi dir="ltr" class="odt-ltr-term">name</bdi>]؛
   </li>
 </ul>
 
-<p>تدير واجهة [ProductsRepository] الوصول إلى جدول [PRODUCTS]:</p>
+<p>تدير واجهة [<bdi dir="ltr" class="odt-ltr-term">ProductsRepository</bdi>] الوصول إلى جدول [<bdi dir="ltr" class="odt-ltr-term">PRODUCTS</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.data.repositories;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2781,14 +2783,14 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>التفسيرات هي نفسها كما في واجهة [CategoriesRepository].</p>
-<p>سيتم تنفيذ هذه الواجهات بواسطة فئات يتم إنشاؤها بواسطة [Spring Data] عند تشغيل المشروع. وتسمى هذه الفئات [proxies]. بشكل افتراضي، <strong>يتم تشغيل</strong> أساليب فئة التنفيذ <strong>ضمن معاملة</strong>. وحقيقة أن هذه الواجهات تمتد من فئة [<span style="color: #000000">CrudRepository</span>] تجعلها مكونات Spring.</p>
+<p>التفسيرات هي نفسها كما في واجهة [<bdi dir="ltr" class="odt-ltr-term">CategoriesRepository</bdi>].</p>
+<p>سيتم تنفيذ هذه الواجهات بواسطة فئات يتم إنشاؤها بواسطة [<bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi>] عند تشغيل المشروع. وتسمى هذه الفئات [<bdi dir="ltr" class="odt-ltr-term">proxies</bdi>]. بشكل افتراضي، <strong>يتم تشغيل</strong> أساليب فئة التنفيذ <strong>ضمن معاملة</strong>. وحقيقة أن هذه الواجهات تمتد من فئة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">CrudRepository</bdi></span>] تجعلها مكونات <bdi dir="ltr" class="odt-ltr-term">Spring.</bdi></p>
 <p><a id="refheading2192542014630537"></a></p>
-<h3 id="1137-dao">11.3.7. <span style="color: #4f81bd"><span style="color: #4f81bd">طبقة [DAO]</span></span></h3>
-<p>طبقة [<strong>DAO</strong>] طبقة [<strong>Console</strong>] طبقة [<strong>JPA</strong>] برنامج تشغيل [<strong>JDBC</strong>] طبقة [<strong>Spring Data</strong>] Spring 4DBMS</p>
+<h3 id="1137-dao">11.3.7. <span style="color: #4f81bd"><span style="color: #4f81bd">طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]</span></span></h3>
+<p>طبقة [<strong><bdi dir="ltr" class="odt-ltr-term">DAO</bdi></strong>] طبقة [<strong><bdi dir="ltr" class="odt-ltr-term">Console</bdi></strong>] طبقة [<strong><bdi dir="ltr" class="odt-ltr-term">JPA</bdi></strong>] برنامج تشغيل [<strong><bdi dir="ltr" class="odt-ltr-term">JDBC</bdi></strong>] طبقة [<strong><bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi></strong>] <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> 4DBMS</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D7000000C851D05EDC.png" width="150" height="140" style="display:inline-block; margin:4px;width:3.979cm;height:3.701cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D7000000C851D05EDC.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>واجهة [IDao] لطبقة [DAO] هي كما يلي:</p>
+<p>واجهة [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>] لطبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] هي كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.data.dao;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2843,8 +2845,8 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>هنا، اعتمدنا القاعدة التي تنص على أن أي طريقة تقوم بتعديل الكائنات التي تم تمريرها كمعلمات إدخال يجب أن تعيدها في نتيجتها. تم شرح سبب هذه القاعدة في <a href="#refheading317791812363491"><u><span style="color: #0563c1">القسم 4.2</span></u></a>: فهي تسمح لطبقة وعميلها بالتواجد في جهازي JVM منفصلين وبالتالي العمل في تكوين عميل/خادم.</p>
-<p>فيما يلي تنفيذ [Dao] لهذه الواجهة:</p>
+<p>هنا، اعتمدنا القاعدة التي تنص على أن أي طريقة تقوم بتعديل الكائنات التي تم تمريرها كمعلمات إدخال يجب أن تعيدها في نتيجتها. تم شرح سبب هذه القاعدة في <a href="#refheading317791812363491"><u><span style="color: #0563c1">القسم 4.2</span></u></a>: فهي تسمح لطبقة وعميلها بالتواجد في جهازي <bdi dir="ltr" class="odt-ltr-term">JVM</bdi> منفصلين وبالتالي العمل في تكوين عميل/خادم.</p>
+<p>فيما يلي تنفيذ [<bdi dir="ltr" class="odt-ltr-term">Dao</bdi>] لهذه الواجهة:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.data.dao;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -3018,19 +3020,19 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 16: تجعل العلامة [@Component] فئة [Dao] مكونًا لـ Spring؛
+  <li>السطر 16: تجعل العلامة [@<bdi dir="ltr" class="odt-ltr-term">Component</bdi>] فئة [<bdi dir="ltr" class="odt-ltr-term">Dao</bdi>] مكونًا لـ <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>؛
   </li>
-  <li>الأسطر 19–23: حقن المراجع في واجهتي [CrudRepository] من [Spring Data]. يحدث هذا الحقن أثناء إنشاء مثيلات كائنات Spring، عادةً في بداية تنفيذ مشروع Spring؛
+  <li>الأسطر 19–23: حقن المراجع في واجهتي [<bdi dir="ltr" class="odt-ltr-term">CrudRepository</bdi>] من [<bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi>]. يحدث هذا الحقن أثناء إنشاء مثيلات كائنات <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>، عادةً في بداية تنفيذ مشروع <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>؛
   </li>
-  <li>لاحظ في السطرين 28 و 46 أن طريقة [save] لواجهة [<span style="color: #0000c0">productsRepository</span>] تُستخدم لكل من إدراج المنتجات وتحديثها. يستخدم [Spring Data] المفتاح الأساسي للمنتج لتحديد ما إذا كان سيتم إجراء عملية إدراج أم تحديث. إذا كان المفتاح الأساسي [null]، فستكون العملية إدراجًا؛ وإلا، فستكون تحديثًا؛
+  <li>لاحظ في السطرين 28 و 46 أن طريقة [<bdi dir="ltr" class="odt-ltr-term">save</bdi>] لواجهة [<span style="color: #0000c0"><bdi dir="ltr" class="odt-ltr-term">productsRepository</bdi></span>] تُستخدم لكل من إدراج المنتجات وتحديثها. يستخدم [<bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi>] المفتاح الأساسي للمنتج لتحديد ما إذا كان سيتم إجراء عملية إدراج أم تحديث. إذا كان المفتاح الأساسي [<bdi dir="ltr" class="odt-ltr-term">null</bdi>]، فستكون العملية إدراجًا؛ وإلا، فستكون تحديثًا؛
   </li>
-  <li>السطر 82: نستخدم طريقة [<span style="color: #000000">Lists.</span><i><span style="color: #000000">newArrayList</span></i>] من مكتبة Guava للحصول على قائمة بالمنتجات. تُرجع طريقة [<span style="color: #0000c0">productsRepository</span><span style="color: #000000">.findAll()</span>] نوع [Iterable&lt;Product&gt;]؛
+  <li>السطر 82: نستخدم طريقة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">Lists.</bdi></span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">newArrayList</bdi></span></i>] من مكتبة <bdi dir="ltr" class="odt-ltr-term">Guava</bdi> للحصول على قائمة بالمنتجات. تُرجع طريقة [<span style="color: #0000c0"><bdi dir="ltr" class="odt-ltr-term">productsRepository</bdi></span><span style="color: #000000">.<bdi dir="ltr" class="odt-ltr-term">findAll</bdi>()</span>] نوع [<bdi dir="ltr" class="odt-ltr-term">Iterable</bdi>&lt;<bdi dir="ltr" class="odt-ltr-term">Product</bdi>&gt;]؛
   </li>
-  <li>السطر 28: تُرجع الطريقة [<span style="color: #0000c0">productsRepository</span><span style="color: #000000">.save(</span><span style="color: #6a3e3e">products</span><span style="color: #000000">)</span>] نوع [Iterable&lt;Product&gt;]. وينطبق الأمر نفسه على عمليات [save] الأخرى في الفئة؛
+  <li>السطر 28: تُرجع الطريقة [<span style="color: #0000c0"><bdi dir="ltr" class="odt-ltr-term">productsRepository</bdi></span><span style="color: #000000">.<bdi dir="ltr" class="odt-ltr-term">save</bdi>(</span><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">products</bdi></span><span style="color: #000000">)</span>] نوع [<bdi dir="ltr" class="odt-ltr-term">Iterable</bdi>&lt;<bdi dir="ltr" class="odt-ltr-term">Product</bdi>&gt;]. وينطبق الأمر نفسه على عمليات [<bdi dir="ltr" class="odt-ltr-term">save</bdi>] الأخرى في الفئة؛
   </li>
 </ul>
 
-<p>في فئة [Dao] أعلاه، يتم تغليف الاستثناءات التي قد تحدث في النوع [DaoException] التالي:</p>
+<p>في فئة [<bdi dir="ltr" class="odt-ltr-term">Dao</bdi>] أعلاه، يتم تغليف الاستثناءات التي قد تحدث في النوع [<bdi dir="ltr" class="odt-ltr-term">DaoException</bdi>] التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.data.dao;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -3115,37 +3117,37 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 10: الفئة تمتد من فئة [RuntimeException] وبالتالي فهي استثناء غير معالج؛
+  <li>السطر 10: الفئة تمتد من فئة [<bdi dir="ltr" class="odt-ltr-term">RuntimeException</bdi>] وبالتالي فهي استثناء غير معالج؛
   </li>
   <li>السطر 16: رمز خطأ؛
   </li>
-  <li>السطر 17: قائمة برسائل الخطأ المرتبطة بمكدس الاستثناءات الذي تسبب في [DaoException]؛
+  <li>السطر 17: قائمة برسائل الخطأ المرتبطة بمكدس الاستثناءات الذي تسبب في [<bdi dir="ltr" class="odt-ltr-term">DaoException</bdi>]؛
   </li>
-  <li>الأسطر 59–76: تسترد الطريقة الخاصة [<span style="color: #000000">getMessagesForException</span>] قائمة رسائل الخطأ المرتبطة بالاستثناءات في مكدس الاستثناءات. من الممكن بالفعل تكديس الاستثناءات باستخدام منشئات فئة <b>Exception</b> التالية:
+  <li>الأسطر 59–76: تسترد الطريقة الخاصة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">getMessagesForException</bdi></span>] قائمة رسائل الخطأ المرتبطة بالاستثناءات في مكدس الاستثناءات. من الممكن بالفعل تكديس الاستثناءات باستخدام منشئات فئة <b><bdi dir="ltr" class="odt-ltr-term">Exception</bdi></b> التالية:
     <ul>
-      <li><b>Exception(String message, Throwable cause)</b>: تنشئ استثناءً مع رسالة والاستثناء المراد تغليفه؛
+      <li><b><bdi dir="ltr" class="odt-ltr-term">Exception</bdi>(<bdi dir="ltr" class="odt-ltr-term">String message</bdi>, <bdi dir="ltr" class="odt-ltr-term">Throwable cause</bdi>)</b>: تنشئ استثناءً مع رسالة والاستثناء المراد تغليفه؛
       </li>
-      <li><b>Exception(Throwable cause)</b>: ينشئ استثناءً يحتوي على الاستثناء المراد تغليفه؛
+      <li><b><bdi dir="ltr" class="odt-ltr-term">Exception</bdi>(<bdi dir="ltr" class="odt-ltr-term">Throwable cause</bdi>)</b>: ينشئ استثناءً يحتوي على الاستثناء المراد تغليفه؛
       </li>
     </ul>
   </li>
 </ul>
 
-<p>النوع [Throwable] هو الفئة الأم لفئة [Exception]. إذا تم تنفيذ المنشئات السابقة بشكل متكرر، فسيحتوي الاستثناء النهائي على استثناءات متعددة. ويُشار إلى هذا باسم مكدس الاستثناءات. </p>
+<p>النوع [<bdi dir="ltr" class="odt-ltr-term">Throwable</bdi>] هو الفئة الأم لفئة [<bdi dir="ltr" class="odt-ltr-term">Exception</bdi>]. إذا تم تنفيذ المنشئات السابقة بشكل متكرر، فسيحتوي الاستثناء النهائي على استثناءات متعددة. ويُشار إلى هذا باسم مكدس الاستثناءات. </p>
 <ul>
-  <li>يتم الحصول على السبب الأخير للاستثناء e1 بواسطة التعبير [e1.getCause()]؛
+  <li>يتم الحصول على السبب الأخير للاستثناء <bdi dir="ltr" class="odt-ltr-term">e1</bdi> بواسطة التعبير [<bdi dir="ltr" class="odt-ltr-term">e1.getCause</bdi>()]؛
   </li>
-  <li>يتم الحصول على السبب قبل الأخير للاستثناء e1 باستخدام التعبير [e1.getCause().getCause()]؛
+  <li>يتم الحصول على السبب قبل الأخير للاستثناء <bdi dir="ltr" class="odt-ltr-term">e1</bdi> باستخدام التعبير [<bdi dir="ltr" class="odt-ltr-term">e1.getCause</bdi>().<bdi dir="ltr" class="odt-ltr-term">getCause</bdi>()]؛
   </li>
-  <li>تستمر هذه العملية حتى يتم الحصول على [getCause()==null]؛
+  <li>تستمر هذه العملية حتى يتم الحصول على [<bdi dir="ltr" class="odt-ltr-term">getCause</bdi>()==<bdi dir="ltr" class="odt-ltr-term">null</bdi>]؛
   </li>
 </ul>
 
 <p><a id="refheading2189872014630537"></a></p>
-<h3 id="1138-spring">11.3.8. <span style="color: #4f81bd"><span style="color: #4f81bd">تكوين مشروع Spring</span></span></h3>
+<h3 id="1138-spring">11.3.8. <span style="color: #4f81bd"><span style="color: #4f81bd">تكوين مشروع <bdi dir="ltr" class="odt-ltr-term">Spring</bdi></span></span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EB000000C97BBACDD4.png" width="164" height="141" style="display:inline-block; margin:4px;width:4.35cm;height:3.722cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EB000000C97BBACDD4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>تقوم فئة [DaoConfig] بتكوين طبقة [DAO]:</p>
+<p>تقوم فئة [<bdi dir="ltr" class="odt-ltr-term">DaoConfig</bdi>] بتكوين طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.data.config;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -3227,19 +3229,19 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>تمت مناقشة تكوين مشابه وشرحه في <a href="#springdataconfig"><u><span style="color: #0563c1">القسم 11.2.5</span></u></a>. وقد أضفنا التعليقات التوضيحية التالية لـ Spring:</p>
+<p>تمت مناقشة تكوين مشابه وشرحه في <a href="#springdataconfig"><u><span style="color: #0563c1">القسم 11.2.5</span></u></a>. وقد أضفنا التعليقات التوضيحية التالية لـ <bdi dir="ltr" class="odt-ltr-term">Spring:</bdi></p>
 <ul>
-  <li>السطر 17: تُستخدم تعليمة [<span style="color: #646464">@EnableJpaRepositories</span>] للإشارة إلى الحزم التي توجد بها واجهات [CrudRepository] من [Spring Data]؛
+  <li>السطر 17: تُستخدم تعليمة [<span style="color: #646464">@<bdi dir="ltr" class="odt-ltr-term">EnableJpaRepositories</bdi></span>] للإشارة إلى الحزم التي توجد بها واجهات [<bdi dir="ltr" class="odt-ltr-term">CrudRepository</bdi>] من [<bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi>]؛
   </li>
-  <li>السطر 18: الفئة هي فئة تكوين Spring. هذه المعلومة مهمة. إذا قمنا بإزالتها، فسيظل المشروع يعمل. ومع ذلك، في وقت لاحق من هذا المستند، عندما نقوم بإنشاء مشاريع تعتمد على هذا المشروع، فإن بعضها لن يعمل بعد إزالة التعليق التوضيحي في السطر 18؛
+  <li>السطر 18: الفئة هي فئة تكوين <bdi dir="ltr" class="odt-ltr-term">Spring.</bdi> هذه المعلومة مهمة. إذا قمنا بإزالتها، فسيظل المشروع يعمل. ومع ذلك، في وقت لاحق من هذا المستند، عندما نقوم بإنشاء مشاريع تعتمد على هذا المشروع، فإن بعضها لن يعمل بعد إزالة التعليق التوضيحي في السطر 18؛
   </li>
-  <li>السطر 19: تحدد علامة [<span style="color: #646464">@ComponentScan</span>] الحزم التي توجد فيها كائنات Spring. هذه هي الفئات المُعلَّمة بـ [@Component، @Service، @Controller، ...]. هنا، سيتم العثور على مكون Spring [Dao] وإنشاء مثيل له؛
+  <li>السطر 19: تحدد علامة [<span style="color: #646464">@<bdi dir="ltr" class="odt-ltr-term">ComponentScan</bdi></span>] الحزم التي توجد فيها كائنات <bdi dir="ltr" class="odt-ltr-term">Spring.</bdi> هذه هي الفئات المُعلَّمة بـ [@<bdi dir="ltr" class="odt-ltr-term">Component</bdi>، @<bdi dir="ltr" class="odt-ltr-term">Service</bdi>، @<bdi dir="ltr" class="odt-ltr-term">Controller</bdi>، ...]. هنا، سيتم العثور على مكون <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> [<bdi dir="ltr" class="odt-ltr-term">Dao</bdi>] وإنشاء مثيل له؛
   </li>
-  <li>الأسطر 73–76: لقد قمنا بتعريف bean يمثل مصفوفة الحزم التي سيتم فحصها بحثًا عن كيانات JPA. سيسمح هذا لمشروع يستورد فئة [DaoConfig] بإعادة تعريف هذا bean وبالتالي تغيير الحزم التي يتم فحصها (السطر 59). سنواجه هذه المشكلة لاحقًا في هذا المستند؛
+  <li>الأسطر 73–76: لقد قمنا بتعريف <bdi dir="ltr" class="odt-ltr-term">bean</bdi> يمثل مصفوفة الحزم التي سيتم فحصها بحثًا عن كيانات <bdi dir="ltr" class="odt-ltr-term">JPA.</bdi> سيسمح هذا لمشروع يستورد فئة [<bdi dir="ltr" class="odt-ltr-term">DaoConfig</bdi>] بإعادة تعريف هذا <bdi dir="ltr" class="odt-ltr-term">bean</bdi> وبالتالي تغيير الحزم التي يتم فحصها (السطر 59). سنواجه هذه المشكلة لاحقًا في هذا المستند؛
   </li>
 </ul>
 
-<p>تقوم فئة [AppConfig] بتكوين المشروع بأكمله:</p>
+<p>تقوم فئة [<bdi dir="ltr" class="odt-ltr-term">AppConfig</bdi>] بتكوين المشروع بأكمله:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.data.config;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -3309,33 +3311,33 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 11: الفئة هي فئة تكوين Spring؛
+  <li>السطر 11: الفئة هي فئة تكوين <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>؛
   </li>
-  <li>السطر 12: تستورد الفاصوليا المحددة بواسطة فئة [DaoConfig] التي رأيناها للتو؛
+  <li>السطر 12: تستورد الفاصوليا المحددة بواسطة فئة [<bdi dir="ltr" class="odt-ltr-term">DaoConfig</bdi>] التي رأيناها للتو؛
   </li>
-  <li>تستخدم طبقة [console] مخططات JSON المحددة هنا؛
+  <li>تستخدم طبقة [<bdi dir="ltr" class="odt-ltr-term">console</bdi>] مخططات <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> المحددة هنا؛
   </li>
-  <li>الأسطر 14–64: تحدد خمسة مخططات JSON؛
+  <li>الأسطر 14–64: تحدد خمسة مخططات <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>؛
   </li>
-  <li>الأسطر 15–18: لا يحتوي مخطط JSON [<span style="color: #2a00ff">jsonMapper</span>] على أي مرشحات؛
+  <li>الأسطر 15–18: لا يحتوي مخطط <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> [<span style="color: #2a00ff"><bdi dir="ltr" class="odt-ltr-term">jsonMapper</bdi></span>] على أي مرشحات؛
   </li>
-  <li>الأسطر 20-30: يسمح مرشح JSON [<span style="color: #2a00ff">jsonMapperCategoryWithProducts</span>] بتسلسل/إلغاء تسلسل كائن [Category] <b>مع </b>منتجاته؛
+  <li>الأسطر 20-30: يسمح مرشح <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> [<span style="color: #2a00ff"><bdi dir="ltr" class="odt-ltr-term">jsonMapperCategoryWithProducts</bdi></span>] بتسلسل/إلغاء تسلسل كائن [<bdi dir="ltr" class="odt-ltr-term">Category</bdi>] <b>مع </b>منتجاته؛
   </li>
-  <li>الأسطر 32–42: يسمح مرشح JSON [<span style="color: #2a00ff">jsonMapperProductWithCategory</span>] بتسلسل/إلغاء تسلسل كائن [Product] <b>مع </b>فئته؛
+  <li>الأسطر 32–42: يسمح مرشح <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> [<span style="color: #2a00ff"><bdi dir="ltr" class="odt-ltr-term">jsonMapperProductWithCategory</bdi></span>] بتسلسل/إلغاء تسلسل كائن [<bdi dir="ltr" class="odt-ltr-term">Product</bdi>] <b>مع </b>فئته؛
   </li>
-  <li>الأسطر 43-53: يسمح مرشح JSON [<span style="color: #2a00ff">jsonMapperCategorieWithoutProduits</span>] بتسلسل/إلغاء تسلسل كائن [Categorie] <b>بدون </b>منتجاته؛
+  <li>الأسطر 43-53: يسمح مرشح <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> [<span style="color: #2a00ff"><bdi dir="ltr" class="odt-ltr-term">jsonMapperCategorieWithoutProduits</bdi></span>] بتسلسل/إلغاء تسلسل كائن [<bdi dir="ltr" class="odt-ltr-term">Categorie</bdi>] <b>بدون </b>منتجاته؛
   </li>
-  <li>الأسطر 55–64: يتيح مرشح JSON [<span style="color: #2a00ff">jsonMapperProductWithoutCategory</span>] تحويل كائن [Product] إلى تسلسل أو استرجاعه من التسلسل <b>بدون </b>فئته؛
+  <li>الأسطر 55–64: يتيح مرشح <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> [<span style="color: #2a00ff"><bdi dir="ltr" class="odt-ltr-term">jsonMapperProductWithoutCategory</bdi></span>] تحويل كائن [<bdi dir="ltr" class="odt-ltr-term">Product</bdi>] إلى تسلسل أو استرجاعه من التسلسل <b>بدون </b>فئته؛
   </li>
 </ul>
 
-<p>لاحظ أنه عند إنشاء مرشح JSON لكيان T، يجب عليك تكوين ليس فقط المرشح الخاص بالكيان T، بل أيضًا المرشحات الخاصة بالكيانات Ti التي قد يحتوي عليها.</p>
+<p>لاحظ أنه عند إنشاء مرشح <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> لكيان <bdi dir="ltr" class="odt-ltr-term">T</bdi>، يجب عليك تكوين ليس فقط المرشح الخاص بالكيان <bdi dir="ltr" class="odt-ltr-term">T</bdi>، بل أيضًا المرشحات الخاصة بالكيانات <bdi dir="ltr" class="odt-ltr-term">Ti</bdi> التي قد يحتوي عليها.</p>
 <p><a id="refheading2192562014630537"></a></p>
-<h3 id="1139-console">11.3.9. <span style="color: #4f81bd">طبقة [console]</span></h3>
-<p>Layer[<strong>DAO</strong>]Layer[<strong>console</strong>]Layer[<strong>JPA</strong>]Driver[<strong>JDBC</strong>]Layer[<strong>Spring Data</strong>]Spring 4DBMS</p>
+<h3 id="1139-console">11.3.9. <span style="color: #4f81bd">طبقة [<bdi dir="ltr" class="odt-ltr-term">console</bdi>]</span></h3>
+<p><bdi dir="ltr" class="odt-ltr-term">Layer</bdi>[<strong><bdi dir="ltr" class="odt-ltr-term">DAO</bdi></strong>]<bdi dir="ltr" class="odt-ltr-term">Layer</bdi>[<strong><bdi dir="ltr" class="odt-ltr-term">console</bdi></strong>]<bdi dir="ltr" class="odt-ltr-term">Layer</bdi>[<strong><bdi dir="ltr" class="odt-ltr-term">JPA</bdi></strong>]<bdi dir="ltr" class="odt-ltr-term">Driver</bdi>[<strong><bdi dir="ltr" class="odt-ltr-term">JDBC</bdi></strong>]<bdi dir="ltr" class="odt-ltr-term">Layer</bdi>[<strong><bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi></strong>]<bdi dir="ltr" class="odt-ltr-term">Spring</bdi> 4DBMS</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D7000000CA3A9BDE61.png" width="150" height="141" style="display:inline-block; margin:4px;width:3.979cm;height:3.738cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D7000000CA3A9BDE61.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>فئة [Main] هي كما يلي:</p>
+<p>فئة [<bdi dir="ltr" class="odt-ltr-term">Main</bdi>] هي كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.data.console;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -3483,15 +3485,15 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 25: إنشاء مثيلات لفاصوليا Spring من فئة التكوين [AppConfig]؛
+  <li>السطر 25: إنشاء مثيلات لفاصوليا <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> من فئة التكوين [<bdi dir="ltr" class="odt-ltr-term">AppConfig</bdi>]؛
   </li>
-  <li>الأسطر 26–33: استرداد المراجع إلى مخططات JSON. نستخدم التوقيع التالي لطريقة [ApplicationContext].getBean:
+  <li>الأسطر 26–33: استرداد المراجع إلى مخططات <bdi dir="ltr" class="odt-ltr-term">JSON.</bdi> نستخدم التوقيع التالي لطريقة [<bdi dir="ltr" class="odt-ltr-term">ApplicationContext</bdi>].<bdi dir="ltr" class="odt-ltr-term">getBean:</bdi>
     <ul>
-      <li><b>[ApplicationContext].getBean(String id, Class class)</b>: والتي تُستخدم عند وجود عدة حبات من النوع [class]. في هذه الحالة، نحدد معرف الحبة المطلوبة. إذا تم تعريفها باستخدام تعليق [<b>@Bean</b>]، فإن معرفها هو اسم الطريقة المُعلَّقة. إذا تم تعريفها باستخدام تعليق [<b>@Bean(&quot;identifier&quot;</b>)]، فإن معرفها هو المعرف المحدد في التعليق؛
+      <li><b>[<bdi dir="ltr" class="odt-ltr-term">ApplicationContext</bdi>].<bdi dir="ltr" class="odt-ltr-term">getBean</bdi>(<bdi dir="ltr" class="odt-ltr-term">String id</bdi>, <bdi dir="ltr" class="odt-ltr-term">Class class</bdi>)</b>: والتي تُستخدم عند وجود عدة حبات من النوع [<bdi dir="ltr" class="odt-ltr-term">class</bdi>]. في هذه الحالة، نحدد معرف الحبة المطلوبة. إذا تم تعريفها باستخدام تعليق [<b>@<bdi dir="ltr" class="odt-ltr-term">Bean</bdi></b>]، فإن معرفها هو اسم الطريقة المُعلَّقة. إذا تم تعريفها باستخدام تعليق [<b>@<bdi dir="ltr" class="odt-ltr-term">Bean</bdi>(&quot;<bdi dir="ltr" class="odt-ltr-term">identifier</bdi>&quot;</b>)]، فإن معرفها هو المعرف المحدد في التعليق؛
       </li>
     </ul>
   </li>
-  <li>السطر 34: استرداد مرجع من طبقة [DAO]؛
+  <li>السطر 34: استرداد مرجع من طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]؛
   </li>
   <li>الأسطر 37-39: مسح قاعدة البيانات. نقوم بمسح جدول الفئات (السطر 39). لأننا كتبنا:
   </li>
@@ -3504,27 +3506,27 @@
 
 <p>عند حذف فئة ما، يتم حذف جميع المنتجات المرتبطة بها أيضًا؛</p>
 <ul>
-  <li>الأسطر 43–53: ملء الجدول بفئتين، تحتوي كل منهما على 5 منتجات. في السطر 50، سيؤدي إدراج الفئتين إلى إدراج منتجاتهما في نفس الوقت، مرة أخرى لأننا كتبنا [<span style="color: #000000">cascade = { CascadeType.</span><i><b><span style="color: #0000c0">ALL </span></b></i><span style="color: #000000">}</span>];
+  <li>الأسطر 43–53: ملء الجدول بفئتين، تحتوي كل منهما على 5 منتجات. في السطر 50، سيؤدي إدراج الفئتين إلى إدراج منتجاتهما في نفس الوقت، مرة أخرى لأننا كتبنا [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">cascade</bdi> = { <bdi dir="ltr" class="odt-ltr-term">CascadeType.</bdi></span><i><b><span style="color: #0000c0"><bdi dir="ltr" class="odt-ltr-term">ALL</bdi> </span></b></i><span style="color: #000000">}</span>];
   </li>
-  <li>السطر 58: نعرض الفئات. نستخدم أداة تعيين JSON [<span style="color: #6a3e3e">jsonMapperCategorieWithoutProduits</span>] لعرض الفئات بدون منتجاتها. في الواقع، تُرجع الطريقة [<span style="color: #6a3e3e">dao</span><span style="color: #000000">.getAllCategories()</span>] الفئات بدون منتجاتها (التحميل المتأخر)؛
+  <li>السطر 58: نعرض الفئات. نستخدم أداة تعيين <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> [<span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">jsonMapperCategorieWithoutProduits</bdi></span>] لعرض الفئات بدون منتجاتها. في الواقع، تُرجع الطريقة [<span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">dao</bdi></span><span style="color: #000000">.<bdi dir="ltr" class="odt-ltr-term">getAllCategories</bdi>()</span>] الفئات بدون منتجاتها (التحميل المتأخر)؛
   </li>
-  <li>السطر 61: نعرض المنتجات بدون فئاتها. وذلك لأن الطريقة [<span style="color: #6a3e3e">dao</span><span style="color: #000000">.getAllProduits()</span>] تُرجع المنتجات بدون فئاتها (التحميل المتأخر)؛
+  <li>السطر 61: نعرض المنتجات بدون فئاتها. وذلك لأن الطريقة [<span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">dao</bdi></span><span style="color: #000000">.<bdi dir="ltr" class="odt-ltr-term">getAllProduits</bdi>()</span>] تُرجع المنتجات بدون فئاتها (التحميل المتأخر)؛
   </li>
-  <li>الأسطر 63-65: عرض الفئة المسماة [categorie1] مع منتجاتها (التحميل الفوري)؛
+  <li>الأسطر 63-65: عرض الفئة المسماة [<bdi dir="ltr" class="odt-ltr-term">categorie1</bdi>] مع منتجاتها (التحميل الفوري)؛
   </li>
   <li>الأسطر 67-69: عرض منتج مع فئته؛
   </li>
-  <li>الأسطر 71-81: يتم زيادة أسعار جميع المنتجات في الفئة [categorie1] بنسبة 10٪؛
+  <li>الأسطر 71-81: يتم زيادة أسعار جميع المنتجات في الفئة [<bdi dir="ltr" class="odt-ltr-term">categorie1</bdi>] بنسبة 10٪؛
   </li>
-  <li>الأسطر 91-101: إضافة فئة تحتوي على منتجين يحملان نفس الاسم. ومع ذلك، في جدول [PRODUCTS]، يوجد قيد فريد على عمود [NAME]. وبالتالي، سيتم رفض إدراج المنتج الثاني وستظهر استثناء. ومع ذلك، تعمل طريقة [<span style="color: #6a3e3e">dao</span><span style="color: #000000">.addProducts</span>] ضمن معاملة. وبالتالي، فإن فشل الإدراج الثاني يجب أن يؤدي أيضًا إلى التراجع عن إدراج المنتج الأول وكذلك إدراج فئتهما [cat1]. وهذا ما نريد التحقق منه؛
+  <li>الأسطر 91-101: إضافة فئة تحتوي على منتجين يحملان نفس الاسم. ومع ذلك، في جدول [<bdi dir="ltr" class="odt-ltr-term">PRODUCTS</bdi>]، يوجد قيد فريد على عمود [<bdi dir="ltr" class="odt-ltr-term">NAME</bdi>]. وبالتالي، سيتم رفض إدراج المنتج الثاني وستظهر استثناء. ومع ذلك، تعمل طريقة [<span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">dao</bdi></span><span style="color: #000000">.<bdi dir="ltr" class="odt-ltr-term">addProducts</bdi></span>] ضمن معاملة. وبالتالي، فإن فشل الإدراج الثاني يجب أن يؤدي أيضًا إلى التراجع عن إدراج المنتج الأول وكذلك إدراج فئتهما [<bdi dir="ltr" class="odt-ltr-term">cat1</bdi>]. وهذا ما نريد التحقق منه؛
   </li>
-  <li>الأسطر 119-121: طريقة عامة قادرة على عرض سلسلة JSON لأي عنصر من النوع T. يتم التحكم في تسلسل JSON بواسطة أداة التعيين التي يتم تمريرها كمعلمة؛
+  <li>الأسطر 119-121: طريقة عامة قادرة على عرض سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> لأي عنصر من النوع <bdi dir="ltr" class="odt-ltr-term">T.</bdi> يتم التحكم في تسلسل <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> بواسطة أداة التعيين التي يتم تمريرها كمعلمة؛
   </li>
-  <li>الأسطر 124–128: طريقة مماثلة، هذه المرة لقائمة عناصر من النوع T؛
+  <li>الأسطر 124–128: طريقة مماثلة، هذه المرة لقائمة عناصر من النوع <bdi dir="ltr" class="odt-ltr-term">T</bdi>؛
   </li>
 </ul>
 
-<p>يؤدي تنفيذ الفئة [Main] إلى النتائج التالية (باستثناء سجلات Spring):</p>
+<p>يؤدي تنفيذ الفئة [<bdi dir="ltr" class="odt-ltr-term">Main</bdi>] إلى النتائج التالية (باستثناء سجلات <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>):</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">Vidage de la base de données --------------------------------</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">Remplissage de la base --------------------------------</span></span>
@@ -3574,18 +3576,18 @@
   </li>
   <li>الأسطر 22–26: تحديث أسعار منتجات معينة. في السطر 24، يمكننا أن نرى أن الأسعار قد ارتفعت بالفعل بنسبة 10٪؛
   </li>
-  <li>الأسطر 27-36: إضافة الفئة [cat1] مع منتجين يحملان نفس الاسم. يمكننا أن نرى أن الجدول هو نفسه قبل (الأسطر 28-29) وبعد الإضافة (الأسطر 35-36)، مما يدل على أن جميع عمليات الإدراج في المعاملة قد تم التراجع عنها بالفعل؛
+  <li>الأسطر 27-36: إضافة الفئة [<bdi dir="ltr" class="odt-ltr-term">cat1</bdi>] مع منتجين يحملان نفس الاسم. يمكننا أن نرى أن الجدول هو نفسه قبل (الأسطر 28-29) وبعد الإضافة (الأسطر 35-36)، مما يدل على أن جميع عمليات الإدراج في المعاملة قد تم التراجع عنها بالفعل؛
   </li>
   <li>الأسطر 31–34: الاستثناء الذي حدث أثناء إدراج المنتج الثاني وتسبب في فشل المعاملة بأكملها؛
   </li>
 </ul>
 <p><a id="refheading251892391218965"></a></p>
-<h3 id="11310-junit">11.3.10. <span style="color: #4f81bd">اختبار الوحدة JUnit</span></h3>
+<h3 id="11310-junit">11.3.10. <span style="color: #4f81bd">اختبار الوحدة <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi></span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000049300000118B0C0B6D1.png" width="586" height="140" style="display:inline-block; margin:4px;width:15.492cm;height:3.704cm;" class="odt-zoomable" data-zoom-src="images/100000000000049300000118B0C0B6D1.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000C40000008E249C2D8E.png" width="137" height="99" style="display:inline-block; margin:4px;width:3.63cm;height:2.63cm;" class="odt-zoomable" data-zoom-src="images/10000000000000C40000008E249C2D8E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>فئة [Test01] هي كما يلي:</p>
+<p>فئة [<bdi dir="ltr" class="odt-ltr-term">Test01</bdi>] هي كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.data.tests;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -3776,13 +3778,13 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 27: يتم تكوين اختبار الوحدة بواسطة فئة [AppConfig] التي تم عرضها بالفعل في <a href="#refheading2189872014630537"><u><span style="color: #0563c1">القسم 11.3.</span></u></a>8؛
+  <li>السطر 27: يتم تكوين اختبار الوحدة بواسطة فئة [<bdi dir="ltr" class="odt-ltr-term">AppConfig</bdi>] التي تم عرضها بالفعل في <a href="#refheading2189872014630537"><u><span style="color: #0563c1">القسم 11.3.</span></u></a>8؛
   </li>
-  <li>السطران 32-33: إدخال مرجع إلى طبقة [DAO]؛
+  <li>السطران 32-33: إدخال مرجع إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]؛
   </li>
-  <li>الأسطر 36–50: إدخال خمسة مخططات JSON؛
+  <li>الأسطر 36–50: إدخال خمسة مخططات <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>؛
   </li>
-  <li>الأسطر 60–71: بعد إفراغ قاعدة البيانات (السطر 57)، يتم ملء قاعدة البيانات بفئتين، تحتوي كل منهما على 5 منتجات. يتم تنفيذ هذه الطريقة قبل كل اختبار بسبب التعليق التوضيحي [@Before] في السطر 52؛
+  <li>الأسطر 60–71: بعد إفراغ قاعدة البيانات (السطر 57)، يتم ملء قاعدة البيانات بفئتين، تحتوي كل منهما على 5 منتجات. يتم تنفيذ هذه الطريقة قبل كل اختبار بسبب التعليق التوضيحي [@<bdi dir="ltr" class="odt-ltr-term">Before</bdi>] في السطر 52؛
   </li>
   <li>الأسطر 75-93: عرض محتويات قاعدة البيانات؛
   </li>
@@ -3804,10 +3806,10 @@
 
 <p><a id="refheading251894391218965"></a></p>
 <h3 id="11311">11.3.11. <span style="color: #4f81bd">إدارة السجلات</span></h3>
-<p><a id="refheading180262656793311"></a>يتم تكوين سجلات تطبيق وحدة التحكم أو اختبار JUnit بواسطة ملف [logback.xml] التالي:</p>
+<p><a id="refheading180262656793311"></a>يتم تكوين سجلات تطبيق وحدة التحكم أو اختبار <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi> بواسطة ملف [<bdi dir="ltr" class="odt-ltr-term">logback.xml</bdi>] التالي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000ED000000CC76F2BE04.png" width="166" height="143" style="display:inline-block; margin:4px;width:4.39cm;height:3.778cm;" class="odt-zoomable" data-zoom-src="images/10000000000000ED000000CC76F2BE04.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>يجب أن يكون اسم الملف [logback.xml] وأن يكون موجودًا في مسار فئات المشروع. ولضمان ذلك، تم وضعه هنا في المجلد [src/main/resources]، الذي يعد جزءًا من مسار فئات المشروع. وفيما يلي محتوياته:</p>
+<p>يجب أن يكون اسم الملف [<bdi dir="ltr" class="odt-ltr-term">logback.xml</bdi>] وأن يكون موجودًا في مسار فئات المشروع. ولضمان ذلك، تم وضعه هنا في المجلد [<bdi dir="ltr" class="odt-ltr-term">src/main/resources</bdi>]، الذي يعد جزءًا من مسار فئات المشروع. وفيما يلي محتوياته:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">configuration</span><span style="color:#008080">&gt;</span><span style="color:#000000"> </span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -3827,28 +3829,28 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 12: تعرض العلامة [<span style="color: #008080">&lt;</span><span style="color: #3f7f7f">root </span><span style="color: #000000">level=</span><i><span style="color: #2a00ff">&quot;info&quot;</span></i><span style="color: #008080">&gt;</span>] سجلات بمستوى [info]. بدلاً من [info]، يمكنك استخدام:
+  <li>السطر 12: تعرض العلامة [<span style="color: #008080">&lt;</span><span style="color: #3f7f7f"><bdi dir="ltr" class="odt-ltr-term">root</bdi> </span><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">level</bdi>=</span><i><span style="color: #2a00ff">&quot;<bdi dir="ltr" class="odt-ltr-term">info</bdi>&quot;</span></i><span style="color: #008080">&gt;</span>] سجلات بمستوى [<bdi dir="ltr" class="odt-ltr-term">info</bdi>]. بدلاً من [<bdi dir="ltr" class="odt-ltr-term">info</bdi>]، يمكنك استخدام:
     <ul>
-      <li>[debug]: هذا هو مستوى السجل الأكثر تفصيلاً. يوصى باستخدامه خلال مرحلة تصحيح أخطاء المشروع لأنه يوفر سجلات مفيدة للغاية حول تفاعلات العميل/الخادم. هذه طريقة لفهم ما يحدث &quot;خلف الكواليس&quot;؛
+      <li>[<bdi dir="ltr" class="odt-ltr-term">debug</bdi>]: هذا هو مستوى السجل الأكثر تفصيلاً. يوصى باستخدامه خلال مرحلة تصحيح أخطاء المشروع لأنه يوفر سجلات مفيدة للغاية حول تفاعلات العميل/الخادم. هذه طريقة لفهم ما يحدث &quot;خلف الكواليس&quot;؛
       </li>
-      <li>[off]: لا توجد سجلات على الإطلاق؛
+      <li>[<bdi dir="ltr" class="odt-ltr-term">off</bdi>]: لا توجد سجلات على الإطلاق؛
       </li>
-      <li>[warn]: مستوى تسجيل متوسط حيث يعرض Spring الحالات الشاذة التي ليست بالضرورة أخطاء. يجب عليك مراجعتها إذا لم تحصل على النتيجة المتوقعة؛
+      <li>[<bdi dir="ltr" class="odt-ltr-term">warn</bdi>]: مستوى تسجيل متوسط حيث يعرض <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> الحالات الشاذة التي ليست بالضرورة أخطاء. يجب عليك مراجعتها إذا لم تحصل على النتيجة المتوقعة؛
       </li>
     </ul>
   </li>
 </ul>
 
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><strong>المهمة</strong>: اضبط المستوى في السطر 12 على [debug]، ثم قم بتشغيل اختبار الوحدة. لاحظ الفرق في السجلات.</p>
+<p><strong>المهمة</strong>: اضبط المستوى في السطر 12 على [<bdi dir="ltr" class="odt-ltr-term">debug</bdi>]، ثم قم بتشغيل اختبار الوحدة. لاحظ الفرق في السجلات.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
 <p><a id="refheading165801515544210"></a></p>
-<h3 id="11312-maven">11.3.12. <span style="color: #4f81bd">إنشاء أرشيف Maven للمشروع</span></h3>
-<p>لتثبيت أرشيف المشروع في مستودع Maven المحلي، اتبع الخطوات التالية [1-3]:</p>
+<h3 id="11312-maven">11.3.12. <span style="color: #4f81bd">إنشاء أرشيف <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> للمشروع</span></h3>
+<p>لتثبيت أرشيف المشروع في مستودع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> المحلي، اتبع الخطوات التالية [1-3]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000405000004CAD7507622.png" width="515" height="613" style="display:inline-block; margin:4px;width:13.614cm;height:16.221cm;" class="odt-zoomable" data-zoom-src="images/1000000000000405000004CAD7507622.png" /></td></tr></table>
 
-<p>سيتم إنشاء الأرشيف باستخدام المعرفات الموجودة في ملف [pom.xml]:</p>
+<p>سيتم إنشاء الأرشيف باستخدام المعرفات الموجودة في ملف [<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">istia.st.springdata</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">intro-spring-data-01</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span></span></span>
@@ -3856,13 +3858,13 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">packaging</span><span style="color:#008080">&gt;</span><span style="color:#000000">jar</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">packaging</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
-<p>يمكن العثور على موقع مستودع Maven المحلي في إعدادات Eclipse:</p>
+<p>يمكن العثور على موقع مستودع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> المحلي في إعدادات <bdi dir="ltr" class="odt-ltr-term">Eclipse:</bdi></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000024B00000200824CCAC4.png" width="411" height="358" style="display:inline-block; margin:4px;width:10.871cm;height:9.483cm;" class="odt-zoomable" data-zoom-src="images/100000000000024B00000200824CCAC4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>يمكنك بعد ذلك التحقق من أن مكون Maven قد تم تثبيته بشكل صحيح:</p>
+<p>يمكنك بعد ذلك التحقق من أن مكون <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> قد تم تثبيته بشكل صحيح:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000022F0000009B72132AEB.png" width="391" height="108" style="display:inline-block; margin:4px;width:10.351cm;height:2.87cm;" class="odt-zoomable" data-zoom-src="images/100000000000022F0000009B72132AEB.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>الآن، يمكن لمشروع Maven محلي آخر استخدام هذا الأرشيف.</p>
+<p>الآن، يمكن لمشروع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> محلي آخر استخدام هذا الأرشيف.</p>
 
 
 

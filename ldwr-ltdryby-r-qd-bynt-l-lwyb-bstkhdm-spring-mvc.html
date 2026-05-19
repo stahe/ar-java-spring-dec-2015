@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1454,110 +1456,110 @@
 <a id="refheading2192602014630537-copie-2"></a>
 <a id="refheading300917216381043"></a>
 <a id="refheading261305838046689-copie-2"></a></p>
-<h1 id="13-spring-mvc">13. <span style="color: #365f91">[الدورة التدريبية]: عرض قاعدة بيانات على الويب باستخدام Spring MVC</span></h1>
-<p><strong>الكلمات المفتاحية</strong>: بنية متعددة المستويات، Spring، حقن التبعية، خدمة الويب / JSON، العميل / الخادم</p>
+<h1 id="13-spring-mvc">13. <span style="color: #365f91">[الدورة التدريبية]: عرض قاعدة بيانات على الويب باستخدام <bdi dir="ltr" class="odt-ltr-term">Spring MVC</bdi></span></h1>
+<p><strong>الكلمات المفتاحية</strong>: بنية متعددة المستويات، <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>، حقن التبعية، خدمة الويب / <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>، العميل / الخادم</p>
 <p><a id="refheading98774873157090"></a></p>
 <h2 id="131">13.1. <span style="color: #4f81bd"><span style="color: #4f81bd">الدعم</span></span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000CD0000009ABDAFF778.png" width="144" height="108" style="display:inline-block; margin:4px;width:3.799cm;height:2.854cm;" class="odt-zoomable" data-zoom-src="images/10000000000000CD0000009ABDAFF778.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E100000073CE9A20C0.png" width="158" height="81" style="display:inline-block; margin:4px;width:4.17cm;height:2.131cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E100000073CE9A20C0.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>يمكن العثور على مشاريع هذا الفصل في المجلد [support / chap-13]. يقوم البرنامج النصي SQL [dbintrospringdata.sql] بإنشاء قاعدة بيانات MySQL المطلوبة للاختبار.</p>
+<p>يمكن العثور على مشاريع هذا الفصل في المجلد [<bdi dir="ltr" class="odt-ltr-term">support</bdi> / <bdi dir="ltr" class="odt-ltr-term">chap-13</bdi>]. يقوم البرنامج النصي <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> [<bdi dir="ltr" class="odt-ltr-term">dbintrospringdata.sql</bdi>] بإنشاء قاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">MySQL</bdi> المطلوبة للاختبار.</p>
 <p><a id="refheading99511454977699"></a></p>
-<h2 id="132-spring-mvc">13.2. <span style="color: #4f81bd">دور Spring MVC في تطبيق الويب</span></h2>
-<p>دعونا نضع Spring MVC في سياق تطوير تطبيق ويب. في أغلب الأحيان، سيتم بناؤه على بنية متعددة الطبقات مثل ما يلي:</p>
+<h2 id="132-spring-mvc">13.2. <span style="color: #4f81bd">دور <bdi dir="ltr" class="odt-ltr-term">Spring MVC</bdi> في تطبيق الويب</span></h2>
+<p>دعونا نضع <bdi dir="ltr" class="odt-ltr-term">Spring MVC</bdi> في سياق تطوير تطبيق ويب. في أغلب الأحيان، سيتم بناؤه على بنية متعددة الطبقات مثل ما يلي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000050B00000136980366E7.png" width="646" height="155" style="display:inline-block; margin:4px;width:17.08cm;height:4.101cm;" class="odt-zoomable" data-zoom-src="images/100000000000050B00000136980366E7.png" /></td></tr></table>
 
 <ul>
-  <li>الطبقة [<b>Web</b>] هي الطبقة التي تتعامل مع مستخدم تطبيق الويب. يتفاعل المستخدم مع تطبيق الويب من خلال صفحات الويب التي يتم عرضها في المتصفح. <b>يقع Spring MVC في هذه الطبقة وفقط في هذه الطبقة؛</b>
+  <li>الطبقة [<b><bdi dir="ltr" class="odt-ltr-term">Web</bdi></b>] هي الطبقة التي تتعامل مع مستخدم تطبيق الويب. يتفاعل المستخدم مع تطبيق الويب من خلال صفحات الويب التي يتم عرضها في المتصفح. <b>يقع <bdi dir="ltr" class="odt-ltr-term">Spring MVC</bdi> في هذه الطبقة وفقط في هذه الطبقة؛</b>
   </li>
-  <li>تنفذ طبقة [<b>الأعمال</b>] منطق الأعمال الخاص بالتطبيق، مثل حساب الراتب أو الفاتورة. تستخدم هذه الطبقة البيانات الواردة من المستخدم عبر طبقة [الويب] ومن نظام إدارة قواعد البيانات (DBMS) عبر طبقة [DAO]؛
+  <li>تنفذ طبقة [<b>الأعمال</b>] منطق الأعمال الخاص بالتطبيق، مثل حساب الراتب أو الفاتورة. تستخدم هذه الطبقة البيانات الواردة من المستخدم عبر طبقة [الويب] ومن نظام إدارة قواعد البيانات (<bdi dir="ltr" class="odt-ltr-term">DBMS</bdi>) عبر طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]؛
   </li>
-  <li>تدير طبقة [<b>DAO</b>] (كائنات الوصول إلى البيانات) وطبقة [<b>ORM</b>] (مُخطِط العلاقات بين الكائنات) ومحرك JDBC الوصول إلى البيانات في نظام إدارة قواعد البيانات. تعمل طبقة [<b>ORM</b>] كجسر بين الكائنات التي تتعامل معها طبقة [DAO] والصفوف والأعمدة في الجداول في قاعدة البيانات العلائقية. تسمح مواصفات JPA (Java Persistence API) بالتجريد من ORM المستخدم، شريطة أن تنفذ هذه المواصفات. سيكون هذا هو الحال هنا، وسنشير من الآن فصاعدًا إلى طبقة ORM باسم طبقة JPA؛
+  <li>تدير طبقة [<b><bdi dir="ltr" class="odt-ltr-term">DAO</bdi></b>] (كائنات الوصول إلى البيانات) وطبقة [<b><bdi dir="ltr" class="odt-ltr-term">ORM</bdi></b>] (مُخطِط العلاقات بين الكائنات) ومحرك <bdi dir="ltr" class="odt-ltr-term">JDBC</bdi> الوصول إلى البيانات في نظام إدارة قواعد البيانات. تعمل طبقة [<b><bdi dir="ltr" class="odt-ltr-term">ORM</bdi></b>] كجسر بين الكائنات التي تتعامل معها طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] والصفوف والأعمدة في الجداول في قاعدة البيانات العلائقية. تسمح مواصفات <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> (<bdi dir="ltr" class="odt-ltr-term">Java Persistence API</bdi>) بالتجريد من <bdi dir="ltr" class="odt-ltr-term">ORM</bdi> المستخدم، شريطة أن تنفذ هذه المواصفات. سيكون هذا هو الحال هنا، وسنشير من الآن فصاعدًا إلى طبقة <bdi dir="ltr" class="odt-ltr-term">ORM</bdi> باسم طبقة <bdi dir="ltr" class="odt-ltr-term">JPA</bdi>؛
   </li>
-  <li>يتم التعامل مع تكامل الطبقات بواسطة إطار عمل Spring؛
+  <li>يتم التعامل مع تكامل الطبقات بواسطة إطار عمل <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>؛
   </li>
 </ul>
 <p><a id="refheading99531454977699"></a></p>
-<h2 id="133-spring-mvc">13.3. <span style="color: #4f81bd">نموذج تطوير Spring MVC</span></h2>
-<p>تنفذ Spring MVC نمط الهندسة المعمارية MVC (Model–View–Controller) على النحو التالي:</p>
+<h2 id="133-spring-mvc">13.3. <span style="color: #4f81bd">نموذج تطوير <bdi dir="ltr" class="odt-ltr-term">Spring MVC</bdi></span></h2>
+<p>تنفذ <bdi dir="ltr" class="odt-ltr-term">Spring MVC</bdi> نمط الهندسة المعمارية <bdi dir="ltr" class="odt-ltr-term">MVC</bdi> (<bdi dir="ltr" class="odt-ltr-term">Model</bdi>–<bdi dir="ltr" class="odt-ltr-term">View</bdi>–<bdi dir="ltr" class="odt-ltr-term">Controller</bdi>) على النحو التالي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000063700000237FD3DB044.png" width="680" height="242" style="display:inline-block; margin:4px;width:17.999cm;height:6.414cm;" class="odt-zoomable" data-zoom-src="images/100000000000063700000237FD3DB044.png" /></td></tr></table>
 
 <p>تتم معالجة طلب العميل على النحو التالي:</p>
 <ol>
-  <li><b>الطلب </b>- تأتي عناوين URL المطلوبة بالصيغة<i> http://machine:port/contexte/Action/param1/param2/....?p1=v1&amp;p2=v2&amp;... </i>ويستخدم [المحرك الأمامي] ملف تكوين أو تعليقات Java لتوجيه الطلب إلى وحدة التحكم الصحيحة والإجراء الصحيح داخل تلك الوحدة. وللقيام بذلك، يستخدم حقل [Action] في عنوان URL. يتكون باقي عنوان URL [<i>/param1/param2/...</i>] من معلمات اختيارية سيتم تمريرها إلى الإجراء. يشير الحرف <b>C </b>في MVC هنا إلى السلسلة [Front Controller، Controller، Action]. إذا لم تتمكن أي وحدة تحكم من معالجة الإجراء المطلوب، فسيرد خادم الويب بأن عنوان URL المطلوب لم يتم العثور عليه.
+  <li><b>الطلب </b>- تأتي عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> المطلوبة بالصيغة<i> <bdi dir="ltr" class="odt-ltr-term">http://machine:port/contexte/Action/param1/param2/....</bdi>?<bdi dir="ltr" class="odt-ltr-term">p1</bdi>=<bdi dir="ltr" class="odt-ltr-term">v1</bdi>&amp;<bdi dir="ltr" class="odt-ltr-term">p2</bdi>=<bdi dir="ltr" class="odt-ltr-term">v2</bdi>&amp;... </i>ويستخدم [المحرك الأمامي] ملف تكوين أو تعليقات <bdi dir="ltr" class="odt-ltr-term">Java</bdi> لتوجيه الطلب إلى وحدة التحكم الصحيحة والإجراء الصحيح داخل تلك الوحدة. وللقيام بذلك، يستخدم حقل [<bdi dir="ltr" class="odt-ltr-term">Action</bdi>] في عنوان <bdi dir="ltr" class="odt-ltr-term">URL.</bdi> يتكون باقي عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<i>/<bdi dir="ltr" class="odt-ltr-term">param1/param2/...</bdi></i>] من معلمات اختيارية سيتم تمريرها إلى الإجراء. يشير الحرف <b><bdi dir="ltr" class="odt-ltr-term">C</bdi> </b>في <bdi dir="ltr" class="odt-ltr-term">MVC</bdi> هنا إلى السلسلة [<bdi dir="ltr" class="odt-ltr-term">Front Controller</bdi>، <bdi dir="ltr" class="odt-ltr-term">Controller</bdi>، <bdi dir="ltr" class="odt-ltr-term">Action</bdi>]. إذا لم تتمكن أي وحدة تحكم من معالجة الإجراء المطلوب، فسيرد خادم الويب بأن عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> المطلوب لم يتم العثور عليه.
   </li>
   <li>المعالجة 
     <ul>
-      <li>يمكن للإجراء المحدد استخدام المعلمات التي مررها إليه [Front Controller]. ويمكن أن تأتي هذه المعلمات من عدة مصادر:
+      <li>يمكن للإجراء المحدد استخدام المعلمات التي مررها إليه [<bdi dir="ltr" class="odt-ltr-term">Front Controller</bdi>]. ويمكن أن تأتي هذه المعلمات من عدة مصادر:
       </li>
-      <li>مسار [<i>/param1/param2/...</i>] لعنوان URL،
+      <li>مسار [<i>/<bdi dir="ltr" class="odt-ltr-term">param1/param2/...</bdi></i>] لعنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi>،
       </li>
-      <li>معلمات [<i>p1=v1&amp;p2=v2</i>] لعنوان URL<i>،</i>
+      <li>معلمات [<i><bdi dir="ltr" class="odt-ltr-term">p1</bdi>=<bdi dir="ltr" class="odt-ltr-term">v1</bdi>&amp;<bdi dir="ltr" class="odt-ltr-term">p2</bdi>=<bdi dir="ltr" class="odt-ltr-term">v2</bdi></i>] لعنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi><i>،</i>
       </li>
       <li>من المعلمات التي أرسلها المتصفح مع طلبه؛
       </li>
-      <li>عند معالجة طلب المستخدم، قد يحتاج الإجراء إلى طبقة [business] [2b]. بمجرد معالجة طلب العميل، قد يؤدي ذلك إلى استجابات متنوعة. ومن الأمثلة الكلاسيكية على ذلك:
+      <li>عند معالجة طلب المستخدم، قد يحتاج الإجراء إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] [2b]. بمجرد معالجة طلب العميل، قد يؤدي ذلك إلى استجابات متنوعة. ومن الأمثلة الكلاسيكية على ذلك:
       </li>
       <li>صفحة خطأ إذا تعذر معالجة الطلب بشكل صحيح
       </li>
       <li>صفحة تأكيد في الحالات الأخرى
       </li>
-      <li>يأمر الإجراء بعرض طريقة عرض محددة [3]. ستعرض طريقة <b>العرض</b> هذه البيانات المعروفة باسم <b>نموذج العرض</b>. هذا هو <b>M </b>في MVC. سيقوم الإجراء بإنشاء نموذج M هذا [2c] ويأمر بعرض طريقة عرض <b>V </b>[3]؛
+      <li>يأمر الإجراء بعرض طريقة عرض محددة [3]. ستعرض طريقة <b>العرض</b> هذه البيانات المعروفة باسم <b>نموذج العرض</b>. هذا هو <b><bdi dir="ltr" class="odt-ltr-term">M</bdi> </b>في <bdi dir="ltr" class="odt-ltr-term">MVC.</bdi> سيقوم الإجراء بإنشاء نموذج <bdi dir="ltr" class="odt-ltr-term">M</bdi> هذا [2c] ويأمر بعرض طريقة عرض <b><bdi dir="ltr" class="odt-ltr-term">V</bdi> </b>[3]؛
       </li>
     </ul>
   </li>
-  <li><b>الاستجابة </b>- تستخدم طريقة العرض <b>V</b> المحددة النموذج <b>M </b>الذي أنشأته الإجراء لتهيئة الأجزاء الديناميكية من استجابة HTML التي يجب إرسالها إلى العميل، ثم ترسل هذه الاستجابة.
+  <li><b>الاستجابة </b>- تستخدم طريقة العرض <b><bdi dir="ltr" class="odt-ltr-term">V</bdi></b> المحددة النموذج <b><bdi dir="ltr" class="odt-ltr-term">M</bdi> </b>الذي أنشأته الإجراء لتهيئة الأجزاء الديناميكية من استجابة <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> التي يجب إرسالها إلى العميل، ثم ترسل هذه الاستجابة.
   </li>
 </ol>
 
-<p>بالنسبة لخدمة الويب / JSON، يتم تعديل البنية السابقة بشكل طفيف:</p>
+<p>بالنسبة لخدمة الويب / <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>، يتم تعديل البنية السابقة بشكل طفيف:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000046B0000015D36B32E26.png" width="566" height="175" style="display:inline-block; margin:4px;width:14.963cm;height:4.618cm;" class="odt-zoomable" data-zoom-src="images/100000000000046B0000015D36B32E26.png" /></td></tr></table>
 
 <ul>
-  <li>في [4a]، يتم تحويل النموذج، وهو فئة Java، إلى سلسلة JSON بواسطة مكتبة JSON؛
+  <li>في [4a]، يتم تحويل النموذج، وهو فئة <bdi dir="ltr" class="odt-ltr-term">Java</bdi>، إلى سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> بواسطة مكتبة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>؛
   </li>
-  <li>في [4b]، يتم إرسال سلسلة JSON هذه إلى المتصفح؛
+  <li>في [4b]، يتم إرسال سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> هذه إلى المتصفح؛
   </li>
 </ul>
 
-<p>الآن، دعونا نوضح العلاقة بين بنية الويب MVC والبنية الطبقية. اعتمادًا على كيفية تعريف النموذج، قد يكون هذان المفهومان مرتبطين أو غير مرتبطين. لنفكر في تطبيق ويب Spring MVC أحادي الطبقة:</p>
+<p>الآن، دعونا نوضح العلاقة بين بنية الويب <bdi dir="ltr" class="odt-ltr-term">MVC</bdi> والبنية الطبقية. اعتمادًا على كيفية تعريف النموذج، قد يكون هذان المفهومان مرتبطين أو غير مرتبطين. لنفكر في تطبيق ويب <bdi dir="ltr" class="odt-ltr-term">Spring MVC</bdi> أحادي الطبقة:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003DE00000164C5D9CDE1.png" width="495" height="178" style="display:inline-block; margin:4px;width:13.097cm;height:4.71cm;" class="odt-zoomable" data-zoom-src="images/10000000000003DE00000164C5D9CDE1.png" /></td></tr></table>
 
-<p>إذا قمنا بتنفيذ الطبقة [Web] باستخدام Spring MVC، فسنحصل بالفعل على بنية ويب MVC ولكن ليس بنية متعددة الطبقات. هنا، ستتولى الطبقة [Web] كل شيء: العرض، والمنطق التجاري، والوصول إلى البيانات. والأعمال هي التي ستقوم بتنفيذ هذا العمل.</p>
+<p>إذا قمنا بتنفيذ الطبقة [<bdi dir="ltr" class="odt-ltr-term">Web</bdi>] باستخدام <bdi dir="ltr" class="odt-ltr-term">Spring MVC</bdi>، فسنحصل بالفعل على بنية ويب <bdi dir="ltr" class="odt-ltr-term">MVC</bdi> ولكن ليس بنية متعددة الطبقات. هنا، ستتولى الطبقة [<bdi dir="ltr" class="odt-ltr-term">Web</bdi>] كل شيء: العرض، والمنطق التجاري، والوصول إلى البيانات. والأعمال هي التي ستقوم بتنفيذ هذا العمل.</p>
 <p>الآن، دعونا ننظر في بنية ويب متعددة الطبقات:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004650000011CDD30A7F5.png" width="563" height="142" style="display:inline-block; margin:4px;width:14.884cm;height:3.757cm;" class="odt-zoomable" data-zoom-src="images/10000000000004650000011CDD30A7F5.png" /></td></tr></table>
 
-<p>يمكن تنفيذ طبقة [الويب] بدون إطار عمل وبدون اتباع نمط MVC. في هذه الحالة، لا تزال لدينا بنية متعددة الطبقات، لكن طبقة الويب لا تنفذ نمط MVC.</p>
-<p>على سبيل المثال، في عالم .NET، يمكن تنفيذ طبقة [الويب] الموصوفة أعلاه باستخدام ASP.NET MVC، مما ينتج عنه بنية متعددة الطبقات مع طبقة [ويب] بنمط MVC. ومع ذلك، يمكن استبدال طبقة ASP.NET MVC هذه بطبقة ASP.NET كلاسيكية (WebForms) مع الحفاظ على بقية العناصر (منطق الأعمال، DAO، ORM) <strong>دون تغيير</strong>.  وبذلك نحصل على بنية متعددة الطبقات مع طبقة [Web] لم تعد قائمة على MVC.</p>
-<p>في MVC، قلنا أن نموذج M هو نموذج عرض V، أي مجموعة البيانات التي يعرضها عرض V. وهناك تعريف آخر لنموذج M في MVC:</p>
+<p>يمكن تنفيذ طبقة [الويب] بدون إطار عمل وبدون اتباع نمط <bdi dir="ltr" class="odt-ltr-term">MVC.</bdi> في هذه الحالة، لا تزال لدينا بنية متعددة الطبقات، لكن طبقة الويب لا تنفذ نمط <bdi dir="ltr" class="odt-ltr-term">MVC.</bdi></p>
+<p>على سبيل المثال، في عالم .<bdi dir="ltr" class="odt-ltr-term">NET</bdi>، يمكن تنفيذ طبقة [الويب] الموصوفة أعلاه باستخدام <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi>، مما ينتج عنه بنية متعددة الطبقات مع طبقة [ويب] بنمط <bdi dir="ltr" class="odt-ltr-term">MVC.</bdi> ومع ذلك، يمكن استبدال طبقة <bdi dir="ltr" class="odt-ltr-term">ASP.NET MVC</bdi> هذه بطبقة <bdi dir="ltr" class="odt-ltr-term">ASP.NET</bdi> كلاسيكية (<bdi dir="ltr" class="odt-ltr-term">WebForms</bdi>) مع الحفاظ على بقية العناصر (منطق الأعمال، <bdi dir="ltr" class="odt-ltr-term">DAO</bdi>، <bdi dir="ltr" class="odt-ltr-term">ORM</bdi>) <strong>دون تغيير</strong>.  وبذلك نحصل على بنية متعددة الطبقات مع طبقة [<bdi dir="ltr" class="odt-ltr-term">Web</bdi>] لم تعد قائمة على <bdi dir="ltr" class="odt-ltr-term">MVC.</bdi></p>
+<p>في <bdi dir="ltr" class="odt-ltr-term">MVC</bdi>، قلنا أن نموذج <bdi dir="ltr" class="odt-ltr-term">M</bdi> هو نموذج عرض <bdi dir="ltr" class="odt-ltr-term">V</bdi>، أي مجموعة البيانات التي يعرضها عرض <bdi dir="ltr" class="odt-ltr-term">V.</bdi> وهناك تعريف آخر لنموذج <bdi dir="ltr" class="odt-ltr-term">M</bdi> في <bdi dir="ltr" class="odt-ltr-term">MVC:</bdi></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000048E000001172B31577C.png" width="583" height="140" style="display:inline-block; margin:4px;width:15.425cm;height:3.692cm;" class="odt-zoomable" data-zoom-src="images/100000000000048E000001172B31577C.png" /></td></tr></table>
 
-<p>يعتبر العديد من المؤلفين أن ما يقع على يمين طبقة [الويب] يشكل نموذج M في MVC. لتجنب الغموض، يمكننا الإشارة إلى:</p>
+<p>يعتبر العديد من المؤلفين أن ما يقع على يمين طبقة [الويب] يشكل نموذج <bdi dir="ltr" class="odt-ltr-term">M</bdi> في <bdi dir="ltr" class="odt-ltr-term">MVC.</bdi> لتجنب الغموض، يمكننا الإشارة إلى:</p>
 <ul>
   <li><b>نموذج المجال </b>عند الإشارة إلى كل ما يقع على يمين طبقة [الويب]
   </li>
-  <li><b>نموذج العرض </b>عند الإشارة إلى البيانات التي تعرضها طريقة العرض V
+  <li><b>نموذج العرض </b>عند الإشارة إلى البيانات التي تعرضها طريقة العرض <bdi dir="ltr" class="odt-ltr-term">V</bdi>
   </li>
 </ul>
 
-<p>فيما يلي، سيشير مصطلح &quot;نموذج M&quot; حصريًا إلى <strong>نموذج عرض</strong> V.</p>
+<p>فيما يلي، سيشير مصطلح &quot;نموذج <bdi dir="ltr" class="odt-ltr-term">M</bdi>&quot; حصريًا إلى <strong>نموذج عرض</strong> <bdi dir="ltr" class="odt-ltr-term">V.</bdi></p>
 <p><a id="refheading570191429907001"></a></p>
-<h2 id="134-webjson-spring-mvc">13.4. <span style="color: #4f81bd">مشروع Web/JSON باستخدام Spring MVC</span></h2>
-<p>يقدم الموقع [<a href="http://spring.io/guides"><u><span style="color: #0563c1">http://spring.io/guides</span></u></a>] دروسًا تعليمية للمبتدئين لاستكشاف نظام Spring. سنتبع إحدى هذه الدروس لاكتشاف تكوين Maven المطلوب لمشروع Spring MVC.</p>
+<h2 id="134-webjson-spring-mvc">13.4. <span style="color: #4f81bd">مشروع <bdi dir="ltr" class="odt-ltr-term">Web/JSON</bdi> باستخدام <bdi dir="ltr" class="odt-ltr-term">Spring MVC</bdi></span></h2>
+<p>يقدم الموقع [<a href="http://spring.io/guides"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">http://spring.io/guides</bdi></span></u></a>] دروسًا تعليمية للمبتدئين لاستكشاف نظام <bdi dir="ltr" class="odt-ltr-term">Spring.</bdi> سنتبع إحدى هذه الدروس لاكتشاف تكوين <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> المطلوب لمشروع <bdi dir="ltr" class="odt-ltr-term">Spring MVC.</bdi></p>
 <p><a id="refheading15914779844303"></a></p>
 <h3 id="1341">13.4.1. <span style="color: #4f81bd"><span style="color: #4f81bd">مشروع العرض التوضيحي</span></span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003780000013C8AAFD577.png" width="444" height="158" style="display:inline-block; margin:4px;width:11.748cm;height:4.18cm;" class="odt-zoomable" data-zoom-src="images/10000000000003780000013C8AAFD577.png" /></td></tr></table>
 
 <ul>
-  <li>في [1]، نقوم باستيراد أحد أدلة Spring؛
+  <li>في [1]، نقوم باستيراد أحد أدلة <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>؛
   </li>
 </ul>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E4000002E98F346916.png" width="626" height="373" style="display:inline-block; margin:4px;width:16.563cm;height:9.857cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E4000002E98F346916.png" /></td></tr></table>
 
 <ul>
-  <li>في [2]، نختار مثال [Rest Service]؛
+  <li>في [2]، نختار مثال [<bdi dir="ltr" class="odt-ltr-term">Rest Service</bdi>]؛
   </li>
-  <li>في [3]، نختار مشروع Maven؛
+  <li>في [3]، نختار مشروع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi>؛
   </li>
   <li>في [4]، نختار الإصدار النهائي من الدليل؛
   </li>
@@ -1567,11 +1569,11 @@
   </li>
 </ul>
 
-<p>غالبًا ما تُسمى خدمات الويب التي يمكن الوصول إليها عبر عناوين URL قياسية والتي تُرجع بيانات JSON بخدمات REST (REpresentational State Transfer). ويُقال إن الخدمة تتبع نمط RESTful إذا كانت تتبع قواعد معينة.</p>
-<p>دعونا الآن نفحص المشروع المستورد، بدءًا من تكوين Maven الخاص به.</p>
+<p>غالبًا ما تُسمى خدمات الويب التي يمكن الوصول إليها عبر عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> قياسية والتي تُرجع بيانات <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> بخدمات <bdi dir="ltr" class="odt-ltr-term">REST</bdi> (<bdi dir="ltr" class="odt-ltr-term">REpresentational State Transfer</bdi>). ويُقال إن الخدمة تتبع نمط <bdi dir="ltr" class="odt-ltr-term">RESTful</bdi> إذا كانت تتبع قواعد معينة.</p>
+<p>دعونا الآن نفحص المشروع المستورد، بدءًا من تكوين <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> الخاص به.</p>
 <p><a id="refheading15916779844303"></a></p>
-<h3 id="1342-maven">13.4.2. <span style="color: #4f81bd">تكوين Maven</span></h3>
-<p><a id="refheading5702314299070011"></a>ملف [pom.xml] هو كما يلي:</p>
+<h3 id="1342-maven">13.4.2. <span style="color: #4f81bd">تكوين <bdi dir="ltr" class="odt-ltr-term">Maven</bdi></span></h3>
+<p><a id="refheading5702314299070011"></a>ملف [<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>] هو كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;?</span><span style="color:#3f7f7f">xml</span> <span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;1.0&quot;</span> <span style="color:#7f007f">encoding</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;UTF-8&quot;</span><span style="color:#008080">?&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span> <span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span>
@@ -1624,31 +1626,31 @@
 </code></pre></div>
 
 <ul>
-  <li>الأسطر 6–8: خصائص مشروع Maven. هناك علامة [&lt;packaging&gt;] تحدد نوع الملف الذي ينتجه بناء Maven مفقودة. في حالة عدم وجودها، يتم استخدام النوع [jar]. وبالتالي، فإن التطبيق هو تطبيق قابل للتنفيذ قائم على وحدة التحكم، وليس تطبيق ويب، وفي هذه الحالة سيكون التعبئة [war]؛
+  <li>الأسطر 6–8: خصائص مشروع <bdi dir="ltr" class="odt-ltr-term">Maven.</bdi> هناك علامة [&lt;<bdi dir="ltr" class="odt-ltr-term">packaging</bdi>&gt;] تحدد نوع الملف الذي ينتجه بناء <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> مفقودة. في حالة عدم وجودها، يتم استخدام النوع [<bdi dir="ltr" class="odt-ltr-term">jar</bdi>]. وبالتالي، فإن التطبيق هو تطبيق قابل للتنفيذ قائم على وحدة التحكم، وليس تطبيق ويب، وفي هذه الحالة سيكون التعبئة [<bdi dir="ltr" class="odt-ltr-term">war</bdi>]؛
   </li>
-  <li>الأسطر 10-14: يحتوي مشروع Maven على مشروع أب [<span style="color: #000000">spring-boot-starter-parent</span>]. يحدد هذا معظم تبعيات المشروع. قد تكون كافية، وفي هذه الحالة لا تضاف أي تبعيات إضافية، أو قد لا تكون كافية، وفي هذه الحالة تضاف التبعيات المفقودة؛
+  <li>الأسطر 10-14: يحتوي مشروع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> على مشروع أب [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">spring-boot-starter-parent</bdi></span>]. يحدد هذا معظم تبعيات المشروع. قد تكون كافية، وفي هذه الحالة لا تضاف أي تبعيات إضافية، أو قد لا تكون كافية، وفي هذه الحالة تضاف التبعيات المفقودة؛
   </li>
-  <li>الأسطر 17-20: تتضمن الأداة [spring-boot-starter-web] المكتبات اللازمة لمشروع خدمة ويب Spring MVC حيث لا يتم إنشاء أي عروض. تتضمن هذه الأداة عددًا كبيرًا جدًا من المكتبات، بما في ذلك تلك الخاصة بخادم Tomcat المدمج. سيتم تشغيل التطبيق على هذا الخادم؛
+  <li>الأسطر 17-20: تتضمن الأداة [<bdi dir="ltr" class="odt-ltr-term">spring-boot-starter-web</bdi>] المكتبات اللازمة لمشروع خدمة ويب <bdi dir="ltr" class="odt-ltr-term">Spring MVC</bdi> حيث لا يتم إنشاء أي عروض. تتضمن هذه الأداة عددًا كبيرًا جدًا من المكتبات، بما في ذلك تلك الخاصة بخادم <bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi> المدمج. سيتم تشغيل التطبيق على هذا الخادم؛
   </li>
 </ul>
 
 <p>المكتبات المضمنة في هذا التكوين كثيرة جدًا:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000013900000130C601B465.png" width="219" height="213" style="display:inline-block; margin:4px;width:5.791cm;height:5.623cm;" class="odt-zoomable" data-zoom-src="images/100000000000013900000130C601B465.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F700000110A13A7F1F.png" width="173" height="190" style="display:inline-block; margin:4px;width:4.57cm;height:5.032cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F700000110A13A7F1F.png" /></td></tr></table>
 
-<p>أعلاه، نرى الأرشيفات الثلاثة لخادم Tomcat.</p>
+<p>أعلاه، نرى الأرشيفات الثلاثة لخادم <bdi dir="ltr" class="odt-ltr-term">Tomcat.</bdi></p>
 <p><a id="refheading15918779844303"></a></p>
-<h3 id="1343-spring-json">13.4.3. <span style="color: #4f81bd">بنية خدمة Spring [الويب / JSON]</span></h3>
-<p><a id="refheading5702514299070011"></a>بالنسبة لخدمة الويب/JSON، يقوم Spring MVC بتنفيذ نموذج MVC على النحو التالي:</p>
+<h3 id="1343-spring-json">13.4.3. <span style="color: #4f81bd">بنية خدمة <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> [الويب / <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>]</span></h3>
+<p><a id="refheading5702514299070011"></a>بالنسبة لخدمة الويب/<bdi dir="ltr" class="odt-ltr-term">JSON</bdi>، يقوم <bdi dir="ltr" class="odt-ltr-term">Spring MVC</bdi> بتنفيذ نموذج <bdi dir="ltr" class="odt-ltr-term">MVC</bdi> على النحو التالي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000046200000164D2C28E83.png" width="561" height="178" style="display:inline-block; margin:4px;width:14.843cm;height:4.71cm;" class="odt-zoomable" data-zoom-src="images/100000000000046200000164D2C28E83.png" /></td></tr></table>
 
 <ul>
-  <li>في [4a]، يتم تحويل النموذج — وهو فئة Java — إلى سلسلة JSON بواسطة مكتبة JSON؛
+  <li>في [4a]، يتم تحويل النموذج — وهو فئة <bdi dir="ltr" class="odt-ltr-term">Java</bdi> — إلى سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> بواسطة مكتبة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>؛
   </li>
-  <li>في [4b]، يتم إرسال سلسلة JSON هذه إلى المتصفح؛
+  <li>في [4b]، يتم إرسال سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> هذه إلى المتصفح؛
   </li>
 </ul>
 <p><a id="refheading15920779844303"></a></p>
-<h3 id="1344-c">13.4.4. <span style="color: #4f81bd">وحدة التحكم C</span></h3>
+<h3 id="1344-c">13.4.4. <span style="color: #4f81bd">وحدة التحكم <bdi dir="ltr" class="odt-ltr-term">C</bdi></span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000ED000000AB6C6D3DB3.png" width="166" height="120" style="display:inline-block; margin:4px;width:4.39cm;height:3.166cm;" class="odt-zoomable" data-zoom-src="images/10000000000000ED000000AB6C6D3DB3.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><a id="refheading5702714299070011"></a></p>
@@ -1675,18 +1677,18 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 9: تجعل العلامة التوضيحية [<b>@RestController</b>] فئة [<span style="color: #000000">GreetingController</span>] وحدة تحكم Spring، مما يعني أن طرقها مسجلة لمعالجة عناوين URL. لقد رأينا العلامة التوضيحية المماثلة [<b>@Controller</b>]. كان نوع الإرجاع لطرق تلك الوحدة هو [String]، وهو اسم العرض المراد عرضه. هنا، الأمر مختلف. تُرجع أساليب [<b>@RestController</b>] كائنات يتم تسلسلها لإرسالها إلى المتصفح. يعتمد نوع التسلسل الذي يتم إجراؤه على تكوين Spring MVC. هنا، سيتم تسلسلها إلى JSON. إن وجود مكتبة JSON في تبعيات المشروع هو ما يجعل Spring Boot يقوم تلقائيًا بتكوين المشروع بهذه الطريقة؛
+  <li>السطر 9: تجعل العلامة التوضيحية [<b>@<bdi dir="ltr" class="odt-ltr-term">RestController</bdi></b>] فئة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">GreetingController</bdi></span>] وحدة تحكم <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>، مما يعني أن طرقها مسجلة لمعالجة عناوين <bdi dir="ltr" class="odt-ltr-term">URL.</bdi> لقد رأينا العلامة التوضيحية المماثلة [<b>@<bdi dir="ltr" class="odt-ltr-term">Controller</bdi></b>]. كان نوع الإرجاع لطرق تلك الوحدة هو [<bdi dir="ltr" class="odt-ltr-term">String</bdi>]، وهو اسم العرض المراد عرضه. هنا، الأمر مختلف. تُرجع أساليب [<b>@<bdi dir="ltr" class="odt-ltr-term">RestController</bdi></b>] كائنات يتم تسلسلها لإرسالها إلى المتصفح. يعتمد نوع التسلسل الذي يتم إجراؤه على تكوين <bdi dir="ltr" class="odt-ltr-term">Spring MVC.</bdi> هنا، سيتم تسلسلها إلى <bdi dir="ltr" class="odt-ltr-term">JSON.</bdi> إن وجود مكتبة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> في تبعيات المشروع هو ما يجعل <bdi dir="ltr" class="odt-ltr-term">Spring Boot</bdi> يقوم تلقائيًا بتكوين المشروع بهذه الطريقة؛
   </li>
-  <li>السطر 14: تحدد العلامة [<b>@RequestMapping</b>] عنوان URL الذي تعالجه الطريقة، وهو في هذه الحالة عنوان URL [/greeting]؛
+  <li>السطر 14: تحدد العلامة [<b>@<bdi dir="ltr" class="odt-ltr-term">RequestMapping</bdi></b>] عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الذي تعالجه الطريقة، وهو في هذه الحالة عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">greeting</bdi>]؛
   </li>
-  <li>السطر 15: سبق أن شرحنا التعليق التوضيحي [<span style="color: #646464">@RequestParam</span>]. والنتيجة التي ترجعها الطريقة هي كائن من النوع [Greeting].
+  <li>السطر 15: سبق أن شرحنا التعليق التوضيحي [<span style="color: #646464">@<bdi dir="ltr" class="odt-ltr-term">RequestParam</bdi></span>]. والنتيجة التي ترجعها الطريقة هي كائن من النوع [<bdi dir="ltr" class="odt-ltr-term">Greeting</bdi>].
   </li>
-  <li>السطر 12: عدد صحيح طويل من النوع الذري. وهذا يعني أنه يدعم الوصول المتزامن. قد ترغب خيوط متعددة في زيادة متغير [counter] في نفس الوقت. وسيتم التعامل مع هذا بشكل صحيح. لا يمكن للخيط قراءة قيمة العداد إلا بعد أن ينتهي الخيط الذي يقوم بتعديله حاليًا من تعديله.
+  <li>السطر 12: عدد صحيح طويل من النوع الذري. وهذا يعني أنه يدعم الوصول المتزامن. قد ترغب خيوط متعددة في زيادة متغير [<bdi dir="ltr" class="odt-ltr-term">counter</bdi>] في نفس الوقت. وسيتم التعامل مع هذا بشكل صحيح. لا يمكن للخيط قراءة قيمة العداد إلا بعد أن ينتهي الخيط الذي يقوم بتعديله حاليًا من تعديله.
   </li>
 </ul>
 <p><a id="refheading15922779844303"></a></p>
-<h3 id="1345-m">13.4.5. <span style="color: #4f81bd">نموذج M</span></h3>
-<p><a id="refheading570291429907001"></a>نموذج M الناتج عن الطريقة السابقة هو كائن [Greeting] التالي:</p>
+<h3 id="1345-m">13.4.5. <span style="color: #4f81bd">نموذج <bdi dir="ltr" class="odt-ltr-term">M</bdi></span></h3>
+<p><a id="refheading570291429907001"></a>نموذج <bdi dir="ltr" class="odt-ltr-term">M</bdi> الناتج عن الطريقة السابقة هو كائن [<bdi dir="ltr" class="odt-ltr-term">Greeting</bdi>] التالي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000ED000000ABFE40A4F7.png" width="166" height="120" style="display:inline-block; margin:4px;width:4.39cm;height:3.166cm;" class="odt-zoomable" data-zoom-src="images/10000000000000ED000000ABFE40A4F7.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -1712,7 +1714,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>سيؤدي تحويل JSON لهذا الكائن إلى إنشاء السلسلة <strong>{&quot;id&quot;:n,&quot;content&quot;:&quot;text&quot;}</strong>. وفي النهاية، ستكون سلسلة JSON الناتجة عن طريقة وحدة التحكم بالشكل التالي:</p>
+<p>سيؤدي تحويل <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> لهذا الكائن إلى إنشاء السلسلة <strong>{&quot;<bdi dir="ltr" class="odt-ltr-term">id</bdi>&quot;:<bdi dir="ltr" class="odt-ltr-term">n</bdi>,&quot;<bdi dir="ltr" class="odt-ltr-term">content</bdi>&quot;:&quot;<bdi dir="ltr" class="odt-ltr-term">text</bdi>&quot;}</strong>. وفي النهاية، ستكون سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> الناتجة عن طريقة وحدة التحكم بالشكل التالي:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{&quot;id&quot;:2,&quot;content&quot;:&quot;Hello, World!&quot;}
 </code></pre></div>
 <p>أو </p>
@@ -1723,7 +1725,7 @@
 <p><a id="refheading570311429907001"></a></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000ED000000AB6B43BC81.png" width="166" height="120" style="display:inline-block; margin:4px;width:4.39cm;height:3.166cm;" class="odt-zoomable" data-zoom-src="images/10000000000000ED000000AB6B43BC81.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>تعد فئة [Application.java] هي الفئة القابلة للتنفيذ في المشروع. وفيما يلي شفرة البرمجة الخاصة بها:</p>
+<p>تعد فئة [<bdi dir="ltr" class="odt-ltr-term">Application.java</bdi>] هي الفئة القابلة للتنفيذ في المشروع. وفيما يلي شفرة البرمجة الخاصة بها:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> hello;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1804,38 +1806,38 @@
 <a id="__codelineno-2-27" name="__codelineno-2-27"></a>2014-11-28 15:22:58.319  INFO 3152 --- [           main] hello.Application                        : Started Application in 3.788 seconds (JVM running for 4.424)
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li>السطر 13: يبدأ خادم Tomcat على المنفذ 8080 (السطر 12)؛
+  <li>السطر 13: يبدأ خادم <bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi> على المنفذ 8080 (السطر 12)؛
   </li>
-  <li>السطر 17: وجود سيرفلت [DispatcherServlet]؛
+  <li>السطر 17: وجود سيرفلت [<bdi dir="ltr" class="odt-ltr-term">DispatcherServlet</bdi>]؛
   </li>
-  <li>السطر 20: تم اكتشاف الطريقة [GreetingController.greeting]؛
+  <li>السطر 20: تم اكتشاف الطريقة [<bdi dir="ltr" class="odt-ltr-term">GreetingController.greeting</bdi>]؛
   </li>
 </ul>
 
-<p>لاختبار تطبيق الويب، نطلب عنوان URL [http://localhost:8080/greeting]:</p>
+<p>لاختبار تطبيق الويب، نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/greeting</bdi>]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000145000000802108509F.png" width="212" height="83" style="display:inline-block; margin:4px;width:5.609cm;height:2.208cm;" class="odt-zoomable" data-zoom-src="images/1000000000000145000000802108509F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000019F00000085614557B2.png" width="290" height="93" style="display:inline-block; margin:4px;width:7.68cm;height:2.461cm;" class="odt-zoomable" data-zoom-src="images/100000000000019F00000085614557B2.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>نتلقى سلسلة JSON المتوقعة. قد يكون من المثير للاهتمام الاطلاع على رؤوس HTTP التي أرسلها الخادم. للقيام بذلك، سنستخدم ملحق Chrome المسمى [Advanced Rest Client] (Chrome / Ctrl-T / قائمة [التطبيقات] / [Advanced Rest Client] - انظر الملاحق، <a href="#refheading398832986338762"><u><span style="color: #0563c1">الفقرة 22.5</span></u></a>):</p>
+<p>نتلقى سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> المتوقعة. قد يكون من المثير للاهتمام الاطلاع على رؤوس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> التي أرسلها الخادم. للقيام بذلك، سنستخدم ملحق <bdi dir="ltr" class="odt-ltr-term">Chrome</bdi> المسمى [<bdi dir="ltr" class="odt-ltr-term">Advanced Rest Client</bdi>] (<bdi dir="ltr" class="odt-ltr-term">Chrome</bdi> / <bdi dir="ltr" class="odt-ltr-term">Ctrl-T</bdi> / قائمة [التطبيقات] / [<bdi dir="ltr" class="odt-ltr-term">Advanced Rest Client</bdi>] - انظر الملاحق، <a href="#refheading398832986338762"><u><span style="color: #0563c1">الفقرة 22.5</span></u></a>):</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000535000004DB0D231B7F.png" width="667" height="622" style="display:inline-block; margin:4px;width:17.635cm;height:16.445cm;" class="odt-zoomable" data-zoom-src="images/1000000000000535000004DB0D231B7F.png" /></td></tr></table>
 
 <ul>
-  <li>في [1]، عنوان URL المطلوب؛
+  <li>في [1]، عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> المطلوب؛
   </li>
-  <li>في [2]، يتم استخدام طريقة GET؛
+  <li>في [2]، يتم استخدام طريقة <bdi dir="ltr" class="odt-ltr-term">GET</bdi>؛
   </li>
-  <li>في [3]، استجابة JSON؛
+  <li>في [3]، استجابة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>؛
   </li>
-  <li>في [4]، أشار الخادم إلى أنه يرسل استجابة بتنسيق JSON؛
+  <li>في [4]، أشار الخادم إلى أنه يرسل استجابة بتنسيق <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>؛
   </li>
-  <li>في [5]، نطلب نفس عنوان URL ولكن هذه المرة باستخدام طلب POST؛
+  <li>في [5]، نطلب نفس عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> ولكن هذه المرة باستخدام طلب <bdi dir="ltr" class="odt-ltr-term">POST</bdi>؛
   </li>
-  <li>في [7]، يتم إرسال المعلومات إلى الخادم بتنسيق [urlencoded]؛
+  <li>في [7]، يتم إرسال المعلومات إلى الخادم بتنسيق [<bdi dir="ltr" class="odt-ltr-term">urlencoded</bdi>]؛
   </li>
-  <li>في [6]، المعلمة &quot;<b>name&quot; </b>وقيمتها؛
+  <li>في [6]، المعلمة &quot;<b><bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot; </b>وقيمتها؛
   </li>
-  <li>في [8]، يُخبر المتصفح الخادم بأنه يرسل له معلومات [urlencoded]؛
+  <li>في [8]، يُخبر المتصفح الخادم بأنه يرسل له معلومات [<bdi dir="ltr" class="odt-ltr-term">urlencoded</bdi>]؛
   </li>
-  <li>في [9]، استجابة JSON من الخادم؛
+  <li>في [9]، استجابة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> من الخادم؛
   </li>
 </ul>
 <p><a id="refheading15928779844303"></a></p>
@@ -1846,17 +1848,17 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000418000003580007FFB3.png" width="524" height="428" style="display:inline-block; margin:4px;width:13.864cm;height:11.324cm;" class="odt-zoomable" data-zoom-src="images/1000000000000418000003580007FFB3.png" /></td></tr></table>
 
 <ul>
-  <li>في [1]: نقوم بتشغيل هدف Maven؛
+  <li>في [1]: نقوم بتشغيل هدف <bdi dir="ltr" class="odt-ltr-term">Maven</bdi>؛
   </li>
-  <li>في [2]: هناك هدفان: [clean] لحذف مجلد [target] من مشروع Maven، و[package] لإعادة إنشائه؛
+  <li>في [2]: هناك هدفان: [<bdi dir="ltr" class="odt-ltr-term">clean</bdi>] لحذف مجلد [<bdi dir="ltr" class="odt-ltr-term">target</bdi>] من مشروع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi>، و[<bdi dir="ltr" class="odt-ltr-term">package</bdi>] لإعادة إنشائه؛
   </li>
-  <li>في [3]: سيكون المجلد [target] الذي تم إنشاؤه موجودًا في هذا المجلد؛
+  <li>في [3]: سيكون المجلد [<bdi dir="ltr" class="odt-ltr-term">target</bdi>] الذي تم إنشاؤه موجودًا في هذا المجلد؛
   </li>
   <li>في [4]: نقوم بإنشاء الهدف؛
   </li>
 </ul>
 
-<p>في السجلات التي تظهر في وحدة التحكم، من المهم رؤية المكون الإضافي [<span style="color: #000000">spring-boot-maven-plugin</span>]. هذا هو المكون الإضافي الذي يقوم بإنشاء الأرشيف القابل للتنفيذ.</p>
+<p>في السجلات التي تظهر في وحدة التحكم، من المهم رؤية المكون الإضافي [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">spring-boot-maven-plugin</bdi></span>]. هذا هو المكون الإضافي الذي يقوم بإنشاء الأرشيف القابل للتنفيذ.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="o">---</span><span class="w"> </span><span class="n">spring</span><span class="o">-</span><span class="n">boot</span><span class="o">-</span><span class="n">maven</span><span class="o">-</span><span class="n">plugin</span><span class="p">:</span><span class="mf">1.1.0</span><span class="p">.</span><span class="na">RELEASE</span><span class="p">:</span><span class="n">repackage</span><span class="w"> </span><span class="p">(</span><span class="k">default</span><span class="p">)</span><span class="w"> </span><span class="err">@</span><span class="w"> </span><span class="n">gs</span><span class="o">-</span><span class="n">rest</span><span class="o">-</span><span class="n">service</span><span class="w"> </span><span class="o">---</span>
 </code></pre></div>
 <p>باستخدام وحدة التحكم، انتقل إلى المجلد الذي تم إنشاؤه:</p>
@@ -1900,8 +1902,8 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001470000007FCF70CA67.png" width="229" height="89" style="display:inline-block; margin:4px;width:6.05cm;height:2.35cm;" class="odt-zoomable" data-zoom-src="images/10000000000001470000007FCF70CA67.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><a id="refheading15930779844303"></a></p>
-<h3 id="1349-tomcat">13.4.9. <span style="color: #4f81bd">نشر التطبيق على خادم Tomcat</span></h3>
-<p>كما فعلنا في المشروع السابق، نقوم بتعديل ملف [pom.xml] على النحو التالي:</p>
+<h3 id="1349-tomcat">13.4.9. <span style="color: #4f81bd">نشر التطبيق على خادم <bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi></span></h3>
+<p>كما فعلنا في المشروع السابق، نقوم بتعديل ملف [<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>] على النحو التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;?</span><span style="color:#3f7f7f">xml</span> <span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;1.0&quot;</span> <span style="color:#7f007f">encoding</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;UTF-8&quot;</span><span style="color:#008080">?&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span> <span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span>
@@ -1918,14 +1920,14 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 9: يجب تحديد أنك ستقوم بإنشاء ملف WAR (أرشيف ويب)؛
+  <li>السطر 9: يجب تحديد أنك ستقوم بإنشاء ملف <bdi dir="ltr" class="odt-ltr-term">WAR</bdi> (أرشيف ويب)؛
   </li>
 </ul>
 
-<p>يجب عليك أيضًا تكوين تطبيق الويب. في حالة عدم وجود ملف [web.xml]، يتم ذلك باستخدام فئة تمتد من [<span style="color: #000000">SpringBootServletInitializer</span>]:</p>
+<p>يجب عليك أيضًا تكوين تطبيق الويب. في حالة عدم وجود ملف [<bdi dir="ltr" class="odt-ltr-term">web.xml</bdi>]، يتم ذلك باستخدام فئة تمتد من [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">SpringBootServletInitializer</bdi></span>]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000102000000D1A9F9B1A9.png" width="181" height="146" style="display:inline-block; margin:4px;width:4.78cm;height:3.872cm;" class="odt-zoomable" data-zoom-src="images/1000000000000102000000D1A9F9B1A9.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>فيما يلي فئة [ApplicationInitializer]:</p>
+<p>فيما يلي فئة [<bdi dir="ltr" class="odt-ltr-term">ApplicationInitializer</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> hello;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1943,9 +1945,9 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 6: فئة [<span style="color: #000000">ApplicationInitializer</span>] تمتد من فئة [<span style="color: #000000">SpringBootServletInitializer</span>]؛
+  <li>السطر 6: فئة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ApplicationInitializer</bdi></span>] تمتد من فئة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">SpringBootServletInitializer</bdi></span>]؛
   </li>
-  <li>السطر 9: يتم تجاوز طريقة [configure] (السطر 8)؛
+  <li>السطر 9: يتم تجاوز طريقة [<bdi dir="ltr" class="odt-ltr-term">configure</bdi>] (السطر 8)؛
   </li>
   <li>السطر 10: يتم توفير الفئة التي تقوم بتكوين المشروع؛
   </li>
@@ -1955,35 +1957,35 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E700000158F9710373.png" width="628" height="172" style="display:inline-block; margin:4px;width:16.603cm;height:4.551cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E700000158F9710373.png" /></td></tr></table>
 
 <ul>
-  <li>في [1-2]، قم بتشغيل المشروع على أحد الخوادم المسجلة في بيئة تطوير Eclipse؛
+  <li>في [1-2]، قم بتشغيل المشروع على أحد الخوادم المسجلة في بيئة تطوير <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi>؛
   </li>
 </ul>
 
-<p>بمجرد الانتهاء من ذلك، يمكنك طلب عنوان URL [http://localhost:8080/gs-rest-service/greeting/?name=Mitchell] في متصفح:</p>
+<p>بمجرد الانتهاء من ذلك، يمكنك طلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/gs-rest-service/greeting/</bdi>?<bdi dir="ltr" class="odt-ltr-term">name</bdi>=<bdi dir="ltr" class="odt-ltr-term">Mitchell</bdi>] في متصفح:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000022B0000008EA361FFF2.png" width="389" height="99" style="display:inline-block; margin:4px;width:10.28cm;height:2.63cm;" class="odt-zoomable" data-zoom-src="images/100000000000022B0000008EA361FFF2.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><a id="refheading15932779844303"></a></p>
 <h3 id="13410">13.4.10. <span style="color: #4f81bd">الخلاصة</span></h3>
-<p>لقد قدمنا نوعًا من مشاريع Spring MVC حيث يرسل التطبيق الويب دفق JSON إلى المتصفح. سنقوم الآن بتطوير تطبيق ويب/JSON لعرض قاعدة البيانات [dbintrospringdata] التي تمت دراستها في البرنامج التعليمي [مقدمة إلى Spring Data] على الويب.</p>
+<p>لقد قدمنا نوعًا من مشاريع <bdi dir="ltr" class="odt-ltr-term">Spring MVC</bdi> حيث يرسل التطبيق الويب دفق <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> إلى المتصفح. سنقوم الآن بتطوير تطبيق ويب/<bdi dir="ltr" class="odt-ltr-term">JSON</bdi> لعرض قاعدة البيانات [<bdi dir="ltr" class="odt-ltr-term">dbintrospringdata</bdi>] التي تمت دراستها في البرنامج التعليمي [مقدمة إلى <bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi>] على الويب.</p>
 <p><a id="refheading416278986338762"></a></p>
-<h2 id="135-dbintrospringdata">13.5. <span style="color: #4f81bd">عرض قاعدة بيانات [dbintrospringdata] على الويب</span></h2>
+<h2 id="135-dbintrospringdata">13.5. <span style="color: #4f81bd">عرض قاعدة بيانات [<bdi dir="ltr" class="odt-ltr-term">dbintrospringdata</bdi>] على الويب</span></h2>
 <p><a id="refheading17982265679331"></a></p>
-<h3 id="1351-json">13.5.1. <span style="color: #4f81bd">بنية خدمة الويب/JSON</span></h3>
+<h3 id="1351-json">13.5.1. <span style="color: #4f81bd">بنية خدمة الويب/<bdi dir="ltr" class="odt-ltr-term">JSON</bdi></span></h3>
 <p>سنقوم بتنفيذ البنية التالية:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000462000001676F190154.png" width="561" height="179" style="display:inline-block; margin:4px;width:14.843cm;height:4.748cm;" class="odt-zoomable" data-zoom-src="images/1000000000000462000001676F190154.png" /></td></tr></table>
 
-<p>يتم تنفيذ طبقات [DAO] و[JPA] بواسطة التطبيق المكتوب في البرنامج التعليمي [مقدمة إلى Spring Data].</p>
+<p>يتم تنفيذ طبقات [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">JPA</bdi>] بواسطة التطبيق المكتوب في البرنامج التعليمي [مقدمة إلى <bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi>].</p>
 <p><a id="refheading251896391218965"></a></p>
 <h3 id="1352">13.5.2. <span style="color: #4f81bd">تثبيت قاعدة البيانات</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E10000006A162CCEFA.png" width="158" height="74" style="display:inline-block; margin:4px;width:4.17cm;height:1.965cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E10000006A162CCEFA.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>يقوم البرنامج النصي SQL [dbintrospringdata.sql] بإنشاء قاعدة بيانات MySQL المطلوبة للاختبار.</p>
+<p>يقوم البرنامج النصي <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> [<bdi dir="ltr" class="odt-ltr-term">dbintrospringdata.sql</bdi>] بإنشاء قاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">MySQL</bdi> المطلوبة للاختبار.</p>
 <p><a id="refheading17986265679331"></a></p>
-<h3 id="1353-eclipse-json">13.5.3. <span style="color: #4f81bd">مشروع Eclipse لخدمة الويب / JSON</span></h3>
-<p>مشروع Eclipse لخدمة الويب / JSON هو كما يلي:</p>
+<h3 id="1353-eclipse-json">13.5.3. <span style="color: #4f81bd">مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> لخدمة الويب / <bdi dir="ltr" class="odt-ltr-term">JSON</bdi></span></h3>
+<p>مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> لخدمة الويب / <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> هو كما يلي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E2000001136FF077F3.png" width="158" height="193" style="display:inline-block; margin:4px;width:4.189cm;height:5.098cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E2000001136FF077F3.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>هذا مشروع Maven يحتوي على ملف [pom.xml] كما يلي:</p>
+<p>هذا مشروع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> يحتوي على ملف [<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>] كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span> <span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#7f007f">xsi:schemaLocation</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#008080">&gt;</span></span></span>
@@ -2035,13 +2037,13 @@
 </code></pre></div>
 
 <ul>
-  <li>الأسطر 11–15: مشروع Maven الأصلي المستخدم بالفعل لطبقة [DAO]؛
+  <li>الأسطر 11–15: مشروع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> الأصلي المستخدم بالفعل لطبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]؛
   </li>
-  <li>الأسطر 18–22: التبعية لطبقة [DAO]؛
+  <li>الأسطر 18–22: التبعية لطبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]؛
   </li>
-  <li>الأسطر 23–26: التبعية على عنصر [spring-boot-starter-web]. يتضمن هذا العنصر جميع التبعيات اللازمة لإنشاء خدمة ويب/JSON. كما يتضمن مكتبات غير ضرورية. لذا، سيكون من الضروري إجراء تكوين أكثر دقة. ومع ذلك، فإن هذا التكوين مفيد للبدء؛
+  <li>الأسطر 23–26: التبعية على عنصر [<bdi dir="ltr" class="odt-ltr-term">spring-boot-starter-web</bdi>]. يتضمن هذا العنصر جميع التبعيات اللازمة لإنشاء خدمة ويب/<bdi dir="ltr" class="odt-ltr-term">JSON.</bdi> كما يتضمن مكتبات غير ضرورية. لذا، سيكون من الضروري إجراء تكوين أكثر دقة. ومع ذلك، فإن هذا التكوين مفيد للبدء؛
   </li>
-  <li>الأسطر 28–30: التبعية على عنصر [spring-boot-starter] تسمح لك بإدارة تعليقات Spring Boot؛
+  <li>الأسطر 28–30: التبعية على عنصر [<bdi dir="ltr" class="odt-ltr-term">spring-boot-starter</bdi>] تسمح لك بإدارة تعليقات <bdi dir="ltr" class="odt-ltr-term">Spring Boot</bdi>؛
   </li>
 </ul>
 
@@ -2049,17 +2051,17 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F80000021C318645BE.png" width="636" height="270" style="display:inline-block; margin:4px;width:16.828cm;height:7.144cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F80000021C318645BE.png" /></td></tr></table>
 
 <ul>
-  <li>في [1]، يمكننا أن نرى أن Eclipse قد اكتشف التبعية لأرشيف المشروع [intro-spring-data-01]؛
+  <li>في [1]، يمكننا أن نرى أن <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> قد اكتشف التبعية لأرشيف المشروع [<bdi dir="ltr" class="odt-ltr-term">intro-spring-data-01</bdi>]؛
   </li>
 </ul>
 
-<p>التبعيات المذكورة أعلاه هي تبعيات كل من طبقة [DAO] وطبقة [web].</p>
+<p>التبعيات المذكورة أعلاه هي تبعيات كل من طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] وطبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>].</p>
 <p><a id="refheading17988265679331"></a></p>
-<h4 id="13531-web">13.5.3.1. <span style="color: #4f81bd">تكوين طبقة [web]</span></h4>
-<p>يتم تكوين طبقة [web] بواسطة ملف [AppConfig]:</p>
+<h4 id="13531-web">13.5.3.1. <span style="color: #4f81bd">تكوين طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>]</span></h4>
+<p>يتم تكوين طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>] بواسطة ملف [<bdi dir="ltr" class="odt-ltr-term">AppConfig</bdi>]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F7000000CD6A8D0755.png" width="173" height="143" style="display:inline-block; margin:4px;width:4.57cm;height:3.792cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F7000000CD6A8D0755.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>تقوم فئة [WebConfig] بتكوين طبقة [web]:</p>
+<p>تقوم فئة [<bdi dir="ltr" class="odt-ltr-term">WebConfig</bdi>] بتكوين طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.webjson.config;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2156,33 +2158,33 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 18: تعمل العلامة [<span style="color: #646464">@EnableWebMvc</span>] على تشغيل التكوينات التلقائية لإطار عمل Spring MVC؛
+  <li>السطر 18: تعمل العلامة [<span style="color: #646464">@<bdi dir="ltr" class="odt-ltr-term">EnableWebMvc</bdi></span>] على تشغيل التكوينات التلقائية لإطار عمل <bdi dir="ltr" class="odt-ltr-term">Spring MVC</bdi>؛
   </li>
-  <li>السطر 19: تمتد فئة [<span style="color: #000000">WebConfig</span>] من فئة [<span style="color: #000000">WebMvcConfigurerAdapter</span>] في Spring لإعادة تعريف بعض المكونات (السطور 26–40)؛
+  <li>السطر 19: تمتد فئة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">WebConfig</bdi></span>] من فئة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">WebMvcConfigurerAdapter</bdi></span>] في <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> لإعادة تعريف بعض المكونات (السطور 26–40)؛
   </li>
-  <li>السطور 22–23: حقن سياق Spring؛
+  <li>السطور 22–23: حقن سياق <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>؛
   </li>
-  <li>الأسطر 25-29: تعريف سيرفلت إطار عمل Spring MVC، الذي يوجه طلبات HTTP إلى وحدة التحكم والطريقة الصحيحة. [DispatcherServlet] هي فئة Spring؛
+  <li>الأسطر 25-29: تعريف سيرفلت إطار عمل <bdi dir="ltr" class="odt-ltr-term">Spring MVC</bdi>، الذي يوجه طلبات <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> إلى وحدة التحكم والطريقة الصحيحة. [<bdi dir="ltr" class="odt-ltr-term">DispatcherServlet</bdi>] هي فئة <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>؛
   </li>
-  <li>الأسطر 31-34: نحدد أن هذا السيرفلت يتعامل مع جميع عناوين URL؛
+  <li>الأسطر 31-34: نحدد أن هذا السيرفلت يتعامل مع جميع عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi>؛
   </li>
-  <li>الأسطر 36-39: سيؤدي وجود هذا البين إلى تنشيط خادم Tomcat المضمن في أرشيفات المشروع. وسيقوم بالاستماع إلى الطلبات على المنفذ 8080؛
+  <li>الأسطر 36-39: سيؤدي وجود هذا البين إلى تنشيط خادم <bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi> المضمن في أرشيفات المشروع. وسيقوم بالاستماع إلى الطلبات على المنفذ 8080؛
   </li>
-  <li>الأسطر 42–91: حبات سيتم استخدامها لإدارة مرشحات JSON؛
+  <li>الأسطر 42–91: حبات سيتم استخدامها لإدارة مرشحات <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>؛
   </li>
-  <li>الأسطر 42–45: مخطط JSON بدون مرشحات؛
+  <li>الأسطر 42–45: مخطط <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> بدون مرشحات؛
   </li>
-  <li>الأسطر 47–57: مخطط JSON الذي يسمح لك باسترداد فئة مع منتجاتها. لاحظ أنه عند طلب فئة مع منتجاتها، يجب عليك تكوين كل من مرشح JSON لفئة [Category] ومرشح فئة [Product]. هذا هو الحال دائمًا. عند تسلسل/إلغاء تسلسل فئة إلى JSON، يجب عليك تكوين مرشح JSON للفئة ومرشحات جميع التبعيات المراد تضمينها فيها؛
+  <li>الأسطر 47–57: مخطط <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> الذي يسمح لك باسترداد فئة مع منتجاتها. لاحظ أنه عند طلب فئة مع منتجاتها، يجب عليك تكوين كل من مرشح <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> لفئة [<bdi dir="ltr" class="odt-ltr-term">Category</bdi>] ومرشح فئة [<bdi dir="ltr" class="odt-ltr-term">Product</bdi>]. هذا هو الحال دائمًا. عند تسلسل/إلغاء تسلسل فئة إلى <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>، يجب عليك تكوين مرشح <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> للفئة ومرشحات جميع التبعيات المراد تضمينها فيها؛
   </li>
-  <li>الأسطر 59–69: مخطط JSON الذي يسمح بعرض منتج مع فئته؛
+  <li>الأسطر 59–69: مخطط <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> الذي يسمح بعرض منتج مع فئته؛
   </li>
-  <li>الأسطر 71–80: مخطط JSON الذي يسمح لك بالحصول على فئة بدون منتجاتها؛
+  <li>الأسطر 71–80: مخطط <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> الذي يسمح لك بالحصول على فئة بدون منتجاتها؛
   </li>
-  <li>الأسطر 82–91: مخطط JSON الذي يسمح لك باسترداد منتج بدون فئته؛
+  <li>الأسطر 82–91: مخطط <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> الذي يسمح لك باسترداد منتج بدون فئته؛
   </li>
 </ul>
 
-<p>تقوم فئة [AppConfig] بتكوين التطبيق بأكمله، أي طبقات [web] و[DAO]:</p>
+<p>تقوم فئة [<bdi dir="ltr" class="odt-ltr-term">AppConfig</bdi>] بتكوين التطبيق بأكمله، أي طبقات [<bdi dir="ltr" class="odt-ltr-term">web</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.webjson.config;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2199,18 +2201,18 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 9: يستورد المكونات من طبقة [DAO] وتلك من طبقة [web]؛
+  <li>السطر 9: يستورد المكونات من طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] وتلك من طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>]؛
   </li>
-  <li>السطر 8: يحدد الحزم التي يمكن العثور فيها على حبات Spring الأخرى؛
+  <li>السطر 8: يحدد الحزم التي يمكن العثور فيها على حبات <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> الأخرى؛
   </li>
 </ul>
 
-<p>لاحظ أننا لم نستخدم تعليق [@EnableAutoConfiguration] في أي مكان. لقد فضلنا التحكم في التكوين بأنفسنا.</p>
+<p>لاحظ أننا لم نستخدم تعليق [@<bdi dir="ltr" class="odt-ltr-term">EnableAutoConfiguration</bdi>] في أي مكان. لقد فضلنا التحكم في التكوين بأنفسنا.</p>
 <p><a id="refheading251898391218965"></a></p>
 <h3 id="1354">13.5.4. <span style="color: #4f81bd">نموذج التطبيق</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F5000000A53F2ECF2A.png" width="172" height="116" style="display:inline-block; margin:4px;width:4.54cm;height:3.059cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F5000000A53F2ECF2A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>تبدو فئة [ApplicationModel] كما يلي:</p>
+<p>تبدو فئة [<bdi dir="ltr" class="odt-ltr-term">ApplicationModel</bdi>] كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.webjson.models;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2314,13 +2316,13 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 12: الفئة هي فئة Spring فريدة؛
+  <li>السطر 12: الفئة هي فئة <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> فريدة؛
   </li>
-  <li>السطر 13: والتي تنفذ واجهة [IDao] لطبقة [DAO]؛
+  <li>السطر 13: والتي تنفذ واجهة [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>] لطبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]؛
   </li>
-  <li>السطران 16-17: حقن مرجع في طبقة [DAO]؛
+  <li>السطران 16-17: حقن مرجع في طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]؛
   </li>
-  <li>الأسطر 19–99: تنفيذ واجهة [IDao]؛
+  <li>الأسطر 19–99: تنفيذ واجهة [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>]؛
   </li>
 </ul>
 
@@ -2328,21 +2330,21 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000466000001628820A007.png" width="563" height="177" style="display:inline-block; margin:4px;width:14.896cm;height:4.683cm;" class="odt-zoomable" data-zoom-src="images/1000000000000466000001628820A007.png" /></td></tr></table>
 
 <ul>
-  <li>في [2b]، تتواصل أساليب وحدة (وحدات) التحكم مع العنصر الفريد [ApplicationModel]؛
+  <li>في [2b]، تتواصل أساليب وحدة (وحدات) التحكم مع العنصر الفريد [<bdi dir="ltr" class="odt-ltr-term">ApplicationModel</bdi>]؛
   </li>
 </ul>
 
-<p>توفر هذه الاستراتيجية مرونة فيما يتعلق بإدارة ذاكرة التخزين المؤقت المحتملة. يمكن استخدام فئة [ApplicationModel] لتخزين المعلومات التي تم الحصول عليها من طبقة [DAO] أو بيانات التكوين. قد يكون هذا مفيدًا عندما لا يكون لديك سيطرة على طبقة [DAO]. قد تتطور استراتيجية التخزين المؤقت هذه بمرور الوقت. لن يكون للتغييرات أي تأثير على كود وحدة (وحدات) التحكم.</p>
+<p>توفر هذه الاستراتيجية مرونة فيما يتعلق بإدارة ذاكرة التخزين المؤقت المحتملة. يمكن استخدام فئة [<bdi dir="ltr" class="odt-ltr-term">ApplicationModel</bdi>] لتخزين المعلومات التي تم الحصول عليها من طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] أو بيانات التكوين. قد يكون هذا مفيدًا عندما لا يكون لديك سيطرة على طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]. قد تتطور استراتيجية التخزين المؤقت هذه بمرور الوقت. لن يكون للتغييرات أي تأثير على كود وحدة (وحدات) التحكم.</p>
 <p><a id="refheading480904986338762"></a></p>
 <h3 id="1355">13.5.5. <span style="color: #4f81bd">وحدة التحكم</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004550000016BDC470FEB.png" width="555" height="181" style="display:inline-block; margin:4px;width:14.672cm;height:4.801cm;" class="odt-zoomable" data-zoom-src="images/10000000000004550000016BDC470FEB.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F2000000A33600291A.png" width="169" height="114" style="display:inline-block; margin:4px;width:4.48cm;height:3.018cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F2000000A33600291A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>لدينا هنا وحدة تحكم واحدة فقط، وهي فئة [MyController].</p>
+<p>لدينا هنا وحدة تحكم واحدة فقط، وهي فئة [<bdi dir="ltr" class="odt-ltr-term">MyController</bdi>].</p>
 <p><a id="refheading17992265679331"></a></p>
-<h4 id="13551-url">13.5.5.1. <span style="color: #4f81bd">عناوين URL المعروضة</span></h4>
-<p>عناوين URL التي تعرضها وحدة التحكم هذه هي كما يلي:</p>
+<h4 id="13551-url">13.5.5.1. <span style="color: #4f81bd">عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> المعروضة</span></h4>
+<p>عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> التي تعرضها وحدة التحكم هذه هي كما يلي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/addProducts&quot;</span><span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">POST</span><span style="color:#000000">,</span></span></span>
@@ -2350,7 +2352,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">String addProducts(HttpServletRequest </span><span style="color:#6a3e3e">request</span><span style="color:#000000">) {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يضيف المنتجات إلى قاعدة البيانات. يتم إرسال هذه البيانات. الاستجابة عبارة عن سلسلة JSON تحتوي على قائمة المنتجات المضافة مع مفاتيحها الأساسية.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
+</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يضيف المنتجات إلى قاعدة البيانات. يتم إرسال هذه البيانات. الاستجابة عبارة عن سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> تحتوي على قائمة المنتجات المضافة مع مفاتيحها الأساسية.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/deleteAllProducts&quot;</span><span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">GET</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">String deleteAllProducts() {</span></span></span>
@@ -2364,14 +2366,14 @@
 <span class="odt-code-line"><span class="odt-code-line-content">..</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يُحدّث المنتجات في قاعدة البيانات. يتم إرسال هذه البيانات. الاستجابة عبارة عن سلسلة JSON تحتوي على قائمة المنتجات المحدّثة.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
+</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يُحدّث المنتجات في قاعدة البيانات. يتم إرسال هذه البيانات. الاستجابة عبارة عن سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> تحتوي على قائمة المنتجات المحدّثة.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/getAllProducts&quot;</span><span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">GET</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">String getAllProducts() {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">..</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يسترد سلسلة JSON لجميع المنتجات.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
+</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يسترد سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> لجميع المنتجات.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/addCategories&quot;</span><span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">POST</span><span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">content-type = </span><span style="color:#2a00ff">&quot;application/json; charset=UTF-8&quot;</span><span style="color:#000000">)</span></span></span>
@@ -2379,7 +2381,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">..</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يضيف فئات إلى قاعدة البيانات. يتم إرسال هذه الطلبات. الاستجابة عبارة عن سلسلة JSON تحتوي على قائمة الفئات المضافة مع مفاتيحها الأساسية. إذا كانت الفئات تحتوي على منتجات، يتم إضافتها أيضًا إلى قاعدة البيانات.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
+</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يضيف فئات إلى قاعدة البيانات. يتم إرسال هذه الطلبات. الاستجابة عبارة عن سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> تحتوي على قائمة الفئات المضافة مع مفاتيحها الأساسية. إذا كانت الفئات تحتوي على منتجات، يتم إضافتها أيضًا إلى قاعدة البيانات.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/deleteAllCategories&quot;</span><span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">GET</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">String deleteAllCategories() {</span></span></span>
@@ -2395,14 +2397,14 @@
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">تحديث الفئات في قاعدة البيانات. يتم إرسال هذه الطلبات. الاستجابة هي قائمة بالفئات المحدثة. إذا كانت الفئات تحتوي على منتجات، يتم تحديثها أيضًا في قاعدة البيانات. إرجاع سلسلة JSON للفئات المعدلة؛</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
+</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">تحديث الفئات في قاعدة البيانات. يتم إرسال هذه الطلبات. الاستجابة هي قائمة بالفئات المحدثة. إذا كانت الفئات تحتوي على منتجات، يتم تحديثها أيضًا في قاعدة البيانات. إرجاع سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> للفئات المعدلة؛</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/getAllCategories&quot;</span><span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">GET</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">String getAllCategories() {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يسترد سلسلة JSON لجميع الفئات.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
+</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يسترد سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> لجميع الفئات.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/getProductByIdWithCategory/{productId}&quot;</span><span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">GET</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">String getProductByIdWithCategory</span></span></span>
@@ -2410,7 +2412,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يسترد سلسلة JSON لمنتج محدد بواسطة معرّفه، إلى جانب فئته.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
+</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يسترد سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> لمنتج محدد بواسطة معرّفه، إلى جانب فئته.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/getProductByIdWithoutCategory/{productId}&quot;</span><span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">GET</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">String getProductByIdWithoutCategory</span></span></span>
@@ -2418,7 +2420,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يسترد سلسلة JSON لمنتج محدد بواسطة معرّفه، بدون فئته.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
+</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يسترد سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> لمنتج محدد بواسطة معرّفه، بدون فئته.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/getProductByNameWithCategory/{name}&quot;</span><span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">GET</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">String getProductByNameWithCategory(</span></span></span>
@@ -2426,7 +2428,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يسترد سلسلة JSON لمنتج محدد باسمه، إلى جانب فئته.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
+</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يسترد سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> لمنتج محدد باسمه، إلى جانب فئته.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/getProductByNameWithoutCategory/{name}&quot;</span><span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">GET</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">String getProductByNameWithoutCategory</span></span></span>
@@ -2434,7 +2436,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يسترد سلسلة JSON لمنتج محدد باسمه، بدون فئته.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
+</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يسترد سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> لمنتج محدد باسمه، بدون فئته.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/getCategoryByIdWithProducts/{categoryId}&quot;</span><span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000"> method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">GET</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">String getCategoryByIdWithProducts</span></span></span>
@@ -2442,7 +2444,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يسترد سلسلة JSON لفئة محددة بواسطة معرفها، مع منتجاتها.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
+</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يسترد سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> لفئة محددة بواسطة معرفها، مع منتجاتها.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/getCategoryByNameWithProducts/{name}&quot;</span><span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">GET</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">String getCategoryByNameWithProducts</span></span></span>
@@ -2450,7 +2452,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يسترد سلسلة JSON لفئة محددة باسمها، مع منتجاتها.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
+</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يسترد سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> لفئة محددة باسمها، مع منتجاتها.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/getCategoryByNameWithoutProducts/{name}&quot;</span><span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">GET</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">String getCategoryByNameWithoutProducts(</span></span></span>
@@ -2458,7 +2460,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يسترد سلسلة JSON لفئة محددة باسمها، بدون منتجاتها.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
+</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يسترد سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> لفئة محددة باسمها، بدون منتجاتها.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/getCategoryByIdWithoutProducts/{categoryId}&quot;</span><span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">GET</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">String getCategoryByIdWithoutProducts(</span></span></span>
@@ -2466,9 +2468,9 @@
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يسترد سلسلة JSON لفئة محددة بواسطة معرفها، باستثناء منتجاتها.</div></td></tr></table>
+</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يسترد سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> لفئة محددة بواسطة معرفها، باستثناء منتجاتها.</div></td></tr></table>
 
-<p><span style="color: #000000">تتوافق عناوين URL المعروضة مع أساليب واجهة [IDao] في طبقة [DAO]. وتستند جميع أساليب خدمة الويب / JSON إلى نفس النموذج. وسنستعرض بعضًا منها.</span></p>
+<p><span style="color: #000000">تتوافق عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> المعروضة مع أساليب واجهة [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>] في طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]. وتستند جميع أساليب خدمة الويب / <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> إلى نفس النموذج. وسنستعرض بعضًا منها.</span></p>
 <p><a id="refheading17994265679331"></a></p>
 <h4 id="13552">13.5.5.2. <span style="color: #000000">هيكل وحدة التحكم</span></h4>
 <p><span style="color: #000000">هيكل وحدة التحكم هو كما يلي:</span></p>
@@ -2539,20 +2541,20 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">السطر 28: تجعل العلامة [@Controller] الفئة مكونًا في Spring؛</span>
+  <li><span style="color: #000000">السطر 28: تجعل العلامة [@<bdi dir="ltr" class="odt-ltr-term">Controller</bdi>] الفئة مكونًا في <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطران 32-33: حقن مرجع إلى فئة [ApplicationModel]؛</span>
+  <li><span style="color: #000000">السطران 32-33: حقن مرجع إلى فئة [<bdi dir="ltr" class="odt-ltr-term">ApplicationModel</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 36-50: حقن مراجع إلى مخططي JSON؛</span>
+  <li><span style="color: #000000">الأسطر 36-50: حقن مراجع إلى مخططي <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطر 58: عنوان URL المعروض هو [/addProducts]. يجب على العميل استخدام طريقة [POST] لتقديم طلبه (method = RequestMethod.</span><i><b><span style="color: #0000c0">POST</span></b></i><span style="color: #000000">). ويجب عليه إرسال القيمة المرسلة كسلسلة JSON (content-type = </span><span style="color: #2a00ff">&quot;application/json; charset=UTF-8&quot;</span><span style="color: #000000">). تقوم الطريقة نفسها بإرجاع </span><span style="color: #000000">الاستجابة إلى العميل (السطر 59). ستكون هذه سلسلة (السطر 60). سيتم إرسال رأس HTTP [Content-type: </span><span style="color: #2a00ff">application/json; charset=UTF-8</span><span style="color: #000000">] إلى العميل للإشارة إلى أنه سيتلقى سلسلة JSON (السطر 58)؛</span>
+  <li><span style="color: #000000">السطر 58: عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> المعروض هو [/<bdi dir="ltr" class="odt-ltr-term">addProducts</bdi>]. يجب على العميل استخدام طريقة [<bdi dir="ltr" class="odt-ltr-term">POST</bdi>] لتقديم طلبه (<bdi dir="ltr" class="odt-ltr-term">method</bdi> = <bdi dir="ltr" class="odt-ltr-term">RequestMethod.</bdi></span><i><b><span style="color: #0000c0"><bdi dir="ltr" class="odt-ltr-term">POST</bdi></span></b></i><span style="color: #000000">). ويجب عليه إرسال القيمة المرسلة كسلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> (<bdi dir="ltr" class="odt-ltr-term">content-type</bdi> = </span><span style="color: #2a00ff">&quot;<bdi dir="ltr" class="odt-ltr-term">application/json</bdi>; <bdi dir="ltr" class="odt-ltr-term">charset</bdi>=<bdi dir="ltr" class="odt-ltr-term">UTF-8</bdi>&quot;</span><span style="color: #000000">). تقوم الطريقة نفسها بإرجاع </span><span style="color: #000000">الاستجابة إلى العميل (السطر 59). ستكون هذه سلسلة (السطر 60). سيتم إرسال رأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">Content-type:</bdi> </span><span style="color: #2a00ff"><bdi dir="ltr" class="odt-ltr-term">application/json</bdi>; <bdi dir="ltr" class="odt-ltr-term">charset</bdi>=<bdi dir="ltr" class="odt-ltr-term">UTF-8</bdi></span><span style="color: #000000">] إلى العميل للإشارة إلى أنه سيتلقى سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> (السطر 58)؛</span>
   </li>
-  <li><span style="color: #000000">السطر 60: تُرجع الطريقة [addProduits] سلسلة JSON التي تحتوي على قائمة المنتجات المضافة إلى قاعدة البيانات؛</span>
+  <li><span style="color: #000000">السطر 60: تُرجع الطريقة [<bdi dir="ltr" class="odt-ltr-term">addProduits</bdi>] سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> التي تحتوي على قائمة المنتجات المضافة إلى قاعدة البيانات؛</span>
   </li>
 </ul>
 <p><a id="refheading399246986338762"></a></p>
 <h4 id="13553">13.5.5.3. <span style="color: #000000">استجابات طرق وحدة التحكم</span></h4>
-<p><span style="color: #000000">تُرجع جميع طرق وحدة التحكم النوع [Response] التالي:</span></p>
+<p><span style="color: #000000">تُرجع جميع طرق وحدة التحكم النوع [<bdi dir="ltr" class="odt-ltr-term">Response</bdi>] التالي:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F8000000B7C9BEFCEE.png" width="173" height="128" style="display:inline-block; margin:4px;width:4.59cm;height:3.387cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F8000000B7C9BEFCEE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -2587,13 +2589,13 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">السطر 5: الاستجابة تغلف نوع T؛</span>
+  <li><span style="color: #000000">السطر 5: الاستجابة تغلف نوع <bdi dir="ltr" class="odt-ltr-term">T</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطر 13: الاستجابة من النوع T؛</span>
+  <li><span style="color: #000000">السطر 13: الاستجابة من النوع <bdi dir="ltr" class="odt-ltr-term">T</bdi>؛</span>
   </li>
   <li><span style="color: #000000">الأسطر 9–11: قد تواجه الطريقة استثناءً. في هذه الحالة، ستُرجع استجابةً تحتوي على:</span>
     <ul>
-      <li><span style="color: #000000">السطر 9: status!=0؛</span>
+      <li><span style="color: #000000">السطر 9: <bdi dir="ltr" class="odt-ltr-term">status</bdi>!=0؛</span>
       </li>
       <li><span style="color: #000000">السطر 11: قائمة الأخطاء التي تمت مواجهتها؛</span>
       </li>
@@ -2601,8 +2603,8 @@
   </li>
 </ul>
 <p><a id="refheading17996265679331"></a></p>
-<h4 id="13554-url-addproducts">13.5.5.4. <span style="color: #000000">عنوان URL [/addProducts]</span></h4>
-<p><span style="color: #000000">يتم التعامل مع عنوان URL [/addProducts] بواسطة الطريقة التالية:</span></p>
+<h4 id="13554-url-addproducts">13.5.5.4. <span style="color: #000000">عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">addProducts</bdi>]</span></h4>
+<p><span style="color: #000000">يتم التعامل مع عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">addProducts</bdi>] بواسطة الطريقة التالية:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#646464">@RequestMapping</span>(value = <span style="color:#2a00ff">&quot;/addProduits&quot;</span>, method = RequestMethod.<span style="font-weight:bold;font-style:italic;color:#0000c0">POST</span>, consumes = <span style="color:#2a00ff">&quot;application/json; charset=UTF-8&quot;</span>, produces = <span style="color:#2a00ff">&quot;application/json; charset=UTF-8&quot;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@ResponseBody</span></span></span>
@@ -2632,30 +2634,30 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">السطر 3: تأخذ الطريقة [HttpServletRequest </span><span style="color: #6a3e3e">request</span><span style="color: #000000">] كمعلمة، والتي تغلف جميع المعلومات المتعلقة بطلب العميل؛</span>
+  <li><span style="color: #000000">السطر 3: تأخذ الطريقة [<bdi dir="ltr" class="odt-ltr-term">HttpServletRequest</bdi> </span><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">request</bdi></span><span style="color: #000000">] كمعلمة، والتي تغلف جميع المعلومات المتعلقة بطلب العميل؛</span>
   </li>
   <li><span style="color: #000000">السطر 5: الاستجابة التي سيتم إرسالها إلى العميل: قائمة بالمنتجات؛</span>
   </li>
-  <li><span style="color: #000000">السطر 8: نسترد القيمة المرسلة. تنتمي فئة [CharStreams] إلى مكتبة [Google Guava]، التي أضفنا مرجعها إلى ملف [pom.xml]. نحصل على سلسلة JSON التي أرسلها العميل. نحتاج إلى إزالة تسلسلها للقيام بشيء ما بها؛</span>
+  <li><span style="color: #000000">السطر 8: نسترد القيمة المرسلة. تنتمي فئة [<bdi dir="ltr" class="odt-ltr-term">CharStreams</bdi>] إلى مكتبة [<bdi dir="ltr" class="odt-ltr-term">Google Guava</bdi>]، التي أضفنا مرجعها إلى ملف [<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>]. نحصل على سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> التي أرسلها العميل. نحتاج إلى إزالة تسلسلها للقيام بشيء ما بها؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 8-10: يتم إجراء عملية إزالة التسلسل. نحصل على قائمة بالمنتجات حيث يحتوي كل منتج على حقل [category=null]؛</span>
+  <li><span style="color: #000000">الأسطر 8-10: يتم إجراء عملية إزالة التسلسل. نحصل على قائمة بالمنتجات حيث يحتوي كل منتج على حقل [<bdi dir="ltr" class="odt-ltr-term">category</bdi>=<bdi dir="ltr" class="odt-ltr-term">null</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 12-14: نقوم بإعادة تعيين حقل [category] لجميع المنتجات في القائمة. للقيام بذلك، نستخدم حقل [categoryId] الخاص بالمنتج، والذي تم تهيئته؛</span>
+  <li><span style="color: #000000">الأسطر 12-14: نقوم بإعادة تعيين حقل [<bdi dir="ltr" class="odt-ltr-term">category</bdi>] لجميع المنتجات في القائمة. للقيام بذلك، نستخدم حقل [<bdi dir="ltr" class="odt-ltr-term">categoryId</bdi>] الخاص بالمنتج، والذي تم تهيئته؛</span>
   </li>
   <li><span style="color: #000000">السطر 16: يتم إدراج المنتجات في قاعدة البيانات؛</span>
   </li>
-  <li><span style="color: #000000">السطر 17: يتم تهيئة كائن [response] بقائمة المنتجات؛</span>
+  <li><span style="color: #000000">السطر 17: يتم تهيئة كائن [<bdi dir="ltr" class="odt-ltr-term">response</bdi>] بقائمة المنتجات؛</span>
   </li>
-  <li><span style="color: #000000">السطور 18-19: الحالة التي تواجه فيها الطريقة استثناءً من طبقة [DAO]. نقوم بتهيئة الاستجابة بـ [status=1000] (رمز الخطأ) [messages=e1.getMessages()]، أي نرسل إلى العميل قائمة بالأخطاء التي تمت مواجهتها على جانب الخادم؛</span>
+  <li><span style="color: #000000">السطور 18-19: الحالة التي تواجه فيها الطريقة استثناءً من طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]. نقوم بتهيئة الاستجابة بـ [<bdi dir="ltr" class="odt-ltr-term">status</bdi>=1000] (رمز الخطأ) [<bdi dir="ltr" class="odt-ltr-term">messages</bdi>=<bdi dir="ltr" class="odt-ltr-term">e1.getMessages</bdi>()]، أي نرسل إلى العميل قائمة بالأخطاء التي تمت مواجهتها على جانب الخادم؛</span>
   </li>
-  <li><span style="color: #000000">السطران 20-21: الحالة التي تواجه فيها الطريقة نوعًا آخر من الاستثناءات. نقوم بتهيئة الاستجابة بـ [status=1000] (رمز الخطأ) [messages=getErrorsForException(</span><span style="color: #6a3e3e">e</span><span style="color: #000000">)] حيث [getErrorsForException] هي طريقة خاصة للفئة تعيد قائمة الأخطاء المرتبطة بالاستثناءات في مكدس استثناءات e، و [body=null]؛</span>
+  <li><span style="color: #000000">السطران 20-21: الحالة التي تواجه فيها الطريقة نوعًا آخر من الاستثناءات. نقوم بتهيئة الاستجابة بـ [<bdi dir="ltr" class="odt-ltr-term">status</bdi>=1000] (رمز الخطأ) [<bdi dir="ltr" class="odt-ltr-term">messages</bdi>=<bdi dir="ltr" class="odt-ltr-term">getErrorsForException</bdi>(</span><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">e</bdi></span><span style="color: #000000">)] حيث [<bdi dir="ltr" class="odt-ltr-term">getErrorsForException</bdi>] هي طريقة خاصة للفئة تعيد قائمة الأخطاء المرتبطة بالاستثناءات في مكدس استثناءات <bdi dir="ltr" class="odt-ltr-term">e</bdi>، و [<bdi dir="ltr" class="odt-ltr-term">body</bdi>=<bdi dir="ltr" class="odt-ltr-term">null</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 24: يتم إرجاع سلسلة JSON للاستجابة؛</span>
+  <li><span style="color: #000000">السطر 24: يتم إرجاع سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> للاستجابة؛</span>
   </li>
 </ul>
 <p><a id="refheading17998265679331"></a></p>
-<h4 id="13555-url-getallproducts">13.5.5.5. <span style="color: #000000">عنوان URL [/getAllProducts]</span></h4>
-<p><span style="color: #000000">يتم التعامل مع عنوان URL [/getAllProducts] بواسطة الطريقة التالية:</span></p>
+<h4 id="13555-url-getallproducts">13.5.5.5. <span style="color: #000000">عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">getAllProducts</bdi>]</span></h4>
+<p><span style="color: #000000">يتم التعامل مع عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">getAllProducts</bdi>] بواسطة الطريقة التالية:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#646464">@RequestMapping</span>(value = <span style="color:#2a00ff">&quot;/getAllProduits&quot;</span>, method = RequestMethod.<span style="font-weight:bold;font-style:italic;color:#0000c0">GET</span>, produces = <span style="color:#2a00ff">&quot;application/json; charset=UTF-8&quot;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@ResponseBody</span></span></span>
@@ -2675,27 +2677,27 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">السطر 1: يتم طلب عنوان URL [/getAllProduits] باستخدام عملية [GET]. ويعيد JSON؛</span>
+  <li><span style="color: #000000">السطر 1: يتم طلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">getAllProduits</bdi>] باستخدام عملية [<bdi dir="ltr" class="odt-ltr-term">GET</bdi>]. ويعيد <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطر 2: ترسل الطريقة نفسها استجابة JSON إلى العميل؛</span>
+  <li><span style="color: #000000">السطر 2: ترسل الطريقة نفسها استجابة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> إلى العميل؛</span>
   </li>
-  <li><span style="color: #000000">السطر 5: تُرجع الطريقة سلسلة JSON من النوع [Response&lt;List&lt;Product&gt;&gt;]؛</span>
+  <li><span style="color: #000000">السطر 5: تُرجع الطريقة سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> من النوع [<bdi dir="ltr" class="odt-ltr-term">Response</bdi>&lt;<bdi dir="ltr" class="odt-ltr-term">List</bdi>&lt;<bdi dir="ltr" class="odt-ltr-term">Product</bdi>&gt;&gt;]؛</span>
   </li>
   <li><span style="color: #000000">السطر 7: يتم طلب المنتجات بدون فئتها؛</span>
   </li>
   <li><span style="color: #000000">الأسطر 8-12: في حالة حدوث خطأ، يتم تهيئة الاستجابة برمز خطأ ورسائل خطأ؛</span>
   </li>
-  <li><span style="color: #000000">السطر 14: يتم إرسال استجابة JSON إلى العميل؛</span>
+  <li><span style="color: #000000">السطر 14: يتم إرسال استجابة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> إلى العميل؛</span>
   </li>
 </ul>
 <p><a id="refheading18000265679331"></a></p>
 <h4 id="13556">13.5.5.6. <span style="color: #000000">الخلاصة</span></h4>
 <p><span style="color: #000000">لن نتناول الطرق الأخرى للمتحكم. فهي مشابهة لإحدى الطريقتين اللتين عرضناهما للتو.</span></p>
 <p><a id="refheading18002265679331"></a></p>
-<h3 id="1356-json">13.5.6. <span style="color: #000000">خدمة الويب / فئة تنفيذ JSON</span></h3>
+<h3 id="1356-json">13.5.6. <span style="color: #000000">خدمة الويب / فئة تنفيذ <bdi dir="ltr" class="odt-ltr-term">JSON</bdi></span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E9000000A2EB61237D.png" width="163" height="113" style="display:inline-block; margin:4px;width:4.309cm;height:2.997cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E9000000A2EB61237D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p><span style="color: #000000">فئة [Boot] هي الفئة القابلة للتنفيذ في المشروع:</span></p>
+<p><span style="color: #000000">فئة [<bdi dir="ltr" class="odt-ltr-term">Boot</bdi>] هي الفئة القابلة للتنفيذ في المشروع:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.webjson.boot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2712,11 +2714,11 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">السطر 10: يتم تنفيذ الطريقة الثابتة [SpringApplication.</span><i><span style="color: #000000">run</span></i><span style="color: #000000">]. فئة [SpringApplication] هي فئة من مشروع [Spring Boot] (السطر 3). يتم تمرير معلمتين إليها:</span>
+  <li><span style="color: #000000">السطر 10: يتم تنفيذ الطريقة الثابتة [<bdi dir="ltr" class="odt-ltr-term">SpringApplication.</bdi></span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">run</bdi></span></i><span style="color: #000000">]. فئة [<bdi dir="ltr" class="odt-ltr-term">SpringApplication</bdi>] هي فئة من مشروع [<bdi dir="ltr" class="odt-ltr-term">Spring Boot</bdi>] (السطر 3). يتم تمرير معلمتين إليها:</span>
     <ul>
-      <li><span style="color: #000000">[AppConfig.</span><b><span style="color: #7f0055">class</span></b><span style="color: #000000">]: الفئة التي تقوم بتكوين التطبيق بأكمله؛</span>
+      <li><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">AppConfig.</bdi></span><b><span style="color: #7f0055"><bdi dir="ltr" class="odt-ltr-term">class</bdi></span></b><span style="color: #000000">]: الفئة التي تقوم بتكوين التطبيق بأكمله؛</span>
       </li>
-      <li><span style="color: #000000">[args]: أي حجج تم تمريرها إلى الطريقة [main] في السطر 9. لا يتم استخدام هذه المعلمة هنا؛</span>
+      <li><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">args</bdi>]: أي حجج تم تمريرها إلى الطريقة [<bdi dir="ltr" class="odt-ltr-term">main</bdi>] في السطر 9. لا يتم استخدام هذه المعلمة هنا؛</span>
       </li>
     </ul>
   </li>
@@ -2842,23 +2844,23 @@
 <a id="__codelineno-4-59" name="__codelineno-4-59"></a><span class="mi">2015</span><span class="o">-</span><span class="mo">03</span><span class="o">-</span><span class="mi">24</span><span class="w"> </span><span class="mi">16</span><span class="p">:</span><span class="mi">22</span><span class="p">:</span><span class="mf">53.108</span><span class="w">  </span><span class="n">INFO</span><span class="w"> </span><span class="mi">9492</span><span class="w"> </span><span class="o">---</span><span class="w"> </span><span class="o">[</span><span class="w">           </span><span class="n">main</span><span class="o">]</span><span class="w"> </span><span class="n">spring</span><span class="p">.</span><span class="na">webjson</span><span class="p">.</span><span class="na">server</span><span class="p">.</span><span class="na">boot</span><span class="p">.</span><span class="na">Boot</span><span class="w">          </span><span class="p">:</span><span class="w"> </span><span class="n">Started</span><span class="w"> </span><span class="n">Boot</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="mf">6.752</span><span class="w"> </span><span class="n">seconds</span><span class="w"> </span><span class="p">(</span><span class="n">JVM</span><span class="w"> </span><span class="n">running</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="mf">7.433</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li>الأسطر 17-19: بدء تشغيل خادم Tomcat لتشغيل خدمة الويب/JSON؛
+  <li>الأسطر 17-19: بدء تشغيل خادم <bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi> لتشغيل خدمة الويب/<bdi dir="ltr" class="odt-ltr-term">JSON</bdi>؛
   </li>
-  <li>الأسطر 25-33: إنشاء طبقة [DAO]؛
+  <li>الأسطر 25-33: إنشاء طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]؛
   </li>
-  <li>الأسطر 32-51: تم اكتشاف عناوين URL المعروضة؛
+  <li>الأسطر 32-51: تم اكتشاف عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> المعروضة؛
   </li>
 </ul>
 <p><a id="refheading18004265679331"></a></p>
-<h3 id="1357-json">13.5.7. <span style="color: #4f81bd">اختبار خدمة الويب / JSON</span></h3>
-<p>لإجراء الاختبارات، نقوم بإنشاء قاعدة بيانات MySQL [dbintrospringdata] من البرنامج النصي SQL [dbintrospringdata.sql]:</p>
+<h3 id="1357-json">13.5.7. <span style="color: #4f81bd">اختبار خدمة الويب / <bdi dir="ltr" class="odt-ltr-term">JSON</bdi></span></h3>
+<p>لإجراء الاختبارات، نقوم بإنشاء قاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">MySQL</bdi> [<bdi dir="ltr" class="odt-ltr-term">dbintrospringdata</bdi>] من البرنامج النصي <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> [<bdi dir="ltr" class="odt-ltr-term">dbintrospringdata.sql</bdi>]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000B70000007E76D27739.png" width="128" height="88" style="display:inline-block; margin:4px;width:3.39cm;height:2.334cm;" class="odt-zoomable" data-zoom-src="images/10000000000000B70000007E76D27739.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>بمجرد الانتهاء من ذلك، نستخدم [Advanced Rest Client] (انظر <a href="#refheading398832986338762"><u><span style="color: #0563c1">القسم 22.5</span></u></a>) للاستعلام عن عناوين URL التي توفرها خدمة الويب / JSON (يجب أن تكون خدمة الويب / JSON قيد التشغيل). </p>
+<p>بمجرد الانتهاء من ذلك، نستخدم [<bdi dir="ltr" class="odt-ltr-term">Advanced Rest Client</bdi>] (انظر <a href="#refheading398832986338762"><u><span style="color: #0563c1">القسم 22.5</span></u></a>) للاستعلام عن عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> التي توفرها خدمة الويب / <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> (يجب أن تكون خدمة الويب / <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> قيد التشغيل). </p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003DB000001FB88B90933.png" width="494" height="254" style="display:inline-block; margin:4px;width:13.058cm;height:6.708cm;" class="odt-zoomable" data-zoom-src="images/10000000000003DB000001FB88B90933.png" /></td></tr></table>
 
 <ul>
-  <li>في [1-3]، نطلب عنوان URL [/getAllCategories] عبر طلب HTTP GET؛
+  <li>في [1-3]، نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">getAllCategories</bdi>] عبر طلب <bdi dir="ltr" class="odt-ltr-term">HTTP GET</bdi>؛
   </li>
 </ul>
 
@@ -2866,31 +2868,31 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000031C000002CDA89C5976.png" width="398" height="358" style="display:inline-block; margin:4px;width:10.53cm;height:9.484cm;" class="odt-zoomable" data-zoom-src="images/100000000000031C000002CDA89C5976.png" /></td></tr></table>
 
 <ul>
-  <li>في [1]، طلب HTTP الخاص بالعميل؛
+  <li>في [1]، طلب <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> الخاص بالعميل؛
   </li>
-  <li>في [2]، استجابة HTTP للخادم؛
+  <li>في [2]، استجابة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> للخادم؛
   </li>
-  <li>في [3]، تشير الحالة [200 OK] إلى أن الخادم قد عالج الطلب بنجاح؛
+  <li>في [3]، تشير الحالة [200 <bdi dir="ltr" class="odt-ltr-term">OK</bdi>] إلى أن الخادم قد عالج الطلب بنجاح؛
   </li>
-  <li>في [4]، استجابة JSON للخادم؛
+  <li>في [4]، استجابة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> للخادم؛
   </li>
 </ul>
 
-<p>استجابة JSON الكاملة هي كما يلي:</p>
+<p>استجابة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> الكاملة هي كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">{&quot;status&quot;:0,&quot;messages&quot;:null,&quot;body&quot;:[{&quot;id&quot;:415,&quot;version&quot;:0,&quot;nom&quot;:&quot;<span style="background-color:#ff950e">categorie0</span>&quot;,&quot;produits&quot;:[{&quot;id&quot;:1849,&quot;version&quot;:0,&quot;nom&quot;:&quot;produit00&quot;,&quot;idCategorie&quot;:415,&quot;prix&quot;:100.0,&quot;description&quot;:&quot;desc00&quot;},{&quot;id&quot;:1850,&quot;version&quot;:0,&quot;nom&quot;:&quot;produit01&quot;,&quot;idCategorie&quot;:415,&quot;prix&quot;:101.0,&quot;description&quot;:&quot;desc01&quot;},{&quot;id&quot;:1851,&quot;version&quot;:0,&quot;nom&quot;:&quot;produit02&quot;,&quot;idCategorie&quot;:415,&quot;prix&quot;:102.0,&quot;description&quot;:&quot;desc02&quot;},{&quot;id&quot;:1852,&quot;version&quot;:0,&quot;nom&quot;:&quot;produit03&quot;,&quot;idCategorie&quot;:415,&quot;prix&quot;:103.0,&quot;description&quot;:&quot;desc03&quot;},{&quot;id&quot;:1853,&quot;version&quot;:0,&quot;nom&quot;:&quot;produit04&quot;,&quot;idCategorie&quot;:415,&quot;prix&quot;:104.0,&quot;description&quot;:&quot;desc04&quot;}]},{&quot;id&quot;:416,&quot;version&quot;:0,&quot;nom&quot;:&quot;<span style="background-color:#ff950e">categorie1</span>&quot;,&quot;produits&quot;:[{&quot;id&quot;:1856,&quot;version&quot;:0,&quot;nom&quot;:&quot;produit12&quot;,&quot;idCategorie&quot;:416,&quot;prix&quot;:112.0,&quot;description&quot;:&quot;desc12&quot;},{&quot;id&quot;:1857,&quot;version&quot;:0,&quot;nom&quot;:&quot;produit13&quot;,&quot;idCategorie&quot;:416,&quot;prix&quot;:113.0,&quot;description&quot;:&quot;desc13&quot;},{&quot;id&quot;:1858,&quot;version&quot;:0,&quot;nom&quot;:&quot;produit14&quot;,&quot;idCategorie&quot;:416,&quot;prix&quot;:114.0,&quot;description&quot;:&quot;desc14&quot;},{&quot;id&quot;:1854,&quot;version&quot;:0,&quot;nom&quot;:&quot;produit10&quot;,&quot;idCategorie&quot;:416,&quot;prix&quot;:110.0,&quot;description&quot;:&quot;desc10&quot;},{&quot;id&quot;:1855,&quot;version&quot;:0,&quot;nom&quot;:&quot;produit11&quot;,&quot;idCategorie&quot;:416,&quot;prix&quot;:111.0,&quot;description&quot;:&quot;desc11&quot;}]}]}</span></span>
 </code></pre></div>
 
 <ul>
-  <li><b>status:0 </b>يعني أنه لم تكن هناك أخطاء من جانب الخادم؛
+  <li><b><bdi dir="ltr" class="odt-ltr-term">status:0</bdi> </b>يعني أنه لم تكن هناك أخطاء من جانب الخادم؛
   </li>
-  <li><b>messages: null </b>تعني أنه لا توجد رسائل خطأ؛
+  <li><b><bdi dir="ltr" class="odt-ltr-term">messages: null</bdi> </b>تعني أنه لا توجد رسائل خطأ؛
   </li>
-  <li><b>body</b>: هو نص الاستجابة، وفي هذه الحالة قائمة الفئات مع منتجاتها. هناك فئتان، كل منهما تحتوي على 5 منتجات؛
+  <li><b><bdi dir="ltr" class="odt-ltr-term">body</bdi></b>: هو نص الاستجابة، وفي هذه الحالة قائمة الفئات مع منتجاتها. هناك فئتان، كل منهما تحتوي على 5 منتجات؛
   </li>
 </ul>
 
-<p>سنضيف المنتج [product15] إلى الفئة [category1]. للقيام بذلك، سنستخدم عنوان URL [/addCategories]، الذي يحتوي على الكود التالي:</p>
+<p>سنضيف المنتج [<bdi dir="ltr" class="odt-ltr-term">product15</bdi>] إلى الفئة [<bdi dir="ltr" class="odt-ltr-term">category1</bdi>]. للقيام بذلك، سنستخدم عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">addCategories</bdi>]، الذي يحتوي على الكود التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/addCategories&quot;</span><span style="color:#000000">, method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">POST</span><span style="color:#000000">, consumes = </span><span style="color:#2a00ff">&quot;application/json; charset=UTF-8&quot;</span><span style="color:#000000">, produces = </span><span style="color:#2a00ff">&quot;application/json; charset=UTF-8&quot;</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@ResponseBody</span></span></span>
@@ -2925,26 +2927,26 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 1: يجب على العميل إرسال طلب POST، ويجب أن تكون القيمة المرسلة سلسلة JSON؛
+  <li>السطر 1: يجب على العميل إرسال طلب <bdi dir="ltr" class="odt-ltr-term">POST</bdi>، ويجب أن تكون القيمة المرسلة سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>؛
   </li>
   <li>الأسطر 9–12: يجب أن تكون القيمة المرسلة قائمة بالفئات مع المنتجات المرتبطة بها؛
   </li>
 </ul>
 
-<p>سننشئ فئة [category2] مع منتج [product21]. تكون سلسلة JSON المراد إرسالها كما يلي:</p>
+<p>سننشئ فئة [<bdi dir="ltr" class="odt-ltr-term">category2</bdi>] مع منتج [<bdi dir="ltr" class="odt-ltr-term">product21</bdi>]. تكون سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> المراد إرسالها كما يلي:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>[{&quot;id&quot;:null,&quot;version&quot;:0,&quot;nom&quot;:&quot;categorie2&quot;,&quot;produits&quot;:[{&quot;id&quot;:null,&quot;version&quot;:0,&quot;nom&quot;:&quot;produit21&quot;,&quot;idCategorie&quot;:null,&quot;prix&quot;:111.0,&quot;description&quot;:&quot;desc21&quot;}]}]
 </code></pre></div>
-<p>يتم إرسال الطلب إلى خدمة الويب / JSON على النحو التالي:</p>
+<p>يتم إرسال الطلب إلى خدمة الويب / <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> على النحو التالي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003FD000002DAA37EA8B6.png" width="511" height="365" style="display:inline-block; margin:4px;width:13.508cm;height:9.657cm;" class="odt-zoomable" data-zoom-src="images/10000000000003FD000002DAA37EA8B6.png" /></td></tr></table>
 
 <ul>
-  <li>في [1]، عنوان URL المطلوب؛
+  <li>في [1]، عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> المطلوب؛
   </li>
-  <li>في [2]، يتم الطلب عبر عملية POST؛
+  <li>في [2]، يتم الطلب عبر عملية <bdi dir="ltr" class="odt-ltr-term">POST</bdi>؛
   </li>
-  <li>في [3]، سلسلة JSON المرسلة؛
+  <li>في [3]، سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> المرسلة؛
   </li>
-  <li>في [4]، يتم إخطار الخادم بأن بيانات JSON سيتم إرسالها؛
+  <li>في [4]، يتم إخطار الخادم بأن بيانات <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> سيتم إرسالها؛
   </li>
 </ul>
 
@@ -2952,7 +2954,7 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002A3000003BA6C0FC241.png" width="338" height="477" style="display:inline-block; margin:4px;width:8.931cm;height:12.622cm;" class="odt-zoomable" data-zoom-src="images/10000000000002A3000003BA6C0FC241.png" /></td></tr></table>
 
 <ul>
-  <li>في [1]، نرى أن كل من الفئة ومنتجها أصبح لهما الآن مفتاح أساسي، مما يشير إلى أنهما قد تم إدخالهما على الأرجح في قاعدة البيانات. سنقوم بالتحقق من ذلك باستخدام عنوان URL [/getCategorieByNameWithProduits/categorie2]:
+  <li>في [1]، نرى أن كل من الفئة ومنتجها أصبح لهما الآن مفتاح أساسي، مما يشير إلى أنهما قد تم إدخالهما على الأرجح في قاعدة البيانات. سنقوم بالتحقق من ذلك باستخدام عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">getCategorieByNameWithProduits/categorie2</bdi>]:
   </li>
 </ul>
 
@@ -2961,42 +2963,42 @@
 <p>نحصل على النتيجة التالية:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001E00000026AD1B3CEE6.png" width="240" height="309" style="display:inline-block; margin:4px;width:6.35cm;height:8.176cm;" class="odt-zoomable" data-zoom-src="images/10000000000001E00000026AD1B3CEE6.png" /></td></tr></table>
 
-<p>لقد استرجعنا بالفعل الفئة [categorie2] مع منتجها الوحيد [produit21]. يمكننا أيضًا طلب المنتج فقط. للقيام بذلك، دعونا نستخدم عنوان URL [/getProduitByIdWithoutCategorie/1859]:</p>
+<p>لقد استرجعنا بالفعل الفئة [<bdi dir="ltr" class="odt-ltr-term">categorie2</bdi>] مع منتجها الوحيد [<bdi dir="ltr" class="odt-ltr-term">produit21</bdi>]. يمكننا أيضًا طلب المنتج فقط. للقيام بذلك، دعونا نستخدم عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">getProduitByIdWithoutCategorie/1859</bdi>]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000029C000000F1CCAE9599.png" width="334" height="120" style="display:inline-block; margin:4px;width:8.837cm;height:3.187cm;" class="odt-zoomable" data-zoom-src="images/100000000000029C000000F1CCAE9599.png" /></td></tr></table>
 
 <p>ونحصل على النتيجة التالية:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001C8000001B94DB1B898.png" width="228" height="221" style="display:inline-block; margin:4px;width:6.033cm;height:5.835cm;" class="odt-zoomable" data-zoom-src="images/10000000000001C8000001B94DB1B898.png" /></td></tr></table>
 
-<p>يمكن تنفيذ جميع عمليات [GET] في متصفح ويب قياسي:</p>
+<p>يمكن تنفيذ جميع عمليات [<bdi dir="ltr" class="odt-ltr-term">GET</bdi>] في متصفح ويب قياسي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002C000000053CAB3BCDB.png" width="493" height="58" style="display:inline-block; margin:4px;width:13.04cm;height:1.536cm;" class="odt-zoomable" data-zoom-src="images/10000000000002C000000053CAB3BCDB.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>ندعو القراء إلى اختبار عناوين URL الأخرى لخدمة الويب /json.</p>
+<p>ندعو القراء إلى اختبار عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الأخرى لخدمة الويب /<bdi dir="ltr" class="odt-ltr-term">json.</bdi></p>
 <p><a id="refheading18006265679331"></a></p>
-<h2 id="136-json">13.6. <span style="color: #4f81bd">عميل مبرمج لخدمة الويب /json</span></h2>
-<p>الآن بعد أن أصبحت قاعدة البيانات [dbintrospringdata] متاحة على الويب، سنقوم بكتابة تطبيق يستخدمها. وبذلك سيكون لدينا بنية العميل/الخادم التالية:</p>
+<h2 id="136-json">13.6. <span style="color: #4f81bd">عميل مبرمج لخدمة الويب /<bdi dir="ltr" class="odt-ltr-term">json</bdi></span></h2>
+<p>الآن بعد أن أصبحت قاعدة البيانات [<bdi dir="ltr" class="odt-ltr-term">dbintrospringdata</bdi>] متاحة على الويب، سنقوم بكتابة تطبيق يستخدمها. وبذلك سيكون لدينا بنية العميل/الخادم التالية:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000047C00000308921A5F6D.png" width="574" height="388" style="display:inline-block; margin:4px;width:15.187cm;height:10.266cm;" class="odt-zoomable" data-zoom-src="images/100000000000047C00000308921A5F6D.png" /></td></tr></table>
 
 <p>سيتكون تطبيق العميل من طبقتين:</p>
 <ul>
-  <li>طبقة [DAO] [2] للتواصل مع تطبيق الويب /json الذي يعرض قاعدة البيانات؛
+  <li>طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] [2] للتواصل مع تطبيق الويب /<bdi dir="ltr" class="odt-ltr-term">json</bdi> الذي يعرض قاعدة البيانات؛
   </li>
-  <li>طبقة اختبار JUnit [1] للتحقق من أن العميل والخادم يعملان بشكل صحيح؛
+  <li>طبقة اختبار <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi> [1] للتحقق من أن العميل والخادم يعملان بشكل صحيح؛
   </li>
 </ul>
 <p><a id="refheading17873265679331"></a></p>
-<h3 id="1361-eclipse">13.6.1. <span style="color: #4f81bd">مشروع Eclipse</span></h3>
-<p>مشروع Eclipse الخاص بالعميل هو كما يلي:</p>
+<h3 id="1361-eclipse">13.6.1. <span style="color: #4f81bd">مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi></span></h3>
+<p>مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> الخاص بالعميل هو كما يلي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E9000000F98862577D.png" width="163" height="174" style="display:inline-block; margin:4px;width:4.309cm;height:4.606cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E9000000F98862577D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <ul>
-  <li>يُنفذ المجلد [src/main/java] طبقة [DAO]؛
+  <li>يُنفذ المجلد [<bdi dir="ltr" class="odt-ltr-term">src/main/java</bdi>] طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]؛
   </li>
-  <li>المجلد [src/test/java] ينفذ اختبارات JUnit؛
+  <li>المجلد [<bdi dir="ltr" class="odt-ltr-term">src/test/java</bdi>] ينفذ اختبارات <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi>؛
   </li>
 </ul>
 <p><a id="refheading17876265679331"></a></p>
-<h3 id="1362-maven">13.6.2. <span style="color: #4f81bd">تكوين مشروع Maven</span></h3>
-<p>المشروع هو مشروع Maven تم تكوينه بواسطة ملف [pom.xml] التالي:</p>
+<h3 id="1362-maven">13.6.2. <span style="color: #4f81bd">تكوين مشروع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi></span></h3>
+<p>المشروع هو مشروع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> تم تكوينه بواسطة ملف [<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>] التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span> <span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#7f007f">xsi:schemaLocation</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#008080">&gt;</span></span></span>
@@ -3086,40 +3088,40 @@
 </code></pre></div>
 
 <ul>
-  <li>الأسطر 14–18: مشروع Maven الأصلي [<span style="color: #000000">spring-boot-starter-parent</span>]، الذي يسمح لنا بتعريف عدد من التبعيات دون تحديد إصداراتها، حيث يتم تعريفها في المشروع الأصلي؛
+  <li>الأسطر 14–18: مشروع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> الأصلي [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">spring-boot-starter-parent</bdi></span>]، الذي يسمح لنا بتعريف عدد من التبعيات دون تحديد إصداراتها، حيث يتم تعريفها في المشروع الأصلي؛
   </li>
-  <li>الأسطر 22–25: على الرغم من أننا لا نكتب تطبيق ويب، فإننا نحتاج إلى التبعية [<span style="color: #000000">spring-web</span>]، التي تتضمن فئة [RestTemplate] التي تتيح التفاعل السهل مع تطبيق ويب/JSON؛
+  <li>الأسطر 22–25: على الرغم من أننا لا نكتب تطبيق ويب، فإننا نحتاج إلى التبعية [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">spring-web</bdi></span>]، التي تتضمن فئة [<bdi dir="ltr" class="odt-ltr-term">RestTemplate</bdi>] التي تتيح التفاعل السهل مع تطبيق ويب/<bdi dir="ltr" class="odt-ltr-term">JSON</bdi>؛
   </li>
-  <li>الأسطر 27–34: مكتبة JSON؛
+  <li>الأسطر 27–34: مكتبة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>؛
   </li>
-  <li>الأسطر 36–39: تبعية ستسمح لنا بتعيين <i>مهلة </i>لطلبات HTTP الخاصة بالعميل. <i>المهلة </i>هي أقصى وقت انتظار لاستجابة الخادم. بعد هذا الوقت، يشير العميل إلى خطأ <i>المهلة </i>عن طريق إلقاء استثناء؛
+  <li>الأسطر 36–39: تبعية ستسمح لنا بتعيين <i>مهلة </i>لطلبات <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> الخاصة بالعميل. <i>المهلة </i>هي أقصى وقت انتظار لاستجابة الخادم. بعد هذا الوقت، يشير العميل إلى خطأ <i>المهلة </i>عن طريق إلقاء استثناء؛
   </li>
-  <li>الأسطر 41–46: مكتبة Google Guava المستخدمة في اختبار JUnit. ولهذا السبب، قمنا بتعيين نطاقها على [test] (السطر 45). وهذا يعني أن هذه التبعية يتم تضمينها فقط عند تنفيذ الكود من فرع [src/test/java]؛
+  <li>الأسطر 41–46: مكتبة <bdi dir="ltr" class="odt-ltr-term">Google Guava</bdi> المستخدمة في اختبار <bdi dir="ltr" class="odt-ltr-term">JUnit.</bdi> ولهذا السبب، قمنا بتعيين نطاقها على [<bdi dir="ltr" class="odt-ltr-term">test</bdi>] (السطر 45). وهذا يعني أن هذه التبعية يتم تضمينها فقط عند تنفيذ الكود من فرع [<bdi dir="ltr" class="odt-ltr-term">src/test/java</bdi>]؛
   </li>
   <li>الأسطر 48–51: مكتبة التسجيل؛
   </li>
-  <li>الأسطر 52–63: التبعيات الخاصة باختبارات JUnit. وتشمل على وجه الخصوص مكتبة JUnit 4 اللازمة لإجراء الاختبارات. وتحتوي هذه التبعيات على السمة [<span style="color: #008080">&lt;</span><span style="color: #3f7f7f">scope</span><span style="color: #008080">&gt;</span><span style="color: #000000">test</span><span style="color: #008080">&lt;</span><span style="color: #3f7f7f">/scope</span><span style="color: #008080">&gt;</span>]، مما يشير إلى أنها مطلوبة فقط لمرحلة الاختبار. ولا يتم تضمينها في أرشيف المشروع النهائي؛
+  <li>الأسطر 52–63: التبعيات الخاصة باختبارات <bdi dir="ltr" class="odt-ltr-term">JUnit.</bdi> وتشمل على وجه الخصوص مكتبة <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi> 4 اللازمة لإجراء الاختبارات. وتحتوي هذه التبعيات على السمة [<span style="color: #008080">&lt;</span><span style="color: #3f7f7f"><bdi dir="ltr" class="odt-ltr-term">scope</bdi></span><span style="color: #008080">&gt;</span><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">test</bdi></span><span style="color: #008080">&lt;</span><span style="color: #3f7f7f">/<bdi dir="ltr" class="odt-ltr-term">scope</bdi></span><span style="color: #008080">&gt;</span>]، مما يشير إلى أنها مطلوبة فقط لمرحلة الاختبار. ولا يتم تضمينها في أرشيف المشروع النهائي؛
   </li>
 </ul>
 <p><a id="refheading18008265679331"></a></p>
-<h3 id="1363-dao">13.6.3. <span style="color: #4f81bd">تنفيذ طبقة [DAO]</span></h3>
+<h3 id="1363-dao">13.6.3. <span style="color: #4f81bd">تنفيذ طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003730000015CDB4D7784.png" width="442" height="174" style="display:inline-block; margin:4px;width:11.682cm;height:4.604cm;" class="odt-zoomable" data-zoom-src="images/10000000000003730000015CDB4D7784.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000DE00000122F972297C.png" width="155" height="203" style="display:inline-block; margin:4px;width:4.11cm;height:5.369cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DE00000122F972297C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <ul>
-  <li>تحتوي حزمة [spring.client.config] على تكوين Spring لطبقة [DAO]؛
+  <li>تحتوي حزمة [<bdi dir="ltr" class="odt-ltr-term">spring.client.config</bdi>] على تكوين <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> لطبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]؛
   </li>
-  <li>تحتوي الحزمة [spring.client.dao] على تنفيذ طبقة [DAO]؛
+  <li>تحتوي الحزمة [<bdi dir="ltr" class="odt-ltr-term">spring.client.dao</bdi>] على تنفيذ طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]؛
   </li>
-  <li>تحتوي حزمة [spring.client.entities] على الكائنات التي يتم تبادلها مع خدمة الويب / JSON؛
+  <li>تحتوي حزمة [<bdi dir="ltr" class="odt-ltr-term">spring.client.entities</bdi>] على الكائنات التي يتم تبادلها مع خدمة الويب / <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>؛
   </li>
 </ul>
 <p><a id="refheading18010265679331"></a></p>
 <h4 id="13631">13.6.3.1. <span style="color: #4f81bd">التكوين</span></h4>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F70000009647928AFE.png" width="173" height="105" style="display:inline-block; margin:4px;width:4.57cm;height:2.775cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F70000009647928AFE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>تتولى فئة [DaoConfig] تكوين Spring لطبقة [DAO]. وفيما يلي شفرة البرمجة الخاصة بها:</p>
+<p>تتولى فئة [<bdi dir="ltr" class="odt-ltr-term">DaoConfig</bdi>] تكوين <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> لطبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]. وفيما يلي شفرة البرمجة الخاصة بها:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.client.config;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -3217,23 +3219,23 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 13: الفئة هي فئة تكوين Spring — يمكن العثور على مكونات Spring في حزمة [<span style="color: #2a00ff">spring.client.dao</span>]؛
+  <li>السطر 13: الفئة هي فئة تكوين <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> — يمكن العثور على مكونات <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> في حزمة [<span style="color: #2a00ff"><bdi dir="ltr" class="odt-ltr-term">spring.client.dao</bdi></span>]؛
   </li>
   <li>السطر 17: تم تعيين <i>مهلة انتظار </i>مدتها ثانية واحدة (1000 مللي ثانية)؛
   </li>
   <li>الأسطر 32–35: الحبة التي تُرجع هذه القيمة؛
   </li>
-  <li>السطر 18: عنوان URL لخدمة الويب / JSON؛
+  <li>السطر 18: عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لخدمة الويب / <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>؛
   </li>
   <li>الأسطر 37-40: الكائن الذي يُرجع هذه القيمة؛
   </li>
-  <li>الأسطر 20-30: تكوين فئة [RestTemplate] التي تتولى الاتصال بخدمة الويب / JSON. عندما لا يكون التكوين مطلوبًا، يمكن إنشاء مثيل لها في الكود باستخدام [new RestTemplate()] البسيط. هنا، نريد تعيين <i>مهلة </i>الاتصال بخدمة الويب / JSON. يتم تمرير bean [timeout] في السطر 36 كمعلمة إلى طريقة [RestTemplate] في السطر 24؛
+  <li>الأسطر 20-30: تكوين فئة [<bdi dir="ltr" class="odt-ltr-term">RestTemplate</bdi>] التي تتولى الاتصال بخدمة الويب / <bdi dir="ltr" class="odt-ltr-term">JSON.</bdi> عندما لا يكون التكوين مطلوبًا، يمكن إنشاء مثيل لها في الكود باستخدام [<bdi dir="ltr" class="odt-ltr-term">new RestTemplate</bdi>()] البسيط. هنا، نريد تعيين <i>مهلة </i>الاتصال بخدمة الويب / <bdi dir="ltr" class="odt-ltr-term">JSON.</bdi> يتم تمرير <bdi dir="ltr" class="odt-ltr-term">bean</bdi> [<bdi dir="ltr" class="odt-ltr-term">timeout</bdi>] في السطر 36 كمعلمة إلى طريقة [<bdi dir="ltr" class="odt-ltr-term">RestTemplate</bdi>] في السطر 24؛
   </li>
-  <li>السطر 23: المكون [<span style="color: #000000">HttpComponentsClientHttpRequestFactory</span>] هو الذي يسمح لنا بتعيين <i>مهلة </i>الاتصال (السطور 29-30)؛
+  <li>السطر 23: المكون [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">HttpComponentsClientHttpRequestFactory</bdi></span>] هو الذي يسمح لنا بتعيين <i>مهلة </i>الاتصال (السطور 29-30)؛
   </li>
-  <li>السطر 24: يتم إنشاء فئة [RestTemplate] باستخدام هذا المكون. نظرًا لأنها تعتمد على هذا المكون للتواصل مع خدمة الويب / JSON، فإن التبادلات ستخضع بالفعل <i>لحد </i>زمني؛
+  <li>السطر 24: يتم إنشاء فئة [<bdi dir="ltr" class="odt-ltr-term">RestTemplate</bdi>] باستخدام هذا المكون. نظرًا لأنها تعتمد على هذا المكون للتواصل مع خدمة الويب / <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>، فإن التبادلات ستخضع بالفعل <i>لحد </i>زمني؛
   </li>
-  <li>سيتبادل العميل والخادم أسطر النص. يقوم المحول بتسلسل كائن إلى نص، والعكس بالعكس، بتفكيك النص إلى كائن. قد يكون هناك عدة محولات مرتبطة بفئة [RestTemplate]، ويعتمد اختيار المحول في أي وقت معين على رؤوس HTTP المرسلة من الخادم. هنا، لن يكون لدينا محول. لذلك، لن يحاول مكون [RestTemplate] تحويل العنصرين التاليين بأي شكل من الأشكال:
+  <li>سيتبادل العميل والخادم أسطر النص. يقوم المحول بتسلسل كائن إلى نص، والعكس بالعكس، بتفكيك النص إلى كائن. قد يكون هناك عدة محولات مرتبطة بفئة [<bdi dir="ltr" class="odt-ltr-term">RestTemplate</bdi>]، ويعتمد اختيار المحول في أي وقت معين على رؤوس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> المرسلة من الخادم. هنا، لن يكون لدينا محول. لذلك، لن يحاول مكون [<bdi dir="ltr" class="odt-ltr-term">RestTemplate</bdi>] تحويل العنصرين التاليين بأي شكل من الأشكال:
     <ul>
       <li>النص المنشور؛
       </li>
@@ -3243,29 +3245,29 @@
   </li>
 </ul>
 
-<p>ستكون هذه النصوص سلاسل JSON، وبالتالي سيتركها مكون [RestTemplate] كما هي. نحن، المطورون، من سنقوم بالتسلسل والتفكيك الضروريين لـ JSON. وذلك لأن المرشحات التي سيتم تطبيقها على القيمة المنشورة والاستجابة المستلمة قد تختلف، وتُظهر التجربة أنه من الأسهل التعامل معها بنفسك بدلاً من محاولة تكوين مكون [RestTemplate] لاستخدام محول JSON الصحيح؛</p>
+<p>ستكون هذه النصوص سلاسل <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>، وبالتالي سيتركها مكون [<bdi dir="ltr" class="odt-ltr-term">RestTemplate</bdi>] كما هي. نحن، المطورون، من سنقوم بالتسلسل والتفكيك الضروريين لـ <bdi dir="ltr" class="odt-ltr-term">JSON.</bdi> وذلك لأن المرشحات التي سيتم تطبيقها على القيمة المنشورة والاستجابة المستلمة قد تختلف، وتُظهر التجربة أنه من الأسهل التعامل معها بنفسك بدلاً من محاولة تكوين مكون [<bdi dir="ltr" class="odt-ltr-term">RestTemplate</bdi>] لاستخدام محول <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> الصحيح؛</p>
 <ul>
-  <li>الأسطر 42–92: تعريف مرشحات JSON. هذه هي نفس المرشحات من جانب الخادم التي تم عرضها وشرحها في <a href="#refheading17988265679331"><u><span style="color: #0563c1">القسم 13.5.3.1</span></u></a>؛
+  <li>الأسطر 42–92: تعريف مرشحات <bdi dir="ltr" class="odt-ltr-term">JSON.</bdi> هذه هي نفس المرشحات من جانب الخادم التي تم عرضها وشرحها في <a href="#refheading17988265679331"><u><span style="color: #0563c1">القسم 13.5.3.1</span></u></a>؛
   </li>
-  <li>الأسطر 43–46: مخطط JSON بدون مرشحات؛
+  <li>الأسطر 43–46: مخطط <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> بدون مرشحات؛
   </li>
-  <li>الأسطر 64–68: مخطط JSON لاسترداد فئة بدون منتجاتها؛
+  <li>الأسطر 64–68: مخطط <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> لاسترداد فئة بدون منتجاتها؛
   </li>
-  <li>الأسطر 48–58: مخطط JSON لاسترداد فئة مع منتجاتها؛
+  <li>الأسطر 48–58: مخطط <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> لاسترداد فئة مع منتجاتها؛
   </li>
-  <li>الأسطر 83–92: مخطط JSON لاسترداد منتج بدون فئته؛
+  <li>الأسطر 83–92: مخطط <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> لاسترداد منتج بدون فئته؛
   </li>
-  <li>الأسطر 60-70: مخطط JSON لاسترداد منتج مع فئته؛
+  <li>الأسطر 60-70: مخطط <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> لاسترداد منتج مع فئته؛
   </li>
 </ul>
 
-<p>ستكون جميع هذه الفاصوليا متاحة لرمز طبقة [DAO] وكذلك لاختبار JUnit.</p>
+<p>ستكون جميع هذه الفاصوليا متاحة لرمز طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] وكذلك لاختبار <bdi dir="ltr" class="odt-ltr-term">JUnit.</bdi></p>
 <p><a id="refheading18012265679331"></a></p>
 <h4 id="13632">13.6.3.2. <span style="color: #4f81bd"><span style="color: #4f81bd">الكيانات</span></span></h4>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EA000000B3AD48A719.png" width="164" height="125" style="display:inline-block; margin:4px;width:4.33cm;height:3.313cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EA000000B3AD48A719.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>الكيانات التي تتعامل معها طبقة [DAO] هي تلك التي تتبادلها مع خدمة الويب / JSON. وهذه هي العناصر والمنتجات. على جانب الخادم، كانت هذه الكيانات تحتوي على تعليقات توضيحية خاصة بالاستمرارية في JPA. هنا، تمت إزالة تلك التعليقات التوضيحية. ندرج كود الكيان مرة أخرى كمرجع:</p>
-<p>[<strong>AbstractEntity</strong>]</p>
+<p>الكيانات التي تتعامل معها طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] هي تلك التي تتبادلها مع خدمة الويب / <bdi dir="ltr" class="odt-ltr-term">JSON.</bdi> وهذه هي العناصر والمنتجات. على جانب الخادم، كانت هذه الكيانات تحتوي على تعليقات توضيحية خاصة بالاستمرارية في <bdi dir="ltr" class="odt-ltr-term">JPA.</bdi> هنا، تمت إزالة تلك التعليقات التوضيحية. ندرج كود الكيان مرة أخرى كمرجع:</p>
+<p>[<strong><bdi dir="ltr" class="odt-ltr-term">AbstractEntity</bdi></strong>]</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.client.entities;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -3401,15 +3403,15 @@
 </code></pre></div>
 
 <p><a id="refheading18014265679331"></a></p>
-<h4 id="13633-daoexception">13.6.3.3. <span style="color: #4f81bd">فئة [DaoException]</span></h4>
+<h4 id="13633-daoexception">13.6.3.3. <span style="color: #4f81bd">فئة [<bdi dir="ltr" class="odt-ltr-term">DaoException</bdi>]</span></h4>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D1000000C90F5AC4AE.png" width="146" height="141" style="display:inline-block; margin:4px;width:3.87cm;height:3.722cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D1000000C90F5AC4AE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>عندما تواجه طبقة [DAO] خطأً، فإنها ستقوم بإلقاء استثناء [DaoException]. تُستخدم هذه الفئة على جانب الخادم ويتم وصفها في <a href="#refheading2192542014630537"><u><span style="color: #0563c1">القسم 11.3.7</span></u></a>.</p>
+<p>عندما تواجه طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] خطأً، فإنها ستقوم بإلقاء استثناء [<bdi dir="ltr" class="odt-ltr-term">DaoException</bdi>]. تُستخدم هذه الفئة على جانب الخادم ويتم وصفها في <a href="#refheading2192542014630537"><u><span style="color: #0563c1">القسم 11.3.7</span></u></a>.</p>
 <p><a id="refheading18016265679331"></a></p>
-<h4 id="13634-dao">13.6.3.4. <span style="color: #4f81bd">واجهة طبقة [DAO]</span></h4>
+<h4 id="13634-dao">13.6.3.4. <span style="color: #4f81bd">واجهة طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]</span></h4>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D1000000C9D2A8FD21.png" width="146" height="141" style="display:inline-block; margin:4px;width:3.87cm;height:3.722cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D1000000C9D2A8FD21.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>تنفذ طبقة [DAO] واجهة [IDao] الموضحة في <a href="#refheading2192542014630537"><u><span style="color: #0563c1">القسم 11.3.7</span></u></a>.</p>
+<p>تنفذ طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] واجهة [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>] الموضحة في <a href="#refheading2192542014630537"><u><span style="color: #0563c1">القسم 11.3.7</span></u></a>.</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.client.dao;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -3466,10 +3468,10 @@
 </code></pre></div>
 
 <p><a id="refheading18018265679331"></a></p>
-<h4 id="13635-json">13.6.3.5. <span style="color: #4f81bd">استجابة خدمة الويب / JSON</span></h4>
+<h4 id="13635-json">13.6.3.5. <span style="color: #4f81bd">استجابة خدمة الويب / <bdi dir="ltr" class="odt-ltr-term">JSON</bdi></span></h4>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D1000000C9C8BF23B9.png" width="146" height="141" style="display:inline-block; margin:4px;width:3.87cm;height:3.722cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D1000000C9C8BF23B9.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>لقد رأينا أن جميع عناوين URL لخدمة الويب / JSON تُرجع نوع [Response] المُعرَّف في <a href="#refheading399246986338762"><u><span style="color: #0563c1">القسم 13.5.5.3</span></u></a>. نعيد عرض هذه الفئة هنا:</p>
+<p>لقد رأينا أن جميع عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لخدمة الويب / <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> تُرجع نوع [<bdi dir="ltr" class="odt-ltr-term">Response</bdi>] المُعرَّف في <a href="#refheading399246986338762"><u><span style="color: #0563c1">القسم 13.5.5.3</span></u></a>. نعيد عرض هذه الفئة هنا:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.client.dao;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -3502,10 +3504,10 @@
 </code></pre></div>
 
 <p><a id="refheading18020265679331"></a></p>
-<h4 id="13636-json">13.6.3.6. <span style="color: #4f81bd">تنفيذ الاتصال بخدمة الويب / JSON</span></h4>
+<h4 id="13636-json">13.6.3.6. <span style="color: #4f81bd">تنفيذ الاتصال بخدمة الويب / <bdi dir="ltr" class="odt-ltr-term">JSON</bdi></span></h4>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D1000000C943E23BD0.png" width="146" height="141" style="display:inline-block; margin:4px;width:3.87cm;height:3.722cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D1000000C943E23BD0.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>تقوم فئة [<a id="abstractdaoclient-client-webjson"></a> AbstractDao] بتنفيذ الاتصال مع خدمة الويب / JSON:</p>
+<p>تقوم فئة [<a id="abstractdaoclient-client-webjson"></a> <bdi dir="ltr" class="odt-ltr-term">AbstractDao</bdi>] بتنفيذ الاتصال مع خدمة الويب / <bdi dir="ltr" class="odt-ltr-term">JSON:</bdi></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.client.dao;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -3558,56 +3560,56 @@
 </code></pre></div>
 
 <ul>
-  <li>السطران 15-16: إدراج مكون [RestTemplate]، الذي يتولى الاتصال بالخادم؛
+  <li>السطران 15-16: إدراج مكون [<bdi dir="ltr" class="odt-ltr-term">RestTemplate</bdi>]، الذي يتولى الاتصال بالخادم؛
   </li>
-  <li>السطران 17-18: إدخال عنوان URL لخدمة الويب / JSON؛
+  <li>السطران 17-18: إدخال عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لخدمة الويب / <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>؛
   </li>
 </ul>
 
-<p>يتم تضمين تنفيذ طرق الاتصال بالخادم في طريقة [<span style="color: #000000">getResponse</span>]:</p>
+<p>يتم تضمين تنفيذ طرق الاتصال بالخادم في طريقة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">getResponse</bdi></span>]:</p>
 <ul>
   <li>السطر 21: تتلقى الطريقة معلمتين:
     <ul>
-      <li>[url]: عنوان URL المطلوب؛
+      <li>[<bdi dir="ltr" class="odt-ltr-term">url</bdi>]: عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> المطلوب؛
       </li>
-      <li>[jsonPost]: سلسلة JSON المراد نشرها، أو <i>null </i>في حالة عدم وجودها. إذا كانت [jsonPost == null]، يتم إجراء طلب عنوان URL باستخدام GET؛ وإلا، يتم استخدام POST؛ 
+      <li>[<bdi dir="ltr" class="odt-ltr-term">jsonPost</bdi>]: سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> المراد نشرها، أو <i><bdi dir="ltr" class="odt-ltr-term">null</bdi> </i>في حالة عدم وجودها. إذا كانت [<bdi dir="ltr" class="odt-ltr-term">jsonPost</bdi> == <bdi dir="ltr" class="odt-ltr-term">null</bdi>]، يتم إجراء طلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> باستخدام <bdi dir="ltr" class="odt-ltr-term">GET</bdi>؛ وإلا، يتم استخدام <bdi dir="ltr" class="odt-ltr-term">POST</bdi>؛ 
       </li>
     </ul>
   </li>
-  <li><span style="color: #000000">السطر 38: العبارة التي ترسل الطلب إلى الخادم وتستقبل استجابته. يوفر مكون [RestTemplate] مجموعة واسعة من الطرق للتفاعل مع الخادم. لقد اخترنا طريقة [exchange] هنا، ولكن هناك طرق أخرى متاحة؛</span>
+  <li><span style="color: #000000">السطر 38: العبارة التي ترسل الطلب إلى الخادم وتستقبل استجابته. يوفر مكون [<bdi dir="ltr" class="odt-ltr-term">RestTemplate</bdi>] مجموعة واسعة من الطرق للتفاعل مع الخادم. لقد اخترنا طريقة [<bdi dir="ltr" class="odt-ltr-term">exchange</bdi>] هنا، ولكن هناك طرق أخرى متاحة؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 27–36: نحتاج إلى إنشاء طلب [RequestEntity]. ويختلف هذا الطلب اعتمادًا على ما إذا كنا نستخدم طلب GET أو POST؛</span>
+  <li><span style="color: #000000">الأسطر 27–36: نحتاج إلى إنشاء طلب [<bdi dir="ltr" class="odt-ltr-term">RequestEntity</bdi>]. ويختلف هذا الطلب اعتمادًا على ما إذا كنا نستخدم طلب <bdi dir="ltr" class="odt-ltr-term">GET</bdi> أو <bdi dir="ltr" class="odt-ltr-term">POST</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطران 30-31: طلب GET. توفر فئة [RequestEntity] طرقًا ثابتة لإنشاء طلبات GET و POST و HEAD وغيرها. تتيح لك طريقة [RequestEntity.get] إنشاء طلب GET عن طريق ربط الطرق المختلفة التي تبنيه:</span>
+  <li><span style="color: #000000">السطران 30-31: طلب <bdi dir="ltr" class="odt-ltr-term">GET.</bdi> توفر فئة [<bdi dir="ltr" class="odt-ltr-term">RequestEntity</bdi>] طرقًا ثابتة لإنشاء طلبات <bdi dir="ltr" class="odt-ltr-term">GET</bdi> و <bdi dir="ltr" class="odt-ltr-term">POST</bdi> و <bdi dir="ltr" class="odt-ltr-term">HEAD</bdi> وغيرها. تتيح لك طريقة [<bdi dir="ltr" class="odt-ltr-term">RequestEntity.get</bdi>] إنشاء طلب <bdi dir="ltr" class="odt-ltr-term">GET</bdi> عن طريق ربط الطرق المختلفة التي تبنيه:</span>
     <ul>
-      <li><span style="color: #000000">تأخذ الطريقة [RequestEntity.get] عنوان URL الهدف كمعلمة في شكل مثيل URI،</span>
+      <li><span style="color: #000000">تأخذ الطريقة [<bdi dir="ltr" class="odt-ltr-term">RequestEntity.get</bdi>] عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الهدف كمعلمة في شكل مثيل <bdi dir="ltr" class="odt-ltr-term">URI</bdi>،</span>
       </li>
-      <li><span style="color: #000000">تسمح لك الطريقة [accept] بتعريف عناصر رأس HTTP [Accept]. هنا، نحدد أننا نقبل النوع [application/json] الذي سيرسله الخادم؛</span>
+      <li><span style="color: #000000">تسمح لك الطريقة [<bdi dir="ltr" class="odt-ltr-term">accept</bdi>] بتعريف عناصر رأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">Accept</bdi>]. هنا، نحدد أننا نقبل النوع [<bdi dir="ltr" class="odt-ltr-term">application/json</bdi>] الذي سيرسله الخادم؛</span>
       </li>
-      <li><span style="color: #000000">تستخدم طريقة [build] هذه المعلومات لإنشاء نوع [RequestEntity] للطلب؛</span>
+      <li><span style="color: #000000">تستخدم طريقة [<bdi dir="ltr" class="odt-ltr-term">build</bdi>] هذه المعلومات لإنشاء نوع [<bdi dir="ltr" class="odt-ltr-term">RequestEntity</bdi>] للطلب؛</span>
       </li>
     </ul>
   </li>
-  <li><span style="color: #000000">السطران 34-35: طلب POST. تقوم طريقة [RequestEntity.post] بإنشاء طلب POST عن طريق ربط الطرق المختلفة التي تبنيه:</span>
+  <li><span style="color: #000000">السطران 34-35: طلب <bdi dir="ltr" class="odt-ltr-term">POST.</bdi> تقوم طريقة [<bdi dir="ltr" class="odt-ltr-term">RequestEntity.post</bdi>] بإنشاء طلب <bdi dir="ltr" class="odt-ltr-term">POST</bdi> عن طريق ربط الطرق المختلفة التي تبنيه:</span>
     <ul>
-      <li><span style="color: #000000">تأخذ طريقة [RequestEntity.post] عنوان URL الهدف كمعلمة في شكل مثيل URI،</span>
+      <li><span style="color: #000000">تأخذ طريقة [<bdi dir="ltr" class="odt-ltr-term">RequestEntity.post</bdi>] عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الهدف كمعلمة في شكل مثيل <bdi dir="ltr" class="odt-ltr-term">URI</bdi>،</span>
       </li>
-      <li><span style="color: #000000">تُعرِّف طريقة [header] رأس HTTP. هنا، نرسل رأس [</span><span style="color: #2a00ff">Content-Type: application/json</span><span style="color: #000000">] إلى الخادم للإشارة إلى أن البيانات المرسلة ستصل في شكل سلسلة JSON؛</span>
+      <li><span style="color: #000000">تُعرِّف طريقة [<bdi dir="ltr" class="odt-ltr-term">header</bdi>] رأس <bdi dir="ltr" class="odt-ltr-term">HTTP.</bdi> هنا، نرسل رأس [</span><span style="color: #2a00ff"><bdi dir="ltr" class="odt-ltr-term">Content-Type: application/json</bdi></span><span style="color: #000000">] إلى الخادم للإشارة إلى أن البيانات المرسلة ستصل في شكل سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>؛</span>
       </li>
-      <li><span style="color: #000000">تسمح لنا طريقة [accept] بالإشارة إلى أننا نقبل النوع [application/json] الذي سيرسله الخادم؛</span>
+      <li><span style="color: #000000">تسمح لنا طريقة [<bdi dir="ltr" class="odt-ltr-term">accept</bdi>] بالإشارة إلى أننا نقبل النوع [<bdi dir="ltr" class="odt-ltr-term">application/json</bdi>] الذي سيرسله الخادم؛</span>
       </li>
-      <li><span style="color: #000000">تقوم طريقة [body] بتعيين القيمة المرسلة. هذه هي المعلمة الرابعة لطريقة [getResponse] العامة (السطر 1)؛</span>
+      <li><span style="color: #000000">تقوم طريقة [<bdi dir="ltr" class="odt-ltr-term">body</bdi>] بتعيين القيمة المرسلة. هذه هي المعلمة الرابعة لطريقة [<bdi dir="ltr" class="odt-ltr-term">getResponse</bdi>] العامة (السطر 1)؛</span>
       </li>
     </ul>
   </li>
-  <li><span style="color: #000000">السطر 38: تُرجع طريقة [RestTemplate].exchange نوع [ResponseEntity&lt;String&gt;] الذي يغلف استجابة الخادم بالكامل: رؤوس HTTP ونص الوثيقة. تسترد طريقة [ResponseEntity].getBody() هذا النص، الذي يمثل استجابة الخادم — في هذه الحالة، سلسلة؛</span>
+  <li><span style="color: #000000">السطر 38: تُرجع طريقة [<bdi dir="ltr" class="odt-ltr-term">RestTemplate</bdi>].<bdi dir="ltr" class="odt-ltr-term">exchange</bdi> نوع [<bdi dir="ltr" class="odt-ltr-term">ResponseEntity</bdi>&lt;<bdi dir="ltr" class="odt-ltr-term">String</bdi>&gt;] الذي يغلف استجابة الخادم بالكامل: رؤوس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> ونص الوثيقة. تسترد طريقة [<bdi dir="ltr" class="odt-ltr-term">ResponseEntity</bdi>].<bdi dir="ltr" class="odt-ltr-term">getBody</bdi>() هذا النص، الذي يمثل استجابة الخادم — في هذه الحالة، سلسلة؛</span>
   </li>
 </ul>
 <p><a id="refheading18022265679331"></a></p>
-<h4 id="13637-idao">13.6.3.7. <span style="color: #4f81bd">تنفيذ واجهة [IDao]</span></h4>
+<h4 id="13637-idao">13.6.3.7. <span style="color: #4f81bd">تنفيذ واجهة [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>]</span></h4>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D1000000C91E039E7B.png" width="146" height="141" style="display:inline-block; margin:4px;width:3.87cm;height:3.722cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D1000000C91E039E7B.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>تنفذ فئة [Dao] واجهة [IDao]:</p>
+<p>تنفذ فئة [<bdi dir="ltr" class="odt-ltr-term">Dao</bdi>] واجهة [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.client.dao;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -3656,18 +3658,18 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 17: فئة [Dao] هي مكون Spring يمكن حقن مكونات Spring أخرى فيه؛
+  <li>السطر 17: فئة [<bdi dir="ltr" class="odt-ltr-term">Dao</bdi>] هي مكون <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> يمكن حقن مكونات <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> أخرى فيه؛
   </li>
-  <li>السطر 18: فئة [<span style="color: #000000">Dao</span>] تمتد من فئة [<span style="color: #000000">AbstractDao</span>] التي رأيناها للتو وتنفذ واجهة [<span style="color: #000000">IDao</span>]؛
+  <li>السطر 18: فئة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">Dao</bdi></span>] تمتد من فئة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">AbstractDao</bdi></span>] التي رأيناها للتو وتنفذ واجهة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">IDao</bdi></span>]؛
   </li>
-  <li>السطران 20-21: نقوم بإدخال سياق Spring للوصول إلى حبوبه؛
+  <li>السطران 20-21: نقوم بإدخال سياق <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> للوصول إلى حبوبه؛
   </li>
-  <li>الأسطر 24–38: حقن مخططي JSON المحددين في فئة [AppConfig] المعروضة في <a href="#refheading17876265679331"><u><span style="color: #0563c1">القسم 13.6.2</span></u></a>؛
+  <li>الأسطر 24–38: حقن مخططي <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> المحددين في فئة [<bdi dir="ltr" class="odt-ltr-term">AppConfig</bdi>] المعروضة في <a href="#refheading17876265679331"><u><span style="color: #0563c1">القسم 13.6.2</span></u></a>؛
   </li>
 </ul>
 
-<p>تتبع جميع تطبيقات الطرق المختلفة لواجهة [IDao] نفس النمط. سنقدم طريقتين، إحداهما تستند إلى عملية [POST]، والأخرى إلى عملية [GET].</p>
-<p>مثال على [GET]: [<span style="color: #000000">getCategorieByNameWithProduits</span>]</p>
+<p>تتبع جميع تطبيقات الطرق المختلفة لواجهة [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>] نفس النمط. سنقدم طريقتين، إحداهما تستند إلى عملية [<bdi dir="ltr" class="odt-ltr-term">POST</bdi>]، والأخرى إلى عملية [<bdi dir="ltr" class="odt-ltr-term">GET</bdi>].</p>
+<p>مثال على [<bdi dir="ltr" class="odt-ltr-term">GET</bdi>]: [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">getCategorieByNameWithProduits</bdi></span>]</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content">@Override</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> Categorie getCategorieByNameWithProduits(String </span><span style="color:#6a3e3e">nom</span><span style="color:#000000">) {</span></span></span>
@@ -3695,7 +3697,7 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 7: يتم استدعاء طريقة [<span style="color: #000000">getResponse</span>] للفئة الأصلية. تتولى هذه الطريقة التعامل مع خدمة الويب/JSON. ومعلماتها هي كما يلي:
+  <li>السطر 7: يتم استدعاء طريقة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">getResponse</bdi></span>] للفئة الأصلية. تتولى هذه الطريقة التعامل مع خدمة الويب/<bdi dir="ltr" class="odt-ltr-term">JSON.</bdi> ومعلماتها هي كما يلي:
   </li>
 </ul>
 
@@ -3706,7 +3708,7 @@
 <ul>
   <li>(تابع)
     <ul>
-      <li>عنوان URL للخدمة التي يتم الاستعلام عنها [<span style="color: #2a00ff">/getCategoryByNameWithProducts/name</span>]؛
+      <li>عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> للخدمة التي يتم الاستعلام عنها [<span style="color: #2a00ff">/<bdi dir="ltr" class="odt-ltr-term">getCategoryByNameWithProducts/name</bdi></span>]؛
       </li>
       <li>القيمة المنشورة. هنا، لا توجد أي قيمة؛
       </li>
@@ -3714,7 +3716,7 @@
   </li>
 </ul>
 
-<p>تُرجع طريقة [getResponse] سلسلة تمثل استجابة JSON المرسلة من الخادم. نقوم بإلغاء تسلسل استجابة JSON هذه على النحو التالي:</p>
+<p>تُرجع طريقة [<bdi dir="ltr" class="odt-ltr-term">getResponse</bdi>] سلسلة تمثل استجابة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> المرسلة من الخادم. نقوم بإلغاء تسلسل استجابة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> هذه على النحو التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000c0">jsonMapperCategorieWithProduits</span><span style="color:#000000">.readValue(</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                    jsonResponse,</span></span>
@@ -3722,11 +3724,11 @@
 <span class="odt-code-line"><span class="odt-code-line-content">});</span></span>
 </code></pre></div>
 
-<p>لأن سلسلة JSON هي تسلسل لنوع [<span style="color: #000000">Response&lt;Category&gt;</span>]؛</p>
+<p>لأن سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> هي تسلسل لنوع [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">Response</bdi>&lt;<bdi dir="ltr" class="odt-ltr-term">Category</bdi>&gt;</span>]؛</p>
 <ul>
   <li>الأسطر 11–17: نتحقق من حالة الاستجابة. إذا لم تكن الحالة 0، فهذا يعني أن هناك خطأً من جانب الخادم. ثم نطلق استثناءً (السطر 13)، باستخدام المعلومات الواردة في الاستجابة (الحالة وقائمة رسائل الخطأ)؛
   </li>
-  <li>السطر 16: إذا لم يكن هناك خطأ من جانب الخادم، فإننا نُرجع النص الأساسي من النوع [<span style="color: #000000">Response&lt;Category&gt;</span>]، أي الفئة المطلوبة؛
+  <li>السطر 16: إذا لم يكن هناك خطأ من جانب الخادم، فإننا نُرجع النص الأساسي من النوع [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">Response</bdi>&lt;<bdi dir="ltr" class="odt-ltr-term">Category</bdi>&gt;</span>]، أي الفئة المطلوبة؛
   </li>
   <li>الأسطر 18-19: معالجة الاستثناء الذي تم إلقائه في السطر 16؛
   </li>
@@ -3734,7 +3736,7 @@
   </li>
 </ul>
 
-<p>مثال على [POST]: [<span style="color: #000000">addCategories</span>]</p>
+<p>مثال على [<bdi dir="ltr" class="odt-ltr-term">POST</bdi>]: [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">addCategories</bdi></span>]</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content">@Override</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> List&lt;Categorie&gt; addCategories(List&lt;Categorie&gt; </span><span style="color:#6a3e3e">categories</span><span style="color:#000000">) {</span></span></span>
@@ -3762,11 +3764,11 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 2: تُستخدم طريقة [<span style="color: #000000">addCategories</span>] لتخزين الفئات التي تم تمريرها كمعلمات في قاعدة البيانات. وتُرجع هذه الفئات نفسها مع إضافة مفاتيحها الأساسية. إذا تم تمرير الفئات مع المنتجات، يتم تخزينها أيضًا؛
+  <li>السطر 2: تُستخدم طريقة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">addCategories</bdi></span>] لتخزين الفئات التي تم تمريرها كمعلمات في قاعدة البيانات. وتُرجع هذه الفئات نفسها مع إضافة مفاتيحها الأساسية. إذا تم تمرير الفئات مع المنتجات، يتم تخزينها أيضًا؛
   </li>
-  <li>السطر 7: يتم استدعاء طريقة [getResponse] الخاصة بالوالد للتعامل مع الاتصال بخدمة الويب / JSON؛
+  <li>السطر 7: يتم استدعاء طريقة [<bdi dir="ltr" class="odt-ltr-term">getResponse</bdi>] الخاصة بالوالد للتعامل مع الاتصال بخدمة الويب / <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>؛
     <ul>
-      <li>المعلمة الأولى هي عنوان URL [<span style="color: #2a00ff">/addCategories</span>]؛
+      <li>المعلمة الأولى هي عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<span style="color: #2a00ff">/<bdi dir="ltr" class="odt-ltr-term">addCategories</bdi></span>]؛
       </li>
       <li>المعلمة الثانية هي القيمة المرسلة، وهي في هذه الحالة قائمة الفئات المراد حفظها؛
       </li>
@@ -3778,7 +3780,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">getResponse(</span><span style="color:#2a00ff">&quot;/addCategories&quot;</span><span style="color:#000000">, </span><span style="color:#0000c0">jsonMapperCategorieWithProduits</span><span style="color:#000000">.writeValueAsString(</span><span style="color:#6a3e3e">categories</span><span style="color:#000000">))</span></span></span>
 </code></pre></div>
 
-<p>ثم يتم فك تسلسل سلسلة JSON الناتجة للحصول على النوع [Response&lt;List&lt;Category&gt;&gt;] المتوقع:</p>
+<p>ثم يتم فك تسلسل سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> الناتجة للحصول على النوع [<bdi dir="ltr" class="odt-ltr-term">Response</bdi>&lt;<bdi dir="ltr" class="odt-ltr-term">List</bdi>&lt;<bdi dir="ltr" class="odt-ltr-term">Category</bdi>&gt;&gt;] المتوقع:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">Response&lt;List&lt;Categorie&gt;&gt; </span><span style="color:#6a3e3e">response</span><span style="color:#000000"> = </span><span style="color:#0000c0">jsonMapperCategorieWithProduits</span><span style="color:#000000">.readValue(</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                    jsonResponse,</span></span>
@@ -3795,11 +3797,11 @@
 
 <p>تتبع جميع الطرق الأخرى نمط الطريقتين المقدمتين.</p>
 <p><a id="refheading18024265679331"></a></p>
-<h3 id="1364-junit">13.6.4. <span style="color: #4f81bd">اختبار JUnit</span></h3>
+<h3 id="1364-junit">13.6.4. <span style="color: #4f81bd">اختبار <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi></span></h3>
 <p>لنعد إلى بنية العميل/الخادم قيد التطوير حاليًا:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004730000030E094525DC.png" width="570" height="391" style="display:inline-block; margin:4px;width:15.069cm;height:10.345cm;" class="odt-zoomable" data-zoom-src="images/10000000000004730000030E094525DC.png" /></td></tr></table>
 
-<p>لقد أنشأنا طبقة [DAO] [2] بنفس واجهة طبقة [DAO] [4]. ولذلك، يمكننا استخدام اختبار JUnit الذي استُخدم لاختبار طبقة [DAO] [4] لاختبار طبقة [DAO] [2]. وللتذكير، فإنه كما يلي:</p>
+<p>لقد أنشأنا طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] [2] بنفس واجهة طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] [4]. ولذلك، يمكننا استخدام اختبار <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi> الذي استُخدم لاختبار طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] [4] لاختبار طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] [2]. وللتذكير، فإنه كما يلي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D70000009A56112D8B.png" width="150" height="108" style="display:inline-block; margin:4px;width:3.979cm;height:2.85cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D70000009A56112D8B.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">

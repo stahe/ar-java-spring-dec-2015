@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1248,19 +1250,19 @@
 
 
 <p><a id="refheading22673565848973"></a></p>
-<h1 id="6-jdbc">6. <span style="color: #365f91">[الدورة]: مقدمة إلى واجهة برمجة تطبيقات JDBC</span></h1>
-<p><strong>الكلمات المفتاحية</strong>: قواعد البيانات العلائقية، واجهة برمجة تطبيقات JDBC، استثناء SQLException.</p>
+<h1 id="6-jdbc">6. <span style="color: #365f91">[الدورة]: مقدمة إلى واجهة برمجة تطبيقات <bdi dir="ltr" class="odt-ltr-term">JDBC</bdi></span></h1>
+<p><strong>الكلمات المفتاحية</strong>: قواعد البيانات العلائقية، واجهة برمجة تطبيقات <bdi dir="ltr" class="odt-ltr-term">JDBC</bdi>، استثناء <bdi dir="ltr" class="odt-ltr-term">SQLException.</bdi></p>
 <p><a id="refheading1217121037674463"></a></p>
 <h2 id="61">6.1. <span style="color: #4f81bd">الدعم</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000BD00000096518BC439.png" width="132" height="105" style="display:inline-block; margin:4px;width:3.5cm;height:2.778cm;" class="odt-zoomable" data-zoom-src="images/10000000000000BD00000096518BC439.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E3000001337D6BE978.png" width="159" height="215" style="display:inline-block; margin:4px;width:4.2cm;height:5.68cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E3000001337D6BE978.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F60000015AF428CA9B.png" width="172" height="242" style="display:inline-block; margin:4px;width:4.56cm;height:6.414cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F60000015AF428CA9B.png" /></td></tr></table>
 
 <p><a id="refheading174544695066931"></a></p>
-<p>يحتوي المجلد [support / chap-06] على مشاريع Eclipse الخاصة بهذا الفصل.</p>
+<p>يحتوي المجلد [<bdi dir="ltr" class="odt-ltr-term">support</bdi> / <bdi dir="ltr" class="odt-ltr-term">chap-06</bdi>] على مشاريع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> الخاصة بهذا الفصل.</p>
 <p><a id="refheading59231820156038"></a></p>
 <h2 id="62">6.2. <span style="color: #4f81bd">البنية</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000051B00000107553F3249.png" width="654" height="131" style="display:inline-block; margin:4px;width:17.291cm;height:3.478cm;" class="odt-zoomable" data-zoom-src="images/100000000000051B00000107553F3249.png" /></td></tr></table>
 
-<p>طبقة JDBC (Java Database Connectivity) هي واجهة عالمية للوصول إلى قواعد البيانات. وهي تقدم دائمًا نفس الواجهة لطبقة [DAO]. إذا قمت بتغيير نظام إدارة قواعد البيانات (DBMS)، فما عليك سوى تغيير برنامج تشغيل JDBC. وتبقى طبقة [DAO] دون تغيير.</p>
+<p>طبقة <bdi dir="ltr" class="odt-ltr-term">JDBC</bdi> (<bdi dir="ltr" class="odt-ltr-term">Java Database Connectivity</bdi>) هي واجهة عالمية للوصول إلى قواعد البيانات. وهي تقدم دائمًا نفس الواجهة لطبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]. إذا قمت بتغيير نظام إدارة قواعد البيانات (<bdi dir="ltr" class="odt-ltr-term">DBMS</bdi>)، فما عليك سوى تغيير برنامج تشغيل <bdi dir="ltr" class="odt-ltr-term">JDBC.</bdi> وتبقى طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] دون تغيير.</p>
 <p><a id="refheading440392216381043"></a></p>
 <h2 id="63">6.3. <span style="color: #4f81bd">خطوات تشغيل قاعدة البيانات</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000051A000000FFD776E479.png" width="653" height="127" style="display:inline-block; margin:4px;width:17.277cm;height:3.373cm;" class="odt-zoomable" data-zoom-src="images/100000000000051A000000FFD776E479.png" /></td></tr></table>
@@ -1268,11 +1270,11 @@
 <p><a id="refheading592518201560381"></a></p>
 <p>في البنية المذكورة أعلاه، يتضمن تشغيل قاعدة البيانات عبر برنامج وحدة التحكم الخطوات التالية:</p>
 <ol start="16">
-  <li>تحميل برنامج تشغيل JDBC الخاص بقاعدة البيانات؛
+  <li>تحميل برنامج تشغيل <bdi dir="ltr" class="odt-ltr-term">JDBC</bdi> الخاص بقاعدة البيانات؛
   </li>
   <li>فتح اتصال بقاعدة البيانات؛
   </li>
-  <li>تنفيذ عبارة SQL على قاعدة البيانات ومعالجة نتائج عبارة SQL؛
+  <li>تنفيذ عبارة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> على قاعدة البيانات ومعالجة نتائج عبارة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi>؛
   </li>
   <li>إغلاق الاتصال؛
   </li>
@@ -1280,7 +1282,7 @@
 
 <p>يتم تنفيذ الخطوة 1 مرة واحدة فقط. يتم تنفيذ الخطوات 2-4 بشكل متكرر. لاحظ أن الاتصالات لا تُترك مفتوحة؛ بل يتم إغلاقها بمجرد انتهاء الحاجة إليها.</p>
 <p><a id="refheading251880391218965"></a></p>
-<h3 id="631-1-jdbc">6.3.1. <span style="color: #4f81bd">الخطوة 1 - تحميل برنامج تشغيل JDBC في الذاكرة</span></h3>
+<h3 id="631-1-jdbc">6.3.1. <span style="color: #4f81bd">الخطوة 1 - تحميل برنامج تشغيل <bdi dir="ltr" class="odt-ltr-term">JDBC</bdi> في الذاكرة</span></h3>
 <p><u><a id="refheading592718201560381"></a>الرمز</u></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// driver loading JDBC</span></span></span>
@@ -1291,10 +1293,10 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>الغرض من العملية في السطر 3 هو تحميل برنامج تشغيل JDBC الخاص بقاعدة البيانات في الذاكرة. لا يلزم تنفيذ هذه العملية سوى مرة واحدة. ومع ذلك، فإن تكرارها لا يتسبب في حدوث خطأ. يتم البحث عن فئة برنامج تشغيل JDBC في مسار فئات المشروع. لذلك، في مشروع Eclipse، يجب أن يكون ملف [jar] الذي يحتوي على فئة برنامج تشغيل JDBC قد تم تضمينه في مسار فئات المشروع.</p>
+<p>الغرض من العملية في السطر 3 هو تحميل برنامج تشغيل <bdi dir="ltr" class="odt-ltr-term">JDBC</bdi> الخاص بقاعدة البيانات في الذاكرة. لا يلزم تنفيذ هذه العملية سوى مرة واحدة. ومع ذلك، فإن تكرارها لا يتسبب في حدوث خطأ. يتم البحث عن فئة برنامج تشغيل <bdi dir="ltr" class="odt-ltr-term">JDBC</bdi> في مسار فئات المشروع. لذلك، في مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi>، يجب أن يكون ملف [<bdi dir="ltr" class="odt-ltr-term">jar</bdi>] الذي يحتوي على فئة برنامج تشغيل <bdi dir="ltr" class="odt-ltr-term">JDBC</bdi> قد تم تضمينه في مسار فئات المشروع.</p>
 <p><a id="refheading251882391218965"></a></p>
 <h3 id="632-2-">6.3.2. <span style="color: #4f81bd">الخطوة 2 - فتح اتصال</span></h3>
-<p><a id="refheading592918201560381"></a>بمجرد تثبيت برنامج تشغيل JDBC، نطلب منه فتح اتصال بالقاعدة البيانات:</p>
+<p><a id="refheading592918201560381"></a>بمجرد تثبيت برنامج تشغيل <bdi dir="ltr" class="odt-ltr-term">JDBC</bdi>، نطلب منه فتح اتصال بالقاعدة البيانات:</p>
 <p><u>الكود</u></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.jdbc;</span></span></span>
@@ -1332,24 +1334,24 @@
 </code></pre></div>
 
 <ul>
-  <li>الأسطر 3–7: الفئات التي تنفذ واجهة JDBC موجودة جميعها في الحزمة [java.sql]. علاوة على ذلك، في حالة حدوث خطأ، فإنها جميعًا ترمي استثناء [SQLException] (الأسطر 19 و27). هذا الاستثناء مشتق من فئة [Exception] وهو ما يُسمى باستثناء مُتحقق منه: يجب عليك استخدام كتلة try/catch لمعالجته، أو بدلاً من ذلك، اختيار عدم معالجته والإشارة إلى أن الطريقة تسمح بانتشار الاستثناء عن طريق إضافة [throws SQLException] إلى توقيع الطريقة؛
+  <li>الأسطر 3–7: الفئات التي تنفذ واجهة <bdi dir="ltr" class="odt-ltr-term">JDBC</bdi> موجودة جميعها في الحزمة [<bdi dir="ltr" class="odt-ltr-term">java.sql</bdi>]. علاوة على ذلك، في حالة حدوث خطأ، فإنها جميعًا ترمي استثناء [<bdi dir="ltr" class="odt-ltr-term">SQLException</bdi>] (الأسطر 19 و27). هذا الاستثناء مشتق من فئة [<bdi dir="ltr" class="odt-ltr-term">Exception</bdi>] وهو ما يُسمى باستثناء مُتحقق منه: يجب عليك استخدام كتلة <bdi dir="ltr" class="odt-ltr-term">try/catch</bdi> لمعالجته، أو بدلاً من ذلك، اختيار عدم معالجته والإشارة إلى أن الطريقة تسمح بانتشار الاستثناء عن طريق إضافة [<bdi dir="ltr" class="odt-ltr-term">throws SQLException</bdi>] إلى توقيع الطريقة؛
   </li>
-  <li>السطر 17: [DriverManager.getConnection] هي طريقة ثابتة تأخذ ثلاثة معلمات:
+  <li>السطر 17: [<bdi dir="ltr" class="odt-ltr-term">DriverManager.getConnection</bdi>] هي طريقة ثابتة تأخذ ثلاثة معلمات:
     <ul>
-      <li>[url]: عنوان URL لقاعدة البيانات. هذه سلسلة تعتمد على قاعدة البيانات المستخدمة. بالنسبة لـ MySQL، تكون على شكل [<i><span style="color: #2a00ff">jdbc:mysql://localhost:3306/db_name</span></i>]؛
+      <li>[<bdi dir="ltr" class="odt-ltr-term">url</bdi>]: عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لقاعدة البيانات. هذه سلسلة تعتمد على قاعدة البيانات المستخدمة. بالنسبة لـ <bdi dir="ltr" class="odt-ltr-term">MySQL</bdi>، تكون على شكل [<i><span style="color: #2a00ff"><bdi dir="ltr" class="odt-ltr-term">jdbc:mysql://localhost:3306/db_name</bdi></span></i>]؛
       </li>
-      <li>[user]: مالك الاتصال؛
+      <li>[<bdi dir="ltr" class="odt-ltr-term">user</bdi>]: مالك الاتصال؛
       </li>
-      <li>[passwd]: كلمة مرور المستخدم؛
+      <li>[<bdi dir="ltr" class="odt-ltr-term">passwd</bdi>]: كلمة مرور المستخدم؛
       </li>
     </ul>
   </li>
-  <li>الأسطر 24-30: يجب إغلاق الاتصال في جملة [finally] بحيث يتم إغلاقه بغض النظر عما إذا حدث استثناء أم لا.
+  <li>الأسطر 24-30: يجب إغلاق الاتصال في جملة [<bdi dir="ltr" class="odt-ltr-term">finally</bdi>] بحيث يتم إغلاقه بغض النظر عما إذا حدث استثناء أم لا.
   </li>
 </ul>
 <p><a id="refheading251884391218965"></a></p>
-<h3 id="633-3-sql-select">6.3.3. <span style="color: #4f81bd">الخطوة 3 - تنفيذ عبارات SQL [SELECT]</span></h3>
-<p><a id="refheading593118201560381"></a>بمجرد إنشاء الاتصال، يمكن تنفيذ أوامر SQL. تختلف طريقة معالجة أوامر القراءة [SELECT] عن تلك المستخدمة في عمليات التحديث [UPDATE، INSERT، DELETE]. سنبدأ بأوامر SQL [SELECT]:</p>
+<h3 id="633-3-sql-select">6.3.3. <span style="color: #4f81bd">الخطوة 3 - تنفيذ عبارات <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> [<bdi dir="ltr" class="odt-ltr-term">SELECT</bdi>]</span></h3>
+<p><a id="refheading593118201560381"></a>بمجرد إنشاء الاتصال، يمكن تنفيذ أوامر <bdi dir="ltr" class="odt-ltr-term">SQL.</bdi> تختلف طريقة معالجة أوامر القراءة [<bdi dir="ltr" class="odt-ltr-term">SELECT</bdi>] عن تلك المستخدمة في عمليات التحديث [<bdi dir="ltr" class="odt-ltr-term">UPDATE</bdi>، <bdi dir="ltr" class="odt-ltr-term">INSERT</bdi>، <bdi dir="ltr" class="odt-ltr-term">DELETE</bdi>]. سنبدأ بأوامر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> [<bdi dir="ltr" class="odt-ltr-term">SELECT</bdi>]:</p>
 <p><u><strong>الكود</strong></u></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">Connection </span><span style="color:#6a3e3e">connexion</span><span style="color:#000000"> = </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">;</span></span></span>
@@ -1385,51 +1387,51 @@
 </code></pre></div>
 
 <ul>
-  <li>السطران 8 و 10: فتح معاملة (السطر 8) في وضع القراءة فقط (السطر 10). المعاملة هي سلسلة من عبارات SQL التي إما تنجح جميعها أو تفشل جميعها. وبالتالي، في معاملة تحتوي على N عبارة SQL، إذا فشلت العبارة (I+1)، فسيتم التراجع عن العبارات I السابقة. بالنسبة لعملية القراءة، لا تكون المعاملة ضرورية. ومع ذلك، فإن إنشاء معاملة للقراءة فقط يمكن أن يسمح لبعض أنظمة إدارة قواعد البيانات (DBMS) بإجراء بعض التحسينات؛
+  <li>السطران 8 و 10: فتح معاملة (السطر 8) في وضع القراءة فقط (السطر 10). المعاملة هي سلسلة من عبارات <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> التي إما تنجح جميعها أو تفشل جميعها. وبالتالي، في معاملة تحتوي على <bdi dir="ltr" class="odt-ltr-term">N</bdi> عبارة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi>، إذا فشلت العبارة (<bdi dir="ltr" class="odt-ltr-term">I+1</bdi>)، فسيتم التراجع عن العبارات <bdi dir="ltr" class="odt-ltr-term">I</bdi> السابقة. بالنسبة لعملية القراءة، لا تكون المعاملة ضرورية. ومع ذلك، فإن إنشاء معاملة للقراءة فقط يمكن أن يسمح لبعض أنظمة إدارة قواعد البيانات (<bdi dir="ltr" class="odt-ltr-term">DBMS</bdi>) بإجراء بعض التحسينات؛
   </li>
-  <li>السطر 12: استخدام [PreparedStatement]. عادةً ما تحتوي [PreparedStatement] على معلمات يُشار إليها بالحرف ?. هنا، لا تحتوي على ذلك. [PreparedStatement] هو عبارة تم إعدادها بواسطة نظام إدارة قواعد البيانات (DBMS). هذا الإعداد له تكلفة ويتم تنفيذه مرة واحدة فقط. ثم يتم تنفيذ هذه العبارة المعدة بواسطة نظام إدارة قواعد البيانات (DBMS) باستخدام المعلمات الفعلية التي تحل محل المعلمات الشكلية ?. لاحظ أنه من الأفضل تحديد الأعمدة المطلوبة بدلاً من استخدام الرمز * لاسترداد جميع الأعمدة. من خلال تحديد أسماء الأعمدة، يمكن بعد ذلك استرداد قيمها بناءً على موضعها في عبارة SELECT؛
+  <li>السطر 12: استخدام [<bdi dir="ltr" class="odt-ltr-term">PreparedStatement</bdi>]. عادةً ما تحتوي [<bdi dir="ltr" class="odt-ltr-term">PreparedStatement</bdi>] على معلمات يُشار إليها بالحرف ?. هنا، لا تحتوي على ذلك. [<bdi dir="ltr" class="odt-ltr-term">PreparedStatement</bdi>] هو عبارة تم إعدادها بواسطة نظام إدارة قواعد البيانات (<bdi dir="ltr" class="odt-ltr-term">DBMS</bdi>). هذا الإعداد له تكلفة ويتم تنفيذه مرة واحدة فقط. ثم يتم تنفيذ هذه العبارة المعدة بواسطة نظام إدارة قواعد البيانات (<bdi dir="ltr" class="odt-ltr-term">DBMS</bdi>) باستخدام المعلمات الفعلية التي تحل محل المعلمات الشكلية ?. لاحظ أنه من الأفضل تحديد الأعمدة المطلوبة بدلاً من استخدام الرمز * لاسترداد جميع الأعمدة. من خلال تحديد أسماء الأعمدة، يمكن بعد ذلك استرداد قيمها بناءً على موضعها في عبارة <bdi dir="ltr" class="odt-ltr-term">SELECT</bdi>؛
   </li>
-  <li>السطر 13: تنفيذ [PreparedStatement]. يتم استرداد كائن [ResultSet]؛
+  <li>السطر 13: تنفيذ [<bdi dir="ltr" class="odt-ltr-term">PreparedStatement</bdi>]. يتم استرداد كائن [<bdi dir="ltr" class="odt-ltr-term">ResultSet</bdi>]؛
   </li>
 </ul>
 
-<p>يمثل كائن [ResultSet] جدولًا، أي مجموعة من الصفوف والأعمدة. في أي وقت معين، لا يمكننا الوصول إلا إلى صف واحد من الجدول، يُسمى الصف الحالي. عند إنشاء [ResultSet] في البداية، لا يوجد صف حالي. يجب علينا تنفيذ عملية [ResultSet.next()] للحصول عليه. توقيع طريقة <em>next</em> هو كما يلي:</p>
+<p>يمثل كائن [<bdi dir="ltr" class="odt-ltr-term">ResultSet</bdi>] جدولًا، أي مجموعة من الصفوف والأعمدة. في أي وقت معين، لا يمكننا الوصول إلا إلى صف واحد من الجدول، يُسمى الصف الحالي. عند إنشاء [<bdi dir="ltr" class="odt-ltr-term">ResultSet</bdi>] في البداية، لا يوجد صف حالي. يجب علينا تنفيذ عملية [<bdi dir="ltr" class="odt-ltr-term">ResultSet.next</bdi>()] للحصول عليه. توقيع طريقة <em><bdi dir="ltr" class="odt-ltr-term">next</bdi></em> هو كما يلي:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    boolean next()
 </code></pre></div>
-<p>تحاول هذه الطريقة الانتقال إلى الصف التالي من [ResultSet] وتُرجع <em>القيمة true</em> في حالة النجاح، و <em>false</em> في حالة الفشل. في حالة النجاح، يصبح الصف التالي هو الصف الحالي الجديد. يتم فقدان الصف السابق ولا يمكن استرداده.</p>
-<p>يحتوي جدول [ResultSet] على أعمدة باسم labelCol1 و labelCol2 و... كما هو محدد في استعلام [SELECT] الذي تم تنفيذه. باستخدام الاستعلام:</p>
+<p>تحاول هذه الطريقة الانتقال إلى الصف التالي من [<bdi dir="ltr" class="odt-ltr-term">ResultSet</bdi>] وتُرجع <em>القيمة <bdi dir="ltr" class="odt-ltr-term">true</bdi></em> في حالة النجاح، و <em><bdi dir="ltr" class="odt-ltr-term">false</bdi></em> في حالة الفشل. في حالة النجاح، يصبح الصف التالي هو الصف الحالي الجديد. يتم فقدان الصف السابق ولا يمكن استرداده.</p>
+<p>يحتوي جدول [<bdi dir="ltr" class="odt-ltr-term">ResultSet</bdi>] على أعمدة باسم <bdi dir="ltr" class="odt-ltr-term">labelCol1</bdi> و <bdi dir="ltr" class="odt-ltr-term">labelCol2</bdi> و... كما هو محدد في استعلام [<bdi dir="ltr" class="odt-ltr-term">SELECT</bdi>] الذي تم تنفيذه. باستخدام الاستعلام:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">myId</span><span class="p">,</span><span class="w"> </span><span class="n">NOM</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">myNom</span><span class="p">,</span><span class="w"> </span><span class="n">CATEGORIE</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">myCategorie</span><span class="p">,</span><span class="w"> </span><span class="n">PRIX</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">myPrix</span><span class="p">,</span><span class="w"> </span><span class="n">DESCRIPTION</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">myDescription</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">PRODUITS</span>
 </code></pre></div>
 <ul>
-  <li>سيتم إدراج عمود [ID] في عمود في [ResultSet] باسم [myId]؛
+  <li>سيتم إدراج عمود [<bdi dir="ltr" class="odt-ltr-term">ID</bdi>] في عمود في [<bdi dir="ltr" class="odt-ltr-term">ResultSet</bdi>] باسم [<bdi dir="ltr" class="odt-ltr-term">myId</bdi>]؛
   </li>
-  <li>سيتم نقل عمود [NAME] إلى عمود في [ResultSet] باسم [myName]؛
+  <li>سيتم نقل عمود [<bdi dir="ltr" class="odt-ltr-term">NAME</bdi>] إلى عمود في [<bdi dir="ltr" class="odt-ltr-term">ResultSet</bdi>] باسم [<bdi dir="ltr" class="odt-ltr-term">myName</bdi>]؛
   </li>
   <li>...
   </li>
 </ul>
 
-<p>في المثال أعلاه، يُطلق على المعرفات [myCol] <strong>اسم تسميات الأعمدة</strong>. بدون هذه التسميات، تعتمد أسماء أعمدة [ResultSet] على نظام إدارة قواعد البيانات (DBMS). عندما يعمل [SELECT] على جدول واحد، تكون تسميات الأعمدة افتراضيًا هي أسماء الأعمدة المطلوبة بواسطة SELECT. تنشأ المشكلة عندما يعمل [SELECT] على جداول متعددة وتحتوي تلك الجداول على أسماء أعمدة متطابقة، كما في المثال التالي:</p>
+<p>في المثال أعلاه، يُطلق على المعرفات [<bdi dir="ltr" class="odt-ltr-term">myCol</bdi>] <strong>اسم تسميات الأعمدة</strong>. بدون هذه التسميات، تعتمد أسماء أعمدة [<bdi dir="ltr" class="odt-ltr-term">ResultSet</bdi>] على نظام إدارة قواعد البيانات (<bdi dir="ltr" class="odt-ltr-term">DBMS</bdi>). عندما يعمل [<bdi dir="ltr" class="odt-ltr-term">SELECT</bdi>] على جدول واحد، تكون تسميات الأعمدة افتراضيًا هي أسماء الأعمدة المطلوبة بواسطة <bdi dir="ltr" class="odt-ltr-term">SELECT.</bdi> تنشأ المشكلة عندما يعمل [<bdi dir="ltr" class="odt-ltr-term">SELECT</bdi>] على جداول متعددة وتحتوي تلك الجداول على أسماء أعمدة متطابقة، كما في المثال التالي:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">PRODUITS</span><span class="p">.</span><span class="n">NOM</span><span class="p">,</span><span class="w"> </span><span class="n">CATEGORIES</span><span class="p">.</span><span class="n">NOM</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">PRODUITS</span><span class="p">,</span><span class="w"> </span><span class="n">CATEGORIES</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">PRODUITS</span><span class="p">.</span><span class="n">CATEGORIE_ID</span><span class="o">=</span><span class="n">CATEGORIES</span><span class="p">.</span><span class="n">ID</span>
 </code></pre></div>
-<p>بافتراض أن الجدول [PRODUCTS] يحتوي على مفتاح خارجي للجدول [CATEGORIES]، ممثلاً بالعلاقة [PRODUCTS].CATEGORY_ID --&gt; [CATEGORIES].ID، وأن كلا الجدولين [PRODUCTS] و[CATEGORIES] يحتويان على حقل [NAME]. في هذه الحالة، تعتمد الأسماء المحددة في [ResultSet] للأعمدة [<strong><em><span style="color: #2a00ff">PRODUCTS.NAME</span></em></strong>] و [<strong><em><span style="color: #2a00ff">CATEGORIES.NAME</span></em></strong>] على نظام إدارة قواعد البيانات (DBMS). ولضمان قابلية النقل بين أنظمة إدارة قواعد البيانات، يجب استخدام تسميات الأعمدة هنا، وسنكتب:</p>
+<p>بافتراض أن الجدول [<bdi dir="ltr" class="odt-ltr-term">PRODUCTS</bdi>] يحتوي على مفتاح خارجي للجدول [<bdi dir="ltr" class="odt-ltr-term">CATEGORIES</bdi>]، ممثلاً بالعلاقة [<bdi dir="ltr" class="odt-ltr-term">PRODUCTS</bdi>].<bdi dir="ltr" class="odt-ltr-term">CATEGORY</bdi>_ID --&gt; [<bdi dir="ltr" class="odt-ltr-term">CATEGORIES</bdi>].<bdi dir="ltr" class="odt-ltr-term">ID</bdi>، وأن كلا الجدولين [<bdi dir="ltr" class="odt-ltr-term">PRODUCTS</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">CATEGORIES</bdi>] يحتويان على حقل [<bdi dir="ltr" class="odt-ltr-term">NAME</bdi>]. في هذه الحالة، تعتمد الأسماء المحددة في [<bdi dir="ltr" class="odt-ltr-term">ResultSet</bdi>] للأعمدة [<strong><em><span style="color: #2a00ff"><bdi dir="ltr" class="odt-ltr-term">PRODUCTS.NAME</bdi></span></em></strong>] و [<strong><em><span style="color: #2a00ff"><bdi dir="ltr" class="odt-ltr-term">CATEGORIES.NAME</bdi></span></em></strong>] على نظام إدارة قواعد البيانات (<bdi dir="ltr" class="odt-ltr-term">DBMS</bdi>). ولضمان قابلية النقل بين أنظمة إدارة قواعد البيانات، يجب استخدام تسميات الأعمدة هنا، وسنكتب:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-sql">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;font-style:italic;color:#2a00ff">SELECT PRODUITS.NOM </span><span style="font-weight:bold;font-style:italic;background-color:#ffccff;color:#2a00ff">as p_NOM</span><span style="font-weight:bold;font-style:italic;color:#2a00ff">, CATEGORIES.NOM </span><span style="font-weight:bold;font-style:italic;background-color:#ffccff;color:#2a00ff">as c_NOM</span><span style="font-weight:bold;font-style:italic;color:#2a00ff"> FROM PRODUITS, CATEGORIES WHERE PRODUITS.CATEGORIE_ID=CATEGORIES.ID</span></span></span>
 </code></pre></div>
 
-<p>للوصول إلى الحقول المختلفة للصف الحالي في [ResultSet]، تتوفر الطرق التالية:</p>
+<p>للوصول إلى الحقول المختلفة للصف الحالي في [<bdi dir="ltr" class="odt-ltr-term">ResultSet</bdi>]، تتوفر الطرق التالية:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Type getType(&quot;labelColi&quot;) 
 </code></pre></div>
-<p>لاسترداد العمود المسمى &quot;labelColi&quot; من الصف الحالي، أي العمود في عبارة [SELECT] الذي يحمل هذا الاسم. يشير <em>النوع</em> إلى نوع بيانات حقل <em>&quot;labelColi&quot;</em>. يمكن استخدام طرق [getType] التالية: getInt، getLong، getString، getDouble، getFloat، getDate، ... بدلاً من استخدام اسم العمود، يمكنك استخدام موضعه في استعلام [SELECT] الذي تم تنفيذه:</p>
+<p>لاسترداد العمود المسمى &quot;<bdi dir="ltr" class="odt-ltr-term">labelColi</bdi>&quot; من الصف الحالي، أي العمود في عبارة [<bdi dir="ltr" class="odt-ltr-term">SELECT</bdi>] الذي يحمل هذا الاسم. يشير <em>النوع</em> إلى نوع بيانات حقل <em>&quot;<bdi dir="ltr" class="odt-ltr-term">labelColi</bdi>&quot;</em>. يمكن استخدام طرق [<bdi dir="ltr" class="odt-ltr-term">getType</bdi>] التالية: <bdi dir="ltr" class="odt-ltr-term">getInt</bdi>، <bdi dir="ltr" class="odt-ltr-term">getLong</bdi>، <bdi dir="ltr" class="odt-ltr-term">getString</bdi>، <bdi dir="ltr" class="odt-ltr-term">getDouble</bdi>، <bdi dir="ltr" class="odt-ltr-term">getFloat</bdi>، <bdi dir="ltr" class="odt-ltr-term">getDate</bdi>، ... بدلاً من استخدام اسم العمود، يمكنك استخدام موضعه في استعلام [<bdi dir="ltr" class="odt-ltr-term">SELECT</bdi>] الذي تم تنفيذه:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Type getType(i) 
 </code></pre></div>
-<p>حيث i هو مؤشر العمود المطلوب (i&gt;=1).</p>
+<p>حيث <bdi dir="ltr" class="odt-ltr-term">i</bdi> هو مؤشر العمود المطلوب (<bdi dir="ltr" class="odt-ltr-term">i</bdi>&gt;=1).</p>
 <ul>
   <li>الأسطر 15–17: استرجاع القيم المقروءة من قاعدة البيانات؛
   </li>
   <li>السطر 19: يتم التحقق من صحة المعاملة (المعروف أيضًا باسم الالتزام). يؤدي هذا إلى إنهائها وتحرير الموارد التي خصصها نظام إدارة قواعد البيانات لها؛
   </li>
-  <li>السطر 25: يتم تحرير الموارد في كتلة [finally]. وهذا يستدعي الطريقة [doFinally] التالية:
+  <li>السطر 25: يتم تحرير الموارد في كتلة [<bdi dir="ltr" class="odt-ltr-term">finally</bdi>]. وهذا يستدعي الطريقة [<bdi dir="ltr" class="odt-ltr-term">doFinally</bdi>] التالية:
   </li>
 </ul>
 
@@ -1463,17 +1465,17 @@
 </code></pre></div>
 
 <ul>
-  <li>الأسطر 3-9: إغلاق [ResultSet]؛
+  <li>الأسطر 3-9: إغلاق [<bdi dir="ltr" class="odt-ltr-term">ResultSet</bdi>]؛
   </li>
-  <li>الأسطر 11–17: إغلاق [PreparedStatement]؛
+  <li>الأسطر 11–17: إغلاق [<bdi dir="ltr" class="odt-ltr-term">PreparedStatement</bdi>]؛
   </li>
   <li>الأسطر 18–27: إغلاق الاتصال؛
   </li>
 </ul>
 
-<p>تبدو عمليات الإغلاق في الأسطر 3–17 زائدة عن الحاجة نظرًا لأن الاتصال يتم إغلاقه في الأسطر 18–25. في الواقع، في بعض الحالات لا تكون زائدة عن الحاجة، ويوصى بتركها [<a href="http://stackoverflow.com/questions/4507440/must-jdbc-resultsets-and-statements-be-closed-separately-although-the-connection"><u><span style="color: #0563c1">http://stackoverflow.com/questions/4507440/must-jdbc-resultsets-and-statements-be-closed-separately-although-the-connection</span></u></a>].</p>
+<p>تبدو عمليات الإغلاق في الأسطر 3–17 زائدة عن الحاجة نظرًا لأن الاتصال يتم إغلاقه في الأسطر 18–25. في الواقع، في بعض الحالات لا تكون زائدة عن الحاجة، ويوصى بتركها [<a href="http://stackoverflow.com/questions/4507440/must-jdbc-resultsets-and-statements-be-closed-separately-although-the-connection"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">http://stackoverflow.com/questions/4507440/must-jdbc-resultsets-and-statements-be-closed-separately-although-the-connection</bdi></span></u></a>].</p>
 <ul>
-  <li>السطر 22: يتم التعامل مع الاستثناء بواسطة الطريقة [doCatchException] التالية:
+  <li>السطر 22: يتم التعامل مع الاستثناء بواسطة الطريقة [<bdi dir="ltr" class="odt-ltr-term">doCatchException</bdi>] التالية:
   </li>
 </ul>
 
@@ -1491,13 +1493,13 @@
 </code></pre></div>
 
 <ul>
-  <li>الأسطر 4–6: يتم التراجع عن المعاملة. يؤدي ذلك إلى إنهائها، ويمكن لنظام إدارة قواعد البيانات (DBMS) تحرير الموارد المخصصة لها؛
+  <li>الأسطر 4–6: يتم التراجع عن المعاملة. يؤدي ذلك إلى إنهائها، ويمكن لنظام إدارة قواعد البيانات (<bdi dir="ltr" class="odt-ltr-term">DBMS</bdi>) تحرير الموارد المخصصة لها؛
   </li>
 </ul>
 
 <p><a id="refheading251886391218965"></a></p>
-<h3 id="634-3-sql-insert-update-delete">6.3.4. <span style="color: #4f81bd">الخطوة 3 - إصدار عبارات SQL [INSERT، UPDATE، DELETE]</span></h3>
-<p><a id="refheading593318201560381"></a>تعد عبارات SQL [INSERT، UPDATE، DELETE] عمليات تحديث: فهي تُعدّل قاعدة البيانات ولكنها لا تُرجع أي صفوف. والمعلومة الوحيدة التي تُرجع هي عدد الصفوف التي تأثرت بعملية التحديث.</p>
+<h3 id="634-3-sql-insert-update-delete">6.3.4. <span style="color: #4f81bd">الخطوة 3 - إصدار عبارات <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> [<bdi dir="ltr" class="odt-ltr-term">INSERT</bdi>، <bdi dir="ltr" class="odt-ltr-term">UPDATE</bdi>، <bdi dir="ltr" class="odt-ltr-term">DELETE</bdi>]</span></h3>
+<p><a id="refheading593318201560381"></a>تعد عبارات <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> [<bdi dir="ltr" class="odt-ltr-term">INSERT</bdi>، <bdi dir="ltr" class="odt-ltr-term">UPDATE</bdi>، <bdi dir="ltr" class="odt-ltr-term">DELETE</bdi>] عمليات تحديث: فهي تُعدّل قاعدة البيانات ولكنها لا تُرجع أي صفوف. والمعلومة الوحيدة التي تُرجع هي عدد الصفوف التي تأثرت بعملية التحديث.</p>
 <p><u><strong>الرمز</strong></u></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">Connection </span><span style="color:#6a3e3e">connexion</span><span style="color:#000000"> = </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">;</span></span></span>
@@ -1530,44 +1532,44 @@
 <ul>
   <li>السطر 9: يُستخدم الاتصال للقراءة والكتابة؛
   </li>
-  <li>السطر 11: [PreparedStatement] مع معلمة واحدة (ممثلة بـ ?). يمكن أن يكون هناك عدة معلمات. يتم ترقيمها بدءًا من 1؛
+  <li>السطر 11: [<bdi dir="ltr" class="odt-ltr-term">PreparedStatement</bdi>] مع معلمة واحدة (ممثلة بـ ?). يمكن أن يكون هناك عدة معلمات. يتم ترقيمها بدءًا من 1؛
   </li>
-  <li>السطر 13: يتم تعيين قيمتها إلى المعلمة الوحيدة. المعلمة الأولى لـ [setType] هي موضع المعلمة في [PreparedStatement] (1، 2، ...) والثانية هي القيمة المعينة لها. يمكنك استخدام الطرق [setInt، setLong، setFloat، setDouble، setString، setDate، ...]؛
+  <li>السطر 13: يتم تعيين قيمتها إلى المعلمة الوحيدة. المعلمة الأولى لـ [<bdi dir="ltr" class="odt-ltr-term">setType</bdi>] هي موضع المعلمة في [<bdi dir="ltr" class="odt-ltr-term">PreparedStatement</bdi>] (1، 2، ...) والثانية هي القيمة المعينة لها. يمكنك استخدام الطرق [<bdi dir="ltr" class="odt-ltr-term">setInt</bdi>، <bdi dir="ltr" class="odt-ltr-term">setLong</bdi>، <bdi dir="ltr" class="odt-ltr-term">setFloat</bdi>، <bdi dir="ltr" class="odt-ltr-term">setDouble</bdi>، <bdi dir="ltr" class="odt-ltr-term">setString</bdi>، <bdi dir="ltr" class="odt-ltr-term">setDate</bdi>، ...]؛
   </li>
-  <li>السطر 15: يتم استخدام طريقة [executeUpdate]، وليس [executeQuery]، التي يتم حجزها لعبارات SELECT. تعرض الطريقة عدد الصفوف التي تأثرت بالعملية. قد تكون 0.
+  <li>السطر 15: يتم استخدام طريقة [<bdi dir="ltr" class="odt-ltr-term">executeUpdate</bdi>]، وليس [<bdi dir="ltr" class="odt-ltr-term">executeQuery</bdi>]، التي يتم حجزها لعبارات <bdi dir="ltr" class="odt-ltr-term">SELECT.</bdi> تعرض الطريقة عدد الصفوف التي تأثرت بالعملية. قد تكون 0.
   </li>
   <li>السطر 17: يتم تنفيذ المعاملة؛
   </li>
 </ul>
 <p><a id="refheading251888391218965"></a></p>
 <h3 id="635-4-">6.3.5. <span style="color: #4f81bd">الخطوة 4 - إغلاق الاتصال</span></h3>
-<p><a id="refheading593518201560381"></a>يجب إغلاق الاتصال بأسرع ما يمكن في بيئة متعددة المستخدمين لأن نظام إدارة قواعد البيانات (DBMS) يقبل عددًا محدودًا من الاتصالات المفتوحة. في الأمثلة السابقة، تم إغلاقه في جملة [finally] لعمليات SQL بحيث يتم إغلاقه بغض النظر عما إذا حدث استثناء أم لا.</p>
+<p><a id="refheading593518201560381"></a>يجب إغلاق الاتصال بأسرع ما يمكن في بيئة متعددة المستخدمين لأن نظام إدارة قواعد البيانات (<bdi dir="ltr" class="odt-ltr-term">DBMS</bdi>) يقبل عددًا محدودًا من الاتصالات المفتوحة. في الأمثلة السابقة، تم إغلاقه في جملة [<bdi dir="ltr" class="odt-ltr-term">finally</bdi>] لعمليات <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> بحيث يتم إغلاقه بغض النظر عما إذا حدث استثناء أم لا.</p>
 <p><a id="refheading59371820156038"></a></p>
 <h2 id="64">6.4. <span style="color: #4f81bd">مشروع نموذجي</span></h2>
 <p><a id="refheading251890391218965"></a></p>
 <h3 id="641">6.4.1. <span style="color: #4f81bd">الدعم</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000546000002946CF3B768.png" width="675" height="330" style="display:inline-block; margin:4px;width:17.859cm;height:8.731cm;" class="odt-zoomable" data-zoom-src="images/1000000000000546000002946CF3B768.png" /></td></tr></table>
 
-<p>يحتوي المجلد [support / chap5] على مشاريع Eclipse الخاصة بهذا الفصل [1، 2]. ويحتوي المجلد [database] على البرنامج النصي SQL لإنشاء قاعدة بيانات MySQL النموذجية الخاصة بهذا الفصل [1، 3].</p>
+<p>يحتوي المجلد [<bdi dir="ltr" class="odt-ltr-term">support</bdi> / <bdi dir="ltr" class="odt-ltr-term">chap5</bdi>] على مشاريع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> الخاصة بهذا الفصل [1، 2]. ويحتوي المجلد [<bdi dir="ltr" class="odt-ltr-term">database</bdi>] على البرنامج النصي <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> لإنشاء قاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">MySQL</bdi> النموذجية الخاصة بهذا الفصل [1، 3].</p>
 <p><a id="refheading59391820156038"></a></p>
 <h3 id="642">6.4.2. <span style="color: #4f81bd">قاعدة البيانات المستخدمة</span></h3>
-<p>تستخدم الأمثلة التالية قاعدة بيانات MySQL التالية:</p>
+<p>تستخدم الأمثلة التالية قاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">MySQL</bdi> التالية:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000268000000DD9250EEBF.png" width="431" height="155" style="display:inline-block; margin:4px;width:11.411cm;height:4.094cm;" class="odt-zoomable" data-zoom-src="images/1000000000000268000000DD9250EEBF.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <ul>
-  <li>[ID]: المفتاح الأساسي في وضع AUTO_INCREMENT (إذا لم يتم تحديد مفتاح أساسي، يقوم نظام إدارة قواعد البيانات بإنشائه)؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">ID</bdi>]: المفتاح الأساسي في وضع <bdi dir="ltr" class="odt-ltr-term">AUTO_INCREMENT</bdi> (إذا لم يتم تحديد مفتاح أساسي، يقوم نظام إدارة قواعد البيانات بإنشائه)؛
   </li>
-  <li>[NAME]: اسم المنتج — فريد؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">NAME</bdi>]: اسم المنتج — فريد؛
   </li>
-  <li>[CATEGORY]: رقم الفئة؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">CATEGORY</bdi>]: رقم الفئة؛
   </li>
-  <li>[PRICE]: سعره؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">PRICE</bdi>]: سعره؛
   </li>
-  <li>[DESCRIPTION]: وصف المنتج؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">DESCRIPTION</bdi>]: وصف المنتج؛
   </li>
 </ul>
 
-<p>سنقوم بإنشائه باستخدام أداة [WampServer] على النحو التالي [1-9]:</p>
+<p>سنقوم بإنشائه باستخدام أداة [<bdi dir="ltr" class="odt-ltr-term">WampServer</bdi>] على النحو التالي [1-9]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005CF000001D89A2EDB81.png" width="680" height="216" style="display:inline-block; margin:4px;width:17.999cm;height:5.713cm;" class="odt-zoomable" data-zoom-src="images/10000000000005CF000001D89A2EDB81.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000567000003F7018B2BEB.png" width="680" height="499" style="display:inline-block; margin:4px;width:17.999cm;height:13.21cm;" class="odt-zoomable" data-zoom-src="images/1000000000000567000003F7018B2BEB.png" /></td></tr></table>
@@ -1577,10 +1579,10 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003840000039CD1B2AF97.png" width="450" height="462" style="display:inline-block; margin:4px;width:11.906cm;height:12.224cm;" class="odt-zoomable" data-zoom-src="images/10000000000003840000039CD1B2AF97.png" /></td></tr></table>
 
 <p><a id="refheading59411820156038"></a></p>
-<h3 id="643-eclipse">6.4.3. <span style="color: #4f81bd">مشروع Eclipse</span></h3>
+<h3 id="643-eclipse">6.4.3. <span style="color: #4f81bd">مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi></span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D80000010680364CDD.png" width="151" height="183" style="display:inline-block; margin:4px;width:4.001cm;height:4.852cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D80000010680364CDD.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>المشروع هو مشروع Maven محدد بواسطة ملف [pom.xml] التالي:</p>
+<p>المشروع هو مشروع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> محدد بواسطة ملف [<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>] التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span> <span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#7f007f">xsi:schemaLocation</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#008080">&gt;</span></span></span>
@@ -1604,14 +1606,14 @@
 </code></pre></div>
 
 <ul>
-  <li>الأسطر 8–12: برنامج تشغيل JDBC لنظام إدارة قواعد البيانات MySQL5؛
+  <li>الأسطر 8–12: برنامج تشغيل <bdi dir="ltr" class="odt-ltr-term">JDBC</bdi> لنظام إدارة قواعد البيانات <bdi dir="ltr" class="odt-ltr-term">MySQL5</bdi>؛
   </li>
-  <li>الأسطر 13–17: مكتبة قادرة على معالجة JSON (ترميز كائنات JavaScript) (انظر <a href="#refheading18056265679331"><u><span style="color: #0563c1">القسم 22.6</span></u></a>). سنستخدمها لعرض المنتجات من قاعدة البيانات بتنسيق JSON؛
+  <li>الأسطر 13–17: مكتبة قادرة على معالجة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> (ترميز كائنات <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi>) (انظر <a href="#refheading18056265679331"><u><span style="color: #0563c1">القسم 22.6</span></u></a>). سنستخدمها لعرض المنتجات من قاعدة البيانات بتنسيق <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>؛
   </li>
 </ul>
 <p><a id="refheading59431820156038"></a></p>
-<h3 id="644-product">6.4.4. <span style="color: #4f81bd">فئة Product</span></h3>
-<p>فئة [Product] هي كما يلي:</p>
+<h3 id="644-product">6.4.4. <span style="color: #4f81bd">فئة <bdi dir="ltr" class="odt-ltr-term">Product</bdi></span></h3>
+<p>فئة [<bdi dir="ltr" class="odt-ltr-term">Product</bdi>] هي كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> istia.st.jdbc;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1656,7 +1658,7 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 34: نستخدم مكتبة JSON لعرض سلسلة JSON الخاصة بالمنتج. ينتج عن ذلك مخرجات مشابهة لما يلي:
+  <li>السطر 34: نستخدم مكتبة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> لعرض سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> الخاصة بالمنتج. ينتج عن ذلك مخرجات مشابهة لما يلي:
   </li>
 </ul>
 
@@ -1664,10 +1666,10 @@
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>{&quot;id&quot;:1,&quot;nom&quot;:&quot;NOM1&quot;,&quot;categorie&quot;:1,&quot;prix&quot;:100.0,&quot;description&quot;:&quot;DESC1&quot;}
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>{&quot;id&quot;:2,&quot;nom&quot;:&quot;NOM2&quot;,&quot;categorie&quot;:1,&quot;prix&quot;:101.0,&quot;description&quot;:&quot;DESC2&quot;}
 </code></pre></div>
-<p>تتمثل ميزة طريقة [toString] المذكورة أعلاه في أنه حتى في حالة إضافة حقول إلى الفئة أو حذفها منها، تظل طريقة [toString] سارية المفعول. علاوة على ذلك، إذا كانت الحقول نفسها كائنات (قوائم، مصفوفات، قواميس، كائنات مستخدم)، يمكن لمكتبات JSON بدورها تحويلها إلى سلاسل JSON؛</p>
+<p>تتمثل ميزة طريقة [<bdi dir="ltr" class="odt-ltr-term">toString</bdi>] المذكورة أعلاه في أنه حتى في حالة إضافة حقول إلى الفئة أو حذفها منها، تظل طريقة [<bdi dir="ltr" class="odt-ltr-term">toString</bdi>] سارية المفعول. علاوة على ذلك، إذا كانت الحقول نفسها كائنات (قوائم، مصفوفات، قواميس، كائنات مستخدم)، يمكن لمكتبات <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> بدورها تحويلها إلى سلاسل <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>؛</p>
 <p><a id="refheading59451820156038"></a></p>
-<h3 id="645-static">6.4.5. <span style="color: #4f81bd">فئة [Static]</span></h3>
-<p>تجمع فئة [Static] الطرق التي تحتوي على كود يُستخدم بشكل متكرر في الفئة الرئيسية:</p>
+<h3 id="645-static">6.4.5. <span style="color: #4f81bd">فئة [<bdi dir="ltr" class="odt-ltr-term">Static</bdi>]</span></h3>
+<p>تجمع فئة [<bdi dir="ltr" class="odt-ltr-term">Static</bdi>] الطرق التي تحتوي على كود يُستخدم بشكل متكرر في الفئة الرئيسية:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> istia.st.jdbc;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1701,7 +1703,7 @@
 </code></pre></div>
 
 <ul>
-  <li>الأسطر 8–19: تُرجع قائمة بالأخطاء مغلفة في كائن من النوع [Throwable]، وهو الفئة الفائقة لفئة [Exception]؛
+  <li>الأسطر 8–19: تُرجع قائمة بالأخطاء مغلفة في كائن من النوع [<bdi dir="ltr" class="odt-ltr-term">Throwable</bdi>]، وهو الفئة الفائقة لفئة [<bdi dir="ltr" class="odt-ltr-term">Exception</bdi>]؛
   </li>
   <li>الأسطر 21-28: تعرض قائمة بالرسائل على الشاشة؛
   </li>
@@ -1830,7 +1832,7 @@
 
 <p><a id="refheading59491820156038"></a></p>
 <h3 id="647">6.4.7. <span style="color: #4f81bd">حذف محتويات جدول المنتجات</span></h3>
-<p>تقوم طريقة [delete] بحذف محتويات الجدول:</p>
+<p>تقوم طريقة [<bdi dir="ltr" class="odt-ltr-term">delete</bdi>] بحذف محتويات الجدول:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content">// product deletion</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">static</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> delete() {</span></span></span>
@@ -1858,25 +1860,25 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 </code></pre></div>
 
-<p>يستخدم هذا المثال المعاملات. تسمح لك المعاملة بتجميع عبارات SQL التي يجب أن تنجح جميعها أو يتم التراجع عنها جميعًا. هناك أربع عمليات يجب الانتباه إليها:</p>
+<p>يستخدم هذا المثال المعاملات. تسمح لك المعاملة بتجميع عبارات <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> التي يجب أن تنجح جميعها أو يتم التراجع عنها جميعًا. هناك أربع عمليات يجب الانتباه إليها:</p>
 <ul>
-  <li>بدء معاملة: [<b><span style="color: #6a3e3e">connection</span></b><b><span style="color: #000000">.setAutoCommit(</span></b><b><span style="color: #7f0055">false</span></b><b><span style="color: #000000">)</span></b><span style="color: #000000">];</span>
+  <li>بدء معاملة: [<b><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">connection</bdi></span></b><b><span style="color: #000000">.<bdi dir="ltr" class="odt-ltr-term">setAutoCommit</bdi>(</span></b><b><span style="color: #7f0055"><bdi dir="ltr" class="odt-ltr-term">false</bdi></span></b><b><span style="color: #000000">)</span></b><span style="color: #000000">];</span>
   </li>
-  <li><span style="color: #000000">إنهاء المعاملة بنجاح: [</span><b><span style="color: #6a3e3e">connection</span></b><b><span style="color: #000000">.commit()</span></b><span style="color: #000000">]. في هذه الحالة، يتم تثبيت جميع العمليات التي تم إجراؤها على قاعدة البيانات أثناء المعاملة؛</span>
+  <li><span style="color: #000000">إنهاء المعاملة بنجاح: [</span><b><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">connection</bdi></span></b><b><span style="color: #000000">.<bdi dir="ltr" class="odt-ltr-term">commit</bdi>()</span></b><span style="color: #000000">]. في هذه الحالة، يتم تثبيت جميع العمليات التي تم إجراؤها على قاعدة البيانات أثناء المعاملة؛</span>
   </li>
-  <li><span style="color: #000000">إنهاء المعاملة بفشل: [</span><b><span style="color: #6a3e3e">connection</span></b><b><span style="color: #000000">.rollback()</span></b><span style="color: #000000">]. في هذه الحالة، يتم التراجع عن جميع العمليات التي تم إجراؤها على قاعدة البيانات أثناء المعاملة؛</span>
+  <li><span style="color: #000000">إنهاء المعاملة بفشل: [</span><b><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">connection</bdi></span></b><b><span style="color: #000000">.<bdi dir="ltr" class="odt-ltr-term">rollback</bdi>()</span></b><span style="color: #000000">]. في هذه الحالة، يتم التراجع عن جميع العمليات التي تم إجراؤها على قاعدة البيانات أثناء المعاملة؛</span>
   </li>
-  <li><span style="color: #000000">العودة إلى وضع [auto-commit]، وهو الوضع الافتراضي لواجهة برمجة تطبيقات JDBC: [</span><b><span style="color: #6a3e3e">connection</span></b><b><span style="color: #000000">.setAutoCommit(</span></b><b><span style="color: #7f0055">true</span></b><b><span style="color: #000000">)</span></b><span style="color: #000000">]. في هذا الوضع، يكون كل جملة SQL جزءًا من معاملة. وبالتالي، إذا قمت بإجراء عمليتي إدراج وفشلت الثانية:</span>
+  <li><span style="color: #000000">العودة إلى وضع [<bdi dir="ltr" class="odt-ltr-term">auto-commit</bdi>]، وهو الوضع الافتراضي لواجهة برمجة تطبيقات <bdi dir="ltr" class="odt-ltr-term">JDBC:</bdi> [</span><b><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">connection</bdi></span></b><b><span style="color: #000000">.<bdi dir="ltr" class="odt-ltr-term">setAutoCommit</bdi>(</span></b><b><span style="color: #7f0055"><bdi dir="ltr" class="odt-ltr-term">true</bdi></span></b><b><span style="color: #000000">)</span></b><span style="color: #000000">]. في هذا الوضع، يكون كل جملة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> جزءًا من معاملة. وبالتالي، إذا قمت بإجراء عمليتي إدراج وفشلت الثانية:</span>
     <ul>
-      <li><span style="color: #000000">في وضع [AutoCommit=true]، يبقى الإدراج الأول (تم تنفيذه بواسطة أول AutoCommit)؛</span>
+      <li><span style="color: #000000">في وضع [<bdi dir="ltr" class="odt-ltr-term">AutoCommit</bdi>=<bdi dir="ltr" class="odt-ltr-term">true</bdi>]، يبقى الإدراج الأول (تم تنفيذه بواسطة أول <bdi dir="ltr" class="odt-ltr-term">AutoCommit</bdi>)؛</span>
       </li>
-      <li><span style="color: #000000">في وضع [AutoCommit=false]، يتم التراجع عن عملية الإدراج الأولى؛</span>
+      <li><span style="color: #000000">في وضع [<bdi dir="ltr" class="odt-ltr-term">AutoCommit</bdi>=<bdi dir="ltr" class="odt-ltr-term">false</bdi>]، يتم التراجع عن عملية الإدراج الأولى؛</span>
       </li>
     </ul>
   </li>
 </ul>
 
-<p>في أمثلةنا، كلما حدث استثناء، نقوم بإلغاء المعاملة في طريقة [<em><span style="color: #000000">doCatchException</span></em>]:</p>
+<p>في أمثلةنا، كلما حدث استثناء، نقوم بإلغاء المعاملة في طريقة [<em><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">doCatchException</bdi></span></em>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">static</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doCatchException(String </span><span style="color:#6a3e3e">title</span><span style="color:#000000">, Connection </span><span style="color:#6a3e3e">connexion</span><span style="color:#000000">, Throwable </span><span style="color:#6a3e3e">th</span><span style="color:#000000">) {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// display error msg</span></span></span>
@@ -1895,7 +1897,7 @@
 
 <p><a id="refheading59511820156038"></a></p>
 <h3 id="648">6.4.8. <span style="color: #4f81bd">إنشاء محتويات جدول المنتجات</span></h3>
-<p>تقوم طريقة [insert] بإنشاء محتوى الجدول:</p>
+<p>تقوم طريقة [<bdi dir="ltr" class="odt-ltr-term">insert</bdi>] بإنشاء محتوى الجدول:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content">// add products</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">static</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> insert() {</span></span></span>
@@ -1935,7 +1937,7 @@
 
 <p><a id="refheading59531820156038"></a></p>
 <h3 id="649">6.4.9. <span style="color: #4f81bd">عرض محتويات جدول المنتجات</span></h3>
-<p>تعرض طريقة [select] محتويات الجدول:</p>
+<p>تعرض طريقة [<bdi dir="ltr" class="odt-ltr-term">select</bdi>] محتويات الجدول:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// product list</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">static</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> select() {</span></span></span>
@@ -1970,7 +1972,7 @@
 
 <p><a id="refheading59551820156038"></a></p>
 <h3 id="6410">6.4.10. <span style="color: #4f81bd">تحديث محتويات الجدول</span></h3>
-<p>تقوم طريقة [update] بتحديث منتجات معينة:</p>
+<p>تقوم طريقة [<bdi dir="ltr" class="odt-ltr-term">update</bdi>] بتحديث منتجات معينة:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content">// product updates</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">static</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> update() {</span></span></span>
@@ -2003,7 +2005,7 @@
 
 <p><a id="refheading59571820156038"></a></p>
 <h3 id="6411">6.4.11. <span style="color: #4f81bd">دور المعاملة</span></h3>
-<p>تقوم الطريقة [insert2] بإدراج منتجين لهما نفس المفتاح الأساسي في الجدول، وهو أمر غير مسموح به. وبما أننا في معاملة، فسيتم التراجع عن الإدراج الأول.</p>
+<p>تقوم الطريقة [<bdi dir="ltr" class="odt-ltr-term">insert2</bdi>] بإدراج منتجين لهما نفس المفتاح الأساسي في الجدول، وهو أمر غير مسموح به. وبما أننا في معاملة، فسيتم التراجع عن الإدراج الأول.</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content">// add 2 pro ducts with the same primary keys</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">static</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> insert2() {</span></span></span>
@@ -2037,7 +2039,7 @@
 
 <p><a id="refheading59591820156038"></a></p>
 <h3 id="6412">6.4.12. <span style="color: #4f81bd">النتائج</span></h3>
-<p>فيما يلي نتائج تنفيذ الطريقة [main]:</p>
+<p>فيما يلي نتائج تنفيذ الطريقة [<bdi dir="ltr" class="odt-ltr-term">main</bdi>]:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
@@ -2111,25 +2113,25 @@
 <a id="__codelineno-6-36" name="__codelineno-6-36"></a>Travail terminé
 </code></pre></div></td></tr></table></div>
 <p><a id="refheading59611820156038"></a></p>
-<h2 id="65-datasource">6.5. <span style="color: #4f81bd">استخدام مصدر بيانات [DataSource]</span></h2>
-<p>سنعيد النظر في التطبيق السابق باستخدام مصدر بيانات [javax.sql.DataSource]:</p>
+<h2 id="65-datasource">6.5. <span style="color: #4f81bd">استخدام مصدر بيانات [<bdi dir="ltr" class="odt-ltr-term">DataSource</bdi>]</span></h2>
+<p>سنعيد النظر في التطبيق السابق باستخدام مصدر بيانات [<bdi dir="ltr" class="odt-ltr-term">javax.sql.DataSource</bdi>]:</p>
 <p><img src="images/100000000000036C0000025CA9CF067E.png" width="670" height="462" style="width:17.729cm;height:12.224cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000036C0000025CA9CF067E.png" /></p>
-<p>سنستخدم مصدر بيانات تم تنفيذه بواسطة فئة [org.apache.tomcat.jdbc.pool.DataSource]. تستخدم هذه الفئة تجمع اتصالات، أي مجموعة من الاتصالات المفتوحة:</p>
+<p>سنستخدم مصدر بيانات تم تنفيذه بواسطة فئة [<bdi dir="ltr" class="odt-ltr-term">org.apache.tomcat.jdbc.pool.DataSource</bdi>]. تستخدم هذه الفئة تجمع اتصالات، أي مجموعة من الاتصالات المفتوحة:</p>
 <ul>
   <li>عندما يتم إنشاء مثيل للمجموعة، يتم فتح عدد معين من الاتصالات بالقاعدة البيانات. هذا العدد قابل للتكوين؛
   </li>
-  <li>عندما يفتح كود Java اتصالاً، يتم توفيره من المجمع؛
+  <li>عندما يفتح كود <bdi dir="ltr" class="odt-ltr-term">Java</bdi> اتصالاً، يتم توفيره من المجمع؛
   </li>
-  <li>عندما يغلق كود Java اتصالاً، يتم إرجاعه إلى المجمع؛
+  <li>عندما يغلق كود <bdi dir="ltr" class="odt-ltr-term">Java</bdi> اتصالاً، يتم إرجاعه إلى المجمع؛
   </li>
 </ul>
 
-<p>في النهاية، يتم فتح الاتصالات مرة واحدة فقط، مما يحسن أداء الوصول إلى قاعدة البيانات. سيتم تعريف مصدر البيانات في فئة تكوين Spring</p>
+<p>في النهاية، يتم فتح الاتصالات مرة واحدة فقط، مما يحسن أداء الوصول إلى قاعدة البيانات. سيتم تعريف مصدر البيانات في فئة تكوين <bdi dir="ltr" class="odt-ltr-term">Spring</bdi></p>
 <p><a id="refheading59631820156038"></a></p>
-<h3 id="651-eclipse">6.5.1. <span style="color: #4f81bd"><span style="color: #4f81bd">مشروع Eclipse</span></span></h3>
+<h3 id="651-eclipse">6.5.1. <span style="color: #4f81bd"><span style="color: #4f81bd">مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi></span></span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D30000010D4DBC1498.png" width="148" height="188" style="display:inline-block; margin:4px;width:3.911cm;height:4.987cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D30000010D4DBC1498.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>هذا المشروع هو مشروع Maven محدد بواسطة ملف [pom.xml] التالي:</p>
+<p>هذا المشروع هو مشروع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> محدد بواسطة ملف [<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>] التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span> <span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#7f007f">xsi:schemaLocation</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#008080">&gt;</span></span></span>
@@ -2167,13 +2169,13 @@
 </code></pre></div>
 
 <ul>
-  <li>الأسطر 21–25: التبعية على Spring؛
+  <li>الأسطر 21–25: التبعية على <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>؛
   </li>
   <li>الأسطر 27–31: التبعية للمكتبة التي توفر مصدر البيانات؛
   </li>
 </ul>
 
-<p>فيما يلي فئة التكوين Spring [AppConfig]:</p>
+<p>فيما يلي فئة التكوين <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> [<bdi dir="ltr" class="odt-ltr-term">AppConfig</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> istia.st.jdbc;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2213,9 +2215,9 @@
 </code></pre></div>
 
 <ul>
-  <li>الأسطر 11–19: تم نقل الثوابت التي تم تعريفها مسبقًا في [IntroJdbc01] إلى [AppConfig]؛
+  <li>الأسطر 11–19: تم نقل الثوابت التي تم تعريفها مسبقًا في [<bdi dir="ltr" class="odt-ltr-term">IntroJdbc01</bdi>] إلى [<bdi dir="ltr" class="odt-ltr-term">AppConfig</bdi>]؛
   </li>
-  <li>الأسطر 31–34: حبة Spring التي تحدد مصدر البيانات؛
+  <li>الأسطر 31–34: حبة <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> التي تحدد مصدر البيانات؛
   </li>
   <li>السطر 24: إنشاء مصدر البيانات، الذي لم يتم تكوينه بعد؛
   </li>
@@ -2226,7 +2228,7 @@
 </ul>
 <p><a id="refheading59651820156038"></a></p>
 <h3 id="652">6.5.2. <span style="color: #4f81bd">الفئة الرئيسية</span></h3>
-<p>الفئة الرئيسية [IntroJdbc02] هي كما يلي:</p>
+<p>الفئة الرئيسية [<bdi dir="ltr" class="odt-ltr-term">IntroJdbc02</bdi>] هي كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> istia.st.jdbc;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2280,20 +2282,20 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 14: مصدر البيانات. لاحظ أنه من النوع [javax.sql.DataSource]، وهو واجهة؛
+  <li>السطر 14: مصدر البيانات. لاحظ أنه من النوع [<bdi dir="ltr" class="odt-ltr-term">javax.sql.DataSource</bdi>]، وهو واجهة؛
   </li>
-  <li>السطر 18: إنشاء مثيلات لكائنات Spring؛
+  <li>السطر 18: إنشاء مثيلات لكائنات <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>؛
   </li>
-  <li>السطر 20: الحصول على مرجع لمصدر البيانات. لاحظ أن الفئة الفعلية المستخدمة لم يتم ذكرها مطلقًا. وبالتالي، لا يوجد هنا ما يشير إلى استخدام تطبيق [TomcatJdbc]؛
+  <li>السطر 20: الحصول على مرجع لمصدر البيانات. لاحظ أن الفئة الفعلية المستخدمة لم يتم ذكرها مطلقًا. وبالتالي، لا يوجد هنا ما يشير إلى استخدام تطبيق [<bdi dir="ltr" class="odt-ltr-term">TomcatJdbc</bdi>]؛
   </li>
   <li>السطر 36: الحصول على اتصال مفتوح؛
   </li>
-  <li>باقي الكود مطابق لكود الفئة [IntroJdbc01]؛
+  <li>باقي الكود مطابق لكود الفئة [<bdi dir="ltr" class="odt-ltr-term">IntroJdbc01</bdi>]؛
   </li>
 </ul>
 <p><a id="refheading440394216381043"></a></p>
 <h2 id="66">6.6. <span style="color: #4f81bd">الخلاصة</span></h2>
-<p>يمكن العثور على مزيد من المعلومات حول إدارة قواعد البيانات في الوثيقة [<a href="http://tahe.developpez.com/tutoriels-cours/spring/spring-data-jpa/serge-tahe-spring-data-jpa-jdbc-mvc-rest-security-cors/"><u><span style="color: #0563c1">العمل مع قاعدة بيانات علائقية باستخدام نظام Spring</span></u></a>].</p>
+<p>يمكن العثور على مزيد من المعلومات حول إدارة قواعد البيانات في الوثيقة [<a href="http://tahe.developpez.com/tutoriels-cours/spring/spring-data-jpa/serge-tahe-spring-data-jpa-jdbc-mvc-rest-security-cors/"><u><span style="color: #0563c1">العمل مع قاعدة بيانات علائقية باستخدام نظام <bdi dir="ltr" class="odt-ltr-term">Spring</bdi></span></u></a>].</p>
 
 
 

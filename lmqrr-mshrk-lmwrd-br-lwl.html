@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1171,41 +1173,41 @@
 
 <p><a id="refheading300921216381043"></a></p>
 <h1 id="18">18. <span style="color: #365f91"><span style="color: #365f91">[المقرر]: مشاركة الموارد عبر الأصول</span></span></h1>
-<p><strong>الكلمات المفتاحية</strong>: CORS (مشاركة الموارد عبر الأصول).</p>
-<p>يقع هذا الفصل إلى حد ما خارج نطاق هذا البرنامج التعليمي. وقد تم تضمينه لأنه يقدم مقدمة عن برمجة الويب وبرمجة JavaScript. من المهم أن نتذكر أن أحد أهداف هذا البرنامج التعليمي هو عرض المفاهيم المستخدمة بشكل متكرر في تطوير JEE، أي تطوير الويب القائم على أطر عمل Java. هنا، نقوم بتوسيع نطاق خادم الويب المستخدم في دراسة قاعدة بيانات المنتجات والفئات لتمكينه من قبول الطلبات عبر المجالات.</p>
-<p>في <span style="color: #000000">الوثيقة [</span><a href="http://tahe.developpez.com/angularjs-spring4"><u><span style="color: #0563c1">دليل AngularJS / Spring 4</span></u></a><span style="color: #000000">]، نقوم بتطوير تطبيق عميل/خادم حيث يكون العميل تطبيق AngularJS:</span></p>
+<p><strong>الكلمات المفتاحية</strong>: <bdi dir="ltr" class="odt-ltr-term">CORS</bdi> (مشاركة الموارد عبر الأصول).</p>
+<p>يقع هذا الفصل إلى حد ما خارج نطاق هذا البرنامج التعليمي. وقد تم تضمينه لأنه يقدم مقدمة عن برمجة الويب وبرمجة <bdi dir="ltr" class="odt-ltr-term">JavaScript.</bdi> من المهم أن نتذكر أن أحد أهداف هذا البرنامج التعليمي هو عرض المفاهيم المستخدمة بشكل متكرر في تطوير <bdi dir="ltr" class="odt-ltr-term">JEE</bdi>، أي تطوير الويب القائم على أطر عمل <bdi dir="ltr" class="odt-ltr-term">Java.</bdi> هنا، نقوم بتوسيع نطاق خادم الويب المستخدم في دراسة قاعدة بيانات المنتجات والفئات لتمكينه من قبول الطلبات عبر المجالات.</p>
+<p>في <span style="color: #000000">الوثيقة [</span><a href="http://tahe.developpez.com/angularjs-spring4"><u><span style="color: #0563c1">دليل <bdi dir="ltr" class="odt-ltr-term">AngularJS</bdi> / <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> 4</span></u></a><span style="color: #000000">]، نقوم بتطوير تطبيق عميل/خادم حيث يكون العميل تطبيق <bdi dir="ltr" class="odt-ltr-term">AngularJS:</bdi></span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003B70000035CAC4B5101.png" width="476" height="430" style="display:inline-block; margin:4px;width:12.582cm;height:11.379cm;" class="odt-zoomable" data-zoom-src="images/10000000000003B70000035CAC4B5101.png" /></td></tr></table>
 
 <ul>
-  <li>تأتي صفحات HTML/CSS/JS لتطبيق Angular من الخادم [1]؛
+  <li>تأتي صفحات <bdi dir="ltr" class="odt-ltr-term">HTML/CSS/JS</bdi> لتطبيق <bdi dir="ltr" class="odt-ltr-term">Angular</bdi> من الخادم [1]؛
   </li>
-  <li>في [2]، ترسل خدمة [dao] طلبًا إلى خادم آخر، وهو الخادم [2]. حسنًا، هذا أمر محظور من قبل المتصفح الذي يشغل تطبيق Angular لأنه يمثل ثغرة أمنية. لا يمكن للتطبيق الاستعلام إلا عن الخادم الذي نشأ منه، أي الخادم [1]؛
+  <li>في [2]، ترسل خدمة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] طلبًا إلى خادم آخر، وهو الخادم [2]. حسنًا، هذا أمر محظور من قبل المتصفح الذي يشغل تطبيق <bdi dir="ltr" class="odt-ltr-term">Angular</bdi> لأنه يمثل ثغرة أمنية. لا يمكن للتطبيق الاستعلام إلا عن الخادم الذي نشأ منه، أي الخادم [1]؛
   </li>
 </ul>
 
-<p>في الواقع، من غير الدقيق القول إن المتصفح يمنع تطبيق Angular من الاستعلام عن الخادم [2]. فهو في الواقع يستعلم عنه ليسأله عما إذا كان يسمح لعميل لا ينشأ منه بالاستعلام عنه. تسمى تقنية المشاركة هذه <strong>CORS</strong> (مشاركة الموارد عبر الأصول). يمنح الخادم [2] الإذن عن طريق إرسال رؤوس HTTP محددة.</p>
+<p>في الواقع، من غير الدقيق القول إن المتصفح يمنع تطبيق <bdi dir="ltr" class="odt-ltr-term">Angular</bdi> من الاستعلام عن الخادم [2]. فهو في الواقع يستعلم عنه ليسأله عما إذا كان يسمح لعميل لا ينشأ منه بالاستعلام عنه. تسمى تقنية المشاركة هذه <strong><bdi dir="ltr" class="odt-ltr-term">CORS</bdi></strong> (مشاركة الموارد عبر الأصول). يمنح الخادم [2] الإذن عن طريق إرسال رؤوس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> محددة.</p>
 <p><span style="color: #000000">سننشئ البنية التالية:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004C20000027F7259DF97.png" width="609" height="319" style="display:inline-block; margin:4px;width:16.113cm;height:8.453cm;" class="odt-zoomable" data-zoom-src="images/10000000000004C20000027F7259DF97.png" /></td></tr></table>
 
 <ul>
-  <li><span style="color: #000000">في [1]، يقوم تطبيق ويب بتقديم صفحات HTML/JS؛</span>
+  <li><span style="color: #000000">في [1]، يقوم تطبيق ويب بتقديم صفحات <bdi dir="ltr" class="odt-ltr-term">HTML/JS</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">في [2]، يقوم المتصفح بتنفيذ JavaScript المضمن في صفحات HTML للاستعلام عن خدمة الويب الآمنة [3]؛</span>
+  <li><span style="color: #000000">في [2]، يقوم المتصفح بتنفيذ <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> المضمن في صفحات <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> للاستعلام عن خدمة الويب الآمنة [3]؛</span>
   </li>
 </ul>
 <p><a id="refheading1217261037674463"></a></p>
 <h2 id="181">18.1. <span style="color: #4f81bd">الدعم</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E000000086360FDC72.png" width="158" height="94" style="display:inline-block; margin:4px;width:4.17cm;height:2.494cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E000000086360FDC72.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p><span style="color: #000000">يمكن العثور على مشاريع هذا الفصل في المجلد [support / chap-18].</span></p>
+<p><span style="color: #000000">يمكن العثور على مشاريع هذا الفصل في المجلد [<bdi dir="ltr" class="odt-ltr-term">support</bdi> / <bdi dir="ltr" class="odt-ltr-term">chap-18</bdi>].</span></p>
 <p><a id="refheading196717811596012"></a></p>
 <h2 id="182">18.2. <span style="color: #4f81bd">مشروع العميل</span></h2>
-<p>قم بإنشاء مشروع Eclipse التالي:</p>
+<p>قم بإنشاء مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> التالي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001030000016B79E096AF.png" width="181" height="254" style="display:inline-block; margin:4px;width:4.8cm;height:6.727cm;" class="odt-zoomable" data-zoom-src="images/10000000000001030000016B79E096AF.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><a id="refheading4845838046689"></a></p>
-<h2 id="183-maven">18.3. <span style="color: #4f81bd">تكوين Maven</span></h2>
-<p><span style="color: #000000">المشروع هو مشروع Maven يحتوي على ملف [pom.xml] التالي:</span></p>
+<h2 id="183-maven">18.3. <span style="color: #4f81bd">تكوين <bdi dir="ltr" class="odt-ltr-term">Maven</bdi></span></h2>
+<p><span style="color: #000000">المشروع هو مشروع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> يحتوي على ملف [<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>] التالي:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span> <span style="color:#7f007f">xmlns</span>=<span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span style="color:#7f007f">xmlns:xsi</span>=<span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#7f007f">xsi:schemaLocation</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#008080">&gt;</span></span></span>
@@ -1253,16 +1255,16 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">الأسطر 11–15: هذا مشروع Spring Boot؛</span>
+  <li><span style="color: #000000">الأسطر 11–15: هذا مشروع <bdi dir="ltr" class="odt-ltr-term">Spring Boot</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 23–26: نستخدم التبعية [spring-boot-starter-web]، التي تتضمن خادم Tomcat و Spring MVC؛</span>
+  <li><span style="color: #000000">الأسطر 23–26: نستخدم التبعية [<bdi dir="ltr" class="odt-ltr-term">spring-boot-starter-web</bdi>]، التي تتضمن خادم <bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi> و <bdi dir="ltr" class="odt-ltr-term">Spring MVC</bdi>؛</span>
   </li>
 </ul>
 <p><a id="refheading1184671799226695"></a></p>
 <h2 id="184">18.4. <span style="color: #4f81bd">إعدادات الربيع</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E3000000708D6932EB.png" width="159" height="78" style="display:inline-block; margin:4px;width:4.2cm;height:2.073cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E3000000708D6932EB.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p><span style="color: #000000">فيما يلي فئة [WebConfig] التي تهيئ مشروع Spring:</span></p>
+<p><span style="color: #000000">فيما يلي فئة [<bdi dir="ltr" class="odt-ltr-term">WebConfig</bdi>] التي تهيئ مشروع <bdi dir="ltr" class="odt-ltr-term">Spring:</bdi></span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span> spring.cors.client.config;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1310,28 +1312,28 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">السطر 15: تقوم الفئة بتكوين مشروع Spring MVC؛</span>
+  <li><span style="color: #000000">السطر 15: تقوم الفئة بتكوين مشروع <bdi dir="ltr" class="odt-ltr-term">Spring MVC</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطر 16: الفئة تمتد فئة [WebMvcConfigurerAdapter] لتجاوز بعض أساليبها؛</span>
+  <li><span style="color: #000000">السطر 16: الفئة تمتد فئة [<bdi dir="ltr" class="odt-ltr-term">WebMvcConfigurerAdapter</bdi>] لتجاوز بعض أساليبها؛</span>
   </li>
   <li><span style="color: #000000">الأسطر 18–36: لقد صادفنا هذه الحبوب بالفعل، على سبيل المثال في </span><a href="#refheading17988265679331"><u><span style="color: #0563c1">القسم 13.5.3.1</span></u></a><span style="color: #000000">. لاحظ، في السطر 35، أن خدمة الويب ستعمل على المنفذ 8081؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 38–42: تسمح لك طريقة [addResourceHandlers] بتعريف الموارد الثابتة، أي الموارد التي لا يتعامل معها [DispatcherServlet] في السطر 23؛</span>
+  <li><span style="color: #000000">الأسطر 38–42: تسمح لك طريقة [<bdi dir="ltr" class="odt-ltr-term">addResourceHandlers</bdi>] بتعريف الموارد الثابتة، أي الموارد التي لا يتعامل معها [<bdi dir="ltr" class="odt-ltr-term">DispatcherServlet</bdi>] في السطر 23؛</span>
   </li>
-  <li><span style="color: #000000">السطر 40: أي طلب لمورد بامتداد .html سيعيد الملف المطلوب في الطلب والموجود في المجلد [static] في مسار فئات المشروع؛</span>
+  <li><span style="color: #000000">السطر 40: أي طلب لمورد بامتداد .<bdi dir="ltr" class="odt-ltr-term">html</bdi> سيعيد الملف المطلوب في الطلب والموجود في المجلد [<bdi dir="ltr" class="odt-ltr-term">static</bdi>] في مسار فئات المشروع؛</span>
   </li>
-  <li><span style="color: #000000">السطر 41: أي طلب لمورد بامتداد .js سيعيد ملف JavaScript المطلوب في الطلب والموجود في المجلد [static/js] في مسار فئات المشروع؛</span>
+  <li><span style="color: #000000">السطر 41: أي طلب لمورد بامتداد .<bdi dir="ltr" class="odt-ltr-term">js</bdi> سيعيد ملف <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> المطلوب في الطلب والموجود في المجلد [<bdi dir="ltr" class="odt-ltr-term">static/js</bdi>] في مسار فئات المشروع؛</span>
   </li>
 </ul>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F400000103E8BCB7A6.png" width="171" height="181" style="display:inline-block; margin:4px;width:4.521cm;height:4.8cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F400000103E8BCB7A6.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><a id="refheading4847838046689"></a></p>
-<h2 id="185-jquery-javascript">18.5. <span style="color: #4f81bd">أساسيات jQuery و JavaScript</span></h2>
-<p><span style="color: #000000">ستكون صفحة HTML الخاصة بالعميل كما يلي:</span></p>
+<h2 id="185-jquery-javascript">18.5. <span style="color: #4f81bd">أساسيات <bdi dir="ltr" class="odt-ltr-term">jQuery</bdi> و <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi></span></h2>
+<p><span style="color: #000000">ستكون صفحة <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> الخاصة بالعميل كما يلي:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000023800000179B7AE4412.png" width="398" height="264" style="display:inline-block; margin:4px;width:10.52cm;height:6.981cm;" class="odt-zoomable" data-zoom-src="images/100000000000023800000179B7AE4412.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p><span style="color: #000000">وستتضمن كود JavaScript (JS) الذي يعمل في المتصفح. سنغطي بعض أساسيات JavaScript لمساعدتنا على فهم الكود. سيقوم العميل بإجراء طلبات HTTP باستخدام مكتبة jQuery [https://jquery.com/]، التي توفر العديد من الوظائف التي تبسط تطوير JavaScript. نقوم بإنشاء ملف HTML ثابت [jQuery.html] ونضعه في المجلد [static]:</span></p>
+<p><span style="color: #000000">وستتضمن كود <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> (<bdi dir="ltr" class="odt-ltr-term">JS</bdi>) الذي يعمل في المتصفح. سنغطي بعض أساسيات <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> لمساعدتنا على فهم الكود. سيقوم العميل بإجراء طلبات <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> باستخدام مكتبة <bdi dir="ltr" class="odt-ltr-term">jQuery</bdi> [<bdi dir="ltr" class="odt-ltr-term">https://jquery.com/</bdi>]، التي توفر العديد من الوظائف التي تبسط تطوير <bdi dir="ltr" class="odt-ltr-term">JavaScript.</bdi> نقوم بإنشاء ملف <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> ثابت [<bdi dir="ltr" class="odt-ltr-term">jQuery.html</bdi>] ونضعه في المجلد [<bdi dir="ltr" class="odt-ltr-term">static</bdi>]:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F40000010355AA616F.png" width="171" height="181" style="display:inline-block; margin:4px;width:4.521cm;height:4.8cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F40000010355AA616F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><span style="color: #000000">سيحتوي هذا الملف على المحتوى التالي:</span></p>
@@ -1351,19 +1353,19 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">السطر 6: استيراد jQuery؛</span>
+  <li><span style="color: #000000">السطر 6: استيراد <bdi dir="ltr" class="odt-ltr-term">jQuery</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 10–12: عنصر صفحة </span><b>بمعرف </b><span style="color: #000000">[element1]. سنعمل مع هذا العنصر.</span>
+  <li><span style="color: #000000">الأسطر 10–12: عنصر صفحة </span><b>بمعرف </b><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">element1</bdi>]. سنعمل مع هذا العنصر.</span>
   </li>
 </ul>
 
-<p><span style="color: #000000">نحتاج إلى تنزيل الملف [</span><em><span style="color: #2a00ff">jquery-2.1.3.min.js</span></em><span style="color: #000000">]. يمكن العثور على أحدث إصدار من jQuery على الرابط [</span><a href="http://jquery.com/download/"><u><span style="color: #0563c1">http://jquery.com/download/</span></u></a><span style="color: #000000">]:</span></p>
+<p><span style="color: #000000">نحتاج إلى تنزيل الملف [</span><em><span style="color: #2a00ff"><bdi dir="ltr" class="odt-ltr-term">jquery-2.1.3.min.js</bdi></span></em><span style="color: #000000">]. يمكن العثور على أحدث إصدار من <bdi dir="ltr" class="odt-ltr-term">jQuery</bdi> على الرابط [</span><a href="http://jquery.com/download/"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">http://jquery.com/download/</bdi></span></u></a><span style="color: #000000">]:</span></p>
 <p><img src="images/10000000000003CC00000103F6C4BFF9.png" width="680" height="181" style="width:18cm;height:4.796cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003CC00000103F6C4BFF9.png" /></p>
-<p><span style="color: #000000">ضع الملف الذي تم تنزيله في المجلد [static/js] وقم بتحديث السطر 6 من ملف HTML ليتوافق مع الإصدار المثبت.</span></p>
-<p><span style="color: #000000">بمجرد الانتهاء من ذلك، افتح العرض الثابت [jQuery.html] في Chrome [1-2]:</span></p>
+<p><span style="color: #000000">ضع الملف الذي تم تنزيله في المجلد [<bdi dir="ltr" class="odt-ltr-term">static/js</bdi>] وقم بتحديث السطر 6 من ملف <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> ليتوافق مع الإصدار المثبت.</span></p>
+<p><span style="color: #000000">بمجرد الانتهاء من ذلك، افتح العرض الثابت [<bdi dir="ltr" class="odt-ltr-term">jQuery.html</bdi>] في <bdi dir="ltr" class="odt-ltr-term">Chrome</bdi> [1-2]:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005000000011532206D4D.png" width="640" height="138" style="display:inline-block; margin:4px;width:16.933cm;height:3.664cm;" class="odt-zoomable" data-zoom-src="images/10000000000005000000011532206D4D.png" /></td></tr></table>
 
-<p><span style="color: #000000">في Google Chrome، اضغط على [Ctrl-Shift-I] لفتح أدوات المطور [3]. تتيح لك علامة التبويب [Console] [4] تشغيل كود JavaScript. أدناه، نقدم أوامر JavaScript التي يمكنك كتابتها ونشرح وظائفها.</span></p>
+<p><span style="color: #000000">في <bdi dir="ltr" class="odt-ltr-term">Google Chrome</bdi>، اضغط على [<bdi dir="ltr" class="odt-ltr-term">Ctrl-Shift-I</bdi>] لفتح أدوات المطور [3]. تتيح لك علامة التبويب [<bdi dir="ltr" class="odt-ltr-term">Console</bdi>] [4] تشغيل كود <bdi dir="ltr" class="odt-ltr-term">JavaScript.</bdi> أدناه، نقدم أوامر <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> التي يمكنك كتابتها ونشرح وظائفها.</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>JS
 </code></pre></div>
@@ -1374,27 +1376,27 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$(&quot;#element1&quot;)
 </code></pre></div>
 </div>
-<div style="margin:0 0 0.5em 0">: يُرجع مجموعة جميع العناصر <b>التي تحمل المعرف </b>[element1]،</div><div style="margin:0 0 0.5em 0">لذلك عادةً ما تكون المجموعة مكونة من عنصر واحد أو لا شيء</div><div style="margin:0 0 0.5em 0">لأنه لا يمكن أن يكون هناك <b>معرفان</b> متطابقان في صفحة HTML.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000B60000008356BBD730.png" width="127" height="92" style="display:inline-block; margin:4px;width:3.371cm;height:2.425cm;" class="odt-zoomable" data-zoom-src="images/10000000000000B60000008356BBD730.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div style="margin:0 0 0.5em 0">: يُرجع مجموعة جميع العناصر <b>التي تحمل المعرف </b>[<bdi dir="ltr" class="odt-ltr-term">element1</bdi>]،</div><div style="margin:0 0 0.5em 0">لذلك عادةً ما تكون المجموعة مكونة من عنصر واحد أو لا شيء</div><div style="margin:0 0 0.5em 0">لأنه لا يمكن أن يكون هناك <b>معرفان</b> متطابقان في صفحة <bdi dir="ltr" class="odt-ltr-term">HTML.</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000B60000008356BBD730.png" width="127" height="92" style="display:inline-block; margin:4px;width:3.371cm;height:2.425cm;" class="odt-zoomable" data-zoom-src="images/10000000000000B60000008356BBD730.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$(&quot;#element1&quot;).text(&quot;blabla&quot;)
 </code></pre></div>
 </div>
-<div style="margin:0 0 0.5em 0">: يعيّن النص [blabla] لجميع العناصر</div><div style="margin:0 0 0.5em 0">في المجموعة. يؤدي هذا إلى تغيير</div><div style="margin:0 0 0.5em 0">المحتوى المعروض على الصفحة</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000101000000253B59BD93.png" width="180" height="26" style="display:inline-block; margin:4px;width:4.761cm;height:0.684cm;" class="odt-zoomable" data-zoom-src="images/1000000000000101000000253B59BD93.png" /><img src="images/10000000000000EF000000B740C0BE12.png" width="167" height="128" style="display:inline-block; margin:4px;width:4.431cm;height:3.394cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EF000000B740C0BE12.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div style="margin:0 0 0.5em 0">: يعيّن النص [<bdi dir="ltr" class="odt-ltr-term">blabla</bdi>] لجميع العناصر</div><div style="margin:0 0 0.5em 0">في المجموعة. يؤدي هذا إلى تغيير</div><div style="margin:0 0 0.5em 0">المحتوى المعروض على الصفحة</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000101000000253B59BD93.png" width="180" height="26" style="display:inline-block; margin:4px;width:4.761cm;height:0.684cm;" class="odt-zoomable" data-zoom-src="images/1000000000000101000000253B59BD93.png" /><img src="images/10000000000000EF000000B740C0BE12.png" width="167" height="128" style="display:inline-block; margin:4px;width:4.431cm;height:3.394cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EF000000B740C0BE12.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$(&quot;#element1&quot;).hide()
 </code></pre></div>
 </div>
-<div style="margin:0 0 0.5em 0">يخفي العناصر في المجموعة.</div><div style="margin:0 0 0.5em 0">لم يعد النص [blabla] معروضًا.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FD0000001F991499F4.png" width="177" height="22" style="display:inline-block; margin:4px;width:4.68cm;height:0.573cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FD0000001F991499F4.png" /><img src="images/10000000000000DE000000987D612336.png" width="155" height="106" style="display:inline-block; margin:4px;width:4.11cm;height:2.813cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DE000000987D612336.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div style="margin:0 0 0.5em 0">يخفي العناصر في المجموعة.</div><div style="margin:0 0 0.5em 0">لم يعد النص [<bdi dir="ltr" class="odt-ltr-term">blabla</bdi>] معروضًا.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FD0000001F991499F4.png" width="177" height="22" style="display:inline-block; margin:4px;width:4.68cm;height:0.573cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FD0000001F991499F4.png" /><img src="images/10000000000000DE000000987D612336.png" width="155" height="106" style="display:inline-block; margin:4px;width:4.11cm;height:2.813cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DE000000987D612336.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$(&quot;#element1&quot;)
 </code></pre></div>
 </div>
-<div style="margin:0 0 0.5em 0">: يعرض المجموعة مرة أخرى. هذا</div><div style="margin:0 0 0.5em 0">يسمح لنا برؤية أن العنصر الذي يحمل المعرف [element1] يحتوي</div><div style="margin:0 0 0.5em 0">سمة CSS <b>style=&#x27;display: none;</b>&#x27;، مما</div><div style="margin:0 0 0.5em 0">إخفاء العنصر.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000019B0000002A4792CCDD.png" width="288" height="29" style="display:inline-block; margin:4px;width:7.609cm;height:0.778cm;" class="odt-zoomable" data-zoom-src="images/100000000000019B0000002A4792CCDD.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div style="margin:0 0 0.5em 0">: يعرض المجموعة مرة أخرى. هذا</div><div style="margin:0 0 0.5em 0">يسمح لنا برؤية أن العنصر الذي يحمل المعرف [<bdi dir="ltr" class="odt-ltr-term">element1</bdi>] يحتوي</div><div style="margin:0 0 0.5em 0">سمة <bdi dir="ltr" class="odt-ltr-term">CSS</bdi> <b><bdi dir="ltr" class="odt-ltr-term">style</bdi>=&#x27;<bdi dir="ltr" class="odt-ltr-term">display: none</bdi>;</b>&#x27;، مما</div><div style="margin:0 0 0.5em 0">إخفاء العنصر.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000019B0000002A4792CCDD.png" width="288" height="29" style="display:inline-block; margin:4px;width:7.609cm;height:0.778cm;" class="odt-zoomable" data-zoom-src="images/100000000000019B0000002A4792CCDD.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$(&quot;#element1&quot;).show()
 </code></pre></div>
 </div>
-<div style="margin:0 0 0.5em 0">: يعرض العناصر الموجودة في المجموعة. يظهر النص</div><div style="margin:0 0 0.5em 0">[blabla] مرة أخرى. إنها السمة</div><div style="margin:0 0 0.5em 0"><b>style=&#x27;display: block;&#x27; </b>هو الذي يضمن هذا</div><div style="margin:0 0 0.5em 0">.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001A500000026083A7878.png" width="294" height="27" style="display:inline-block; margin:4px;width:7.789cm;height:0.704cm;" class="odt-zoomable" data-zoom-src="images/10000000000001A500000026083A7878.png" /><img src="images/10000000000000F9000000C13449EDE1.png" width="174" height="135" style="display:inline-block; margin:4px;width:4.611cm;height:3.574cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F9000000C13449EDE1.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div style="margin:0 0 0.5em 0">: يعرض العناصر الموجودة في المجموعة. يظهر النص</div><div style="margin:0 0 0.5em 0">[<bdi dir="ltr" class="odt-ltr-term">blabla</bdi>] مرة أخرى. إنها السمة</div><div style="margin:0 0 0.5em 0"><b><bdi dir="ltr" class="odt-ltr-term">style</bdi>=&#x27;<bdi dir="ltr" class="odt-ltr-term">display: block</bdi>;&#x27; </b>هو الذي يضمن هذا</div><div style="margin:0 0 0.5em 0">.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001A500000026083A7878.png" width="294" height="27" style="display:inline-block; margin:4px;width:7.789cm;height:0.704cm;" class="odt-zoomable" data-zoom-src="images/10000000000001A500000026083A7878.png" /><img src="images/10000000000000F9000000C13449EDE1.png" width="174" height="135" style="display:inline-block; margin:4px;width:4.611cm;height:3.574cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F9000000C13449EDE1.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$(&quot;#element1&quot;).attr(&#39;style&#39;,&#39;color: red&#39;)
 </code></pre></div>
 </div>
-<div style="margin:0 0 0.5em 0">: يحدد سمة لجميع العناصر في</div><div style="margin:0 0 0.5em 0">المجموعة. السمة هنا هي [style] وقيمتها</div><div style="margin:0 0 0.5em 0">[color: red]. يتحول النص [blabla] إلى اللون الأحمر.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000018B000000231B4940BC.png" width="276" height="24" style="display:inline-block; margin:4px;width:7.31cm;height:0.647cm;" class="odt-zoomable" data-zoom-src="images/100000000000018B000000231B4940BC.png" /><img src="images/10000000000000F7000000BF541DB4ED.png" width="173" height="134" style="display:inline-block; margin:4px;width:4.57cm;height:3.535cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F7000000BF541DB4ED.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div style="margin:0 0 0.5em 0">: يحدد سمة لجميع العناصر في</div><div style="margin:0 0 0.5em 0">المجموعة. السمة هنا هي [<bdi dir="ltr" class="odt-ltr-term">style</bdi>] وقيمتها</div><div style="margin:0 0 0.5em 0">[<bdi dir="ltr" class="odt-ltr-term">color: red</bdi>]. يتحول النص [<bdi dir="ltr" class="odt-ltr-term">blabla</bdi>] إلى اللون الأحمر.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000018B000000231B4940BC.png" width="276" height="24" style="display:inline-block; margin:4px;width:7.31cm;height:0.647cm;" class="odt-zoomable" data-zoom-src="images/100000000000018B000000231B4940BC.png" /><img src="images/10000000000000F7000000BF541DB4ED.png" width="173" height="134" style="display:inline-block; margin:4px;width:4.57cm;height:3.535cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F7000000BF541DB4ED.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>مصفوفة
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EE0000011645A3961D.png" width="167" height="195" style="display:inline-block; margin:4px;width:4.41cm;height:5.151cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EE0000011645A3961D.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
@@ -1402,18 +1404,18 @@
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001A0000000F3CAFDC489.png" width="291" height="170" style="display:inline-block; margin:4px;width:7.699cm;height:4.496cm;" class="odt-zoomable" data-zoom-src="images/10000000000001A0000000F3CAFDC489.png" /></td></tr></table>
 
-<p><span style="color: #000000">لاحظ أن عنوان URL للمتصفح لم يتغير خلال كل هذه العمليات. لم يكن هناك أي اتصال بخادم الويب. كل شيء يحدث داخل المتصفح. والآن، دعونا نلقي نظرة على كود مصدر الصفحة:</span></p>
+<p><span style="color: #000000">لاحظ أن عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> للمتصفح لم يتغير خلال كل هذه العمليات. لم يكن هناك أي اتصال بخادم الويب. كل شيء يحدث داخل المتصفح. والآن، دعونا نلقي نظرة على كود مصدر الصفحة:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000018C00000110E221A43B.png" width="268" height="184" style="display:inline-block; margin:4px;width:7.082cm;height:4.865cm;" class="odt-zoomable" data-zoom-src="images/100000000000018C00000110E221A43B.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000021A000000F83354847E.png" width="376" height="174" style="display:inline-block; margin:4px;width:9.961cm;height:4.591cm;" class="odt-zoomable" data-zoom-src="images/100000000000021A000000F83354847E.png" /></td></tr></table>
 
 <p><span style="color: #000000">هذا هو النص الأصلي. وهو لا يعكس التغييرات التي أجريناها على العنصر في الأسطر 10-12. من المهم تذكر ذلك عند تصحيح أخطاء جافا سكريبت. ولذلك، غالبًا ما يكون من غير الضروري الاطلاع على شفرة المصدر للصفحة المعروضة.</span></p>
 <p><a id="refheading4849838046689"></a></p>
-<h2 id="186-javascript">18.6. <span style="color: #4f81bd">كود JavaScript الخاص بالتطبيق</span></h2>
-<p><span style="color: #000000">لنعد إلى صفحة تطبيق العميل التي ستستعلم عن خدمة الويب / jSON:</span></p>
+<h2 id="186-javascript">18.6. <span style="color: #4f81bd">كود <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> الخاص بالتطبيق</span></h2>
+<p><span style="color: #000000">لنعد إلى صفحة تطبيق العميل التي ستستعلم عن خدمة الويب / <bdi dir="ltr" class="odt-ltr-term">jSON:</bdi></span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EA000001116E9B5DCF.png" width="164" height="191" style="display:inline-block; margin:4px;width:4.33cm;height:5.052cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EA000001116E9B5DCF.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000016F0000018E748E7816.png" width="257" height="278" style="display:inline-block; margin:4px;width:6.789cm;height:7.362cm;" class="odt-zoomable" data-zoom-src="images/100000000000016F0000018E748E7816.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p><span style="color: #000000">فيما يلي كود HTML لهذه الصفحة:</span></p>
+<p><span style="color: #000000">فيما يلي كود <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> لهذه الصفحة:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;!</span><span style="color:#3f7f7f">DOCTYPE</span> <span style="color:#008080">html&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">html</span><span style="color:#008080">&gt;</span></span></span>
@@ -1459,15 +1461,15 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">السطر 6: نستورد مكتبة jQuery؛</span>
+  <li><span style="color: #000000">السطر 6: نستورد مكتبة <bdi dir="ltr" class="odt-ltr-term">jQuery</bdi>؛</span>
   </li>
   <li><span style="color: #000000">السطر 7: نستورد الكود الذي سنكتبه؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 15 و19 و26 و29 و31: لاحظ معرفات [id] لمكونات الصفحة. يشير JavaScript إلى هذه المكونات عبر هذه المعرفات؛</span>
+  <li><span style="color: #000000">الأسطر 15 و19 و26 و29 و31: لاحظ معرفات [<bdi dir="ltr" class="odt-ltr-term">id</bdi>] لمكونات الصفحة. يشير <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> إلى هذه المكونات عبر هذه المعرفات؛</span>
   </li>
 </ul>
 
-<p><span style="color: #000000">الكود [client.js] هو كما يلي:</span></p>
+<p><span style="color: #000000">الكود [<bdi dir="ltr" class="odt-ltr-term">client.js</bdi>] هو كما يلي:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content">// global data</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">var</span><span style="color:#000000"> url;</span></span></span>
@@ -1559,27 +1561,27 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">الأسطر 80–87: كود JavaScript الذي يتم تنفيذه بعد انتهاء تحميل المستند في المتصفح؛</span>
+  <li><span style="color: #000000">الأسطر 80–87: كود <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> الذي يتم تنفيذه بعد انتهاء تحميل المستند في المتصفح؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 81-86: استرداد مراجع العناصر المختلفة في مستند HTML عبر معرفات [id] الخاصة بها؛</span>
+  <li><span style="color: #000000">الأسطر 81-86: استرداد مراجع العناصر المختلفة في مستند <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> عبر معرفات [<bdi dir="ltr" class="odt-ltr-term">id</bdi>] الخاصة بها؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 2-9: متغيرات عامة يمكن الوصول إليها من خلال جميع الوظائف المحددة في ملف JavaScript؛</span>
+  <li><span style="color: #000000">الأسطر 2-9: متغيرات عامة يمكن الوصول إليها من خلال جميع الوظائف المحددة في ملف <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطر 13: يسترد عنوان URL الذي أدخله المستخدم؛</span>
+  <li><span style="color: #000000">السطر 13: يسترد عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الذي أدخله المستخدم؛</span>
   </li>
-  <li><span style="color: #000000">السطر 14: يسترد القيمة التي يريد المستخدم إرسالها (فارغة في حالة عملية GET)؛</span>
+  <li><span style="color: #000000">السطر 14: يسترد القيمة التي يريد المستخدم إرسالها (فارغة في حالة عملية <bdi dir="ltr" class="odt-ltr-term">GET</bdi>)؛</span>
   </li>
   <li><span style="color: #000000">السطر 15: استرداد اسم المستخدم الذي أدخله المستخدم؛</span>
   </li>
   <li><span style="color: #000000">السطر 16: استرداد كلمة المرور الخاصة به؛</span>
   </li>
-  <li><span style="color: #000000">السطر 17: يسترد الطريقة [get] أو [post] لاستخدامها عند طلب عنوان URL من السطر 9:</span>
+  <li><span style="color: #000000">السطر 17: يسترد الطريقة [<bdi dir="ltr" class="odt-ltr-term">get</bdi>] أو [<bdi dir="ltr" class="odt-ltr-term">post</bdi>] لاستخدامها عند طلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> من السطر 9:</span>
     <ul>
-      <li><span style="color: #000000">[</span><b>document</b><span style="color: #000000">] يشير إلى المستند الذي تم تحميله بواسطة المتصفح، والمعروف باسم DOM (نموذج كائن المستند)،</span>
+      <li><span style="color: #000000">[</span><b><bdi dir="ltr" class="odt-ltr-term">document</bdi></b><span style="color: #000000">] يشير إلى المستند الذي تم تحميله بواسطة المتصفح، والمعروف باسم <bdi dir="ltr" class="odt-ltr-term">DOM</bdi> (نموذج كائن المستند)،</span>
       </li>
-      <li><span style="color: #000000">[</span><b>document.forms[0]</b><span style="color: #000000">] يشير إلى النموذج الأول في المستند؛ قد يحتوي المستند على نماذج متعددة. هنا، يوجد نموذج واحد فقط،</span>
+      <li><span style="color: #000000">[</span><b><bdi dir="ltr" class="odt-ltr-term">document.forms</bdi>[0]</b><span style="color: #000000">] يشير إلى النموذج الأول في المستند؛ قد يحتوي المستند على نماذج متعددة. هنا، يوجد نموذج واحد فقط،</span>
       </li>
-      <li><span style="color: #000000">[</span><b>document.forms[0].elements[&#x27;method&#x27;</b><span style="color: #000000">]] يشير إلى عنصر النموذج الذي يحتوي على السمة [name=&#x27;method&#x27;]. وهناك اثنان:</span>
+      <li><span style="color: #000000">[</span><b><bdi dir="ltr" class="odt-ltr-term">document.forms</bdi>[0].<bdi dir="ltr" class="odt-ltr-term">elements</bdi>[&#x27;<bdi dir="ltr" class="odt-ltr-term">method</bdi>&#x27;</b><span style="color: #000000">]] يشير إلى عنصر النموذج الذي يحتوي على السمة [<bdi dir="ltr" class="odt-ltr-term">name</bdi>=&#x27;<bdi dir="ltr" class="odt-ltr-term">method</bdi>&#x27;]. وهناك اثنان:</span>
       </li>
     </ul>
   </li>
@@ -1593,36 +1595,36 @@
 <ul>
   <li><span style="color: #000000">(تابع)</span>
     <ul>
-      <li><span style="color: #000000">[</span><b>document.forms[0].elements[&#x27;method&#x27;].value</b><span style="color: #000000">] هي القيمة التي سيتم إرسالها للمكون الذي يحمل السمة [name=&#x27;method&#x27;]. ونحن نعلم أن القيمة المرسلة هي قيمة السمة [value] الخاصة بزر الاختيار المحدد. وبالتالي، ستكون هنا إحدى السلاسل [&#x27;get&#x27;, &#x27;post&#x27;];</span>
+      <li><span style="color: #000000">[</span><b><bdi dir="ltr" class="odt-ltr-term">document.forms</bdi>[0].<bdi dir="ltr" class="odt-ltr-term">elements</bdi>[&#x27;<bdi dir="ltr" class="odt-ltr-term">method</bdi>&#x27;].<bdi dir="ltr" class="odt-ltr-term">value</bdi></b><span style="color: #000000">] هي القيمة التي سيتم إرسالها للمكون الذي يحمل السمة [<bdi dir="ltr" class="odt-ltr-term">name</bdi>=&#x27;<bdi dir="ltr" class="odt-ltr-term">method</bdi>&#x27;]. ونحن نعلم أن القيمة المرسلة هي قيمة السمة [<bdi dir="ltr" class="odt-ltr-term">value</bdi>] الخاصة بزر الاختيار المحدد. وبالتالي، ستكون هنا إحدى السلاسل [&#x27;<bdi dir="ltr" class="odt-ltr-term">get</bdi>&#x27;, &#x27;<bdi dir="ltr" class="odt-ltr-term">post</bdi>&#x27;];</span>
       </li>
     </ul>
   </li>
-  <li><span style="color: #000000">السطر 18: نقوم بإنشاء ترميز Base74 للسلسلة `username:password`. سيتم استخدام هذه السلسلة المرمزة في رأس HTTP [Authorization] الذي سنرسله إلى الخادم لمصادقة الطلب؛</span>
+  <li><span style="color: #000000">السطر 18: نقوم بإنشاء ترميز <bdi dir="ltr" class="odt-ltr-term">Base74</bdi> للسلسلة `<bdi dir="ltr" class="odt-ltr-term">username:password</bdi>`. سيتم استخدام هذه السلسلة المرمزة في رأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">Authorization</bdi>] الذي سنرسله إلى الخادم لمصادقة الطلب؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 22–26: اعتمادًا على طريقة HTTP التي سيتم استخدامها، نقوم بتنفيذ طريقة [doGet] أو [doPost]؛</span>
+  <li><span style="color: #000000">الأسطر 22–26: اعتمادًا على طريقة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> التي سيتم استخدامها، نقوم بتنفيذ طريقة [<bdi dir="ltr" class="odt-ltr-term">doGet</bdi>] أو [<bdi dir="ltr" class="odt-ltr-term">doPost</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">تقوم طريقة jQuery [$.ajax] بإجراء طلب HTTP؛</span>
+  <li><span style="color: #000000">تقوم طريقة <bdi dir="ltr" class="odt-ltr-term">jQuery</bdi> [$.<bdi dir="ltr" class="odt-ltr-term">ajax</bdi>] بإجراء طلب <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 32–34: نتواصل مع خادم يتطلب رأس HTTP [Authorization: Basic code]؛</span>
+  <li><span style="color: #000000">الأسطر 32–34: نتواصل مع خادم يتطلب رأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">Authorization: Basic code</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 35: سيقوم المستخدم بإدخال عناوين URL بالشكل [/cors-getAllCategories,/cors-addProduits, ...]. لذلك يجب استكمال عناوين URL هذه بعنوان URL للخادم من السطر 6؛</span>
+  <li><span style="color: #000000">السطر 35: سيقوم المستخدم بإدخال عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> بالشكل [/<bdi dir="ltr" class="odt-ltr-term">cors-getAllCategories</bdi>,/<bdi dir="ltr" class="odt-ltr-term">cors-addProduits</bdi>, ...]. لذلك يجب استكمال عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> هذه بعنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> للخادم من السطر 6؛</span>
   </li>
-  <li><span style="color: #000000">السطر 36: طريقة HTTP المطلوب استخدامها؛</span>
+  <li><span style="color: #000000">السطر 36: طريقة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> المطلوب استخدامها؛</span>
   </li>
-  <li><span style="color: #000000">السطر 37: يعرض الخادم JSON. نحدد النوع [text] كنوع النتيجة لعرضها تمامًا كما تم استلامها؛</span>
+  <li><span style="color: #000000">السطر 37: يعرض الخادم <bdi dir="ltr" class="odt-ltr-term">JSON.</bdi> نحدد النوع [<bdi dir="ltr" class="odt-ltr-term">text</bdi>] كنوع النتيجة لعرضها تمامًا كما تم استلامها؛</span>
   </li>
   <li><span style="color: #000000">السطر 42: عرض استجابة النص من الخادم؛</span>
   </li>
   <li><span style="color: #000000">السطران 48-49: عرض أي رسالة خطأ؛</span>
   </li>
-  <li><span style="color: #000000">السطر 53: تستقبل طريقة [doPost] معلمة ثانية، وهي القيمة المراد إرسالها؛</span>
+  <li><span style="color: #000000">السطر 53: تستقبل طريقة [<bdi dir="ltr" class="odt-ltr-term">doPost</bdi>] معلمة ثانية، وهي القيمة المراد إرسالها؛</span>
   </li>
-  <li><span style="color: #000000">السطر 61: للإشارة إلى أن القيمة المرسلة ستكون في شكل سلسلة JSON؛</span>
+  <li><span style="color: #000000">السطر 61: للإشارة إلى أن القيمة المرسلة ستكون في شكل سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>؛</span>
   </li>
 </ul>
 <p><a id="refheading4851838046689"></a></p>
 <h2 id="187">18.7. <span style="color: #4f81bd">تنفيذ العميل</span></h2>
-<p><span style="color: #000000">تطبيق العميل هو تطبيق Spring Boot يتم تشغيله بواسطة فئة [Boot] القابلة للتنفيذ التالية:</span></p>
+<p><span style="color: #000000">تطبيق العميل هو تطبيق <bdi dir="ltr" class="odt-ltr-term">Spring Boot</bdi> يتم تشغيله بواسطة فئة [<bdi dir="ltr" class="odt-ltr-term">Boot</bdi>] القابلة للتنفيذ التالية:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000DF0000008481AE615B.png" width="156" height="92" style="display:inline-block; margin:4px;width:4.129cm;height:2.445cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DF0000008481AE615B.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -1641,58 +1643,58 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 10: تستخدم طريقة [SpringApplication.<i>run</i>] ملف التكوين [WebConfig]. سيتم نشر الصفحة [client.html] على خادم Tomcat الموجود في مسار فئات المشروع؛
+  <li>السطر 10: تستخدم طريقة [<bdi dir="ltr" class="odt-ltr-term">SpringApplication.</bdi><i><bdi dir="ltr" class="odt-ltr-term">run</bdi></i>] ملف التكوين [<bdi dir="ltr" class="odt-ltr-term">WebConfig</bdi>]. سيتم نشر الصفحة [<bdi dir="ltr" class="odt-ltr-term">client.html</bdi>] على خادم <bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi> الموجود في مسار فئات المشروع؛
   </li>
 </ul>
 <p><a id="refheading196719811596012"></a></p>
-<h2 id="188-url-getallcategories">18.8. <span style="color: #4f81bd">عنوان URL [/getAllCategories]</span></h2>
+<h2 id="188-url-getallcategories">18.8. <span style="color: #4f81bd">عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">getAllCategories</bdi>]</span></h2>
 <p><span style="color: #000000">نقوم بتشغيل:</span></p>
 <ul>
-  <li><span style="color: #000000">خادم الويب/JSON على المنفذ 8080؛</span>
+  <li><span style="color: #000000">خادم الويب/<bdi dir="ltr" class="odt-ltr-term">JSON</bdi> على المنفذ 8080؛</span>
   </li>
   <li><span style="color: #000000">العميل الخاص بهذا الخادم على المنفذ 8081؛</span>
   </li>
 </ul>
 
-<p><span style="color: #000000">ثم نطلب عنوان URL [http://localhost:8081/client.html] [1]:</span></p>
+<p><span style="color: #000000">ثم نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8081/client.html</bdi>] [1]:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F500000239E2064DDE.png" width="635" height="285" style="display:inline-block; margin:4px;width:16.789cm;height:7.528cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F500000239E2064DDE.png" /></td></tr></table>
 
 <ul>
-  <li><span style="color: #000000">في [2]، نقوم بإجراء طلب GET على عنوان URL [http://localhost:8080/getAllCategories]؛</span>
+  <li><span style="color: #000000">في [2]، نقوم بإجراء طلب <bdi dir="ltr" class="odt-ltr-term">GET</bdi> على عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/getAllCategories</bdi>]؛</span>
   </li>
 </ul>
 
-<p><span style="color: #000000">لا نتلقى أي استجابة من الخادم. وعندما ننظر إلى وحدة تحكم مطوري Chrome (Ctrl-Shift-I)، نرى خطأً:</span></p>
+<p><span style="color: #000000">لا نتلقى أي استجابة من الخادم. وعندما ننظر إلى وحدة تحكم مطوري <bdi dir="ltr" class="odt-ltr-term">Chrome</bdi> (<bdi dir="ltr" class="odt-ltr-term">Ctrl-Shift-I</bdi>)، نرى خطأً:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000042D00000440D640C30B.png" width="535" height="544" style="display:inline-block; margin:4px;width:14.143cm;height:14.393cm;" class="odt-zoomable" data-zoom-src="images/100000000000042D00000440D640C30B.png" /></td></tr></table>
 
 <ul>
   <li><span style="color: #000000">في [1]، نحن في علامة التبويب [الشبكة]؛</span>
   </li>
-  <li><span style="color: #000000">في [2]، نرى أن طلب HTTP الذي تم إرساله ليس [GET] بل [OPTIONS]. في حالة الطلب عبر النطاقات، يتحقق المتصفح من الخادم للتأكد من استيفاء شروط معينة عن طريق إرسال طلب HTTP [OPTIONS]. في هذه الحالة، الطلبات هي تلك المشار إليها بالعلامات [5-6]؛</span>
+  <li><span style="color: #000000">في [2]، نرى أن طلب <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> الذي تم إرساله ليس [<bdi dir="ltr" class="odt-ltr-term">GET</bdi>] بل [<bdi dir="ltr" class="odt-ltr-term">OPTIONS</bdi>]. في حالة الطلب عبر النطاقات، يتحقق المتصفح من الخادم للتأكد من استيفاء شروط معينة عن طريق إرسال طلب <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">OPTIONS</bdi>]. في هذه الحالة، الطلبات هي تلك المشار إليها بالعلامات [5-6]؛</span>
   </li>
-  <li><span style="color: #000000">في [5]، يسأل المتصفح عما إذا كان يمكن الوصول إلى عنوان URL الهدف باستخدام GET. يطلب رأس الطلب [Access-Control-Request-Method] استجابة برأس HTTP [Access-Control-Allow-Methods] يشير إلى قبول الطريقة المطلوبة؛</span>
+  <li><span style="color: #000000">في [5]، يسأل المتصفح عما إذا كان يمكن الوصول إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الهدف باستخدام <bdi dir="ltr" class="odt-ltr-term">GET.</bdi> يطلب رأس الطلب [<bdi dir="ltr" class="odt-ltr-term">Access-Control-Request-Method</bdi>] استجابة برأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">Access-Control-Allow-Methods</bdi>] يشير إلى قبول الطريقة المطلوبة؛</span>
   </li>
-  <li><span style="color: #000000">في [6]، يرسل المتصفح رأس HTTP [Origin: http://localhost:8081]. يطلب رأس الطلب هذا استجابة في رأس HTTP [Access-Control-Allow-Origin] تشير إلى قبول المنشأ المحدد؛</span>
+  <li><span style="color: #000000">في [6]، يرسل المتصفح رأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">Origin: http://localhost:8081</bdi>]. يطلب رأس الطلب هذا استجابة في رأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">Access-Control-Allow-Origin</bdi>] تشير إلى قبول المنشأ المحدد؛</span>
   </li>
-  <li><span style="color: #000000">في [7]، يسأل المتصفح عما إذا كان رأسا HTTP [Accept] و [Authorization] مقبولين. يتوقع رأس الطلب [Access-Control-Request-Headers] استجابة برأس HTTP [Access-Control-Allow-Headers] يشير إلى أن الرؤوس المطلوبة مقبولة؛</span>
+  <li><span style="color: #000000">في [7]، يسأل المتصفح عما إذا كان رأسا <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">Accept</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">Authorization</bdi>] مقبولين. يتوقع رأس الطلب [<bdi dir="ltr" class="odt-ltr-term">Access-Control-Request-Headers</bdi>] استجابة برأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">Access-Control-Allow-Headers</bdi>] يشير إلى أن الرؤوس المطلوبة مقبولة؛</span>
   </li>
   <li><span style="color: #000000">يحدث خطأ في [3]. يؤدي النقر على الرمز إلى ظهور الخطأ [4]؛</span>
   </li>
-  <li><span style="color: #000000">في [4]، تشير الرسالة إلى أن الخادم لم يرسل رأس HTTP [Access-Control-Allow-Origin]، الذي يحدد ما إذا كان مصدر الطلب مقبولاً أم لا؛</span>
+  <li><span style="color: #000000">في [4]، تشير الرسالة إلى أن الخادم لم يرسل رأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">Access-Control-Allow-Origin</bdi>]، الذي يحدد ما إذا كان مصدر الطلب مقبولاً أم لا؛</span>
   </li>
-  <li><span style="color: #000000">في [8]، يمكننا أن نرى أن الخادم لم يرسل هذا الرأس بالفعل. ونتيجة لذلك، رفض المتصفح إجراء طلب HTTP GET الذي تم طلبه في البداية؛</span>
+  <li><span style="color: #000000">في [8]، يمكننا أن نرى أن الخادم لم يرسل هذا الرأس بالفعل. ونتيجة لذلك، رفض المتصفح إجراء طلب <bdi dir="ltr" class="odt-ltr-term">HTTP GET</bdi> الذي تم طلبه في البداية؛</span>
   </li>
 </ul>
 
-<p><span style="color: #000000">نحتاج إلى تعديل خادم الويب / JSON.</span></p>
+<p><span style="color: #000000">نحتاج إلى تعديل خادم الويب / <bdi dir="ltr" class="odt-ltr-term">JSON.</bdi></span></p>
 <p><a id="refheading4853838046689"></a></p>
-<h2 id="189-json">18.9. <span style="color: #4f81bd">خدمة الويب الجديدة / json</span></h2>
-<p>نقوم بإنشاء مشروع Maven جديد [intro-spring-cors-server-jpa]:</p>
+<h2 id="189-json">18.9. <span style="color: #4f81bd">خدمة الويب الجديدة / <bdi dir="ltr" class="odt-ltr-term">json</bdi></span></h2>
+<p>نقوم بإنشاء مشروع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> جديد [<bdi dir="ltr" class="odt-ltr-term">intro-spring-cors-server-jpa</bdi>]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E7000000C4577E8D45.png" width="163" height="138" style="display:inline-block; margin:4px;width:4.3cm;height:3.648cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E7000000C4577E8D45.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000179000000B7366183FA.png" width="264" height="128" style="display:inline-block; margin:4px;width:6.98cm;height:3.388cm;" class="odt-zoomable" data-zoom-src="images/1000000000000179000000B7366183FA.png" /></td></tr></table>
 
 <p><a id="refheading1184691799226695"></a></p>
-<h3 id="1891-maven">18.9.1. <span style="color: #4f81bd">تكوين Maven</span></h3>
-<p>تكوين Maven للخدمة الويب الجديدة هو كما يلي:</p>
+<h3 id="1891-maven">18.9.1. <span style="color: #4f81bd">تكوين <bdi dir="ltr" class="odt-ltr-term">Maven</bdi></span></h3>
+<p>تكوين <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> للخدمة الويب الجديدة هو كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span> <span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#7f007f">xsi:schemaLocation</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#008080">&gt;</span></span></span>
@@ -1742,12 +1744,12 @@
 </code></pre></div>
 
 <ul>
-  <li>الأسطر 23–27: نسترد جميع البيانات من العمل المنجز حتى الآن عن طريق الوصول إلى أرشيف /json الخاص بخادم الويب الآمن؛
+  <li>الأسطر 23–27: نسترد جميع البيانات من العمل المنجز حتى الآن عن طريق الوصول إلى أرشيف /<bdi dir="ltr" class="odt-ltr-term">json</bdi> الخاص بخادم الويب الآمن؛
   </li>
 </ul>
 <p><a id="refheading1184711799226695"></a></p>
-<h3 id="1892-spring">18.9.2. <span style="color: #4f81bd">تكوين Spring</span></h3>
-<p>فئة التكوين [AppConfig] هي كما يلي:</p>
+<h3 id="1892-spring">18.9.2. <span style="color: #4f81bd">تكوين <bdi dir="ltr" class="odt-ltr-term">Spring</bdi></span></h3>
+<p>فئة التكوين [<bdi dir="ltr" class="odt-ltr-term">AppConfig</bdi>] هي كما يلي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000DE000000805BA1CB1B.png" width="155" height="90" style="display:inline-block; margin:4px;width:4.11cm;height:2.371cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DE000000805BA1CB1B.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -1774,16 +1776,16 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 10: الفئة هي فئة تكوين Spring؛
+  <li>السطر 10: الفئة هي فئة تكوين <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>؛
   </li>
-  <li>السطر 11: يمكن العثور على مكونات Spring الأخرى في حزمة [<span style="color: #2a00ff">spring.cors.server.service</span>]؛
+  <li>السطر 11: يمكن العثور على مكونات <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> الأخرى في حزمة [<span style="color: #2a00ff"><bdi dir="ltr" class="odt-ltr-term">spring.cors.server.service</bdi></span>]؛
   </li>
-  <li>الأسطر 16–19: نقوم بإنشاء مكون Spring باسم [<span style="color: #000000">isCorsEnabled</span>] يشير إلى ما إذا كان يتم قبول العملاء خارج نطاق الخادم أم لا؛
+  <li>الأسطر 16–19: نقوم بإنشاء مكون <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> باسم [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">isCorsEnabled</bdi></span>] يشير إلى ما إذا كان يتم قبول العملاء خارج نطاق الخادم أم لا؛
   </li>
 </ul>
 <p><a id="refheading1184731799226695"></a></p>
-<h3 id="1893-abstractcorscontroller">18.9.3. <span style="color: #4f81bd">فئة [AbstractCorsController]</span></h3>
-<p>فئة [AbstractCorsController]، التي ستكون الفئة الأم لجميع وحدات التحكم في هذا التطبيق:</p>
+<h3 id="1893-abstractcorscontroller">18.9.3. <span style="color: #4f81bd">فئة [<bdi dir="ltr" class="odt-ltr-term">AbstractCorsController</bdi>]</span></h3>
+<p>فئة [<bdi dir="ltr" class="odt-ltr-term">AbstractCorsController</bdi>]، التي ستكون الفئة الأم لجميع وحدات التحكم في هذا التطبيق:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012D000000CF43922F2F.png" width="211" height="145" style="display:inline-block; margin:4px;width:5.57cm;height:3.831cm;" class="odt-zoomable" data-zoom-src="images/100000000000012D000000CF43922F2F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p>فيما يلي شفرة البرمجة الخاصة بها:</p>
@@ -1816,13 +1818,13 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 7: فئة [<span style="color: #000000">CorsController</span>] هي فئة مجردة لأنها مصممة ليتم توسيعها، وليس لإنشاء مثيل لها؛
+  <li>السطر 7: فئة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">CorsController</bdi></span>] هي فئة مجردة لأنها مصممة ليتم توسيعها، وليس لإنشاء مثيل لها؛
   </li>
-  <li>الأسطر 13–24: تضيف طريقة [setHeaders] رؤوس HTTP المطلوبة لطلبات عبر النطاقات إلى [<span style="color: #000000">HttpServletResponse </span><span style="color: #6a3e3e">response</span>] (السطر 13) المرسلة إلى العميل؛
+  <li>الأسطر 13–24: تضيف طريقة [<bdi dir="ltr" class="odt-ltr-term">setHeaders</bdi>] رؤوس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> المطلوبة لطلبات عبر النطاقات إلى [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">HttpServletResponse</bdi> </span><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">response</bdi></span>] (السطر 13) المرسلة إلى العميل؛
   </li>
-  <li>السطر 33: تقبل طريقة [<span style="color: #2a00ff">setHeaders</span>] كمعلمات:
+  <li>السطر 33: تقبل طريقة [<span style="color: #2a00ff"><bdi dir="ltr" class="odt-ltr-term">setHeaders</bdi></span>] كمعلمات:
     <ul>
-      <li>السلسلة [origin] الموجودة في رأس HTTP [Origin] لطلبات عبر النطاقات:
+      <li>السلسلة [<bdi dir="ltr" class="odt-ltr-term">origin</bdi>] الموجودة في رأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">Origin</bdi>] لطلبات عبر النطاقات:
       </li>
     </ul>
   </li>
@@ -1830,21 +1832,21 @@
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Origin:http://localhost:8081
 </code></pre></div>
-<p>هنا، سيكون للمعلمة [origin] في السطر 13 القيمة [http://localhost:8081]. إذا لم يحتوي الطلب على رأس HTTP [Origin]، فسنضمن أن [origin==null]؛</p>
+<p>هنا، سيكون للمعلمة [<bdi dir="ltr" class="odt-ltr-term">origin</bdi>] في السطر 13 القيمة [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8081</bdi>]. إذا لم يحتوي الطلب على رأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">Origin</bdi>]، فسنضمن أن [<bdi dir="ltr" class="odt-ltr-term">origin</bdi>==<bdi dir="ltr" class="odt-ltr-term">null</bdi>]؛</p>
 <ul>
   <li>(تابع)
     <ul>
-      <li> كائن [HttpServletResponse response] الذي سيتم إرجاعه إلى العميل الذي أرسل الطلب؛
+      <li> كائن [<bdi dir="ltr" class="odt-ltr-term">HttpServletResponse response</bdi>] الذي سيتم إرجاعه إلى العميل الذي أرسل الطلب؛
       </li>
     </ul>
   </li>
 </ul>
 
-<p>يتم إدخال هذين المعلمتين بواسطة Spring؛</p>
+<p>يتم إدخال هذين المعلمتين بواسطة <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>؛</p>
 <ul>
-  <li>الأسطر 15–175: إذا تم تكوين التطبيق لقبول الطلبات عبر النطاقات، وإذا أرسل المرسل رأس HTTP [Origin]، وإذا كان هذا الأصل يبدأ بـ [http://localhost]، فسيتم قبول الطلب عبر النطاقات؛ وإلا، فسيتم رفضه؛
+  <li>الأسطر 15–175: إذا تم تكوين التطبيق لقبول الطلبات عبر النطاقات، وإذا أرسل المرسل رأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">Origin</bdi>]، وإذا كان هذا الأصل يبدأ بـ [<bdi dir="ltr" class="odt-ltr-term">http://localhost</bdi>]، فسيتم قبول الطلب عبر النطاقات؛ وإلا، فسيتم رفضه؛
   </li>
-  <li>السطر 19: إذا كان العميل في المجال [http://localhost:port]، فإننا نرسل رأس HTTP:
+  <li>السطر 19: إذا كان العميل في المجال [<bdi dir="ltr" class="odt-ltr-term">http://localhost:port</bdi>]، فإننا نرسل رأس <bdi dir="ltr" class="odt-ltr-term">HTTP:</bdi>
   </li>
 </ul>
 
@@ -1854,18 +1856,18 @@
 
 <p>مما يعني أن الخادم يقبل أصل العميل؛</p>
 <ul>
-  <li>السطر 21: لقد حددنا رأسين HTTP محددين في طلب HTTP [OPTIONS]:
+  <li>السطر 21: لقد حددنا رأسين <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> محددين في طلب <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">OPTIONS</bdi>]:
   </li>
 </ul>
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Access-Control-Request-Method: GET
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>Access-Control-Request-Headers: accept, authorization
 </code></pre></div>
-<p>استجابةً لرأس HTTP [Access-Control-Request-X]، يرد الخادم برأس HTTP [Access-Control-Allow-X] يحدد ما هو مسموح به. الأسطر 20–23 تكرر ببساطة طلب العميل للإشارة إلى أنه تم قبوله؛</p>
+<p>استجابةً لرأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">Access-Control-Request-X</bdi>]، يرد الخادم برأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">Access-Control-Allow-X</bdi>] يحدد ما هو مسموح به. الأسطر 20–23 تكرر ببساطة طلب العميل للإشارة إلى أنه تم قبوله؛</p>
 <p><a id="refheading1184751799226695"></a></p>
-<h3 id="1894-mycontrollerwithhttpoptions">18.9.4. <span style="color: #4f81bd">وحدة التحكم [MyControllerWithHttpOptions]</span></h3>
-<p>لتجنب الحاجة إلى تعديل خادم الويب/JSON غير الآمن [intro-server-webjson-01] الذي تمت مناقشته في <a href="#refheading17986265679331"><u><span style="color: #0563c1">القسم 13.5.</span></u></a>3، سنقوم بإنشاء وحدة تحكم جديدة. في حين أن الخادم غير الآمن يتعامل مع عنوان URL [/url]، فإن وحدة التحكم الجديدة ستتعامل مع عنوان URL [/cors-url]، وسيقبل هذا العنوان طلبات عبر الأصول.</p>
-<p>فئة [MyControllerWithHttpOptions] هي وحدة التحكم التي ستتعامل مع طلبات HTTP من النوع [OPTIONS]:</p>
+<h3 id="1894-mycontrollerwithhttpoptions">18.9.4. <span style="color: #4f81bd">وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">MyControllerWithHttpOptions</bdi>]</span></h3>
+<p>لتجنب الحاجة إلى تعديل خادم الويب/<bdi dir="ltr" class="odt-ltr-term">JSON</bdi> غير الآمن [<bdi dir="ltr" class="odt-ltr-term">intro-server-webjson-01</bdi>] الذي تمت مناقشته في <a href="#refheading17986265679331"><u><span style="color: #0563c1">القسم 13.5.</span></u></a>3، سنقوم بإنشاء وحدة تحكم جديدة. في حين أن الخادم غير الآمن يتعامل مع عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">url</bdi>]، فإن وحدة التحكم الجديدة ستتعامل مع عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">cors-url</bdi>]، وسيقبل هذا العنوان طلبات عبر الأصول.</p>
+<p>فئة [<bdi dir="ltr" class="odt-ltr-term">MyControllerWithHttpOptions</bdi>] هي وحدة التحكم التي ستتعامل مع طلبات <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> من النوع [<bdi dir="ltr" class="odt-ltr-term">OPTIONS</bdi>]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012D000000CF59FC9B0F.png" width="211" height="145" style="display:inline-block; margin:4px;width:5.57cm;height:3.831cm;" class="odt-zoomable" data-zoom-src="images/100000000000012D000000CF59FC9B0F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -1895,30 +1897,30 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 14: الفئة هي وحدة تحكم Spring MVC؛
+  <li>السطر 14: الفئة هي وحدة تحكم <bdi dir="ltr" class="odt-ltr-term">Spring MVC</bdi>؛
   </li>
-  <li>السطر 15: الفئة [<span style="color: #000000">MyControllerWithHttpOptions</span>] تمتد من الفئة [<span style="color: #000000">AbstractCorsController</span>] التي وصفناها للتو؛
+  <li>السطر 15: الفئة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">MyControllerWithHttpOptions</bdi></span>] تمتد من الفئة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">AbstractCorsController</bdi></span>] التي وصفناها للتو؛
   </li>
-  <li>السطران 17-18: تعالج الطريقة [<span style="color: #000000">getAllCategories</span>] (السطر 18) عنوان URL [<span style="color: #2a00ff">&quot;/cors-getAllCategories&quot;</span>] عند طلبه باستخدام طريقة HTTP [OPTIONS]؛
+  <li>السطران 17-18: تعالج الطريقة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">getAllCategories</bdi></span>] (السطر 18) عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<span style="color: #2a00ff">&quot;/<bdi dir="ltr" class="odt-ltr-term">cors-getAllCategories</bdi>&quot;</span>] عند طلبه باستخدام طريقة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">OPTIONS</bdi>]؛
   </li>
-  <li>السطر 18: تقبل طريقة [<span style="color: #000000">getAllCategories</span>] معلمتين:
+  <li>السطر 18: تقبل طريقة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">getAllCategories</bdi></span>] معلمتين:
     <ul>
-      <li>[<span style="color: #646464">@RequestHeader</span><span style="color: #000000">(value = </span><span style="color: #2a00ff">&quot;Origin&quot;</span><span style="color: #000000">, required = </span><b><span style="color: #7f0055">false</span></b><span style="color: #000000">) String </span><span style="color: #6a3e3e">origin</span>] لاسترداد قيمة رأس HTTP [<b>Origin</b>:http://localhost:8081] عند وجودها. في هذا المثال، ستتلقى المعلمة [String origin] القيمة [http://localhost:8081]. هذا الرأس غير مطلوب [<span style="color: #000000">required = </span><b><span style="color: #7f0055">false</span></b>]. وعندما لا يكون موجودًا، ستكون قيمة المعلمة [String origin] هي <i>null</i>؛
+      <li>[<span style="color: #646464">@<bdi dir="ltr" class="odt-ltr-term">RequestHeader</bdi></span><span style="color: #000000">(<bdi dir="ltr" class="odt-ltr-term">value</bdi> = </span><span style="color: #2a00ff">&quot;<bdi dir="ltr" class="odt-ltr-term">Origin</bdi>&quot;</span><span style="color: #000000">, <bdi dir="ltr" class="odt-ltr-term">required</bdi> = </span><b><span style="color: #7f0055"><bdi dir="ltr" class="odt-ltr-term">false</bdi></span></b><span style="color: #000000">) <bdi dir="ltr" class="odt-ltr-term">String</bdi> </span><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">origin</bdi></span>] لاسترداد قيمة رأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<b><bdi dir="ltr" class="odt-ltr-term">Origin</bdi></b>:<bdi dir="ltr" class="odt-ltr-term">http://localhost:8081</bdi>] عند وجودها. في هذا المثال، ستتلقى المعلمة [<bdi dir="ltr" class="odt-ltr-term">String origin</bdi>] القيمة [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8081</bdi>]. هذا الرأس غير مطلوب [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">required</bdi> = </span><b><span style="color: #7f0055"><bdi dir="ltr" class="odt-ltr-term">false</bdi></span></b>]. وعندما لا يكون موجودًا، ستكون قيمة المعلمة [<bdi dir="ltr" class="odt-ltr-term">String origin</bdi>] هي <i><bdi dir="ltr" class="odt-ltr-term">null</bdi></i>؛
       </li>
-      <li>[<span style="color: #000000">HttpServletResponse </span><span style="color: #6a3e3e">httpServletResponse</span>]: الاستجابة التي سيتم إرسالها إلى العميل؛
+      <li>[<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">HttpServletResponse</bdi> </span><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">httpServletResponse</bdi></span>]: الاستجابة التي سيتم إرسالها إلى العميل؛
       </li>
     </ul>
   </li>
-  <li>السطر 21: نرسل رؤوس HTTP التي تتيح الطلبات عبر الأصول. يتم تعريف طريقة [<span style="color: #000000">setHeaders</span>] في الفئة الأصلية [<span style="color: #000000">AbstractCorsController</span>]؛
+  <li>السطر 21: نرسل رؤوس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> التي تتيح الطلبات عبر الأصول. يتم تعريف طريقة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">setHeaders</bdi></span>] في الفئة الأصلية [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">AbstractCorsController</bdi></span>]؛
   </li>
 </ul>
 
-<p>يتم ذلك لجميع عناوين URL التي يعرضها خادم الويب/JSON غير الآمن [intro-server-webjson-01] الذي تمت مناقشته في <a href="#refheading17986265679331"><u><span style="color: #0563c1">القسم 13.5.3</span></u></a>. عندما يعرض هذا الخدمة عنوان URL [/url]، تعرض الفئة [<span style="color: #000000">MyControllerWithHttpOptions</span>] أعلاه عنوان URL [/cors-url].</p>
+<p>يتم ذلك لجميع عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> التي يعرضها خادم الويب/<bdi dir="ltr" class="odt-ltr-term">JSON</bdi> غير الآمن [<bdi dir="ltr" class="odt-ltr-term">intro-server-webjson-01</bdi>] الذي تمت مناقشته في <a href="#refheading17986265679331"><u><span style="color: #0563c1">القسم 13.5.3</span></u></a>. عندما يعرض هذا الخدمة عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">url</bdi>]، تعرض الفئة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">MyControllerWithHttpOptions</bdi></span>] أعلاه عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">cors-url</bdi>].</p>
 <p><a id="refheading1184771799226695"></a></p>
-<h3 id="1895-mycontrollerwithcors">18.9.5. <span style="color: #4f81bd">وحدة التحكم [MyControllerWithCors]</span></h3>
+<h3 id="1895-mycontrollerwithcors">18.9.5. <span style="color: #4f81bd">وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">MyControllerWithCors</bdi>]</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012D000000CF2C6ABD45.png" width="211" height="145" style="display:inline-block; margin:4px;width:5.57cm;height:3.831cm;" class="odt-zoomable" data-zoom-src="images/100000000000012D000000CF2C6ABD45.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>فئة [MyControllerWithCors] هي وحدة التحكم التي ستتعامل مع طلبات HTTP [GET] و [POST]:</p>
+<p>فئة [<bdi dir="ltr" class="odt-ltr-term">MyControllerWithCors</bdi>] هي وحدة التحكم التي ستتعامل مع طلبات <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">GET</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">POST</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="font-weight:bold;color:#000000"> spring.cors.server.service;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1955,40 +1957,40 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 17: فئة [<span style="color: #000000">MyControllerWithCors</span>] هي وحدة تحكم Spring MVC
+  <li>السطر 17: فئة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">MyControllerWithCors</bdi></span>] هي وحدة تحكم <bdi dir="ltr" class="odt-ltr-term">Spring MVC</bdi>
   </li>
-  <li>السطر 18: وهي تمتد من فئة [<span style="color: #000000">AbstractCorsController</span>]؛
+  <li>السطر 18: وهي تمتد من فئة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">AbstractCorsController</bdi></span>]؛
   </li>
-  <li>السطران 21-22: حقن وحدة التحكم [MyController] من خادم الويب غير الآمن / JSON [intro-server-webjson-01] الذي تمت مناقشته في <a href="#refheading17986265679331"><u><span style="color: #0563c1">القسم 13.5.3</span></u></a>؛
+  <li>السطران 21-22: حقن وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">MyController</bdi>] من خادم الويب غير الآمن / <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> [<bdi dir="ltr" class="odt-ltr-term">intro-server-webjson-01</bdi>] الذي تمت مناقشته في <a href="#refheading17986265679331"><u><span style="color: #0563c1">القسم 13.5.3</span></u></a>؛
   </li>
-  <li>الأسطر 25-27: تعالج طريقة [<span style="color: #000000">getAllCategories</span>] عنوان URL [<span style="color: #2a00ff">/cors-getAllCategories</span>] (السطر 28) عند طلبها باستخدام طريقة HTTP [GET]؛
+  <li>الأسطر 25-27: تعالج طريقة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">getAllCategories</bdi></span>] عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<span style="color: #2a00ff">/<bdi dir="ltr" class="odt-ltr-term">cors-getAllCategories</bdi></span>] (السطر 28) عند طلبها باستخدام طريقة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">GET</bdi>]؛
   </li>
-  <li>السطر 26: سيتم إرسال نتيجة طريقة [<span style="color: #000000">getAllCategories</span>] إلى العميل. هذه النتيجة عبارة عن دفق JSON (السمة [produces] في السطر 27 ونوع [String] للنتيجة في السطر 25)؛
+  <li>السطر 26: سيتم إرسال نتيجة طريقة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">getAllCategories</bdi></span>] إلى العميل. هذه النتيجة عبارة عن دفق <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> (السمة [<bdi dir="ltr" class="odt-ltr-term">produces</bdi>] في السطر 27 ونوع [<bdi dir="ltr" class="odt-ltr-term">String</bdi>] للنتيجة في السطر 25)؛
   </li>
-  <li>السطر 27: تتلقى الطريقة نفس المعلمات التي تتلقاها طريقة [<span style="color: #000000">getAllCategories</span>] الخاصة بوحدة التحكم [<span style="color: #000000">MyControllerWithHttpOptions</span>] التي درسناها للتو؛
+  <li>السطر 27: تتلقى الطريقة نفس المعلمات التي تتلقاها طريقة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">getAllCategories</bdi></span>] الخاصة بوحدة التحكم [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">MyControllerWithHttpOptions</bdi></span>] التي درسناها للتو؛
   </li>
-  <li>السطر 30: يتم استدعاء طريقة [<span style="color: #0000c0">myController</span><span style="color: #000000">.getAllCategories()</span>] لإرسال الاستجابة؛
+  <li>السطر 30: يتم استدعاء طريقة [<span style="color: #0000c0"><bdi dir="ltr" class="odt-ltr-term">myController</bdi></span><span style="color: #000000">.<bdi dir="ltr" class="odt-ltr-term">getAllCategories</bdi>()</span>] لإرسال الاستجابة؛
   </li>
 </ul>
 
-<p>في النهاية، فإن طريقة [<span style="color: #0000c0">myController</span><span style="color: #000000">.getAllCategories()</span>] الخاصة بالخادم غير الآمن هي التي ترسل الاستجابة. لقد قمنا ببساطة بإثراء استجابتها بالرؤوس المطلوبة لطلبات عبر النطاقات.</p>
-<p>يتم ذلك لجميع عناوين URL التي يعرضها الخادم غير الآمن web/JSON [intro-server-webjson-01] الذي تمت مناقشته في <a href="#refheading17986265679331"><u><span style="color: #0563c1">القسم 13.5.3</span></u></a>. عندما يعرض هذا الخدمة عنوان URL [/url]، تعرض فئة [<span style="color: #000000">MyControllerWithCors</span>] أعلاه عنوان URL [/cors-url].</p>
+<p>في النهاية، فإن طريقة [<span style="color: #0000c0"><bdi dir="ltr" class="odt-ltr-term">myController</bdi></span><span style="color: #000000">.<bdi dir="ltr" class="odt-ltr-term">getAllCategories</bdi>()</span>] الخاصة بالخادم غير الآمن هي التي ترسل الاستجابة. لقد قمنا ببساطة بإثراء استجابتها بالرؤوس المطلوبة لطلبات عبر النطاقات.</p>
+<p>يتم ذلك لجميع عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> التي يعرضها الخادم غير الآمن <bdi dir="ltr" class="odt-ltr-term">web/JSON</bdi> [<bdi dir="ltr" class="odt-ltr-term">intro-server-webjson-01</bdi>] الذي تمت مناقشته في <a href="#refheading17986265679331"><u><span style="color: #0563c1">القسم 13.5.3</span></u></a>. عندما يعرض هذا الخدمة عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">url</bdi>]، تعرض فئة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">MyControllerWithCors</bdi></span>] أعلاه عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">cors-url</bdi>].</p>
 <p>سيتم تنفيذ الطلب عبر النطاقات على النحو التالي:</p>
 <ul>
-  <li>يطلب كود JavaScript الخاص بالعميل عنوان URL [/cors-url] باستخدام طلب HTTP GET أو POST؛
+  <li>يطلب كود <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> الخاص بالعميل عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">cors-url</bdi>] باستخدام طلب <bdi dir="ltr" class="odt-ltr-term">HTTP GET</bdi> أو <bdi dir="ltr" class="odt-ltr-term">POST</bdi>؛
   </li>
-  <li>يقوم المتصفح الذي ينفذ هذا الكود باعتراض الطلب ويطلب أولاً عنوان URL [/cors-url] باستخدام طلب HTTP OPTIONS للتحقق من أن خدمة الويب المستهدفة تقبل الطلبات عبر المنشأ؛
+  <li>يقوم المتصفح الذي ينفذ هذا الكود باعتراض الطلب ويطلب أولاً عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">cors-url</bdi>] باستخدام طلب <bdi dir="ltr" class="odt-ltr-term">HTTP OPTIONS</bdi> للتحقق من أن خدمة الويب المستهدفة تقبل الطلبات عبر المنشأ؛
   </li>
-  <li>تقوم إحدى الطرق في وحدة التحكم [<span style="color: #000000">MyControllerWithHttpOptions</span>] بإرسال رؤوس العناوين عبر المجالات التي يتوقعها المتصفح؛
+  <li>تقوم إحدى الطرق في وحدة التحكم [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">MyControllerWithHttpOptions</bdi></span>] بإرسال رؤوس العناوين عبر المجالات التي يتوقعها المتصفح؛
   </li>
-  <li>ثم يطلب المتصفح عنوان URL الأولي [/cors-url] باستخدام طلب HTTP GET أو POST؛
+  <li>ثم يطلب المتصفح عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الأولي [/<bdi dir="ltr" class="odt-ltr-term">cors-url</bdi>] باستخدام طلب <bdi dir="ltr" class="odt-ltr-term">HTTP GET</bdi> أو <bdi dir="ltr" class="odt-ltr-term">POST</bdi>؛
   </li>
-  <li>ثم تستجيب إحدى الطرق في وحدة التحكم [<span style="color: #000000">MyControllerWithCors</span>]؛
+  <li>ثم تستجيب إحدى الطرق في وحدة التحكم [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">MyControllerWithCors</bdi></span>]؛
   </li>
 </ul>
 <p><a id="refheading1184791799226695"></a></p>
 <h3 id="1896">18.9.6. <span style="color: #4f81bd">الاختبارات</span></h3>
-<p>فئة التمهيد لمشروع [intro-spring-cors-server-jpa] هي كما يلي:</p>
+<p>فئة التمهيد لمشروع [<bdi dir="ltr" class="odt-ltr-term">intro-spring-cors-server-jpa</bdi>] هي كما يلي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F10000007F52D83E51.png" width="169" height="89" style="display:inline-block; margin:4px;width:4.461cm;height:2.351cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F10000007F52D83E51.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -2007,17 +2009,17 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 10: يتم تنفيذ الطريقة الثابتة [<span style="color: #000000">SpringApplication.</span><i><span style="color: #000000">run</span></i>] باستخدام تكوين Spring [AppConfig]. ونتيجة لهذا التكوين، يتم تشغيل خادم Tomcat المضمن في أرشيفات المشروع، ويتم نشر تطبيق الويب [intro-spring-cors-server-jpa] عليه. كما يتم نشر تطبيق الويب الخاص بالخادم غير الآمن [intro-server-webjson-01]، والذي يعد جزءًا من أرشيفات المشروع، عليه. ونظرًا لأن المشروع [<span style="color: #000000">intro-spring-security-server-01</span>] يعد أيضًا جزءًا من الأرشيفات، يتم في النهاية عرض نوعين من عناوين URL:
+  <li>السطر 10: يتم تنفيذ الطريقة الثابتة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">SpringApplication.</bdi></span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">run</bdi></span></i>] باستخدام تكوين <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> [<bdi dir="ltr" class="odt-ltr-term">AppConfig</bdi>]. ونتيجة لهذا التكوين، يتم تشغيل خادم <bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi> المضمن في أرشيفات المشروع، ويتم نشر تطبيق الويب [<bdi dir="ltr" class="odt-ltr-term">intro-spring-cors-server-jpa</bdi>] عليه. كما يتم نشر تطبيق الويب الخاص بالخادم غير الآمن [<bdi dir="ltr" class="odt-ltr-term">intro-server-webjson-01</bdi>]، والذي يعد جزءًا من أرشيفات المشروع، عليه. ونظرًا لأن المشروع [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">intro-spring-security-server-01</bdi></span>] يعد أيضًا جزءًا من الأرشيفات، يتم في النهاية عرض نوعين من عناوين <bdi dir="ltr" class="odt-ltr-term">URL:</bdi>
     <ul>
-      <li>عناوين خدمة الويب الآمنة: /url؛
+      <li>عناوين خدمة الويب الآمنة: /<bdi dir="ltr" class="odt-ltr-term">url</bdi>؛
       </li>
-      <li>عناوين خدمة الويب التي تقبل الطلبات عبر النطاقات: /cors-url؛
+      <li>عناوين خدمة الويب التي تقبل الطلبات عبر النطاقات: /<bdi dir="ltr" class="odt-ltr-term">cors-url</bdi>؛
       </li>
     </ul>
   </li>
 </ul>
 
-<p>نحن الآن جاهزون لإجراء المزيد من الاختبارات. نقوم بتشغيل الإصدار الجديد من خدمة الويب ونجد أن المشكلة لا تزال قائمة. لم يتغير شيء. إذا أضفنا عبارة إخراج وحدة التحكم في السطر 7 أدناه، فلن يتم عرضها أبدًا، مما يشير إلى أن طريقة [<span style="color: #000000">getAllCategories</span>] لفئة [<span style="color: #000000">MyControllerWithHttpOptions</span>] لم يتم استدعاؤها أبدًا؛</p>
+<p>نحن الآن جاهزون لإجراء المزيد من الاختبارات. نقوم بتشغيل الإصدار الجديد من خدمة الويب ونجد أن المشكلة لا تزال قائمة. لم يتغير شيء. إذا أضفنا عبارة إخراج وحدة التحكم في السطر 7 أدناه، فلن يتم عرضها أبدًا، مما يشير إلى أن طريقة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">getAllCategories</bdi></span>] لفئة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">MyControllerWithHttpOptions</bdi></span>] لم يتم استدعاؤها أبدًا؛</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content">@Controller</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000"> MyControllerWithHttpOptions </span><span style="font-weight:bold;color:#7f0055">extends</span><span style="color:#000000"> AbstractCorsController {</span></span></span>
@@ -2032,7 +2034,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 </code></pre></div>
 
-<p>بعد إجراء بعض الأبحاث، اكتشفنا أن Spring MVC تتعامل بشكل افتراضي مع طلبات HTTP [OPTIONS] بنفسها. لذلك، فإن Spring هي التي تستجيب دائمًا، وليس أبدًا طريقة [<span style="color: #000000">getAllCategories</span>] في السطر 5 أعلاه. يمكن تغيير هذا السلوك الافتراضي لـ Spring MVC. نقوم بتعديل فئة [AppConfig] الحالية:</p>
+<p>بعد إجراء بعض الأبحاث، اكتشفنا أن <bdi dir="ltr" class="odt-ltr-term">Spring MVC</bdi> تتعامل بشكل افتراضي مع طلبات <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">OPTIONS</bdi>] بنفسها. لذلك، فإن <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> هي التي تستجيب دائمًا، وليس أبدًا طريقة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">getAllCategories</bdi></span>] في السطر 5 أعلاه. يمكن تغيير هذا السلوك الافتراضي لـ <bdi dir="ltr" class="odt-ltr-term">Spring MVC.</bdi> نقوم بتعديل فئة [<bdi dir="ltr" class="odt-ltr-term">AppConfig</bdi>] الحالية:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EF000000920FA8B00D.png" width="167" height="102" style="display:inline-block; margin:4px;width:4.431cm;height:2.708cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EF000000920FA8B00D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -2072,11 +2074,11 @@
 </code></pre></div>
 
 <ul>
-  <li>السطران 25-26: حقن حبة [dispatcherServlet]، التي تتولى معالجة طلبات العميل. تم تعريف هذه الحبة في تكوين خادم الويب/JSON غير الآمن [intro-server-webjson-01] الذي تمت مناقشته في <a href="#refheading17986265679331"><u><span style="color: #0563c1">القسم 13.5.3</span></u></a>؛
+  <li>السطران 25-26: حقن حبة [<bdi dir="ltr" class="odt-ltr-term">dispatcherServlet</bdi>]، التي تتولى معالجة طلبات العميل. تم تعريف هذه الحبة في تكوين خادم الويب/<bdi dir="ltr" class="odt-ltr-term">JSON</bdi> غير الآمن [<bdi dir="ltr" class="odt-ltr-term">intro-server-webjson-01</bdi>] الذي تمت مناقشته في <a href="#refheading17986265679331"><u><span style="color: #0563c1">القسم 13.5.3</span></u></a>؛
   </li>
-  <li>السطران 28-29: سيتم تنفيذ طريقة [init] (السطر 29) بمجرد إنشاء مثيل لفئة [<span style="color: #000000">AppConfig</span>] وتنفيذ عمليات حقن Spring. لذلك، عند تنفيذها، يكون الحقل الموجود في السطر 26 قد تم تهيئته بالفعل؛
+  <li>السطران 28-29: سيتم تنفيذ طريقة [<bdi dir="ltr" class="odt-ltr-term">init</bdi>] (السطر 29) بمجرد إنشاء مثيل لفئة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">AppConfig</bdi></span>] وتنفيذ عمليات حقن <bdi dir="ltr" class="odt-ltr-term">Spring.</bdi> لذلك، عند تنفيذها، يكون الحقل الموجود في السطر 26 قد تم تهيئته بالفعل؛
   </li>
-  <li>السطر 31: نقوم بتكوين حبة [dispatcherServlet] بحيث تسمح لتطبيق الويب بمعالجة طلبات HTTP [OPTIONS] بنفسه؛
+  <li>السطر 31: نقوم بتكوين حبة [<bdi dir="ltr" class="odt-ltr-term">dispatcherServlet</bdi>] بحيث تسمح لتطبيق الويب بمعالجة طلبات <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">OPTIONS</bdi>] بنفسه؛
   </li>
 </ul>
 
@@ -2084,11 +2086,11 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000051D0000039B3DDD374B.png" width="655" height="462" style="display:inline-block; margin:4px;width:17.318cm;height:12.211cm;" class="odt-zoomable" data-zoom-src="images/100000000000051D0000039B3DDD374B.png" /></td></tr></table>
 
 <ul>
-  <li>في [1]، نرى أن هناك طلبين HTTP إلى عنوان URL [http://localhost:8080/cors-getAllCategories]؛
+  <li>في [1]، نرى أن هناك طلبين <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/cors-getAllCategories</bdi>]؛
   </li>
-  <li>في [2]، طلب [OPTIONS]؛
+  <li>في [2]، طلب [<bdi dir="ltr" class="odt-ltr-term">OPTIONS</bdi>]؛
   </li>
-  <li>في [3]، الرؤوس الثلاثة لـ HTTP التي قمنا بتكوينها للتو في استجابة الخادم؛
+  <li>في [3]، الرؤوس الثلاثة لـ <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> التي قمنا بتكوينها للتو في استجابة الخادم؛
   </li>
 </ul>
 
@@ -2098,11 +2100,11 @@
 <ul>
   <li>في [1]، الطلب قيد الفحص؛
   </li>
-  <li>في [2]، هذا هو طلب GET. بفضل طلب [OPTIONS] الأول، تلقى المتصفح المعلومات التي طلبها. وهو الآن يقوم بتنفيذ طلب [GET] الذي تم طلبه في البداية؛
+  <li>في [2]، هذا هو طلب <bdi dir="ltr" class="odt-ltr-term">GET.</bdi> بفضل طلب [<bdi dir="ltr" class="odt-ltr-term">OPTIONS</bdi>] الأول، تلقى المتصفح المعلومات التي طلبها. وهو الآن يقوم بتنفيذ طلب [<bdi dir="ltr" class="odt-ltr-term">GET</bdi>] الذي تم طلبه في البداية؛
   </li>
   <li>في [3]، استجابة الخادم؛
   </li>
-  <li>في [4]، يرسل الخادم JSON؛
+  <li>في [4]، يرسل الخادم <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>؛
   </li>
   <li>في [5]، حدث خطأ؛
   </li>
@@ -2110,8 +2112,8 @@
   </li>
 </ul>
 
-<p>من الصعب شرح ما حدث هنا. استجابة الخادم [3] طبيعية [HTTP/1.1 200 OK]. لذلك، يجب أن يكون لدينا المستند المطلوب. من الممكن أن يكون الخادم قد أرسل المستند بالفعل ولكن المتصفح يمنع استخدامه لأنه يتطلب، بالنسبة لطلب GET أيضًا، أن تتضمن الاستجابة رأس HTTP [Access-Control-Allow-Origin:http://localhost:8081].</p>
-<p>سنقوم بعد ذلك بتعديل وحدة التحكم [MyControllerWithCors] بحيث ترسل أيضًا الرؤوس المطلوبة لطلبات عبر الأصول:</p>
+<p>من الصعب شرح ما حدث هنا. استجابة الخادم [3] طبيعية [<bdi dir="ltr" class="odt-ltr-term">HTTP/1.1</bdi> 200 <bdi dir="ltr" class="odt-ltr-term">OK</bdi>]. لذلك، يجب أن يكون لدينا المستند المطلوب. من الممكن أن يكون الخادم قد أرسل المستند بالفعل ولكن المتصفح يمنع استخدامه لأنه يتطلب، بالنسبة لطلب <bdi dir="ltr" class="odt-ltr-term">GET</bdi> أيضًا، أن تتضمن الاستجابة رأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">Access-Control-Allow-Origin:http://localhost:8081</bdi>].</p>
+<p>سنقوم بعد ذلك بتعديل وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">MyControllerWithCors</bdi>] بحيث ترسل أيضًا الرؤوس المطلوبة لطلبات عبر الأصول:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/cors-getAllCategories&quot;</span><span style="color:#000000">, method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">GET</span><span style="color:#000000">, produces = </span><span style="color:#2a00ff">&quot;application/json; charset=UTF-8&quot;</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@ResponseBody</span></span></span>
@@ -2134,9 +2136,9 @@
 
 <p>لقد نجحنا في الحصول على قائمة الفئات.</p>
 <p><a id="refheading196721811596012"></a></p>
-<h2 id="1810-url-get">18.10. <span style="color: #4f81bd">عناوين URL [GET] الأخرى</span></h2>
-<p>في وحدات التحكم [MyControllerWithCors، MyControllerWithHttpOptions]، يتبع كود الإجراءات التي تتعامل مع عناوين URL [GET] المطلوبة نمط الإجراءات التي تعاملت سابقًا مع عنوان URL [<span style="color: #2a00ff">/cors-getAllCategories</span>]. يمكن للقارئ التحقق من الكود في الأمثلة المرفقة مع هذا المستند. فيما يلي مثال لعنوان URL [/cors-getAllProducts]:</p>
-<p><u><strong>في [</strong></u><span style="color: #000000">MyControllerWithHttpOptions</span><u><strong>]</strong></u></p>
+<h2 id="1810-url-get">18.10. <span style="color: #4f81bd">عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">GET</bdi>] الأخرى</span></h2>
+<p>في وحدات التحكم [<bdi dir="ltr" class="odt-ltr-term">MyControllerWithCors</bdi>، <bdi dir="ltr" class="odt-ltr-term">MyControllerWithHttpOptions</bdi>]، يتبع كود الإجراءات التي تتعامل مع عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">GET</bdi>] المطلوبة نمط الإجراءات التي تعاملت سابقًا مع عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<span style="color: #2a00ff">/<bdi dir="ltr" class="odt-ltr-term">cors-getAllCategories</bdi></span>]. يمكن للقارئ التحقق من الكود في الأمثلة المرفقة مع هذا المستند. فيما يلي مثال لعنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">cors-getAllProducts</bdi>]:</p>
+<p><u><strong>في [</strong></u><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">MyControllerWithHttpOptions</bdi></span><u><strong>]</strong></u></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/cors-getAllProduits&quot;</span><span style="color:#000000">, method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">OPTIONS</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> getAllProduits(</span><span style="color:#646464">@RequestHeader</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;Origin&quot;</span><span style="color:#000000">, required = </span><span style="font-weight:bold;color:#7f0055">false</span><span style="color:#000000">) String </span><span style="color:#6a3e3e">origin</span><span style="color:#000000">,</span></span></span>
@@ -2146,7 +2148,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p><u><strong>في [</strong></u><span style="color: #000000">MyControllerWithCors</span><u><strong>]</strong></u></p>
+<p><u><strong>في [</strong></u><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">MyControllerWithCors</bdi></span><u><strong>]</strong></u></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/cors-getAllProduits&quot;</span><span style="color:#000000">, method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">GET</span><span style="color:#000000">, produces = </span><span style="color:#2a00ff">&quot;application/json; charset=UTF-8&quot;</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@ResponseBody</span></span></span>
@@ -2163,16 +2165,16 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000037C0000024BEFB99290.png" width="623" height="410" style="display:inline-block; margin:4px;width:16.48cm;height:10.844cm;" class="odt-zoomable" data-zoom-src="images/100000000000037C0000024BEFB99290.png" /></td></tr></table>
 
 <p><a id="refheading196723811596012"></a></p>
-<h2 id="1811-url-post">18.11. <span style="color: #4f81bd">عناوين URL [POST]</span></h2>
+<h2 id="1811-url-post">18.11. <span style="color: #4f81bd">عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">POST</bdi>]</span></h2>
 <p>دعونا ندرس السيناريو التالي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000347000002364D26D28E.png" width="420" height="283" style="display:inline-block; margin:4px;width:11.1cm;height:7.488cm;" class="odt-zoomable" data-zoom-src="images/1000000000000347000002364D26D28E.png" /></td></tr></table>
 
 <ul>
-  <li>نقوم بإرسال طلب POST [1] إلى عنوان URL [2]؛
+  <li>نقوم بإرسال طلب <bdi dir="ltr" class="odt-ltr-term">POST</bdi> [1] إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [2]؛
   </li>
-  <li>في [3]، القيمة المرسلة. هذه سلسلة JSON؛
+  <li>في [3]، القيمة المرسلة. هذه سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>؛
   </li>
-  <li>بشكل عام، نحاول إنشاء فئة تسمى [category2]؛
+  <li>بشكل عام، نحاول إنشاء فئة تسمى [<bdi dir="ltr" class="odt-ltr-term">category2</bdi>]؛
   </li>
 </ul>
 
@@ -2180,17 +2182,17 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E4000003F5B1DD62CA.png" width="626" height="506" style="display:inline-block; margin:4px;width:16.563cm;height:13.4cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E4000003F5B1DD62CA.png" /></td></tr></table>
 
 <ul>
-  <li>في [1]، كما هو الحال مع طلبات [GET]، يقوم المتصفح بإرسال طلب [OPTIONS]؛
+  <li>في [1]، كما هو الحال مع طلبات [<bdi dir="ltr" class="odt-ltr-term">GET</bdi>]، يقوم المتصفح بإرسال طلب [<bdi dir="ltr" class="odt-ltr-term">OPTIONS</bdi>]؛
   </li>
-  <li>في [2]، يطلب إذن الوصول لطلب [POST]. في السابق، كان [GET]؛
+  <li>في [2]، يطلب إذن الوصول لطلب [<bdi dir="ltr" class="odt-ltr-term">POST</bdi>]. في السابق، كان [<bdi dir="ltr" class="odt-ltr-term">GET</bdi>]؛
   </li>
-  <li>في [3]، يطلب الإذن لإرسال رؤوس HTTP [accept، authorization، content-type]. في السابق، لم يكن لدينا سوى الرؤوس الأولى والثانية؛
+  <li>في [3]، يطلب الإذن لإرسال رؤوس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">accept</bdi>، <bdi dir="ltr" class="odt-ltr-term">authorization</bdi>، <bdi dir="ltr" class="odt-ltr-term">content-type</bdi>]. في السابق، لم يكن لدينا سوى الرؤوس الأولى والثانية؛
   </li>
   <li>في [4]، لا تمنح خدمة الويب جميع الأذونات المطلوبة، مما يتسبب في الخطأ [5]؛
   </li>
 </ul>
 
-<p>نقوم بتعديل طريقة [AbstractController.sendHeaders] على النحو التالي:</p>
+<p>نقوم بتعديل طريقة [<bdi dir="ltr" class="odt-ltr-term">AbstractController.sendHeaders</bdi>] على النحو التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.cors.server.service;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2220,14 +2222,14 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 21: أضفنا رأس HTTP [Content-Type] (لا يهم استخدام الأحرف الكبيرة أو الصغيرة)؛
+  <li>السطر 21: أضفنا رأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">Content-Type</bdi>] (لا يهم استخدام الأحرف الكبيرة أو الصغيرة)؛
   </li>
-  <li>السطر 23: أضفنا طريقة HTTP [POST]؛
+  <li>السطر 23: أضفنا طريقة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">POST</bdi>]؛
   </li>
 </ul>
 
-<p>وهذا يعني أن طرق [POST] تُعالج بنفس طريقة معالجة طلبات [GET]. فيما يلي مثال على عنوان URL [/cors-addArticles]:</p>
-<p><u><strong>في [</strong></u><span style="color: #000000">MyControllerWithCors</span><u><strong>]</strong></u></p>
+<p>وهذا يعني أن طرق [<bdi dir="ltr" class="odt-ltr-term">POST</bdi>] تُعالج بنفس طريقة معالجة طلبات [<bdi dir="ltr" class="odt-ltr-term">GET</bdi>]. فيما يلي مثال على عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">cors-addArticles</bdi>]:</p>
+<p><u><strong>في [</strong></u><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">MyControllerWithCors</bdi></span><u><strong>]</strong></u></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/cors-addCategories&quot;</span><span style="color:#000000">, method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">POST</span><span style="color:#000000">, consumes = </span><span style="color:#2a00ff">&quot;application/json; charset=UTF-8&quot;</span><span style="color:#000000">, produces = </span><span style="color:#2a00ff">&quot;application/json; charset=UTF-8&quot;</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@ResponseBody</span></span></span>
@@ -2241,7 +2243,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p><u><strong>في [</strong></u><span style="color: #000000">MyControllerWithHttpOptions</span><u><strong>]</strong></u></p>
+<p><u><strong>في [</strong></u><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">MyControllerWithHttpOptions</bdi></span><u><strong>]</strong></u></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/cors-addCategories&quot;</span><span style="color:#000000">, method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">OPTIONS</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> addCategories(HttpServletRequest </span><span style="color:#6a3e3e">request</span><span style="color:#000000">,</span></span></span>
@@ -2255,12 +2257,12 @@
 <p>والنتيجة هي كما يلي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000028A000001B0983BB733.png" width="455" height="302" style="display:inline-block; margin:4px;width:12.04cm;height:8.003cm;" class="odt-zoomable" data-zoom-src="images/100000000000028A000001B0983BB733.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>تمت إضافة الفئة [categorie2] بنجاح إلى قاعدة البيانات. وقد خصص لها نظام إدارة قواعد البيانات (DBMS) المفتاح الأساسي 1729.</p>
+<p>تمت إضافة الفئة [<bdi dir="ltr" class="odt-ltr-term">categorie2</bdi>] بنجاح إلى قاعدة البيانات. وقد خصص لها نظام إدارة قواعد البيانات (<bdi dir="ltr" class="odt-ltr-term">DBMS</bdi>) المفتاح الأساسي 1729.</p>
 <p><a id="refheading1190181799226695"></a></p>
-<h2 id="1812-authenticatecorscontroller">18.12. <span style="color: #4f81bd">[<span style="color: #000000">AuthenticateCorsController</span>]</span></h2>
+<h2 id="1812-authenticatecorscontroller">18.12. <span style="color: #4f81bd">[<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">AuthenticateCorsController</bdi></span>]</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012D000000CFEA3F395F.png" width="212" height="146" style="display:inline-block; margin:4px;width:5.611cm;height:3.859cm;" class="odt-zoomable" data-zoom-src="images/100000000000012D000000CFEA3F395F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>يوجد وحدة التحكم [<span style="color: #000000">AuthenticateCorsController</span>] لتوفير عنوان URL [/cors-authenticate]، الذي يسمح لك باستدعاء عنوان URL الحالي [/authenticate] باستخدام طلب عبر النطاقات. وفيما يلي شفرة البرمجة الخاصة بها:</p>
+<p>يوجد وحدة التحكم [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">AuthenticateCorsController</bdi></span>] لتوفير عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">cors-authenticate</bdi>]، الذي يسمح لك باستدعاء عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الحالي [/<bdi dir="ltr" class="odt-ltr-term">authenticate</bdi>] باستخدام طلب عبر النطاقات. وفيما يلي شفرة البرمجة الخاصة بها:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.cors.server.service;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2306,7 +2308,7 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004EE0000029608FC6559.png" width="631" height="331" style="display:inline-block; margin:4px;width:16.695cm;height:8.758cm;" class="odt-zoomable" data-zoom-src="images/10000000000004EE0000029608FC6559.png" /></td></tr></table>
 
 <ul>
-  <li>يتم عرض الردود باستخدام كود JavaScript التالي:
+  <li>يتم عرض الردود باستخدام كود <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> التالي:
   </li>
 </ul>
 
@@ -2337,14 +2339,14 @@
 </code></pre></div>
 
 <ul>
-  <li>يتم عرض الاستجابة [1] بواسطة السطر 14 من الدالة [success]؛
+  <li>يتم عرض الاستجابة [1] بواسطة السطر 14 من الدالة [<bdi dir="ltr" class="odt-ltr-term">success</bdi>]؛
   </li>
-  <li>يتم عرض الاستجابة [2] بواسطة السطر 20 من دالة [error]. تقوم دالة [JSON.stringify] بإنشاء سلسلة JSON لكائن [jqXHR.statusCode()]، وهو الكائن الذي يغلف الخطأ الذي حدث. لا يوفر هذا الكائن سوى القليل من المعلومات. من الممكن استخدام طرق أخرى لكائن [<span style="color: #000000">jqXHR</span>] للحصول، على سبيل المثال، على رؤوس HTTP التي يعيدها الخادم؛
+  <li>يتم عرض الاستجابة [2] بواسطة السطر 20 من دالة [<bdi dir="ltr" class="odt-ltr-term">error</bdi>]. تقوم دالة [<bdi dir="ltr" class="odt-ltr-term">JSON.stringify</bdi>] بإنشاء سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> لكائن [<bdi dir="ltr" class="odt-ltr-term">jqXHR.statusCode</bdi>()]، وهو الكائن الذي يغلف الخطأ الذي حدث. لا يوفر هذا الكائن سوى القليل من المعلومات. من الممكن استخدام طرق أخرى لكائن [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">jqXHR</bdi></span>] للحصول، على سبيل المثال، على رؤوس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> التي يعيدها الخادم؛
   </li>
 </ul>
 <p><a id="refheading196725811596012"></a></p>
 <h2 id="1813">18.13. <span style="color: #4f81bd">الخلاصة</span></h2>
-<p>يدعم تطبيقنا الآن الطلبات عبر النطاقات. يمكن تمكينها أو تعطيلها عبر التكوين في فئة [AppConfig]:</p>
+<p>يدعم تطبيقنا الآن الطلبات عبر النطاقات. يمكن تمكينها أو تعطيلها عبر التكوين في فئة [<bdi dir="ltr" class="odt-ltr-term">AppConfig</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#646464">@ComponentScan</span><span style="color:#000000">(basePackages = { </span><span style="color:#2a00ff">&quot;spring.cors.server.service&quot;</span><span style="color:#000000"> })</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#646464">@Import</span><span style="color:#000000">({ SecurityConfig.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000"> })</span></span></span>

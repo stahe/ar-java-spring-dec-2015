@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1155,12 +1157,12 @@
 
 
 <p><a id="refheading129870735939761"></a></p>
-<h1 id="20-rxjava">20. <span style="color: #365f91">البرمجة غير المتزامنة باستخدام RxJava</span></h1>
-<p><strong>قراءات موصى بها</strong>: [<a href="http://tahe.developpez.com/tutoriels-cours/rxjava-rxswing-rxandroid/documents/rxjava.pdf"><u><span style="color: #0563c1">مقدمة إلى RxJava. التطبيق في بيئات Swing وAndroid</span></u></a>.]</p>
+<h1 id="20-rxjava">20. <span style="color: #365f91">البرمجة غير المتزامنة باستخدام <bdi dir="ltr" class="odt-ltr-term">RxJava</bdi></span></h1>
+<p><strong>قراءات موصى بها</strong>: [<a href="http://tahe.developpez.com/tutoriels-cours/rxjava-rxswing-rxandroid/documents/rxjava.pdf"><u><span style="color: #0563c1">مقدمة إلى <bdi dir="ltr" class="odt-ltr-term">RxJava.</bdi> التطبيق في بيئات <bdi dir="ltr" class="odt-ltr-term">Swing</bdi> و<bdi dir="ltr" class="odt-ltr-term">Android</bdi></span></u></a>.]</p>
 <p>في هذا الفصل، نعود إلى <a href="#refheading251527391218965"><u><span style="color: #0563c1">الفصل 17.6،</span></u></a> حيث قمنا بإنشاء تطبيق عميل/خادم بالبنية التالية:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004C7000002EECD229798.png" width="612" height="375" style="display:inline-block; margin:4px;width:16.18cm;height:9.922cm;" class="odt-zoomable" data-zoom-src="images/10000000000004C7000002EECD229798.png" /></td></tr></table>
 
-<p>تؤدي بعض إجراءات المستخدم على واجهة Swing في [1] إلى تشغيل إجراءات تمتد حتى قاعدة البيانات في [3] عبر شبكة HTTP [2]. ونتيجة لذلك، قد يستغرق وصول الاستجابة لإجراء المستخدم وقتًا أطول أو أقصر. ومن المفيد تضمين مؤشر تحميل على واجهة المستخدم مع خيار لإلغاء العملية التي تم بدءها إذا استغرقت وقتًا طويلاً. في <a href="#refheading251527391218965"><u><span style="color: #0563c1">الفصل 17.</span></u></a>6، تكون كل إجراءات المستخدم التي تتطلب تبادل البيانات مع الخادم متزامنة. لا يكتمل معالج الأحداث الذي ينفذه الكود حتى يتم استلام الاستجابة. خلال هذه الفترة، تتجمد الواجهة الرسومية: فهي لا تستجيب لإجراءات المستخدم الجديدة. يتم ببساطة وضع هذه الإجراءات في قائمة انتظار ليتم معالجتها بمجرد انتهاء معالج الأحداث قيد التشغيل حاليًا. وبالتالي، إذا تم عرض زر إلغاء، يمكن للمستخدم النقر عليه، ولكن لن يحدث شيء حتى تنتهي العملية الحالية. عندئذٍ لن يكون لزر الإلغاء أي فائدة.</p>
+<p>تؤدي بعض إجراءات المستخدم على واجهة <bdi dir="ltr" class="odt-ltr-term">Swing</bdi> في [1] إلى تشغيل إجراءات تمتد حتى قاعدة البيانات في [3] عبر شبكة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [2]. ونتيجة لذلك، قد يستغرق وصول الاستجابة لإجراء المستخدم وقتًا أطول أو أقصر. ومن المفيد تضمين مؤشر تحميل على واجهة المستخدم مع خيار لإلغاء العملية التي تم بدءها إذا استغرقت وقتًا طويلاً. في <a href="#refheading251527391218965"><u><span style="color: #0563c1">الفصل 17.</span></u></a>6، تكون كل إجراءات المستخدم التي تتطلب تبادل البيانات مع الخادم متزامنة. لا يكتمل معالج الأحداث الذي ينفذه الكود حتى يتم استلام الاستجابة. خلال هذه الفترة، تتجمد الواجهة الرسومية: فهي لا تستجيب لإجراءات المستخدم الجديدة. يتم ببساطة وضع هذه الإجراءات في قائمة انتظار ليتم معالجتها بمجرد انتهاء معالج الأحداث قيد التشغيل حاليًا. وبالتالي، إذا تم عرض زر إلغاء، يمكن للمستخدم النقر عليه، ولكن لن يحدث شيء حتى تنتهي العملية الحالية. عندئذٍ لن يكون لزر الإلغاء أي فائدة.</p>
 <p>لكي يصبح النقر على زر الإلغاء ساري المفعول، يجب إكمال العملية الحالية. لتحقيق ذلك، يجب تشغيل العملية التي قد تستغرق وقتًا طويلاً بشكل غير متزامن: </p>
 <ul>
   <li>يبدأ معالج الأحداث العملية التي قد تستغرق وقتًا طويلاً ولكنه لا ينتظر نتيجتها ويعيد التحكم إلى مؤشر ترابط واجهة المستخدم الذي يتعامل مع أحداث واجهة المستخدم الرسومية. يتم تشغيل العملية التي قد تستغرق وقتًا طويلاً على مؤشر ترابط مختلف عن مؤشر ترابط واجهة المستخدم، مما يمنع حظر هذا الأخير؛
@@ -1172,37 +1174,37 @@
 </ul>
 
 <p>ستعمل واجهة المستخدم كما في السابق. إذا كانت أوقات استجابة الخادم سريعة، فلن يلاحظ المستخدم أي فرق. إذا كانت ملحوظة، فسيظهر للمستخدم زر إلغاء وسيكون لديه خيار مقاطعة العملية الحالية.</p>
-<p>تتيح مكتبة [<a href="http://reactivex.io/"><u><span style="color: #0563c1">Rx</span></u></a>] البرمجة غير المتزامنة. وتكمن ميزتها الرئيسية في حقيقة أنها تم نقلها إلى العديد من البيئات (Java، .NET، JS، إلخ) وأن إتقانها في بيئة ما يمكن نقله بسهولة إلى بيئة أخرى. هنا، سنشير إلى الفصل 2 من الوثيقة [<a href="http://tahe.developpez.com/tutoriels-cours/rxjava-rxswing-rxandroid/documents/rxjava.pdf"><u><span style="color: #0563c1">مقدمة إلى RxJava. التطبيق على بيئات Swing و Android</span></u></a>]. ونشجع القارئ على قراءته. في الأقسام التالية، سنستخدم كودًا من الأمثلة الواردة في هذا الفصل.</p>
+<p>تتيح مكتبة [<a href="http://reactivex.io/"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">Rx</bdi></span></u></a>] البرمجة غير المتزامنة. وتكمن ميزتها الرئيسية في حقيقة أنها تم نقلها إلى العديد من البيئات (<bdi dir="ltr" class="odt-ltr-term">Java</bdi>، .<bdi dir="ltr" class="odt-ltr-term">NET</bdi>، <bdi dir="ltr" class="odt-ltr-term">JS</bdi>، إلخ) وأن إتقانها في بيئة ما يمكن نقله بسهولة إلى بيئة أخرى. هنا، سنشير إلى الفصل 2 من الوثيقة [<a href="http://tahe.developpez.com/tutoriels-cours/rxjava-rxswing-rxandroid/documents/rxjava.pdf"><u><span style="color: #0563c1">مقدمة إلى <bdi dir="ltr" class="odt-ltr-term">RxJava.</bdi> التطبيق على بيئات <bdi dir="ltr" class="odt-ltr-term">Swing</bdi> و <bdi dir="ltr" class="odt-ltr-term">Android</bdi></span></u></a>]. ونشجع القارئ على قراءته. في الأقسام التالية، سنستخدم كودًا من الأمثلة الواردة في هذا الفصل.</p>
 <p>سنطور بنية التطبيق على النحو التالي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003BD000001460AF459F1.png" width="479" height="163" style="display:inline-block; margin:4px;width:12.661cm;height:4.313cm;" class="odt-zoomable" data-zoom-src="images/10000000000003BD000001460AF459F1.png" /></td></tr></table>
 
 <ul>
-  <li>في [1]، نقوم بإدراج طبقة [RxJava] بين طبقة [Swing] وطبقة [منطق الأعمال]. وسيتم الآن استدعاء الطرق الموجودة في الطبقة الأخيرة بشكل غير متزامن؛
+  <li>في [1]، نقوم بإدراج طبقة [<bdi dir="ltr" class="odt-ltr-term">RxJava</bdi>] بين طبقة [<bdi dir="ltr" class="odt-ltr-term">Swing</bdi>] وطبقة [منطق الأعمال]. وسيتم الآن استدعاء الطرق الموجودة في الطبقة الأخيرة بشكل غير متزامن؛
   </li>
 </ul>
 
 <p>سنمضي قدماً في عدة خطوات:</p>
 <ul>
-  <li><b>الخطوة 1</b>: تقدم طبقة [منطق الأعمال، DAO] حاليًا واجهة متزامنة لطبقة [UI]. سنحولها إلى طبقة غير متزامنة [RxJava، منطق الأعمال، DAO]؛
+  <li><b>الخطوة 1</b>: تقدم طبقة [منطق الأعمال، <bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] حاليًا واجهة متزامنة لطبقة [<bdi dir="ltr" class="odt-ltr-term">UI</bdi>]. سنحولها إلى طبقة غير متزامنة [<bdi dir="ltr" class="odt-ltr-term">RxJava</bdi>، منطق الأعمال، <bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]؛
   </li>
-  <li><b>الخطوة 2</b>: سنقوم بتحويل تطبيق وحدة التحكم المتزامن إلى تطبيق يظل متزامنًا ولكنه يستخدم واجهة غير متزامنة [RxJava، الأعمال، DAO]؛
+  <li><b>الخطوة 2</b>: سنقوم بتحويل تطبيق وحدة التحكم المتزامن إلى تطبيق يظل متزامنًا ولكنه يستخدم واجهة غير متزامنة [<bdi dir="ltr" class="odt-ltr-term">RxJava</bdi>، الأعمال، <bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]؛
   </li>
-  <li><b>الخطوة 3</b>: سنقوم بتحويل تطبيق Swing المتزامن إلى تطبيق Swing غير متزامن؛
+  <li><b>الخطوة 3</b>: سنقوم بتحويل تطبيق <bdi dir="ltr" class="odt-ltr-term">Swing</bdi> المتزامن إلى تطبيق <bdi dir="ltr" class="odt-ltr-term">Swing</bdi> غير متزامن؛
   </li>
 </ul>
 
 <p><a id="refheading129872735939761"></a></p>
 <h2 id="201-1">20.1. <span style="color: #4f81bd">الخطوة 1</span></h2>
-<p>نقوم بتحويل الطبقة المتزامنة الحالية [منطق الأعمال، DAO] إلى طبقة غير متزامنة [RxJava، منطق الأعمال، DAO].</p>
+<p>نقوم بتحويل الطبقة المتزامنة الحالية [منطق الأعمال، <bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] إلى طبقة غير متزامنة [<bdi dir="ltr" class="odt-ltr-term">RxJava</bdi>، منطق الأعمال، <bdi dir="ltr" class="odt-ltr-term">DAO</bdi>].</p>
 <p><a id="refheading129874735939761"></a></p>
 <h3 id="2011">20.1.1. <span style="color: #4f81bd">الإنشاء</span></h3>
-<p>نبدأ بمشروع Maven من <a href="#refheading110174391218965"><u><span style="color: #0563c1">الفصل 17.4</span></u></a>، الذي نفتحه في <strong>NetBeans</strong>:</p>
+<p>نبدأ بمشروع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> من <a href="#refheading110174391218965"><u><span style="color: #0563c1">الفصل 17.4</span></u></a>، الذي نفتحه في <strong><bdi dir="ltr" class="odt-ltr-term">NetBeans</bdi></strong>:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F0000000C583EDA9B3.png" width="168" height="138" style="display:inline-block; margin:4px;width:4.45cm;height:3.653cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F0000000C583EDA9B3.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001310000010375A45E24.png" width="214" height="181" style="display:inline-block; margin:4px;width:5.65cm;height:4.798cm;" class="odt-zoomable" data-zoom-src="images/10000000000001310000010375A45E24.png" /></td></tr></table>
 
-<p>نقوم بنسخ هذا المشروع [1] (نسخ/لصق) إلى مشروع جديد [elections-rxjava-business-dao-security-webjson] [2].</p>
+<p>نقوم بنسخ هذا المشروع [1] (نسخ/لصق) إلى مشروع جديد [<bdi dir="ltr" class="odt-ltr-term">elections-rxjava-business-dao-security-webjson</bdi>] [2].</p>
 <p><a id="refheading129876735939761"></a></p>
-<h3 id="2012-maven">20.1.2. <span style="color: #4f81bd">تكوين Maven</span></h3>
-<p>نقوم بتحديث ملف [pom.xml] للمشروع الجديد لإضافة التبعية لمكتبة [RxJava]:</p>
+<h3 id="2012-maven">20.1.2. <span style="color: #4f81bd">تكوين <bdi dir="ltr" class="odt-ltr-term">Maven</bdi></span></h3>
+<p>نقوم بتحديث ملف [<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>] للمشروع الجديد لإضافة التبعية لمكتبة [<bdi dir="ltr" class="odt-ltr-term">RxJava</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span> <span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">         <span style="color:#7f007f">xsi:schemaLocation</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#008080">&gt;</span></span></span>
@@ -1290,17 +1292,17 @@
 </code></pre></div>
 
 <ul>
-  <li>الأسطر 65–70: أضفنا التبعية لمكتبة RxJava؛
+  <li>الأسطر 65–70: أضفنا التبعية لمكتبة <bdi dir="ltr" class="odt-ltr-term">RxJava</bdi>؛
   </li>
 </ul>
 <p><a id="refheading129878735939761"></a></p>
 <h3 id="2013">20.1.3. <span style="color: #4f81bd">التنفيذ غير المتزامن لطبقة [الأعمال]</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003CD00000135B33CC21A.png" width="487" height="155" style="display:inline-block; margin:4px;width:12.873cm;height:4.089cm;" class="odt-zoomable" data-zoom-src="images/10000000000003CD00000135B33CC21A.png" /></td></tr></table>
 
-<p>لتنفيذ طبقة [RxJava، الأعمال]، نضيف واجهة غير متزامنة [IRxElectionsMetier] [1] وتنفيذها [RxElectionsMetier] [2] إلى المشروع:</p>
+<p>لتنفيذ طبقة [<bdi dir="ltr" class="odt-ltr-term">RxJava</bdi>، الأعمال]، نضيف واجهة غير متزامنة [<bdi dir="ltr" class="odt-ltr-term">IRxElectionsMetier</bdi>] [1] وتنفيذها [<bdi dir="ltr" class="odt-ltr-term">RxElectionsMetier</bdi>] [2] إلى المشروع:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001240000011A86638049.png" width="204" height="197" style="display:inline-block; margin:4px;width:5.41cm;height:5.225cm;" class="odt-zoomable" data-zoom-src="images/10000000000001240000011A86638049.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>واجهة [IRxElectionsMetier] هي الواجهة غير المتزامنة لطبقة [RxJava، الأعمال]. وفيما يلي شفرة البرمجة الخاصة بها:</p>
+<p>واجهة [<bdi dir="ltr" class="odt-ltr-term">IRxElectionsMetier</bdi>] هي الواجهة غير المتزامنة لطبقة [<bdi dir="ltr" class="odt-ltr-term">RxJava</bdi>، الأعمال]. وفيما يلي شفرة البرمجة الخاصة بها:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.security.client.metier;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1331,18 +1333,18 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>ترث واجهة [IRxElectionsMetier] الطرق من واجهة [IElectionsMetier]، ولكن في حين أن الطريقة M في واجهة [IElectionsMetier] تُرجع نتيجة من النوع T، فإن الطريقة M في واجهة [IRxElectionsMetier] تُرجع نتيجة من النوع <strong>Observable</strong>&lt;<strong>T</strong>&gt;. ويتم توفير النوع [Observable] بواسطة مكتبة RxJava. يوفر النوع Observable&lt;T&gt; الطريقة [subscribe]، التي تسترد النوع T بشكل غير متزامن. ترتبط ثلاثة أحداث بهذه الطريقة:</p>
+<p>ترث واجهة [<bdi dir="ltr" class="odt-ltr-term">IRxElectionsMetier</bdi>] الطرق من واجهة [<bdi dir="ltr" class="odt-ltr-term">IElectionsMetier</bdi>]، ولكن في حين أن الطريقة <bdi dir="ltr" class="odt-ltr-term">M</bdi> في واجهة [<bdi dir="ltr" class="odt-ltr-term">IElectionsMetier</bdi>] تُرجع نتيجة من النوع <bdi dir="ltr" class="odt-ltr-term">T</bdi>، فإن الطريقة <bdi dir="ltr" class="odt-ltr-term">M</bdi> في واجهة [<bdi dir="ltr" class="odt-ltr-term">IRxElectionsMetier</bdi>] تُرجع نتيجة من النوع <strong><bdi dir="ltr" class="odt-ltr-term">Observable</bdi></strong>&lt;<strong><bdi dir="ltr" class="odt-ltr-term">T</bdi></strong>&gt;. ويتم توفير النوع [<bdi dir="ltr" class="odt-ltr-term">Observable</bdi>] بواسطة مكتبة <bdi dir="ltr" class="odt-ltr-term">RxJava.</bdi> يوفر النوع <bdi dir="ltr" class="odt-ltr-term">Observable</bdi>&lt;<bdi dir="ltr" class="odt-ltr-term">T</bdi>&gt; الطريقة [<bdi dir="ltr" class="odt-ltr-term">subscribe</bdi>]، التي تسترد النوع <bdi dir="ltr" class="odt-ltr-term">T</bdi> بشكل غير متزامن. ترتبط ثلاثة أحداث بهذه الطريقة:</p>
 <ul>
-  <li><b>onSuccess</b>(T result)، التي تُعلم بأن نتيجة من النوع T متاحة. قد تُرجع العملية غير المتزامنة نتائج متعددة؛
+  <li><b><bdi dir="ltr" class="odt-ltr-term">onSuccess</bdi></b>(<bdi dir="ltr" class="odt-ltr-term">T result</bdi>)، التي تُعلم بأن نتيجة من النوع <bdi dir="ltr" class="odt-ltr-term">T</bdi> متاحة. قد تُرجع العملية غير المتزامنة نتائج متعددة؛
   </li>
-  <li><b>onError</b>(Throwable th)، التي تُعلم بأن العملية غير المتزامنة واجهت خطأً؛
+  <li><b><bdi dir="ltr" class="odt-ltr-term">onError</bdi></b>(<bdi dir="ltr" class="odt-ltr-term">Throwable th</bdi>)، التي تُعلم بأن العملية غير المتزامنة واجهت خطأً؛
   </li>
-  <li><b>onCompleted</b>()، التي تُعلم بأن العملية غير المتزامنة قد اكتملت؛
+  <li><b><bdi dir="ltr" class="odt-ltr-term">onCompleted</bdi></b>()، التي تُعلم بأن العملية غير المتزامنة قد اكتملت؛
   </li>
 </ul>
 
-<p>حتى يتم استدعاء طريقة [Observable.subscribe]، لا تبدأ العملية غير المتزامنة المرتبطة بـ observable. لا يحصل الكود الذي يستدعي طريقة M من واجهة [IRxElectionsMetier] على النتيجة المتوقعة T، بل يحصل على نوع Observable&lt;T&gt; الذي سيسمح له لاحقًا بالحصول على النتيجة T عن طريق استدعاء طريقة [Observable.subscribe].</p>
-<p>فيما يلي تنفيذ [RxElectionsMetier] لواجهة [IRxElectionsMetier]:</p>
+<p>حتى يتم استدعاء طريقة [<bdi dir="ltr" class="odt-ltr-term">Observable.subscribe</bdi>]، لا تبدأ العملية غير المتزامنة المرتبطة بـ <bdi dir="ltr" class="odt-ltr-term">observable.</bdi> لا يحصل الكود الذي يستدعي طريقة <bdi dir="ltr" class="odt-ltr-term">M</bdi> من واجهة [<bdi dir="ltr" class="odt-ltr-term">IRxElectionsMetier</bdi>] على النتيجة المتوقعة <bdi dir="ltr" class="odt-ltr-term">T</bdi>، بل يحصل على نوع <bdi dir="ltr" class="odt-ltr-term">Observable</bdi>&lt;<bdi dir="ltr" class="odt-ltr-term">T</bdi>&gt; الذي سيسمح له لاحقًا بالحصول على النتيجة <bdi dir="ltr" class="odt-ltr-term">T</bdi> عن طريق استدعاء طريقة [<bdi dir="ltr" class="odt-ltr-term">Observable.subscribe</bdi>].</p>
+<p>فيما يلي تنفيذ [<bdi dir="ltr" class="odt-ltr-term">RxElectionsMetier</bdi>] لواجهة [<bdi dir="ltr" class="odt-ltr-term">IRxElectionsMetier</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.security.client.metier;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1401,47 +1403,47 @@
 </code></pre></div>
 
 <ul>
-  <li>السطور 12-13: حقن Spring لطبقة الأعمال <b>المتزامنة</b>؛
+  <li>السطور 12-13: حقن <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> لطبقة الأعمال <b>المتزامنة</b>؛
   </li>
-  <li>السطور 20-34: سنعلق على طريقة [getVoterLists]، التي بدلاً من إرجاع نوع [VoterList[]]، ترجع نوع [Observable&lt;VoterList[]&gt;]؛
+  <li>السطور 20-34: سنعلق على طريقة [<bdi dir="ltr" class="odt-ltr-term">getVoterLists</bdi>]، التي بدلاً من إرجاع نوع [<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>[]]، ترجع نوع [<bdi dir="ltr" class="odt-ltr-term">Observable</bdi>&lt;<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>[]&gt;]؛
   </li>
-  <li>الأسطر 22-32: تسمح لك الطريقة الثابتة [Observable.create] بإنشاء Observable من نوع [<b>Subscriber</b>]. يمثل نوع [Subscriber] مشتركًا في تدفقات النتائج التي تنتجها العملية المراقبة (Observable). ويوفر ثلاث طرق:
+  <li>الأسطر 22-32: تسمح لك الطريقة الثابتة [<bdi dir="ltr" class="odt-ltr-term">Observable.create</bdi>] بإنشاء <bdi dir="ltr" class="odt-ltr-term">Observable</bdi> من نوع [<b><bdi dir="ltr" class="odt-ltr-term">Subscriber</bdi></b>]. يمثل نوع [<bdi dir="ltr" class="odt-ltr-term">Subscriber</bdi>] مشتركًا في تدفقات النتائج التي تنتجها العملية المراقبة (<bdi dir="ltr" class="odt-ltr-term">Observable</bdi>). ويوفر ثلاث طرق:
     <ul>
-      <li>[Subscriber.<b>onNext</b>] (السطر 25) لتلقي نتيجة من العملية المراقبة؛
+      <li>[<bdi dir="ltr" class="odt-ltr-term">Subscriber.</bdi><b><bdi dir="ltr" class="odt-ltr-term">onNext</bdi></b>] (السطر 25) لتلقي نتيجة من العملية المراقبة؛
       </li>
-      <li>[Subscriber.<b>onError</b>] (السطر 30) لتلقي استثناء من العملية المراقبة. بعد حدوث استثناء، لا يصدر النوع [Observable] نتائج بعد ذلك؛
+      <li>[<bdi dir="ltr" class="odt-ltr-term">Subscriber.</bdi><b><bdi dir="ltr" class="odt-ltr-term">onError</bdi></b>] (السطر 30) لتلقي استثناء من العملية المراقبة. بعد حدوث استثناء، لا يصدر النوع [<bdi dir="ltr" class="odt-ltr-term">Observable</bdi>] نتائج بعد ذلك؛
       </li>
-      <li>[Subscriber.<b>onCompleted</b>] (السطر 27) لتلقي إشارة نهاية الإصدار من العملية المراقبة. هنا، تصدر العملية المراقبة عنصرًا واحدًا فقط. لاحظ أن هذه الإشارة لا تصدر في حالة حدوث استثناء. هذا هو السلوك الافتراضي لـ Observables: إصدار استثناء يشير أيضًا إلى نهاية الإصدارات. المشتركون على دراية بذلك؛
+      <li>[<bdi dir="ltr" class="odt-ltr-term">Subscriber.</bdi><b><bdi dir="ltr" class="odt-ltr-term">onCompleted</bdi></b>] (السطر 27) لتلقي إشارة نهاية الإصدار من العملية المراقبة. هنا، تصدر العملية المراقبة عنصرًا واحدًا فقط. لاحظ أن هذه الإشارة لا تصدر في حالة حدوث استثناء. هذا هو السلوك الافتراضي لـ <bdi dir="ltr" class="odt-ltr-term">Observables:</bdi> إصدار استثناء يشير أيضًا إلى نهاية الإصدارات. المشتركون على دراية بذلك؛
       </li>
     </ul>
   </li>
-  <li>الأسطر 22–34: تأخذ طريقة [Observable.create] نوع [Observable.OnSubscribe] كمعلمة. هذا النوع هو <b>واجهة وظيفية</b>. تم تقديم هذا المفهوم مع Java 8 ويشير إلى واجهة ذات طريقة واحدة. هنا، الطريقة الوحيدة لواجهة [Observable.OnSubscribe] هي كما يلي:
+  <li>الأسطر 22–34: تأخذ طريقة [<bdi dir="ltr" class="odt-ltr-term">Observable.create</bdi>] نوع [<bdi dir="ltr" class="odt-ltr-term">Observable.OnSubscribe</bdi>] كمعلمة. هذا النوع هو <b>واجهة وظيفية</b>. تم تقديم هذا المفهوم مع <bdi dir="ltr" class="odt-ltr-term">Java</bdi> 8 ويشير إلى واجهة ذات طريقة واحدة. هنا، الطريقة الوحيدة لواجهة [<bdi dir="ltr" class="odt-ltr-term">Observable.OnSubscribe</bdi>] هي كما يلي:
   </li>
 </ul>
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>T call(Subscriber&lt;T&gt; subscriber)
 </code></pre></div>
-<p>لتنفيذ واجهة وظيفية ذات طريقة واحدة <strong>m(param1, param2, ..., paramn)</strong>، يمكنك استخدام الصيغة المبسطة التالية:</p>
+<p>لتنفيذ واجهة وظيفية ذات طريقة واحدة <strong><bdi dir="ltr" class="odt-ltr-term">m</bdi>(<bdi dir="ltr" class="odt-ltr-term">param1</bdi>, <bdi dir="ltr" class="odt-ltr-term">param2</bdi>, ..., <bdi dir="ltr" class="odt-ltr-term">paramn</bdi>)</strong>، يمكنك استخدام الصيغة المبسطة التالية:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>(param1, param2, ..., paramn) -&gt; { code de la méthode m}
 </code></pre></div>
 <p>وهذا ما تم في الأسطر 22–34:</p>
 <ul>
-  <li>[subscriber] هو معلمة طريقة [Observable.OnSubscribe.<b>call</b>]؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">subscriber</bdi>] هو معلمة طريقة [<bdi dir="ltr" class="odt-ltr-term">Observable.OnSubscribe.</bdi><b><bdi dir="ltr" class="odt-ltr-term">call</bdi></b>]؛
   </li>
-  <li>الأسطر 23–32: الكود الذي نريد توفيره لطريقة [call]؛
+  <li>الأسطر 23–32: الكود الذي نريد توفيره لطريقة [<bdi dir="ltr" class="odt-ltr-term">call</bdi>]؛
   </li>
 </ul>
 
 <ul>
-  <li>السطر 25: نطلب قوائم الناخبين بشكل متزامن من طبقة [business] التي تم إدخالها في السطر 13. لذلك سيتعين علينا انتظار النتيجة. وعند استلامها، يتم تمريرها إلى طريقة [onNext] الخاصة بالمشترك؛
+  <li>السطر 25: نطلب قوائم الناخبين بشكل متزامن من طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] التي تم إدخالها في السطر 13. لذلك سيتعين علينا انتظار النتيجة. وعند استلامها، يتم تمريرها إلى طريقة [<bdi dir="ltr" class="odt-ltr-term">onNext</bdi>] الخاصة بالمشترك؛
   </li>
-  <li>السطر 28: في حالة حدوث خطأ، يتم تمرير الاستثناء إلى طريقة [onError] الخاصة بالمشترك؛
+  <li>السطر 28: في حالة حدوث خطأ، يتم تمرير الاستثناء إلى طريقة [<bdi dir="ltr" class="odt-ltr-term">onError</bdi>] الخاصة بالمشترك؛
   </li>
   <li>السطر 31: ننتظر نتيجة واحدة. بمجرد الحصول عليها (سواء كانت قوائم الناخبين أو استثناء)، نُعلم المشترك بأن العملية المراقبة قد انتهت من إصدار النتائج؛
   </li>
 </ul>
 
-<p>من المهم تذكر أن طريقة [RxElectionsMetier] تُرجع نوع Observable&lt;VoterList[]&gt; وليس النوع VoterList[] نفسه. يجب أن يستدعي الكود المستدعي الطريقة Observable&lt;VoterList[]&gt;.<strong>subscribe</strong> حتى يتم تنفيذ الكود في الأسطر 23–33 وإرجاع قوائم الناخبين عبر السطر 25.</p>
+<p>من المهم تذكر أن طريقة [<bdi dir="ltr" class="odt-ltr-term">RxElectionsMetier</bdi>] تُرجع نوع <bdi dir="ltr" class="odt-ltr-term">Observable</bdi>&lt;<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>[]&gt; وليس النوع <bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>[] نفسه. يجب أن يستدعي الكود المستدعي الطريقة <bdi dir="ltr" class="odt-ltr-term">Observable</bdi>&lt;<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>[]&gt;.<strong><bdi dir="ltr" class="odt-ltr-term">subscribe</bdi></strong> حتى يتم تنفيذ الكود في الأسطر 23–33 وإرجاع قوائم الناخبين عبر السطر 25.</p>
 <p>الرمز الخاص بالطرق الأخرى مشابه:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.security.client.metier;</span></span></span>
@@ -1552,16 +1554,16 @@
 </code></pre></div>
 
 <ul>
-  <li>السطران 20 و 81: لا يتم استدعاء طريقة [onNext] للمشترك لأن المشترك لا يتوقع أي نتائج؛
+  <li>السطران 20 و 81: لا يتم استدعاء طريقة [<bdi dir="ltr" class="odt-ltr-term">onNext</bdi>] للمشترك لأن المشترك لا يتوقع أي نتائج؛
   </li>
 </ul>
 <p><a id="refheading129880735939761"></a></p>
-<h3 id="2014-junit-business">20.1.4. <span style="color: #4f81bd">اختبارات JUnit لطبقة [business]</span></h3>
+<h3 id="2014-junit-business">20.1.4. <span style="color: #4f81bd">اختبارات <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi> لطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>]</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012000000113B05A3BCF.png" width="201" height="192" style="display:inline-block; margin:4px;width:5.33cm;height:5.089cm;" class="odt-zoomable" data-zoom-src="images/100000000000012000000113B05A3BCF.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><a id="refheading127476149879088"></a></p>
 <h4 id="20141-01">20.1.4.1. <span style="color: #4f81bd">الاختبار 01</span></h4>
-<p>نعود إلى اختبار الوحدة [Test01] الذي تمت مناقشته في <a href="#refheading251914391218965"><u><span style="color: #0563c1">القسم 17.4.4</span></u></a>. وقد تم تصميمه لإجراء مكالمات متزامنة إلى واجهة [IElectionsMetier]. نقوم بتعديله بحيث يقوم بإجراء مكالمات متزامنة إلى واجهة [IRxElectionsMetier] الجديدة. ومن الممكن بالفعل إجراء مكالمات متزامنة إلى واجهة RxJava غير متزامنة. يصبح الكود كما يلي:</p>
+<p>نعود إلى اختبار الوحدة [<bdi dir="ltr" class="odt-ltr-term">Test01</bdi>] الذي تمت مناقشته في <a href="#refheading251914391218965"><u><span style="color: #0563c1">القسم 17.4.4</span></u></a>. وقد تم تصميمه لإجراء مكالمات متزامنة إلى واجهة [<bdi dir="ltr" class="odt-ltr-term">IElectionsMetier</bdi>]. نقوم بتعديله بحيث يقوم بإجراء مكالمات متزامنة إلى واجهة [<bdi dir="ltr" class="odt-ltr-term">IRxElectionsMetier</bdi>] الجديدة. ومن الممكن بالفعل إجراء مكالمات متزامنة إلى واجهة <bdi dir="ltr" class="odt-ltr-term">RxJava</bdi> غير متزامنة. يصبح الكود كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.security.client.metier.junit;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1776,9 +1778,9 @@
 
 <p>دعونا نلقي نظرة على التغييرات:</p>
 <ul>
-  <li>السطر 48: الطريقة الثابتة [BlockingObservable.from(Observable).first]:
+  <li>السطر 48: الطريقة الثابتة [<bdi dir="ltr" class="odt-ltr-term">BlockingObservable.from</bdi>(<bdi dir="ltr" class="odt-ltr-term">Observable</bdi>).<bdi dir="ltr" class="odt-ltr-term">first</bdi>]:
     <ul>
-      <li>تشترك في المراقب الذي تم تمريره كمعلمة إلى [from]؛
+      <li>تشترك في المراقب الذي تم تمريره كمعلمة إلى [<bdi dir="ltr" class="odt-ltr-term">from</bdi>]؛
       </li>
       <li>تقوم بتشغيل تنفيذ الكود المرتبط بالمتغير القابل للمراقبة؛
       </li>
@@ -1788,18 +1790,18 @@
   </li>
 </ul>
 
-<p>نستخدم الطريقة [firstOrDefault(null)] هنا لأن المراقب [metier.authenticate] لا يُرجع نتيجة عند تنفيذه. وبالتالي، ستكون نتيجة الطريقة [firstOrDefault(null)] هي <em>null</em>، وهي قيمة لا تُستخدم هنا؛</p>
-<p>نكرر هذا النمط في بقية الكود كلما أردنا استدعاء طبقة [business].</p>
-<p>يجب أن ينجح الاختبار الوحدوي [Test01]:</p>
+<p>نستخدم الطريقة [<bdi dir="ltr" class="odt-ltr-term">firstOrDefault</bdi>(<bdi dir="ltr" class="odt-ltr-term">null</bdi>)] هنا لأن المراقب [<bdi dir="ltr" class="odt-ltr-term">metier.authenticate</bdi>] لا يُرجع نتيجة عند تنفيذه. وبالتالي، ستكون نتيجة الطريقة [<bdi dir="ltr" class="odt-ltr-term">firstOrDefault</bdi>(<bdi dir="ltr" class="odt-ltr-term">null</bdi>)] هي <em><bdi dir="ltr" class="odt-ltr-term">null</bdi></em>، وهي قيمة لا تُستخدم هنا؛</p>
+<p>نكرر هذا النمط في بقية الكود كلما أردنا استدعاء طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>].</p>
+<p>يجب أن ينجح الاختبار الوحدوي [<bdi dir="ltr" class="odt-ltr-term">Test01</bdi>]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001D2000000F6CBC27211.png" width="322" height="170" style="display:inline-block; margin:4px;width:8.513cm;height:4.494cm;" class="odt-zoomable" data-zoom-src="images/10000000000001D2000000F6CBC27211.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><strong>المهمة</strong>: تحقق من نجاح اختبار [Test01].</p>
+<p><strong>المهمة</strong>: تحقق من نجاح اختبار [<bdi dir="ltr" class="odt-ltr-term">Test01</bdi>].</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
 <p><a id="refheading128124149879088"></a></p>
-<h4 id="20142-test02">20.1.4.2. <span style="color: #4f81bd"><span style="color: #4f81bd">Test02</span></span></h4>
-<p>نقوم بتعديل اختبار [Test01] لكي يختبر الآن الواجهة غير المتزامنة [IRxElectionsMetier] عن طريق إجراء مكالمات غير متزامنة إلى أساليبها.</p>
+<h4 id="20142-test02">20.1.4.2. <span style="color: #4f81bd"><span style="color: #4f81bd"><bdi dir="ltr" class="odt-ltr-term">Test02</bdi></span></span></h4>
+<p>نقوم بتعديل اختبار [<bdi dir="ltr" class="odt-ltr-term">Test01</bdi>] لكي يختبر الآن الواجهة غير المتزامنة [<bdi dir="ltr" class="odt-ltr-term">IRxElectionsMetier</bdi>] عن طريق إجراء مكالمات غير متزامنة إلى أساليبها.</p>
 <p>دعونا نفحص الاختبار الأولي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// thread synchronization semaphore</span></span></span>
@@ -1832,11 +1834,11 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 2: الإشارة (semaphore) هي أداة تُستخدم لمزامنة الخيوط (threads) مع بعضها البعض. والخيوط هي تدفقات تنفيذية تعمل بالتوازي. لتنفيذ المهمة T1، قد يحتاج الخيط [Thread1] إلى اكتمال المهمة T2، التي ينفذها الخيط [Thread2]. وعندئذٍ ينتظر حتى يرسل له الخيط [Thread2] إشارة تشير إلى اكتمال المهمة T2. هناك طرق مختلفة لإدارة هذه المزامنة بين خيطين. الطريقة المستخدمة هنا هي كما يلي:
+  <li>السطر 2: الإشارة (<bdi dir="ltr" class="odt-ltr-term">semaphore</bdi>) هي أداة تُستخدم لمزامنة الخيوط (<bdi dir="ltr" class="odt-ltr-term">threads</bdi>) مع بعضها البعض. والخيوط هي تدفقات تنفيذية تعمل بالتوازي. لتنفيذ المهمة <bdi dir="ltr" class="odt-ltr-term">T1</bdi>، قد يحتاج الخيط [<bdi dir="ltr" class="odt-ltr-term">Thread1</bdi>] إلى اكتمال المهمة <bdi dir="ltr" class="odt-ltr-term">T2</bdi>، التي ينفذها الخيط [<bdi dir="ltr" class="odt-ltr-term">Thread2</bdi>]. وعندئذٍ ينتظر حتى يرسل له الخيط [<bdi dir="ltr" class="odt-ltr-term">Thread2</bdi>] إشارة تشير إلى اكتمال المهمة <bdi dir="ltr" class="odt-ltr-term">T2.</bdi> هناك طرق مختلفة لإدارة هذه المزامنة بين خيطين. الطريقة المستخدمة هنا هي كما يلي:
     <ul>
-      <li>السطر 10: يقوم الخيط [Thread1] بإنشاء إشارة بقيمة 1؛
+      <li>السطر 10: يقوم الخيط [<bdi dir="ltr" class="odt-ltr-term">Thread1</bdi>] بإنشاء إشارة بقيمة 1؛
       </li>
-      <li>السطر 12: يقوم الخيط [Thread1] بإنشاء وتشغيل خيط [Thread2]. ويتم تحقيق ذلك باستخدام الصيغة:
+      <li>السطر 12: يقوم الخيط [<bdi dir="ltr" class="odt-ltr-term">Thread1</bdi>] بإنشاء وتشغيل خيط [<bdi dir="ltr" class="odt-ltr-term">Thread2</bdi>]. ويتم تحقيق ذلك باستخدام الصيغة:
       </li>
     </ul>
   </li>
@@ -1846,7 +1848,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">electionsMetier.authenticate(user).<span style="color:#ff0000">subscribeOn</span>(Schedulers.io())</span></span>
 </code></pre></div>
 
-<p>تحدد طريقة [Observable.subscribeOn] الخيط الذي سيتم تشغيل العملية المراقبة عليه. المعلمة لـ [subscribeOn] هي مجموعة خيوط. توفر مكتبة RxJava عدة مجموعات مناسبة لمواقف مختلفة. مجموعة [Schedulers.io()] هي المجموعة الموصى بها لعمليات الشبكة؛</p>
+<p>تحدد طريقة [<bdi dir="ltr" class="odt-ltr-term">Observable.subscribeOn</bdi>] الخيط الذي سيتم تشغيل العملية المراقبة عليه. المعلمة لـ [<bdi dir="ltr" class="odt-ltr-term">subscribeOn</bdi>] هي مجموعة خيوط. توفر مكتبة <bdi dir="ltr" class="odt-ltr-term">RxJava</bdi> عدة مجموعات مناسبة لمواقف مختلفة. مجموعة [<bdi dir="ltr" class="odt-ltr-term">Schedulers.io</bdi>()] هي المجموعة الموصى بها لعمليات الشبكة؛</p>
 <ul>
   <li>(تابع)
     <ul>
@@ -1860,29 +1862,29 @@
 <span class="odt-code-line"><span class="odt-code-line-content">electionsMetier.authenticate(user).<span style="color:#ff0000">subscribeOn</span>(Schedulers.io()).subscribe(...)</span></span>
 </code></pre></div>
 
-<p>تنفذ العملية المتزامنة المُغلفة في المراقب [authenticate(user)]. ولكن نظرًا لأن هذه العملية المتزامنة يتم تشغيلها على مؤشر ترابط آخر غير [Thread1]، فإن هذا الأخير لا ينتظر الرد من طريقة [subscribe] وينتقل إلى العبارة التالية؛</p>
+<p>تنفذ العملية المتزامنة المُغلفة في المراقب [<bdi dir="ltr" class="odt-ltr-term">authenticate</bdi>(<bdi dir="ltr" class="odt-ltr-term">user</bdi>)]. ولكن نظرًا لأن هذه العملية المتزامنة يتم تشغيلها على مؤشر ترابط آخر غير [<bdi dir="ltr" class="odt-ltr-term">Thread1</bdi>]، فإن هذا الأخير لا ينتظر الرد من طريقة [<bdi dir="ltr" class="odt-ltr-term">subscribe</bdi>] وينتقل إلى العبارة التالية؛</p>
 <ul>
   <li>(تابع)
     <ul>
-      <li>السطر 23: يتوقف مؤشر الترابط [Thread1] وينتظر حتى يصبح مؤشر الإشارة 0 (وهو حاليًا عند 1)؛
+      <li>السطر 23: يتوقف مؤشر الترابط [<bdi dir="ltr" class="odt-ltr-term">Thread1</bdi>] وينتظر حتى يصبح مؤشر الإشارة 0 (وهو حاليًا عند 1)؛
       </li>
     </ul>
   </li>
-  <li>الأسطر 13-21: تأخذ طريقة [subscribe] ثلاث دوال لامدا كمعلمات:
+  <li>الأسطر 13-21: تأخذ طريقة [<bdi dir="ltr" class="odt-ltr-term">subscribe</bdi>] ثلاث دوال لامدا كمعلمات:
     <ul>
-      <li>الأولى [<b>(result)-&gt;{...}</b>] تُستدعى في كل مرة يصدر فيها المراقب [authenticate(user)] نتيجة [result]. لدينا هنا مراقب [authenticate(user)] يقوم بعمل ما ولكنه لا يصدر أي نتيجة. ولذلك لن يتم استدعاء دالة لامدا <b>[(result)-&gt;{}</b>] أبدًا. وهذا هو سبب كون كودها فارغًا هنا [<b>{}</b>]؛
+      <li>الأولى [<b>(<bdi dir="ltr" class="odt-ltr-term">result</bdi>)-&gt;{...}</b>] تُستدعى في كل مرة يصدر فيها المراقب [<bdi dir="ltr" class="odt-ltr-term">authenticate</bdi>(<bdi dir="ltr" class="odt-ltr-term">user</bdi>)] نتيجة [<bdi dir="ltr" class="odt-ltr-term">result</bdi>]. لدينا هنا مراقب [<bdi dir="ltr" class="odt-ltr-term">authenticate</bdi>(<bdi dir="ltr" class="odt-ltr-term">user</bdi>)] يقوم بعمل ما ولكنه لا يصدر أي نتيجة. ولذلك لن يتم استدعاء دالة لامدا <b>[(<bdi dir="ltr" class="odt-ltr-term">result</bdi>)-&gt;{}</b>] أبدًا. وهذا هو سبب كون كودها فارغًا هنا [<b>{}</b>]؛
       </li>
-      <li>الثانية [<b>(th)-&gt;{...}</b>] تأخذ نوع [Throwable] كمعلمة. يتم استدعاؤها عندما يواجه تنفيذ المراقب استثناءً. هنا، نتعامل مع المعلمة [Throwable th] على النحو التالي:
+      <li>الثانية [<b>(<bdi dir="ltr" class="odt-ltr-term">th</bdi>)-&gt;{...}</b>] تأخذ نوع [<bdi dir="ltr" class="odt-ltr-term">Throwable</bdi>] كمعلمة. يتم استدعاؤها عندما يواجه تنفيذ المراقب استثناءً. هنا، نتعامل مع المعلمة [<bdi dir="ltr" class="odt-ltr-term">Throwable th</bdi>] على النحو التالي:
         <ul>
-          <li>السطر 16: نقوم بتخزينها في حقل من فئة الاختبار من النوع [ElectionsException] لأن المراقب المنفذ يرمي هذا النوع من الاستثناءات فقط؛
+          <li>السطر 16: نقوم بتخزينها في حقل من فئة الاختبار من النوع [<bdi dir="ltr" class="odt-ltr-term">ElectionsException</bdi>] لأن المراقب المنفذ يرمي هذا النوع من الاستثناءات فقط؛
           </li>
-          <li>السطر 17: نضبط الإشارة إلى 0 للإشارة إلى أن مؤشر الترابط [Thread2] قد أنهى عمله؛
+          <li>السطر 17: نضبط الإشارة إلى 0 للإشارة إلى أن مؤشر الترابط [<bdi dir="ltr" class="odt-ltr-term">Thread2</bdi>] قد أنهى عمله؛
           </li>
         </ul>
       </li>
       <li>يتم استدعاء [<b>()-&gt;{...}</b>] الثالث عندما لا يكون لدى المراقب عناصر أخرى لإصدارها. نتعامل مع هذا الحدث على النحو التالي:
         <ul>
-          <li>السطر 20: نضبط الإشارة إلى 0 للإشارة إلى أن الخيط [Thread2] قد أنهى عمله؛
+          <li>السطر 20: نضبط الإشارة إلى 0 للإشارة إلى أن الخيط [<bdi dir="ltr" class="odt-ltr-term">Thread2</bdi>] قد أنهى عمله؛
           </li>
         </ul>
       </li>
@@ -1892,7 +1894,7 @@
 
 <p>لاحظ أن اللامدا الثالثة لا يتم استدعاؤها في حالة حدوث استثناء. ولهذا السبب كان علينا تعيين الإشارة إلى 0 في السطر 17 أيضًا؛</p>
 <ul>
-  <li>السطر 25: عندما نصل إلى هذا السطر، يكون المراقب قد أنهى عمله. يمكننا بعد ذلك إجراء نفس الفحوصات كما في الاختبار [Test01]؛
+  <li>السطر 25: عندما نصل إلى هذا السطر، يكون المراقب قد أنهى عمله. يمكننا بعد ذلك إجراء نفس الفحوصات كما في الاختبار [<bdi dir="ltr" class="odt-ltr-term">Test01</bdi>]؛
   </li>
 </ul>
 
@@ -1950,24 +1952,24 @@
 </code></pre></div>
 
 <ul>
-  <li>الأسطر 20–30: التنفيذ غير المتزامن للقابل للمراقبة [electionsMetier.calculateSeats(admin, lists)]؛
+  <li>الأسطر 20–30: التنفيذ غير المتزامن للقابل للمراقبة [<bdi dir="ltr" class="odt-ltr-term">electionsMetier.calculateSeats</bdi>(<bdi dir="ltr" class="odt-ltr-term">admin</bdi>, <bdi dir="ltr" class="odt-ltr-term">lists</bdi>)]؛
   </li>
-  <li>الأسطر 21–23: يُرجع تنفيذ المراقب نوع [VoterList[]]، والذي يتم تخزينه في حقل من فئة الاختبار، السطر 3؛
+  <li>الأسطر 21–23: يُرجع تنفيذ المراقب نوع [<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>[]]، والذي يتم تخزينه في حقل من فئة الاختبار، السطر 3؛
   </li>
-  <li>الأسطر 34–48: هذه الفحوصات هي تلك الموجودة في اختبار [Test01]، والتي أضفنا إليها الفحص في السطر 34 الذي يضمن عدم حدوث أي استثناء؛
+  <li>الأسطر 34–48: هذه الفحوصات هي تلك الموجودة في اختبار [<bdi dir="ltr" class="odt-ltr-term">Test01</bdi>]، والتي أضفنا إليها الفحص في السطر 34 الذي يضمن عدم حدوث أي استثناء؛
   </li>
 </ul>
 
-<p>اختبار [Test02] بأكمله متاح في مواد الدورة التدريبية.</p>
+<p>اختبار [<bdi dir="ltr" class="odt-ltr-term">Test02</bdi>] بأكمله متاح في مواد الدورة التدريبية.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><strong>المهمة</strong>: قم بتشغيل اختبار [Test02] وتأكد من نجاحه.</p>
+<p><strong>المهمة</strong>: قم بتشغيل اختبار [<bdi dir="ltr" class="odt-ltr-term">Test02</bdi>] وتأكد من نجاحه.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
 <p><a id="refheading128128149879088"></a></p>
-<h4 id="20143-test03">20.1.4.3. <span style="color: #4f81bd">Test03</span></h4>
-<p>يقوم الاختبار [Test03] بنفس ما يقوم به الاختبار [Test01]: فهو يختبر واجهة [IRxElectionsMetier] باستخدام استدعاءات متزامنة لتلك الواجهة. وهو نسخة من الاختبار [Test02] مع اختلافين:</p>
+<h4 id="20143-test03">20.1.4.3. <span style="color: #4f81bd"><bdi dir="ltr" class="odt-ltr-term">Test03</bdi></span></h4>
+<p>يقوم الاختبار [<bdi dir="ltr" class="odt-ltr-term">Test03</bdi>] بنفس ما يقوم به الاختبار [<bdi dir="ltr" class="odt-ltr-term">Test01</bdi>]: فهو يختبر واجهة [<bdi dir="ltr" class="odt-ltr-term">IRxElectionsMetier</bdi>] باستخدام استدعاءات متزامنة لتلك الواجهة. وهو نسخة من الاختبار [<bdi dir="ltr" class="odt-ltr-term">Test02</bdi>] مع اختلافين:</p>
 <ul>
-  <li>لم تعد العناصر القابلة للمراقبة تُنفَّذ في مؤشر ترابط مختلف عن المؤشر الذي يُشغِّل الاختبارات. عندما يُنفِّذ مؤشر الترابط [Thread1] طريقة [subscribe] لعنصر قابل للمراقبة، فإنه يبدأ عملية HTTP إلى الخادم أيضًا على مؤشر الترابط [Thread1]. ثم تصبح طريقة [subscribe] بأكملها متزامنة؛
+  <li>لم تعد العناصر القابلة للمراقبة تُنفَّذ في مؤشر ترابط مختلف عن المؤشر الذي يُشغِّل الاختبارات. عندما يُنفِّذ مؤشر الترابط [<bdi dir="ltr" class="odt-ltr-term">Thread1</bdi>] طريقة [<bdi dir="ltr" class="odt-ltr-term">subscribe</bdi>] لعنصر قابل للمراقبة، فإنه يبدأ عملية <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> إلى الخادم أيضًا على مؤشر الترابط [<bdi dir="ltr" class="odt-ltr-term">Thread1</bdi>]. ثم تصبح طريقة [<bdi dir="ltr" class="odt-ltr-term">subscribe</bdi>] بأكملها متزامنة؛
   </li>
   <li>نظرًا لوجود مؤشر ترابط واحد فقط الآن، تصبح مزامنة مؤشرات الترابط غير ضرورية ويختفي الإشارة؛
   </li>
@@ -1996,7 +1998,7 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 7: بشكل افتراضي، يتم تشغيل الطريقة [<span style="color: #ff0000">electionsMetier.authenticate(user)</span>.subscribe] في مؤشر ترابط الكود المستدعي. وبالتالي، فهذه عملية متزامنة؛
+  <li>السطر 7: بشكل افتراضي، يتم تشغيل الطريقة [<span style="color: #ff0000"><bdi dir="ltr" class="odt-ltr-term">electionsMetier.authenticate</bdi>(<bdi dir="ltr" class="odt-ltr-term">user</bdi>)</span>.<bdi dir="ltr" class="odt-ltr-term">subscribe</bdi>] في مؤشر ترابط الكود المستدعي. وبالتالي، فهذه عملية متزامنة؛
   </li>
 </ul>
 
@@ -2047,19 +2049,19 @@
 </code></pre></div>
 
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><strong>المهمة</strong>: قم بتشغيل الاختبار [Test03] وتأكد من نجاحه.</p>
+<p><strong>المهمة</strong>: قم بتشغيل الاختبار [<bdi dir="ltr" class="odt-ltr-term">Test03</bdi>] وتأكد من نجاحه.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
 <p><a id="refheading129882735939761"></a></p>
 <h2 id="202-2">20.2. <span style="color: #4f81bd">الخطوة 2</span></h2>
-<p>سنقوم الآن بتحويل تطبيق وحدة التحكم المتزامن من <a href="#refheading110868391218965"><u><span style="color: #0563c1">الفصل 17.5</span></u></a> إلى تطبيق يظل متزامنًا ولكنه يستخدم الواجهة غير المتزامنة [RxJava، منطق الأعمال، DAO]؛</p>
+<p>سنقوم الآن بتحويل تطبيق وحدة التحكم المتزامن من <a href="#refheading110868391218965"><u><span style="color: #0563c1">الفصل 17.5</span></u></a> إلى تطبيق يظل متزامنًا ولكنه يستخدم الواجهة غير المتزامنة [<bdi dir="ltr" class="odt-ltr-term">RxJava</bdi>، منطق الأعمال، <bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]؛</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003F2000001322CEEF8B8.png" width="505" height="153" style="display:inline-block; margin:4px;width:13.361cm;height:4.048cm;" class="odt-zoomable" data-zoom-src="images/10000000000003F2000001322CEEF8B8.png" /></td></tr></table>
 
-<p>نبدأ بالمشروع [elections-console-business-dao-security-webjson] [1] من <a href="#refheading110868391218965"><u><span style="color: #0563c1">الفصل 17.5،</span></u></a> الذي نقوم بنسخه إلى مشروع جديد [elections-console-rxjava-business-dao-security-webjson] [2]:</p>
+<p>نبدأ بالمشروع [<bdi dir="ltr" class="odt-ltr-term">elections-console-business-dao-security-webjson</bdi>] [1] من <a href="#refheading110868391218965"><u><span style="color: #0563c1">الفصل 17.5،</span></u></a> الذي نقوم بنسخه إلى مشروع جديد [<bdi dir="ltr" class="odt-ltr-term">elections-console-rxjava-business-dao-security-webjson</bdi>] [2]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001420000010BCAA9096A.png" width="225" height="187" style="display:inline-block; margin:4px;width:5.96cm;height:4.942cm;" class="odt-zoomable" data-zoom-src="images/10000000000001420000010BCAA9096A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000016B00000135D181CE2C.png" width="254" height="216" style="display:inline-block; margin:4px;width:6.72cm;height:5.72cm;" class="odt-zoomable" data-zoom-src="images/100000000000016B00000135D181CE2C.png" /></td></tr></table>
 
 <ul>
-  <li>في [3-4]، في المشروع الجديد، نزيل التبعية للطبقة [business] المتزامنة القديمة؛
+  <li>في [3-4]، في المشروع الجديد، نزيل التبعية للطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] المتزامنة القديمة؛
   </li>
 </ul>
 
@@ -2073,14 +2075,14 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000021100000244E2DEC2B7.png" width="327" height="358" style="display:inline-block; margin:4px;width:8.641cm;height:9.474cm;" class="odt-zoomable" data-zoom-src="images/100000000000021100000244E2DEC2B7.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012D00000117BD12F800.png" width="211" height="195" style="display:inline-block; margin:4px;width:5.57cm;height:5.163cm;" class="odt-zoomable" data-zoom-src="images/100000000000012D00000117BD12F800.png" /></td></tr></table>
 
 <ul>
-  <li>في [10-14]، نعيد تسمية فئة [ElectionsConsole] إلى [ElectionsConsole01]؛
+  <li>في [10-14]، نعيد تسمية فئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsConsole</bdi>] إلى [<bdi dir="ltr" class="odt-ltr-term">ElectionsConsole01</bdi>]؛
   </li>
 </ul>
 
-<p>وبالمثل، نعيد تسمية فئة [BootElectionsConsole] إلى [BootElectionsConsole01]:</p>
+<p>وبالمثل، نعيد تسمية فئة [<bdi dir="ltr" class="odt-ltr-term">BootElectionsConsole</bdi>] إلى [<bdi dir="ltr" class="odt-ltr-term">BootElectionsConsole01</bdi>]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000100000000B8D59AAE49.png" width="179" height="129" style="display:inline-block; margin:4px;width:4.74cm;height:3.408cm;" class="odt-zoomable" data-zoom-src="images/1000000000000100000000B8D59AAE49.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>فيما يلي الكود الحالي لفئة [BootElectionsConsole01]:</p>
+<p>فيما يلي الكود الحالي لفئة [<bdi dir="ltr" class="odt-ltr-term">BootElectionsConsole01</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.security.client.boot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2100,7 +2102,7 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 13: نظرًا لأننا قمنا بتغيير اسم الفئة من [ElectionsConsole] إلى [ElectionsConsole01]، يجب علينا الآن كتابة:
+  <li>السطر 13: نظرًا لأننا قمنا بتغيير اسم الفئة من [<bdi dir="ltr" class="odt-ltr-term">ElectionsConsole</bdi>] إلى [<bdi dir="ltr" class="odt-ltr-term">ElectionsConsole01</bdi>]، يجب علينا الآن كتابة:
   </li>
 </ul>
 
@@ -2108,7 +2110,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return</span><span style="color:#000000"> ctx.getBean(</span><span style="color:#2a00ff">&quot;</span><span style="color:#ff0000">electionsConsole01</span><span style="color:#2a00ff">&quot;</span><span style="color:#000000">,IElectionsUI.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">);</span></span></span>
 </code></pre></div>
 
-<p>لنعد إلى كود الفئة [ElectionsConsole01]:</p>
+<p>لنعد إلى كود الفئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsConsole01</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#646464">@</span><span style="color:#000000">Component</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000"> ElectionsConsole01 </span><span style="font-weight:bold;color:#7f0055">implements</span><span style="color:#000000"> IElectionsUI {</span></span></span>
@@ -2136,7 +2138,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>إذا اتبعنا مثال الاختبار [Test01] في <a href="#refheading127476149879088"><u><span style="color: #0563c1">القسم 20.1.4.1</span></u></a>، فستتغير الأسطر 5 و17 و20 و22 على النحو التالي:</p>
+<p>إذا اتبعنا مثال الاختبار [<bdi dir="ltr" class="odt-ltr-term">Test01</bdi>] في <a href="#refheading127476149879088"><u><span style="color: #0563c1">القسم 20.1.4.1</span></u></a>، فستتغير الأسطر 5 و17 و20 و22 على النحو التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#646464">@</span><span style="color:#000000">Component</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000"> ElectionsConsole01 </span><span style="font-weight:bold;color:#7f0055">implements</span><span style="color:#000000"> IElectionsUI {</span></span></span>
@@ -2165,25 +2167,25 @@
 </code></pre></div>
 
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><strong><span style="color: #000000">المهمة</span></strong><span style="color: #000000">: قم بتكوين المشروع لتشغيل فئة [BootElectionsConsole01] باستخدام المعلمات الثلاثة [SS، ساعات العمل، أيام العمل] وتأكد من أن تشغيل المشروع بالضبط الذي تم تكوينه ينتج النتائج المتوقعة.</span></p>
+<p><strong><span style="color: #000000">المهمة</span></strong><span style="color: #000000">: قم بتكوين المشروع لتشغيل فئة [<bdi dir="ltr" class="odt-ltr-term">BootElectionsConsole01</bdi>] باستخدام المعلمات الثلاثة [<bdi dir="ltr" class="odt-ltr-term">SS</bdi>، ساعات العمل، أيام العمل] وتأكد من أن تشغيل المشروع بالضبط الذي تم تكوينه ينتج النتائج المتوقعة.</span></p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><strong>المهمة</strong>: قم بتكوين المشروع لتشغيل الزوج [<span style="color: #000000">BootElectionsConsole02, ElectionsConsole02]، حيث تمت كتابة الفئة [ElectionsConsole02] وفقًا لنموذج الاختبار [Test02] في </span><a href="#refheading128124149879088"><u><span style="color: #0563c1">القسم 20.1.4.2</span></u></a><span style="color: #000000">.</span></p>
+<p><strong>المهمة</strong>: قم بتكوين المشروع لتشغيل الزوج [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">BootElectionsConsole02</bdi>, <bdi dir="ltr" class="odt-ltr-term">ElectionsConsole02</bdi>]، حيث تمت كتابة الفئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsConsole02</bdi>] وفقًا لنموذج الاختبار [<bdi dir="ltr" class="odt-ltr-term">Test02</bdi>] في </span><a href="#refheading128124149879088"><u><span style="color: #0563c1">القسم 20.1.4.2</span></u></a><span style="color: #000000">.</span></p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><strong>المهمة</strong>: قم بتكوين المشروع لتشغيل الزوج [<span style="color: #000000">BootElectionsConsole03، ElectionsConsole03]، حيث تمت كتابة الفئة [ElectionsConsole03] وفقًا لنموذج الاختبار [Test03] في </span><a href="#refheading128128149879088"><u><span style="color: #0563c1">القسم 20.1.4.3</span></u></a><span style="color: #000000">.</span></p>
+<p><strong>المهمة</strong>: قم بتكوين المشروع لتشغيل الزوج [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">BootElectionsConsole03</bdi>، <bdi dir="ltr" class="odt-ltr-term">ElectionsConsole03</bdi>]، حيث تمت كتابة الفئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsConsole03</bdi>] وفقًا لنموذج الاختبار [<bdi dir="ltr" class="odt-ltr-term">Test03</bdi>] في </span><a href="#refheading128128149879088"><u><span style="color: #0563c1">القسم 20.1.4.3</span></u></a><span style="color: #000000">.</span></p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
 <p><a id="refheading129884735939761"></a></p>
 <h2 id="203-3">20.3. <span style="color: #000000">الخطوة 3</span></h2>
-<p><span style="color: #000000">سننتقل الآن إلى نقل تطبيق Swing إلى بيئة غير متزامنة.</span></p>
+<p><span style="color: #000000">سننتقل الآن إلى نقل تطبيق <bdi dir="ltr" class="odt-ltr-term">Swing</bdi> إلى بيئة غير متزامنة.</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003CA00000133793411BE.png" width="485" height="153" style="display:inline-block; margin:4px;width:12.832cm;height:4.06cm;" class="odt-zoomable" data-zoom-src="images/10000000000003CA00000133793411BE.png" /></td></tr></table>
 
-<p><span style="color: #000000">نبدأ بنسخ مشروع [elections-swing-metier-dao-security-webjson] [1] من </span><a href="#refheading251527391218965"><u><span style="color: #0563c1">الفصل 17.6</span></u></a><span style="color: #000000"> إلى مشروع جديد [elections-swing-rxjava-metier-dao-security-webjson] [2]:</span></p>
+<p><span style="color: #000000">نبدأ بنسخ مشروع [<bdi dir="ltr" class="odt-ltr-term">elections-swing-metier-dao-security-webjson</bdi>] [1] من </span><a href="#refheading251527391218965"><u><span style="color: #0563c1">الفصل 17.6</span></u></a><span style="color: #000000"> إلى مشروع جديد [<bdi dir="ltr" class="odt-ltr-term">elections-swing-rxjava-metier-dao-security-webjson</bdi>] [2]:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000146000000ACC12B8135.png" width="228" height="120" style="display:inline-block; margin:4px;width:6.04cm;height:3.187cm;" class="odt-zoomable" data-zoom-src="images/1000000000000146000000ACC12B8135.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000191000001222CDE9ABE.png" width="280" height="203" style="display:inline-block; margin:4px;width:7.421cm;height:5.368cm;" class="odt-zoomable" data-zoom-src="images/1000000000000191000001222CDE9ABE.png" /></td></tr></table>
 
 <ul>
-  <li><span style="color: #000000">في [3، 4]، نزيل التبعية لطبقة [console] المتزامنة؛</span>
+  <li><span style="color: #000000">في [3، 4]، نزيل التبعية لطبقة [<bdi dir="ltr" class="odt-ltr-term">console</bdi>] المتزامنة؛</span>
   </li>
 </ul>
 
@@ -2194,11 +2196,11 @@
   </li>
 </ul>
 
-<p><span style="color: #000000">ستقوم طبقة [swing] بإجراء مكالمات غير متزامنة حقيقية إلى طبقة [business]. عند استدعاء طريقة في هذه الأخيرة، سيكون هناك خيطان:</span></p>
+<p><span style="color: #000000">ستقوم طبقة [<bdi dir="ltr" class="odt-ltr-term">swing</bdi>] بإجراء مكالمات غير متزامنة حقيقية إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>]. عند استدعاء طريقة في هذه الأخيرة، سيكون هناك خيطان:</span></p>
 <ul>
   <li><span style="color: #000000">خيط واجهة المستخدم، الذي يتعامل مع الأحداث؛</span>
   </li>
-  <li><span style="color: #000000">خيط الإدخال/الإخراج الذي سيقوم بتنفيذ استدعاء HTTP إلى الخادم؛</span>
+  <li><span style="color: #000000">خيط الإدخال/الإخراج الذي سيقوم بتنفيذ استدعاء <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> إلى الخادم؛</span>
   </li>
 </ul>
 
@@ -2206,8 +2208,8 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012C000000C88953966C.png" width="210" height="140" style="display:inline-block; margin:4px;width:5.549cm;height:3.699cm;" class="odt-zoomable" data-zoom-src="images/100000000000012C000000C88953966C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><a id="refheading129886735939761"></a></p>
-<h3 id="2031-maven">20.3.1. <span style="color: #000000">تكوين Maven</span></h3>
-<p><span style="color: #000000">هنا، سنستخدم مكتبة [RxSwing]، التي توسع مكتبة [RxJava] بميزات متوفرة فقط في بيئة Swing. للقيام بذلك، نقوم بتعديل ملف [pom.xml] على النحو التالي:</span></p>
+<h3 id="2031-maven">20.3.1. <span style="color: #000000">تكوين <bdi dir="ltr" class="odt-ltr-term">Maven</bdi></span></h3>
+<p><span style="color: #000000">هنا، سنستخدم مكتبة [<bdi dir="ltr" class="odt-ltr-term">RxSwing</bdi>]، التي توسع مكتبة [<bdi dir="ltr" class="odt-ltr-term">RxJava</bdi>] بميزات متوفرة فقط في بيئة <bdi dir="ltr" class="odt-ltr-term">Swing.</bdi> للقيام بذلك، نقوم بتعديل ملف [<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>] على النحو التالي:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span> <span style="color:#7f007f">xmlns</span>=<span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span style="color:#7f007f">xmlns:xsi</span>=<span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">         <span style="color:#7f007f">xsi:schemaLocation</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#008080">&gt;</span></span></span>
@@ -2245,8 +2247,8 @@
 </code></pre></div>
 
 <p><a id="refheading129888735939761"></a></p>
-<h3 id="2032-electionsconnectform">20.3.2. <span style="color: #000000">فئة [ElectionsConnectForm]</span></h3>
-<p><span style="color: #000000">في عملية غير متزامنة، تصبح فئة [ElectionsConnectForm] كما يلي:</span></p>
+<h3 id="2032-electionsconnectform">20.3.2. <span style="color: #000000">فئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsConnectForm</bdi>]</span></h3>
+<p><span style="color: #000000">في عملية غير متزامنة، تصبح فئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsConnectForm</bdi>] كما يلي:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.security.client.swing;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2341,7 +2343,7 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">الأسطر 36–63: يتم تنفيذ طريقة [doConnect] عندما ينقر المستخدم على خيار القائمة [Connect]:</span>
+  <li><span style="color: #000000">الأسطر 36–63: يتم تنفيذ طريقة [<bdi dir="ltr" class="odt-ltr-term">doConnect</bdi>] عندما ينقر المستخدم على خيار القائمة [<bdi dir="ltr" class="odt-ltr-term">Connect</bdi>]:</span>
   </li>
 </ul>
 
@@ -2353,25 +2355,25 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">العملية التي يتم مراقبة [</span>metier.authenticate(user)<span style="color: #000000">]؛</span>
+  <li><span style="color: #000000">العملية التي يتم مراقبة [</span><bdi dir="ltr" class="odt-ltr-term">metier.authenticate</bdi>(<bdi dir="ltr" class="odt-ltr-term">user</bdi>)<span style="color: #000000">]؛</span>
   </li>
-  <li><span style="color: #000000">وسيتم تنفيذها على مؤشر ترابط I/O مأخوذ من تجمع [</span>Schedulers.io()<span style="color: #000000">]؛</span>
+  <li><span style="color: #000000">وسيتم تنفيذها على مؤشر ترابط <bdi dir="ltr" class="odt-ltr-term">I/O</bdi> مأخوذ من تجمع [</span><bdi dir="ltr" class="odt-ltr-term">Schedulers.io</bdi>()<span style="color: #000000">]؛</span>
   </li>
-  <li><span style="color: #000000">وسيتم مراقبة العملية في مؤشر ترابط واجهة المستخدم، وهو المؤشر الذي يتعامل مع أحداث واجهة Swing [</span><span style="color: #ff0000">observeOn(SwingScheduler.getInstance())</span><span style="color: #000000">]. يتم الحصول على هذا المؤشر عبر الطريقة [</span><span style="color: #ff0000">SwingScheduler.getInstance()</span><span style="color: #000000">]، حيث [</span><span style="color: #ff0000">SwingScheduler</span><span style="color: #000000">] هي فئة مقدمة من مكتبة [RxSwing]. وهذا أمر إلزامي. عند الحصول على نتيجة العملية غير المتزامنة، غالبًا ما تُستخدم لتعديل عناصر واجهة Swing. ومع ذلك، لا يمكن تعديل واجهة Swing إلا في مؤشر ترابط واجهة المستخدم؛ وإلا، يتم إصدار استثناء. لذلك يجب أن يتم تنفيذ الأسطر 41–61 في مؤشر ترابط واجهة المستخدم. ويتم ضمان ذلك هنا بواسطة الطريقة [</span><span style="color: #ff0000">observeOn(SwingScheduler.getInstance())</span><span style="color: #000000">]؛</span>
+  <li><span style="color: #000000">وسيتم مراقبة العملية في مؤشر ترابط واجهة المستخدم، وهو المؤشر الذي يتعامل مع أحداث واجهة <bdi dir="ltr" class="odt-ltr-term">Swing</bdi> [</span><span style="color: #ff0000"><bdi dir="ltr" class="odt-ltr-term">observeOn</bdi>(<bdi dir="ltr" class="odt-ltr-term">SwingScheduler.getInstance</bdi>())</span><span style="color: #000000">]. يتم الحصول على هذا المؤشر عبر الطريقة [</span><span style="color: #ff0000"><bdi dir="ltr" class="odt-ltr-term">SwingScheduler.getInstance</bdi>()</span><span style="color: #000000">]، حيث [</span><span style="color: #ff0000"><bdi dir="ltr" class="odt-ltr-term">SwingScheduler</bdi></span><span style="color: #000000">] هي فئة مقدمة من مكتبة [<bdi dir="ltr" class="odt-ltr-term">RxSwing</bdi>]. وهذا أمر إلزامي. عند الحصول على نتيجة العملية غير المتزامنة، غالبًا ما تُستخدم لتعديل عناصر واجهة <bdi dir="ltr" class="odt-ltr-term">Swing.</bdi> ومع ذلك، لا يمكن تعديل واجهة <bdi dir="ltr" class="odt-ltr-term">Swing</bdi> إلا في مؤشر ترابط واجهة المستخدم؛ وإلا، يتم إصدار استثناء. لذلك يجب أن يتم تنفيذ الأسطر 41–61 في مؤشر ترابط واجهة المستخدم. ويتم ضمان ذلك هنا بواسطة الطريقة [</span><span style="color: #ff0000"><bdi dir="ltr" class="odt-ltr-term">observeOn</bdi>(<bdi dir="ltr" class="odt-ltr-term">SwingScheduler.getInstance</bdi>())</span><span style="color: #000000">]؛</span>
   </li>
 </ul>
 
 <p><span style="color: #000000">دعونا نعلق على بقية الكود:</span></p>
 <ul>
-  <li><span style="color: #000000">السطور 42-43: توجد هذه السطور للامتثال لصيغة الأسلوب [subscribe]. لن يتم تنفيذها أبدًا لأن عملية [</span>metier.authenticate(user)<span style="color: #000000">] لا تُرجع أي نتيجة؛</span>
+  <li><span style="color: #000000">السطور 42-43: توجد هذه السطور للامتثال لصيغة الأسلوب [<bdi dir="ltr" class="odt-ltr-term">subscribe</bdi>]. لن يتم تنفيذها أبدًا لأن عملية [</span><bdi dir="ltr" class="odt-ltr-term">metier.authenticate</bdi>(<bdi dir="ltr" class="odt-ltr-term">user</bdi>)<span style="color: #000000">] لا تُرجع أي نتيجة؛</span>
   </li>
   <li><span style="color: #000000">الأسطر 35-52: عند تلقي استثناء، يتم عرضه؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 54-61: يتم تنفيذها عندما تشير عملية [</span>metier.authenticate(user)<span style="color: #000000">] إلى انتهاء عمليات الإرسال الخاصة بها؛</span>
+  <li><span style="color: #000000">الأسطر 54-61: يتم تنفيذها عندما تشير عملية [</span><bdi dir="ltr" class="odt-ltr-term">metier.authenticate</bdi>(<bdi dir="ltr" class="odt-ltr-term">user</bdi>)<span style="color: #000000">] إلى انتهاء عمليات الإرسال الخاصة بها؛</span>
   </li>
 </ul>
 <p><a id="refheading129890735939761"></a></p>
-<h3 id="2033-electionsmainform">20.3.3. <span style="color: #000000">فئة [ElectionsMainForm]</span></h3>
+<h3 id="2033-electionsmainform">20.3.3. <span style="color: #000000">فئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsMainForm</bdi>]</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012C000000C88953966C.png" width="210" height="140" style="display:inline-block; margin:4px;width:5.549cm;height:3.699cm;" class="odt-zoomable" data-zoom-src="images/100000000000012C000000C88953966C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><a id="refheading129892735939761"></a></p>
@@ -2466,7 +2468,7 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">السطر 46: يتم تنفيذ طريقة [init] عندما تكون النافذة المرتبطة على وشك العرض. والغرض منها هو تهيئة المكونات [1-3] أدناه:</span>
+  <li><span style="color: #000000">السطر 46: يتم تنفيذ طريقة [<bdi dir="ltr" class="odt-ltr-term">init</bdi>] عندما تكون النافذة المرتبطة على وشك العرض. والغرض منها هو تهيئة المكونات [1-3] أدناه:</span>
   </li>
 </ul>
 
@@ -2475,9 +2477,9 @@
 <ul>
   <li><span style="color: #000000">السطور 71–85: يتم طلب قوائم المرشحين بشكل غير متزامن (المكون [1])؛</span>
   </li>
-  <li><span style="color: #000000">السطر 71: العملية المراقبة هي [</span>metier.getListesElectorales(user)<span style="color: #000000">]. يتم تنفيذها على مؤشر ترابط الإدخال/الإخراج [</span>subscribeOn(Schedulers.io())<span style="color: #000000">] ومراقبتها على مؤشر ترابط واجهة المستخدم [</span>observeOn(SwingScheduler.getInstance()<span style="color: #000000">)]؛</span>
+  <li><span style="color: #000000">السطر 71: العملية المراقبة هي [</span><bdi dir="ltr" class="odt-ltr-term">metier.getListesElectorales</bdi>(<bdi dir="ltr" class="odt-ltr-term">user</bdi>)<span style="color: #000000">]. يتم تنفيذها على مؤشر ترابط الإدخال/الإخراج [</span><bdi dir="ltr" class="odt-ltr-term">subscribeOn</bdi>(<bdi dir="ltr" class="odt-ltr-term">Schedulers.io</bdi>())<span style="color: #000000">] ومراقبتها على مؤشر ترابط واجهة المستخدم [</span><bdi dir="ltr" class="odt-ltr-term">observeOn</bdi>(<bdi dir="ltr" class="odt-ltr-term">SwingScheduler.getInstance</bdi>()<span style="color: #000000">)]؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 74–77: يتم تخزين النتيجة التي تعيدها العملية المراقبة في الحقل [listes] في السطر 38؛</span>
+  <li><span style="color: #000000">الأسطر 74–77: يتم تخزين النتيجة التي تعيدها العملية المراقبة في الحقل [<bdi dir="ltr" class="odt-ltr-term">listes</bdi>] في السطر 38؛</span>
   </li>
   <li><span style="color: #000000">السطر 79: يتم التعامل مع أي استثناء بالطريقة التالية:</span>
   </li>
@@ -2492,7 +2494,7 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">الأسطر 81–84: في نهاية العملية التي تمت ملاحظتها، يتم تنفيذ الأسطر 81–84. لا يتم تنفيذ هذه الأسطر في حالة حدوث استثناء. تقوم الطريقة [doInitStep2] بتنفيذ الخطوة 2 من عملية التهيئة على النحو التالي:</span>
+  <li><span style="color: #000000">الأسطر 81–84: في نهاية العملية التي تمت ملاحظتها، يتم تنفيذ الأسطر 81–84. لا يتم تنفيذ هذه الأسطر في حالة حدوث استثناء. تقوم الطريقة [<bdi dir="ltr" class="odt-ltr-term">doInitStep2</bdi>] بتنفيذ الخطوة 2 من عملية التهيئة على النحو التالي:</span>
   </li>
 </ul>
 
@@ -2525,7 +2527,7 @@
   </li>
   <li><span style="color: #000000">الأسطر 7–20: نطلب عدد المقاعد المطلوب شغلها بشكل غير متزامن؛</span>
   </li>
-  <li><span style="color: #000000">السطر 7: العملية المرصودة هي [</span>metier.getNbSiegesAPourvoir(user)<span style="color: #000000">]. يتم تنفيذها على مؤشر ترابط I/O [</span>subscribeOn(Schedulers.io())<span style="color: #000000">] ويتم رصدها على مؤشر ترابط واجهة المستخدم [</span>observeOn(SwingScheduler.getInstance()<span style="color: #000000">)]؛</span>
+  <li><span style="color: #000000">السطر 7: العملية المرصودة هي [</span><bdi dir="ltr" class="odt-ltr-term">metier.getNbSiegesAPourvoir</bdi>(<bdi dir="ltr" class="odt-ltr-term">user</bdi>)<span style="color: #000000">]. يتم تنفيذها على مؤشر ترابط <bdi dir="ltr" class="odt-ltr-term">I/O</bdi> [</span><bdi dir="ltr" class="odt-ltr-term">subscribeOn</bdi>(<bdi dir="ltr" class="odt-ltr-term">Schedulers.io</bdi>())<span style="color: #000000">] ويتم رصدها على مؤشر ترابط واجهة المستخدم [</span><bdi dir="ltr" class="odt-ltr-term">observeOn</bdi>(<bdi dir="ltr" class="odt-ltr-term">SwingScheduler.getInstance</bdi>()<span style="color: #000000">)]؛</span>
   </li>
   <li><span style="color: #000000">الأسطر 10-13: تُستخدم النتيجة التي تعيدها العملية لتحديث واجهة المستخدم الرسومية؛</span>
   </li>
@@ -2557,7 +2559,7 @@
 <ul>
   <li><span style="color: #000000">السطران 3-4: يتم طلب عتبة التصويت بشكل غير متزامن؛</span>
   </li>
-  <li><span style="color: #000000">السطر 3: العملية المراقبة هي [</span>business.getVotingThreshold(user)<span style="color: #000000">]. يتم تنفيذها على مؤشر ترابط I/O [</span>subscribeOn(Schedulers.io())<span style="color: #000000">] ومراقبتها على مؤشر ترابط واجهة المستخدم [</span>observeOn(SwingScheduler.getInstance()<span style="color: #000000">)]؛</span>
+  <li><span style="color: #000000">السطر 3: العملية المراقبة هي [</span><bdi dir="ltr" class="odt-ltr-term">business.getVotingThreshold</bdi>(<bdi dir="ltr" class="odt-ltr-term">user</bdi>)<span style="color: #000000">]. يتم تنفيذها على مؤشر ترابط <bdi dir="ltr" class="odt-ltr-term">I/O</bdi> [</span><bdi dir="ltr" class="odt-ltr-term">subscribeOn</bdi>(<bdi dir="ltr" class="odt-ltr-term">Schedulers.io</bdi>())<span style="color: #000000">] ومراقبتها على مؤشر ترابط واجهة المستخدم [</span><bdi dir="ltr" class="odt-ltr-term">observeOn</bdi>(<bdi dir="ltr" class="odt-ltr-term">SwingScheduler.getInstance</bdi>()<span style="color: #000000">)]؛</span>
   </li>
   <li><span style="color: #000000">السطور 6-9: يتم استخدام النتيجة التي تعيدها العملية لتحديث واجهة المستخدم الرسومية؛</span>
   </li>
@@ -2569,7 +2571,7 @@
 
 <p><a id="refheading129894735939761"></a></p>
 <h4 id="20332">20.3.3.2. <span style="color: #4f81bd">حساب المقاعد التي فازت بها القوائم المختلفة</span></h4>
-<p><span style="color: #000000">تتولى طريقة [doCalculer] مسؤولية حساب عدد المقاعد التي فازت بها القوائم المختلفة:</span></p>
+<p><span style="color: #000000">تتولى طريقة [<bdi dir="ltr" class="odt-ltr-term">doCalculer</bdi>] مسؤولية حساب عدد المقاعد التي فازت بها القوائم المختلفة:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#646464">@</span>Override</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doCalculer() {</span></span></span>
@@ -2592,9 +2594,9 @@
 <ul>
   <li><span style="color: #000000">السطور 6–15: يتم حساب المقاعد التي حصلت عليها القوائم المختلفة بشكل غير متزامن؛</span>
   </li>
-  <li><span style="color: #000000">السطر 6: العملية المرصودة هي [</span>metier.calculateSeats(user, tListsEntered)<span style="color: #000000">]. يتم تنفيذها على مؤشر ترابط I/O [</span>subscribeOn(Schedulers.io())<span style="color: #000000">] ويتم رصدها على مؤشر ترابط واجهة المستخدم [</span>observeOn(SwingScheduler.getInstance()<span style="color: #000000">)]؛</span>
+  <li><span style="color: #000000">السطر 6: العملية المرصودة هي [</span><bdi dir="ltr" class="odt-ltr-term">metier.calculateSeats</bdi>(<bdi dir="ltr" class="odt-ltr-term">user</bdi>, <bdi dir="ltr" class="odt-ltr-term">tListsEntered</bdi>)<span style="color: #000000">]. يتم تنفيذها على مؤشر ترابط <bdi dir="ltr" class="odt-ltr-term">I/O</bdi> [</span><bdi dir="ltr" class="odt-ltr-term">subscribeOn</bdi>(<bdi dir="ltr" class="odt-ltr-term">Schedulers.io</bdi>())<span style="color: #000000">] ويتم رصدها على مؤشر ترابط واجهة المستخدم [</span><bdi dir="ltr" class="odt-ltr-term">observeOn</bdi>(<bdi dir="ltr" class="odt-ltr-term">SwingScheduler.getInstance</bdi>()<span style="color: #000000">)]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 9: يتم استخدام النتيجة التي تعيدها العملية بواسطة الطريقة [consumeResultSeats]؛</span>
+  <li><span style="color: #000000">السطر 9: يتم استخدام النتيجة التي تعيدها العملية بواسطة الطريقة [<bdi dir="ltr" class="odt-ltr-term">consumeResultSeats</bdi>]؛</span>
   </li>
   <li><span style="color: #000000">السطر 11: يتم عرض أي استثناءات؛</span>
   </li>
@@ -2602,7 +2604,7 @@
   </li>
 </ul>
 
-<p><span style="color: #000000">السطر 9: تعالج طريقة [consumeResultSieges] النتيجة التي تعيدها العملية المراقبة، وتقوم بتحديث قوائم المرشحين بحقول [seats, eliminated] الخاصة بهم:</span></p>
+<p><span style="color: #000000">السطر 9: تعالج طريقة [<bdi dir="ltr" class="odt-ltr-term">consumeResultSieges</bdi>] النتيجة التي تعيدها العملية المراقبة، وتقوم بتحديث قوائم المرشحين بحقول [<bdi dir="ltr" class="odt-ltr-term">seats</bdi>, <bdi dir="ltr" class="odt-ltr-term">eliminated</bdi>] الخاصة بهم:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="font-weight:bold;color:#7f0055">private</span> <span style="font-weight:bold;color:#7f0055">void</span> consumeResultSieges(ListeElectorale[] tListesSaisies) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// the result is stored</span></span></span>
@@ -2627,7 +2629,7 @@
 </ul>
 <p><a id="refheading129896735939761"></a></p>
 <h4 id="20333">20.3.3.3. <span style="color: #4f81bd">تسجيل نتائج الانتخابات</span></h4>
-<p><span style="color: #000000">يتم حفظ نتائج الانتخابات باستخدام الطريقة [doEnregistrer] التالية:</span></p>
+<p><span style="color: #000000">يتم حفظ نتائج الانتخابات باستخدام الطريقة [<bdi dir="ltr" class="odt-ltr-term">doEnregistrer</bdi>] التالية:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#646464">@</span>Override</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> doEnregistrer() {</span></span></span>
@@ -2653,7 +2655,7 @@
 <ul>
   <li><span style="color: #000000">السطور 4–17: يتم حفظ نتائج الانتخابات بشكل غير متزامن؛</span>
   </li>
-  <li><span style="color: #000000">السطر 4: العملية المراقبة هي [</span>business.recordResults(user, tEnteredLists)<span style="color: #000000">]. يتم تنفيذها على مؤشر ترابط I/O [</span>subscribeOn(Schedulers.io())<span style="color: #000000">] ومراقبتها على مؤشر ترابط واجهة المستخدم [</span>observeOn(SwingScheduler.getInstance()<span style="color: #000000">)]؛</span>
+  <li><span style="color: #000000">السطر 4: العملية المراقبة هي [</span><bdi dir="ltr" class="odt-ltr-term">business.recordResults</bdi>(<bdi dir="ltr" class="odt-ltr-term">user</bdi>, <bdi dir="ltr" class="odt-ltr-term">tEnteredLists</bdi>)<span style="color: #000000">]. يتم تنفيذها على مؤشر ترابط <bdi dir="ltr" class="odt-ltr-term">I/O</bdi> [</span><bdi dir="ltr" class="odt-ltr-term">subscribeOn</bdi>(<bdi dir="ltr" class="odt-ltr-term">Schedulers.io</bdi>())<span style="color: #000000">] ومراقبتها على مؤشر ترابط واجهة المستخدم [</span><bdi dir="ltr" class="odt-ltr-term">observeOn</bdi>(<bdi dir="ltr" class="odt-ltr-term">SwingScheduler.getInstance</bdi>()<span style="color: #000000">)]؛</span>
   </li>
   <li><span style="color: #000000">السطور 7-8: لن يتم تنفيذ هذه السطور أبدًا لأن العملية المراقبة لا تُرجع نتيجة؛</span>
   </li>
@@ -2664,7 +2666,7 @@
 </ul>
 
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><strong>المهمة</strong><span style="color: #000000">: تحقق من أن تطبيق Swing يعمل. ثم قم بتعديل واجهة المستخدم الرسومية (GUI) والكود بحيث تظهر صورة التحميل مع خيار لإلغاء العملية الحالية أثناء عملية غير متزامنة مع خادم الويب/JSON.</span></p>
+<p><strong>المهمة</strong><span style="color: #000000">: تحقق من أن تطبيق <bdi dir="ltr" class="odt-ltr-term">Swing</bdi> يعمل. ثم قم بتعديل واجهة المستخدم الرسومية (<bdi dir="ltr" class="odt-ltr-term">GUI</bdi>) والكود بحيث تظهر صورة التحميل مع خيار لإلغاء العملية الحالية أثناء عملية غير متزامنة مع خادم الويب/<bdi dir="ltr" class="odt-ltr-term">JSON.</bdi></span></p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
 

@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1104,30 +1106,30 @@
 
 
 <p><a id="refheading18028265679331"></a></p>
-<h1 id="14-td">14. <span style="color: #365f91">[TD]: عرض الويب لطبقة [الأعمال]</span></h1>
-<p><strong>الكلمات المفتاحية</strong>: بنية متعددة المستويات، Spring، حقن التبعية، خدمة الويب / JSON، العميل / الخادم.</p>
-<p>لنعد إلى البنية الحالية لتطبيق TD:</p>
+<h1 id="14-td">14. <span style="color: #365f91">[<bdi dir="ltr" class="odt-ltr-term">TD</bdi>]: عرض الويب لطبقة [الأعمال]</span></h1>
+<p><strong>الكلمات المفتاحية</strong>: بنية متعددة المستويات، <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>، حقن التبعية، خدمة الويب / <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>، العميل / الخادم.</p>
+<p>لنعد إلى البنية الحالية لتطبيق <bdi dir="ltr" class="odt-ltr-term">TD:</bdi></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004D20000010079CD4A52.png" width="617" height="128" style="display:inline-block; margin:4px;width:16.325cm;height:3.387cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D20000010079CD4A52.png" /></td></tr></table>
 
 <p>سنطور هذه البنية لتصبح كما يلي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004D8000001138084BFB3.png" width="620" height="137" style="display:inline-block; margin:4px;width:16.404cm;height:3.637cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D8000001138084BFB3.png" /></td></tr></table>
 
-<p>من أجل عرض واجهة [IMetier] لطبقة الأعمال على الويب. للقيام بذلك، سنتبع المنهجية الموضحة في <a href="#refheading416278986338762"><u><span style="color: #0563c1">القسم 13.5</span></u></a>.</p>
+<p>من أجل عرض واجهة [<bdi dir="ltr" class="odt-ltr-term">IMetier</bdi>] لطبقة الأعمال على الويب. للقيام بذلك، سنتبع المنهجية الموضحة في <a href="#refheading416278986338762"><u><span style="color: #0563c1">القسم 13.5</span></u></a>.</p>
 <p><a id="refheading1217181037674463"></a></p>
 <h2 id="141">14.1. <span style="color: #4f81bd">الدعم</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001060000007DF83B60DF.png" width="183" height="87" style="display:inline-block; margin:4px;width:4.851cm;height:2.314cm;" class="odt-zoomable" data-zoom-src="images/10000000000001060000007DF83B60DF.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><a id="refheading987748731570901"></a></p>
-<p>يمكن العثور على مشاريع هذا الفصل في المجلد [support / chap-14].</p>
+<p>يمكن العثور على مشاريع هذا الفصل في المجلد [<bdi dir="ltr" class="odt-ltr-term">support</bdi> / <bdi dir="ltr" class="odt-ltr-term">chap-14</bdi>].</p>
 <p><a id="refheading180302656793311"></a></p>
-<h2 id="142-eclipse">14.2. <span style="color: #4f81bd">مشروع Eclipse الخاص بطبقة [الأعمال]</span></h2>
+<h2 id="142-eclipse">14.2. <span style="color: #4f81bd">مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> الخاص بطبقة [الأعمال]</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004DA000000FB45BFD6B4.png" width="621" height="126" style="display:inline-block; margin:4px;width:16.431cm;height:3.321cm;" class="odt-zoomable" data-zoom-src="images/10000000000004DA000000FB45BFD6B4.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000118000000EA47979940.png" width="196" height="164" style="display:inline-block; margin:4px;width:5.181cm;height:4.33cm;" class="odt-zoomable" data-zoom-src="images/1000000000000118000000EA47979940.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><a id="refheading251900391218965"></a></p>
-<h3 id="1421-maven">14.2.1. <span style="color: #4f81bd">تكوين Maven</span></h3>
-<p>مشروع طبقة [الأعمال] هو مشروع Maven تم تكوينه بواسطة ملف [pom.xml] التالي:</p>
+<h3 id="1421-maven">14.2.1. <span style="color: #4f81bd">تكوين <bdi dir="ltr" class="odt-ltr-term">Maven</bdi></span></h3>
+<p>مشروع طبقة [الأعمال] هو مشروع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> تم تكوينه بواسطة ملف [<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>] التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;?</span><span style="color:#3f7f7f">xml</span> <span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;1.0&quot;</span> <span style="color:#7f007f">encoding</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;UTF-8&quot;</span><span style="color:#008080">?&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span> <span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span></span></span>
@@ -1184,16 +1186,16 @@
 </code></pre></div>
 
 <ul>
-  <li>الأسطر 18–22: التبعية لطبقة [DAO] التي تم إنشاؤها في <a href="#refheading2192602014630537"><u><span style="color: #0563c1">الفقرة 12</span></u></a>؛
+  <li>الأسطر 18–22: التبعية لطبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] التي تم إنشاؤها في <a href="#refheading2192602014630537"><u><span style="color: #0563c1">الفقرة 12</span></u></a>؛
   </li>
   <li>الأسطر 23–34: التبعيات المطلوبة للاختبار؛
   </li>
 </ul>
 <p><a id="refheading251902391218965"></a></p>
-<h3 id="1422-spring">14.2.2. <span style="color: #4f81bd">تكوين Spring</span></h3>
+<h3 id="1422-spring">14.2.2. <span style="color: #4f81bd">تكوين <bdi dir="ltr" class="odt-ltr-term">Spring</bdi></span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000011700000083837432B9.png" width="196" height="92" style="display:inline-block; margin:4px;width:5.181cm;height:2.432cm;" class="odt-zoomable" data-zoom-src="images/100000000000011700000083837432B9.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>مشروع طبقة [الأعمال] هو مشروع Spring تم تكوينه بواسطة ملف [MetierConfig] التالي:</p>
+<p>مشروع طبقة [الأعمال] هو مشروع <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> تم تكوينه بواسطة ملف [<bdi dir="ltr" class="odt-ltr-term">MetierConfig</bdi>] التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.metier.config;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1209,15 +1211,15 @@
 </code></pre></div>
 
 <ul>
-  <li>نحن لا نستخدم التعليق التوضيحي [@Configuration] هنا، والذي من شأنه أن يجعل الفئة فئة تكوين Spring. إن وجود التعليقات التوضيحية [@Import] و [@ComponentScan] يجعلها تلقائيًا فئة تكوين؛
+  <li>نحن لا نستخدم التعليق التوضيحي [@<bdi dir="ltr" class="odt-ltr-term">Configuration</bdi>] هنا، والذي من شأنه أن يجعل الفئة فئة تكوين <bdi dir="ltr" class="odt-ltr-term">Spring.</bdi> إن وجود التعليقات التوضيحية [@<bdi dir="ltr" class="odt-ltr-term">Import</bdi>] و [@<bdi dir="ltr" class="odt-ltr-term">ComponentScan</bdi>] يجعلها تلقائيًا فئة تكوين؛
   </li>
-  <li>السطر 8: نقوم باستيراد ملف التكوين من طبقة [DAO]. وبذلك يصبح بإمكاننا الوصول إلى جميع الفاصوليا المحددة في هذا الملف؛
+  <li>السطر 8: نقوم باستيراد ملف التكوين من طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]. وبذلك يصبح بإمكاننا الوصول إلى جميع الفاصوليا المحددة في هذا الملف؛
   </li>
-  <li>السطر 9: توجد مكونات Spring الأخرى في المجلد [<span style="color: #2a00ff">elections.metier.service</span>]؛
+  <li>السطر 9: توجد مكونات <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> الأخرى في المجلد [<span style="color: #2a00ff"><bdi dir="ltr" class="odt-ltr-term">elections.metier.service</bdi></span>]؛
   </li>
 </ul>
 <p><a id="refheading251904391218965"></a></p>
-<h3 id="1423-business">14.2.3. <span style="color: #4f81bd">تنفيذ طبقة [business]</span></h3>
+<h3 id="1423-business">14.2.3. <span style="color: #4f81bd">تنفيذ طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>]</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000010C0000008FFD111688.png" width="187" height="100" style="display:inline-block; margin:4px;width:4.96cm;height:2.648cm;" class="odt-zoomable" data-zoom-src="images/100000000000010C0000008FFD111688.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p>تنفيذ طبقة [الأعمال] هو ذلك المحدد في <a href="#refheading318251812363491"><u><span style="color: #0563c1">القسم 8.5</span></u></a>.</p>
@@ -1227,33 +1229,33 @@
 
 <p>فئة الاختبار هي تلك الموصوفة في <a href="#refheading318231812363491"><u><span style="color: #0563c1">القسم 8.6</span></u></a>.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><strong>المهمة</strong>: قم بتنفيذ مشروع طبقة [الأعمال] واجتاز اختبار الوحدة الخاص به. قم بإنشاء أرشيف الطبقة في مستودع Maven المحلي (Run As / Maven / Install).</p>
+<p><strong>المهمة</strong>: قم بتنفيذ مشروع طبقة [الأعمال] واجتاز اختبار الوحدة الخاص به. قم بإنشاء أرشيف الطبقة في مستودع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> المحلي (<bdi dir="ltr" class="odt-ltr-term">Run As</bdi> / <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> / <bdi dir="ltr" class="odt-ltr-term">Install</bdi>).</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
 <p><a id="refheading18030265679331"></a></p>
-<h2 id="143-eclipse">14.3. <span style="color: #4f81bd">مشروع Eclipse لطبقة [الويب]</span></h2>
+<h2 id="143-eclipse">14.3. <span style="color: #4f81bd">مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> لطبقة [الويب]</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E700000109B8AD6479.png" width="628" height="133" style="display:inline-block; margin:4px;width:16.603cm;height:3.507cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E700000109B8AD6479.png" /></td></tr></table>
 
-<p>طبقة الويب هي طبقة Spring MVC:</p>
+<p>طبقة الويب هي طبقة <bdi dir="ltr" class="odt-ltr-term">Spring MVC:</bdi></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000046A000001643A4134AE.png" width="565" height="178" style="display:inline-block; margin:4px;width:14.949cm;height:4.71cm;" class="odt-zoomable" data-zoom-src="images/100000000000046A000001643A4134AE.png" /></td></tr></table>
 
-<p>يتميز مشروع Eclipse بالهيكل التالي:</p>
+<p>يتميز مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> بالهيكل التالي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000144000000DF0DF25CC2.png" width="227" height="156" style="display:inline-block; margin:4px;width:6.001cm;height:4.129cm;" class="odt-zoomable" data-zoom-src="images/1000000000000144000000DF0DF25CC2.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E2000000AAC294C278.png" width="158" height="119" style="display:inline-block; margin:4px;width:4.189cm;height:3.15cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E2000000AAC294C278.png" /></td></tr></table>
 
 <ul>
-  <li>[Boot.java] هي الفئة التي تطلق خدمة الويب؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">Boot.java</bdi>] هي الفئة التي تطلق خدمة الويب؛
   </li>
-  <li>[WebConfig.java] هي فئة تكوين خدمة الويب؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">WebConfig.java</bdi>] هي فئة تكوين خدمة الويب؛
   </li>
-  <li>[Response.java] هي الاستجابة التي تولدها عناوين URL المختلفة لخدمة الويب؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">Response.java</bdi>] هي الاستجابة التي تولدها عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> المختلفة لخدمة الويب؛
   </li>
-  <li>[ElectionsController] هي فئة تنفيذ خدمة الويب؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">ElectionsController</bdi>] هي فئة تنفيذ خدمة الويب؛
   </li>
 </ul>
 
 <p><a id="refheading18032265679331"></a></p>
-<h2 id="144-maven">14.4. <span style="color: #4f81bd">تكوين Maven</span></h2>
-<p>المشروع هو مشروع Maven تم تكوينه بواسطة ملف [pom.xml] التالي:</p>
+<h2 id="144-maven">14.4. <span style="color: #4f81bd">تكوين <bdi dir="ltr" class="odt-ltr-term">Maven</bdi></span></h2>
+<p>المشروع هو مشروع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> تم تكوينه بواسطة ملف [<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>] التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span> <span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#7f007f">xsi:schemaLocation</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#008080">&gt;</span></span></span>
@@ -1306,15 +1308,15 @@
 <ul>
   <li>الأسطر 19–23: التبعية لأرشيف طبقة [الأعمال]. هذا هو الأرشيف الذي أنشأناه في <a href="#refheading18028265679331"><u><span style="color: #0563c1">الفقرة 1</span></u></a>4؛
   </li>
-  <li>الأسطر 25–28: التبعية لتطبيق Spring MVC؛
+  <li>الأسطر 25–28: التبعية لتطبيق <bdi dir="ltr" class="odt-ltr-term">Spring MVC</bdi>؛
   </li>
 </ul>
 
 <p><a id="refheading18034265679331"></a></p>
-<h2 id="145-spring">14.5. <span style="color: #4f81bd">تكوين Spring</span></h2>
+<h2 id="145-spring">14.5. <span style="color: #4f81bd">تكوين <bdi dir="ltr" class="odt-ltr-term">Spring</bdi></span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000014100000093208C1DB3.png" width="225" height="103" style="display:inline-block; margin:4px;width:5.941cm;height:2.722cm;" class="odt-zoomable" data-zoom-src="images/100000000000014100000093208C1DB3.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>تقوم فئة [WebConfig] بتكوين خدمة الويب:</p>
+<p>تقوم فئة [<bdi dir="ltr" class="odt-ltr-term">WebConfig</bdi>] بتكوين خدمة الويب:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.webjson.config;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1372,9 +1374,9 @@
 <ul>
   <li>تم شرح معنى هذا التكوين في <a href="#refheading17988265679331"><u><span style="color: #0563c1">القسم 13.5.3.1</span></u></a>. سنشرح فقط الميزات الجديدة:
   </li>
-  <li>السطر 22: نقوم باستيراد ملف التكوين من طبقة [business] للاستفادة من جميع حبوبها؛
+  <li>السطر 22: نقوم باستيراد ملف التكوين من طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] للاستفادة من جميع حبوبها؛
   </li>
-  <li>السطر 23: نحدد أن الفاصوليا الأخرى ستوجد في المجلد [<span style="color: #2a00ff">elections.webjson.server.service</span>]؛
+  <li>السطر 23: نحدد أن الفاصوليا الأخرى ستوجد في المجلد [<span style="color: #2a00ff"><bdi dir="ltr" class="odt-ltr-term">elections.webjson.server.service</bdi></span>]؛
   </li>
 </ul>
 
@@ -1382,7 +1384,7 @@
 <h2 id="146">14.6. <span style="color: #4f81bd">فئة تشغيل خدمة الويب</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001390000009220D29527.png" width="219" height="102" style="display:inline-block; margin:4px;width:5.791cm;height:2.701cm;" class="odt-zoomable" data-zoom-src="images/10000000000001390000009220D29527.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>تقوم فئة [Boot] بتشغيل خدمة الويب على النحو التالي:</p>
+<p>تقوم فئة [<bdi dir="ltr" class="odt-ltr-term">Boot</bdi>] بتشغيل خدمة الويب على النحو التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.webjson.boot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1399,14 +1401,14 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 10: ستستخدم الطريقة الثابتة [<span style="color: #000000">SpringApplication.</span><i><span style="color: #000000">run</span></i>] ملف التكوين [WebConfig]. وبفضل التعليق التوضيحي [@EnableAutoConfiguration]، سيقوم Spring Boot بتشغيل خادم Tomcat ونشر خدمة الويب عليه؛
+  <li>السطر 10: ستستخدم الطريقة الثابتة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">SpringApplication.</bdi></span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">run</bdi></span></i>] ملف التكوين [<bdi dir="ltr" class="odt-ltr-term">WebConfig</bdi>]. وبفضل التعليق التوضيحي [@<bdi dir="ltr" class="odt-ltr-term">EnableAutoConfiguration</bdi>]، سيقوم <bdi dir="ltr" class="odt-ltr-term">Spring Boot</bdi> بتشغيل خادم <bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi> ونشر خدمة الويب عليه؛
   </li>
 </ul>
 <p><a id="refheading18038265679331"></a></p>
-<h2 id="147-url">14.7. <span style="color: #4f81bd"><span style="color: #4f81bd">الاستجابة من عناوين URL لخدمة الويب</span></span></h2>
+<h2 id="147-url">14.7. <span style="color: #4f81bd"><span style="color: #4f81bd">الاستجابة من عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لخدمة الويب</span></span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000146000000A451BFCA3B.png" width="228" height="115" style="display:inline-block; margin:4px;width:6.04cm;height:3.039cm;" class="odt-zoomable" data-zoom-src="images/1000000000000146000000A451BFCA3B.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>ترسل جميع عناوين URL لخدمة الويب / JSON نفس نوع الاستجابة:</p>
+<p>ترسل جميع عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لخدمة الويب / <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> نفس نوع الاستجابة:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.webjson.service;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1440,10 +1442,10 @@
 
 <p>تم عرض هذه الفئة ومناقشتها في <a href="#refheading399246986338762"><u><span style="color: #0563c1">القسم 13.5.5.3</span></u></a>.</p>
 <p><a id="refheading18040265679331"></a></p>
-<h2 id="148-json">14.8. <span style="color: #4f81bd">تنفيذ خدمة الويب / JSON</span></h2>
+<h2 id="148-json">14.8. <span style="color: #4f81bd">تنفيذ خدمة الويب / <bdi dir="ltr" class="odt-ltr-term">JSON</bdi></span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000146000000A451BFCA3B.png" width="228" height="115" style="display:inline-block; margin:4px;width:6.04cm;height:3.039cm;" class="odt-zoomable" data-zoom-src="images/1000000000000146000000A451BFCA3B.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>يتم تنفيذ خدمة الويب /JSON بواسطة فئة [ElectionsController] التالية:</p>
+<p>يتم تنفيذ خدمة الويب /<bdi dir="ltr" class="odt-ltr-term">JSON</bdi> بواسطة فئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsController</bdi>] التالية:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.webjson.service;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1535,30 +1537,30 @@
 </code></pre></div>
 
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><strong>المهمة</strong>: اتبع الخطوات الواردة في <a href="#refheading480904986338762"><u><span style="color: #0563c1">القسم 13.5.5</span></u></a>، وأكمل الكود الخاص بفئة [<span style="color: #000000">ElectionsController</span>].</p>
+<p><strong>المهمة</strong>: اتبع الخطوات الواردة في <a href="#refheading480904986338762"><u><span style="color: #0563c1">القسم 13.5.5</span></u></a>، وأكمل الكود الخاص بفئة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ElectionsController</bdi></span>].</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <p><strong>ملاحظات</strong>: </p>
 <ul>
-  <li>لا توجد مرشحات JSON هنا لأن الجدولين [CONF] و[LISTES] غير مرتبطين بعلاقة مفتاح خارجي، مما يبسط كود خدمة الويب بشكل كبير؛
+  <li>لا توجد مرشحات <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> هنا لأن الجدولين [<bdi dir="ltr" class="odt-ltr-term">CONF</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">LISTES</bdi>] غير مرتبطين بعلاقة مفتاح خارجي، مما يبسط كود خدمة الويب بشكل كبير؛
   </li>
-  <li>لا تنسَ الإشارات التوضيحية المختلفة الضرورية في Spring؛
+  <li>لا تنسَ الإشارات التوضيحية المختلفة الضرورية في <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>؛
   </li>
-  <li>سيتم تسمية عناوين URL تبعًا للأساليب المرتبطة بها؛
+  <li>سيتم تسمية عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> تبعًا للأساليب المرتبطة بها؛
   </li>
-  <li>يتم استدعاء الطريقة [setListeElectorales] من خلال عملية [POST]. القيمة المرسلة هي مصفوفة القوائم المتنافسة (من النوع <i>ListeElectorale[]) </i>مع سماتها [المقاعد، الأصوات، تم استبعادها]، والتي يجب حفظها في قاعدة البيانات. تُرجع هذه الطريقة كائن [Response&lt;Void&gt;] يحتوي على حقل [status=0] في حالة عدم وجود أخطاء، وإلا تُرجع قيمة أخرى؛
+  <li>يتم استدعاء الطريقة [<bdi dir="ltr" class="odt-ltr-term">setListeElectorales</bdi>] من خلال عملية [<bdi dir="ltr" class="odt-ltr-term">POST</bdi>]. القيمة المرسلة هي مصفوفة القوائم المتنافسة (من النوع <i><bdi dir="ltr" class="odt-ltr-term">ListeElectorale</bdi>[]) </i>مع سماتها [المقاعد، الأصوات، تم استبعادها]، والتي يجب حفظها في قاعدة البيانات. تُرجع هذه الطريقة كائن [<bdi dir="ltr" class="odt-ltr-term">Response</bdi>&lt;<bdi dir="ltr" class="odt-ltr-term">Void</bdi>&gt;] يحتوي على حقل [<bdi dir="ltr" class="odt-ltr-term">status</bdi>=0] في حالة عدم وجود أخطاء، وإلا تُرجع قيمة أخرى؛
   </li>
-  <li>يتم استدعاء الطريقة [calculateSeats] باستخدام عملية [POST]. القيمة المرسلة هي مصفوفة القوائم المتنافسة (من النوع <i>ElectoralList[]) </i>مع سماتها [name, votes]. تُرجع هذه الطريقة [Response&lt;<i>ElectoralList[]</i>&gt;] مع، كنصها الأساسي، القوائم الانتخابية مع حقول [seats, eliminated] المُهيأة؛
+  <li>يتم استدعاء الطريقة [<bdi dir="ltr" class="odt-ltr-term">calculateSeats</bdi>] باستخدام عملية [<bdi dir="ltr" class="odt-ltr-term">POST</bdi>]. القيمة المرسلة هي مصفوفة القوائم المتنافسة (من النوع <i><bdi dir="ltr" class="odt-ltr-term">ElectoralList</bdi>[]) </i>مع سماتها [<bdi dir="ltr" class="odt-ltr-term">name</bdi>, <bdi dir="ltr" class="odt-ltr-term">votes</bdi>]. تُرجع هذه الطريقة [<bdi dir="ltr" class="odt-ltr-term">Response</bdi>&lt;<i><bdi dir="ltr" class="odt-ltr-term">ElectoralList</bdi>[]</i>&gt;] مع، كنصها الأساسي، القوائم الانتخابية مع حقول [<bdi dir="ltr" class="odt-ltr-term">seats</bdi>, <bdi dir="ltr" class="odt-ltr-term">eliminated</bdi>] المُهيأة؛
   </li>
 </ul>
 
 <p><a id="refheading18042265679331"></a></p>
 <h2 id="149">14.9. <span style="color: #4f81bd">الاختبارات</span></h2>
-<p>بعد تشغيل خدمة الويب، قم بإجراء الاختبارات التالية للتأكد من أن خدمة الويب تعمل بشكل صحيح باستخدام الأداة المساعدة [Advanced Rest Client]:</p>
+<p>بعد تشغيل خدمة الويب، قم بإجراء الاختبارات التالية للتأكد من أن خدمة الويب تعمل بشكل صحيح باستخدام الأداة المساعدة [<bdi dir="ltr" class="odt-ltr-term">Advanced Rest Client</bdi>]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004740000019153345254.png" width="570" height="201" style="display:inline-block; margin:4px;width:15.081cm;height:5.306cm;" class="odt-zoomable" data-zoom-src="images/10000000000004740000019153345254.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>رد JSON على الطلب السابق هو كما يلي [1]:</p>
+<p>رد <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> على الطلب السابق هو كما يلي [1]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004EE0000010E9AF4E549.png" width="631" height="135" style="display:inline-block; margin:4px;width:16.695cm;height:3.572cm;" class="odt-zoomable" data-zoom-src="images/10000000000004EE0000010E9AF4E549.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>1</b></div><img src="images/100000000000020E0000009B405BC0BA.png" width="327" height="96" style="display:inline-block; margin:4px;width:8.641cm;height:2.545cm;" class="odt-zoomable" data-zoom-src="images/100000000000020E0000009B405BC0BA.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>2</b></div><img src="images/10000000000001660000009D582D7FD4.png" width="251" height="110" style="display:inline-block; margin:4px;width:6.63cm;height:2.909cm;" class="odt-zoomable" data-zoom-src="images/10000000000001660000009D582D7FD4.png" /></td></tr></table>
@@ -1566,32 +1568,32 @@
 <p>في [2]، انسخ الرد إلى الحافظة، ثم الصقه في أي محرر نصوص [3]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004DB000000B345A6C2CD.png" width="622" height="89" style="display:inline-block; margin:4px;width:16.445cm;height:2.367cm;" class="odt-zoomable" data-zoom-src="images/10000000000004DB000000B345A6C2CD.png" /></td></tr></table>
 
-<p>افصل قيمة حقل [body] وقم بتغيير، على سبيل المثال، الأصوات المخصصة للقوائم. أدناه [4]، قمنا بتعيين الأصوات لجميع القوائم على 100:</p>
+<p>افصل قيمة حقل [<bdi dir="ltr" class="odt-ltr-term">body</bdi>] وقم بتغيير، على سبيل المثال، الأصوات المخصصة للقوائم. أدناه [4]، قمنا بتعيين الأصوات لجميع القوائم على 100:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005350000009F9BBD92F1.png" width="667" height="79" style="display:inline-block; margin:4px;width:17.635cm;height:2.103cm;" class="odt-zoomable" data-zoom-src="images/10000000000005350000009F9BBD92F1.png" /></td></tr></table>
 
-<p>تأكد من أن سلسلة JSON الخاصة بك تبدأ بـ [ وتنتهي بـ ]. تُستخدم هذه الأحرف لتحديد مصفوفة JSON. في [5]، الصق سلسلة JSON أعلاه. ستكون هذه هي القيمة التي سيتم إرسالها إلى عنوان URL التالي. للقيام بذلك، حدد طريقة HTTP [POST] [7].</p>
+<p>تأكد من أن سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> الخاصة بك تبدأ بـ [ وتنتهي بـ ]. تُستخدم هذه الأحرف لتحديد مصفوفة <bdi dir="ltr" class="odt-ltr-term">JSON.</bdi> في [5]، الصق سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> أعلاه. ستكون هذه هي القيمة التي سيتم إرسالها إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> التالي. للقيام بذلك، حدد طريقة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">POST</bdi>] [7].</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000389000002951E58C4B7.png" width="453" height="331" style="display:inline-block; margin:4px;width:11.973cm;height:8.745cm;" class="odt-zoomable" data-zoom-src="images/1000000000000389000002951E58C4B7.png" /></td></tr></table>
 
 <ul>
-  <li>في [6]، اطلب عنوان URL [setListesElectorales]. يتم طلب عنوان URL هذا باستخدام طلب POST. القيمة المرسلة هي مصفوفة JSON للقوائم المتنافسة، والتي يجب حفظ نتائجها في قاعدة البيانات؛
+  <li>في [6]، اطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">setListesElectorales</bdi>]. يتم طلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> هذا باستخدام طلب <bdi dir="ltr" class="odt-ltr-term">POST.</bdi> القيمة المرسلة هي مصفوفة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> للقوائم المتنافسة، والتي يجب حفظ نتائجها في قاعدة البيانات؛
   </li>
 </ul>
 
 <p>يتم الحصول على النتيجة التالية:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012D000000AAEFA1BA96.png" width="211" height="119" style="display:inline-block; margin:4px;width:5.57cm;height:3.147cm;" class="odt-zoomable" data-zoom-src="images/100000000000012D000000AAEFA1BA96.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>يشير الحقل [status=0] إلى عدم وجود أخطاء. للتحقق من ذلك، اطلب القوائم المتنافسة مرة أخرى وتأكد من تطبيق التغييرات التي أجريتها على القوائم:</p>
+<p>يشير الحقل [<bdi dir="ltr" class="odt-ltr-term">status</bdi>=0] إلى عدم وجود أخطاء. للتحقق من ذلك، اطلب القوائم المتنافسة مرة أخرى وتأكد من تطبيق التغييرات التي أجريتها على القوائم:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000047B000002A09AA33DAB.png" width="574" height="336" style="display:inline-block; margin:4px;width:15.175cm;height:8.892cm;" class="odt-zoomable" data-zoom-src="images/100000000000047B000002A09AA33DAB.png" /></td></tr></table>
 
-<p>نقوم بإرسال طلب [POST] آخر لحساب المقاعد التي فازت بها القوائم:</p>
+<p>نقوم بإرسال طلب [<bdi dir="ltr" class="odt-ltr-term">POST</bdi>] آخر لحساب المقاعد التي فازت بها القوائم:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000036B0000026DEF80E326.png" width="438" height="311" style="display:inline-block; margin:4px;width:11.576cm;height:8.216cm;" class="odt-zoomable" data-zoom-src="images/100000000000036B0000026DEF80E326.png" /></td></tr></table>
 
 <ul>
-  <li>في [1]: عنوان URL لحساب المقاعد؛
+  <li>في [1]: عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لحساب المقاعد؛
   </li>
-  <li>في [2]: نرسل طلب [POST]؛
+  <li>في [2]: نرسل طلب [<bdi dir="ltr" class="odt-ltr-term">POST</bdi>]؛
   </li>
-  <li>في [3]: القوائم المتنافسة. نضبط حقل [votes] على القيم الواردة في البرنامج التعليمي، ونضبط جميع [seats] على 0، ونضبط جميع حقول [eliminate] على false؛
+  <li>في [3]: القوائم المتنافسة. نضبط حقل [<bdi dir="ltr" class="odt-ltr-term">votes</bdi>] على القيم الواردة في البرنامج التعليمي، ونضبط جميع [<bdi dir="ltr" class="odt-ltr-term">seats</bdi>] على 0، ونضبط جميع حقول [<bdi dir="ltr" class="odt-ltr-term">eliminate</bdi>] على <bdi dir="ltr" class="odt-ltr-term">false</bdi>؛
   </li>
 </ul>
 
