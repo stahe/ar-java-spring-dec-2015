@@ -1169,11 +1169,11 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000239000000BFCE24760F.png" width="398" height="134" style="display:inline-block; margin:4px;width:10.539cm;height:3.538cm;" class="odt-zoomable" data-zoom-src="images/1000000000000239000000BFCE24760F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <ul>
-  <li>[<bdi dir="ltr" class="odt-ltr-term">id</bdi>]: مفتاح أساسي يتزايد تلقائيًا؛
+  <li>[id]: مفتاح أساسي يتزايد تلقائيًا؛
   </li>
   <li>[<bdi dir="ltr" class="odt-ltr-term">version</bdi>]: رقم إصدار السجل — يمكن تجاهله هنا؛
   </li>
-  <li>[<bdi dir="ltr" class="odt-ltr-term">sap</bdi>]: عدد المقاعد المطلوب شغلها؛
+  <li>[sap]: عدد المقاعد المطلوب شغلها؛
   </li>
   <li>[<bdi dir="ltr" class="odt-ltr-term">votingThreshold</bdi>]: الحد الأدنى الذي إذا لم تتجاوزه القائمة يتم استبعادها؛
   </li>
@@ -1186,7 +1186,7 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000224000000EFED15390F.png" width="384" height="167" style="display:inline-block; margin:4px;width:10.149cm;height:4.426cm;" class="odt-zoomable" data-zoom-src="images/1000000000000224000000EFED15390F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <ul>
-  <li>[<bdi dir="ltr" class="odt-ltr-term">id</bdi>]: مفتاح أساسي يتزايد تلقائيًا؛
+  <li>[id]: مفتاح أساسي يتزايد تلقائيًا؛
   </li>
   <li>[<bdi dir="ltr" class="odt-ltr-term">version</bdi>]: رقم إصدار السجل — يمكن تجاهله هنا؛
   </li>
@@ -1421,7 +1421,7 @@
   </li>
   <li>[<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>] هو نموذج الكائن المرتبط بصف في جدول [<bdi dir="ltr" class="odt-ltr-term">LISTS</bdi>]؛
   </li>
-  <li>[<bdi dir="ltr" class="odt-ltr-term">AbstactEntity</bdi>] هي الفئة الأم للفئتين السابقتين. وهي تغلف الحقول [<bdi dir="ltr" class="odt-ltr-term">id</bdi>, <bdi dir="ltr" class="odt-ltr-term">version</bdi>] المشتركة بين الفئتين؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">AbstactEntity</bdi>] هي الفئة الأم للفئتين السابقتين. وهي تغلف الحقول [id, <bdi dir="ltr" class="odt-ltr-term">version</bdi>] المشتركة بين الفئتين؛
   </li>
   <li>[<bdi dir="ltr" class="odt-ltr-term">ElectionsException</bdi>] هي فئة استثناء؛
   </li>
@@ -1783,7 +1783,7 @@
   </li>
   <li>السطر 13: تجعل العلامة [@<bdi dir="ltr" class="odt-ltr-term">Configuration</bdi>] فئة [<bdi dir="ltr" class="odt-ltr-term">AppConfig</bdi>] فئة تكوين <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>؛
   </li>
-  <li>السطر 11: تحدد علامة [@<bdi dir="ltr" class="odt-ltr-term">ComponentScan</bdi>] الحزم التي يمكن العثور فيها على كائنات <bdi dir="ltr" class="odt-ltr-term">Spring.</bdi> هنا، سنقوم بتعريف كائن <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> في حزمة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]. تجعل علامة [@<bdi dir="ltr" class="odt-ltr-term">ComponentScan</bdi>] الفئة فئة تكوين، مما يوفر علينا الحاجة إلى إضافة علامة [@<bdi dir="ltr" class="odt-ltr-term">Configuration</bdi>]؛
+  <li>السطر 11: تحدد علامة [@<bdi dir="ltr" class="odt-ltr-term">ComponentScan</bdi>] الحزم التي يمكن العثور فيها على كائنات <bdi dir="ltr" class="odt-ltr-term">Spring.</bdi> هنا، سنقوم بتعريف كائن <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> في حزمة [dao]. تجعل علامة [@<bdi dir="ltr" class="odt-ltr-term">ComponentScan</bdi>] الفئة فئة تكوين، مما يوفر علينا الحاجة إلى إضافة علامة [@<bdi dir="ltr" class="odt-ltr-term">Configuration</bdi>]؛
   </li>
   <li>السطر 12 يتيح إدارة ذاكرة التخزين المؤقت. والمبدأ هو كما يلي:
     <ul>
@@ -1851,7 +1851,7 @@
 <ul>
   <li>[<bdi dir="ltr" class="odt-ltr-term">debug</bdi>]: المستوى الأكثر تفصيلاً؛
   </li>
-  <li>[<bdi dir="ltr" class="odt-ltr-term">off</bdi>]: لا توجد سجلات؛
+  <li>[off]: لا توجد سجلات؛
   </li>
   <li>[<bdi dir="ltr" class="odt-ltr-term">info</bdi>]: مستوى التسجيل العادي؛
   </li>
@@ -1886,7 +1886,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>سيكون الهيكل الأساسي لفئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsDaoJdbc</bdi>] التي تنفذ طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] باستخدام قاعدة بيانات كما يلي:</p>
+<p>سيكون الهيكل الأساسي لفئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsDaoJdbc</bdi>] التي تنفذ طبقة [dao] باستخدام قاعدة بيانات كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.dao.service;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2434,7 +2434,7 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000015C000000CBF66E50FE.png" width="243" height="142" style="display:inline-block; margin:4px;width:6.44cm;height:3.757cm;" class="odt-zoomable" data-zoom-src="images/100000000000015C000000CBF66E50FE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><a id="refheading318151812363491"></a></p>
-<h2 id="711-with-dependencies-dao">7.11. <span style="color: #4f81bd">إنشاء أرشيف [<bdi dir="ltr" class="odt-ltr-term">with-dependencies</bdi>] لطبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]</span></h2>
+<h2 id="711-with-dependencies-dao">7.11. <span style="color: #4f81bd">إنشاء أرشيف [<bdi dir="ltr" class="odt-ltr-term">with-dependencies</bdi>] لطبقة [dao]</span></h2>
 <p>يتميز المشروع النهائي بالبنية التالية:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000052200000109068314C5.png" width="657" height="133" style="display:inline-block; margin:4px;width:17.383cm;height:3.507cm;" class="odt-zoomable" data-zoom-src="images/100000000000052200000109068314C5.png" /></td></tr></table>
 
@@ -2620,12 +2620,12 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002D5000000BFFAF27BA0.png" width="363" height="96" style="display:inline-block; margin:4px;width:9.592cm;height:2.528cm;" class="odt-zoomable" data-zoom-src="images/10000000000002D5000000BFFAF27BA0.png" /></td></tr></table>
 
 <p>لننسخ الحزمة [<bdi dir="ltr" class="odt-ltr-term">dao.console</bdi>] من مشروع [<bdi dir="ltr" class="odt-ltr-term">elections-dao-jdbc-01</bdi>] ونلصقها في مشروع [<bdi dir="ltr" class="odt-ltr-term">elections-dao-jdbc-02</bdi>] [2]. تظهر عدة أخطاء لأن الفئة [<bdi dir="ltr" class="odt-ltr-term">Main</bdi>] تشير إلى فئات غير موجودة في [<bdi dir="ltr" class="odt-ltr-term">Classpath</bdi>] الخاص بها. سنقوم بتعديل [<bdi dir="ltr" class="odt-ltr-term">Classpath</bdi>].</p>
-<p>أولاً، نقوم بإنشاء [2-8] مجلد [<bdi dir="ltr" class="odt-ltr-term">lib</bdi>] في المشروع الجديد:</p>
+<p>أولاً، نقوم بإنشاء [2-8] مجلد [lib] في المشروع الجديد:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005AF0000028393526CB7.png" width="680" height="301" style="display:inline-block; margin:4px;width:17.999cm;height:7.953cm;" class="odt-zoomable" data-zoom-src="images/10000000000005AF0000028393526CB7.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B9000001363273150F.png" width="605" height="155" style="display:inline-block; margin:4px;width:15.995cm;height:4.101cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B9000001363273150F.png" /></td></tr></table>
 
-<p>في [9]، نضع الأرشيف الذي تم إنشاؤه في الخطوة السابقة في مجلد [<bdi dir="ltr" class="odt-ltr-term">lib</bdi>]، ثم نعدل مسار البناء للمشروع:</p>
+<p>في [9]، نضع الأرشيف الذي تم إنشاؤه في الخطوة السابقة في مجلد [lib]، ثم نعدل مسار البناء للمشروع:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000446000001E12F4F0629.png" width="547" height="240" style="display:inline-block; margin:4px;width:14.473cm;height:6.362cm;" class="odt-zoomable" data-zoom-src="images/1000000000000446000001E12F4F0629.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004690000016F69FAE278.png" width="565" height="184" style="display:inline-block; margin:4px;width:14.937cm;height:4.856cm;" class="odt-zoomable" data-zoom-src="images/10000000000004690000016F69FAE278.png" /></td></tr></table>

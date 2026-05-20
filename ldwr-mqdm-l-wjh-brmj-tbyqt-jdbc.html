@@ -1293,7 +1293,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>الغرض من العملية في السطر 3 هو تحميل برنامج تشغيل <bdi dir="ltr" class="odt-ltr-term">JDBC</bdi> الخاص بقاعدة البيانات في الذاكرة. لا يلزم تنفيذ هذه العملية سوى مرة واحدة. ومع ذلك، فإن تكرارها لا يتسبب في حدوث خطأ. يتم البحث عن فئة برنامج تشغيل <bdi dir="ltr" class="odt-ltr-term">JDBC</bdi> في مسار فئات المشروع. لذلك، في مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi>، يجب أن يكون ملف [<bdi dir="ltr" class="odt-ltr-term">jar</bdi>] الذي يحتوي على فئة برنامج تشغيل <bdi dir="ltr" class="odt-ltr-term">JDBC</bdi> قد تم تضمينه في مسار فئات المشروع.</p>
+<p>الغرض من العملية في السطر 3 هو تحميل برنامج تشغيل <bdi dir="ltr" class="odt-ltr-term">JDBC</bdi> الخاص بقاعدة البيانات في الذاكرة. لا يلزم تنفيذ هذه العملية سوى مرة واحدة. ومع ذلك، فإن تكرارها لا يتسبب في حدوث خطأ. يتم البحث عن فئة برنامج تشغيل <bdi dir="ltr" class="odt-ltr-term">JDBC</bdi> في مسار فئات المشروع. لذلك، في مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi>، يجب أن يكون ملف [jar] الذي يحتوي على فئة برنامج تشغيل <bdi dir="ltr" class="odt-ltr-term">JDBC</bdi> قد تم تضمينه في مسار فئات المشروع.</p>
 <p><a id="refheading251882391218965"></a></p>
 <h3 id="632-2-">6.3.2. <span style="color: #4f81bd">الخطوة 2 - فتح اتصال</span></h3>
 <p><a id="refheading592918201560381"></a>بمجرد تثبيت برنامج تشغيل <bdi dir="ltr" class="odt-ltr-term">JDBC</bdi>، نطلب منه فتح اتصال بالقاعدة البيانات:</p>
@@ -1338,7 +1338,7 @@
   </li>
   <li>السطر 17: [<bdi dir="ltr" class="odt-ltr-term">DriverManager.getConnection</bdi>] هي طريقة ثابتة تأخذ ثلاثة معلمات:
     <ul>
-      <li>[<bdi dir="ltr" class="odt-ltr-term">url</bdi>]: عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لقاعدة البيانات. هذه سلسلة تعتمد على قاعدة البيانات المستخدمة. بالنسبة لـ <bdi dir="ltr" class="odt-ltr-term">MySQL</bdi>، تكون على شكل [<i><span style="color: #2a00ff"><bdi dir="ltr" class="odt-ltr-term">jdbc:mysql://localhost:3306/db_name</bdi></span></i>]؛
+      <li>[url]: عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لقاعدة البيانات. هذه سلسلة تعتمد على قاعدة البيانات المستخدمة. بالنسبة لـ <bdi dir="ltr" class="odt-ltr-term">MySQL</bdi>، تكون على شكل [<i><span style="color: #2a00ff"><bdi dir="ltr" class="odt-ltr-term">jdbc:mysql://localhost:3306/db_name</bdi></span></i>]؛
       </li>
       <li>[<bdi dir="ltr" class="odt-ltr-term">user</bdi>]: مالك الاتصال؛
       </li>
@@ -1425,7 +1425,7 @@
 <p>لاسترداد العمود المسمى &quot;<bdi dir="ltr" class="odt-ltr-term">labelColi</bdi>&quot; من الصف الحالي، أي العمود في عبارة [<bdi dir="ltr" class="odt-ltr-term">SELECT</bdi>] الذي يحمل هذا الاسم. يشير <em>النوع</em> إلى نوع بيانات حقل <em>&quot;<bdi dir="ltr" class="odt-ltr-term">labelColi</bdi>&quot;</em>. يمكن استخدام طرق [<bdi dir="ltr" class="odt-ltr-term">getType</bdi>] التالية: <bdi dir="ltr" class="odt-ltr-term">getInt</bdi>، <bdi dir="ltr" class="odt-ltr-term">getLong</bdi>، <bdi dir="ltr" class="odt-ltr-term">getString</bdi>، <bdi dir="ltr" class="odt-ltr-term">getDouble</bdi>، <bdi dir="ltr" class="odt-ltr-term">getFloat</bdi>، <bdi dir="ltr" class="odt-ltr-term">getDate</bdi>، ... بدلاً من استخدام اسم العمود، يمكنك استخدام موضعه في استعلام [<bdi dir="ltr" class="odt-ltr-term">SELECT</bdi>] الذي تم تنفيذه:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Type getType(i) 
 </code></pre></div>
-<p>حيث <bdi dir="ltr" class="odt-ltr-term">i</bdi> هو مؤشر العمود المطلوب (<bdi dir="ltr" class="odt-ltr-term">i</bdi>&gt;=1).</p>
+<p>حيث i هو مؤشر العمود المطلوب (i&gt;=1).</p>
 <ul>
   <li>الأسطر 15–17: استرجاع القيم المقروءة من قاعدة البيانات؛
   </li>

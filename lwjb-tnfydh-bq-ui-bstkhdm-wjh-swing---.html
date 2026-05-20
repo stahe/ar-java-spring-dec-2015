@@ -1212,7 +1212,7 @@
 
 <p><a id="refheading318571812363491"></a>
 <a id="application-swing"></a></p>
-<h1 id="10-ui-swing-">10. <span style="color: #365f91">[الواجب]: تنفيذ طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] باستخدام واجهة <bdi dir="ltr" class="odt-ltr-term">Swing</bdi> -</span></h1>
+<h1 id="10-ui-swing-">10. <span style="color: #365f91">[الواجب]: تنفيذ طبقة [ui] باستخدام واجهة <bdi dir="ltr" class="odt-ltr-term">Swing</bdi> -</span></h1>
 <p><strong>الكلمات المفتاحية</strong>: بنية متعددة الطبقات، <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>، حقن التبعية، مكتبة مكونات <bdi dir="ltr" class="odt-ltr-term">Swing.</bdi></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000051B000000FD768FBF48.png" width="654" height="127" style="display:inline-block; margin:4px;width:17.291cm;height:3.348cm;" class="odt-zoomable" data-zoom-src="images/100000000000051B000000FD768FBF48.png" /></td></tr></table>
 
@@ -1230,15 +1230,15 @@
 <p>لنعد إلى البنية العامة لتطبيق [<bdi dir="ltr" class="odt-ltr-term">Elections</bdi>]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004BB000000FF2B1C6207.png" width="606" height="128" style="display:inline-block; margin:4px;width:16.021cm;height:3.374cm;" class="odt-zoomable" data-zoom-src="images/10000000000004BB000000FF2B1C6207.png" /></td></tr></table>
 
-<p>نحن نركز الآن على تنفيذ جديد لطبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>]. التنفيذ الوحيد الموجود حاليًا هو واجهة وحدة التحكم. ونحن الآن بصدد إنشاء واجهة مستخدم رسومية.</p>
+<p>نحن نركز الآن على تنفيذ جديد لطبقة [ui]. التنفيذ الوحيد الموجود حاليًا هو واجهة وحدة التحكم. ونحن الآن بصدد إنشاء واجهة مستخدم رسومية.</p>
 <p>سيكون لدى المستخدم الواجهة التالية للتفاعل مع تطبيق [<bdi dir="ltr" class="odt-ltr-term">Elections</bdi>]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003A90000035363325D82.png" width="469" height="426" style="display:inline-block; margin:4px;width:12.397cm;height:11.259cm;" class="odt-zoomable" data-zoom-src="images/10000000000003A90000035363325D82.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001C0000001A0CEDB96B1.png" width="358" height="333" style="display:inline-block; margin:4px;width:9.479cm;height:8.802cm;" class="odt-zoomable" data-zoom-src="images/10000000000001C0000001A0CEDB96B1.png" /></td></tr></table>
 
-<p>تقع واجهة المستخدم الرسومية في الطبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>]. وهذه الطبقة هي التي تتفاعل مع المستخدم.</p>
+<p>تقع واجهة المستخدم الرسومية في الطبقة [ui]. وهذه الطبقة هي التي تتفاعل مع المستخدم.</p>
 <ul>
-  <li>عند بدء التشغيل، يقوم تطبيق وحدة التحكم [<b><bdi dir="ltr" class="odt-ltr-term">main</bdi></b>] بإنشاء مثيلات للطبقات الثلاث للتطبيق باستخدام <bdi dir="ltr" class="odt-ltr-term">Spring.</bdi> ويتم ذلك قبل أن تظهر واجهة المستخدم الرسومية. وأيضًا خلال مرحلة التهيئة هذه، تُطلب المعلومات التي تميز الانتخابات (عدد المقاعد المطلوب شغلها، والعتبة الانتخابية، والقوائم المتنافسة) من طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]. إذا فشلت مرحلة التهيئة هذه (على سبيل المثال، عدم القدرة على الوصول إلى البيانات)، يتم عرض رسالة خطأ على وحدة التحكم ولا يتم عرض واجهة المستخدم الرسومية.
+  <li>عند بدء التشغيل، يقوم تطبيق وحدة التحكم [<b><bdi dir="ltr" class="odt-ltr-term">main</bdi></b>] بإنشاء مثيلات للطبقات الثلاث للتطبيق باستخدام <bdi dir="ltr" class="odt-ltr-term">Spring.</bdi> ويتم ذلك قبل أن تظهر واجهة المستخدم الرسومية. وأيضًا خلال مرحلة التهيئة هذه، تُطلب المعلومات التي تميز الانتخابات (عدد المقاعد المطلوب شغلها، والعتبة الانتخابية، والقوائم المتنافسة) من طبقة [dao]. إذا فشلت مرحلة التهيئة هذه (على سبيل المثال، عدم القدرة على الوصول إلى البيانات)، يتم عرض رسالة خطأ على وحدة التحكم ولا يتم عرض واجهة المستخدم الرسومية.
   </li>
 </ul>
 
@@ -1276,7 +1276,7 @@
 </ul>
 
 <p><a id="refheading318611812363491"></a></p>
-<h2 id="103-electionsswing-ui">10.3. <span style="color: #4f81bd">فئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsSwing</bdi>] التي تنفذ طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>]</span></h2>
+<h2 id="103-electionsswing-ui">10.3. <span style="color: #4f81bd">فئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsSwing</bdi>] التي تنفذ طبقة [ui]</span></h2>
 <p><a id="refheading318631812363491"></a></p>
 <h3 id="1031-netbeans">10.3.1. <span style="color: #4f81bd">مشروع <bdi dir="ltr" class="odt-ltr-term">NetBeans</bdi></span></h3>
 <p><strong>ملاحظة</strong>: يشرح <a href="#refheading78364566070260"><u><span style="color: #0563c1">القسم 22.4</span></u></a> كيفية الحصول على <bdi dir="ltr" class="odt-ltr-term">NetBeans.</bdi> </p>
@@ -1531,7 +1531,7 @@
 <p>لنعد إلى بنية تطبيقنا:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004BE000000FD68310DE1.png" width="607" height="127" style="display:inline-block; margin:4px;width:16.06cm;height:3.348cm;" class="odt-zoomable" data-zoom-src="images/10000000000004BE000000FD68310DE1.png" /></td></tr></table>
 
-<p>يجب أن تنفذ فئة [<bdi dir="ltr" class="odt-ltr-term">AbstractElectionsSwing</bdi>] الطبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] أعلاه. لا يحتوي كودها، الذي تم إنشاؤه بواسطة <bdi dir="ltr" class="odt-ltr-term">NetBeans</bdi>، حاليًا سوى على كود إدارة النوافذ ومعالجات الأحداث التي لا تقوم بأي شيء في هذه المرحلة. فيما سبق، نرى أن فئة [<bdi dir="ltr" class="odt-ltr-term">AbstractElectionsSwing</bdi>] ستحتاج إلى معالجة التفاعلات مع طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>]. ستتم هذه المعالجة في معالجات الأحداث. لتوضيح بنية الكود، قررنا وضعه في فئتين:</p>
+<p>يجب أن تنفذ فئة [<bdi dir="ltr" class="odt-ltr-term">AbstractElectionsSwing</bdi>] الطبقة [ui] أعلاه. لا يحتوي كودها، الذي تم إنشاؤه بواسطة <bdi dir="ltr" class="odt-ltr-term">NetBeans</bdi>، حاليًا سوى على كود إدارة النوافذ ومعالجات الأحداث التي لا تقوم بأي شيء في هذه المرحلة. فيما سبق، نرى أن فئة [<bdi dir="ltr" class="odt-ltr-term">AbstractElectionsSwing</bdi>] ستحتاج إلى معالجة التفاعلات مع طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>]. ستتم هذه المعالجة في معالجات الأحداث. لتوضيح بنية الكود، قررنا وضعه في فئتين:</p>
 <ul>
   <li>[<bdi dir="ltr" class="odt-ltr-term">AbstractElectionsSwing</bdi>]، والتي ستبقى كما تم إنشاؤها بواسطة <bdi dir="ltr" class="odt-ltr-term">NetBeans</bdi> مع بعض التغييرات الطفيفة. لن تتعامل هذه الفئة مع أي أحداث بنفسها. ستكون معالجات الأحداث فارغة ومُعلنة على أنها مجردة. وسيتم تنفيذها بواسطة فئة مشتقة من [<bdi dir="ltr" class="odt-ltr-term">AbstractElectionsSwing</bdi>].
   </li>
@@ -1674,7 +1674,7 @@
 <p>لنعد إلى بنية تطبيقنا:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004AF000000FEFC7607C9.png" width="600" height="127" style="display:inline-block; margin:4px;width:15.863cm;height:3.36cm;" class="odt-zoomable" data-zoom-src="images/10000000000004AF000000FEFC7607C9.png" /></td></tr></table>
 
-<p>في الأعلى، يجب أن تقدم طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] واجهة [<bdi dir="ltr" class="odt-ltr-term">IElectionsUI</bdi>] إلى الكائن [<bdi dir="ltr" class="odt-ltr-term">main</bdi>]:</p>
+<p>في الأعلى، يجب أن تقدم طبقة [ui] واجهة [<bdi dir="ltr" class="odt-ltr-term">IElectionsUI</bdi>] إلى الكائن [<bdi dir="ltr" class="odt-ltr-term">main</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> elections.ui.service;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1701,11 +1701,11 @@
 <ul>
   <li>السطر 1: تنفذ فئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsSwing</bdi>] واجهة [<bdi dir="ltr" class="odt-ltr-term">IElectionsUI</bdi>]
   </li>
-  <li>الأسطر 4–6: طريقة [<bdi dir="ltr" class="odt-ltr-term">run</bdi>] لهذه الواجهة
+  <li>الأسطر 4–6: طريقة [run] لهذه الواجهة
   </li>
 </ul>
 
-<p>ما الذي يجب أن تفعله طريقة <em><bdi dir="ltr" class="odt-ltr-term">run</bdi></em>؟ عرض نافذة واجهة المستخدم الرسومية. كيف نفعل ذلك؟ يمكننا استخدام طريقة [<bdi dir="ltr" class="odt-ltr-term">main</bdi>] التي أنشأتها <bdi dir="ltr" class="odt-ltr-term">NetBeans</bdi> في فئة [<bdi dir="ltr" class="odt-ltr-term">AbstractElectionsSwing</bdi>] كدليل، وهي تقوم بالضبط بما نريده:</p>
+<p>ما الذي يجب أن تفعله طريقة <em>run</em>؟ عرض نافذة واجهة المستخدم الرسومية. كيف نفعل ذلك؟ يمكننا استخدام طريقة [<bdi dir="ltr" class="odt-ltr-term">main</bdi>] التي أنشأتها <bdi dir="ltr" class="odt-ltr-term">NetBeans</bdi> في فئة [<bdi dir="ltr" class="odt-ltr-term">AbstractElectionsSwing</bdi>] كدليل، وهي تقوم بالضبط بما نريده:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">static</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> main(String </span><span style="color:#6a3e3e">args</span><span style="color:#000000">[]) {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#3f7f5f">/* Set the Nimbus look and feel */</span></span></span>
@@ -1752,7 +1752,7 @@
   </li>
 </ul>
 
-<p>يمكن أن تكون طريقة [<bdi dir="ltr" class="odt-ltr-term">run</bdi>] لفئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsSwing</bdi>] كما يلي:</p>
+<p>يمكن أن تكون طريقة [run] لفئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsSwing</bdi>] كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#646464">@Override</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> run() {</span></span></span>
@@ -1793,13 +1793,13 @@
   </li>
 </ul>
 
-<p><strong>ملاحظة</strong>: بمجرد كتابة الطريقة [<bdi dir="ltr" class="odt-ltr-term">run</bdi>] في الفئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsSwing</bdi>]، يمكن إزالة الطريقة [<bdi dir="ltr" class="odt-ltr-term">main</bdi>] الخاصة بالفئة المجردة [<bdi dir="ltr" class="odt-ltr-term">AbstractElectionsSwing</bdi>].</p>
+<p><strong>ملاحظة</strong>: بمجرد كتابة الطريقة [run] في الفئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsSwing</bdi>]، يمكن إزالة الطريقة [<bdi dir="ltr" class="odt-ltr-term">main</bdi>] الخاصة بالفئة المجردة [<bdi dir="ltr" class="odt-ltr-term">AbstractElectionsSwing</bdi>].</p>
 <p><a id="refheading318711812363491"></a></p>
 <h3 id="1036">10.3.6. <span style="color: #4f81bd">الفئة القابلة للتنفيذ</span></h3>
 <p>لنعد إلى بنية تطبيقنا:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B10000010765176D5C.png" width="601" height="131" style="display:inline-block; margin:4px;width:15.889cm;height:3.478cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B10000010765176D5C.png" /></td></tr></table>
 
-<p>نود أن يقوم <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> بإنشاء مثيل لطبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] كما كان الحال عند تنفيذها بواسطة تطبيق <em>وحدة التحكم</em>. وللقيام بذلك، يجب أن تحتوي فئة التنفيذ [<bdi dir="ltr" class="odt-ltr-term">ElectionsSwing</bdi>] على مرجع إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>]:</p>
+<p>نود أن يقوم <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> بإنشاء مثيل لطبقة [ui] كما كان الحال عند تنفيذها بواسطة تطبيق <em>وحدة التحكم</em>. وللقيام بذلك، يجب أن تحتوي فئة التنفيذ [<bdi dir="ltr" class="odt-ltr-term">ElectionsSwing</bdi>] على مرجع إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content">@Component</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000"> ElectionsSwing </span><span style="font-weight:bold;color:#7f0055">extends</span><span style="color:#000000"> AbstractElectionsSwing </span><span style="font-weight:bold;color:#7f0055">implements</span><span style="color:#000000"> IElectionsUI{</span></span></span>
@@ -1860,7 +1860,7 @@
   </li>
   <li>حقن التبعيات، في هذه الحالة الإشارة إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>]؛
   </li>
-  <li>تنفيذ طريقة [<bdi dir="ltr" class="odt-ltr-term">run</bdi>] لفئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsSwing</bdi>]:
+  <li>تنفيذ طريقة [run] لفئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsSwing</bdi>]:
   </li>
 </ul>
 
@@ -1947,7 +1947,7 @@
 </ul>
 
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><strong>المهمة</strong>: باتباع مثال طريقة <em><code>&lt;bdi dir="ltr" class="odt-ltr-term"&gt;setEnabled&lt;/bdi&gt;</code></em> في السطر 9<em>،</em> اكتب طريقة <em><code>&lt;bdi dir="ltr" class="odt-ltr-term"&gt;setEnabled&lt;/bdi&gt;</code></em> في السطر 16 التي تقوم بنفس الشيء مع مكونات <code>*&lt;bdi dir="ltr" class="odt-ltr-term"&gt;JMenuItem&lt;/bdi&gt;</code>*.</p>
+<p><strong>المهمة</strong>: باتباع مثال طريقة <em><code>setEnabled</code></em> في السطر 9<em>،</em> اكتب طريقة <em><code>setEnabled</code></em> في السطر 16 التي تقوم بنفس الشيء مع مكونات <code>*JMenuItem</code>*.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
 <p><a id="refheading318791812363491"></a></p>
@@ -2118,7 +2118,7 @@
 <p><strong>ملاحظة</strong>:</p>
 <p>يعرض مكون <em><bdi dir="ltr" class="odt-ltr-term">JList</bdi></em> البيانات الموجودة في نموذج. بشكل افتراضي، يكون هذا النموذج من النوع <em><bdi dir="ltr" class="odt-ltr-term">DefaultListModel</bdi></em> (السطران 2 و3). يتصرف كائن <em><bdi dir="ltr" class="odt-ltr-term">DefaultListModel</bdi></em> بشكل مشابه إلى حد ما لـ <em><bdi dir="ltr" class="odt-ltr-term">ArrayList</bdi></em>:</p>
 <ul>
-  <li>لإضافة كائن <i><bdi dir="ltr" class="odt-ltr-term">o</bdi> </i>إلى النموذج:
+  <li>لإضافة كائن <i>o </i>إلى النموذج:
   </li>
 </ul>
 
@@ -2126,9 +2126,9 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000c0">[DefaultListModel]</span><span style="color:#000000">.addElement(</span><span style="color:#2a00ff">Object o</span><span style="color:#000000">);</span></span></span>
 </code></pre></div>
 
-<p>في هذا التطبيق، سيكون الكائن <em><bdi dir="ltr" class="odt-ltr-term">o</bdi></em> دائمًا من النوع <em><bdi dir="ltr" class="odt-ltr-term">String</bdi></em>.</p>
+<p>في هذا التطبيق، سيكون الكائن <em>o</em> دائمًا من النوع <em><bdi dir="ltr" class="odt-ltr-term">String</bdi></em>.</p>
 <ul>
-  <li>لإزالة العنصر <bdi dir="ltr" class="odt-ltr-term">i</bdi> من النموذج:
+  <li>لإزالة العنصر i من النموذج:
   </li>
 </ul>
 
@@ -2137,7 +2137,7 @@
 </code></pre></div>
 
 <ul>
-  <li>لاسترداد العنصر <bdi dir="ltr" class="odt-ltr-term">i</bdi> من النموذج:
+  <li>لاسترداد العنصر i من النموذج:
   </li>
 </ul>
 
@@ -2236,7 +2236,7 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 25: في كل مرة يضيف فيها المستخدم أصواتًا إلى قائمة ويؤكد اختياره، يتم تخزين هذه القائمة في حقل [<span style="color: #0000c0"><bdi dir="ltr" class="odt-ltr-term">listesSaisies</bdi></span>] في السطر 9. يتم حفظ القائمة هناك مع المعلومات [<bdi dir="ltr" class="odt-ltr-term">id</bdi>، <bdi dir="ltr" class="odt-ltr-term">version</bdi>، <bdi dir="ltr" class="odt-ltr-term">name</bdi>، <bdi dir="ltr" class="odt-ltr-term">voice</bdi>]. تأتي المعلومات الثلاثة الأولى من القوائم المخزنة مبدئيًا في المصفوفة في السطر 6. تُرجع طريقة [<bdi dir="ltr" class="odt-ltr-term">getSelectedIndex</bdi>] لمربع القائمة المنسدلة مؤشر القائمة المحددة؛
+  <li>السطر 25: في كل مرة يضيف فيها المستخدم أصواتًا إلى قائمة ويؤكد اختياره، يتم تخزين هذه القائمة في حقل [<span style="color: #0000c0"><bdi dir="ltr" class="odt-ltr-term">listesSaisies</bdi></span>] في السطر 9. يتم حفظ القائمة هناك مع المعلومات [id، <bdi dir="ltr" class="odt-ltr-term">version</bdi>، <bdi dir="ltr" class="odt-ltr-term">name</bdi>، <bdi dir="ltr" class="odt-ltr-term">voice</bdi>]. تأتي المعلومات الثلاثة الأولى من القوائم المخزنة مبدئيًا في المصفوفة في السطر 6. تُرجع طريقة [<bdi dir="ltr" class="odt-ltr-term">getSelectedIndex</bdi>] لمربع القائمة المنسدلة مؤشر القائمة المحددة؛
   </li>
 </ul>
 

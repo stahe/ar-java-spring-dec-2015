@@ -1485,7 +1485,7 @@
 
 <p>تتم معالجة طلب العميل على النحو التالي:</p>
 <ol>
-  <li><b>الطلب </b>- تأتي عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> المطلوبة بالصيغة<i> <bdi dir="ltr" class="odt-ltr-term">http://machine:port/contexte/Action/param1/param2/....</bdi>?<bdi dir="ltr" class="odt-ltr-term">p1</bdi>=<bdi dir="ltr" class="odt-ltr-term">v1</bdi>&amp;<bdi dir="ltr" class="odt-ltr-term">p2</bdi>=<bdi dir="ltr" class="odt-ltr-term">v2</bdi>&amp;... </i>ويستخدم [المحرك الأمامي] ملف تكوين أو تعليقات <bdi dir="ltr" class="odt-ltr-term">Java</bdi> لتوجيه الطلب إلى وحدة التحكم الصحيحة والإجراء الصحيح داخل تلك الوحدة. وللقيام بذلك، يستخدم حقل [<bdi dir="ltr" class="odt-ltr-term">Action</bdi>] في عنوان <bdi dir="ltr" class="odt-ltr-term">URL.</bdi> يتكون باقي عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<i>/<bdi dir="ltr" class="odt-ltr-term">param1/param2/...</bdi></i>] من معلمات اختيارية سيتم تمريرها إلى الإجراء. يشير الحرف <b><bdi dir="ltr" class="odt-ltr-term">C</bdi> </b>في <bdi dir="ltr" class="odt-ltr-term">MVC</bdi> هنا إلى السلسلة [<bdi dir="ltr" class="odt-ltr-term">Front Controller</bdi>، <bdi dir="ltr" class="odt-ltr-term">Controller</bdi>، <bdi dir="ltr" class="odt-ltr-term">Action</bdi>]. إذا لم تتمكن أي وحدة تحكم من معالجة الإجراء المطلوب، فسيرد خادم الويب بأن عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> المطلوب لم يتم العثور عليه.
+  <li><b>الطلب </b>- تأتي عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> المطلوبة بالصيغة<i> <bdi dir="ltr" class="odt-ltr-term">http://machine:port/contexte/Action/param1/param2/....</bdi>?p1=v1&amp;p2=v2&amp;... </i>ويستخدم [المحرك الأمامي] ملف تكوين أو تعليقات <bdi dir="ltr" class="odt-ltr-term">Java</bdi> لتوجيه الطلب إلى وحدة التحكم الصحيحة والإجراء الصحيح داخل تلك الوحدة. وللقيام بذلك، يستخدم حقل [<bdi dir="ltr" class="odt-ltr-term">Action</bdi>] في عنوان <bdi dir="ltr" class="odt-ltr-term">URL.</bdi> يتكون باقي عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<i>/<bdi dir="ltr" class="odt-ltr-term">param1/param2/...</bdi></i>] من معلمات اختيارية سيتم تمريرها إلى الإجراء. يشير الحرف <b><bdi dir="ltr" class="odt-ltr-term">C</bdi> </b>في <bdi dir="ltr" class="odt-ltr-term">MVC</bdi> هنا إلى السلسلة [<bdi dir="ltr" class="odt-ltr-term">Front Controller</bdi>، <bdi dir="ltr" class="odt-ltr-term">Controller</bdi>، <bdi dir="ltr" class="odt-ltr-term">Action</bdi>]. إذا لم تتمكن أي وحدة تحكم من معالجة الإجراء المطلوب، فسيرد خادم الويب بأن عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> المطلوب لم يتم العثور عليه.
   </li>
   <li>المعالجة 
     <ul>
@@ -1493,7 +1493,7 @@
       </li>
       <li>مسار [<i>/<bdi dir="ltr" class="odt-ltr-term">param1/param2/...</bdi></i>] لعنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi>،
       </li>
-      <li>معلمات [<i><bdi dir="ltr" class="odt-ltr-term">p1</bdi>=<bdi dir="ltr" class="odt-ltr-term">v1</bdi>&amp;<bdi dir="ltr" class="odt-ltr-term">p2</bdi>=<bdi dir="ltr" class="odt-ltr-term">v2</bdi></i>] لعنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi><i>،</i>
+      <li>معلمات [<i>p1=v1&amp;p2=v2</i>] لعنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi><i>،</i>
       </li>
       <li>من المعلمات التي أرسلها المتصفح مع طلبه؛
       </li>
@@ -1626,7 +1626,7 @@
 </code></pre></div>
 
 <ul>
-  <li>الأسطر 6–8: خصائص مشروع <bdi dir="ltr" class="odt-ltr-term">Maven.</bdi> هناك علامة [&lt;<bdi dir="ltr" class="odt-ltr-term">packaging</bdi>&gt;] تحدد نوع الملف الذي ينتجه بناء <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> مفقودة. في حالة عدم وجودها، يتم استخدام النوع [<bdi dir="ltr" class="odt-ltr-term">jar</bdi>]. وبالتالي، فإن التطبيق هو تطبيق قابل للتنفيذ قائم على وحدة التحكم، وليس تطبيق ويب، وفي هذه الحالة سيكون التعبئة [<bdi dir="ltr" class="odt-ltr-term">war</bdi>]؛
+  <li>الأسطر 6–8: خصائص مشروع <bdi dir="ltr" class="odt-ltr-term">Maven.</bdi> هناك علامة [&lt;<bdi dir="ltr" class="odt-ltr-term">packaging</bdi>&gt;] تحدد نوع الملف الذي ينتجه بناء <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> مفقودة. في حالة عدم وجودها، يتم استخدام النوع [jar]. وبالتالي، فإن التطبيق هو تطبيق قابل للتنفيذ قائم على وحدة التحكم، وليس تطبيق ويب، وفي هذه الحالة سيكون التعبئة [war]؛
   </li>
   <li>الأسطر 10-14: يحتوي مشروع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> على مشروع أب [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">spring-boot-starter-parent</bdi></span>]. يحدد هذا معظم تبعيات المشروع. قد تكون كافية، وفي هذه الحالة لا تضاف أي تبعيات إضافية، أو قد لا تكون كافية، وفي هذه الحالة تضاف التبعيات المفقودة؛
   </li>
@@ -1714,7 +1714,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>سيؤدي تحويل <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> لهذا الكائن إلى إنشاء السلسلة <strong>{&quot;<bdi dir="ltr" class="odt-ltr-term">id</bdi>&quot;:<bdi dir="ltr" class="odt-ltr-term">n</bdi>,&quot;<bdi dir="ltr" class="odt-ltr-term">content</bdi>&quot;:&quot;<bdi dir="ltr" class="odt-ltr-term">text</bdi>&quot;}</strong>. وفي النهاية، ستكون سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> الناتجة عن طريقة وحدة التحكم بالشكل التالي:</p>
+<p>سيؤدي تحويل <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> لهذا الكائن إلى إنشاء السلسلة <strong>{&quot;id&quot;:n,&quot;<bdi dir="ltr" class="odt-ltr-term">content</bdi>&quot;:&quot;<bdi dir="ltr" class="odt-ltr-term">text</bdi>&quot;}</strong>. وفي النهاية، ستكون سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> الناتجة عن طريقة وحدة التحكم بالشكل التالي:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{&quot;id&quot;:2,&quot;content&quot;:&quot;Hello, World!&quot;}
 </code></pre></div>
 <p>أو </p>
@@ -2055,13 +2055,13 @@
   </li>
 </ul>
 
-<p>التبعيات المذكورة أعلاه هي تبعيات كل من طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] وطبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>].</p>
+<p>التبعيات المذكورة أعلاه هي تبعيات كل من طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] وطبقة [web].</p>
 <p><a id="refheading17988265679331"></a></p>
-<h4 id="13531-web">13.5.3.1. <span style="color: #4f81bd">تكوين طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>]</span></h4>
-<p>يتم تكوين طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>] بواسطة ملف [<bdi dir="ltr" class="odt-ltr-term">AppConfig</bdi>]:</p>
+<h4 id="13531-web">13.5.3.1. <span style="color: #4f81bd">تكوين طبقة [web]</span></h4>
+<p>يتم تكوين طبقة [web] بواسطة ملف [<bdi dir="ltr" class="odt-ltr-term">AppConfig</bdi>]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F7000000CD6A8D0755.png" width="173" height="143" style="display:inline-block; margin:4px;width:4.57cm;height:3.792cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F7000000CD6A8D0755.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>تقوم فئة [<bdi dir="ltr" class="odt-ltr-term">WebConfig</bdi>] بتكوين طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>]:</p>
+<p>تقوم فئة [<bdi dir="ltr" class="odt-ltr-term">WebConfig</bdi>] بتكوين طبقة [web]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.webjson.config;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2184,7 +2184,7 @@
   </li>
 </ul>
 
-<p>تقوم فئة [<bdi dir="ltr" class="odt-ltr-term">AppConfig</bdi>] بتكوين التطبيق بأكمله، أي طبقات [<bdi dir="ltr" class="odt-ltr-term">web</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]:</p>
+<p>تقوم فئة [<bdi dir="ltr" class="odt-ltr-term">AppConfig</bdi>] بتكوين التطبيق بأكمله، أي طبقات [web] و[<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.webjson.config;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2201,7 +2201,7 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 9: يستورد المكونات من طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] وتلك من طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>]؛
+  <li>السطر 9: يستورد المكونات من طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] وتلك من طبقة [web]؛
   </li>
   <li>السطر 8: يحدد الحزم التي يمكن العثور فيها على حبات <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> الأخرى؛
   </li>
@@ -2650,7 +2650,7 @@
   </li>
   <li><span style="color: #000000">السطور 18-19: الحالة التي تواجه فيها الطريقة استثناءً من طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]. نقوم بتهيئة الاستجابة بـ [<bdi dir="ltr" class="odt-ltr-term">status</bdi>=1000] (رمز الخطأ) [<bdi dir="ltr" class="odt-ltr-term">messages</bdi>=<bdi dir="ltr" class="odt-ltr-term">e1.getMessages</bdi>()]، أي نرسل إلى العميل قائمة بالأخطاء التي تمت مواجهتها على جانب الخادم؛</span>
   </li>
-  <li><span style="color: #000000">السطران 20-21: الحالة التي تواجه فيها الطريقة نوعًا آخر من الاستثناءات. نقوم بتهيئة الاستجابة بـ [<bdi dir="ltr" class="odt-ltr-term">status</bdi>=1000] (رمز الخطأ) [<bdi dir="ltr" class="odt-ltr-term">messages</bdi>=<bdi dir="ltr" class="odt-ltr-term">getErrorsForException</bdi>(</span><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">e</bdi></span><span style="color: #000000">)] حيث [<bdi dir="ltr" class="odt-ltr-term">getErrorsForException</bdi>] هي طريقة خاصة للفئة تعيد قائمة الأخطاء المرتبطة بالاستثناءات في مكدس استثناءات <bdi dir="ltr" class="odt-ltr-term">e</bdi>، و [<bdi dir="ltr" class="odt-ltr-term">body</bdi>=<bdi dir="ltr" class="odt-ltr-term">null</bdi>]؛</span>
+  <li><span style="color: #000000">السطران 20-21: الحالة التي تواجه فيها الطريقة نوعًا آخر من الاستثناءات. نقوم بتهيئة الاستجابة بـ [<bdi dir="ltr" class="odt-ltr-term">status</bdi>=1000] (رمز الخطأ) [<bdi dir="ltr" class="odt-ltr-term">messages</bdi>=<bdi dir="ltr" class="odt-ltr-term">getErrorsForException</bdi>(</span><span style="color: #6a3e3e">e</span><span style="color: #000000">)] حيث [<bdi dir="ltr" class="odt-ltr-term">getErrorsForException</bdi>] هي طريقة خاصة للفئة تعيد قائمة الأخطاء المرتبطة بالاستثناءات في مكدس استثناءات e، و [<bdi dir="ltr" class="odt-ltr-term">body</bdi>=<bdi dir="ltr" class="odt-ltr-term">null</bdi>]؛</span>
   </li>
   <li><span style="color: #000000">السطر 24: يتم إرجاع سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> للاستجابة؛</span>
   </li>
@@ -2714,7 +2714,7 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">السطر 10: يتم تنفيذ الطريقة الثابتة [<bdi dir="ltr" class="odt-ltr-term">SpringApplication.</bdi></span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">run</bdi></span></i><span style="color: #000000">]. فئة [<bdi dir="ltr" class="odt-ltr-term">SpringApplication</bdi>] هي فئة من مشروع [<bdi dir="ltr" class="odt-ltr-term">Spring Boot</bdi>] (السطر 3). يتم تمرير معلمتين إليها:</span>
+  <li><span style="color: #000000">السطر 10: يتم تنفيذ الطريقة الثابتة [<bdi dir="ltr" class="odt-ltr-term">SpringApplication.</bdi></span><i><span style="color: #000000">run</span></i><span style="color: #000000">]. فئة [<bdi dir="ltr" class="odt-ltr-term">SpringApplication</bdi>] هي فئة من مشروع [<bdi dir="ltr" class="odt-ltr-term">Spring Boot</bdi>] (السطر 3). يتم تمرير معلمتين إليها:</span>
     <ul>
       <li><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">AppConfig.</bdi></span><b><span style="color: #7f0055"><bdi dir="ltr" class="odt-ltr-term">class</bdi></span></b><span style="color: #000000">]: الفئة التي تقوم بتكوين التطبيق بأكمله؛</span>
       </li>
@@ -3570,7 +3570,7 @@
 <ul>
   <li>السطر 21: تتلقى الطريقة معلمتين:
     <ul>
-      <li>[<bdi dir="ltr" class="odt-ltr-term">url</bdi>]: عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> المطلوب؛
+      <li>[url]: عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> المطلوب؛
       </li>
       <li>[<bdi dir="ltr" class="odt-ltr-term">jsonPost</bdi>]: سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> المراد نشرها، أو <i><bdi dir="ltr" class="odt-ltr-term">null</bdi> </i>في حالة عدم وجودها. إذا كانت [<bdi dir="ltr" class="odt-ltr-term">jsonPost</bdi> == <bdi dir="ltr" class="odt-ltr-term">null</bdi>]، يتم إجراء طلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> باستخدام <bdi dir="ltr" class="odt-ltr-term">GET</bdi>؛ وإلا، يتم استخدام <bdi dir="ltr" class="odt-ltr-term">POST</bdi>؛ 
       </li>

@@ -1537,7 +1537,7 @@
   </li>
   <li>السطور 6–10: يتم تعريف كل عنصر فريد بواسطة علامة &lt;<b><bdi dir="ltr" class="odt-ltr-term">bean</bdi></b>&gt;؛
   </li>
-  <li>السطر 6: [<bdi dir="ltr" class="odt-ltr-term">id</bdi>] هو معرف العنصر الفردي. [<bdi dir="ltr" class="odt-ltr-term">class</bdi>] هو الاسم الكامل للفئة المراد إنشاء مثيل لها؛
+  <li>السطر 6: [id] هو معرف العنصر الفردي. [<bdi dir="ltr" class="odt-ltr-term">class</bdi>] هو الاسم الكامل للفئة المراد إنشاء مثيل لها؛
   </li>
   <li>الأسطر 7–9: القيم الثلاث التي يتم تمريرها إلى منشئ فئة [<bdi dir="ltr" class="odt-ltr-term">Person</bdi>]؛
   </li>
@@ -1549,7 +1549,7 @@
     <ul>
       <li>[<bdi dir="ltr" class="odt-ltr-term">value</bdi>]: لتعيين قيمة أولية (سلسلة، رقم، تاريخ، إلخ) للحقل،
       </li>
-      <li>[<bdi dir="ltr" class="odt-ltr-term">ref</bdi>]: لتعيين مرجع كائن <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> إلى الحقل؛
+      <li>[ref]: لتعيين مرجع كائن <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> إلى الحقل؛
       </li>
     </ul>
   </li>
@@ -1607,7 +1607,7 @@
   </li>
   <li>السطر 19: لا نستخدم اسم الفول، بل نوعه فقط، لأن هناك عنصرًا فريدًا واحدًا فقط من النوع [<bdi dir="ltr" class="odt-ltr-term">Apartment</bdi>]؛
   </li>
-  <li>السطر 18: يتم استخدام كل من المعرف ونوع العنصر الفردي المطلوب. المعرف زائد عن الحاجة نظرًا لوجود عنصر فردي واحد فقط من النوع [<b><span style="color: #7f0055"><bdi dir="ltr" class="odt-ltr-term">new</bdi> </span></b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ArrayList</bdi>&lt;<bdi dir="ltr" class="odt-ltr-term">Person</bdi>&gt;().<bdi dir="ltr" class="odt-ltr-term">getClass</bdi>()</span>]؛
+  <li>السطر 18: يتم استخدام كل من المعرف ونوع العنصر الفردي المطلوب. المعرف زائد عن الحاجة نظرًا لوجود عنصر فردي واحد فقط من النوع [<b><span style="color: #7f0055">new </span></b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ArrayList</bdi>&lt;<bdi dir="ltr" class="odt-ltr-term">Person</bdi>&gt;().<bdi dir="ltr" class="odt-ltr-term">getClass</bdi>()</span>]؛
   </li>
   <li>السطران 32-33: يوضحان أنه إذا طلبنا نفس العنصر الفردي عدة مرات، فسنحصل دائمًا على نفس المرجع، مما يدل على أننا نتعامل بالفعل مع عنصر فردي. من المهم فهم هذه النقطة؛
   </li>
@@ -1649,19 +1649,19 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001DA000001B90B0E735E.png" width="237" height="220" style="display:inline-block; margin:4px;width:6.271cm;height:5.833cm;" class="odt-zoomable" data-zoom-src="images/10000000000001DA000001B90B0E735E.png" /></td></tr></table>
 
 <ul>
-  <li>في [3]، حدد ملفات <bdi dir="ltr" class="odt-ltr-term">JAR</bdi> المراد إضافتها إلى مسار <bdi dir="ltr" class="odt-ltr-term">ClassPath</bdi> للمشروع (هنا، توجد في مجلد [<bdi dir="ltr" class="odt-ltr-term">lib</bdi>] داخل المشروع)؛
+  <li>في [3]، حدد ملفات <bdi dir="ltr" class="odt-ltr-term">JAR</bdi> المراد إضافتها إلى مسار <bdi dir="ltr" class="odt-ltr-term">ClassPath</bdi> للمشروع (هنا، توجد في مجلد [lib] داخل المشروع)؛
   </li>
 </ul>
 
 <p><strong>التعريف</strong>: [<bdi dir="ltr" class="odt-ltr-term">ClassPath</bdi>] للمشروع هو مجموعة المجلدات التي تبحث فيها <bdi dir="ltr" class="odt-ltr-term">JVM</bdi> (آلة <bdi dir="ltr" class="odt-ltr-term">Java</bdi> الافتراضية) التي تشغل المشروع للعثور على فئة يشير إليها. بالنسبة لمشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi>، يتكون [<bdi dir="ltr" class="odt-ltr-term">ClassPath</bdi>] من العناصر التالية:</p>
 <ul>
-  <li>مجلد [<bdi dir="ltr" class="odt-ltr-term">bin</bdi>] الخاص بالمشروع؛
+  <li>مجلد [bin] الخاص بالمشروع؛
   </li>
   <li>عناصر [<bdi dir="ltr" class="odt-ltr-term">Build Path</bdi>] للمشروع؛
   </li>
 </ul>
 
-<p>مجلد [<bdi dir="ltr" class="odt-ltr-term">bin</bdi>] هو المجلد الناتج عن ترجمة مجلد [<bdi dir="ltr" class="odt-ltr-term">src</bdi>]. لذلك، فإن كل ما يتم وضعه في مجلد [<bdi dir="ltr" class="odt-ltr-term">src</bdi>] يصبح تلقائيًا جزءًا من [<bdi dir="ltr" class="odt-ltr-term">ClassPath</bdi>] (حتى لو لم يكن ملف .<bdi dir="ltr" class="odt-ltr-term">java</bdi>). وبالتالي، في المشروع السابق، سيكون ملف تكوين <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> [<bdi dir="ltr" class="odt-ltr-term">config-01.xml</bdi>]، الموجود في مجلد [<bdi dir="ltr" class="odt-ltr-term">src</bdi>]، جزءًا من [<bdi dir="ltr" class="odt-ltr-term">ClassPath</bdi>] للمشروع في وقت التشغيل.</p>
+<p>مجلد [bin] هو المجلد الناتج عن ترجمة مجلد [src]. لذلك، فإن كل ما يتم وضعه في مجلد [src] يصبح تلقائيًا جزءًا من [<bdi dir="ltr" class="odt-ltr-term">ClassPath</bdi>] (حتى لو لم يكن ملف .<bdi dir="ltr" class="odt-ltr-term">java</bdi>). وبالتالي، في المشروع السابق، سيكون ملف تكوين <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> [<bdi dir="ltr" class="odt-ltr-term">config-01.xml</bdi>]، الموجود في مجلد [src]، جزءًا من [<bdi dir="ltr" class="odt-ltr-term">ClassPath</bdi>] للمشروع في وقت التشغيل.</p>
 <p><a id="refheading78435838046689"></a></p>
 <h3 id="527">5.2.7. <span style="color: #4f81bd">النتائج</span></h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
@@ -1931,7 +1931,7 @@
   </li>
   <li>في [6]: إصدارها؛
   </li>
-  <li>في [7]: تنسيق التعبئة (تشمل التنسيقات الأخرى <bdi dir="ltr" class="odt-ltr-term">war</bdi> و <bdi dir="ltr" class="odt-ltr-term">ear</bdi> و <bdi dir="ltr" class="odt-ltr-term">apk</bdi> وغيرها)؛
+  <li>في [7]: تنسيق التعبئة (تشمل التنسيقات الأخرى war و ear و apk وغيرها)؛
   </li>
   <li>في [8]: المشروع الذي تم إنشاؤه بهذه الطريقة؛
   </li>
@@ -1939,13 +1939,13 @@
 
 <p>بشكل افتراضي، يتمتع مشروع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> بهيكل مجلدات محدد:</p>
 <ul>
-  <li>[<bdi dir="ltr" class="odt-ltr-term">src</bdi> / <bdi dir="ltr" class="odt-ltr-term">main</bdi> / <bdi dir="ltr" class="odt-ltr-term">java</bdi>]: شفرة المصدر للمشروع. سيتم نقل الناتج المُجمَّع من هذه المصادر إلى مجلد [<bdi dir="ltr" class="odt-ltr-term">target/classes</bdi>] الخاص بالمشروع؛
+  <li>[src / <bdi dir="ltr" class="odt-ltr-term">main</bdi> / <bdi dir="ltr" class="odt-ltr-term">java</bdi>]: شفرة المصدر للمشروع. سيتم نقل الناتج المُجمَّع من هذه المصادر إلى مجلد [<bdi dir="ltr" class="odt-ltr-term">target/classes</bdi>] الخاص بالمشروع؛
   </li>
   <li>[<bdi dir="ltr" class="odt-ltr-term">src/main/resources</bdi>]: الموارد التي يجب أن تكون في مسار فئة المشروع ولكنها ليست ملفات مصدر <bdi dir="ltr" class="odt-ltr-term">Java.</bdi> سيتم نسخها كما هي إلى مجلد [<bdi dir="ltr" class="odt-ltr-term">target/classes</bdi>] الخاص بالمشروع؛
   </li>
   <li>[<bdi dir="ltr" class="odt-ltr-term">src/test/java</bdi>]: شفرة المصدر لاختبارات المشروع. سيتم نقل الناتج المُجمَّع من هذه المصادر إلى مجلد [<bdi dir="ltr" class="odt-ltr-term">target/test-classes</bdi>] الخاص بالمشروع. لا يتم تضمين هذه العناصر في أرشيف <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> الخاص بالمشروع؛
   </li>
-  <li>[<bdi dir="ltr" class="odt-ltr-term">src</bdi> / <bdi dir="ltr" class="odt-ltr-term">test</bdi> / <bdi dir="ltr" class="odt-ltr-term">resources</bdi>]: الموارد التي يجب أن تكون موجودة في مسار فئات المشروع للاختبار ولكنها ليست ملفات مصدر <bdi dir="ltr" class="odt-ltr-term">Java.</bdi> سيتم نسخها كما هي إلى مجلد [<bdi dir="ltr" class="odt-ltr-term">target/test-classes</bdi>] الخاص بالمشروع؛
+  <li>[src / <bdi dir="ltr" class="odt-ltr-term">test</bdi> / <bdi dir="ltr" class="odt-ltr-term">resources</bdi>]: الموارد التي يجب أن تكون موجودة في مسار فئات المشروع للاختبار ولكنها ليست ملفات مصدر <bdi dir="ltr" class="odt-ltr-term">Java.</bdi> سيتم نسخها كما هي إلى مجلد [<bdi dir="ltr" class="odt-ltr-term">target/test-classes</bdi>] الخاص بالمشروع؛
   </li>
 </ul>
 
@@ -2938,7 +2938,7 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">الأسطر 8–10: نقوم بحقن (السطر 8) المكون المسمى (السطر 9) [<bdi dir="ltr" class="odt-ltr-term">ui1</bdi>]. لاحظ أنه في السطر 10، نقوم بحقن مثيل واجهة بدلاً من مثيل فئة؛</span>
+  <li><span style="color: #000000">الأسطر 8–10: نقوم بحقن (السطر 8) المكون المسمى (السطر 9) [ui1]. لاحظ أنه في السطر 10، نقوم بحقن مثيل واجهة بدلاً من مثيل فئة؛</span>
   </li>
   <li><span style="color: #000000">الأسطر 21–32: يتم إدخال المكونات الأخرى المحددة في فئة [<bdi dir="ltr" class="odt-ltr-term">Config</bdi>] بنفس الطريقة؛</span>
   </li>
@@ -2964,17 +2964,17 @@
   </li>
   <li><span style="color: #000000">السطر 43: يختبر مثيل [<bdi dir="ltr" class="odt-ltr-term">metier2</bdi>] لواجهة [<bdi dir="ltr" class="odt-ltr-term">IMetier</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 48: يختبر مثيل [<bdi dir="ltr" class="odt-ltr-term">ui1</bdi>] لواجهة [<bdi dir="ltr" class="odt-ltr-term">IUi</bdi>]؛</span>
+  <li><span style="color: #000000">السطر 48: يختبر مثيل [ui1] لواجهة [<bdi dir="ltr" class="odt-ltr-term">IUi</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 36: يختبر مثيل [<bdi dir="ltr" class="odt-ltr-term">ui2</bdi>] لواجهة [<bdi dir="ltr" class="odt-ltr-term">IUi</bdi>]؛</span>
+  <li><span style="color: #000000">السطر 36: يختبر مثيل [ui2] لواجهة [<bdi dir="ltr" class="odt-ltr-term">IUi</bdi>]؛</span>
   </li>
 </ul>
 
 <p><span style="color: #000000">التأكيدات التي يمكن استخدامها في طريقة الاختبار هي كما يلي:</span></p>
 <ul>
-  <li><b><bdi dir="ltr" class="odt-ltr-term">assertEquals</bdi>(<bdi dir="ltr" class="odt-ltr-term">expression1</bdi>, <bdi dir="ltr" class="odt-ltr-term">expression2</bdi>)</b>: يتحقق من أن قيم التعبيرين متساوية. يتم قبول العديد من أنواع التعبيرات (<bdi dir="ltr" class="odt-ltr-term">int</bdi>، <bdi dir="ltr" class="odt-ltr-term">String</bdi>، <bdi dir="ltr" class="odt-ltr-term">float</bdi>، <bdi dir="ltr" class="odt-ltr-term">double</bdi>، <bdi dir="ltr" class="odt-ltr-term">boolean</bdi>، <bdi dir="ltr" class="odt-ltr-term">char</bdi>، <bdi dir="ltr" class="odt-ltr-term">short</bdi>). إذا لم تكن التعبيرات متساوية، يتم إلقاء استثناء من النوع [<bdi dir="ltr" class="odt-ltr-term">AssertionFailedError</bdi>]،
+  <li><b><bdi dir="ltr" class="odt-ltr-term">assertEquals</bdi>(<bdi dir="ltr" class="odt-ltr-term">expression1</bdi>, <bdi dir="ltr" class="odt-ltr-term">expression2</bdi>)</b>: يتحقق من أن قيم التعبيرين متساوية. يتم قبول العديد من أنواع التعبيرات (int، <bdi dir="ltr" class="odt-ltr-term">String</bdi>، <bdi dir="ltr" class="odt-ltr-term">float</bdi>، <bdi dir="ltr" class="odt-ltr-term">double</bdi>، <bdi dir="ltr" class="odt-ltr-term">boolean</bdi>، <bdi dir="ltr" class="odt-ltr-term">char</bdi>، <bdi dir="ltr" class="odt-ltr-term">short</bdi>). إذا لم تكن التعبيرات متساوية، يتم إلقاء استثناء من النوع [<bdi dir="ltr" class="odt-ltr-term">AssertionFailedError</bdi>]،
   </li>
-  <li><b><bdi dir="ltr" class="odt-ltr-term">assertEquals</bdi>(<bdi dir="ltr" class="odt-ltr-term">real1</bdi>, <bdi dir="ltr" class="odt-ltr-term">real2</bdi>, <bdi dir="ltr" class="odt-ltr-term">delta</bdi>)</b>: يتحقق من أن رقمين حقيقيين متساويان في حدود <b><bdi dir="ltr" class="odt-ltr-term">delta</bdi></b>، أي <bdi dir="ltr" class="odt-ltr-term">abs</bdi>(<bdi dir="ltr" class="odt-ltr-term">real1-real2</bdi>) &lt;= <bdi dir="ltr" class="odt-ltr-term">delta.</bdi> على سبيل المثال، يمكن كتابة <b><bdi dir="ltr" class="odt-ltr-term">assertEquals</bdi>(<bdi dir="ltr" class="odt-ltr-term">real1</bdi>, <bdi dir="ltr" class="odt-ltr-term">real2</bdi>, 1E-6) </b>للتحقق من أن القيمتين متساويتان في حدود 10⁻⁶،
+  <li><b><bdi dir="ltr" class="odt-ltr-term">assertEquals</bdi>(<bdi dir="ltr" class="odt-ltr-term">real1</bdi>, <bdi dir="ltr" class="odt-ltr-term">real2</bdi>, <bdi dir="ltr" class="odt-ltr-term">delta</bdi>)</b>: يتحقق من أن رقمين حقيقيين متساويان في حدود <b><bdi dir="ltr" class="odt-ltr-term">delta</bdi></b>، أي abs(<bdi dir="ltr" class="odt-ltr-term">real1-real2</bdi>) &lt;= <bdi dir="ltr" class="odt-ltr-term">delta.</bdi> على سبيل المثال، يمكن كتابة <b><bdi dir="ltr" class="odt-ltr-term">assertEquals</bdi>(<bdi dir="ltr" class="odt-ltr-term">real1</bdi>, <bdi dir="ltr" class="odt-ltr-term">real2</bdi>, 1E-6) </b>للتحقق من أن القيمتين متساويتان في حدود 10⁻⁶،
   </li>
   <li><b><bdi dir="ltr" class="odt-ltr-term">assertEquals</bdi>(<bdi dir="ltr" class="odt-ltr-term">message</bdi>, <bdi dir="ltr" class="odt-ltr-term">expression1</bdi>, <bdi dir="ltr" class="odt-ltr-term">expression2</bdi>) </b>و <b><bdi dir="ltr" class="odt-ltr-term">assertEquals</bdi>(<bdi dir="ltr" class="odt-ltr-term">message</bdi>, <bdi dir="ltr" class="odt-ltr-term">real1</bdi>, <bdi dir="ltr" class="odt-ltr-term">real2</bdi>, <bdi dir="ltr" class="odt-ltr-term">delta</bdi>) </b>هما متغيران يسمحان لك بتحديد رسالة الخطأ المرتبطة باستثناء [<bdi dir="ltr" class="odt-ltr-term">AssertionFailedError</bdi>] الذي يتم إلقائه عند فشل طريقة [<bdi dir="ltr" class="odt-ltr-term">assertEquals</bdi>]،
   </li>
@@ -2994,7 +2994,7 @@
 <p><span style="color: #000000">يتم الحصول على النتيجة التالية:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000017400000124C99CC553.png" width="260" height="204" style="display:inline-block; margin:4px;width:6.89cm;height:5.408cm;" class="odt-zoomable" data-zoom-src="images/100000000000017400000124C99CC553.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p><span style="color: #000000">هنا، اجتازت جميع الاختبارات. ما الذي يوضحه هذا المثال؟ إنه يوضح المرونة التي يوفرها إطار عمل <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> في تكوين بنية متعددة الطبقات. يمكنك اختيار استخدام تنفيذ [<bdi dir="ltr" class="odt-ltr-term">Ui1</bdi>، <bdi dir="ltr" class="odt-ltr-term">Metier1</bdi>، <bdi dir="ltr" class="odt-ltr-term">Dao1</bdi>] أو [<bdi dir="ltr" class="odt-ltr-term">Ui2</bdi>، <bdi dir="ltr" class="odt-ltr-term">Metier2</bdi>، <bdi dir="ltr" class="odt-ltr-term">Dao2</bdi>] ببساطة عن طريق تكوينه. وبالتالي، في اختبار <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi> السابق، إذا احتفظت فقط بحقن حبوب [<bdi dir="ltr" class="odt-ltr-term">ui1</bdi>, <bdi dir="ltr" class="odt-ltr-term">metier1</bdi>, <bdi dir="ltr" class="odt-ltr-term">dao1</bdi>]، فأنت تعمل مع البنية الأولى. لتغيير البنية، ما عليك سوى تغيير الحبوب المحقونة. ويتم ذلك دون تعديل كود الطبقات التي تنفذ الواجهات. يُسمى هذا النوع من البرمجة بالبرمجة القائمة على الواجهة لأننا لا نستخدم مثيلات الفئات التي تنفذ الطبقات، بل مثيلات واجهاتها.</span></p>
+<p><span style="color: #000000">هنا، اجتازت جميع الاختبارات. ما الذي يوضحه هذا المثال؟ إنه يوضح المرونة التي يوفرها إطار عمل <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> في تكوين بنية متعددة الطبقات. يمكنك اختيار استخدام تنفيذ [<bdi dir="ltr" class="odt-ltr-term">Ui1</bdi>، <bdi dir="ltr" class="odt-ltr-term">Metier1</bdi>، <bdi dir="ltr" class="odt-ltr-term">Dao1</bdi>] أو [<bdi dir="ltr" class="odt-ltr-term">Ui2</bdi>، <bdi dir="ltr" class="odt-ltr-term">Metier2</bdi>، <bdi dir="ltr" class="odt-ltr-term">Dao2</bdi>] ببساطة عن طريق تكوينه. وبالتالي، في اختبار <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi> السابق، إذا احتفظت فقط بحقن حبوب [ui1, <bdi dir="ltr" class="odt-ltr-term">metier1</bdi>, <bdi dir="ltr" class="odt-ltr-term">dao1</bdi>]، فأنت تعمل مع البنية الأولى. لتغيير البنية، ما عليك سوى تغيير الحبوب المحقونة. ويتم ذلك دون تعديل كود الطبقات التي تنفذ الواجهات. يُسمى هذا النوع من البرمجة بالبرمجة القائمة على الواجهة لأننا لا نستخدم مثيلات الفئات التي تنفذ الطبقات، بل مثيلات واجهاتها.</span></p>
 <p><a id="refheading78455838046689"></a></p>
 <h2 id="56">5.6. <span style="color: #4f81bd">الخلاصة</span></h2>
 <ul>

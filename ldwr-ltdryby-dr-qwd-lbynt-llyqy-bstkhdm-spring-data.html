@@ -1400,11 +1400,11 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>لدى العميل معرف [<bdi dir="ltr" class="odt-ltr-term">id</bdi>] واسم أول [<bdi dir="ltr" class="odt-ltr-term">firstName</bdi>] واسم عائلة [<bdi dir="ltr" class="odt-ltr-term">lastName</bdi>]. تمثل كل مثيل [<bdi dir="ltr" class="odt-ltr-term">Customer</bdi>] صفًا في جدول قاعدة البيانات.</p>
+<p>لدى العميل معرف [id] واسم أول [<bdi dir="ltr" class="odt-ltr-term">firstName</bdi>] واسم عائلة [<bdi dir="ltr" class="odt-ltr-term">lastName</bdi>]. تمثل كل مثيل [<bdi dir="ltr" class="odt-ltr-term">Customer</bdi>] صفًا في جدول قاعدة البيانات.</p>
 <ul>
   <li>السطر 8: تعليق <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> يضمن أن استمرارية مثيلات [<bdi dir="ltr" class="odt-ltr-term">Customer</bdi>] (إنشاء، قراءة، تحديث، حذف) ستدار بواسطة تطبيق <bdi dir="ltr" class="odt-ltr-term">JPA.</bdi> استنادًا إلى تبعيات <bdi dir="ltr" class="odt-ltr-term">Maven</bdi>، يمكننا أن نرى أن تطبيق <bdi dir="ltr" class="odt-ltr-term">JPA/Hibernate</bdi> قيد الاستخدام؛
   </li>
-  <li>السطران 11-12: تعليقات توضيحية لـ <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> تربط حقل [<bdi dir="ltr" class="odt-ltr-term">id</bdi>] بالمفتاح الأساسي لجدول [<bdi dir="ltr" class="odt-ltr-term">Customer</bdi>]. يشير السطر 12 إلى أن تطبيق <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> سيستخدم طريقة إنشاء المفتاح الأساسي الخاصة بنظام إدارة قواعد البيانات المستخدم، وهو <bdi dir="ltr" class="odt-ltr-term">H2</bdi> في هذه الحالة؛
+  <li>السطران 11-12: تعليقات توضيحية لـ <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> تربط حقل [id] بالمفتاح الأساسي لجدول [<bdi dir="ltr" class="odt-ltr-term">Customer</bdi>]. يشير السطر 12 إلى أن تطبيق <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> سيستخدم طريقة إنشاء المفتاح الأساسي الخاصة بنظام إدارة قواعد البيانات المستخدم، وهو <bdi dir="ltr" class="odt-ltr-term">H2</bdi> في هذه الحالة؛
   </li>
 </ul>
 
@@ -1412,7 +1412,7 @@
 <ul>
   <li>سيتم تسمية جدول [<bdi dir="ltr" class="odt-ltr-term">Customer</bdi>] على اسم الفئة، أي [<bdi dir="ltr" class="odt-ltr-term">Customer</bdi>]؛
   </li>
-  <li>سيتم تسمية أعمدة هذا الجدول على اسم حقول الفئة: [<bdi dir="ltr" class="odt-ltr-term">id</bdi>, <bdi dir="ltr" class="odt-ltr-term">firstName</bdi>, <bdi dir="ltr" class="odt-ltr-term">lastName</bdi>]، مع ملاحظة أن حالة الأحرف لا تؤخذ في الاعتبار في أسماء أعمدة الجدول؛
+  <li>سيتم تسمية أعمدة هذا الجدول على اسم حقول الفئة: [id, <bdi dir="ltr" class="odt-ltr-term">firstName</bdi>, <bdi dir="ltr" class="odt-ltr-term">lastName</bdi>]، مع ملاحظة أن حالة الأحرف لا تؤخذ في الاعتبار في أسماء أعمدة الجدول؛
   </li>
 </ul>
 
@@ -1523,7 +1523,7 @@
 <p>بكود مشابه لما يلي:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">return</span><span class="w"> </span><span class="p">[</span><span class="n">em</span><span class="p">].</span><span class="n">createQuery</span><span class="p">(</span><span class="ss">&quot;select c from Customer c where  c.lastName=:value&quot;</span><span class="p">).</span><span class="n">setParameter</span><span class="p">(</span><span class="ss">&quot;value&quot;</span><span class="p">,</span><span class="n">lastName</span><span class="p">).</span><span class="n">getResultList</span><span class="p">()</span>
 </code></pre></div>
-<p>حيث يشير [<bdi dir="ltr" class="odt-ltr-term">em</bdi>] إلى سياق ثبات <bdi dir="ltr" class="odt-ltr-term">JPA.</bdi> وهذا ممكن فقط إذا كانت فئة [<bdi dir="ltr" class="odt-ltr-term">Customer</bdi>] تحتوي على حقل باسم [<bdi dir="ltr" class="odt-ltr-term">lastName</bdi>]، وهو ما يحدث بالفعل.</p>
+<p>حيث يشير [em] إلى سياق ثبات <bdi dir="ltr" class="odt-ltr-term">JPA.</bdi> وهذا ممكن فقط إذا كانت فئة [<bdi dir="ltr" class="odt-ltr-term">Customer</bdi>] تحتوي على حقل باسم [<bdi dir="ltr" class="odt-ltr-term">lastName</bdi>]، وهو ما يحدث بالفعل.</p>
 <p>في الختام، في الحالات البسيطة، يسمح لنا <bdi dir="ltr" class="odt-ltr-term">Spring Data</bdi> بتنفيذ طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] بواجهة بسيطة.</p>
 <p><a id="refheading2192382014630537"></a></p>
 <h3 id="1124-console">11.2.4. <span style="color: #4f81bd">طبقة [<bdi dir="ltr" class="odt-ltr-term">console</bdi>]</span></h3>
@@ -1603,7 +1603,7 @@
   </li>
   <li>السطران 11-12: يتم حقن <bdi dir="ltr" class="odt-ltr-term">bean</bdi> [<bdi dir="ltr" class="odt-ltr-term">CustomerRepository</bdi>] في كود الفئة الرئيسية؛
   </li>
-  <li>السطر 15: يتم تنفيذ الطريقة الثابتة [<bdi dir="ltr" class="odt-ltr-term">run</bdi>] لفئة [<bdi dir="ltr" class="odt-ltr-term">SpringApplication</bdi>] من مشروع <bdi dir="ltr" class="odt-ltr-term">Spring Boot.</bdi> معلمتها هي الفئة التي تحتوي على تعليق [<bdi dir="ltr" class="odt-ltr-term">Configuration</bdi>] أو [<bdi dir="ltr" class="odt-ltr-term">EnableAutoConfiguration</bdi>]. بعد ذلك، سيتم تنفيذ كل ما تم شرحه سابقًا. والنتيجة هي سياق تطبيق <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>، أي مجموعة من الحبوب التي يديرها <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>؛
+  <li>السطر 15: يتم تنفيذ الطريقة الثابتة [run] لفئة [<bdi dir="ltr" class="odt-ltr-term">SpringApplication</bdi>] من مشروع <bdi dir="ltr" class="odt-ltr-term">Spring Boot.</bdi> معلمتها هي الفئة التي تحتوي على تعليق [<bdi dir="ltr" class="odt-ltr-term">Configuration</bdi>] أو [<bdi dir="ltr" class="odt-ltr-term">EnableAutoConfiguration</bdi>]. بعد ذلك، سيتم تنفيذ كل ما تم شرحه سابقًا. والنتيجة هي سياق تطبيق <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>، أي مجموعة من الحبوب التي يديرها <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>؛
   </li>
 </ul>
 
@@ -2544,11 +2544,11 @@
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 </code></pre></div>
 
-<p>الغرض من هذه الفئة هو توفير فئة أم لكيانات <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> من خلال تغليف <span style="color: #000000">الخصائص [<bdi dir="ltr" class="odt-ltr-term">id</bdi>، <bdi dir="ltr" class="odt-ltr-term">version</bdi>] (السطران 19 و22) المشتركة بين كيانات [<bdi dir="ltr" class="odt-ltr-term">Product</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">Category</bdi>] المرتبطة بقاعدة البيانات </span>في مكان واحد<span style="color: #000000">. ترتبط هذه الخصائص بأعمدة [<bdi dir="ltr" class="odt-ltr-term">ID</bdi>، <bdi dir="ltr" class="odt-ltr-term">VERSION</bdi>] في الجداول (السطران 18 و21).</span></p>
+<p>الغرض من هذه الفئة هو توفير فئة أم لكيانات <bdi dir="ltr" class="odt-ltr-term">JPA</bdi> من خلال تغليف <span style="color: #000000">الخصائص [id، <bdi dir="ltr" class="odt-ltr-term">version</bdi>] (السطران 19 و22) المشتركة بين كيانات [<bdi dir="ltr" class="odt-ltr-term">Product</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">Category</bdi>] المرتبطة بقاعدة البيانات </span>في مكان واحد<span style="color: #000000">. ترتبط هذه الخصائص بأعمدة [<bdi dir="ltr" class="odt-ltr-term">ID</bdi>، <bdi dir="ltr" class="odt-ltr-term">VERSION</bdi>] في الجداول (السطران 18 و21).</span></p>
 <ul>
   <li><span style="color: #000000">السطر 13: تشير العلامة [@<bdi dir="ltr" class="odt-ltr-term">MappedSuperclass</bdi>] إلى أن الفئة هي فئة أم لكيانات <bdi dir="ltr" class="odt-ltr-term">JPA</bdi>؛</span>
   </li>
-  <li><span style="color: #000000">السطر 16: تشير العلامة [@<bdi dir="ltr" class="odt-ltr-term">Id</bdi>] إلى أن الحقل [<bdi dir="ltr" class="odt-ltr-term">id</bdi>] (قد يكون له اسم مختلف) مرتبط بالمفتاح الأساسي لجدول؛</span>
+  <li><span style="color: #000000">السطر 16: تشير العلامة [@<bdi dir="ltr" class="odt-ltr-term">Id</bdi>] إلى أن الحقل [id] (قد يكون له اسم مختلف) مرتبط بالمفتاح الأساسي لجدول؛</span>
   </li>
   <li><span style="color: #000000">السطر 17: تحدد التعليقة التوضيحية [</span><span style="color: #646464">@<bdi dir="ltr" class="odt-ltr-term">GeneratedValue</bdi></span><span style="color: #000000">(<bdi dir="ltr" class="odt-ltr-term">strategy</bdi>=<bdi dir="ltr" class="odt-ltr-term">GenerationType.</bdi></span><i><b><span style="color: #0000c0"><bdi dir="ltr" class="odt-ltr-term">IDENTITY</bdi></span></b></i><span style="color: #000000">)] وضع إنشاء المفتاح الأساسي. سيستخدم وضع [<bdi dir="ltr" class="odt-ltr-term">GenerationType.</bdi></span><i><b><span style="color: #0000c0"><bdi dir="ltr" class="odt-ltr-term">IDENTITY</bdi></span></b></i><span style="color: #000000">] وضع [<bdi dir="ltr" class="odt-ltr-term">AUTO_INCREMENT</bdi>] مع <bdi dir="ltr" class="odt-ltr-term">MySQL.</bdi> مع نظام إدارة قواعد البيانات (<bdi dir="ltr" class="odt-ltr-term">DBMS</bdi>) آخر، سيستخدم هذا الوضع طريقة مختلفة. الميزة هي أن المطور لا يحتاج إلى القلق بشأن هذا الأمر، ويظل كوده صالحًا بغض النظر عن نظام إدارة قواعد البيانات المستخدم؛</span>
   </li>
@@ -2558,9 +2558,9 @@
   </li>
   <li><span style="color: #000000">الأسطر 35–52: إعادة تعريف طريقتي [<bdi dir="ltr" class="odt-ltr-term">hashCode</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">equals</bdi>]. بشكل افتراضي، تُرجع [<bdi dir="ltr" class="odt-ltr-term">obj1.equals</bdi>(<bdi dir="ltr" class="odt-ltr-term">obj2</bdi>)] القيمة <bdi dir="ltr" class="odt-ltr-term">true</bdi> إذا كان [<bdi dir="ltr" class="odt-ltr-term">obj1</bdi> == <bdi dir="ltr" class="odt-ltr-term">obj2</bdi>]، أي إذا كان <bdi dir="ltr" class="odt-ltr-term">obj1</bdi> و <bdi dir="ltr" class="odt-ltr-term">obj2</bdi> مؤشرين متساويين. إذا أردنا مقارنة الكائنات المشار إليها بدلاً من المؤشرات نفسها، يجب علينا تجاوز طريقة [<bdi dir="ltr" class="odt-ltr-term">equals</bdi>] وطريقة [<bdi dir="ltr" class="odt-ltr-term">hashCode</bdi>]. يجب أن تُرجع الطريقة الأخيرة نفس القيمة لكائنين تعتبرهما طريقة [<bdi dir="ltr" class="odt-ltr-term">equals</bdi>] متساويين؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 42–51: سيتم اعتبار كائنين من النوع [<bdi dir="ltr" class="odt-ltr-term">AbstractEntity</bdi>] أو الأنواع المشتقة متساويين إذا كانت مفاتيحهما الأساسية [<bdi dir="ltr" class="odt-ltr-term">id</bdi>] متساوية؛</span>
+  <li><span style="color: #000000">الأسطر 42–51: سيتم اعتبار كائنين من النوع [<bdi dir="ltr" class="odt-ltr-term">AbstractEntity</bdi>] أو الأنواع المشتقة متساويين إذا كانت مفاتيحهما الأساسية [id] متساوية؛</span>
   </li>
-  <li><span style="color: #000000">الأسطر 35-38: تعيد طريقة [<bdi dir="ltr" class="odt-ltr-term">hashCode</bdi>] بالفعل نفس القيمة لكائنين متطابقين من نوع [<bdi dir="ltr" class="odt-ltr-term">AbstractEntity</bdi>] واللذين لهما بالتالي نفس المفتاح الأساسي [<bdi dir="ltr" class="odt-ltr-term">id</bdi>]؛</span>
+  <li><span style="color: #000000">الأسطر 35-38: تعيد طريقة [<bdi dir="ltr" class="odt-ltr-term">hashCode</bdi>] بالفعل نفس القيمة لكائنين متطابقين من نوع [<bdi dir="ltr" class="odt-ltr-term">AbstractEntity</bdi>] واللذين لهما بالتالي نفس المفتاح الأساسي [id]؛</span>
   </li>
   <li><span style="color: #000000">الأسطر 55-63: تُرجع طريقة [<bdi dir="ltr" class="odt-ltr-term">toString</bdi>] سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> للكائن [<bdi dir="ltr" class="odt-ltr-term">this</bdi>]. إذا كان هذا الكائن يشير إلى فئة فرعية، فستُرجع هذه الطريقة سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> للفئة الفرعية. وهذا يلغي الحاجة إلى إنشاء طريقة [<bdi dir="ltr" class="odt-ltr-term">toString</bdi>] في الفئات الفرعية؛</span>
   </li>
@@ -2628,7 +2628,7 @@
   </li>
   <li>السطر 14: اسم مرشح <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> المراد تطبيقه على الكيان. سنلاحظ أن الخاصية [<span style="color: #0000c0"><bdi dir="ltr" class="odt-ltr-term">categorie</bdi></span>] في السطر 13 ليست متاحة دائمًا. ولذلك يجب استبعادها من تمثيل <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> للكائن. وللقيام بذلك، نحتاج إلى مرشح. لذا سنحدد ما إذا كنا نريد تضمين الخاصية [<span style="color: #0000c0"><bdi dir="ltr" class="odt-ltr-term">categorie</bdi></span>] أم لا في مرشح باسم [<span style="color: #2a00ff"><bdi dir="ltr" class="odt-ltr-term">jsonFilterCategorie</bdi></span>]؛
   </li>
-  <li>السطر 18: تربط التعليقة التوضيحية [@<bdi dir="ltr" class="odt-ltr-term">Column</bdi>] الحقل [<bdi dir="ltr" class="odt-ltr-term">nom</bdi>] بالعمود [<bdi dir="ltr" class="odt-ltr-term">NOM</bdi>] في الجدول [<bdi dir="ltr" class="odt-ltr-term">PRODUITS</bdi>]. عندما يكون للحقل نفس اسم العمود المرتبط به، يمكن حذف التعليقة التوضيحية [@<bdi dir="ltr" class="odt-ltr-term">Column</bdi>]. وهذا هو الحال هنا؛
+  <li>السطر 18: تربط التعليقة التوضيحية [@<bdi dir="ltr" class="odt-ltr-term">Column</bdi>] الحقل [nom] بالعمود [<bdi dir="ltr" class="odt-ltr-term">NOM</bdi>] في الجدول [<bdi dir="ltr" class="odt-ltr-term">PRODUITS</bdi>]. عندما يكون للحقل نفس اسم العمود المرتبط به، يمكن حذف التعليقة التوضيحية [@<bdi dir="ltr" class="odt-ltr-term">Column</bdi>]. وهذا هو الحال هنا؛
   </li>
   <li>الأسطر 31-33: فئة المنتج؛
   </li>
@@ -3135,9 +3135,9 @@
 
 <p>النوع [<bdi dir="ltr" class="odt-ltr-term">Throwable</bdi>] هو الفئة الأم لفئة [<bdi dir="ltr" class="odt-ltr-term">Exception</bdi>]. إذا تم تنفيذ المنشئات السابقة بشكل متكرر، فسيحتوي الاستثناء النهائي على استثناءات متعددة. ويُشار إلى هذا باسم مكدس الاستثناءات. </p>
 <ul>
-  <li>يتم الحصول على السبب الأخير للاستثناء <bdi dir="ltr" class="odt-ltr-term">e1</bdi> بواسطة التعبير [<bdi dir="ltr" class="odt-ltr-term">e1.getCause</bdi>()]؛
+  <li>يتم الحصول على السبب الأخير للاستثناء e1 بواسطة التعبير [<bdi dir="ltr" class="odt-ltr-term">e1.getCause</bdi>()]؛
   </li>
-  <li>يتم الحصول على السبب قبل الأخير للاستثناء <bdi dir="ltr" class="odt-ltr-term">e1</bdi> باستخدام التعبير [<bdi dir="ltr" class="odt-ltr-term">e1.getCause</bdi>().<bdi dir="ltr" class="odt-ltr-term">getCause</bdi>()]؛
+  <li>يتم الحصول على السبب قبل الأخير للاستثناء e1 باستخدام التعبير [<bdi dir="ltr" class="odt-ltr-term">e1.getCause</bdi>().<bdi dir="ltr" class="odt-ltr-term">getCause</bdi>()]؛
   </li>
   <li>تستمر هذه العملية حتى يتم الحصول على [<bdi dir="ltr" class="odt-ltr-term">getCause</bdi>()==<bdi dir="ltr" class="odt-ltr-term">null</bdi>]؛
   </li>
@@ -3508,9 +3508,9 @@
 <ul>
   <li>الأسطر 43–53: ملء الجدول بفئتين، تحتوي كل منهما على 5 منتجات. في السطر 50، سيؤدي إدراج الفئتين إلى إدراج منتجاتهما في نفس الوقت، مرة أخرى لأننا كتبنا [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">cascade</bdi> = { <bdi dir="ltr" class="odt-ltr-term">CascadeType.</bdi></span><i><b><span style="color: #0000c0"><bdi dir="ltr" class="odt-ltr-term">ALL</bdi> </span></b></i><span style="color: #000000">}</span>];
   </li>
-  <li>السطر 58: نعرض الفئات. نستخدم أداة تعيين <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> [<span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">jsonMapperCategorieWithoutProduits</bdi></span>] لعرض الفئات بدون منتجاتها. في الواقع، تُرجع الطريقة [<span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">dao</bdi></span><span style="color: #000000">.<bdi dir="ltr" class="odt-ltr-term">getAllCategories</bdi>()</span>] الفئات بدون منتجاتها (التحميل المتأخر)؛
+  <li>السطر 58: نعرض الفئات. نستخدم أداة تعيين <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> [<span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">jsonMapperCategorieWithoutProduits</bdi></span>] لعرض الفئات بدون منتجاتها. في الواقع، تُرجع الطريقة [<span style="color: #6a3e3e">dao</span><span style="color: #000000">.<bdi dir="ltr" class="odt-ltr-term">getAllCategories</bdi>()</span>] الفئات بدون منتجاتها (التحميل المتأخر)؛
   </li>
-  <li>السطر 61: نعرض المنتجات بدون فئاتها. وذلك لأن الطريقة [<span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">dao</bdi></span><span style="color: #000000">.<bdi dir="ltr" class="odt-ltr-term">getAllProduits</bdi>()</span>] تُرجع المنتجات بدون فئاتها (التحميل المتأخر)؛
+  <li>السطر 61: نعرض المنتجات بدون فئاتها. وذلك لأن الطريقة [<span style="color: #6a3e3e">dao</span><span style="color: #000000">.<bdi dir="ltr" class="odt-ltr-term">getAllProduits</bdi>()</span>] تُرجع المنتجات بدون فئاتها (التحميل المتأخر)؛
   </li>
   <li>الأسطر 63-65: عرض الفئة المسماة [<bdi dir="ltr" class="odt-ltr-term">categorie1</bdi>] مع منتجاتها (التحميل الفوري)؛
   </li>
@@ -3518,7 +3518,7 @@
   </li>
   <li>الأسطر 71-81: يتم زيادة أسعار جميع المنتجات في الفئة [<bdi dir="ltr" class="odt-ltr-term">categorie1</bdi>] بنسبة 10٪؛
   </li>
-  <li>الأسطر 91-101: إضافة فئة تحتوي على منتجين يحملان نفس الاسم. ومع ذلك، في جدول [<bdi dir="ltr" class="odt-ltr-term">PRODUCTS</bdi>]، يوجد قيد فريد على عمود [<bdi dir="ltr" class="odt-ltr-term">NAME</bdi>]. وبالتالي، سيتم رفض إدراج المنتج الثاني وستظهر استثناء. ومع ذلك، تعمل طريقة [<span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">dao</bdi></span><span style="color: #000000">.<bdi dir="ltr" class="odt-ltr-term">addProducts</bdi></span>] ضمن معاملة. وبالتالي، فإن فشل الإدراج الثاني يجب أن يؤدي أيضًا إلى التراجع عن إدراج المنتج الأول وكذلك إدراج فئتهما [<bdi dir="ltr" class="odt-ltr-term">cat1</bdi>]. وهذا ما نريد التحقق منه؛
+  <li>الأسطر 91-101: إضافة فئة تحتوي على منتجين يحملان نفس الاسم. ومع ذلك، في جدول [<bdi dir="ltr" class="odt-ltr-term">PRODUCTS</bdi>]، يوجد قيد فريد على عمود [<bdi dir="ltr" class="odt-ltr-term">NAME</bdi>]. وبالتالي، سيتم رفض إدراج المنتج الثاني وستظهر استثناء. ومع ذلك، تعمل طريقة [<span style="color: #6a3e3e">dao</span><span style="color: #000000">.<bdi dir="ltr" class="odt-ltr-term">addProducts</bdi></span>] ضمن معاملة. وبالتالي، فإن فشل الإدراج الثاني يجب أن يؤدي أيضًا إلى التراجع عن إدراج المنتج الأول وكذلك إدراج فئتهما [<bdi dir="ltr" class="odt-ltr-term">cat1</bdi>]. وهذا ما نريد التحقق منه؛
   </li>
   <li>الأسطر 119-121: طريقة عامة قادرة على عرض سلسلة <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> لأي عنصر من النوع <bdi dir="ltr" class="odt-ltr-term">T.</bdi> يتم التحكم في تسلسل <bdi dir="ltr" class="odt-ltr-term">JSON</bdi> بواسطة أداة التعيين التي يتم تمريرها كمعلمة؛
   </li>
@@ -3833,7 +3833,7 @@
     <ul>
       <li>[<bdi dir="ltr" class="odt-ltr-term">debug</bdi>]: هذا هو مستوى السجل الأكثر تفصيلاً. يوصى باستخدامه خلال مرحلة تصحيح أخطاء المشروع لأنه يوفر سجلات مفيدة للغاية حول تفاعلات العميل/الخادم. هذه طريقة لفهم ما يحدث &quot;خلف الكواليس&quot;؛
       </li>
-      <li>[<bdi dir="ltr" class="odt-ltr-term">off</bdi>]: لا توجد سجلات على الإطلاق؛
+      <li>[off]: لا توجد سجلات على الإطلاق؛
       </li>
       <li>[<bdi dir="ltr" class="odt-ltr-term">warn</bdi>]: مستوى تسجيل متوسط حيث يعرض <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> الحالات الشاذة التي ليست بالضرورة أخطاء. يجب عليك مراجعتها إذا لم تحصل على النتيجة المتوقعة؛
       </li>

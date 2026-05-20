@@ -1000,7 +1000,7 @@
   </li>
   <li>في الجزء الثاني من التمرين، تم تقديم فئتين:
     <ul>
-      <li>[<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>]، التي تمثل سمات (<bdi dir="ltr" class="odt-ltr-term">id</bdi>، <bdi dir="ltr" class="odt-ltr-term">name</bdi>، <bdi dir="ltr" class="odt-ltr-term">votes</bdi>، <bdi dir="ltr" class="odt-ltr-term">seats</bdi>، <bdi dir="ltr" class="odt-ltr-term">eliminated</bdi>) قائمة المرشحين
+      <li>[<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>]، التي تمثل سمات (id، <bdi dir="ltr" class="odt-ltr-term">name</bdi>، <bdi dir="ltr" class="odt-ltr-term">votes</bdi>، <bdi dir="ltr" class="odt-ltr-term">seats</bdi>، <bdi dir="ltr" class="odt-ltr-term">eliminated</bdi>) قائمة المرشحين
       </li>
       <li>[<bdi dir="ltr" class="odt-ltr-term">ElectionsException</bdi>]، وهي فئة للاستثناءات غير المعالجة. يُستخدم هذا النوع من الاستثناءات كلما حدث خطأ فادح في تطبيق الانتخابات. وهو غير معالج، مما يعني أن المطور غير مطالب بمعالجته باستخدام كتلة <bdi dir="ltr" class="odt-ltr-term">try-catch.</bdi>
       </li>
@@ -1087,7 +1087,7 @@
 <ul>
   <li>طبقة الوصول إلى البيانات أو [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] (<bdi dir="ltr" class="odt-ltr-term">DAO</bdi> = كائن الوصول إلى البيانات) للبيانات المخزنة بالفعل في الملفات أو قواعد البيانات. قد يكون هذا هو الحال هنا بالنسبة لأسماء القوائم، وعدد المقاعد المطلوب شغلها، والحد الأدنى للانتخاب. في الواقع، هذه المعلومات معروفة قبل الانتخابات نفسها.
   </li>
-  <li>طبقة واجهة المستخدم أو [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] (<bdi dir="ltr" class="odt-ltr-term">UI</bdi> = واجهة المستخدم) للبيانات التي يدخلها المستخدم أو التي تُعرض عليه. قد يكون هذا هو الحال هنا بالنسبة للأصوات التي حصلت عليها القوائم، والتي لا تُعرف إلا في اللحظة الأخيرة، وكذلك بالنسبة لعرض نتائج الانتخابات.
+  <li>طبقة واجهة المستخدم أو [ui] (<bdi dir="ltr" class="odt-ltr-term">UI</bdi> = واجهة المستخدم) للبيانات التي يدخلها المستخدم أو التي تُعرض عليه. قد يكون هذا هو الحال هنا بالنسبة للأصوات التي حصلت عليها القوائم، والتي لا تُعرف إلا في اللحظة الأخيرة، وكذلك بالنسبة لعرض نتائج الانتخابات.
   </li>
 </ul>
 
@@ -1112,19 +1112,19 @@
 
 <p>في هذا النوع من البنية، غالبًا ما يكون المستخدم هو من يأخذ زمام المبادرة. فهو يقدم طلبًا في [1] ويتلقى استجابة في [8]. وهذا ما يُسمى بدورة الطلب والاستجابة. لنأخذ مثال حساب المقاعد التي تم الفوز بها في ليلة الانتخابات. سيتطلب ذلك عدة خطوات:</p>
 <ol>
-  <li>ستحتاج طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] إلى سؤال المستخدم عن عدد الأصوات التي حصلت عليها كل قائمة. للقيام بذلك، ستحتاج إلى عرض أسماء القوائم المتنافسة على المستخدم. بعد ذلك، سيقوم المستخدم ببساطة بإدخال عدد الأصوات بجانب كل قائمة وطلب حساب المقاعد.
+  <li>ستحتاج طبقة [ui] إلى سؤال المستخدم عن عدد الأصوات التي حصلت عليها كل قائمة. للقيام بذلك، ستحتاج إلى عرض أسماء القوائم المتنافسة على المستخدم. بعد ذلك، سيقوم المستخدم ببساطة بإدخال عدد الأصوات بجانب كل قائمة وطلب حساب المقاعد.
   </li>
-  <li>لا تحتوي طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] على أسماء القوائم. يتم تخزين هذه الأسماء في مصدر البيانات الموجود على يمين الرسم التخطيطي. وستستخدم المسار [2، 3، 4، 5، 6، 7] لاستردادها. العملية [2] هي طلب القوائم، والعملية [7] هي الاستجابة لهذا الطلب. بمجرد الانتهاء من ذلك، يمكنها عرضها على المستخدم عبر [8].
+  <li>لا تحتوي طبقة [ui] على أسماء القوائم. يتم تخزين هذه الأسماء في مصدر البيانات الموجود على يمين الرسم التخطيطي. وستستخدم المسار [2، 3، 4، 5، 6، 7] لاستردادها. العملية [2] هي طلب القوائم، والعملية [7] هي الاستجابة لهذا الطلب. بمجرد الانتهاء من ذلك، يمكنها عرضها على المستخدم عبر [8].
   </li>
-  <li>سيقوم المستخدم بإرسال عدد الأصوات التي حصلت عليها كل قائمة إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>]. هذه هي العملية [1] أعلاه. خلال هذه الخطوة، يتفاعل المستخدم فقط مع طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>]. وهذه الطبقة هي التي ستتحقق من صحة البيانات المدخلة. بمجرد الانتهاء من ذلك، سيطلب المستخدم قائمة المقاعد التي حصلت عليها كل قائمة.
+  <li>سيقوم المستخدم بإرسال عدد الأصوات التي حصلت عليها كل قائمة إلى طبقة [ui]. هذه هي العملية [1] أعلاه. خلال هذه الخطوة، يتفاعل المستخدم فقط مع طبقة [ui]. وهذه الطبقة هي التي ستتحقق من صحة البيانات المدخلة. بمجرد الانتهاء من ذلك، سيطلب المستخدم قائمة المقاعد التي حصلت عليها كل قائمة.
   </li>
-  <li>ستطلب طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] من طبقة الأعمال حساب المقاعد. للقيام بذلك، سترسل البيانات التي تلقتها من المستخدم إلى طبقة الأعمال. هذه هي العملية [2].
+  <li>ستطلب طبقة [ui] من طبقة الأعمال حساب المقاعد. للقيام بذلك، سترسل البيانات التي تلقتها من المستخدم إلى طبقة الأعمال. هذه هي العملية [2].
   </li>
   <li>تحتاج طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] إلى معلومات معينة لأداء مهمتها. لديها بالفعل القوائم من العملية (ب). كما تحتاج إلى عدد المقاعد المطلوب شغلها وقيمة العتبة الانتخابية. وستطلب هذه المعلومات من طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] عبر المسار [3، 4، 5، 6]. [3] هو الطلب الأولي و[6] هو الرد على هذا الطلب.
   </li>
   <li>بعد الحصول على جميع البيانات المطلوبة، تحسب طبقة [الأعمال] المقاعد التي فازت بها كل قائمة.
   </li>
-  <li>يمكن لطبقة [الأعمال] الآن الرد على الطلب المقدم من طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] في (د). هذا هو المسار [7].
+  <li>يمكن لطبقة [الأعمال] الآن الرد على الطلب المقدم من طبقة [ui] في (د). هذا هو المسار [7].
   </li>
   <li>ستقوم طبقة [<bdi dir="ltr" class="odt-ltr-term">UI</bdi>] بتنسيق هذه النتائج لتقديمها للمستخدم في شكل مناسب ثم عرضها. هذا هو المسار [8].
   </li>
@@ -1161,9 +1161,9 @@
 <a id="__codelineno-2-3" name="__codelineno-2-3"></a>ib.getData(...);
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li>السطر 1: يتم إنشاء مثيل [<bdi dir="ltr" class="odt-ltr-term">ib</bdi>] ينفذ الواجهة [<bdi dir="ltr" class="odt-ltr-term">IB</bdi>] عن طريق إنشاء مثيل للفئة [<bdi dir="ltr" class="odt-ltr-term">B1</bdi>]
+  <li>السطر 1: يتم إنشاء مثيل [ib] ينفذ الواجهة [<bdi dir="ltr" class="odt-ltr-term">IB</bdi>] عن طريق إنشاء مثيل للفئة [<bdi dir="ltr" class="odt-ltr-term">B1</bdi>]
   </li>
-  <li>السطر 3: يتم طلب البيانات من المثيل [<bdi dir="ltr" class="odt-ltr-term">ib</bdi>]
+  <li>السطر 3: يتم طلب البيانات من المثيل [ib]
   </li>
 </ul>
 
@@ -1180,15 +1180,15 @@
 <a id="__codelineno-3-3" name="__codelineno-3-3"></a>ib.getData(...);
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li>السطر 1: مثيل [<bdi dir="ltr" class="odt-ltr-term">ib</bdi>] ينفذ واجهة [<bdi dir="ltr" class="odt-ltr-term">IB</bdi>] للطبقة [<bdi dir="ltr" class="odt-ltr-term">B</bdi>]. يتم إنشاء هذا المثيل بواسطة <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> بناءً على المعلومات الموجودة في ملف التكوين. سيتولى <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> إنشاء:
+  <li>السطر 1: مثيل [ib] ينفذ واجهة [<bdi dir="ltr" class="odt-ltr-term">IB</bdi>] للطبقة [<bdi dir="ltr" class="odt-ltr-term">B</bdi>]. يتم إنشاء هذا المثيل بواسطة <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> بناءً على المعلومات الموجودة في ملف التكوين. سيتولى <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> إنشاء:
     <ul>
-      <li>المثيل [<bdi dir="ltr" class="odt-ltr-term">b</bdi>] الذي ينفذ الطبقة [<bdi dir="ltr" class="odt-ltr-term">B</bdi>]
+      <li>المثيل [b] الذي ينفذ الطبقة [<bdi dir="ltr" class="odt-ltr-term">B</bdi>]
       </li>
-      <li>المثيل [<bdi dir="ltr" class="odt-ltr-term">a</bdi>] الذي ينفذ الطبقة [<bdi dir="ltr" class="odt-ltr-term">A</bdi>]. سيتم تهيئة هذا المثيل. سيتم تعيين الحقل [<bdi dir="ltr" class="odt-ltr-term">ib</bdi>] أعلاه إلى مرجع [<bdi dir="ltr" class="odt-ltr-term">b</bdi>] للكائن الذي ينفذ الطبقة [<bdi dir="ltr" class="odt-ltr-term">B</bdi>]
+      <li>المثيل [a] الذي ينفذ الطبقة [<bdi dir="ltr" class="odt-ltr-term">A</bdi>]. سيتم تهيئة هذا المثيل. سيتم تعيين الحقل [ib] أعلاه إلى مرجع [b] للكائن الذي ينفذ الطبقة [<bdi dir="ltr" class="odt-ltr-term">B</bdi>]
       </li>
     </ul>
   </li>
-  <li>السطر 3: يتم طلب البيانات من المثيل [<bdi dir="ltr" class="odt-ltr-term">ib</bdi>]
+  <li>السطر 3: يتم طلب البيانات من المثيل [ib]
   </li>
 </ul>
 
@@ -1246,7 +1246,7 @@
 
 <p>ما هي الواجهة التي يجب أن تقدمها طبقة [الأعمال] إلى طبقة [واجهة المستخدم]؟ دعونا ندرس التفاعلات المحتملة بين هاتين الطبقتين.</p>
 <ol>
-  <li>ستكون طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] مسؤولة عن مطالبة المستخدم بالتصويت للقوائم المتنافسة المختلفة. للقيام بذلك، يجب أن تعرف عدد القوائم. يمكنها طلب هذه المعلومات من طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>]، والتي بدورها يمكنها طلب جدول القوائم المتنافسة من طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]. إذا كانت طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] تمتلك هذا الجدول، فمن الأفضل أن تنقله إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">UI</bdi>]. ستحصل طبقة [<bdi dir="ltr" class="odt-ltr-term">UI</bdi>] بعد ذلك على أسماء القوائم ويمكنها تحسين رسائلها الموجهة إلى المستخدم بالسؤال، على سبيل المثال، &quot;عدد الأصوات للقائمة أ&quot;.
+  <li>ستكون طبقة [ui] مسؤولة عن مطالبة المستخدم بالتصويت للقوائم المتنافسة المختلفة. للقيام بذلك، يجب أن تعرف عدد القوائم. يمكنها طلب هذه المعلومات من طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>]، والتي بدورها يمكنها طلب جدول القوائم المتنافسة من طبقة [dao]. إذا كانت طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] تمتلك هذا الجدول، فمن الأفضل أن تنقله إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">UI</bdi>]. ستحصل طبقة [<bdi dir="ltr" class="odt-ltr-term">UI</bdi>] بعد ذلك على أسماء القوائم ويمكنها تحسين رسائلها الموجهة إلى المستخدم بالسؤال، على سبيل المثال، &quot;عدد الأصوات للقائمة أ&quot;.
   </li>
   <li>بمجرد حصول طبقة [<bdi dir="ltr" class="odt-ltr-term">UI</bdi>] على الأصوات لجميع القوائم، ستطلب حساب المقاعد من طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>]. يمكن لطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] إجراء هذا الحساب وإرجاع النتيجة إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">UI</bdi>].
   </li>
@@ -1276,15 +1276,15 @@
 <ul>
   <li>السطر 1: تسمى الواجهة [<bdi dir="ltr" class="odt-ltr-term">IElectionsMetier</bdi>]. وهي تحدد الطرق التالية:
     <ul>
-      <li>السطر 3: طريقة [<bdi dir="ltr" class="odt-ltr-term">getVoterLists</bdi>] التي ستسمح لطبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] بالحصول على مصفوفة القوائم المتنافسة؛
+      <li>السطر 3: طريقة [<bdi dir="ltr" class="odt-ltr-term">getVoterLists</bdi>] التي ستسمح لطبقة [ui] بالحصول على مصفوفة القوائم المتنافسة؛
       </li>
       <li>السطر 5: تسترد الطريقة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">getNbSiegesAPourvoir</bdi></span>] عدد المقاعد التي يتعين شغلها؛
       </li>
       <li>السطر 7: تسترد الطريقة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">getElectoralThreshold</bdi></span>] العتبة الانتخابية؛
       </li>
-      <li>السطر 11: طريقة [<bdi dir="ltr" class="odt-ltr-term">calculateSeats</bdi>] (السطر 36) التي ستسمح لطبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] بطلب حساب المقاعد بمجرد معرفة عدد الأصوات للقوائم المختلفة. المعلمة هي مصفوفة القوائم المتنافسة، بدون مقاعدها وبدون القيمة المنطقية &quot;<bdi dir="ltr" class="odt-ltr-term">eliminated</bdi>&quot;. والنتيجة المرجعة هي هذه المصفوفة نفسها، ولكن هذه المرة مع تهيئة الحقول [<bdi dir="ltr" class="odt-ltr-term">seats</bdi>, <bdi dir="ltr" class="odt-ltr-term">eliminated</bdi>]؛
+      <li>السطر 11: طريقة [<bdi dir="ltr" class="odt-ltr-term">calculateSeats</bdi>] (السطر 36) التي ستسمح لطبقة [ui] بطلب حساب المقاعد بمجرد معرفة عدد الأصوات للقوائم المختلفة. المعلمة هي مصفوفة القوائم المتنافسة، بدون مقاعدها وبدون القيمة المنطقية &quot;<bdi dir="ltr" class="odt-ltr-term">eliminated</bdi>&quot;. والنتيجة المرجعة هي هذه المصفوفة نفسها، ولكن هذه المرة مع تهيئة الحقول [<bdi dir="ltr" class="odt-ltr-term">seats</bdi>, <bdi dir="ltr" class="odt-ltr-term">eliminated</bdi>]؛
       </li>
-      <li>السطر 9: طريقة [<bdi dir="ltr" class="odt-ltr-term">recordResults</bdi>] التي ستسمح لطبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] بطلب تسجيل النتائج.
+      <li>السطر 9: طريقة [<bdi dir="ltr" class="odt-ltr-term">recordResults</bdi>] التي ستسمح لطبقة [ui] بطلب تسجيل النتائج.
       </li>
     </ul>
   </li>
@@ -1317,20 +1317,20 @@
 <p>عند كتابة واجهة، من المهم تذكر أنه يمكن استخدامها في سياقين مختلفين: <em>محلي وعن بُعد</em><a id="interface-locale-distante"></a> . في السياق <em>المحلي</em>، يتم تنفيذ الطريقة المستدعية والطريقة المستدعاة في نفس <bdi dir="ltr" class="odt-ltr-term">JVM</bdi> (آلة <bdi dir="ltr" class="odt-ltr-term">Java</bdi> الافتراضية):</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006D90000017E26BC8CF3.png" width="526" height="115" style="display:inline-block; margin:4px;width:13.91cm;height:3.03cm;" class="odt-zoomable" data-zoom-src="images/10000000000006D90000017E26BC8CF3.png" /></td></tr></table>
 
-<p>إذا استدعت طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] طريقة <em><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">calculateSeats</bdi> </span></em>في طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]، فإنها تمتلك بالفعل مرجعًا إلى المعلمة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>[] </span><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">voterLists</bdi></span>] التي تمررها إلى الطريقة.</p>
+<p>إذا استدعت طبقة [ui] طريقة <em><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">calculateSeats</bdi> </span></em>في طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]، فإنها تمتلك بالفعل مرجعًا إلى المعلمة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>[] </span><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">voterLists</bdi></span>] التي تمررها إلى الطريقة.</p>
 <p>في السياق <em>البعيد</em>، يتم تنفيذ الطريقة المستدعية والطريقة المستدعاة في <bdi dir="ltr" class="odt-ltr-term">JVMs</bdi> مختلفة:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000070000000191104E68B3.png" width="537" height="120" style="display:inline-block; margin:4px;width:14.22cm;height:3.182cm;" class="odt-zoomable" data-zoom-src="images/100000000000070000000191104E68B3.png" /></td></tr></table>
 
-<p>في المثال أعلاه، تعمل طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] في <bdi dir="ltr" class="odt-ltr-term">JVM</bdi> 1 وطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] في <bdi dir="ltr" class="odt-ltr-term">JVM</bdi> 2 على جهازين مختلفين. لا تتواصل الطبقتان مباشرة. بينهما توجد طبقة سنسميها طبقة الاتصال [1]. تتكون هذه الطبقة من طبقة إرسال [2] وطبقة استقبال [3]. لا يتعين على المطور عمومًا كتابة طبقات الاتصال هذه. يتم إنشاؤها تلقائيًا بواسطة أدوات برمجية. تُكتب طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] كما لو كانت تعمل في نفس <bdi dir="ltr" class="odt-ltr-term">JVM</bdi> مثل طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]. لذلك، لا يلزم إجراء أي تغييرات في الكود.</p>
-<p>آلية الاتصال بين طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] وطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] هي كما يلي:</p>
+<p>في المثال أعلاه، تعمل طبقة [ui] في <bdi dir="ltr" class="odt-ltr-term">JVM</bdi> 1 وطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] في <bdi dir="ltr" class="odt-ltr-term">JVM</bdi> 2 على جهازين مختلفين. لا تتواصل الطبقتان مباشرة. بينهما توجد طبقة سنسميها طبقة الاتصال [1]. تتكون هذه الطبقة من طبقة إرسال [2] وطبقة استقبال [3]. لا يتعين على المطور عمومًا كتابة طبقات الاتصال هذه. يتم إنشاؤها تلقائيًا بواسطة أدوات برمجية. تُكتب طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] كما لو كانت تعمل في نفس <bdi dir="ltr" class="odt-ltr-term">JVM</bdi> مثل طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]. لذلك، لا يلزم إجراء أي تغييرات في الكود.</p>
+<p>آلية الاتصال بين طبقة [ui] وطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] هي كما يلي:</p>
 <ul>
-  <li>تستدعي طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] طريقة <i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">calculateSeats</bdi> </span></i>في طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>]، وتمرر لها المعلمة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>[] </span><i><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">voterLists1</bdi></span></i>]؛
+  <li>تستدعي طبقة [ui] طريقة <i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">calculateSeats</bdi> </span></i>في طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>]، وتمرر لها المعلمة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>[] </span><i><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">voterLists1</bdi></span></i>]؛
   </li>
   <li>يتم تمرير هذه المعلمة فعليًا إلى طبقة الإرسال [2]. ستقوم هذه الطبقة بإرسال <b>قيمة </b>المعلمة `<i><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">listesElectorales1</bdi>` </span></i>عبر الشبكة، وليس <b>مرجعها</b>. يعتمد الشكل الدقيق لهذه القيمة على بروتوكول الاتصال المستخدم؛
   </li>
   <li>ستسترد طبقة الاستقبال [3] هذه القيمة وتستخدمها لإعادة بناء كائن [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>[] </span><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">voterLists2</bdi></span>] يعكس المعلمة الأولية المرسلة من طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>]. لدينا الآن كائنان متطابقان (من حيث المحتوى) في جهازي <bdi dir="ltr" class="odt-ltr-term">JVM</bdi> مختلفين: <i><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">voterLists1</bdi> </span></i>و <i><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">voterLists2</bdi></span></i>.
   </li>
-  <li>ستقوم الطبقة المستقبلة بتمرير كائن <i><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">listesElectorales2</bdi> </span></i>إلى طريقة <i><bdi dir="ltr" class="odt-ltr-term">calculerSieges</bdi> </i>في طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>]، والتي ستحفظه في قاعدة البيانات. بعد هذه العملية، يشير مرجع <i><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">listesElectorales2</bdi> </span></i>إلى مصفوفة من كائنات [<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>] مع تهيئة حقول [<bdi dir="ltr" class="odt-ltr-term">seats</bdi>, <bdi dir="ltr" class="odt-ltr-term">eliminated</bdi>] الخاصة بها. هذا ليس هو الحال بالنسبة لكائن <bdi dir="ltr" class="odt-ltr-term">listesElectorales1</bdi>، الذي تمتلك طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] مرجعًا إليه. إذا أردنا أن يكون لطبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] مرجع إلى كائن <bdi dir="ltr" class="odt-ltr-term">listesElectorales2</bdi>، فيجب علينا تمريره إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>]. لذلك، نستخدم التوقيع التالي لطريقة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">calculerSieges</bdi></span>]:
+  <li>ستقوم الطبقة المستقبلة بتمرير كائن <i><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">listesElectorales2</bdi> </span></i>إلى طريقة <i><bdi dir="ltr" class="odt-ltr-term">calculerSieges</bdi> </i>في طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>]، والتي ستحفظه في قاعدة البيانات. بعد هذه العملية، يشير مرجع <i><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">listesElectorales2</bdi> </span></i>إلى مصفوفة من كائنات [<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>] مع تهيئة حقول [<bdi dir="ltr" class="odt-ltr-term">seats</bdi>, <bdi dir="ltr" class="odt-ltr-term">eliminated</bdi>] الخاصة بها. هذا ليس هو الحال بالنسبة لكائن <bdi dir="ltr" class="odt-ltr-term">listesElectorales1</bdi>، الذي تمتلك طبقة [ui] مرجعًا إليه. إذا أردنا أن يكون لطبقة [ui] مرجع إلى كائن <bdi dir="ltr" class="odt-ltr-term">listesElectorales2</bdi>، فيجب علينا تمريره إلى طبقة [ui]. لذلك، نستخدم التوقيع التالي لطريقة [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">calculerSieges</bdi></span>]:
   </li>
 </ul>
 
@@ -1482,7 +1482,7 @@
 <ul>
   <li><span style="color: #000000">السطر 20: </span><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ElectionsException</bdi></span></b><span style="color: #000000">()</span>
   </li>
-  <li><span style="color: #000000">السطر 24: </span><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ElectionsException</bdi></span></b><span style="color: #000000">(</span><b><span style="color: #7f0055"><bdi dir="ltr" class="odt-ltr-term">int</bdi> </span></b><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">code</bdi></span><span style="color: #000000">, <bdi dir="ltr" class="odt-ltr-term">Throwable</bdi> </span><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">e</bdi></span><span style="color: #000000">): المعلمة الثانية من النوع [<bdi dir="ltr" class="odt-ltr-term">Throwable</bdi>]، وهي الفئة الفائقة لفئة [<bdi dir="ltr" class="odt-ltr-term">Exception</bdi>]. يسمح هذا المنشئ بتغليف الاستثناء </span><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">e</bdi> </span></b><span style="color: #000000">مع رمز الخطأ. يسمح لك النوع [<bdi dir="ltr" class="odt-ltr-term">Throwable</bdi>] (وبالتالي النوع <bdi dir="ltr" class="odt-ltr-term">Exception</bdi>) بتغليف استثناء واحد أو أكثر. الفكرة هي:</span>
+  <li><span style="color: #000000">السطر 24: </span><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ElectionsException</bdi></span></b><span style="color: #000000">(</span><b><span style="color: #7f0055">int </span></b><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">code</bdi></span><span style="color: #000000">, <bdi dir="ltr" class="odt-ltr-term">Throwable</bdi> </span><span style="color: #6a3e3e">e</span><span style="color: #000000">): المعلمة الثانية من النوع [<bdi dir="ltr" class="odt-ltr-term">Throwable</bdi>]، وهي الفئة الفائقة لفئة [<bdi dir="ltr" class="odt-ltr-term">Exception</bdi>]. يسمح هذا المنشئ بتغليف الاستثناء </span><b><span style="color: #000000">e </span></b><span style="color: #000000">مع رمز الخطأ. يسمح لك النوع [<bdi dir="ltr" class="odt-ltr-term">Throwable</bdi>] (وبالتالي النوع <bdi dir="ltr" class="odt-ltr-term">Exception</bdi>) بتغليف استثناء واحد أو أكثر. الفكرة هي:</span>
     <ul>
       <li><span style="color: #000000">التقاط الاستثناء الذي يحدث؛</span>
       </li>
@@ -1500,7 +1500,7 @@
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>   throw new Exception2(«un message»,e1);
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>}
 </code></pre></div>
-<p><span style="color: #000000">يحدث التغليف في السطر 34 عبر عبارة [</span><strong><span style="color: #7f0055"><bdi dir="ltr" class="odt-ltr-term">super</bdi></span></strong><span style="color: #000000">(</span><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">message</bdi></span><span style="color: #000000">, </span><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">e</bdi></span><span style="color: #000000">)]. يمكن تكرار عملية التغليف هذه، ويمكن إثراء الاستثناء الأولي برسائل مختلفة. ويُشار إلى هذا باسم مكدس الاستثناءات. تتيح لك الطريقة [</span><strong><span style="color: #7f0055"><bdi dir="ltr" class="odt-ltr-term">private</bdi> </span></strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">List</bdi>&lt;<bdi dir="ltr" class="odt-ltr-term">String</bdi>&gt; <bdi dir="ltr" class="odt-ltr-term">getErrorsForException</bdi>(<bdi dir="ltr" class="odt-ltr-term">Throwable</bdi> </span><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">th</bdi></span><span style="color: #000000">)] استرداد الرسائل المختلفة المرتبطة بالاستثناءات المغلفة:</span></p>
+<p><span style="color: #000000">يحدث التغليف في السطر 34 عبر عبارة [</span><strong><span style="color: #7f0055"><bdi dir="ltr" class="odt-ltr-term">super</bdi></span></strong><span style="color: #000000">(</span><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">message</bdi></span><span style="color: #000000">, </span><span style="color: #6a3e3e">e</span><span style="color: #000000">)]. يمكن تكرار عملية التغليف هذه، ويمكن إثراء الاستثناء الأولي برسائل مختلفة. ويُشار إلى هذا باسم مكدس الاستثناءات. تتيح لك الطريقة [</span><strong><span style="color: #7f0055"><bdi dir="ltr" class="odt-ltr-term">private</bdi> </span></strong><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">List</bdi>&lt;<bdi dir="ltr" class="odt-ltr-term">String</bdi>&gt; <bdi dir="ltr" class="odt-ltr-term">getErrorsForException</bdi>(<bdi dir="ltr" class="odt-ltr-term">Throwable</bdi> </span><span style="color: #6a3e3e">th</span><span style="color: #000000">)] استرداد الرسائل المختلفة المرتبطة بالاستثناءات المغلفة:</span></p>
 <ul>
   <li><span style="color: #000000">(تابع)</span>
     <ul>
@@ -1516,11 +1516,11 @@
   </li>
   <li><span style="color: #000000">السطران 28-29: يتم إنشاء الحقول [<bdi dir="ltr" class="odt-ltr-term">code</bdi>، <bdi dir="ltr" class="odt-ltr-term">errors</bdi>]؛</span>
   </li>
-  <li><span style="color: #000000">السطر 32: </span><b><span style="color: #7f0055"><bdi dir="ltr" class="odt-ltr-term">public</bdi> </span></b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ElectionsException</bdi>(</span><b><span style="color: #7f0055"><bdi dir="ltr" class="odt-ltr-term">int</bdi> </span></b><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">code</bdi></span><span style="color: #000000">, <bdi dir="ltr" class="odt-ltr-term">String</bdi> </span><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">message</bdi></span><span style="color: #000000">, <bdi dir="ltr" class="odt-ltr-term">Throwable</bdi> </span><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">e</bdi></span><span style="color: #000000">): هذا المنشئ مشابه للمنشئ السابق، باستثناء أنه يثري الاستثناء الذي سيغلفه برمز ورسالة؛</span>
+  <li><span style="color: #000000">السطر 32: </span><b><span style="color: #7f0055"><bdi dir="ltr" class="odt-ltr-term">public</bdi> </span></b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ElectionsException</bdi>(</span><b><span style="color: #7f0055">int </span></b><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">code</bdi></span><span style="color: #000000">, <bdi dir="ltr" class="odt-ltr-term">String</bdi> </span><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">message</bdi></span><span style="color: #000000">, <bdi dir="ltr" class="odt-ltr-term">Throwable</bdi> </span><span style="color: #6a3e3e">e</span><span style="color: #000000">): هذا المنشئ مشابه للمنشئ السابق، باستثناء أنه يثري الاستثناء الذي سيغلفه برمز ورسالة؛</span>
   </li>
-  <li><span style="color: #000000">السطر 40: </span><b><span style="color: #7f0055"><bdi dir="ltr" class="odt-ltr-term">public</bdi> </span></b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ElectionsException</bdi>(</span><b><span style="color: #7f0055"><bdi dir="ltr" class="odt-ltr-term">int</bdi> </span></b><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">code</bdi></span><span style="color: #000000">, <bdi dir="ltr" class="odt-ltr-term">String</bdi> </span><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">message</bdi></span><span style="color: #000000">): منشئ بدون تغليف الاستثناء؛</span>
+  <li><span style="color: #000000">السطر 40: </span><b><span style="color: #7f0055"><bdi dir="ltr" class="odt-ltr-term">public</bdi> </span></b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ElectionsException</bdi>(</span><b><span style="color: #7f0055">int </span></b><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">code</bdi></span><span style="color: #000000">, <bdi dir="ltr" class="odt-ltr-term">String</bdi> </span><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">message</bdi></span><span style="color: #000000">): منشئ بدون تغليف الاستثناء؛</span>
   </li>
-  <li><span style="color: #000000">السطر 50: </span><b><span style="color: #7f0055"><bdi dir="ltr" class="odt-ltr-term">public</bdi> </span></b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ElectionsException</bdi>(</span><b><span style="color: #7f0055"><bdi dir="ltr" class="odt-ltr-term">int</bdi> </span></b><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">code</bdi></span><span style="color: #000000">, <bdi dir="ltr" class="odt-ltr-term">List</bdi>&lt;<bdi dir="ltr" class="odt-ltr-term">String</bdi>&gt; </span><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">errors</bdi></span><span style="color: #000000">): مُنشئ بدون تغليف للاستثناء أو رسالة؛</span>
+  <li><span style="color: #000000">السطر 50: </span><b><span style="color: #7f0055"><bdi dir="ltr" class="odt-ltr-term">public</bdi> </span></b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ElectionsException</bdi>(</span><b><span style="color: #7f0055">int </span></b><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">code</bdi></span><span style="color: #000000">, <bdi dir="ltr" class="odt-ltr-term">List</bdi>&lt;<bdi dir="ltr" class="odt-ltr-term">String</bdi>&gt; </span><span style="color: #6a3e3e"><bdi dir="ltr" class="odt-ltr-term">errors</bdi></span><span style="color: #000000">): مُنشئ بدون تغليف للاستثناء أو رسالة؛</span>
   </li>
 </ul>
 
@@ -1531,7 +1531,7 @@
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>   throw new ElectionsException(un_code,un_message,e1);
 <a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>}
 </code></pre></div>
-<p><span style="color: #000000">حيث قد تكون الرسالة موجودة أو غير موجودة. بمجرد إنشائها، لا يُقصد من استثناء [<bdi dir="ltr" class="odt-ltr-term">ElectionsException</bdi>] أن يغلف استثناءات جديدة. في المثال أعلاه، يغلف الاستثناء </span><em><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">e1</bdi> </span></em><span style="color: #000000">والاستثناءات التي يغلفها</span><em><span style="color: #000000"> <bdi dir="ltr" class="odt-ltr-term">e1</bdi></span></em><span style="color: #000000">. ولا توجد تغليفات أخرى بعد ذلك.</span></p>
+<p><span style="color: #000000">حيث قد تكون الرسالة موجودة أو غير موجودة. بمجرد إنشائها، لا يُقصد من استثناء [<bdi dir="ltr" class="odt-ltr-term">ElectionsException</bdi>] أن يغلف استثناءات جديدة. في المثال أعلاه، يغلف الاستثناء </span><em><span style="color: #000000">e1 </span></em><span style="color: #000000">والاستثناءات التي يغلفها</span><em><span style="color: #000000"> e1</span></em><span style="color: #000000">. ولا توجد تغليفات أخرى بعد ذلك.</span></p>
 <p><span style="color: #000000">يمكن أيضًا استخدام فئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsException</bdi>] على النحو التالي:</span></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>//<span class="w"> </span>code<span class="w"> </span>susceptible<span class="w"> </span>de<span class="w"> </span>rencontrer<span class="w"> </span>un<span class="w"> </span>cas<span class="w"> </span>d<span class="s1">&#39;erreur (mais pas sous la forme d&#39;</span>une<span class="w"> </span>exception<span class="o">)</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>...

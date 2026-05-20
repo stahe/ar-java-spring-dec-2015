@@ -1423,7 +1423,7 @@
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>T call(Subscriber&lt;T&gt; subscriber)
 </code></pre></div>
-<p>لتنفيذ واجهة وظيفية ذات طريقة واحدة <strong><bdi dir="ltr" class="odt-ltr-term">m</bdi>(<bdi dir="ltr" class="odt-ltr-term">param1</bdi>, <bdi dir="ltr" class="odt-ltr-term">param2</bdi>, ..., <bdi dir="ltr" class="odt-ltr-term">paramn</bdi>)</strong>، يمكنك استخدام الصيغة المبسطة التالية:</p>
+<p>لتنفيذ واجهة وظيفية ذات طريقة واحدة <strong>m(<bdi dir="ltr" class="odt-ltr-term">param1</bdi>, <bdi dir="ltr" class="odt-ltr-term">param2</bdi>, ..., <bdi dir="ltr" class="odt-ltr-term">paramn</bdi>)</strong>، يمكنك استخدام الصيغة المبسطة التالية:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>(param1, param2, ..., paramn) -&gt; { code de la méthode m}
 </code></pre></div>
 <p>وهذا ما تم في الأسطر 22–34:</p>
@@ -1874,7 +1874,7 @@
     <ul>
       <li>الأولى [<b>(<bdi dir="ltr" class="odt-ltr-term">result</bdi>)-&gt;{...}</b>] تُستدعى في كل مرة يصدر فيها المراقب [<bdi dir="ltr" class="odt-ltr-term">authenticate</bdi>(<bdi dir="ltr" class="odt-ltr-term">user</bdi>)] نتيجة [<bdi dir="ltr" class="odt-ltr-term">result</bdi>]. لدينا هنا مراقب [<bdi dir="ltr" class="odt-ltr-term">authenticate</bdi>(<bdi dir="ltr" class="odt-ltr-term">user</bdi>)] يقوم بعمل ما ولكنه لا يصدر أي نتيجة. ولذلك لن يتم استدعاء دالة لامدا <b>[(<bdi dir="ltr" class="odt-ltr-term">result</bdi>)-&gt;{}</b>] أبدًا. وهذا هو سبب كون كودها فارغًا هنا [<b>{}</b>]؛
       </li>
-      <li>الثانية [<b>(<bdi dir="ltr" class="odt-ltr-term">th</bdi>)-&gt;{...}</b>] تأخذ نوع [<bdi dir="ltr" class="odt-ltr-term">Throwable</bdi>] كمعلمة. يتم استدعاؤها عندما يواجه تنفيذ المراقب استثناءً. هنا، نتعامل مع المعلمة [<bdi dir="ltr" class="odt-ltr-term">Throwable th</bdi>] على النحو التالي:
+      <li>الثانية [<b>(th)-&gt;{...}</b>] تأخذ نوع [<bdi dir="ltr" class="odt-ltr-term">Throwable</bdi>] كمعلمة. يتم استدعاؤها عندما يواجه تنفيذ المراقب استثناءً. هنا، نتعامل مع المعلمة [<bdi dir="ltr" class="odt-ltr-term">Throwable th</bdi>] على النحو التالي:
         <ul>
           <li>السطر 16: نقوم بتخزينها في حقل من فئة الاختبار من النوع [<bdi dir="ltr" class="odt-ltr-term">ElectionsException</bdi>] لأن المراقب المنفذ يرمي هذا النوع من الاستثناءات فقط؛
           </li>
