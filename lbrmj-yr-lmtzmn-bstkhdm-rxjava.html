@@ -1160,7 +1160,7 @@
 <h1 id="20-rxjava">20. <span style="color: #365f91">البرمجة غير المتزامنة باستخدام <bdi dir="ltr" class="odt-ltr-term">RxJava</bdi></span></h1>
 <p><strong>قراءات موصى بها</strong>: [<a href="http://tahe.developpez.com/tutoriels-cours/rxjava-rxswing-rxandroid/documents/rxjava.pdf"><u><span style="color: #0563c1">مقدمة إلى <bdi dir="ltr" class="odt-ltr-term">RxJava.</bdi> التطبيق في بيئات <bdi dir="ltr" class="odt-ltr-term">Swing</bdi> و<bdi dir="ltr" class="odt-ltr-term">Android</bdi></span></u></a>.]</p>
 <p>في هذا الفصل، نعود إلى <a href="#refheading251527391218965"><u><span style="color: #0563c1">الفصل 17.6،</span></u></a> حيث قمنا بإنشاء تطبيق عميل/خادم بالبنية التالية:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004C7000002EECD229798.png" width="612" height="375" style="display:inline-block; margin:4px;width:16.18cm;height:9.922cm;" class="odt-zoomable" data-zoom-src="images/10000000000004C7000002EECD229798.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000004C7000002EECD229798.png" width="612" height="375" style="display:inline-block; margin:4px;width:16.18cm;height:9.922cm;" class="odt-zoomable" data-zoom-src="images/10000000000004C7000002EECD229798.png" /></td></tr></table>
 
 <p>تؤدي بعض إجراءات المستخدم على واجهة <bdi dir="ltr" class="odt-ltr-term">Swing</bdi> في [1] إلى تشغيل إجراءات تمتد حتى قاعدة البيانات في [3] عبر شبكة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [2]. ونتيجة لذلك، قد يستغرق وصول الاستجابة لإجراء المستخدم وقتًا أطول أو أقصر. ومن المفيد تضمين مؤشر تحميل على واجهة المستخدم مع خيار لإلغاء العملية التي تم بدءها إذا استغرقت وقتًا طويلاً. في <a href="#refheading251527391218965"><u><span style="color: #0563c1">الفصل 17.</span></u></a>6، تكون كل إجراءات المستخدم التي تتطلب تبادل البيانات مع الخادم متزامنة. لا يكتمل معالج الأحداث الذي ينفذه الكود حتى يتم استلام الاستجابة. خلال هذه الفترة، تتجمد الواجهة الرسومية: فهي لا تستجيب لإجراءات المستخدم الجديدة. يتم ببساطة وضع هذه الإجراءات في قائمة انتظار ليتم معالجتها بمجرد انتهاء معالج الأحداث قيد التشغيل حاليًا. وبالتالي، إذا تم عرض زر إلغاء، يمكن للمستخدم النقر عليه، ولكن لن يحدث شيء حتى تنتهي العملية الحالية. عندئذٍ لن يكون لزر الإلغاء أي فائدة.</p>
 <p>لكي يصبح النقر على زر الإلغاء ساري المفعول، يجب إكمال العملية الحالية. لتحقيق ذلك، يجب تشغيل العملية التي قد تستغرق وقتًا طويلاً بشكل غير متزامن: </p>
@@ -1176,7 +1176,7 @@
 <p>ستعمل واجهة المستخدم كما في السابق. إذا كانت أوقات استجابة الخادم سريعة، فلن يلاحظ المستخدم أي فرق. إذا كانت ملحوظة، فسيظهر للمستخدم زر إلغاء وسيكون لديه خيار مقاطعة العملية الحالية.</p>
 <p>تتيح مكتبة [<a href="http://reactivex.io/"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">Rx</bdi></span></u></a>] البرمجة غير المتزامنة. وتكمن ميزتها الرئيسية في حقيقة أنها تم نقلها إلى العديد من البيئات (<bdi dir="ltr" class="odt-ltr-term">Java</bdi>، .<bdi dir="ltr" class="odt-ltr-term">NET</bdi>، <bdi dir="ltr" class="odt-ltr-term">JS</bdi>، إلخ) وأن إتقانها في بيئة ما يمكن نقله بسهولة إلى بيئة أخرى. هنا، سنشير إلى الفصل 2 من الوثيقة [<a href="http://tahe.developpez.com/tutoriels-cours/rxjava-rxswing-rxandroid/documents/rxjava.pdf"><u><span style="color: #0563c1">مقدمة إلى <bdi dir="ltr" class="odt-ltr-term">RxJava.</bdi> التطبيق على بيئات <bdi dir="ltr" class="odt-ltr-term">Swing</bdi> و <bdi dir="ltr" class="odt-ltr-term">Android</bdi></span></u></a>]. ونشجع القارئ على قراءته. في الأقسام التالية، سنستخدم كودًا من الأمثلة الواردة في هذا الفصل.</p>
 <p>سنطور بنية التطبيق على النحو التالي:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003BD000001460AF459F1.png" width="479" height="163" style="display:inline-block; margin:4px;width:12.661cm;height:4.313cm;" class="odt-zoomable" data-zoom-src="images/10000000000003BD000001460AF459F1.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000003BD000001460AF459F1.png" width="479" height="163" style="display:inline-block; margin:4px;width:12.661cm;height:4.313cm;" class="odt-zoomable" data-zoom-src="images/10000000000003BD000001460AF459F1.png" /></td></tr></table>
 
 <ul>
   <li>في [1]، نقوم بإدراج طبقة [<bdi dir="ltr" class="odt-ltr-term">RxJava</bdi>] بين طبقة [<bdi dir="ltr" class="odt-ltr-term">Swing</bdi>] وطبقة [منطق الأعمال]. وسيتم الآن استدعاء الطرق الموجودة في الطبقة الأخيرة بشكل غير متزامن؛
@@ -1199,7 +1199,7 @@
 <p><a id="refheading129874735939761"></a></p>
 <h3 id="2011">20.1.1. <span style="color: #4f81bd">الإنشاء</span></h3>
 <p>نبدأ بمشروع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> من <a href="#refheading110174391218965"><u><span style="color: #0563c1">الفصل 17.4</span></u></a>، الذي نفتحه في <strong><bdi dir="ltr" class="odt-ltr-term">NetBeans</bdi></strong>:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F0000000C583EDA9B3.png" width="168" height="138" style="display:inline-block; margin:4px;width:4.45cm;height:3.653cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F0000000C583EDA9B3.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001310000010375A45E24.png" width="214" height="181" style="display:inline-block; margin:4px;width:5.65cm;height:4.798cm;" class="odt-zoomable" data-zoom-src="images/10000000000001310000010375A45E24.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000000F0000000C583EDA9B3.png" width="168" height="138" style="display:inline-block; margin:4px;width:4.45cm;height:3.653cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F0000000C583EDA9B3.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000001310000010375A45E24.png" width="214" height="181" style="display:inline-block; margin:4px;width:5.65cm;height:4.798cm;" class="odt-zoomable" data-zoom-src="images/10000000000001310000010375A45E24.png" /></td></tr></table>
 
 <p>نقوم بنسخ هذا المشروع [1] (نسخ/لصق) إلى مشروع جديد [<bdi dir="ltr" class="odt-ltr-term">elections-rxjava-business-dao-security-webjson</bdi>] [2].</p>
 <p><a id="refheading129876735939761"></a></p>
@@ -1297,10 +1297,10 @@
 </ul>
 <p><a id="refheading129878735939761"></a></p>
 <h3 id="2013">20.1.3. <span style="color: #4f81bd">التنفيذ غير المتزامن لطبقة [الأعمال]</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003CD00000135B33CC21A.png" width="487" height="155" style="display:inline-block; margin:4px;width:12.873cm;height:4.089cm;" class="odt-zoomable" data-zoom-src="images/10000000000003CD00000135B33CC21A.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000003CD00000135B33CC21A.png" width="487" height="155" style="display:inline-block; margin:4px;width:12.873cm;height:4.089cm;" class="odt-zoomable" data-zoom-src="images/10000000000003CD00000135B33CC21A.png" /></td></tr></table>
 
 <p>لتنفيذ طبقة [<bdi dir="ltr" class="odt-ltr-term">RxJava</bdi>، الأعمال]، نضيف واجهة غير متزامنة [<bdi dir="ltr" class="odt-ltr-term">IRxElectionsMetier</bdi>] [1] وتنفيذها [<bdi dir="ltr" class="odt-ltr-term">RxElectionsMetier</bdi>] [2] إلى المشروع:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001240000011A86638049.png" width="204" height="197" style="display:inline-block; margin:4px;width:5.41cm;height:5.225cm;" class="odt-zoomable" data-zoom-src="images/10000000000001240000011A86638049.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000001240000011A86638049.png" width="204" height="197" style="display:inline-block; margin:4px;width:5.41cm;height:5.225cm;" class="odt-zoomable" data-zoom-src="images/10000000000001240000011A86638049.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td></tr></table>
 
 <p>واجهة [<bdi dir="ltr" class="odt-ltr-term">IRxElectionsMetier</bdi>] هي الواجهة غير المتزامنة لطبقة [<bdi dir="ltr" class="odt-ltr-term">RxJava</bdi>، الأعمال]. وفيما يلي شفرة البرمجة الخاصة بها:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -1423,7 +1423,7 @@
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>T call(Subscriber&lt;T&gt; subscriber)
 </code></pre></div>
-<p>لتنفيذ واجهة وظيفية ذات طريقة واحدة <strong>m(<bdi dir="ltr" class="odt-ltr-term">param1</bdi>, <bdi dir="ltr" class="odt-ltr-term">param2</bdi>, ..., <bdi dir="ltr" class="odt-ltr-term">paramn</bdi>)</strong>، يمكنك استخدام الصيغة المبسطة التالية:</p>
+<p>لتنفيذ واجهة وظيفية ذات طريقة واحدة <strong>m(<bdi dir="ltr" class="odt-ltr-term">param1, param2</bdi>, ..., <bdi dir="ltr" class="odt-ltr-term">paramn</bdi>)</strong>، يمكنك استخدام الصيغة المبسطة التالية:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>(param1, param2, ..., paramn) -&gt; { code de la méthode m}
 </code></pre></div>
 <p>وهذا ما تم في الأسطر 22–34:</p>
@@ -1559,7 +1559,7 @@
 </ul>
 <p><a id="refheading129880735939761"></a></p>
 <h3 id="2014-junit-business">20.1.4. <span style="color: #4f81bd">اختبارات <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi> لطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>]</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012000000113B05A3BCF.png" width="201" height="192" style="display:inline-block; margin:4px;width:5.33cm;height:5.089cm;" class="odt-zoomable" data-zoom-src="images/100000000000012000000113B05A3BCF.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000012000000113B05A3BCF.png" width="201" height="192" style="display:inline-block; margin:4px;width:5.33cm;height:5.089cm;" class="odt-zoomable" data-zoom-src="images/100000000000012000000113B05A3BCF.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td></tr></table>
 
 <p><a id="refheading127476149879088"></a></p>
 <h4 id="20141-01">20.1.4.1. <span style="color: #4f81bd">الاختبار 01</span></h4>
@@ -1793,7 +1793,7 @@
 <p>نستخدم الطريقة [<bdi dir="ltr" class="odt-ltr-term">firstOrDefault</bdi>(<bdi dir="ltr" class="odt-ltr-term">null</bdi>)] هنا لأن المراقب [<bdi dir="ltr" class="odt-ltr-term">metier.authenticate</bdi>] لا يُرجع نتيجة عند تنفيذه. وبالتالي، ستكون نتيجة الطريقة [<bdi dir="ltr" class="odt-ltr-term">firstOrDefault</bdi>(<bdi dir="ltr" class="odt-ltr-term">null</bdi>)] هي <em><bdi dir="ltr" class="odt-ltr-term">null</bdi></em>، وهي قيمة لا تُستخدم هنا؛</p>
 <p>نكرر هذا النمط في بقية الكود كلما أردنا استدعاء طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>].</p>
 <p>يجب أن ينجح الاختبار الوحدوي [<bdi dir="ltr" class="odt-ltr-term">Test01</bdi>]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001D2000000F6CBC27211.png" width="322" height="170" style="display:inline-block; margin:4px;width:8.513cm;height:4.494cm;" class="odt-zoomable" data-zoom-src="images/10000000000001D2000000F6CBC27211.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000001D2000000F6CBC27211.png" width="322" height="170" style="display:inline-block; margin:4px;width:8.513cm;height:4.494cm;" class="odt-zoomable" data-zoom-src="images/10000000000001D2000000F6CBC27211.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td></tr></table>
 
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
 <p><strong>المهمة</strong>: تحقق من نجاح اختبار [<bdi dir="ltr" class="odt-ltr-term">Test01</bdi>].</p>
@@ -1952,7 +1952,7 @@
 </code></pre></div>
 
 <ul>
-  <li>الأسطر 20–30: التنفيذ غير المتزامن للقابل للمراقبة [<bdi dir="ltr" class="odt-ltr-term">electionsMetier.calculateSeats</bdi>(<bdi dir="ltr" class="odt-ltr-term">admin</bdi>, <bdi dir="ltr" class="odt-ltr-term">lists</bdi>)]؛
+  <li>الأسطر 20–30: التنفيذ غير المتزامن للقابل للمراقبة [<bdi dir="ltr" class="odt-ltr-term">electionsMetier.calculateSeats</bdi>(<bdi dir="ltr" class="odt-ltr-term">admin, lists</bdi>)]؛
   </li>
   <li>الأسطر 21–23: يُرجع تنفيذ المراقب نوع [<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>[]]، والذي يتم تخزينه في حقل من فئة الاختبار، السطر 3؛
   </li>
@@ -2055,24 +2055,24 @@
 <p><a id="refheading129882735939761"></a></p>
 <h2 id="202-2">20.2. <span style="color: #4f81bd">الخطوة 2</span></h2>
 <p>سنقوم الآن بتحويل تطبيق وحدة التحكم المتزامن من <a href="#refheading110868391218965"><u><span style="color: #0563c1">الفصل 17.5</span></u></a> إلى تطبيق يظل متزامنًا ولكنه يستخدم الواجهة غير المتزامنة [<bdi dir="ltr" class="odt-ltr-term">RxJava</bdi>، منطق الأعمال، <bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]؛</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003F2000001322CEEF8B8.png" width="505" height="153" style="display:inline-block; margin:4px;width:13.361cm;height:4.048cm;" class="odt-zoomable" data-zoom-src="images/10000000000003F2000001322CEEF8B8.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000003F2000001322CEEF8B8.png" width="505" height="153" style="display:inline-block; margin:4px;width:13.361cm;height:4.048cm;" class="odt-zoomable" data-zoom-src="images/10000000000003F2000001322CEEF8B8.png" /></td></tr></table>
 
 <p>نبدأ بالمشروع [<bdi dir="ltr" class="odt-ltr-term">elections-console-business-dao-security-webjson</bdi>] [1] من <a href="#refheading110868391218965"><u><span style="color: #0563c1">الفصل 17.5،</span></u></a> الذي نقوم بنسخه إلى مشروع جديد [<bdi dir="ltr" class="odt-ltr-term">elections-console-rxjava-business-dao-security-webjson</bdi>] [2]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001420000010BCAA9096A.png" width="225" height="187" style="display:inline-block; margin:4px;width:5.96cm;height:4.942cm;" class="odt-zoomable" data-zoom-src="images/10000000000001420000010BCAA9096A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000016B00000135D181CE2C.png" width="254" height="216" style="display:inline-block; margin:4px;width:6.72cm;height:5.72cm;" class="odt-zoomable" data-zoom-src="images/100000000000016B00000135D181CE2C.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000001420000010BCAA9096A.png" width="225" height="187" style="display:inline-block; margin:4px;width:5.96cm;height:4.942cm;" class="odt-zoomable" data-zoom-src="images/10000000000001420000010BCAA9096A.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000016B00000135D181CE2C.png" width="254" height="216" style="display:inline-block; margin:4px;width:6.72cm;height:5.72cm;" class="odt-zoomable" data-zoom-src="images/100000000000016B00000135D181CE2C.png" /></td></tr></table>
 
 <ul>
   <li>في [3-4]، في المشروع الجديد، نزيل التبعية للطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] المتزامنة القديمة؛
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000147000000E6F3A24D18.png" width="229" height="161" style="display:inline-block; margin:4px;width:6.05cm;height:4.255cm;" class="odt-zoomable" data-zoom-src="images/1000000000000147000000E6F3A24D18.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002490000011E3D72526F.png" width="409" height="200" style="display:inline-block; margin:4px;width:10.83cm;height:5.295cm;" class="odt-zoomable" data-zoom-src="images/10000000000002490000011E3D72526F.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000147000000E6F3A24D18.png" width="229" height="161" style="display:inline-block; margin:4px;width:6.05cm;height:4.255cm;" class="odt-zoomable" data-zoom-src="images/1000000000000147000000E6F3A24D18.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000002490000011E3D72526F.png" width="409" height="200" style="display:inline-block; margin:4px;width:10.83cm;height:5.295cm;" class="odt-zoomable" data-zoom-src="images/10000000000002490000011E3D72526F.png" /></td></tr></table>
 
 <ul>
   <li>في [5-9]، نضيف تبعية إلى الطبقة [التجارية] غير المتزامنة الجديدة؛
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000021100000244E2DEC2B7.png" width="327" height="358" style="display:inline-block; margin:4px;width:8.641cm;height:9.474cm;" class="odt-zoomable" data-zoom-src="images/100000000000021100000244E2DEC2B7.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012D00000117BD12F800.png" width="211" height="195" style="display:inline-block; margin:4px;width:5.57cm;height:5.163cm;" class="odt-zoomable" data-zoom-src="images/100000000000012D00000117BD12F800.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000021100000244E2DEC2B7.png" width="327" height="358" style="display:inline-block; margin:4px;width:8.641cm;height:9.474cm;" class="odt-zoomable" data-zoom-src="images/100000000000021100000244E2DEC2B7.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000012D00000117BD12F800.png" width="211" height="195" style="display:inline-block; margin:4px;width:5.57cm;height:5.163cm;" class="odt-zoomable" data-zoom-src="images/100000000000012D00000117BD12F800.png" /></td></tr></table>
 
 <ul>
   <li>في [10-14]، نعيد تسمية فئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsConsole</bdi>] إلى [<bdi dir="ltr" class="odt-ltr-term">ElectionsConsole01</bdi>]؛
@@ -2080,7 +2080,7 @@
 </ul>
 
 <p>وبالمثل، نعيد تسمية فئة [<bdi dir="ltr" class="odt-ltr-term">BootElectionsConsole</bdi>] إلى [<bdi dir="ltr" class="odt-ltr-term">BootElectionsConsole01</bdi>]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000100000000B8D59AAE49.png" width="179" height="129" style="display:inline-block; margin:4px;width:4.74cm;height:3.408cm;" class="odt-zoomable" data-zoom-src="images/1000000000000100000000B8D59AAE49.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000100000000B8D59AAE49.png" width="179" height="129" style="display:inline-block; margin:4px;width:4.74cm;height:3.408cm;" class="odt-zoomable" data-zoom-src="images/1000000000000100000000B8D59AAE49.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td></tr></table>
 
 <p>فيما يلي الكود الحالي لفئة [<bdi dir="ltr" class="odt-ltr-term">BootElectionsConsole01</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -2170,7 +2170,7 @@
 <p><strong><span style="color: #000000">المهمة</span></strong><span style="color: #000000">: قم بتكوين المشروع لتشغيل فئة [<bdi dir="ltr" class="odt-ltr-term">BootElectionsConsole01</bdi>] باستخدام المعلمات الثلاثة [<bdi dir="ltr" class="odt-ltr-term">SS</bdi>، ساعات العمل، أيام العمل] وتأكد من أن تشغيل المشروع بالضبط الذي تم تكوينه ينتج النتائج المتوقعة.</span></p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><strong>المهمة</strong>: قم بتكوين المشروع لتشغيل الزوج [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">BootElectionsConsole02</bdi>, <bdi dir="ltr" class="odt-ltr-term">ElectionsConsole02</bdi>]، حيث تمت كتابة الفئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsConsole02</bdi>] وفقًا لنموذج الاختبار [<bdi dir="ltr" class="odt-ltr-term">Test02</bdi>] في </span><a href="#refheading128124149879088"><u><span style="color: #0563c1">القسم 20.1.4.2</span></u></a><span style="color: #000000">.</span></p>
+<p><strong>المهمة</strong>: قم بتكوين المشروع لتشغيل الزوج [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">BootElectionsConsole02, ElectionsConsole02</bdi>]، حيث تمت كتابة الفئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsConsole02</bdi>] وفقًا لنموذج الاختبار [<bdi dir="ltr" class="odt-ltr-term">Test02</bdi>] في </span><a href="#refheading128124149879088"><u><span style="color: #0563c1">القسم 20.1.4.2</span></u></a><span style="color: #000000">.</span></p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
 <p><strong>المهمة</strong>: قم بتكوين المشروع لتشغيل الزوج [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">BootElectionsConsole03</bdi>، <bdi dir="ltr" class="odt-ltr-term">ElectionsConsole03</bdi>]، حيث تمت كتابة الفئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsConsole03</bdi>] وفقًا لنموذج الاختبار [<bdi dir="ltr" class="odt-ltr-term">Test03</bdi>] في </span><a href="#refheading128128149879088"><u><span style="color: #0563c1">القسم 20.1.4.3</span></u></a><span style="color: #000000">.</span></p>
@@ -2179,17 +2179,17 @@
 <p><a id="refheading129884735939761"></a></p>
 <h2 id="203-3">20.3. <span style="color: #000000">الخطوة 3</span></h2>
 <p><span style="color: #000000">سننتقل الآن إلى نقل تطبيق <bdi dir="ltr" class="odt-ltr-term">Swing</bdi> إلى بيئة غير متزامنة.</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003CA00000133793411BE.png" width="485" height="153" style="display:inline-block; margin:4px;width:12.832cm;height:4.06cm;" class="odt-zoomable" data-zoom-src="images/10000000000003CA00000133793411BE.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000003CA00000133793411BE.png" width="485" height="153" style="display:inline-block; margin:4px;width:12.832cm;height:4.06cm;" class="odt-zoomable" data-zoom-src="images/10000000000003CA00000133793411BE.png" /></td></tr></table>
 
 <p><span style="color: #000000">نبدأ بنسخ مشروع [<bdi dir="ltr" class="odt-ltr-term">elections-swing-metier-dao-security-webjson</bdi>] [1] من </span><a href="#refheading251527391218965"><u><span style="color: #0563c1">الفصل 17.6</span></u></a><span style="color: #000000"> إلى مشروع جديد [<bdi dir="ltr" class="odt-ltr-term">elections-swing-rxjava-metier-dao-security-webjson</bdi>] [2]:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000146000000ACC12B8135.png" width="228" height="120" style="display:inline-block; margin:4px;width:6.04cm;height:3.187cm;" class="odt-zoomable" data-zoom-src="images/1000000000000146000000ACC12B8135.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000191000001222CDE9ABE.png" width="280" height="203" style="display:inline-block; margin:4px;width:7.421cm;height:5.368cm;" class="odt-zoomable" data-zoom-src="images/1000000000000191000001222CDE9ABE.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000146000000ACC12B8135.png" width="228" height="120" style="display:inline-block; margin:4px;width:6.04cm;height:3.187cm;" class="odt-zoomable" data-zoom-src="images/1000000000000146000000ACC12B8135.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000191000001222CDE9ABE.png" width="280" height="203" style="display:inline-block; margin:4px;width:7.421cm;height:5.368cm;" class="odt-zoomable" data-zoom-src="images/1000000000000191000001222CDE9ABE.png" /></td></tr></table>
 
 <ul>
   <li><span style="color: #000000">في [3، 4]، نزيل التبعية لطبقة [<bdi dir="ltr" class="odt-ltr-term">console</bdi>] المتزامنة؛</span>
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000106000000BDF7A58C21.png" width="183" height="132" style="display:inline-block; margin:4px;width:4.851cm;height:3.5cm;" class="odt-zoomable" data-zoom-src="images/1000000000000106000000BDF7A58C21.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002410000014F8DEACC02.png" width="404" height="234" style="display:inline-block; margin:4px;width:10.68cm;height:6.202cm;" class="odt-zoomable" data-zoom-src="images/10000000000002410000014F8DEACC02.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000106000000BDF7A58C21.png" width="183" height="132" style="display:inline-block; margin:4px;width:4.851cm;height:3.5cm;" class="odt-zoomable" data-zoom-src="images/1000000000000106000000BDF7A58C21.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000002410000014F8DEACC02.png" width="404" height="234" style="display:inline-block; margin:4px;width:10.68cm;height:6.202cm;" class="odt-zoomable" data-zoom-src="images/10000000000002410000014F8DEACC02.png" /></td></tr></table>
 
 <ul>
   <li><span style="color: #000000">في [5-9]، نضيف تبعية لطبقة وحدة التحكم غير المتزامنة؛</span>
@@ -2205,7 +2205,7 @@
 </ul>
 
 <p><span style="color: #000000">طوال المكالمة غير المتزامنة، يجب أن نعرض صورة تحميل وزر إلغاء. لن نقوم بذلك هنا، وسيتم اقتراح ذلك عليك كتحسين للتطبيق. يتم إجراء التغييرات في الفئتين اللتين تجريان مكالمات إلى طبقة [الأعمال]:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012C000000C88953966C.png" width="210" height="140" style="display:inline-block; margin:4px;width:5.549cm;height:3.699cm;" class="odt-zoomable" data-zoom-src="images/100000000000012C000000C88953966C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000012C000000C88953966C.png" width="210" height="140" style="display:inline-block; margin:4px;width:5.549cm;height:3.699cm;" class="odt-zoomable" data-zoom-src="images/100000000000012C000000C88953966C.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td></tr></table>
 
 <p><a id="refheading129886735939761"></a></p>
 <h3 id="2031-maven">20.3.1. <span style="color: #000000">تكوين <bdi dir="ltr" class="odt-ltr-term">Maven</bdi></span></h3>
@@ -2347,7 +2347,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000016A000000EBC99E3A9A.png" width="253" height="164" style="display:inline-block; margin:4px;width:6.699cm;height:4.35cm;" class="odt-zoomable" data-zoom-src="images/100000000000016A000000EBC99E3A9A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000016A000000EBC99E3A9A.png" width="253" height="164" style="display:inline-block; margin:4px;width:6.699cm;height:4.35cm;" class="odt-zoomable" data-zoom-src="images/100000000000016A000000EBC99E3A9A.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td></tr></table>
 
 <p><span style="color: #000000">كل شيء موجود في السطر 40:</span></p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
@@ -2374,7 +2374,7 @@
 </ul>
 <p><a id="refheading129890735939761"></a></p>
 <h3 id="2033-electionsmainform">20.3.3. <span style="color: #000000">فئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsMainForm</bdi>]</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012C000000C88953966C.png" width="210" height="140" style="display:inline-block; margin:4px;width:5.549cm;height:3.699cm;" class="odt-zoomable" data-zoom-src="images/100000000000012C000000C88953966C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000012C000000C88953966C.png" width="210" height="140" style="display:inline-block; margin:4px;width:5.549cm;height:3.699cm;" class="odt-zoomable" data-zoom-src="images/100000000000012C000000C88953966C.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td></tr></table>
 
 <p><a id="refheading129892735939761"></a></p>
 <h4 id="20331">20.3.3.1. <span style="color: #4f81bd">تهيئة واجهة المستخدم الرسومية</span></h4>
@@ -2472,7 +2472,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000211000001CC6930C088.png" width="327" height="284" style="display:inline-block; margin:4px;width:8.641cm;height:7.514cm;" class="odt-zoomable" data-zoom-src="images/1000000000000211000001CC6930C088.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000211000001CC6930C088.png" width="327" height="284" style="display:inline-block; margin:4px;width:8.641cm;height:7.514cm;" class="odt-zoomable" data-zoom-src="images/1000000000000211000001CC6930C088.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td></tr></table>
 
 <ul>
   <li><span style="color: #000000">السطور 71–85: يتم طلب قوائم المرشحين بشكل غير متزامن (المكون [1])؛</span>
@@ -2594,7 +2594,7 @@
 <ul>
   <li><span style="color: #000000">السطور 6–15: يتم حساب المقاعد التي حصلت عليها القوائم المختلفة بشكل غير متزامن؛</span>
   </li>
-  <li><span style="color: #000000">السطر 6: العملية المرصودة هي [</span><bdi dir="ltr" class="odt-ltr-term">metier.calculateSeats</bdi>(<bdi dir="ltr" class="odt-ltr-term">user</bdi>, <bdi dir="ltr" class="odt-ltr-term">tListsEntered</bdi>)<span style="color: #000000">]. يتم تنفيذها على مؤشر ترابط <bdi dir="ltr" class="odt-ltr-term">I/O</bdi> [</span><bdi dir="ltr" class="odt-ltr-term">subscribeOn</bdi>(<bdi dir="ltr" class="odt-ltr-term">Schedulers.io</bdi>())<span style="color: #000000">] ويتم رصدها على مؤشر ترابط واجهة المستخدم [</span><bdi dir="ltr" class="odt-ltr-term">observeOn</bdi>(<bdi dir="ltr" class="odt-ltr-term">SwingScheduler.getInstance</bdi>()<span style="color: #000000">)]؛</span>
+  <li><span style="color: #000000">السطر 6: العملية المرصودة هي [</span><bdi dir="ltr" class="odt-ltr-term">metier.calculateSeats</bdi>(<bdi dir="ltr" class="odt-ltr-term">user, tListsEntered</bdi>)<span style="color: #000000">]. يتم تنفيذها على مؤشر ترابط <bdi dir="ltr" class="odt-ltr-term">I/O</bdi> [</span><bdi dir="ltr" class="odt-ltr-term">subscribeOn</bdi>(<bdi dir="ltr" class="odt-ltr-term">Schedulers.io</bdi>())<span style="color: #000000">] ويتم رصدها على مؤشر ترابط واجهة المستخدم [</span><bdi dir="ltr" class="odt-ltr-term">observeOn</bdi>(<bdi dir="ltr" class="odt-ltr-term">SwingScheduler.getInstance</bdi>()<span style="color: #000000">)]؛</span>
   </li>
   <li><span style="color: #000000">السطر 9: يتم استخدام النتيجة التي تعيدها العملية بواسطة الطريقة [<bdi dir="ltr" class="odt-ltr-term">consumeResultSeats</bdi>]؛</span>
   </li>
@@ -2604,7 +2604,7 @@
   </li>
 </ul>
 
-<p><span style="color: #000000">السطر 9: تعالج طريقة [<bdi dir="ltr" class="odt-ltr-term">consumeResultSieges</bdi>] النتيجة التي تعيدها العملية المراقبة، وتقوم بتحديث قوائم المرشحين بحقول [<bdi dir="ltr" class="odt-ltr-term">seats</bdi>, <bdi dir="ltr" class="odt-ltr-term">eliminated</bdi>] الخاصة بهم:</span></p>
+<p><span style="color: #000000">السطر 9: تعالج طريقة [<bdi dir="ltr" class="odt-ltr-term">consumeResultSieges</bdi>] النتيجة التي تعيدها العملية المراقبة، وتقوم بتحديث قوائم المرشحين بحقول [<bdi dir="ltr" class="odt-ltr-term">seats, eliminated</bdi>] الخاصة بهم:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="font-weight:bold;color:#7f0055">private</span> <span style="font-weight:bold;color:#7f0055">void</span> consumeResultSieges(ListeElectorale[] tListesSaisies) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// the result is stored</span></span></span>
@@ -2655,7 +2655,7 @@
 <ul>
   <li><span style="color: #000000">السطور 4–17: يتم حفظ نتائج الانتخابات بشكل غير متزامن؛</span>
   </li>
-  <li><span style="color: #000000">السطر 4: العملية المراقبة هي [</span><bdi dir="ltr" class="odt-ltr-term">business.recordResults</bdi>(<bdi dir="ltr" class="odt-ltr-term">user</bdi>, <bdi dir="ltr" class="odt-ltr-term">tEnteredLists</bdi>)<span style="color: #000000">]. يتم تنفيذها على مؤشر ترابط <bdi dir="ltr" class="odt-ltr-term">I/O</bdi> [</span><bdi dir="ltr" class="odt-ltr-term">subscribeOn</bdi>(<bdi dir="ltr" class="odt-ltr-term">Schedulers.io</bdi>())<span style="color: #000000">] ومراقبتها على مؤشر ترابط واجهة المستخدم [</span><bdi dir="ltr" class="odt-ltr-term">observeOn</bdi>(<bdi dir="ltr" class="odt-ltr-term">SwingScheduler.getInstance</bdi>()<span style="color: #000000">)]؛</span>
+  <li><span style="color: #000000">السطر 4: العملية المراقبة هي [</span><bdi dir="ltr" class="odt-ltr-term">business.recordResults</bdi>(<bdi dir="ltr" class="odt-ltr-term">user, tEnteredLists</bdi>)<span style="color: #000000">]. يتم تنفيذها على مؤشر ترابط <bdi dir="ltr" class="odt-ltr-term">I/O</bdi> [</span><bdi dir="ltr" class="odt-ltr-term">subscribeOn</bdi>(<bdi dir="ltr" class="odt-ltr-term">Schedulers.io</bdi>())<span style="color: #000000">] ومراقبتها على مؤشر ترابط واجهة المستخدم [</span><bdi dir="ltr" class="odt-ltr-term">observeOn</bdi>(<bdi dir="ltr" class="odt-ltr-term">SwingScheduler.getInstance</bdi>()<span style="color: #000000">)]؛</span>
   </li>
   <li><span style="color: #000000">السطور 7-8: لن يتم تنفيذ هذه السطور أبدًا لأن العملية المراقبة لا تُرجع نتيجة؛</span>
   </li>

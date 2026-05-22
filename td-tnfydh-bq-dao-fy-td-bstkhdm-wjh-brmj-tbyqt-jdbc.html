@@ -1142,14 +1142,14 @@
 <h1 id="7-td-dao-td-jdbc">7. <span style="color: #365f91">[<bdi dir="ltr" class="odt-ltr-term">TD</bdi>]: تنفيذ طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] في <bdi dir="ltr" class="odt-ltr-term">TD</bdi> باستخدام واجهة برمجة تطبيقات <bdi dir="ltr" class="odt-ltr-term">JDBC</bdi></span></h1>
 <p><strong>الكلمات المفتاحية</strong>: قواعد البيانات العلائقية، واجهة برمجة تطبيقات <bdi dir="ltr" class="odt-ltr-term">JDBC</bdi>، <bdi dir="ltr" class="odt-ltr-term">SQLException.</bdi></p>
 <p>دعونا نعيد النظر في البنية الطبقية لتطبيقنا:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005270000010B3CF3EB8F.png" width="660" height="133" style="display:inline-block; margin:4px;width:17.45cm;height:3.531cm;" class="odt-zoomable" data-zoom-src="images/10000000000005270000010B3CF3EB8F.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000005270000010B3CF3EB8F.png" width="660" height="133" style="display:inline-block; margin:4px;width:17.45cm;height:3.531cm;" class="odt-zoomable" data-zoom-src="images/10000000000005270000010B3CF3EB8F.png" /></td></tr></table>
 
 <p>يتم تخزين البيانات المطلوبة للانتخابات في قاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">MySQL</bdi> [<bdi dir="ltr" class="odt-ltr-term">dbelections</bdi>]</p>
 <p><a id="refheading17454669506693"></a></p>
 <h2 id="71">7.1. <span style="color: #4f81bd">الدعم</span></h2>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000543000001F8AA1FCF5F.png" width="674" height="252" style="display:inline-block; margin:4px;width:17.821cm;height:6.668cm;" class="odt-zoomable" data-zoom-src="images/1000000000000543000001F8AA1FCF5F.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000543000001F8AA1FCF5F.png" width="674" height="252" style="display:inline-block; margin:4px;width:17.821cm;height:6.668cm;" class="odt-zoomable" data-zoom-src="images/1000000000000543000001F8AA1FCF5F.png" /></td></tr></table>
 
-<p><a id="dbelections1"></a>يحتوي المجلد [<bdi dir="ltr" class="odt-ltr-term">support</bdi> / <bdi dir="ltr" class="odt-ltr-term">chap-07</bdi>] [1] على:</p>
+<p><a id="dbelections1"></a>يحتوي المجلد [<bdi dir="ltr" class="odt-ltr-term">support / chap-07</bdi>] [1] على:</p>
 <ul>
   <li>مشاريع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> الخاصة بهذا الفصل [2]؛
   </li>
@@ -1163,10 +1163,10 @@
 <p><strong>المهمة</strong>: قم بإنشاء قاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">MySQL</bdi> [<bdi dir="ltr" class="odt-ltr-term">dblelections</bdi>] باتباع الإجراء الموضح في <a href="#refheading59391820156038"><u><span style="color: #0563c1">القسم 6.4.2</span></u></a>.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <p>قاعدة البيانات [<bdi dir="ltr" class="odt-ltr-term">dbelections</bdi>] هي قاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">MySQL</bdi> تحتوي على جدولين:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000A60000004FE55D3DA1.png" width="116" height="55" style="display:inline-block; margin:4px;width:3.069cm;height:1.461cm;" class="odt-zoomable" data-zoom-src="images/10000000000000A60000004FE55D3DA1.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000000A60000004FE55D3DA1.png" width="116" height="55" style="display:inline-block; margin:4px;width:3.069cm;height:1.461cm;" class="odt-zoomable" data-zoom-src="images/10000000000000A60000004FE55D3DA1.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td></tr></table>
 
 <p>يحتوي الجدول [<bdi dir="ltr" class="odt-ltr-term">conf</bdi>] على معلومات تكوين الانتخابات:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000239000000BFCE24760F.png" width="398" height="134" style="display:inline-block; margin:4px;width:10.539cm;height:3.538cm;" class="odt-zoomable" data-zoom-src="images/1000000000000239000000BFCE24760F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000239000000BFCE24760F.png" width="398" height="134" style="display:inline-block; margin:4px;width:10.539cm;height:3.538cm;" class="odt-zoomable" data-zoom-src="images/1000000000000239000000BFCE24760F.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td></tr></table>
 
 <ul>
   <li>[id]: مفتاح أساسي يتزايد تلقائيًا؛
@@ -1180,10 +1180,10 @@
 </ul>
 
 <p>محتوياته هي كما يلي:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001BE000000518D5261E4.png" width="312" height="57" style="display:inline-block; margin:4px;width:8.26cm;height:1.499cm;" class="odt-zoomable" data-zoom-src="images/10000000000001BE000000518D5261E4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000001BE000000518D5261E4.png" width="312" height="57" style="display:inline-block; margin:4px;width:8.26cm;height:1.499cm;" class="odt-zoomable" data-zoom-src="images/10000000000001BE000000518D5261E4.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td></tr></table>
 
 <p>يحتوي الجدول [<bdi dir="ltr" class="odt-ltr-term">listes</bdi>] على قوائم المرشحين للانتخابات:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000224000000EFED15390F.png" width="384" height="167" style="display:inline-block; margin:4px;width:10.149cm;height:4.426cm;" class="odt-zoomable" data-zoom-src="images/1000000000000224000000EFED15390F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000224000000EFED15390F.png" width="384" height="167" style="display:inline-block; margin:4px;width:10.149cm;height:4.426cm;" class="odt-zoomable" data-zoom-src="images/1000000000000224000000EFED15390F.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td></tr></table>
 
 <ul>
   <li>[id]: مفتاح أساسي يتزايد تلقائيًا؛
@@ -1201,7 +1201,7 @@
 </ul>
 
 <p>محتويات جدول [<bdi dir="ltr" class="odt-ltr-term">listes</bdi>] هي كما يلي:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000101000000CD7E60F518.png" width="180" height="144" style="display:inline-block; margin:4px;width:4.761cm;height:3.798cm;" class="odt-zoomable" data-zoom-src="images/1000000000000101000000CD7E60F518.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000101000000CD7E60F518.png" width="180" height="144" style="display:inline-block; margin:4px;width:4.761cm;height:3.798cm;" class="odt-zoomable" data-zoom-src="images/1000000000000101000000CD7E60F518.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td></tr></table>
 
 <p>يُسمى البرنامج النصي <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> لإنشاء قاعدة البيانات [<bdi dir="ltr" class="odt-ltr-term">dbelections</bdi>] بـ [<bdi dir="ltr" class="odt-ltr-term">dbelections.sql</bdi>] وهو موجود على الخادم. وفيما يلي نصه:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
@@ -1287,10 +1287,10 @@
 
 <p><a id="refheading22677565848973"></a></p>
 <h2 id="73-eclipse">7.3. <span style="color: #4f81bd">مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi></span></h2>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005250000011170996311.png" width="659" height="137" style="display:inline-block; margin:4px;width:17.424cm;height:3.612cm;" class="odt-zoomable" data-zoom-src="images/10000000000005250000011170996311.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000005250000011170996311.png" width="659" height="137" style="display:inline-block; margin:4px;width:17.424cm;height:3.612cm;" class="odt-zoomable" data-zoom-src="images/10000000000005250000011170996311.png" /></td></tr></table>
 
 <p>سيكون مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> الخاص بطبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] على النحو التالي:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000013B0000013B850721FB.png" width="220" height="220" style="display:inline-block; margin:4px;width:5.83cm;height:5.83cm;" class="odt-zoomable" data-zoom-src="images/100000000000013B0000013B850721FB.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000013B0000013B850721FB.png" width="220" height="220" style="display:inline-block; margin:4px;width:5.83cm;height:5.83cm;" class="odt-zoomable" data-zoom-src="images/100000000000013B0000013B850721FB.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td></tr></table>
 
 <ul>
   <li>تحتوي حزمة [<bdi dir="ltr" class="odt-ltr-term">elections.dao.entities</bdi>] على الكائنات التي تتعامل معها طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]؛
@@ -1306,7 +1306,7 @@
 </ul>
 <p><a id="refheading22679565848973"></a></p>
 <h2 id="74-maven">7.4. <span style="color: #4f81bd">تكوين مشروع <bdi dir="ltr" class="odt-ltr-term">Maven</bdi></span></h2>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000142000000E016C40EC7.png" width="225" height="157" style="display:inline-block; margin:4px;width:5.96cm;height:4.145cm;" class="odt-zoomable" data-zoom-src="images/1000000000000142000000E016C40EC7.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000142000000E016C40EC7.png" width="225" height="157" style="display:inline-block; margin:4px;width:5.96cm;height:4.145cm;" class="odt-zoomable" data-zoom-src="images/1000000000000142000000E016C40EC7.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td></tr></table>
 
 <p>فيما يلي ملف [<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>] الذي يقوم بتكوين مشروع <bdi dir="ltr" class="odt-ltr-term">Maven:</bdi></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
@@ -1414,21 +1414,21 @@
 </ul>
 <p><a id="refheading22681565848973"></a></p>
 <h2 id="75-dao">7.5. <span style="color: #4f81bd">الكيانات في طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]</span></h2>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000128000000CBA7F86E43.png" width="207" height="142" style="display:inline-block; margin:4px;width:5.48cm;height:3.759cm;" class="odt-zoomable" data-zoom-src="images/1000000000000128000000CBA7F86E43.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000128000000CBA7F86E43.png" width="207" height="142" style="display:inline-block; margin:4px;width:5.48cm;height:3.759cm;" class="odt-zoomable" data-zoom-src="images/1000000000000128000000CBA7F86E43.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td></tr></table>
 
 <ul>
   <li>[<bdi dir="ltr" class="odt-ltr-term">ElectionsConfig</bdi>] هو نموذج الكائن المرتبط بصف في جدول [<bdi dir="ltr" class="odt-ltr-term">CONF</bdi>]؛
   </li>
   <li>[<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>] هو نموذج الكائن المرتبط بصف في جدول [<bdi dir="ltr" class="odt-ltr-term">LISTS</bdi>]؛
   </li>
-  <li>[<bdi dir="ltr" class="odt-ltr-term">AbstactEntity</bdi>] هي الفئة الأم للفئتين السابقتين. وهي تغلف الحقول [id, <bdi dir="ltr" class="odt-ltr-term">version</bdi>] المشتركة بين الفئتين؛
+  <li>[<bdi dir="ltr" class="odt-ltr-term">AbstactEntity</bdi>] هي الفئة الأم للفئتين السابقتين. وهي تغلف الحقول [<bdi dir="ltr" class="odt-ltr-term">id, version</bdi>] المشتركة بين الفئتين؛
   </li>
   <li>[<bdi dir="ltr" class="odt-ltr-term">ElectionsException</bdi>] هي فئة استثناء؛
   </li>
 </ul>
 <p><a id="refheading22683565848973"></a></p>
 <h3 id="751-electionsexception">7.5.1. <span style="color: #4f81bd"><span style="color: #4f81bd">فئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsException</bdi>]</span></span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000128000000CB4ED74EBE.png" width="207" height="142" style="display:inline-block; margin:4px;width:5.48cm;height:3.759cm;" class="odt-zoomable" data-zoom-src="images/1000000000000128000000CB4ED74EBE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000128000000CB4ED74EBE.png" width="207" height="142" style="display:inline-block; margin:4px;width:5.48cm;height:3.759cm;" class="odt-zoomable" data-zoom-src="images/1000000000000128000000CB4ED74EBE.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td></tr></table>
 
 <p>تم وصف فئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsException</bdi>] في <a href="#refheading1626141501930048"><u><span style="color: #0563c1">القسم 4.3</span></u></a>. وإليك شفرة البرمجة الخاصة بها مرة أخرى:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -1527,7 +1527,7 @@
 </ul>
 <p><a id="refheading22685565848973"></a></p>
 <h3 id="752-abstractentity">7.5.2. <span style="color: #4f81bd">فئة [<bdi dir="ltr" class="odt-ltr-term">AbstractEntity</bdi>]</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000128000000CBC48C394C.png" width="207" height="142" style="display:inline-block; margin:4px;width:5.48cm;height:3.759cm;" class="odt-zoomable" data-zoom-src="images/1000000000000128000000CBC48C394C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000128000000CBC48C394C.png" width="207" height="142" style="display:inline-block; margin:4px;width:5.48cm;height:3.759cm;" class="odt-zoomable" data-zoom-src="images/1000000000000128000000CBC48C394C.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td></tr></table>
 
 <p>فئة [<bdi dir="ltr" class="odt-ltr-term">AbstractEntity</bdi>] هي كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -1581,7 +1581,7 @@
 </ul>
 <p><a id="refheading22687565848973"></a></p>
 <h3 id="753-electionsconfig">7.5.3. <span style="color: #4f81bd"><span style="color: #4f81bd">فئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsConfig</bdi>]</span></span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000128000000CBD98166F6.png" width="207" height="142" style="display:inline-block; margin:4px;width:5.48cm;height:3.759cm;" class="odt-zoomable" data-zoom-src="images/1000000000000128000000CBD98166F6.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000128000000CBD98166F6.png" width="207" height="142" style="display:inline-block; margin:4px;width:5.48cm;height:3.759cm;" class="odt-zoomable" data-zoom-src="images/1000000000000128000000CBD98166F6.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td></tr></table>
 
 <p>فئة [<bdi dir="ltr" class="odt-ltr-term">ElectionsConfig</bdi>] هي كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -1620,7 +1620,7 @@
 </ul>
 <p><a id="refheading22689565848973"></a></p>
 <h3 id="754-voterlist">7.5.4. <span style="color: #4f81bd">فئة [<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>]</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000128000000CBABF9AE30.png" width="207" height="142" style="display:inline-block; margin:4px;width:5.48cm;height:3.759cm;" class="odt-zoomable" data-zoom-src="images/1000000000000128000000CBABF9AE30.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000128000000CBABF9AE30.png" width="207" height="142" style="display:inline-block; margin:4px;width:5.48cm;height:3.759cm;" class="odt-zoomable" data-zoom-src="images/1000000000000128000000CBABF9AE30.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td></tr></table>
 
 <p>فئة [<bdi dir="ltr" class="odt-ltr-term">VoterList</bdi>] هي كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -1725,9 +1725,9 @@
 </ul>
 <p><a id="refheading22691565848973"></a></p>
 <h2 id="76-spring-dao">7.6. <span style="color: #4f81bd">تكوين <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> لطبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]</span></h2>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005170000010DBE71959B.png" width="652" height="135" style="display:inline-block; margin:4px;width:17.238cm;height:3.56cm;" class="odt-zoomable" data-zoom-src="images/10000000000005170000010DBE71959B.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000005170000010DBE71959B.png" width="652" height="135" style="display:inline-block; margin:4px;width:17.238cm;height:3.56cm;" class="odt-zoomable" data-zoom-src="images/10000000000005170000010DBE71959B.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000013B000000C19F3287BB.png" width="220" height="135" style="display:inline-block; margin:4px;width:5.83cm;height:3.572cm;" class="odt-zoomable" data-zoom-src="images/100000000000013B000000C19F3287BB.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000013B000000C19F3287BB.png" width="220" height="135" style="display:inline-block; margin:4px;width:5.83cm;height:3.572cm;" class="odt-zoomable" data-zoom-src="images/100000000000013B000000C19F3287BB.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td></tr></table>
 
 <p>فئة [<bdi dir="ltr" class="odt-ltr-term">AppConfig</bdi>] هي فئة تكوين في <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> تقوم بتكوين الوصول إلى قاعدة البيانات على النحو التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -1798,7 +1798,7 @@
 </ul>
 <p><a id="refheading106239108242770"></a></p>
 <h2 id="77">7.7. <span style="color: #4f81bd">تكوين السجل</span></h2>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001AD000001B9F417F917.png" width="215" height="221" style="display:inline-block; margin:4px;width:5.676cm;height:5.835cm;" class="odt-zoomable" data-zoom-src="images/10000000000001AD000001B9F417F917.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000001AD000001B9F417F917.png" width="215" height="221" style="display:inline-block; margin:4px;width:5.676cm;height:5.835cm;" class="odt-zoomable" data-zoom-src="images/10000000000001AD000001B9F417F917.png" /></td></tr></table>
 
 <p>يتم تعريف مكتبات التسجيل من خلال التبعية التالية في ملف [<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
@@ -1810,7 +1810,7 @@
 </code></pre></div>
 
 <p>تتضمن هذه التبعية المكتبات التالية:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000123000000819DA6E3AA.png" width="212" height="94" style="display:inline-block; margin:4px;width:5.611cm;height:2.487cm;" class="odt-zoomable" data-zoom-src="images/1000000000000123000000819DA6E3AA.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000123000000819DA6E3AA.png" width="212" height="94" style="display:inline-block; margin:4px;width:5.611cm;height:2.487cm;" class="odt-zoomable" data-zoom-src="images/1000000000000123000000819DA6E3AA.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td></tr></table>
 
 <p>تتولى مكتبة [<bdi dir="ltr" class="odt-ltr-term">logback</bdi>] عملية التسجيل. ويتم تكوينها بواسطة ملفين:</p>
 <ul>
@@ -1862,9 +1862,9 @@
 <p>قم بالتبديل إلى وضع [<bdi dir="ltr" class="odt-ltr-term">debug</bdi>] فور ظهور الأخطاء أثناء التنفيذ.</p>
 <p><a id="refheading22693565848973"></a></p>
 <h2 id="78-dao">7.8. <span style="color: #4f81bd">تنفيذ طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]</span></h2>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000052300000111576A9DF3.png" width="658" height="137" style="display:inline-block; margin:4px;width:17.397cm;height:3.612cm;" class="odt-zoomable" data-zoom-src="images/100000000000052300000111576A9DF3.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000052300000111576A9DF3.png" width="658" height="137" style="display:inline-block; margin:4px;width:17.397cm;height:3.612cm;" class="odt-zoomable" data-zoom-src="images/100000000000052300000111576A9DF3.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FD000000B8EDB337F3.png" width="177" height="129" style="display:inline-block; margin:4px;width:4.68cm;height:3.404cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FD000000B8EDB337F3.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000000FD000000B8EDB337F3.png" width="177" height="129" style="display:inline-block; margin:4px;width:4.68cm;height:3.404cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FD000000B8EDB337F3.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td></tr></table>
 
 <p>واجهة [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>] لطبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] هي كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -1990,9 +1990,9 @@
 
 <p><a id="refheading22695565848973"></a></p>
 <h2 id="79-main">7.9. <span style="color: #4f81bd">فئة الاختبار [<bdi dir="ltr" class="odt-ltr-term">Main</bdi>]</span></h2>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005120000010C2BC21605.png" width="649" height="134" style="display:inline-block; margin:4px;width:17.171cm;height:3.545cm;" class="odt-zoomable" data-zoom-src="images/10000000000005120000010C2BC21605.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000005120000010C2BC21605.png" width="649" height="134" style="display:inline-block; margin:4px;width:17.171cm;height:3.545cm;" class="odt-zoomable" data-zoom-src="images/10000000000005120000010C2BC21605.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E9000000DC13348C3A.png" width="163" height="154" style="display:inline-block; margin:4px;width:4.309cm;height:4.069cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E9000000DC13348C3A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000000E9000000DC13348C3A.png" width="163" height="154" style="display:inline-block; margin:4px;width:4.309cm;height:4.069cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E9000000DC13348C3A.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td></tr></table>
 
 <p>الفئة [<bdi dir="ltr" class="odt-ltr-term">Main</bdi>] هي كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -2195,9 +2195,9 @@
 <p><a id="refheading318051812363491"></a>
 <a id="tests-dao-jdbc"></a></p>
 <h2 id="710-junit-electionsdaojdbc">7.10. <span style="color: #4f81bd">اختبارات <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi> لفئة [ <bdi dir="ltr" class="odt-ltr-term">ElectionsDaoJdbc</bdi>]</span></h2>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000504000001051711870E.png" width="642" height="131" style="display:inline-block; margin:4px;width:16.986cm;height:3.454cm;" class="odt-zoomable" data-zoom-src="images/1000000000000504000001051711870E.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000504000001051711870E.png" width="642" height="131" style="display:inline-block; margin:4px;width:16.986cm;height:3.454cm;" class="odt-zoomable" data-zoom-src="images/1000000000000504000001051711870E.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F6000000DD8B3B1641.png" width="172" height="155" style="display:inline-block; margin:4px;width:4.56cm;height:4.098cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F6000000DD8B3B1641.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000000F6000000DD8B3B1641.png" width="172" height="155" style="display:inline-block; margin:4px;width:4.56cm;height:4.098cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F6000000DD8B3B1641.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td></tr></table>
 
 <p>فئة [<bdi dir="ltr" class="odt-ltr-term">Test01</bdi>] هي فئة الاختبار [<bdi dir="ltr" class="odt-ltr-term">JUnit</bdi>] التالية:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -2326,7 +2326,7 @@
   </li>
   <li>الأسطر 11–19: نعرض محتويات جدول [<bdi dir="ltr" class="odt-ltr-term">LISTES</bdi>]. لا توجد اختبارات هنا، فقط فحص بصري؛
   </li>
-  <li>الأسطر 21-35: نقوم بتعديل جدول [<bdi dir="ltr" class="odt-ltr-term">LISTES</bdi>] في قاعدة البيانات عن طريق تعيين قيم لحقول القوائم [<bdi dir="ltr" class="odt-ltr-term">voices</bdi>, <bdi dir="ltr" class="odt-ltr-term">seats</bdi>, <bdi dir="ltr" class="odt-ltr-term">eliminated</bdi>]؛
+  <li>الأسطر 21-35: نقوم بتعديل جدول [<bdi dir="ltr" class="odt-ltr-term">LISTES</bdi>] في قاعدة البيانات عن طريق تعيين قيم لحقول القوائم [<bdi dir="ltr" class="odt-ltr-term">voices, seats, eliminated</bdi>]؛
   </li>
   <li>الأسطر 37–51: نقرأ جدول [<bdi dir="ltr" class="odt-ltr-term">LISTES</bdi>] مرة أخرى ونتحقق من أن النتيجة تتطابق مع ما تم إدخاله؛
   </li>
@@ -2426,17 +2426,17 @@
   </li>
   <li>الأسطر 27-34: المحتويات الأولية لجدول [<bdi dir="ltr" class="odt-ltr-term">LISTES</bdi>]؛
   </li>
-  <li>الأسطر 35-42: محتويات جدول [<bdi dir="ltr" class="odt-ltr-term">LISTES</bdi>] بعد تعيين قيم لحقول [<bdi dir="ltr" class="odt-ltr-term">voix</bdi>, <bdi dir="ltr" class="odt-ltr-term">sieges</bdi>, <bdi dir="ltr" class="odt-ltr-term">elimine</bdi>]؛
+  <li>الأسطر 35-42: محتويات جدول [<bdi dir="ltr" class="odt-ltr-term">LISTES</bdi>] بعد تعيين قيم لحقول [<bdi dir="ltr" class="odt-ltr-term">voix, sieges, elimine</bdi>]؛
   </li>
 </ul>
 
 <p>بالإضافة إلى ذلك، اجتاز اختبار <bdi dir="ltr" class="odt-ltr-term">JUnit:</bdi></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000015C000000CBF66E50FE.png" width="243" height="142" style="display:inline-block; margin:4px;width:6.44cm;height:3.757cm;" class="odt-zoomable" data-zoom-src="images/100000000000015C000000CBF66E50FE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000015C000000CBF66E50FE.png" width="243" height="142" style="display:inline-block; margin:4px;width:6.44cm;height:3.757cm;" class="odt-zoomable" data-zoom-src="images/100000000000015C000000CBF66E50FE.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td></tr></table>
 
 <p><a id="refheading318151812363491"></a></p>
 <h2 id="711-with-dependencies-dao">7.11. <span style="color: #4f81bd">إنشاء أرشيف [<bdi dir="ltr" class="odt-ltr-term">with-dependencies</bdi>] لطبقة [dao]</span></h2>
 <p>يتميز المشروع النهائي بالبنية التالية:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000052200000109068314C5.png" width="657" height="133" style="display:inline-block; margin:4px;width:17.383cm;height:3.507cm;" class="odt-zoomable" data-zoom-src="images/100000000000052200000109068314C5.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000052200000109068314C5.png" width="657" height="133" style="display:inline-block; margin:4px;width:17.383cm;height:3.507cm;" class="odt-zoomable" data-zoom-src="images/100000000000052200000109068314C5.png" /></td></tr></table>
 
 <p>دعونا نستعرض تكوين <bdi dir="ltr" class="odt-ltr-term">Maven</bdi> الخاص بالمشروع:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
@@ -2520,7 +2520,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">project</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000110000001949B862F61.png" width="212" height="315" style="display:inline-block; margin:4px;width:5.611cm;height:8.334cm;" class="odt-zoomable" data-zoom-src="images/1000000000000110000001949B862F61.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000110000001949B862F61.png" width="212" height="315" style="display:inline-block; margin:4px;width:5.611cm;height:8.334cm;" class="odt-zoomable" data-zoom-src="images/1000000000000110000001949B862F61.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td></tr></table>
 
 <p>سنقوم بإنشاء ملف <bdi dir="ltr" class="odt-ltr-term">JAR</bdi> واحد يحتوي على الفئات من جميع ملفات <bdi dir="ltr" class="odt-ltr-term">JAR</bdi> المذكورة أعلاه بالإضافة إلى تلك الموجودة في مشروع طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]. ويتم ذلك عن طريق إجراء تغيير على ملف [<bdi dir="ltr" class="odt-ltr-term">pom.xml</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
@@ -2574,9 +2574,9 @@
 </ul>
 
 <p>بمجرد إجراء هذا التغيير، يمكنك إنشاء ملف <bdi dir="ltr" class="odt-ltr-term">JAR</bdi> كما يلي [1-10]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E5000002EDF261F0B0.png" width="627" height="375" style="display:inline-block; margin:4px;width:16.577cm;height:9.91cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E5000002EDF261F0B0.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000004E5000002EDF261F0B0.png" width="627" height="375" style="display:inline-block; margin:4px;width:16.577cm;height:9.91cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E5000002EDF261F0B0.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003DF00000141E7C0DBB7.png" width="496" height="161" style="display:inline-block; margin:4px;width:13.111cm;height:4.247cm;" class="odt-zoomable" data-zoom-src="images/10000000000003DF00000141E7C0DBB7.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000003DF00000141E7C0DBB7.png" width="496" height="161" style="display:inline-block; margin:4px;width:13.111cm;height:4.247cm;" class="odt-zoomable" data-zoom-src="images/10000000000003DF00000141E7C0DBB7.png" /></td></tr></table>
 
 <ul>
   <li>في [5]، حدد مجلد المشروع باستخدام الزر [6]؛
@@ -2595,14 +2595,14 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004640000016A4EBC4A4F.png" width="562" height="181" style="display:inline-block; margin:4px;width:14.87cm;height:4.789cm;" class="odt-zoomable" data-zoom-src="images/10000000000004640000016A4EBC4A4F.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000004640000016A4EBC4A4F.png" width="562" height="181" style="display:inline-block; margin:4px;width:14.87cm;height:4.789cm;" class="odt-zoomable" data-zoom-src="images/10000000000004640000016A4EBC4A4F.png" /></td></tr></table>
 
 <ul>
   <li>في [9-10]، تحقق من أن لديك <b><bdi dir="ltr" class="odt-ltr-term">JDK</bdi> </b>(مجموعة أدوات تطوير <bdi dir="ltr" class="odt-ltr-term">Java</bdi>) وليس <b><bdi dir="ltr" class="odt-ltr-term">JRE</bdi> </b>(بيئة تشغيل <bdi dir="ltr" class="odt-ltr-term">Java</bdi>). الفرق هو أن <bdi dir="ltr" class="odt-ltr-term">JDK</bdi> يتضمن مُجمِّعًا، بينما <bdi dir="ltr" class="odt-ltr-term">JRE</bdi> لا يتضمنه. إذا لم يكن لديك <bdi dir="ltr" class="odt-ltr-term">JDK</bdi>، فيجب عليك إضافة واحد في [10] باستخدام [11]. للقيام بذلك، اتبع الإجراء الموضح في <a href="#refheading17454269506693"><u><span style="color: #0563c1">القسم 3.</span></u></a>1؛
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F2000000EE9C7D9767.png" width="633" height="119" style="display:inline-block; margin:4px;width:16.748cm;height:3.149cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F2000000EE9C7D9767.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000004F2000000EE9C7D9767.png" width="633" height="119" style="display:inline-block; margin:4px;width:16.748cm;height:3.149cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F2000000EE9C7D9767.png" /></td></tr></table>
 
 <ul>
   <li>في [17]، قم بتشغيل تكوين البناء؛
@@ -2612,32 +2612,32 @@
 </ul>
 
 <p>يمكنك فتح هذا الأرشيف باستخدام أداة فك الضغط:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000013500000180C2689868.png" width="216" height="269" style="display:inline-block; margin:4px;width:5.72cm;height:7.108cm;" class="odt-zoomable" data-zoom-src="images/100000000000013500000180C2689868.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000013500000180C2689868.png" width="216" height="269" style="display:inline-block; margin:4px;width:5.72cm;height:7.108cm;" class="odt-zoomable" data-zoom-src="images/100000000000013500000180C2689868.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td></tr></table>
 
 <p><a id="refheading22697565848973"></a></p>
 <h2 id="712-dao">7.12. <span style="color: #4f81bd">اختبار أرشيف طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]</span></h2>
 <p>لنقم بإنشاء مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> قياسي (وليس <bdi dir="ltr" class="odt-ltr-term">Maven</bdi>) [1]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002D5000000BFFAF27BA0.png" width="363" height="96" style="display:inline-block; margin:4px;width:9.592cm;height:2.528cm;" class="odt-zoomable" data-zoom-src="images/10000000000002D5000000BFFAF27BA0.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000002D5000000BFFAF27BA0.png" width="363" height="96" style="display:inline-block; margin:4px;width:9.592cm;height:2.528cm;" class="odt-zoomable" data-zoom-src="images/10000000000002D5000000BFFAF27BA0.png" /></td></tr></table>
 
 <p>لننسخ الحزمة [<bdi dir="ltr" class="odt-ltr-term">dao.console</bdi>] من مشروع [<bdi dir="ltr" class="odt-ltr-term">elections-dao-jdbc-01</bdi>] ونلصقها في مشروع [<bdi dir="ltr" class="odt-ltr-term">elections-dao-jdbc-02</bdi>] [2]. تظهر عدة أخطاء لأن الفئة [<bdi dir="ltr" class="odt-ltr-term">Main</bdi>] تشير إلى فئات غير موجودة في [<bdi dir="ltr" class="odt-ltr-term">Classpath</bdi>] الخاص بها. سنقوم بتعديل [<bdi dir="ltr" class="odt-ltr-term">Classpath</bdi>].</p>
 <p>أولاً، نقوم بإنشاء [2-8] مجلد [lib] في المشروع الجديد:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005AF0000028393526CB7.png" width="680" height="301" style="display:inline-block; margin:4px;width:17.999cm;height:7.953cm;" class="odt-zoomable" data-zoom-src="images/10000000000005AF0000028393526CB7.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000005AF0000028393526CB7.png" width="680" height="301" style="display:inline-block; margin:4px;width:17.999cm;height:7.953cm;" class="odt-zoomable" data-zoom-src="images/10000000000005AF0000028393526CB7.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B9000001363273150F.png" width="605" height="155" style="display:inline-block; margin:4px;width:15.995cm;height:4.101cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B9000001363273150F.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000004B9000001363273150F.png" width="605" height="155" style="display:inline-block; margin:4px;width:15.995cm;height:4.101cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B9000001363273150F.png" /></td></tr></table>
 
 <p>في [9]، نضع الأرشيف الذي تم إنشاؤه في الخطوة السابقة في مجلد [lib]، ثم نعدل مسار البناء للمشروع:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000446000001E12F4F0629.png" width="547" height="240" style="display:inline-block; margin:4px;width:14.473cm;height:6.362cm;" class="odt-zoomable" data-zoom-src="images/1000000000000446000001E12F4F0629.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000446000001E12F4F0629.png" width="547" height="240" style="display:inline-block; margin:4px;width:14.473cm;height:6.362cm;" class="odt-zoomable" data-zoom-src="images/1000000000000446000001E12F4F0629.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004690000016F69FAE278.png" width="565" height="184" style="display:inline-block; margin:4px;width:14.937cm;height:4.856cm;" class="odt-zoomable" data-zoom-src="images/10000000000004690000016F69FAE278.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000004690000016F69FAE278.png" width="565" height="184" style="display:inline-block; margin:4px;width:14.937cm;height:4.856cm;" class="odt-zoomable" data-zoom-src="images/10000000000004690000016F69FAE278.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000590000002ABEFCC8920.png" width="680" height="326" style="display:inline-block; margin:4px;width:17.999cm;height:8.632cm;" class="odt-zoomable" data-zoom-src="images/1000000000000590000002ABEFCC8920.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000590000002ABEFCC8920.png" width="680" height="326" style="display:inline-block; margin:4px;width:17.999cm;height:8.632cm;" class="odt-zoomable" data-zoom-src="images/1000000000000590000002ABEFCC8920.png" /></td></tr></table>
 
 <ul>
   <li>في [18]، قمنا باستيراد أرشيف طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] التي تم إنشاؤها مسبقًا؛
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000307000000DBE24C6827.png" width="388" height="109" style="display:inline-block; margin:4px;width:10.253cm;height:2.896cm;" class="odt-zoomable" data-zoom-src="images/1000000000000307000000DBE24C6827.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000307000000DBE24C6827.png" width="388" height="109" style="display:inline-block; margin:4px;width:10.253cm;height:2.896cm;" class="odt-zoomable" data-zoom-src="images/1000000000000307000000DBE24C6827.png" /></td></tr></table>
 
 <ul>
   <li>في [19]، لم يعد المشروع يظهر أي أخطاء؛
